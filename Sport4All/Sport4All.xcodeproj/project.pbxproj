@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E197F01278D7E6F008BBABB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E197F00278D7E6F008BBABB /* Constants.swift */; };
+		5E197F03278D80D4008BBABB /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E197F02278D80D4008BBABB /* ColorExtension.swift */; };
 		5ECF53EF278C3AB8005F6D01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECF53EE278C3AB8005F6D01 /* AppDelegate.swift */; };
 		5ECF53F1278C3AB8005F6D01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECF53F0278C3AB8005F6D01 /* SceneDelegate.swift */; };
 		5ECF53F3278C3AB8005F6D01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECF53F2278C3AB8005F6D01 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E197F00278D7E6F008BBABB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5E197F02278D80D4008BBABB /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		5ECF53EB278C3AB8005F6D01 /* Sport4All.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sport4All.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ECF53EE278C3AB8005F6D01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5ECF53F0278C3AB8005F6D01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +41,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E197EF9278D7DA3008BBABB /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				5E197EFD278D7E36008BBABB /* Extension */,
+				5E197F00278D7E6F008BBABB /* Constants.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		5E197EFB278D7DBA008BBABB /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				5ECF53FC278C3AB9005F6D01 /* Info.plist */,
+				5E197EFC278D7DF1008BBABB /* Fonts */,
+				5ECF53F7278C3AB9005F6D01 /* Assets.xcassets */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		5E197EFC278D7DF1008BBABB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		5E197EFD278D7E36008BBABB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5E197F02278D80D4008BBABB /* ColorExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		5ECF53E2278C3AB8005F6D01 = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +94,13 @@
 		5ECF53ED278C3AB8005F6D01 /* Sport4All */ = {
 			isa = PBXGroup;
 			children = (
-				5ECF53EE278C3AB8005F6D01 /* AppDelegate.swift */,
 				5ECF53F0278C3AB8005F6D01 /* SceneDelegate.swift */,
+				5ECF53EE278C3AB8005F6D01 /* AppDelegate.swift */,
+				5E197EFB278D7DBA008BBABB /* SupportingFiles */,
+				5E197EF9278D7DA3008BBABB /* Util */,
 				5ECF53F2278C3AB8005F6D01 /* ViewController.swift */,
 				5ECF53F4278C3AB8005F6D01 /* Main.storyboard */,
-				5ECF53F7278C3AB9005F6D01 /* Assets.xcassets */,
 				5ECF53F9278C3AB9005F6D01 /* LaunchScreen.storyboard */,
-				5ECF53FC278C3AB9005F6D01 /* Info.plist */,
 			);
 			path = Sport4All;
 			sourceTree = "<group>";
@@ -141,6 +179,8 @@
 				5ECF53F3278C3AB8005F6D01 /* ViewController.swift in Sources */,
 				5ECF53EF278C3AB8005F6D01 /* AppDelegate.swift in Sources */,
 				5ECF53F1278C3AB8005F6D01 /* SceneDelegate.swift in Sources */,
+				5E197F01278D7E6F008BBABB /* Constants.swift in Sources */,
+				5E197F03278D80D4008BBABB /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +330,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Sport4All/Info.plist;
+				INFOPLIST_FILE = Sport4All/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -301,7 +341,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = racoonGroup.Sport4All;
+				PRODUCT_BUNDLE_IDENTIFIER = diego.CEV.Sport4All;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -317,7 +357,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Sport4All/Info.plist;
+				INFOPLIST_FILE = Sport4All/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -328,7 +368,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = racoonGroup.Sport4All;
+				PRODUCT_BUNDLE_IDENTIFIER = diego.CEV.Sport4All;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
