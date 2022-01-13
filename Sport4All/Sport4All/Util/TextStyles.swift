@@ -7,16 +7,17 @@
 
 import UIKit
 
-struct TextStyles {
-	
-	enum FontType: String {
-		case SFProRegular = "SFPro-Regular"
-		case SFProMedium = "SFPro-Medium"
-		case SFProSemibold = "SFPro-Semibold"
-		case SFProBold = "SFPro-Bold"
-		case SFProDisplayRegular = "SFProDisplay-Regular"
-		case SFProDisplayMedium = "SFProDisplay-Medium"
-		case SFProDisplaySemibold = "SFProDisplay-Semibold"
-		case SFProDisplayBold = "SFProDisplay-Bold"
-	}
+enum FontType: String {
+	case SFProRegular = "SFPro-Regular"
+	case SFProMedium = "SFPro-Medium"
+	case SFProSemibold = "SFPro-Semibold"
+	case SFProBold = "SFPro-Bold"
+	case SFProDisplayRegular = "SFProDisplay-Regular"
+	case SFProDisplayMedium = "SFProDisplay-Medium"
+	case SFProDisplaySemibold = "SFProDisplay-Semibold"
+	case SFProDisplayBold = "SFProDisplay-Bold"
 }
+
+//enum FontSize: CGFloat {
+//	
+//}

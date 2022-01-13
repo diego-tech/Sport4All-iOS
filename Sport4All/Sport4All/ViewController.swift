@@ -15,7 +15,7 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
 	
-		exampleLabel.font = UIFont(name: TextStyles.FontType.SFProMedium.rawValue, size: 12)
+		exampleLabel.font = UIFont(name: FontType.SFProBold.rawValue, size: 12)
 	}
 }
 
