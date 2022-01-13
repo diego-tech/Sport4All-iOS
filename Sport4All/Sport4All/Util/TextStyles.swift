@@ -7,6 +7,7 @@
 
 import UIKit
 
+// Custom Fonts Type
 enum FontType: String {
 	case SFProRegular = "SFPro-Regular"
 	case SFProMedium = "SFPro-Medium"
@@ -18,6 +19,13 @@ enum FontType: String {
 	case SFProDisplayBold = "SFProDisplay-Bold"
 }
 
-//enum FontSize: CGFloat {
-//	
-//}
+// Custom Fonts Size
+enum FontSize: CGFloat {
+	case bigTitle = 25
+	case title = 22
+	case subtitle = 20
+	case button = 17
+	case customSegments = 14
+	case body = 12
+	case smallText = 9
+}
