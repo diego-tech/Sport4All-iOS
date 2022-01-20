@@ -93,6 +93,53 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		5E75E4C4279993CD005B89A3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5E75E4C927999412005B89A3 /* Main */,
+				5E75E4C827999409005B89A3 /* Launch */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5E75E4C5279993D3005B89A3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5E75E4C6279993E5005B89A3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5ECF53F2278C3AB8005F6D01 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5E75E4C7279993F2005B89A3 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		5E75E4C827999409005B89A3 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				5ECF53F9278C3AB9005F6D01 /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		5E75E4C927999412005B89A3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				5ECF53F4278C3AB8005F6D01 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		5ECF53E2278C3AB8005F6D01 = {
 			isa = PBXGroup;
 			children = (
@@ -114,11 +161,12 @@
 			children = (
 				5ECF53F0278C3AB8005F6D01 /* SceneDelegate.swift */,
 				5ECF53EE278C3AB8005F6D01 /* AppDelegate.swift */,
+				5E75E4C7279993F2005B89A3 /* Provider */,
+				5E75E4C6279993E5005B89A3 /* Controllers */,
+				5E75E4C5279993D3005B89A3 /* Model */,
+				5E75E4C4279993CD005B89A3 /* Views */,
 				5E197EFB278D7DBA008BBABB /* SupportingFiles */,
 				5E197EF9278D7DA3008BBABB /* Util */,
-				5ECF53F2278C3AB8005F6D01 /* ViewController.swift */,
-				5ECF53F4278C3AB8005F6D01 /* Main.storyboard */,
-				5ECF53F9278C3AB9005F6D01 /* LaunchScreen.storyboard */,
 			);
 			path = Sport4All;
 			sourceTree = "<group>";
