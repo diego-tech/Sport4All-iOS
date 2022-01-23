@@ -51,5 +51,9 @@ class ViewController: UIViewController {
 	}
 	
 	@IBAction func goToRegisterButtonAction(_ sender: Any) {
+//		Ir a Registro
+//		let storyBoard = UIStoryboard(name: "Register", bundle: nil)
+//		let vc = storyBoard.instantiateViewController(withIdentifier: "Register")
+//		present(vc, animated: true, completion: nil)
 	}
 }
