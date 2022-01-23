@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -18,51 +17,54 @@
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                    <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="4uf-uS-lpy">
-                                <rect key="frame" x="137" y="236" width="140" height="140"/>
+                                <rect key="frame" x="173" y="344" width="68" height="73"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="BpL-FT-btm"/>
-                                    <constraint firstAttribute="width" secondItem="4uf-uS-lpy" secondAttribute="height" multiplier="1:1" id="hOE-Ng-dAj"/>
-                                    <constraint firstAttribute="width" constant="140" id="wOg-4K-J5v"/>
+                                    <constraint firstAttribute="width" constant="68" id="GN5-hb-eq4"/>
+                                    <constraint firstAttribute="height" constant="73" id="V4p-UZ-a2U"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play 4 All" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlG-GM-M0y">
-                                <rect key="frame" x="144.5" y="601" width="125" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="125" id="XLJ-T9-UeH"/>
-                                    <constraint firstAttribute="height" constant="36" id="mPn-YO-ZqQ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="30"/>
+                                <rect key="frame" x="20" y="497" width="374" height="47"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="34"/>
                                 <color key="textColor" name="CorporativeColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="YlG-GM-M0y" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="E0L-mY-tdY"/>
-                            <constraint firstItem="4uf-uS-lpy" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Fpu-jU-drv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YlG-GM-M0y" secondAttribute="bottom" constant="225" id="Ix1-d6-1yq"/>
-                            <constraint firstItem="4uf-uS-lpy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="192" id="a9o-F2-1Zn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4uf-uS-lpy" secondAttribute="trailing" constant="173" id="3Xd-Ii-fnD"/>
+                            <constraint firstItem="YlG-GM-M0y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ahf-21-oEJ"/>
+                            <constraint firstItem="4uf-uS-lpy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="173" id="HaL-re-IYC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YlG-GM-M0y" secondAttribute="bottom" constant="318" id="MRG-PD-AWv"/>
+                            <constraint firstItem="YlG-GM-M0y" firstAttribute="top" secondItem="4uf-uS-lpy" secondAttribute="bottom" constant="80" id="OBz-lE-E0a"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YlG-GM-M0y" secondAttribute="trailing" constant="20" id="hdb-Yj-Imb"/>
+                            <constraint firstItem="4uf-uS-lpy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="300" id="kIG-vy-hYo"/>
                         </constraints>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="4uf-uS-lpy"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="100.93457943925233" y="40.820734341252702"/>
+            <point key="canvasLocation" x="100.00000000000001" y="40.178571428571423"/>
         </scene>
     </scenes>
     <resources>
         <image name="LogoIcon" width="65.5" height="73"/>
+        <namedColor name="BackgroundColor">
+            <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="CorporativeColor">
             <color red="0.20000000000000001" green="0.36862745098039218" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
