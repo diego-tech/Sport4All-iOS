@@ -1,30 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7gE-w9-wFv">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Bold.otf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+        <array key="SF-Pro.ttf">
+            <string>SFPro-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="mBz-4k-rN5">
             <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController storyboardIdentifier="Login" id="7gE-w9-wFv" customClass="ViewController" customModule="Sport4All" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y8g-dp-gMx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="v7K-Bl-akm">
+                                <rect key="frame" x="123.5" y="106" width="156" height="83"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="83" id="NEn-12-rgA"/>
+                                    <constraint firstAttribute="width" constant="156" id="bxC-fR-iNg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INICIO DE SESIÓN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gab-C1-SKl">
+                                <rect key="frame" x="96" y="255" width="222" height="32.5"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="27"/>
+                                <color key="textColor" name="CorporativeColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre de usuario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ev0-J8-Gft">
+                                <rect key="frame" x="24" y="382.5" width="366" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oiI-fi-oyW">
+                                <rect key="frame" x="24" y="450" width="366" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUn-ma-9h0">
+                                <rect key="frame" x="24" y="496" width="169" height="27"/>
+                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="¿Has olvidado la contraseña ?">
+                                    <color key="titleColor" name="CorporativeColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="rememberPasswordButtonAction:" destination="7gE-w9-wFv" eventType="touchUpInside" id="b38-VK-O3C"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4n3-PN-LaW">
+                                <rect key="frame" x="80.5" y="594" width="262" height="57"/>
+                                <color key="backgroundColor" name="SearchColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="262" id="T9X-Rj-COm"/>
+                                    <constraint firstAttribute="height" constant="57" id="W4k-d7-EA7"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="ACCEDER" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="17"/>
+                                    <color key="baseForegroundColor" name="HardColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="accessButtonAction:" destination="7gE-w9-wFv" eventType="touchUpInside" id="PeR-ZO-6gx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOc-6M-5Eh">
+                                <rect key="frame" x="119" y="691" width="271" height="29"/>
+                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="14"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="¿No Tienes Cuenta?         Registrate Ahora">
+                                    <color key="titleColor" name="CorporativeColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToRegisterButtonAction:" destination="7gE-w9-wFv" eventType="touchUpInside" id="2eK-hu-2Mo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7pE-oz-ES7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7pE-oz-ES7" firstAttribute="trailing" secondItem="OOc-6M-5Eh" secondAttribute="trailing" constant="24" id="1do-9u-Dy3"/>
+                            <constraint firstItem="oiI-fi-oyW" firstAttribute="leading" secondItem="7pE-oz-ES7" secondAttribute="leading" constant="24" id="7Q5-Um-MOJ"/>
+                            <constraint firstItem="gab-C1-SKl" firstAttribute="top" secondItem="v7K-Bl-akm" secondAttribute="bottom" constant="66" id="8UE-3v-KZD"/>
+                            <constraint firstItem="v7K-Bl-akm" firstAttribute="centerX" secondItem="y8g-dp-gMx" secondAttribute="centerX" constant="-5.5" id="BC5-Dm-8do"/>
+                            <constraint firstItem="kUn-ma-9h0" firstAttribute="top" secondItem="oiI-fi-oyW" secondAttribute="bottom" constant="12" id="Biz-yn-ZBX"/>
+                            <constraint firstItem="7pE-oz-ES7" firstAttribute="trailing" secondItem="oiI-fi-oyW" secondAttribute="trailing" constant="24" id="CKg-4t-Xg5"/>
+                            <constraint firstItem="ev0-J8-Gft" firstAttribute="centerX" secondItem="y8g-dp-gMx" secondAttribute="centerX" id="FRP-9J-jUM"/>
+                            <constraint firstItem="OOc-6M-5Eh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7pE-oz-ES7" secondAttribute="leading" symbolic="YES" id="JTS-Zy-Pz6"/>
+                            <constraint firstItem="oiI-fi-oyW" firstAttribute="top" secondItem="ev0-J8-Gft" secondAttribute="bottom" constant="33.5" id="Jcn-tw-95h"/>
+                            <constraint firstItem="kUn-ma-9h0" firstAttribute="leading" secondItem="7pE-oz-ES7" secondAttribute="leading" constant="24" id="K3Q-TQ-OEo"/>
+                            <constraint firstItem="7pE-oz-ES7" firstAttribute="trailing" secondItem="ev0-J8-Gft" secondAttribute="trailing" constant="24" id="YeM-ol-o96"/>
+                            <constraint firstItem="v7K-Bl-akm" firstAttribute="top" secondItem="7pE-oz-ES7" secondAttribute="top" constant="62" id="ZXy-Ii-plQ"/>
+                            <constraint firstItem="gab-C1-SKl" firstAttribute="centerX" secondItem="y8g-dp-gMx" secondAttribute="centerX" id="aZv-D6-0mZ"/>
+                            <constraint firstItem="ev0-J8-Gft" firstAttribute="top" secondItem="gab-C1-SKl" secondAttribute="bottom" constant="95" id="dTa-tf-OBP"/>
+                            <constraint firstItem="ev0-J8-Gft" firstAttribute="leading" secondItem="7pE-oz-ES7" secondAttribute="leading" constant="24" id="gEU-0E-CKk"/>
+                            <constraint firstItem="OOc-6M-5Eh" firstAttribute="top" secondItem="4n3-PN-LaW" secondAttribute="bottom" constant="40" id="seg-fa-OEx"/>
+                            <constraint firstItem="4n3-PN-LaW" firstAttribute="centerX" secondItem="y8g-dp-gMx" secondAttribute="centerX" constant="4.5" id="xIy-oy-ifL"/>
+                            <constraint firstItem="4n3-PN-LaW" firstAttribute="top" secondItem="kUn-ma-9h0" secondAttribute="bottom" constant="71" id="ztd-Ru-c3R"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="accessButton" destination="4n3-PN-LaW" id="zBg-7D-Wfc"/>
+                        <outlet property="emailTextField" destination="ev0-J8-Gft" id="OBp-eY-L3A"/>
+                        <outlet property="goToRegisterButton" destination="OOc-6M-5Eh" id="h5V-f5-UEc"/>
+                        <outlet property="passwordTextField" destination="oiI-fi-oyW" id="myS-OS-0lz"/>
+                        <outlet property="rememberPasswordButton" destination="kUn-ma-9h0" id="7dg-fG-TrM"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iLT-um-9YJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-268" y="-58"/>
+            <point key="canvasLocation" x="-164" y="-82"/>
         </scene>
     </scenes>
     <resources>
+        <image name="LogoIcon" width="65.5" height="73"/>
+        <namedColor name="CorporativeColor">
+            <color red="0.20000000000000001" green="0.36862745098039218" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="HardColor">
+            <color red="0.19607843137254902" green="0.26666666666666666" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SearchColor">
+            <color red="0.53725490196078429" green="0.67450980392156867" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
