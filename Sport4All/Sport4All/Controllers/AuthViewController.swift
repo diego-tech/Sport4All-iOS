@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AuthViewController.swift
 //  Sport4All
 //
 //  Created by Diego Muñoz Herranz on 10/1/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AuthViewController: UIViewController {
 	
 	// Variables
 	
@@ -21,25 +21,40 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
+		
+		// Inicialización Estilos
+		setTextFieldStyles()
+		setButtonStyles()
 	}
 	
 	// MARK: Functions
 	private func checkTextFields() {
 		if emailTextField.text == "" || passwordTextField.text == ""  {
-			textFieldErrorStyles(textField: emailTextField, placeHolderText: "Introduzca el Correo Electrónico")
-			textFieldErrorStyles(textField: passwordTextField, placeHolderText: "Introduzca la Contraseña")
+			emailTextField.placeholderStyles(placeHolderText: "Introduzca el Correo Electrónico")
+
+			passwordTextField.placeholderStyles(placeHolderText: "Introduzca la Contraseña")
 		} else {
 			debugPrint("Continua!!")
 		}
 	}
 	
 	// MARK: Styles
-	private func textFieldErrorStyles(textField: UITextField, placeHolderText: String){
-		textField.layer.borderColor = UIColor.redColor?.cgColor
-		textField.layer.borderWidth = 1
-		textField.placeholder = placeHolderText
-		textField.layer.cornerCurve = .circular
-		textField.layer.cornerRadius = 5
+	private func setTextFieldStyles(){
+		// Estilos Email Text Field
+		emailTextField.bottomBorder()
+		emailTextField.placeholderStyles(placeHolderText: "Correo Electrónico")
+		emailTextField.textStyles(keyboardType: .emailAddress)
+		
+		// Estilos Password Text Field
+		passwordTextField.bottomBorder()
+		passwordTextField.placeholderStyles(placeHolderText: "Contraseña")
+		passwordTextField.textStyles(keyboardType: .default)
+	}
+	
+	private func setButtonStyles() {
+		// Estilos Access Button
+		accessButton.round()
+		accessButton.colors()
 	}
 	
 	// MARK: Action Functions

@@ -19,12 +19,12 @@
         <!--View Controller-->
         <scene sceneID="vvc-uf-4vB">
             <objects>
-                <viewController storyboardIdentifier="Register" modalPresentationStyle="fullScreen" id="cbh-Mk-sot" customClass="ViewController" customModule="Sport4All" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Register" modalPresentationStyle="fullScreen" id="cbh-Mk-sot" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mmc-gJ-EMi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="LogoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="cwm-vx-pPV">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="252" image="LogoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="cwm-vx-pPV">
                                 <rect key="frame" x="169" y="97" width="74" height="73"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REGISTRO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ob-rA-8mm">
@@ -119,7 +119,7 @@
         <!--View Controller-->
         <scene sceneID="6uv-5c-YqL">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="K2x-Il-VBK" customClass="ViewController" customModule="Sport4All" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="K2x-Il-VBK" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XRG-ac-ppk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
