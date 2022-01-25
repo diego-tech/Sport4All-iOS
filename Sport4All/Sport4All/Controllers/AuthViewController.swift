@@ -41,12 +41,12 @@ class AuthViewController: UIViewController {
 	// MARK: Styles
 	private func setTextFieldStyles(){
 		// Estilos Email Text Field
-		emailTextField.bottomBorder()
+		emailTextField.bottomBorder(color: .hardColor!)
 		emailTextField.placeholderStyles(placeHolderText: "Correo Electrónico")
 		emailTextField.textStyles(keyboardType: .emailAddress)
 		
 		// Estilos Password Text Field
-		passwordTextField.bottomBorder()
+		passwordTextField.bottomBorder(color: .hardColor!)
 		passwordTextField.placeholderStyles(placeHolderText: "Contraseña")
 		passwordTextField.textStyles(keyboardType: .default)
 	}
