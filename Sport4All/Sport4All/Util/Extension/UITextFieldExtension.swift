@@ -7,6 +7,8 @@
 
 import UIKit
 
+var iconClick = false
+
 extension UITextField {
 
 	// Borde Inferior UITextField
@@ -41,5 +43,39 @@ extension UITextField {
 	func textStyles(keyboardType: UIKeyboardType) {
 		self.tintColor = .hardColor
 		self.keyboardType = keyboardType
+	}
+	
+	// Ver y Ocultar la Contraseña
+	func showAndHidePassword() {
+		let imageEye = UIImageView()
+		imageEye.image = UIImage(named: "CloseEye")
+		
+		let contentView = UIView()
+		contentView.addSubview(imageEye)
+		
+		contentView.frame = CGRect(x: 0.0, y: 0.0, width: UIImage(named: "CloseEye")!.size.width, height: UIImage(named: "CloseEye")!.size.height)
+		imageEye.frame = CGRect(x: -10.0, y: 0.0, width: UIImage(named: "CloseEye")!.size.width, height: UIImage(named: "CloseEye")!.size.height)
+		
+		self.rightView = contentView
+		self.rightViewMode = .always
+		
+		let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+		
+		imageEye.isUserInteractionEnabled = true
+		imageEye.addGestureRecognizer(tapGestureRecognizer)
+	}
+	
+	@objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+		let tappedImage = tapGestureRecognizer.view as! UIImageView
+		
+		if iconClick {
+			iconClick = false
+			tappedImage.image = UIImage(named: "OpenEye")
+			self.isSecureTextEntry = false
+		} else {
+			iconClick = true
+			tappedImage.image = UIImage(named: "CloseEye")
+			self.isSecureTextEntry = true
+		}
 	}
 }

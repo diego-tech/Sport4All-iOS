@@ -31,8 +31,9 @@ class AuthViewController: UIViewController {
 	private func checkTextFields() {
 		if emailTextField.text == "" || passwordTextField.text == ""  {
 			emailTextField.placeholderStyles(placeHolderText: "Introduzca el Correo Electrónico")
-
+			emailTextField.bottomBorder(color: .red)
 			passwordTextField.placeholderStyles(placeHolderText: "Introduzca la Contraseña")
+			passwordTextField.bottomBorder(color: .red)
 		} else {
 			debugPrint("Continua!!")
 		}
@@ -49,6 +50,8 @@ class AuthViewController: UIViewController {
 		passwordTextField.bottomBorder(color: .hardColor!)
 		passwordTextField.placeholderStyles(placeHolderText: "Contraseña")
 		passwordTextField.textStyles(keyboardType: .default)
+		passwordTextField.isSecureTextEntry = true
+		passwordTextField.showAndHidePassword()
 	}
 	
 	private func setButtonStyles() {
