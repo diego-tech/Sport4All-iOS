@@ -8,15 +8,22 @@
 import UIKit
 
 extension UITextField {
+
 	// Borde Inferior UITextField
-	func bottomBorder() {
-		let bottomLine = CALayer()
-		bottomLine.frame = CGRect(x: 0.0, y: self.frame.height, width: self.frame.width, height: 1)
-		bottomLine.backgroundColor = UIColor.hardColor?.cgColor
-		self.borderStyle = UITextField.BorderStyle.none
-		self.layer.addSublayer(bottomLine)
+	func bottomBorder(color: UIColor){
+		let bottomLine = UIView()
+		
+		self.borderStyle = .none
+		bottomLine.translatesAutoresizingMaskIntoConstraints = false
+		bottomLine.backgroundColor = color
+		
+		self.addSubview(bottomLine)
+		bottomLine.topAnchor.constraint(equalTo: self.bottomAnchor, constant: 10).isActive = true
+		bottomLine.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+		bottomLine.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+		bottomLine.heightAnchor.constraint(equalToConstant: 1.5).isActive = true
 	}
-	
+
 	// Estilos Placeholder
 	func placeholderStyles(placeHolderText: String) {
 		let attributes = [
