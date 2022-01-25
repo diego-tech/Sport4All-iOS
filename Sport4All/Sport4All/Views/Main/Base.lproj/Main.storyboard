@@ -25,20 +25,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="v7K-Bl-akm">
-                                <rect key="frame" x="134" y="106" width="146" height="78"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="146" id="YXz-iN-fKS"/>
-                                    <constraint firstAttribute="height" constant="78" id="jr6-Yz-t7k"/>
-                                </constraints>
+                                <rect key="frame" x="134" y="106" width="146" height="73"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INICIO DE SESIÓN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gab-C1-SKl">
-                                <rect key="frame" x="10" y="253" width="394" height="30"/>
+                                <rect key="frame" x="10" y="248" width="394" height="30"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="25"/>
                                 <color key="textColor" name="CorporativeColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="hfM-v6-JvX">
-                                <rect key="frame" x="20" y="343" width="374" height="101"/>
+                                <rect key="frame" x="20" y="338" width="374" height="101"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre de usuario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ev0-J8-Gft">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
@@ -53,7 +49,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUn-ma-9h0">
-                                <rect key="frame" x="20" y="474" width="169" height="27"/>
+                                <rect key="frame" x="20" y="469" width="169" height="27"/>
                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="¿Has olvidado la contraseña ?">
@@ -64,7 +60,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4n3-PN-LaW">
-                                <rect key="frame" x="76" y="571" width="262" height="50"/>
+                                <rect key="frame" x="76" y="566" width="262" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="FmF-cv-ajJ"/>
                                 </constraints>
@@ -82,7 +78,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOc-6M-5Eh">
-                                <rect key="frame" x="71.5" y="666" width="271" height="29"/>
+                                <rect key="frame" x="71.5" y="661" width="271" height="29"/>
                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="¿No Tienes Cuenta?         Registrate Ahora">
@@ -97,17 +93,16 @@
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="OOc-6M-5Eh" firstAttribute="centerX" secondItem="y8g-dp-gMx" secondAttribute="centerX" id="0o2-1M-cVy"/>
+                            <constraint firstItem="7pE-oz-ES7" firstAttribute="trailing" secondItem="v7K-Bl-akm" secondAttribute="trailing" constant="134" id="1GH-5A-u1V"/>
                             <constraint firstItem="kUn-ma-9h0" firstAttribute="top" secondItem="hfM-v6-JvX" secondAttribute="bottom" constant="30" id="4qb-ze-ksO"/>
                             <constraint firstItem="v7K-Bl-akm" firstAttribute="top" secondItem="7pE-oz-ES7" secondAttribute="top" constant="62" id="HEm-Is-l7v"/>
-                            <constraint firstItem="7pE-oz-ES7" firstAttribute="trailing" secondItem="v7K-Bl-akm" secondAttribute="trailing" constant="134" id="JJH-5c-fmo"/>
-                            <constraint firstItem="7pE-oz-ES7" firstAttribute="trailing" secondItem="hfM-v6-JvX" secondAttribute="trailing" constant="20" id="JzD-Pm-bXU"/>
                             <constraint firstItem="OOc-6M-5Eh" firstAttribute="top" secondItem="4n3-PN-LaW" secondAttribute="bottom" constant="45" id="M3L-3y-Tdv"/>
+                            <constraint firstItem="7pE-oz-ES7" firstAttribute="trailing" secondItem="gab-C1-SKl" secondAttribute="trailing" constant="10" id="Mdv-9I-7hL"/>
                             <constraint firstItem="gab-C1-SKl" firstAttribute="leading" secondItem="7pE-oz-ES7" secondAttribute="leading" constant="10" id="NGi-Qp-xsF"/>
-                            <constraint firstItem="7pE-oz-ES7" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kUn-ma-9h0" secondAttribute="trailing" symbolic="YES" id="RiN-bk-Tm2"/>
-                            <constraint firstItem="7pE-oz-ES7" firstAttribute="trailing" secondItem="gab-C1-SKl" secondAttribute="trailing" constant="10" id="ToW-Od-bNE"/>
-                            <constraint firstItem="7pE-oz-ES7" firstAttribute="trailing" secondItem="4n3-PN-LaW" secondAttribute="trailing" constant="76" id="W2W-KB-rYH"/>
+                            <constraint firstItem="7pE-oz-ES7" firstAttribute="trailing" secondItem="hfM-v6-JvX" secondAttribute="trailing" constant="20" id="Tp5-U2-fL1"/>
                             <constraint firstItem="v7K-Bl-akm" firstAttribute="leading" secondItem="7pE-oz-ES7" secondAttribute="leading" constant="134" id="Yty-Yv-RhN"/>
                             <constraint firstItem="hfM-v6-JvX" firstAttribute="top" secondItem="gab-C1-SKl" secondAttribute="bottom" constant="60" id="aM3-Tu-LMW"/>
+                            <constraint firstItem="7pE-oz-ES7" firstAttribute="trailing" secondItem="4n3-PN-LaW" secondAttribute="trailing" constant="76" id="cGy-kJ-LXA"/>
                             <constraint firstItem="kUn-ma-9h0" firstAttribute="leading" secondItem="7pE-oz-ES7" secondAttribute="leading" constant="20" id="cod-H5-lmO"/>
                             <constraint firstItem="4n3-PN-LaW" firstAttribute="top" secondItem="kUn-ma-9h0" secondAttribute="bottom" constant="70" id="dh4-Xf-05T"/>
                             <constraint firstItem="gab-C1-SKl" firstAttribute="top" secondItem="v7K-Bl-akm" secondAttribute="bottom" constant="69" id="gpj-mn-hjs"/>
