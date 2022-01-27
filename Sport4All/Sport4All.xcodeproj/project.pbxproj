@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E123C3B27A2F1E400CF14EE /* FirstRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E123C3A27A2F1E400CF14EE /* FirstRegisterViewController.swift */; };
+		5E123C3D27A2F1F000CF14EE /* SecondRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E123C3C27A2F1F000CF14EE /* SecondRegisterViewController.swift */; };
+		5E123C3F27A3082A00CF14EE /* CustomSegmentedControlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E123C3E27A3082A00CF14EE /* CustomSegmentedControlDelegate.swift */; };
 		5E197F01278D7E6F008BBABB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E197F00278D7E6F008BBABB /* Constants.swift */; };
 		5E197F03278D80D4008BBABB /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E197F02278D80D4008BBABB /* ColorExtension.swift */; };
 		5E9C14C22790358F002D9AF1 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C14BD2790358F002D9AF1 /* SF-Pro-Display-Semibold.otf */; };
@@ -27,6 +30,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E123C3A27A2F1E400CF14EE /* FirstRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterViewController.swift; sourceTree = "<group>"; };
+		5E123C3C27A2F1F000CF14EE /* SecondRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegisterViewController.swift; sourceTree = "<group>"; };
+		5E123C3E27A3082A00CF14EE /* CustomSegmentedControlDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControlDelegate.swift; sourceTree = "<group>"; };
 		5E197F00278D7E6F008BBABB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5E197F02278D80D4008BBABB /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		5E9C14BD2790358F002D9AF1 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
@@ -65,6 +71,7 @@
 				5E197EFD278D7E36008BBABB /* Extension */,
 				5E197F00278D7E6F008BBABB /* Constants.swift */,
 				5E9C14C9279038D0002D9AF1 /* TextStyles.swift */,
+				5E123C3E27A3082A00CF14EE /* CustomSegmentedControlDelegate.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -122,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				5ECF53F2278C3AB8005F6D01 /* AuthViewController.swift */,
+				5E123C3A27A2F1E400CF14EE /* FirstRegisterViewController.swift */,
+				5E123C3C27A2F1F000CF14EE /* SecondRegisterViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -270,9 +279,12 @@
 				5ECF53F3278C3AB8005F6D01 /* AuthViewController.swift in Sources */,
 				5ECB28AC279F0F5200583F67 /* UITextFieldExtension.swift in Sources */,
 				5ECF53EF278C3AB8005F6D01 /* AppDelegate.swift in Sources */,
+				5E123C3B27A2F1E400CF14EE /* FirstRegisterViewController.swift in Sources */,
 				5ECF53F1278C3AB8005F6D01 /* SceneDelegate.swift in Sources */,
+				5E123C3F27A3082A00CF14EE /* CustomSegmentedControlDelegate.swift in Sources */,
 				5E197F01278D7E6F008BBABB /* Constants.swift in Sources */,
 				5E197F03278D80D4008BBABB /* ColorExtension.swift in Sources */,
+				5E123C3D27A2F1F000CF14EE /* SecondRegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

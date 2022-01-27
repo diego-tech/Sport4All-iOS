@@ -27,6 +27,21 @@ class AuthViewController: UIViewController {
 		setButtonStyles()
 	}
 	
+	// MARK: Action Functions
+	@IBAction func rememberPasswordButtonAction(_ sender: UIButton) {
+	}
+	
+	@IBAction func accessButtonAction(_ sender: UIButton) {
+		checkTextFields()
+	}
+	
+	@IBAction func goToRegisterButtonAction(_ sender: UIButton) {
+//		Ir a Registro
+		let storyBoard = UIStoryboard(name: "Register", bundle: nil)
+		let vc = storyBoard.instantiateViewController(withIdentifier: "FirstRegister")
+		present(vc, animated: true, completion: nil)
+	}
+	
 	// MARK: Functions
 	private func checkTextFields() {
 		if emailTextField.text == "" || passwordTextField.text == ""  {
@@ -40,7 +55,7 @@ class AuthViewController: UIViewController {
 	}
 	
 	// MARK: Styles
-	private func setTextFieldStyles(){
+	private func setTextFieldStyles() {
 		// Estilos Email Text Field
 		emailTextField.bottomBorder(color: .hardColor!)
 		emailTextField.placeholderStyles(placeHolderText: "Correo Electrónico")
@@ -58,20 +73,5 @@ class AuthViewController: UIViewController {
 		// Estilos Access Button
 		accessButton.round()
 		accessButton.colors()
-	}
-	
-	// MARK: Action Functions
-	@IBAction func rememberPasswordButtonAction(_ sender: UIButton) {
-	}
-	
-	@IBAction func accessButtonAction(_ sender: UIButton) {
-		checkTextFields()
-	}
-	
-	@IBAction func goToRegisterButtonAction(_ sender: Any) {
-//		Ir a Registro
-		let storyBoard = UIStoryboard(name: "Register", bundle: nil)
-		let vc = storyBoard.instantiateViewController(withIdentifier: "Register")
-		present(vc, animated: true, completion: nil)
 	}
 }
