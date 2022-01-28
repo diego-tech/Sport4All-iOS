@@ -71,6 +71,7 @@ class CustomSegmentedControl: UIView {
 extension CustomSegmentedControl {
 	private func updateView() {
 		createButton()
+		configAllView()
 		configSelectorView()
 		configStackView()
 	}
@@ -86,6 +87,13 @@ extension CustomSegmentedControl {
 		stack.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
 		stack.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
 		stack.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+	}
+	
+	private func configAllView() {
+		let width = frame.width
+		selectorView = UIView(frame: CGRect(x: 0, y: self.frame.height, width: width, height: 2))
+		selectorView.backgroundColor = .periwinkle
+		addSubview(selectorView)
 	}
 	
 	private func configSelectorView() {
