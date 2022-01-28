@@ -29,6 +29,10 @@ class AuthViewController: UIViewController {
 	
 	// MARK: Action Functions
 	@IBAction func rememberPasswordButtonAction(_ sender: UIButton) {
+		// Ir a Recuperar Contraseña
+		let storyBoard = UIStoryboard(name: "RetrievePassword", bundle: nil)
+		let vc = storyBoard.instantiateViewController(withIdentifier: "RetrievePassword")
+		present(vc, animated: true, completion: nil)
 	}
 	
 	@IBAction func accessButtonAction(_ sender: UIButton) {
@@ -36,7 +40,7 @@ class AuthViewController: UIViewController {
 	}
 	
 	@IBAction func goToRegisterButtonAction(_ sender: UIButton) {
-//		Ir a Registro
+		// Ir a Registro
 		let storyBoard = UIStoryboard(name: "Register", bundle: nil)
 		let vc = storyBoard.instantiateViewController(withIdentifier: "FirstRegister")
 		present(vc, animated: true, completion: nil)
