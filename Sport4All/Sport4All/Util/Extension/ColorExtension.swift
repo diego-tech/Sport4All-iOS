@@ -20,4 +20,5 @@ extension UIColor {
 	static let redColor = UIColor(named: "RedColor")
 	static let searchColor = UIColor(named: "SearchColor")
 	static let softBlue = UIColor(named: "SoftBlue")
+	static let blueLowOpacity = UIColor(named: "BlueLowOpacity")
 }

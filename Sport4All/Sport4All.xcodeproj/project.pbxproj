@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E123C3B27A2F1E400CF14EE /* FirstRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E123C3A27A2F1E400CF14EE /* FirstRegisterViewController.swift */; };
+		5E123C3D27A2F1F000CF14EE /* SecondRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E123C3C27A2F1F000CF14EE /* SecondRegisterViewController.swift */; };
+		5E123C3F27A3082A00CF14EE /* CustomSegmentedControlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E123C3E27A3082A00CF14EE /* CustomSegmentedControlDelegate.swift */; };
 		5E197F01278D7E6F008BBABB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E197F00278D7E6F008BBABB /* Constants.swift */; };
 		5E197F03278D80D4008BBABB /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E197F02278D80D4008BBABB /* ColorExtension.swift */; };
 		5E9C14C22790358F002D9AF1 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C14BD2790358F002D9AF1 /* SF-Pro-Display-Semibold.otf */; };
@@ -15,15 +18,21 @@
 		5E9C14C52790358F002D9AF1 /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C14C02790358F002D9AF1 /* SF-Pro.ttf */; };
 		5E9C14C62790358F002D9AF1 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C14C12790358F002D9AF1 /* SF-Pro-Display-Bold.otf */; };
 		5E9C14CA279038D0002D9AF1 /* TextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9C14C9279038D0002D9AF1 /* TextStyles.swift */; };
+		5ECB28AC279F0F5200583F67 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB28AB279F0F5200583F67 /* UITextFieldExtension.swift */; };
+		5ECB28AE279F157C00583F67 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB28AD279F157C00583F67 /* UIButtonExtension.swift */; };
 		5ECF53EF278C3AB8005F6D01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECF53EE278C3AB8005F6D01 /* AppDelegate.swift */; };
 		5ECF53F1278C3AB8005F6D01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECF53F0278C3AB8005F6D01 /* SceneDelegate.swift */; };
-		5ECF53F3278C3AB8005F6D01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECF53F2278C3AB8005F6D01 /* ViewController.swift */; };
+		5ECF53F3278C3AB8005F6D01 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECF53F2278C3AB8005F6D01 /* AuthViewController.swift */; };
 		5ECF53F6278C3AB8005F6D01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ECF53F4278C3AB8005F6D01 /* Main.storyboard */; };
 		5ECF53F8278C3AB9005F6D01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ECF53F7278C3AB9005F6D01 /* Assets.xcassets */; };
 		5ECF53FB278C3AB9005F6D01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ECF53F9278C3AB9005F6D01 /* LaunchScreen.storyboard */; };
+		5EFC3CA9279DC0A100720905 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EFC3CA8279DC0A100720905 /* Register.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E123C3A27A2F1E400CF14EE /* FirstRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterViewController.swift; sourceTree = "<group>"; };
+		5E123C3C27A2F1F000CF14EE /* SecondRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegisterViewController.swift; sourceTree = "<group>"; };
+		5E123C3E27A3082A00CF14EE /* CustomSegmentedControlDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControlDelegate.swift; sourceTree = "<group>"; };
 		5E197F00278D7E6F008BBABB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5E197F02278D80D4008BBABB /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		5E9C14BD2790358F002D9AF1 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
@@ -32,14 +41,17 @@
 		5E9C14C02790358F002D9AF1 /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
 		5E9C14C12790358F002D9AF1 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		5E9C14C9279038D0002D9AF1 /* TextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyles.swift; sourceTree = "<group>"; };
+		5ECB28AB279F0F5200583F67 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		5ECB28AD279F157C00583F67 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		5ECF53EB278C3AB8005F6D01 /* Sport4All.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sport4All.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ECF53EE278C3AB8005F6D01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5ECF53F0278C3AB8005F6D01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5ECF53F2278C3AB8005F6D01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5ECF53F2278C3AB8005F6D01 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		5ECF53F5278C3AB8005F6D01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5ECF53F7278C3AB9005F6D01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5ECF53FA278C3AB9005F6D01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5ECF53FC278C3AB9005F6D01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EFC3CA8279DC0A100720905 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +71,7 @@
 				5E197EFD278D7E36008BBABB /* Extension */,
 				5E197F00278D7E6F008BBABB /* Constants.swift */,
 				5E9C14C9279038D0002D9AF1 /* TextStyles.swift */,
+				5E123C3E27A3082A00CF14EE /* CustomSegmentedControlDelegate.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -89,6 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				5E197F02278D80D4008BBABB /* ColorExtension.swift */,
+				5ECB28AB279F0F5200583F67 /* UITextFieldExtension.swift */,
+				5ECB28AD279F157C00583F67 /* UIButtonExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -96,6 +111,7 @@
 		5E75E4C4279993CD005B89A3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5EFC3CA7279DC09400720905 /* Register */,
 				5E75E4C927999412005B89A3 /* Main */,
 				5E75E4C827999409005B89A3 /* Launch */,
 			);
@@ -112,7 +128,9 @@
 		5E75E4C6279993E5005B89A3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5ECF53F2278C3AB8005F6D01 /* ViewController.swift */,
+				5ECF53F2278C3AB8005F6D01 /* AuthViewController.swift */,
+				5E123C3A27A2F1E400CF14EE /* FirstRegisterViewController.swift */,
+				5E123C3C27A2F1F000CF14EE /* SecondRegisterViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -169,6 +187,14 @@
 				5E197EF9278D7DA3008BBABB /* Util */,
 			);
 			path = Sport4All;
+			sourceTree = "<group>";
+		};
+		5EFC3CA7279DC09400720905 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				5EFC3CA8279DC0A100720905 /* Register.storyboard */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +260,7 @@
 				5ECF53FB278C3AB9005F6D01 /* LaunchScreen.storyboard in Resources */,
 				5E9C14C52790358F002D9AF1 /* SF-Pro.ttf in Resources */,
 				5ECF53F8278C3AB9005F6D01 /* Assets.xcassets in Resources */,
+				5EFC3CA9279DC0A100720905 /* Register.storyboard in Resources */,
 				5E9C14C32790358F002D9AF1 /* SF-Pro-Display-Regular.otf in Resources */,
 				5E9C14C62790358F002D9AF1 /* SF-Pro-Display-Bold.otf in Resources */,
 				5ECF53F6278C3AB8005F6D01 /* Main.storyboard in Resources */,
@@ -248,11 +275,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E9C14CA279038D0002D9AF1 /* TextStyles.swift in Sources */,
-				5ECF53F3278C3AB8005F6D01 /* ViewController.swift in Sources */,
+				5ECB28AE279F157C00583F67 /* UIButtonExtension.swift in Sources */,
+				5ECF53F3278C3AB8005F6D01 /* AuthViewController.swift in Sources */,
+				5ECB28AC279F0F5200583F67 /* UITextFieldExtension.swift in Sources */,
 				5ECF53EF278C3AB8005F6D01 /* AppDelegate.swift in Sources */,
+				5E123C3B27A2F1E400CF14EE /* FirstRegisterViewController.swift in Sources */,
 				5ECF53F1278C3AB8005F6D01 /* SceneDelegate.swift in Sources */,
+				5E123C3F27A3082A00CF14EE /* CustomSegmentedControlDelegate.swift in Sources */,
 				5E197F01278D7E6F008BBABB /* Constants.swift in Sources */,
 				5E197F03278D80D4008BBABB /* ColorExtension.swift in Sources */,
+				5E123C3D27A2F1F000CF14EE /* SecondRegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,64 +5,39 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="SF-Pro-Display-Bold.otf">
-            <string>SFProDisplay-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                    <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="4uf-uS-lpy">
-                                <rect key="frame" x="137" y="236" width="140" height="140"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="BpL-FT-btm"/>
-                                    <constraint firstAttribute="width" secondItem="4uf-uS-lpy" secondAttribute="height" multiplier="1:1" id="hOE-Ng-dAj"/>
-                                    <constraint firstAttribute="width" constant="140" id="wOg-4K-J5v"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhiteLogo" translatesAutoresizingMaskIntoConstraints="NO" id="w7l-Lv-zbn">
+                                <rect key="frame" x="-263" y="286" width="1145" height="610"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play 4 All" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlG-GM-M0y">
-                                <rect key="frame" x="144.5" y="601" width="125" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="125" id="XLJ-T9-UeH"/>
-                                    <constraint firstAttribute="height" constant="36" id="mPn-YO-ZqQ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="30"/>
-                                <color key="textColor" name="CorporativeColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="CorporativeColor"/>
                         <constraints>
-                            <constraint firstItem="YlG-GM-M0y" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="E0L-mY-tdY"/>
-                            <constraint firstItem="4uf-uS-lpy" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Fpu-jU-drv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YlG-GM-M0y" secondAttribute="bottom" constant="225" id="Ix1-d6-1yq"/>
-                            <constraint firstItem="4uf-uS-lpy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="192" id="a9o-F2-1Zn"/>
+                            <constraint firstAttribute="bottom" secondItem="w7l-Lv-zbn" secondAttribute="bottom" id="Oti-Uv-pO3"/>
+                            <constraint firstAttribute="trailing" secondItem="w7l-Lv-zbn" secondAttribute="trailing" constant="-468" id="WuH-r4-psQ"/>
+                            <constraint firstItem="w7l-Lv-zbn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="242" id="tM9-Du-NZ5"/>
+                            <constraint firstItem="w7l-Lv-zbn" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="-263" id="yno-hx-TTn"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="100.93457943925233" y="40.820734341252702"/>
+            <point key="canvasLocation" x="-97.101449275362327" y="-109.15178571428571"/>
         </scene>
     </scenes>
     <resources>
-        <image name="LogoIcon" width="65.5" height="73"/>
+        <image name="WhiteLogo" width="665.5" height="665.5"/>
         <namedColor name="CorporativeColor">
             <color red="0.20000000000000001" green="0.36862745098039218" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
