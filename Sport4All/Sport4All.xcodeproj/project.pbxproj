@@ -28,6 +28,10 @@
 		5ECF53F6278C3AB8005F6D01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ECF53F4278C3AB8005F6D01 /* Main.storyboard */; };
 		5ECF53F8278C3AB9005F6D01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ECF53F7278C3AB9005F6D01 /* Assets.xcassets */; };
 		5ECF53FB278C3AB9005F6D01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ECF53F9278C3AB9005F6D01 /* LaunchScreen.storyboard */; };
+		5EF497A327A5570F008B0C37 /* DateDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A227A5570F008B0C37 /* DateDecoder.swift */; };
+		5EF497A627A55794008B0C37 /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A527A55794008B0C37 /* UserDefaultsProvider.swift */; };
+		5EF497A827A55858008B0C37 /* NetworkingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A727A55858008B0C37 /* NetworkingProvider.swift */; };
+		5EF497AB27A55898008B0C37 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5EF497AA27A55898008B0C37 /* Alamofire */; };
 		5EFC3CA9279DC0A100720905 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EFC3CA8279DC0A100720905 /* Register.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +59,9 @@
 		5ECF53F7278C3AB9005F6D01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5ECF53FA278C3AB9005F6D01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5ECF53FC278C3AB9005F6D01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EF497A227A5570F008B0C37 /* DateDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDecoder.swift; sourceTree = "<group>"; };
+		5EF497A527A55794008B0C37 /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
+		5EF497A727A55858008B0C37 /* NetworkingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProvider.swift; sourceTree = "<group>"; };
 		5EFC3CA8279DC0A100720905 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EF497AB27A55898008B0C37 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +160,9 @@
 		5E75E4C7279993F2005B89A3 /* Provider */ = {
 			isa = PBXGroup;
 			children = (
+				5EF497A427A55778008B0C37 /* UserDefaults */,
+				5EF497A127A55703008B0C37 /* Decoder */,
+				5EF497A727A55858008B0C37 /* NetworkingProvider.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -193,14 +204,30 @@
 			children = (
 				5ECF53F0278C3AB8005F6D01 /* SceneDelegate.swift */,
 				5ECF53EE278C3AB8005F6D01 /* AppDelegate.swift */,
-				5E75E4C7279993F2005B89A3 /* Provider */,
 				5E75E4C6279993E5005B89A3 /* Controllers */,
 				5E75E4C5279993D3005B89A3 /* Model */,
 				5E75E4C4279993CD005B89A3 /* Views */,
 				5E197EFB278D7DBA008BBABB /* SupportingFiles */,
+				5E75E4C7279993F2005B89A3 /* Provider */,
 				5E197EF9278D7DA3008BBABB /* Util */,
 			);
 			path = Sport4All;
+			sourceTree = "<group>";
+		};
+		5EF497A127A55703008B0C37 /* Decoder */ = {
+			isa = PBXGroup;
+			children = (
+				5EF497A227A5570F008B0C37 /* DateDecoder.swift */,
+			);
+			path = Decoder;
+			sourceTree = "<group>";
+		};
+		5EF497A427A55778008B0C37 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				5EF497A527A55794008B0C37 /* UserDefaultsProvider.swift */,
+			);
+			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 		5EFC3CA7279DC09400720905 /* Register */ = {
@@ -227,6 +254,9 @@
 			dependencies = (
 			);
 			name = Sport4All;
+			packageProductDependencies = (
+				5EF497AA27A55898008B0C37 /* Alamofire */,
+			);
 			productName = Sport4All;
 			productReference = 5ECF53EB278C3AB8005F6D01 /* Sport4All.app */;
 			productType = "com.apple.product-type.application";
@@ -255,6 +285,10 @@
 				Base,
 			);
 			mainGroup = 5ECF53E2278C3AB8005F6D01;
+			packageReferences = (
+				5EF497A927A55898008B0C37 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				5EF497AC27A558B7008B0C37 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
 			productRefGroup = 5ECF53EC278C3AB8005F6D01 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -297,8 +331,11 @@
 				5ECF53EF278C3AB8005F6D01 /* AppDelegate.swift in Sources */,
 				5E123C3B27A2F1E400CF14EE /* FirstRegisterViewController.swift in Sources */,
 				5ECF53F1278C3AB8005F6D01 /* SceneDelegate.swift in Sources */,
+				5EF497A827A55858008B0C37 /* NetworkingProvider.swift in Sources */,
+				5EF497A327A5570F008B0C37 /* DateDecoder.swift in Sources */,
 				5E123C3F27A3082A00CF14EE /* CustomSegmentedControlDelegate.swift in Sources */,
 				5E197F01278D7E6F008BBABB /* Constants.swift in Sources */,
+				5EF497A627A55794008B0C37 /* UserDefaultsProvider.swift in Sources */,
 				5E197F03278D80D4008BBABB /* ColorExtension.swift in Sources */,
 				5E123C3D27A2F1F000CF14EE /* SecondRegisterViewController.swift in Sources */,
 			);
@@ -521,6 +558,33 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5EF497A927A55898008B0C37 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		5EF497AC27A558B7008B0C37 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5EF497AA27A55898008B0C37 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5EF497A927A55898008B0C37 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5ECF53E3278C3AB8005F6D01 /* Project object */;
 }
