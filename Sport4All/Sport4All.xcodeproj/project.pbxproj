@@ -21,6 +21,9 @@
 		5E9C14C62790358F002D9AF1 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C14C12790358F002D9AF1 /* SF-Pro-Display-Bold.otf */; };
 		5E9C14CA279038D0002D9AF1 /* TextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9C14C9279038D0002D9AF1 /* TextStyles.swift */; };
 		5EA1A66C27A7D43C0096754C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5EA1A66B27A7D43C0096754C /* Alamofire */; };
+		5EA1A66F27A7E5D60096754C /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA1A66E27A7E5D60096754C /* NewUser.swift */; };
+		5EA1A67127A7E6970096754C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA1A67027A7E6970096754C /* Data.swift */; };
+		5EA1A67327A7E7990096754C /* DbResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA1A67227A7E7990096754C /* DbResponse.swift */; };
 		5ECB28AC279F0F5200583F67 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB28AB279F0F5200583F67 /* UITextFieldExtension.swift */; };
 		5ECB28AE279F157C00583F67 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB28AD279F157C00583F67 /* UIButtonExtension.swift */; };
 		5ECF53EF278C3AB8005F6D01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECF53EE278C3AB8005F6D01 /* AppDelegate.swift */; };
@@ -49,6 +52,9 @@
 		5E9C14C02790358F002D9AF1 /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
 		5E9C14C12790358F002D9AF1 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		5E9C14C9279038D0002D9AF1 /* TextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyles.swift; sourceTree = "<group>"; };
+		5EA1A66E27A7E5D60096754C /* NewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
+		5EA1A67027A7E6970096754C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		5EA1A67227A7E7990096754C /* DbResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbResponse.swift; sourceTree = "<group>"; };
 		5ECB28AB279F0F5200583F67 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		5ECB28AD279F157C00583F67 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		5ECF53EB278C3AB8005F6D01 /* Sport4All.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sport4All.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,7 +89,6 @@
 				5E197EFD278D7E36008BBABB /* Extension */,
 				5E197F00278D7E6F008BBABB /* Constants.swift */,
 				5E9C14C9279038D0002D9AF1 /* TextStyles.swift */,
-				5E123C3E27A3082A00CF14EE /* CustomSegmentedControlDelegate.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 		5E75E4C4279993CD005B89A3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5EA1A66D27A7E26E0096754C /* CustomViews */,
 				5E2FEE6527A43E0F008B0AE1 /* RetrievePassword */,
 				5EFC3CA7279DC09400720905 /* Register */,
 				5E75E4C927999412005B89A3 /* Main */,
@@ -142,6 +148,9 @@
 		5E75E4C5279993D3005B89A3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5EA1A66E27A7E5D60096754C /* NewUser.swift */,
+				5EA1A67027A7E6970096754C /* Data.swift */,
+				5EA1A67227A7E7990096754C /* DbResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -181,6 +190,14 @@
 				5ECF53F4278C3AB8005F6D01 /* Main.storyboard */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		5EA1A66D27A7E26E0096754C /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				5E123C3E27A3082A00CF14EE /* CustomSegmentedControlDelegate.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		5ECF53E2278C3AB8005F6D01 = {
@@ -324,10 +341,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E9C14CA279038D0002D9AF1 /* TextStyles.swift in Sources */,
+				5EA1A66F27A7E5D60096754C /* NewUser.swift in Sources */,
 				5ECB28AE279F157C00583F67 /* UIButtonExtension.swift in Sources */,
 				5ECF53F3278C3AB8005F6D01 /* AuthViewController.swift in Sources */,
 				5E2FEE6927A442DA008B0AE1 /* RetrievePasswordViewController.swift in Sources */,
 				5ECB28AC279F0F5200583F67 /* UITextFieldExtension.swift in Sources */,
+				5EA1A67327A7E7990096754C /* DbResponse.swift in Sources */,
 				5ECF53EF278C3AB8005F6D01 /* AppDelegate.swift in Sources */,
 				5E123C3B27A2F1E400CF14EE /* FirstRegisterViewController.swift in Sources */,
 				5ECF53F1278C3AB8005F6D01 /* SceneDelegate.swift in Sources */,
@@ -335,6 +354,7 @@
 				5EF497A327A5570F008B0C37 /* DateDecoder.swift in Sources */,
 				5E123C3F27A3082A00CF14EE /* CustomSegmentedControlDelegate.swift in Sources */,
 				5E197F01278D7E6F008BBABB /* Constants.swift in Sources */,
+				5EA1A67127A7E6970096754C /* Data.swift in Sources */,
 				5EF497A627A55794008B0C37 /* UserDefaultsProvider.swift in Sources */,
 				5E197F03278D80D4008BBABB /* ColorExtension.swift in Sources */,
 				5E123C3D27A2F1F000CF14EE /* SecondRegisterViewController.swift in Sources */,
