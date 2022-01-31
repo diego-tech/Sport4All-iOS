@@ -25,6 +25,10 @@ class AuthViewController: UIViewController {
 		// Inicialización Estilos
 		setTextFieldStyles()
 		setButtonStyles()
+		
+		// Testeo Funciones API
+//		register()
+		login()
 	}
 	
 	// MARK: Action Functions
@@ -77,5 +81,31 @@ class AuthViewController: UIViewController {
 		// Estilos Access Button
 		accessButton.round()
 		accessButton.colors()
+	}
+	
+	
+	// MARK: API FUNCTIONS TEST
+	private func register() {
+		let newUser = NewUser(email: "test1@test.com", password: "Test12345.", genre: "Otro", name: "Test", surname: "Test 1", image: "test.png")
+		
+		NetworkingProvider.shared.register(newUser: newUser) { responseData, status, msg in
+			print(responseData)
+			print(status)
+			print(msg)
+		} failure: { error in
+			print(error)
+		}
+	}
+	
+	private func login() {
+		let userLogin = UserLogin(email: "test1@test.com", password: "Test12345.")
+		
+		NetworkingProvider.shared.login(userLogin: userLogin) { responseData, status, message in
+			print(responseData)
+			print(status)
+			print(message)
+		} failure: { error in
+			print(error)
+		}
 	}
 }
