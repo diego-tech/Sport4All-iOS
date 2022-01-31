@@ -20,6 +20,9 @@ struct Data: Decodable {
 	// Validator Errors
 //	let errors: [String]?
 	
+	// User Token
+	let token: String?
+	
 	enum CodingKeys: String, CodingKey {
 		case id
 		case name
@@ -29,6 +32,7 @@ struct Data: Decodable {
 		case genre
 		case updatedAt = "updated_at"
 		case createdAt = "created_at"
+		case token
 	}
 }
 
