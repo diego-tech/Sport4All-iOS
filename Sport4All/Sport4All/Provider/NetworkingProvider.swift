@@ -29,6 +29,25 @@ final class NetworkingProvider {
 			}
 		}
 	}
+	
+	// Logeo de Usuario
+	func login(userLogin: UserLogin, serverResponse: @escaping (_ responseData: Data?, _ status: Int?, _ message: String?) -> (), failure: @escaping ( _ error: Error?) -> ()) {
+		
+		let url = "\(Constants.kBaseURL)/login"
+		AF.request(url, method: .post, parameters: userLogin, encoder: JSONParameterEncoder.default).validate(statusCode: Constants.kStatusCode).responseDecodable(of: Response.self, decoder: DateDecoder()) {
+			response in
+			
+			// Handle Response Data && Status Code && Message
+			if let data = response.value?.data, let status = response.value?.status, let msg = response.value?.msg {
+				serverResponse(data, status, msg)
+			}
+			
+			// Handle Alamofire Error
+			if let error = response.error {
+				failure(error)
+			}
+		}
+	}
 }
 
 

@@ -24,6 +24,7 @@
 		5EA1A66F27A7E5D60096754C /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA1A66E27A7E5D60096754C /* NewUser.swift */; };
 		5EA1A67127A7E6970096754C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA1A67027A7E6970096754C /* Data.swift */; };
 		5EA1A67327A7E7990096754C /* DbResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA1A67227A7E7990096754C /* DbResponse.swift */; };
+		5EA1A67527A7EDCF0096754C /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA1A67427A7EDCF0096754C /* UserLogin.swift */; };
 		5ECB28AC279F0F5200583F67 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB28AB279F0F5200583F67 /* UITextFieldExtension.swift */; };
 		5ECB28AE279F157C00583F67 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB28AD279F157C00583F67 /* UIButtonExtension.swift */; };
 		5ECF53EF278C3AB8005F6D01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECF53EE278C3AB8005F6D01 /* AppDelegate.swift */; };
@@ -55,6 +56,7 @@
 		5EA1A66E27A7E5D60096754C /* NewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
 		5EA1A67027A7E6970096754C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		5EA1A67227A7E7990096754C /* DbResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbResponse.swift; sourceTree = "<group>"; };
+		5EA1A67427A7EDCF0096754C /* UserLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
 		5ECB28AB279F0F5200583F67 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		5ECB28AD279F157C00583F67 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		5ECF53EB278C3AB8005F6D01 /* Sport4All.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sport4All.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +153,7 @@
 				5EA1A66E27A7E5D60096754C /* NewUser.swift */,
 				5EA1A67027A7E6970096754C /* Data.swift */,
 				5EA1A67227A7E7990096754C /* DbResponse.swift */,
+				5EA1A67427A7EDCF0096754C /* UserLogin.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				5EF497A627A55794008B0C37 /* UserDefaultsProvider.swift in Sources */,
 				5E197F03278D80D4008BBABB /* ColorExtension.swift in Sources */,
 				5E123C3D27A2F1F000CF14EE /* SecondRegisterViewController.swift in Sources */,
+				5EA1A67527A7EDCF0096754C /* UserLogin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

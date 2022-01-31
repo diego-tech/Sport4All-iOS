@@ -27,7 +27,8 @@ class AuthViewController: UIViewController {
 		setButtonStyles()
 		
 		// Testeo Funciones API
-		register()
+//		register()
+		login()
 	}
 	
 	// MARK: Action Functions
@@ -94,6 +95,17 @@ class AuthViewController: UIViewController {
 		} failure: { error in
 			print(error)
 		}
-
+	}
+	
+	private func login() {
+		let userLogin = UserLogin(email: "test1@test.com", password: "Test12345.")
+		
+		NetworkingProvider.shared.login(userLogin: userLogin) { responseData, status, message in
+			print(responseData)
+			print(status)
+			print(message)
+		} failure: { error in
+			print(error)
+		}
 	}
 }
