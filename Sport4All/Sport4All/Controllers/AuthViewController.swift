@@ -28,7 +28,8 @@ class AuthViewController: UIViewController {
 		
 		// Testeo Funciones API
 //		register()
-		login()
+//		login()
+		userInfo()
 	}
 	
 	// MARK: Action Functions
@@ -101,6 +102,16 @@ class AuthViewController: UIViewController {
 		let userLogin = UserLogin(email: "test1@test.com", password: "Test12345.")
 		
 		NetworkingProvider.shared.login(userLogin: userLogin) { responseData, status, message in
+			print(responseData)
+			print(status)
+			print(message)
+		} failure: { error in
+			print(error)
+		}
+	}
+	
+	private func userInfo() {
+		NetworkingProvider.shared.userInfo { responseData, status, message in
 			print(responseData)
 			print(status)
 			print(message)
