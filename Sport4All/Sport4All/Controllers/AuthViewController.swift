@@ -47,6 +47,10 @@ class AuthViewController: UIViewController {
 	
 	@IBAction func accessButtonAction(_ sender: UIButton) {
 		checkTextFields()
+		
+		let storyBoard = UIStoryboard(name: "TabBar", bundle: nil)
+		let vc = storyBoard.instantiateViewController(withIdentifier: "TabBar")
+		present(vc, animated: true, completion: nil)
 	}
 	
 	@IBAction func goToRegisterButtonAction(_ sender: UIButton) {

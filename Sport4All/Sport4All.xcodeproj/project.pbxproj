@@ -14,6 +14,8 @@
 		5E197F03278D80D4008BBABB /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E197F02278D80D4008BBABB /* ColorExtension.swift */; };
 		5E2FEE6727A43E3E008B0AE1 /* RetrievePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E2FEE6627A43E3E008B0AE1 /* RetrievePassword.storyboard */; };
 		5E2FEE6927A442DA008B0AE1 /* RetrievePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2FEE6827A442DA008B0AE1 /* RetrievePasswordViewController.swift */; };
+		5E371D2927A925F900446D73 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E371D2827A925F900446D73 /* TabBar.storyboard */; };
+		5E371D2B27A92A5E00446D73 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E371D2A27A92A5E00446D73 /* TabBarController.swift */; };
 		5E9C14C22790358F002D9AF1 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C14BD2790358F002D9AF1 /* SF-Pro-Display-Semibold.otf */; };
 		5E9C14C32790358F002D9AF1 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C14BE2790358F002D9AF1 /* SF-Pro-Display-Regular.otf */; };
 		5E9C14C42790358F002D9AF1 /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C14BF2790358F002D9AF1 /* SF-Pro-Display-Medium.otf */; };
@@ -47,6 +49,8 @@
 		5E197F02278D80D4008BBABB /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		5E2FEE6627A43E3E008B0AE1 /* RetrievePassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RetrievePassword.storyboard; sourceTree = "<group>"; };
 		5E2FEE6827A442DA008B0AE1 /* RetrievePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrievePasswordViewController.swift; sourceTree = "<group>"; };
+		5E371D2827A925F900446D73 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		5E371D2A27A92A5E00446D73 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		5E9C14BD2790358F002D9AF1 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		5E9C14BE2790358F002D9AF1 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		5E9C14BF2790358F002D9AF1 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
@@ -135,9 +139,18 @@
 			path = RetrievePassword;
 			sourceTree = "<group>";
 		};
+		5E371D2727A925D900446D73 /* TabBars */ = {
+			isa = PBXGroup;
+			children = (
+				5E371D2827A925F900446D73 /* TabBar.storyboard */,
+			);
+			path = TabBars;
+			sourceTree = "<group>";
+		};
 		5E75E4C4279993CD005B89A3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5E371D2727A925D900446D73 /* TabBars */,
 				5EA1A66D27A7E26E0096754C /* CustomViews */,
 				5E2FEE6527A43E0F008B0AE1 /* RetrievePassword */,
 				5EFC3CA7279DC09400720905 /* Register */,
@@ -165,6 +178,7 @@
 				5E123C3A27A2F1E400CF14EE /* FirstRegisterViewController.swift */,
 				5E123C3C27A2F1F000CF14EE /* SecondRegisterViewController.swift */,
 				5E2FEE6827A442DA008B0AE1 /* RetrievePasswordViewController.swift */,
+				5E371D2A27A92A5E00446D73 /* TabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -324,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E9C14C42790358F002D9AF1 /* SF-Pro-Display-Medium.otf in Resources */,
+				5E371D2927A925F900446D73 /* TabBar.storyboard in Resources */,
 				5E2FEE6727A43E3E008B0AE1 /* RetrievePassword.storyboard in Resources */,
 				5E9C14C22790358F002D9AF1 /* SF-Pro-Display-Semibold.otf in Resources */,
 				5ECF53FB278C3AB9005F6D01 /* LaunchScreen.storyboard in Resources */,
@@ -351,6 +366,7 @@
 				5ECB28AC279F0F5200583F67 /* UITextFieldExtension.swift in Sources */,
 				5EA1A67327A7E7990096754C /* DbResponse.swift in Sources */,
 				5ECF53EF278C3AB8005F6D01 /* AppDelegate.swift in Sources */,
+				5E371D2B27A92A5E00446D73 /* TabBarController.swift in Sources */,
 				5E123C3B27A2F1E400CF14EE /* FirstRegisterViewController.swift in Sources */,
 				5ECF53F1278C3AB8005F6D01 /* SceneDelegate.swift in Sources */,
 				5EF497A827A55858008B0C37 /* NetworkingProvider.swift in Sources */,
