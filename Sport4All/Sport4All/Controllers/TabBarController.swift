@@ -18,6 +18,8 @@ class TabBarController: UITabBarController {
 		
 		self.setUpTabBarUI()
 		self.addCustomTabBarView()
+		
+		print(UserDefaultsProvider.string(key: .authUserToken))
 	}
 	
 	override func viewDidLayoutSubviews() {

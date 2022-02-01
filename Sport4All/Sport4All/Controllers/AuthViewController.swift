@@ -12,6 +12,7 @@ class AuthViewController: UIViewController {
 	// Variables
 	var userEmail: String?
 	var userPassword: String?
+	var message: String?
 	
 	// Outlets
 	@IBOutlet weak var emailTextField: UITextField!
@@ -59,6 +60,45 @@ class AuthViewController: UIViewController {
 	}
 	
 	// MARK: Functions
+	private func userLogin() {
+		let userLogin = getTextFieldValues()
+		print(userLogin)
+		
+		if (emailTFisEmpty() && passwordTFisEmpty()) {
+			NetworkingProvider.shared.login(userLogin: userLogin) { responseData, status, msg in
+				let statusCode = status
+				
+				if let msg = msg {
+					self.message = msg
+				}
+				
+				if self.checkStatusCode(statusCode: statusCode) {
+					if let authUserToken = responseData?.token {
+						UserDefaultsProvider.setUserDefaults(key: .authUserToken, value: authUserToken)
+					}
+					let storyBoard = UIStoryboard(name: "TabBar", bundle: nil)
+					let vc = storyBoard.instantiateViewController(withIdentifier: "TabBar")
+					self.show(vc, sender: self)
+				}  else {
+					debugPrint("Error")
+				}
+				
+			} failure: { error in
+				print(error)
+			}
+		}
+	}
+	
+	private func checkStatusCode(statusCode: Int?) -> Bool {
+		if statusCode == 0 {
+			return false
+		} else if (statusCode == 1) {
+			return true
+		} else {
+			return false
+		}
+	}
+	
 	private func getTextFieldValues() -> UserLogin {
 		if let email = emailTextField.text, let password = passwordTextField.text {
 			userEmail = email
@@ -68,34 +108,24 @@ class AuthViewController: UIViewController {
 		return UserLogin(email: userEmail, password: userPassword)
 	}
 	
-	
-	private func userLogin() {
-		let userLogin = getTextFieldValues()
-		print(userLogin)
-		
-		if (checkTextFields()) {
-			NetworkingProvider.shared.login(userLogin: userLogin) { responseData, status, msg in
-				print(responseData)
-				print(status)
-				print(msg)
-				
-				let storyBoard = UIStoryboard(name: "TabBar", bundle: nil)
-				let vc = storyBoard.instantiateViewController(withIdentifier: "TabBar")
-				self.present(vc, animated: true, completion: nil)
-			} failure: { error in
-				print(error)
-			}
+	private func emailTFisEmpty() -> Bool {
+		if emailTextField.text == "" {
+			emailTextField.placeholderStyles(placeHolderText: "Introduzca el Correo Electrónico")
+			emailTextField.bottomBorder(color: .red)
+			return false
+		} else {
+			emailTextField.bottomBorder(color: .hardColor!)
+			return true
 		}
 	}
 	
-	private func checkTextFields() -> Bool {
-		if emailTextField.text == "" || passwordTextField.text == ""  {
-			emailTextField.placeholderStyles(placeHolderText: "Introduzca el Correo Electrónico")
-			emailTextField.bottomBorder(color: .red)
+	private func passwordTFisEmpty() -> Bool {
+		if passwordTextField.text == ""{
 			passwordTextField.placeholderStyles(placeHolderText: "Introduzca la Contraseña")
 			passwordTextField.bottomBorder(color: .red)
 			return false
 		} else {
+			passwordTextField.bottomBorder(color: .hardColor!)
 			return true
 		}
 	}
@@ -201,13 +231,13 @@ class AuthViewController: UIViewController {
 //		}
 //	}
 //
-//	private func clubList() {
-//		NetworkingProvider.shared.clubList { responseData, status, msg in
-//			print(responseData)
-//			print(status)
-//			print(msg)
-//		} failure: { error in
-//			print(error)
+//		private func clubList() {
+//			NetworkingProvider.shared.clubList { responseData, status, msg in
+//				print(responseData)
+//				print(status)
+//				print(msg)
+//			} failure: { error in
+//				print(error)
+//			}
 //		}
-//	}
 }
