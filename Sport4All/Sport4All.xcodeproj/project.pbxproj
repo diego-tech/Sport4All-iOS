@@ -14,12 +14,19 @@
 		5E197F03278D80D4008BBABB /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E197F02278D80D4008BBABB /* ColorExtension.swift */; };
 		5E2FEE6727A43E3E008B0AE1 /* RetrievePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E2FEE6627A43E3E008B0AE1 /* RetrievePassword.storyboard */; };
 		5E2FEE6927A442DA008B0AE1 /* RetrievePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2FEE6827A442DA008B0AE1 /* RetrievePasswordViewController.swift */; };
+		5E371D2927A925F900446D73 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E371D2827A925F900446D73 /* TabBar.storyboard */; };
+		5E371D2B27A92A5E00446D73 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E371D2A27A92A5E00446D73 /* TabBarController.swift */; };
 		5E9C14C22790358F002D9AF1 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C14BD2790358F002D9AF1 /* SF-Pro-Display-Semibold.otf */; };
 		5E9C14C32790358F002D9AF1 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C14BE2790358F002D9AF1 /* SF-Pro-Display-Regular.otf */; };
 		5E9C14C42790358F002D9AF1 /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C14BF2790358F002D9AF1 /* SF-Pro-Display-Medium.otf */; };
 		5E9C14C52790358F002D9AF1 /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C14C02790358F002D9AF1 /* SF-Pro.ttf */; };
 		5E9C14C62790358F002D9AF1 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C14C12790358F002D9AF1 /* SF-Pro-Display-Bold.otf */; };
 		5E9C14CA279038D0002D9AF1 /* TextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9C14C9279038D0002D9AF1 /* TextStyles.swift */; };
+		5EA1A66C27A7D43C0096754C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5EA1A66B27A7D43C0096754C /* Alamofire */; };
+		5EA1A66F27A7E5D60096754C /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA1A66E27A7E5D60096754C /* NewUser.swift */; };
+		5EA1A67127A7E6970096754C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA1A67027A7E6970096754C /* Data.swift */; };
+		5EA1A67327A7E7990096754C /* DbResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA1A67227A7E7990096754C /* DbResponse.swift */; };
+		5EA1A67527A7EDCF0096754C /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA1A67427A7EDCF0096754C /* UserLogin.swift */; };
 		5ECB28AC279F0F5200583F67 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB28AB279F0F5200583F67 /* UITextFieldExtension.swift */; };
 		5ECB28AE279F157C00583F67 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB28AD279F157C00583F67 /* UIButtonExtension.swift */; };
 		5ECF53EF278C3AB8005F6D01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECF53EE278C3AB8005F6D01 /* AppDelegate.swift */; };
@@ -28,6 +35,9 @@
 		5ECF53F6278C3AB8005F6D01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ECF53F4278C3AB8005F6D01 /* Main.storyboard */; };
 		5ECF53F8278C3AB9005F6D01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ECF53F7278C3AB9005F6D01 /* Assets.xcassets */; };
 		5ECF53FB278C3AB9005F6D01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ECF53F9278C3AB9005F6D01 /* LaunchScreen.storyboard */; };
+		5EF497A327A5570F008B0C37 /* DateDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A227A5570F008B0C37 /* DateDecoder.swift */; };
+		5EF497A627A55794008B0C37 /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A527A55794008B0C37 /* UserDefaultsProvider.swift */; };
+		5EF497A827A55858008B0C37 /* NetworkingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A727A55858008B0C37 /* NetworkingProvider.swift */; };
 		5EFC3CA9279DC0A100720905 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EFC3CA8279DC0A100720905 /* Register.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -39,12 +49,18 @@
 		5E197F02278D80D4008BBABB /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		5E2FEE6627A43E3E008B0AE1 /* RetrievePassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RetrievePassword.storyboard; sourceTree = "<group>"; };
 		5E2FEE6827A442DA008B0AE1 /* RetrievePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrievePasswordViewController.swift; sourceTree = "<group>"; };
+		5E371D2827A925F900446D73 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		5E371D2A27A92A5E00446D73 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		5E9C14BD2790358F002D9AF1 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		5E9C14BE2790358F002D9AF1 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		5E9C14BF2790358F002D9AF1 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 		5E9C14C02790358F002D9AF1 /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
 		5E9C14C12790358F002D9AF1 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		5E9C14C9279038D0002D9AF1 /* TextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyles.swift; sourceTree = "<group>"; };
+		5EA1A66E27A7E5D60096754C /* NewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
+		5EA1A67027A7E6970096754C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		5EA1A67227A7E7990096754C /* DbResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbResponse.swift; sourceTree = "<group>"; };
+		5EA1A67427A7EDCF0096754C /* UserLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
 		5ECB28AB279F0F5200583F67 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		5ECB28AD279F157C00583F67 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		5ECF53EB278C3AB8005F6D01 /* Sport4All.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sport4All.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +71,9 @@
 		5ECF53F7278C3AB9005F6D01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5ECF53FA278C3AB9005F6D01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5ECF53FC278C3AB9005F6D01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EF497A227A5570F008B0C37 /* DateDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDecoder.swift; sourceTree = "<group>"; };
+		5EF497A527A55794008B0C37 /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
+		5EF497A727A55858008B0C37 /* NetworkingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProvider.swift; sourceTree = "<group>"; };
 		5EFC3CA8279DC0A100720905 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EA1A66C27A7D43C0096754C /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +95,6 @@
 				5E197EFD278D7E36008BBABB /* Extension */,
 				5E197F00278D7E6F008BBABB /* Constants.swift */,
 				5E9C14C9279038D0002D9AF1 /* TextStyles.swift */,
-				5E123C3E27A3082A00CF14EE /* CustomSegmentedControlDelegate.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -120,9 +139,19 @@
 			path = RetrievePassword;
 			sourceTree = "<group>";
 		};
+		5E371D2727A925D900446D73 /* TabBars */ = {
+			isa = PBXGroup;
+			children = (
+				5E371D2827A925F900446D73 /* TabBar.storyboard */,
+			);
+			path = TabBars;
+			sourceTree = "<group>";
+		};
 		5E75E4C4279993CD005B89A3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5E371D2727A925D900446D73 /* TabBars */,
+				5EA1A66D27A7E26E0096754C /* CustomViews */,
 				5E2FEE6527A43E0F008B0AE1 /* RetrievePassword */,
 				5EFC3CA7279DC09400720905 /* Register */,
 				5E75E4C927999412005B89A3 /* Main */,
@@ -134,6 +163,10 @@
 		5E75E4C5279993D3005B89A3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5EA1A66E27A7E5D60096754C /* NewUser.swift */,
+				5EA1A67027A7E6970096754C /* Data.swift */,
+				5EA1A67227A7E7990096754C /* DbResponse.swift */,
+				5EA1A67427A7EDCF0096754C /* UserLogin.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -145,6 +178,7 @@
 				5E123C3A27A2F1E400CF14EE /* FirstRegisterViewController.swift */,
 				5E123C3C27A2F1F000CF14EE /* SecondRegisterViewController.swift */,
 				5E2FEE6827A442DA008B0AE1 /* RetrievePasswordViewController.swift */,
+				5E371D2A27A92A5E00446D73 /* TabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -152,6 +186,9 @@
 		5E75E4C7279993F2005B89A3 /* Provider */ = {
 			isa = PBXGroup;
 			children = (
+				5EF497A427A55778008B0C37 /* UserDefaults */,
+				5EF497A127A55703008B0C37 /* Decoder */,
+				5EF497A727A55858008B0C37 /* NetworkingProvider.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -170,6 +207,14 @@
 				5ECF53F4278C3AB8005F6D01 /* Main.storyboard */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		5EA1A66D27A7E26E0096754C /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				5E123C3E27A3082A00CF14EE /* CustomSegmentedControlDelegate.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		5ECF53E2278C3AB8005F6D01 = {
@@ -193,14 +238,30 @@
 			children = (
 				5ECF53F0278C3AB8005F6D01 /* SceneDelegate.swift */,
 				5ECF53EE278C3AB8005F6D01 /* AppDelegate.swift */,
-				5E75E4C7279993F2005B89A3 /* Provider */,
 				5E75E4C6279993E5005B89A3 /* Controllers */,
 				5E75E4C5279993D3005B89A3 /* Model */,
 				5E75E4C4279993CD005B89A3 /* Views */,
 				5E197EFB278D7DBA008BBABB /* SupportingFiles */,
+				5E75E4C7279993F2005B89A3 /* Provider */,
 				5E197EF9278D7DA3008BBABB /* Util */,
 			);
 			path = Sport4All;
+			sourceTree = "<group>";
+		};
+		5EF497A127A55703008B0C37 /* Decoder */ = {
+			isa = PBXGroup;
+			children = (
+				5EF497A227A5570F008B0C37 /* DateDecoder.swift */,
+			);
+			path = Decoder;
+			sourceTree = "<group>";
+		};
+		5EF497A427A55778008B0C37 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				5EF497A527A55794008B0C37 /* UserDefaultsProvider.swift */,
+			);
+			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 		5EFC3CA7279DC09400720905 /* Register */ = {
@@ -227,6 +288,9 @@
 			dependencies = (
 			);
 			name = Sport4All;
+			packageProductDependencies = (
+				5EA1A66B27A7D43C0096754C /* Alamofire */,
+			);
 			productName = Sport4All;
 			productReference = 5ECF53EB278C3AB8005F6D01 /* Sport4All.app */;
 			productType = "com.apple.product-type.application";
@@ -255,6 +319,10 @@
 				Base,
 			);
 			mainGroup = 5ECF53E2278C3AB8005F6D01;
+			packageReferences = (
+				5EF497AC27A558B7008B0C37 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				5EA1A66A27A7D43C0096754C /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 5ECF53EC278C3AB8005F6D01 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -270,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E9C14C42790358F002D9AF1 /* SF-Pro-Display-Medium.otf in Resources */,
+				5E371D2927A925F900446D73 /* TabBar.storyboard in Resources */,
 				5E2FEE6727A43E3E008B0AE1 /* RetrievePassword.storyboard in Resources */,
 				5E9C14C22790358F002D9AF1 /* SF-Pro-Display-Semibold.otf in Resources */,
 				5ECF53FB278C3AB9005F6D01 /* LaunchScreen.storyboard in Resources */,
@@ -290,17 +359,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E9C14CA279038D0002D9AF1 /* TextStyles.swift in Sources */,
+				5EA1A66F27A7E5D60096754C /* NewUser.swift in Sources */,
 				5ECB28AE279F157C00583F67 /* UIButtonExtension.swift in Sources */,
 				5ECF53F3278C3AB8005F6D01 /* AuthViewController.swift in Sources */,
 				5E2FEE6927A442DA008B0AE1 /* RetrievePasswordViewController.swift in Sources */,
 				5ECB28AC279F0F5200583F67 /* UITextFieldExtension.swift in Sources */,
+				5EA1A67327A7E7990096754C /* DbResponse.swift in Sources */,
 				5ECF53EF278C3AB8005F6D01 /* AppDelegate.swift in Sources */,
+				5E371D2B27A92A5E00446D73 /* TabBarController.swift in Sources */,
 				5E123C3B27A2F1E400CF14EE /* FirstRegisterViewController.swift in Sources */,
 				5ECF53F1278C3AB8005F6D01 /* SceneDelegate.swift in Sources */,
+				5EF497A827A55858008B0C37 /* NetworkingProvider.swift in Sources */,
+				5EF497A327A5570F008B0C37 /* DateDecoder.swift in Sources */,
 				5E123C3F27A3082A00CF14EE /* CustomSegmentedControlDelegate.swift in Sources */,
 				5E197F01278D7E6F008BBABB /* Constants.swift in Sources */,
+				5EA1A67127A7E6970096754C /* Data.swift in Sources */,
+				5EF497A627A55794008B0C37 /* UserDefaultsProvider.swift in Sources */,
 				5E197F03278D80D4008BBABB /* ColorExtension.swift in Sources */,
 				5E123C3D27A2F1F000CF14EE /* SecondRegisterViewController.swift in Sources */,
+				5EA1A67527A7EDCF0096754C /* UserLogin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +598,33 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5EA1A66A27A7D43C0096754C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.5.0;
+			};
+		};
+		5EF497AC27A558B7008B0C37 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = exactVersion;
+				version = 6.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5EA1A66B27A7D43C0096754C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5EA1A66A27A7D43C0096754C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5ECF53E3278C3AB8005F6D01 /* Project object */;
 }

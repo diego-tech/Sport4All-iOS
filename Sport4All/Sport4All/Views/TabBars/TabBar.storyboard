@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="eOS-ad-cKz">
+            <objects>
+                <viewController id="QOh-bd-z95" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="se5-8l-CJz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="o6R-2W-K6i"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" tag="-1" title="" image="HomeLogo" selectedImage="HomeLogo" id="8y9-DF-9qg" userLabel="Home Tab Bar Item">
+                        <color key="badgeColor" name="CorporativeColor"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ocH-f2-IL7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-348" y="230"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fzq-c3-zRf">
+            <objects>
+                <viewController id="jt6-XG-Gur" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hqQ-Wc-Cig">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="iOK-Sr-NsW"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="ProfileActive" selectedImage="ProfileActive" id="CSS-1V-awe" userLabel="Profile Tab Bar Item">
+                        <color key="badgeColor" name="CorporativeColor"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fuH-n6-Zit" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-335" y="887"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Z9f-y3-8oK">
+            <objects>
+                <viewController id="a2Z-N8-Dsn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="geu-BB-Jkw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="XFq-Ej-Eeg"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="SocialActive" selectedImage="SocialActive" id="TsN-rA-7mJ" userLabel="Social Tab Bar Item">
+                        <color key="badgeColor" name="CorporativeColor"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xLF-3S-CvM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-348" y="-379"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="BB5-hN-sAE">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBar" modalPresentationStyle="fullScreen" id="2Le-Hg-QcQ" customClass="TabBarController" customModule="Sport4All" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="16x-tI-G1d">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="a2Z-N8-Dsn" kind="relationship" relationship="viewControllers" id="P8K-Bz-WQ3"/>
+                        <segue destination="QOh-bd-z95" kind="relationship" relationship="viewControllers" id="IHc-qt-ZPp"/>
+                        <segue destination="jt6-XG-Gur" kind="relationship" relationship="viewControllers" id="hX9-hk-52B"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qzL-20-Rbm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1465" y="131"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="HomeLogo" width="34" height="34.5"/>
+        <image name="ProfileActive" width="34" height="36"/>
+        <image name="SocialActive" width="40" height="36"/>
+        <namedColor name="BackgroundColor">
+            <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CorporativeColor">
+            <color red="0.20000000000000001" green="0.36862745098039218" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

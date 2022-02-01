@@ -49,10 +49,10 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUn-ma-9h0">
-                                <rect key="frame" x="20" y="469" width="169" height="27"/>
+                                <rect key="frame" x="20" y="469" width="166" height="27"/>
                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="¿Has olvidado la contraseña ?">
+                                <state key="normal" title="¿Has olvidado la contraseña?">
                                     <color key="titleColor" name="HardColor"/>
                                 </state>
                                 <connections>
@@ -97,6 +97,7 @@
                             <constraint firstItem="kUn-ma-9h0" firstAttribute="top" secondItem="hfM-v6-JvX" secondAttribute="bottom" constant="30" id="4qb-ze-ksO"/>
                             <constraint firstItem="v7K-Bl-akm" firstAttribute="top" secondItem="7pE-oz-ES7" secondAttribute="top" constant="62" id="HEm-Is-l7v"/>
                             <constraint firstItem="OOc-6M-5Eh" firstAttribute="top" secondItem="4n3-PN-LaW" secondAttribute="bottom" constant="45" id="M3L-3y-Tdv"/>
+                            <constraint firstItem="7pE-oz-ES7" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kUn-ma-9h0" secondAttribute="trailing" symbolic="YES" id="MGY-Qp-pkd"/>
                             <constraint firstItem="7pE-oz-ES7" firstAttribute="trailing" secondItem="gab-C1-SKl" secondAttribute="trailing" constant="10" id="Mdv-9I-7hL"/>
                             <constraint firstItem="gab-C1-SKl" firstAttribute="leading" secondItem="7pE-oz-ES7" secondAttribute="leading" constant="10" id="NGi-Qp-xsF"/>
                             <constraint firstItem="7pE-oz-ES7" firstAttribute="trailing" secondItem="hfM-v6-JvX" secondAttribute="trailing" constant="20" id="Tp5-U2-fL1"/>
