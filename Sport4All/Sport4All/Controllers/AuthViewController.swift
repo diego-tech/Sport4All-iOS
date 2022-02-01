@@ -10,6 +10,8 @@ import UIKit
 class AuthViewController: UIViewController {
 	
 	// Variables
+	var userEmail: String?
+	var userPassword: String?
 	
 	// Outlets
 	@IBOutlet weak var emailTextField: UITextField!
@@ -34,7 +36,7 @@ class AuthViewController: UIViewController {
 //		modifyData()
 //		modifyPassword()
 //		registerFavClub()
-		clubList()
+//		clubList()
 	}
 	
 	// MARK: Action Functions
@@ -46,11 +48,7 @@ class AuthViewController: UIViewController {
 	}
 	
 	@IBAction func accessButtonAction(_ sender: UIButton) {
-		checkTextFields()
-		
-		let storyBoard = UIStoryboard(name: "TabBar", bundle: nil)
-		let vc = storyBoard.instantiateViewController(withIdentifier: "TabBar")
-		present(vc, animated: true, completion: nil)
+		userLogin()
 	}
 	
 	@IBAction func goToRegisterButtonAction(_ sender: UIButton) {
@@ -61,14 +59,44 @@ class AuthViewController: UIViewController {
 	}
 	
 	// MARK: Functions
-	private func checkTextFields() {
+	private func getTextFieldValues() -> UserLogin {
+		if let email = emailTextField.text, let password = passwordTextField.text {
+			userEmail = email
+			userPassword = password
+		}
+		
+		return UserLogin(email: userEmail, password: userPassword)
+	}
+	
+	
+	private func userLogin() {
+		let userLogin = getTextFieldValues()
+		print(userLogin)
+		
+		if (checkTextFields()) {
+			NetworkingProvider.shared.login(userLogin: userLogin) { responseData, status, msg in
+				print(responseData)
+				print(status)
+				print(msg)
+				
+				let storyBoard = UIStoryboard(name: "TabBar", bundle: nil)
+				let vc = storyBoard.instantiateViewController(withIdentifier: "TabBar")
+				self.present(vc, animated: true, completion: nil)
+			} failure: { error in
+				print(error)
+			}
+		}
+	}
+	
+	private func checkTextFields() -> Bool {
 		if emailTextField.text == "" || passwordTextField.text == ""  {
 			emailTextField.placeholderStyles(placeHolderText: "Introduzca el Correo Electrónico")
 			emailTextField.bottomBorder(color: .red)
 			passwordTextField.placeholderStyles(placeHolderText: "Introduzca la Contraseña")
 			passwordTextField.bottomBorder(color: .red)
+			return false
 		} else {
-			debugPrint("Continua!!")
+			return true
 		}
 	}
 	
@@ -94,92 +122,92 @@ class AuthViewController: UIViewController {
 	}
 	
 	// MARK: API FUNCTIONS TEST
-	private func register() {
-		let newUser = NewUser(email: "test1@test.com", password: "Test12345.", genre: "Otro", name: "Test", surname: "Test 1", image: "test.png")
-		
-		NetworkingProvider.shared.register(newUser: newUser) { responseData, status, msg in
-			print(responseData)
-			print(status)
-			print(msg)
-		} failure: { error in
-			print(error)
-		}
-	}
-	
-	private func login() {
-		let userLogin = UserLogin(email: "test1@test.com", password: "s0fBYfoZ")
-		
-		NetworkingProvider.shared.login(userLogin: userLogin) { responseData, status, msg in
-			print(responseData)
-			print(status)
-			print(msg)
-		} failure: { error in
-			print(error)
-		}
-	}
-	
-	private func userInfo() {
-		NetworkingProvider.shared.userInfo { responseData, status, msg in
-			print(responseData)
-			print(status)
-			print(msg)
-		} failure: { error in
-			print(error)
-		}
-	}
-	
-	private func retrievePassword() {
-		let userEmail = "test1@test.com"
-		
-		NetworkingProvider.shared.retrievePassword(email: userEmail) { status, msg in
-			print(status)
-			print(msg)
-		} failure: { error in
-			print(error)
-		}
-	}
-	
-	private func modifyData() {
-		let modifyUser = NewUser(email: nil, password: nil, genre: nil, name: "Test Modificado", surname: nil, image: nil)
-		
-		NetworkingProvider.shared.modifyData(userModify: modifyUser) { responseData, status, msg in
-			print(responseData)
-			print(status)
-			print(msg)
-		} failure: { error in
-			print(error)
-		}
-	}
-	
-	private func modifyPassword() {
-		let password = "Pass1."
-		
-		NetworkingProvider.shared.modifyPassword(newPassword: password) { responseData, status, msg in
-			print(responseData)
-			print(status)
-			print(msg)
-		} failure: { error in
-			print(error)
-		}
-	}
-	
-	private func registerFavClub() {
-		NetworkingProvider.shared.registerFavClub(clubId: 1) { responseData, status, msg in
-			print(responseData)
-			print(status)
-			print(msg)
-		} failure: { error in
-			print(error)
-		}
-	}
-	
-	private func clubList() {
-		NetworkingProvider.shared.clubList { responseData, status, msg in
-			print(responseData)
-			print(status)
-			print(msg)
-		} failure: { error in
-			print(error)
-		}
-	}
+//	private func register() {
+//		let newUser = NewUser(email: "test1@test.com", password: "Test1234", genre: "Otro", name: "Test", surname: "Test 1", image: "test.png")
+//
+//		NetworkingProvider.shared.register(newUser: newUser) { responseData, status, msg in
+//			print(responseData)
+//			print(status)
+//			print(msg)
+//		} failure: { error in
+//			print(error)
+//		}
+//	}
+//
+//	private func login() {
+//		let userLogin = UserLogin(email: "test1@test.com", password: "s0fBYfoZ")
+//
+//		NetworkingProvider.shared.login(userLogin: userLogin) { responseData, status, msg in
+//			print(responseData)
+//			print(status)
+//			print(msg)
+//		} failure: { error in
+//			print(error)
+//		}
+//	}
+//
+//	private func userInfo() {
+//		NetworkingProvider.shared.userInfo { responseData, status, msg in
+//			print(responseData)
+//			print(status)
+//			print(msg)
+//		} failure: { error in
+//			print(error)
+//		}
+//	}
+//
+//	private func retrievePassword() {
+//		let userEmail = "test1@test.com"
+//
+//		NetworkingProvider.shared.retrievePassword(email: userEmail) { status, msg in
+//			print(status)
+//			print(msg)
+//		} failure: { error in
+//			print(error)
+//		}
+//	}
+//
+//	private func modifyData() {
+//		let modifyUser = NewUser(email: nil, password: nil, genre: nil, name: "Test Modificado", surname: nil, image: nil)
+//
+//		NetworkingProvider.shared.modifyData(userModify: modifyUser) { responseData, status, msg in
+//			print(responseData)
+//			print(status)
+//			print(msg)
+//		} failure: { error in
+//			print(error)
+//		}
+//	}
+//
+//	private func modifyPassword() {
+//		let password = "Pass1."
+//
+//		NetworkingProvider.shared.modifyPassword(newPassword: password) { responseData, status, msg in
+//			print(responseData)
+//			print(status)
+//			print(msg)
+//		} failure: { error in
+//			print(error)
+//		}
+//	}
+//
+//	private func registerFavClub() {
+//		NetworkingProvider.shared.registerFavClub(clubId: 1) { responseData, status, msg in
+//			print(responseData)
+//			print(status)
+//			print(msg)
+//		} failure: { error in
+//			print(error)
+//		}
+//	}
+//
+//	private func clubList() {
+//		NetworkingProvider.shared.clubList { responseData, status, msg in
+//			print(responseData)
+//			print(status)
+//			print(msg)
+//		} failure: { error in
+//			print(error)
+//		}
+//	}
 }
