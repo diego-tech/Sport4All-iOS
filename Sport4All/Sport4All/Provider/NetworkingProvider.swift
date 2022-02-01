@@ -11,7 +11,7 @@ import Alamofire
 final class NetworkingProvider {
 	static let shared = NetworkingProvider()
 	
-	let kTestUserToken = "17|0k3Ztm2RINpmoD55cmtBl86lwSueJoLamS0vqTDW"
+	let kTestUserToken = UserDefaultsProvider.string(key: .authUserToken)
 	
 	// Registro de Usuario
 	func register(newUser: NewUser, serverResponse: @escaping (_ responseData: Data?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
@@ -47,13 +47,14 @@ final class NetworkingProvider {
 			if let error = response.error {
 				failure(error)
 			}
+			
 		}
 	}
 	
 	// Ver Perfil
 	func userInfo(serverResponse: @escaping (_ responseData: Data?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/userinfo"
-		let headers: HTTPHeaders = [.authorization(bearerToken: kTestUserToken)]
+		let headers: HTTPHeaders = [.authorization(bearerToken: kTestUserToken!)]
 		
 		AF.request(url, method: .get, headers: headers).responseDecodable(of: Response.self, decoder: DateDecoder()) { response in
 			
@@ -91,7 +92,7 @@ final class NetworkingProvider {
 	// Modificar Datos del Usuario
 	func modifyData(userModify: NewUser, serverResponse: @escaping (_ responseData: Data?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/usermodify"
-		let headers: HTTPHeaders = [.authorization(bearerToken: kTestUserToken)]
+		let headers: HTTPHeaders = [.authorization(bearerToken: kTestUserToken!)]
 		
 		AF.request(url, method: .post, parameters: userModify, encoder: JSONParameterEncoder.default, headers: headers).responseDecodable(of: Response.self, decoder: DateDecoder()) {
 			response in
@@ -111,7 +112,7 @@ final class NetworkingProvider {
 	// Modificar Contraseña
 	func modifyPassword(newPassword: String, serverResponse: @escaping (_ responseData: Data?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/passmodify"
-		let headers: HTTPHeaders = [.authorization(bearerToken: kTestUserToken)]
+		let headers: HTTPHeaders = [.authorization(bearerToken: kTestUserToken!)]
 		
 		AF.request(url, method: .post, parameters: ["password": newPassword], encoding: JSONEncoding.default, headers: headers).responseDecodable(of: Response.self, decoder: DateDecoder()) {
 			response in
@@ -131,7 +132,7 @@ final class NetworkingProvider {
 	// Registrar Un Club Como Favorito
 	func registerFavClub(clubId: Int, serverResponse: @escaping (_ responseData: Data?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/registerfavclub"
-		let headers: HTTPHeaders = [.authorization(bearerToken: kTestUserToken)]
+		let headers: HTTPHeaders = [.authorization(bearerToken: kTestUserToken!)]
 		
 		AF.request(url, method: .post, parameters: ["club_id": clubId], encoding: JSONEncoding.default, headers: headers).responseDecodable(of: Response.self, decoder: DateDecoder()) {
 			response in
@@ -151,7 +152,7 @@ final class NetworkingProvider {
 	// Lista de Clubes
 	func clubList(serverResponse: @escaping (_ responseData: [Data]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/listclubs"
-		let headers: HTTPHeaders = [.authorization(bearerToken: kTestUserToken)]
+		let headers: HTTPHeaders = [.authorization(bearerToken: kTestUserToken!)]
 		
 		AF.request(url, method: .get, headers: headers).responseDecodable(of: ListResponse.self, decoder: DateDecoder()) {
 			response in
