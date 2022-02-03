@@ -30,6 +30,7 @@ struct Data: Decodable {
 		case image
 		case email
 		case genre
+//		case errors
 		case updatedAt = "updated_at"
 		case createdAt = "created_at"
 		case token
