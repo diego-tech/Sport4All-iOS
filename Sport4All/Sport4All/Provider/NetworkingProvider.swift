@@ -31,6 +31,10 @@ final class NetworkingProvider {
 		}
 	}
 	
+	// Upload User Image
+	
+	func uploadImage(serverResponse: @escaping (_ responseData: Data?, _ status: Int?, _ msg: String?) -> ())
+	
 	// Logeo de Usuario
 	func login(userLogin: UserLogin, serverResponse: @escaping (_ responseData: Data?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/login"
@@ -179,6 +183,7 @@ final class NetworkingProvider {
  Modificar Datos: /usermodify (Token)
  Modificar Contraseña: /passmodify (Token)
  Registar Club Como Favorito: /registerfavclub (Token)
+ Upload Image: /getUploadImage
  
  Registro de Clubs: /registerclub
  Lista de Clubes: /listclubs (Token)
