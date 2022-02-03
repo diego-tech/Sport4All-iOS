@@ -6,10 +6,19 @@
 //
 
 import UIKit
+import Photos
+import PhotosUI
+import Alamofire
 
-class SecondRegisterViewController: UIViewController {
+class SecondRegisterViewController: UIViewController, UINavigationControllerDelegate {
 	
 	// Variables
+	public var registerUserEmail: String = ""
+	public var registerUserPassoword: String = ""
+	
+	var userName: String = ""
+	var userSurname: String = ""
+	var userGenre: String = ""
 	
 	// Outlets
 	@IBOutlet weak var plusRoundedButton: UIButton!
@@ -29,7 +38,7 @@ class SecondRegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-		 
+				
 		// Inicialización Estilos
 		setTextFieldStyles()
 		setButtonStyles()
@@ -41,10 +50,51 @@ class SecondRegisterViewController: UIViewController {
 	}
 	
 	@IBAction func registerButtonAction(_ sender: UIButton) {
+		registerApi()
 		print(interfaceSegmented.selectedIndex)
 	}
 	
+	@IBAction func uploadImage(_ sender: UIButton) {
+		let pickerController = UIImagePickerController()
+		pickerController.delegate = self
+		present(pickerController, animated: true, completion: nil)
+	}
+	
 	// MARK: Functions
+	private func uploadImage() {
+		let url = "\(Constants.kBaseURL)/getUploadImage"
+		
+		let fileURL = Bundle.main.url(forResource: "image", withExtension: "jpg")
+		
+		AF.upload(fileURL!, to: url).responseDecodable(of: Response.self) { response in
+			debugPrint(response)
+		}
+	}
+	
+	private func getValues() -> NewUser {
+		if nameTF.text != "" {
+			userName = nameTF.text!
+		}
+		
+		if surnamesTF.text != "" {
+			userSurname = surnamesTF.text!
+		}
+		
+		return NewUser(email: registerUserEmail, password: registerUserPassoword, genre: "Hombre", name: userName, surname: userSurname, image: nil)
+	}
+	
+	private func registerApi() {
+		
+		let newUser = getValues()
+		
+		NetworkingProvider.shared.register(newUser: newUser) { responseData, status, msg in
+			print(responseData)
+			print(status)
+			print(msg)
+		} failure: { error in
+			print(error)
+		}
+	}
 	
 	// MARK: Styles
 	private func setTextFieldStyles() {
@@ -63,5 +113,24 @@ class SecondRegisterViewController: UIViewController {
 		// Estilos Register Button
 		registerButton.round()
 		registerButton.colors()
+	}
+}
+
+
+extension SecondRegisterViewController: UIImagePickerControllerDelegate {
+	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+		picker.dismiss(animated: true, completion: nil)
+		
+		let image = info[.imageURL] as! URL
+		
+		let url = "\(Constants.kBaseURL)/getUploadImage"
+				
+		AF.upload(multipartFormData: { multipartformadata in
+			multipartformadata.append(image, withName: "fileName")
+		}, to: url, method: .post).responseDecodable(of: Response.self) {
+			response in
+			
+			print(response)
+		}
 	}
 }

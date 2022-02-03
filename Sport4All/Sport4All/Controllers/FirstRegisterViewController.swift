@@ -10,6 +10,8 @@ import UIKit
 class FirstRegisterViewController: UIViewController {
 
 	// Variables
+	var registerUserEmail: String = ""
+	var registerUserPassoword: String = ""
 	
 	// Outlets
 	@IBOutlet weak var firstEmailTF: UITextField!
@@ -31,10 +33,7 @@ class FirstRegisterViewController: UIViewController {
 	@IBAction func nextButtonAction(_ sender: UIButton) {
 		checkTextFields()
 		
-		let storyboard = UIStoryboard(name: "Register", bundle: nil)
-		let vc = storyboard.instantiateViewController(withIdentifier: "SecondRegister")
-		
-		present(vc, animated: true, completion: nil)
+		navigateToSecondRegister()
 	}
 	
 	@IBAction func goBackButtonAction(_ sender: UIButton) {
@@ -58,6 +57,21 @@ class FirstRegisterViewController: UIViewController {
 		} else {
 			debugPrint("Continua!!")
 		}
+	}
+	
+	private func navigateToSecondRegister() {
+		let storyboard = UIStoryboard(name: "Register", bundle: nil)
+		let vc = storyboard.instantiateViewController(withIdentifier: "SecondRegister") as! SecondRegisterViewController
+		
+		if firstEmailTF.text != "" {
+			firstEmailTF.text = vc.registerUserEmail
+		}
+		
+		if firstPasswordTF.text != "" {
+			firstPasswordTF.text = vc.registerUserPassoword
+		}
+		
+		present(vc, animated: true, completion: nil)
 	}
 	
 	// MARK: Styles

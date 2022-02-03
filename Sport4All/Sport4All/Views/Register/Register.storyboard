@@ -188,6 +188,9 @@
                                                 <rect key="frame" x="0.0" y="2.5" width="374" height="133"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="Avatar"/>
+                                                <connections>
+                                                    <action selector="uploadImage:" destination="K2x-Il-VBK" eventType="touchUpInside" id="ZDE-Mk-3xT"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

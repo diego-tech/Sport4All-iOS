@@ -32,8 +32,15 @@ final class NetworkingProvider {
 	}
 	
 	// Upload User Image
-	
-	func uploadImage(serverResponse: @escaping (_ responseData: Data?, _ status: Int?, _ msg: String?) -> ())
+	func uploadImage(serverResponse: @escaping (_ responseData: Data?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+		let url = "\(Constants.kBaseURL)/getUploadImage"
+		
+		let fileURL = Bundle.main.url(forResource: "image", withExtension: "jpg")
+		
+		AF.upload(fileURL!, to: url).responseDecodable(of: Response.self) { response in
+			debugPrint(response)
+		}
+	}
 	
 	// Logeo de Usuario
 	func login(userLogin: UserLogin, serverResponse: @escaping (_ responseData: Data?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
