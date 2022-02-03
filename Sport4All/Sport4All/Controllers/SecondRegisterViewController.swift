@@ -120,17 +120,16 @@ extension SecondRegisterViewController: UIImagePickerControllerDelegate {
 		picker.dismiss(animated: true, completion: nil)
 		
 		let image = info[.imageURL] as! URL
-				
-		let url = "\(Constants.kBaseURL)/getUploadImage"
 		
-		AF.upload(multipartFormData: { multipartformadata in
-			multipartformadata.append(image, withName: "fileName")
-		}, to: url, method: .post).responseDecodable(of: Response.self, decoder: DateDecoder()) {
-			response in
+		NetworkingProvider.shared.uploadImage(userImage: image) { responseData, status, msg in
+			debugPrint(responseData)
+			debugPrint(status)
 			
-			if let msg = response.value?.msg {
+			if let msg = msg {
 				self.imageUrl = msg
 			}
+		} failure: { error in
+			debugPrint(error)
 		}
 	}
 }

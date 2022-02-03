@@ -8,7 +8,7 @@
 import UIKit
 
 class FirstRegisterViewController: UIViewController {
-
+	
 	// Variables
 	var registerUserEmail: String = ""
 	var registerUserPassoword: String = ""
@@ -20,24 +20,19 @@ class FirstRegisterViewController: UIViewController {
 	@IBOutlet weak var secondPasswordTF: UITextField!
 	@IBOutlet weak var nextButton: UIButton!
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		// Do any additional setup after loading the view.
 		
 		// Inicialización Estilos
 		setTextFieldStyles()
 		setButtonStyles()
-    }
+	}
 	
 	// MARK: Action Functions
 	@IBAction func nextButtonAction(_ sender: UIButton) {
-		
-		if checkIfPassIsSame() && checkIfEmailIsSame() {
-			checkTextFields()
-			
-			navigateToSecondRegister()
-		} else {
-			debugPrint("Error")
+		if (checkIfEmailIsSame() && checkIfPassIsSame()) {
+			checkUserExists()
 		}
 	}
 	
@@ -46,21 +41,53 @@ class FirstRegisterViewController: UIViewController {
 	}
 	
 	// MARK: Functions
-	private func checkTextFields() {
-		if firstEmailTF.text == "" || secondEmailTF.text == "" || firstPasswordTF.text == "" || secondPasswordTF.text == "" {
+	private func checkUserExists() {
+		NetworkingProvider.shared.checkUserExists(userEmail: secondEmailTF.text!, userPassword: secondPasswordTF.text!) { responseData, status, msg in
+			debugPrint(responseData)
+			debugPrint(status)
+			debugPrint(msg)
+			
+			self.navigateToSecondRegister()
+		} failure: { error in
+			debugPrint(error)
+		}
+	}
+	
+	private func checkTextFields() -> Bool{
+		if !firstEmailTF.checkIfIsEmpty() {
 			firstEmailTF.placeholderStyles(placeHolderText: "Introduzca el Correo Electrónico")
 			firstEmailTF.bottomBorder(color: .red)
 			
+			return false
+		} else {
+			return true
+		}
+		
+		if !secondEmailTF.checkIfIsEmpty() {
 			secondEmailTF.placeholderStyles(placeHolderText: "Introduzca el Correo Electrónico")
 			secondEmailTF.bottomBorder(color: .red)
 			
+			return false
+		} else {
+			return true
+		}
+		
+		if !firstPasswordTF.checkIfIsEmpty() {
 			firstPasswordTF.placeholderStyles(placeHolderText: "Introduzca la Contraseña")
 			firstPasswordTF.bottomBorder(color: .red)
 			
+			return false
+		} else {
+			return true
+		}
+		
+		if !secondPasswordTF.checkIfIsEmpty() {
 			secondPasswordTF.placeholderStyles(placeHolderText: "Introduza la Contraseña")
 			secondPasswordTF.bottomBorder(color: .red)
+			
+			return false
 		} else {
-			debugPrint("Continua!!")
+			return true
 		}
 	}
 	
@@ -80,19 +107,11 @@ class FirstRegisterViewController: UIViewController {
 	}
 	
 	private func checkIfEmailIsSame() -> Bool{
-		if firstEmailTF.text == secondEmailTF.text {
-			return true
-		} else {
-			return false
-		}
+		return firstEmailTF.text == secondEmailTF.text ? true : false
 	}
 	
 	private func checkIfPassIsSame() -> Bool {
-		if firstPasswordTF.text == secondPasswordTF.text {
-			return true
-		} else {
-			return false
-		}
+		return firstPasswordTF.text == secondPasswordTF.text ? true : false
 	}
 	
 	// MARK: Styles

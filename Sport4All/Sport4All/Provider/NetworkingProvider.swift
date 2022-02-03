@@ -32,13 +32,42 @@ final class NetworkingProvider {
 	}
 	
 	// Upload User Image
-	func uploadImage(serverResponse: @escaping (_ responseData: Data?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+	func uploadImage(userImage: URL, serverResponse: @escaping (_ responseData: Data?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/getUploadImage"
 		
-		let fileURL = Bundle.main.url(forResource: "image", withExtension: "jpg")
+		AF.upload(multipartFormData: { multipartformdata in
+			multipartformdata.append(userImage, withName: "fileName")
+		}, to: url, method: .post).responseDecodable(of: Response.self, decoder: DateDecoder()) {
+			response in
+			
+			// Handle Response Data && Status Code && Message
+			if let data = response.value?.data, let status = response.value?.status, let msg = response.value?.msg {
+				serverResponse(data, status, msg)
+			}
+			
+			// Handle Alamofire Error
+			if let error = response.error {
+				failure(error)
+			}
+		}
+	}
+	
+	// Check If User Exists
+	func checkUserExists(userEmail: String, userPassword: String, serverResponse: @escaping (_ responseData: Data?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+		let url = "\(Constants.kBaseURL)/checkIfUserExists"
 		
-		AF.upload(fileURL!, to: url).responseDecodable(of: Response.self) { response in
-			debugPrint(response)
+		AF.request(url, method: .post, parameters: ["email" : userEmail, "password" : userPassword], encoder: JSONParameterEncoder.default).responseDecodable(of: Response.self, decoder: DateDecoder()) {
+			response in
+			
+			// Handle Response Data && Status Code && Message
+			if let data = response.value?.data, let status = response.value?.status, let msg = response.value?.msg {
+				serverResponse(data, status, msg)
+			}
+			
+			// Handle Alamofire Error
+			if let error = response.error {
+				failure(error)
+			}
 		}
 	}
 	
@@ -191,6 +220,7 @@ final class NetworkingProvider {
  Modificar Contraseña: /passmodify (Token)
  Registar Club Como Favorito: /registerfavclub (Token)
  Upload Image: /getUploadImage
+ CheckEmailFirstRegister: /checkIfUserExists
  
  Registro de Clubs: /registerclub
  Lista de Clubes: /listclubs (Token)
