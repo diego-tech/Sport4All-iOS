@@ -6,19 +6,18 @@
 //
 
 import UIKit
-import Photos
-import PhotosUI
 import Alamofire
 
 class SecondRegisterViewController: UIViewController, UINavigationControllerDelegate {
 	
 	// Variables
-	public var registerUserEmail: String = ""
-	public var registerUserPassoword: String = ""
+	var registerUserEmail: String = ""
+	var registerUserPassoword: String = ""
 	
 	var userName: String = ""
 	var userSurname: String = ""
 	var userGenre: String = ""
+	var imageUrl: String = ""
 	
 	// Outlets
 	@IBOutlet weak var plusRoundedButton: UIButton!
@@ -35,14 +34,14 @@ class SecondRegisterViewController: UIViewController, UINavigationControllerDele
 		}
 	}
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-				
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		// Do any additional setup after loading the view.
+		
 		// Inicialización Estilos
 		setTextFieldStyles()
 		setButtonStyles()
-    }
+	}
 	
 	// MARK: Action Functions
 	@IBAction func goBackButtonAction(_ sender: UIButton) {
@@ -80,11 +79,10 @@ class SecondRegisterViewController: UIViewController, UINavigationControllerDele
 			userSurname = surnamesTF.text!
 		}
 		
-		return NewUser(email: registerUserEmail, password: registerUserPassoword, genre: "Hombre", name: userName, surname: userSurname, image: nil)
+		return NewUser(email: registerUserEmail, password: registerUserPassoword, genre: "Hombre", name: userName, surname: userSurname, image: imageUrl)
 	}
 	
 	private func registerApi() {
-		
 		let newUser = getValues()
 		
 		NetworkingProvider.shared.register(newUser: newUser) { responseData, status, msg in
@@ -122,15 +120,17 @@ extension SecondRegisterViewController: UIImagePickerControllerDelegate {
 		picker.dismiss(animated: true, completion: nil)
 		
 		let image = info[.imageURL] as! URL
-		
-		let url = "\(Constants.kBaseURL)/getUploadImage"
 				
+		let url = "\(Constants.kBaseURL)/getUploadImage"
+		
 		AF.upload(multipartFormData: { multipartformadata in
 			multipartformadata.append(image, withName: "fileName")
-		}, to: url, method: .post).responseDecodable(of: Response.self) {
+		}, to: url, method: .post).responseDecodable(of: Response.self, decoder: DateDecoder()) {
 			response in
 			
-			print(response)
+			if let msg = response.value?.msg {
+				self.imageUrl = msg
+			}
 		}
 	}
 }

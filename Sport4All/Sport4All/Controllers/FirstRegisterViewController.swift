@@ -31,9 +31,14 @@ class FirstRegisterViewController: UIViewController {
 	
 	// MARK: Action Functions
 	@IBAction func nextButtonAction(_ sender: UIButton) {
-		checkTextFields()
 		
-		navigateToSecondRegister()
+		if checkIfPassIsSame() && checkIfEmailIsSame() {
+			checkTextFields()
+			
+			navigateToSecondRegister()
+		} else {
+			debugPrint("Error")
+		}
 	}
 	
 	@IBAction func goBackButtonAction(_ sender: UIButton) {
@@ -64,14 +69,30 @@ class FirstRegisterViewController: UIViewController {
 		let vc = storyboard.instantiateViewController(withIdentifier: "SecondRegister") as! SecondRegisterViewController
 		
 		if firstEmailTF.text != "" {
-			firstEmailTF.text = vc.registerUserEmail
+			vc.registerUserEmail = firstEmailTF.text!
 		}
 		
 		if firstPasswordTF.text != "" {
-			firstPasswordTF.text = vc.registerUserPassoword
+			vc.registerUserPassoword = firstPasswordTF.text!
 		}
 		
 		present(vc, animated: true, completion: nil)
+	}
+	
+	private func checkIfEmailIsSame() -> Bool{
+		if firstEmailTF.text == secondEmailTF.text {
+			return true
+		} else {
+			return false
+		}
+	}
+	
+	private func checkIfPassIsSame() -> Bool {
+		if firstPasswordTF.text == secondPasswordTF.text {
+			return true
+		} else {
+			return false
+		}
 	}
 	
 	// MARK: Styles
