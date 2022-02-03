@@ -80,7 +80,7 @@
                 <constraint firstAttribute="bottom" secondItem="Gic-df-edc" secondAttribute="bottom" id="lsf-fZ-W5G"/>
             </constraints>
             <size key="customSize" width="192" height="257"/>
-            <point key="canvasLocation" x="292.75362318840581" y="200.55803571428569"/>
+            <point key="canvasLocation" x="292.75362318840581" y="200.1358695652174"/>
         </collectionViewCell>
     </objects>
     <resources>

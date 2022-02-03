@@ -154,6 +154,7 @@
 		5E75E4C4279993CD005B89A3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5EF360F527AA9B2B00105AB7 /* CellsView */,
 				5E371D2727A925D900446D73 /* TabBars */,
 				5EA1A66D27A7E26E0096754C /* CustomViews */,
 				5E2FEE6527A43E0F008B0AE1 /* RetrievePassword */,
@@ -248,10 +249,25 @@
 				5E197EFB278D7DBA008BBABB /* SupportingFiles */,
 				5E75E4C7279993F2005B89A3 /* Provider */,
 				5E197EF9278D7DA3008BBABB /* Util */,
+			);
+			path = Sport4All;
+			sourceTree = "<group>";
+		};
+		5EF360F527AA9B2B00105AB7 /* CellsView */ = {
+			isa = PBXGroup;
+			children = (
+				5EF360F627AA9B3300105AB7 /* BestRated */,
+			);
+			path = CellsView;
+			sourceTree = "<group>";
+		};
+		5EF360F627AA9B3300105AB7 /* BestRated */ = {
+			isa = PBXGroup;
+			children = (
 				07AB1FC827AA9599007771E3 /* BestRatedCollectionViewCell.swift */,
 				07AB1FC927AA9599007771E3 /* BestRatedCollectionViewCell.xib */,
 			);
-			path = Sport4All;
+			path = BestRated;
 			sourceTree = "<group>";
 		};
 		5EF497A127A55703008B0C37 /* Decoder */ = {
