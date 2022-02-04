@@ -65,6 +65,7 @@ extension UITextField {
 		imageEye.addGestureRecognizer(tapGestureRecognizer)
 	}
 	
+	// Coger el gesto del usuario al tocar
 	@objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
 		let tappedImage = tapGestureRecognizer.view as! UIImageView
 		
@@ -76,6 +77,18 @@ extension UITextField {
 			iconClick = true
 			tappedImage.image = UIImage(named: "CloseEye")
 			self.isSecureTextEntry = true
+		}
+	}
+	
+	// Comprobar si el TextField está vació
+	func checkIfIsEmpty(placeHolderText: String) -> Bool {
+		if self.text == "" {
+			placeholderStyles(placeHolderText: placeHolderText)
+			bottomBorder(color: .red)
+			return true
+		} else {
+			bottomBorder(color: .hardColor!)
+			return false
 		}
 	}
 }
