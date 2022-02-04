@@ -7,11 +7,16 @@
 
 import UIKit
 
+struct FirstRegisterDataModel: Encodable {
+	let email: String?
+	let password: String?
+}
+
 class FirstRegisterViewController: UIViewController {
 	
 	// Variables
-	var registerUserEmail: String = ""
-	var registerUserPassoword: String = ""
+	var registerUserEmail: String?
+	var registerUserPassword: String?
 	
 	// Outlets
 	@IBOutlet weak var firstEmailTF: UITextField!
@@ -31,8 +36,10 @@ class FirstRegisterViewController: UIViewController {
 	
 	// MARK: Action Functions
 	@IBAction func nextButtonAction(_ sender: UIButton) {
-		if (checkIfEmailIsSame() && checkIfPassIsSame()) {
-			checkUserExists()
+		if !firstEmailTF.checkIfIsEmpty(placeHolderText: "Introduzca el Correo Electrónico") && !secondEmailTF.checkIfIsEmpty(placeHolderText: "Introduzca el Correo Electrónico") && !firstPasswordTF.checkIfIsEmpty(placeHolderText: "Introduzca la Contraseña") && !secondPasswordTF.checkIfIsEmpty(placeHolderText: "Introduzca la Contraseña") {
+			if (checkIfEmailIsSame() && checkIfPassIsSame()) {
+				checkUserExists()
+			}
 		}
 	}
 	
@@ -41,53 +48,33 @@ class FirstRegisterViewController: UIViewController {
 	}
 	
 	// MARK: Functions
-	private func checkUserExists() {
-		NetworkingProvider.shared.checkUserExists(userEmail: secondEmailTF.text!, userPassword: secondPasswordTF.text!) { responseData, status, msg in
-			debugPrint(responseData)
-			debugPrint(status)
-			debugPrint(msg)
-			
-			self.navigateToSecondRegister()
-		} failure: { error in
-			debugPrint(error)
+	private func getTFValues() -> FirstRegisterDataModel{		
+		if let email = secondEmailTF.text, let password = secondPasswordTF.text {
+			registerUserEmail = email
+			registerUserPassword = password
 		}
+		
+		return FirstRegisterDataModel(email: registerUserEmail, password: registerUserPassword)
 	}
 	
-	private func checkTextFields() -> Bool{
-		if !firstEmailTF.checkIfIsEmpty() {
-			firstEmailTF.placeholderStyles(placeHolderText: "Introduzca el Correo Electrónico")
-			firstEmailTF.bottomBorder(color: .red)
-			
-			return false
-		} else {
-			return true
-		}
+	private func checkUserExists() {
+		let firstRegisterData = getTFValues()
 		
-		if !secondEmailTF.checkIfIsEmpty() {
-			secondEmailTF.placeholderStyles(placeHolderText: "Introduzca el Correo Electrónico")
-			secondEmailTF.bottomBorder(color: .red)
+		NetworkingProvider.shared.checkUserExists(firstRegisterData: firstRegisterData) { responseData, status, msg in
+			let statusCode = status
 			
-			return false
-		} else {
-			return true
-		}
-		
-		if !firstPasswordTF.checkIfIsEmpty() {
-			firstPasswordTF.placeholderStyles(placeHolderText: "Introduzca la Contraseña")
-			firstPasswordTF.bottomBorder(color: .red)
-			
-			return false
-		} else {
-			return true
-		}
-		
-		if !secondPasswordTF.checkIfIsEmpty() {
-			secondPasswordTF.placeholderStyles(placeHolderText: "Introduza la Contraseña")
-			secondPasswordTF.bottomBorder(color: .red)
-			
-			return false
-		} else {
-			return true
+			if AuxFunctions.checkStatusCode(statusCode: statusCode) {
+				self.navigateToSecondRegister()
+			} else {
+				let response = responseData
+				debugPrint(response)
+				
+				let message = msg
+				self.alertFunction(title: "Error", msg: message!)
+			}
+		} failure: { error in
+			let err = error
+			debugPrint(err)
 		}
 	}
 	
@@ -107,11 +94,34 @@ class FirstRegisterViewController: UIViewController {
 	}
 	
 	private func checkIfEmailIsSame() -> Bool{
-		return firstEmailTF.text == secondEmailTF.text ? true : false
+		if firstEmailTF.text == secondEmailTF.text {
+			return true
+		} else {
+			secondEmailTF.text = ""
+			secondEmailTF.placeholderStyles(placeHolderText: "El Correo Electrónico No Coincide")
+			secondEmailTF.bottomBorder(color: .red)
+			return false
+		}
 	}
 	
 	private func checkIfPassIsSame() -> Bool {
-		return firstPasswordTF.text == secondPasswordTF.text ? true : false
+		if firstPasswordTF.text == secondPasswordTF.text {
+			return true
+		} else {
+			secondPasswordTF.text = ""
+			secondPasswordTF.placeholderStyles(placeHolderText: "Las Contraseñas No Coinciden")
+			secondPasswordTF.bottomBorder(color: .red)
+			return false
+		}
+	}
+	
+	private func alertFunction(title: String, msg: String){
+		let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "Volver", style: .default, handler: { action in
+			self.dismiss(animated: true, completion: nil)
+		}))
+		
+		present(alert, animated: true)
 	}
 	
 	// MARK: Styles

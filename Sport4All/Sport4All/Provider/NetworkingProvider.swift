@@ -53,10 +53,10 @@ final class NetworkingProvider {
 	}
 	
 	// Check If User Exists
-	func checkUserExists(userEmail: String, userPassword: String, serverResponse: @escaping (_ responseData: Data?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+	func checkUserExists(firstRegisterData: FirstRegisterDataModel, serverResponse: @escaping (_ responseData: Data?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/checkIfUserExists"
 		
-		AF.request(url, method: .post, parameters: ["email" : userEmail, "password" : userPassword], encoder: JSONParameterEncoder.default).responseDecodable(of: Response.self, decoder: DateDecoder()) {
+		AF.request(url, method: .post, parameters: firstRegisterData, encoder: JSONParameterEncoder.default).responseDecodable(of: Response.self, decoder: DateDecoder()) {
 			response in
 			
 			// Handle Response Data && Status Code && Message

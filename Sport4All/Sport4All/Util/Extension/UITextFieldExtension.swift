@@ -81,7 +81,14 @@ extension UITextField {
 	}
 	
 	// Comprobar si el TextField está vació
-	func checkIfIsEmpty() -> Bool {
-		return self.text == "" ? true : false
+	func checkIfIsEmpty(placeHolderText: String) -> Bool {
+		if self.text == "" {
+			placeholderStyles(placeHolderText: placeHolderText)
+			bottomBorder(color: .red)
+			return true
+		} else {
+			bottomBorder(color: .hardColor!)
+			return false
+		}
 	}
 }
