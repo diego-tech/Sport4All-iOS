@@ -11,6 +11,9 @@
         <array key="SF-Pro-Display-Regular.otf">
             <string>SFProDisplay-Regular</string>
         </array>
+        <array key="SF-Pro.ttf">
+            <string>SFPro-Regular</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -80,11 +83,74 @@
                 <constraint firstAttribute="bottom" secondItem="Gic-df-edc" secondAttribute="bottom" id="lsf-fZ-W5G"/>
             </constraints>
             <size key="customSize" width="192" height="257"/>
-            <point key="canvasLocation" x="292.75362318840581" y="200.1358695652174"/>
+            <point key="canvasLocation" x="54" y="184"/>
+        </collectionViewCell>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Fr5-ST-Xi2" customClass="BestRatedCollectionViewCell" customModule="Sport4All" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="125"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="125"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.34999999403953552" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Best Valorated" translatesAutoresizingMaskIntoConstraints="NO" id="j79-cA-UPg">
+                        <rect key="frame" x="-33" y="-32" width="259" height="321"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k02-2M-EMD">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="125"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image Best Valorated" id="jmZ-Nh-Gcp">
+                                <rect key="frame" x="25" y="8" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7p-Pk-HnA">
+                                <rect key="frame" x="5" y="61" width="90" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="1LK-Vv-crU"/>
+                                </constraints>
+                                <string key="text">Club Palomitas
+Moratalaz</string>
+                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="8.5"/>
+                                <color key="textColor" name="HardColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nac-HE-RGX">
+                                <rect key="frame" x="20" y="98" width="60" height="19"/>
+                                <color key="backgroundColor" name="HardColor"/>
+                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="11"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Reserva">
+                                    <color key="titleColor" red="0.91764705879999997" green="0.93333333330000001" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="Periwinkle"/>
+                        <constraints>
+                            <constraint firstItem="nac-HE-RGX" firstAttribute="top" secondItem="B7p-Pk-HnA" secondAttribute="bottom" constant="8" symbolic="YES" id="GN6-Bt-tI4"/>
+                            <constraint firstItem="nac-HE-RGX" firstAttribute="bottom" secondItem="k02-2M-EMD" secondAttribute="bottomMargin" id="MKy-Yp-Mrp"/>
+                            <constraint firstItem="nac-HE-RGX" firstAttribute="centerX" secondItem="B7p-Pk-HnA" secondAttribute="centerX" id="Od3-Tv-CW2"/>
+                            <constraint firstItem="nac-HE-RGX" firstAttribute="leading" secondItem="k02-2M-EMD" secondAttribute="leading" constant="20" id="USo-IF-sjC"/>
+                            <constraint firstItem="B7p-Pk-HnA" firstAttribute="top" secondItem="jmZ-Nh-Gcp" secondAttribute="bottom" constant="3" id="VMu-l0-8eE"/>
+                            <constraint firstItem="B7p-Pk-HnA" firstAttribute="leading" secondItem="k02-2M-EMD" secondAttribute="leading" constant="5" id="Wu7-Ou-2WB"/>
+                            <constraint firstAttribute="trailing" secondItem="B7p-Pk-HnA" secondAttribute="trailing" constant="5" id="vnN-3I-hqa"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="Jx4-xh-A5F"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="k02-2M-EMD" secondAttribute="trailing" id="Idy-kh-mfJ"/>
+                <constraint firstItem="k02-2M-EMD" firstAttribute="top" secondItem="Fr5-ST-Xi2" secondAttribute="top" id="Jot-Xp-Fg8"/>
+                <constraint firstItem="k02-2M-EMD" firstAttribute="leading" secondItem="Fr5-ST-Xi2" secondAttribute="leading" id="Y89-sN-nDp"/>
+                <constraint firstAttribute="bottom" secondItem="k02-2M-EMD" secondAttribute="bottom" id="yAt-Px-VG5"/>
+            </constraints>
+            <size key="customSize" width="192" height="199"/>
+            <point key="canvasLocation" x="450.72463768115944" y="212.36413043478262"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="Best Valorated" width="110" height="135"/>
+        <image name="Image Best Valorated" width="38" height="38"/>
         <namedColor name="HardColor">
             <color red="0.19607843137254902" green="0.26666666666666666" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

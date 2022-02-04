@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="eOS-ad-cKz">
             <objects>
-                <viewController id="QOh-bd-z95" sceneMemberID="viewController">
+                <viewController id="QOh-bd-z95" customClass="HomeViewController" customModule="Sport4All" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="se5-8l-CJz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ocH-f2-IL7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-348" y="230"/>
+            <point key="canvasLocation" x="-349" y="258"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="fzq-c3-zRf">
@@ -42,7 +42,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fuH-n6-Zit" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-335" y="887"/>
+            <point key="canvasLocation" x="-349" y="942"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Z9f-y3-8oK">
