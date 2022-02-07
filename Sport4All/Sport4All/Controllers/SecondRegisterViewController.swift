@@ -25,7 +25,7 @@ class SecondRegisterViewController: UIViewController, UINavigationControllerDele
 	@IBOutlet weak var nameTF: UITextField!
 	@IBOutlet weak var surnamesTF: UITextField!
 	@IBOutlet weak var registerButton: UIButton!
-	@IBOutlet weak var interfaceSegmented: CustomSegmentedControl! {
+	@IBOutlet weak var interfaceSegmented: CustomGenreSegmentedControl! {
 		didSet {
 			interfaceSegmented.setButtonTitles(buttonTitles: ["Mujer", "Hombre", "Otro"])
 			interfaceSegmented.selectorViewColor = .hardColor!

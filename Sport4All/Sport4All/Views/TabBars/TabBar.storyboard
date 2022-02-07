@@ -18,11 +18,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="eOS-ad-cKz">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ocH-f2-IL7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="QOh-bd-z95" sceneMemberID="viewController">
+                <viewController id="QOh-bd-z95" customClass="HomeViewController" customModule="Sport4All" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="se5-8l-CJz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,14 +45,6 @@
                                 <rect key="frame" x="0.0" y="117" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Z5Z-oE-dwE">
-                                <rect key="frame" x="22" y="195" width="370" height="32"/>
-                                <segments>
-                                    <segment title="Clubes"/>
-                                    <segment title="Partidos"/>
-                                </segments>
-                                <color key="selectedSegmentTintColor" name="SearchColor"/>
-                            </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mejor Valorados" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCy-be-K6u">
                                 <rect key="frame" x="22" y="249" width="119" height="21"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="17"/>
@@ -104,36 +95,46 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pe5-hc-JAQ" userLabel="Interface Segmented" customClass="CustomGenreSegmentedControl" customModule="Sport4All" customModuleProvider="target">
+                                <rect key="frame" x="22" y="183" width="370" height="35"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="yvj-Rl-fxe"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="o6R-2W-K6i"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="BRB-dQ-Tua" firstAttribute="centerX" secondItem="ifS-Gr-Cms" secondAttribute="centerX" id="05v-ye-cku"/>
-                            <constraint firstItem="mCy-be-K6u" firstAttribute="top" secondItem="Z5Z-oE-dwE" secondAttribute="bottom" constant="23" id="429-9w-Pbe"/>
                             <constraint firstItem="BRB-dQ-Tua" firstAttribute="leading" secondItem="o6R-2W-K6i" secondAttribute="leading" id="4Fm-eE-2Gt"/>
                             <constraint firstItem="BRB-dQ-Tua" firstAttribute="leading" secondItem="qrS-Wt-GFE" secondAttribute="leading" id="5DH-JL-as0"/>
+                            <constraint firstItem="pe5-hc-JAQ" firstAttribute="leading" secondItem="mCy-be-K6u" secondAttribute="leading" id="68c-c0-SXa"/>
                             <constraint firstItem="BRB-dQ-Tua" firstAttribute="leading" secondItem="amg-ie-YHA" secondAttribute="leading" id="6Lt-3n-uha"/>
-                            <constraint firstItem="Z5Z-oE-dwE" firstAttribute="top" secondItem="se5-8l-CJz" secondAttribute="top" constant="195" id="73A-RY-Lag"/>
+                            <constraint firstItem="pe5-hc-JAQ" firstAttribute="top" secondItem="qrS-Wt-GFE" secondAttribute="bottom" constant="15" id="CJK-cJ-o42"/>
                             <constraint firstItem="amg-ie-YHA" firstAttribute="centerX" secondItem="ifS-Gr-Cms" secondAttribute="centerX" id="G6Y-6W-b9J"/>
+                            <constraint firstItem="mCy-be-K6u" firstAttribute="top" secondItem="pe5-hc-JAQ" secondAttribute="bottom" constant="31" id="GfN-ho-8dd"/>
+                            <constraint firstItem="o6R-2W-K6i" firstAttribute="trailing" secondItem="pe5-hc-JAQ" secondAttribute="trailing" constant="22" id="LRZ-BN-Uql"/>
                             <constraint firstItem="BRB-dQ-Tua" firstAttribute="top" secondItem="amg-ie-YHA" secondAttribute="bottom" constant="7" id="N9A-jS-pcU"/>
-                            <constraint firstItem="Z5Z-oE-dwE" firstAttribute="leading" secondItem="mCy-be-K6u" secondAttribute="leading" id="QL0-gG-4R0"/>
                             <constraint firstItem="amg-ie-YHA" firstAttribute="top" secondItem="se5-8l-CJz" secondAttribute="top" constant="429" id="Rab-ta-73m"/>
                             <constraint firstItem="amg-ie-YHA" firstAttribute="top" secondItem="ifS-Gr-Cms" secondAttribute="bottom" constant="9" id="Rvk-0x-jWW"/>
                             <constraint firstItem="BRB-dQ-Tua" firstAttribute="trailing" secondItem="qrS-Wt-GFE" secondAttribute="trailing" id="XXP-uV-2Ht"/>
-                            <constraint firstItem="Z5Z-oE-dwE" firstAttribute="centerX" secondItem="ifS-Gr-Cms" secondAttribute="centerX" id="YL8-wk-QMj"/>
-                            <constraint firstItem="BRB-dQ-Tua" firstAttribute="centerX" secondItem="Z5Z-oE-dwE" secondAttribute="centerX" id="Yzl-0f-zkb"/>
-                            <constraint firstItem="Z5Z-oE-dwE" firstAttribute="leading" secondItem="o6R-2W-K6i" secondAttribute="leading" constant="22" id="fB0-3e-BVb"/>
                             <constraint firstItem="BRB-dQ-Tua" firstAttribute="centerX" secondItem="se5-8l-CJz" secondAttribute="centerX" id="hIj-v0-Tlt"/>
+                            <constraint firstItem="pe5-hc-JAQ" firstAttribute="leading" secondItem="o6R-2W-K6i" secondAttribute="leading" constant="22" id="ij7-sh-Iqp"/>
                             <constraint firstAttribute="bottomMargin" secondItem="BRB-dQ-Tua" secondAttribute="bottom" constant="-43" id="ksf-Eu-UAQ"/>
+                            <constraint firstItem="pe5-hc-JAQ" firstAttribute="top" secondItem="se5-8l-CJz" secondAttribute="top" constant="183" id="n8K-eK-zDE"/>
                             <constraint firstItem="BRB-dQ-Tua" firstAttribute="trailing" secondItem="amg-ie-YHA" secondAttribute="trailing" id="vuW-7g-v7S"/>
                             <constraint firstItem="ifS-Gr-Cms" firstAttribute="leading" secondItem="o6R-2W-K6i" secondAttribute="leading" constant="10" id="wSB-V0-CPD"/>
-                            <constraint firstItem="Z5Z-oE-dwE" firstAttribute="top" secondItem="qrS-Wt-GFE" secondAttribute="bottom" constant="27" id="xyd-EW-QBV"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="-1" title="" image="HomeLogo" selectedImage="HomeLogo" id="8y9-DF-9qg" userLabel="Home Tab Bar Item">
                         <color key="badgeColor" name="CorporativeColor"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="interfaceSegmented" destination="pe5-hc-JAQ" id="gMY-W4-o4K"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ocH-f2-IL7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-181.15942028985509" y="551.11607142857144"/>
         </scene>
@@ -207,9 +208,6 @@
         </namedColor>
         <namedColor name="HardColor">
             <color red="0.19607843137254902" green="0.26666666666666666" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="SearchColor">
-            <color red="0.53725490196078429" green="0.67450980392156867" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SoftBlue">
             <color red="0.91764705882352937" green="0.93333333333333335" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

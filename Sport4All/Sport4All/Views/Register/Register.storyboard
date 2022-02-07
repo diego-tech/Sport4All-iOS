@@ -242,7 +242,7 @@
                                                 <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MA9-7a-s89" customClass="CustomSegmentedControl" customModule="Sport4All" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MA9-7a-s89" customClass="CustomGenreSegmentedControl" customModule="Sport4All" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="22.5" width="374" height="35"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
