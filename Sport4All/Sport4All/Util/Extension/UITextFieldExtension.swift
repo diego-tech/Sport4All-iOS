@@ -43,6 +43,7 @@ extension UITextField {
 	func textStyles(keyboardType: UIKeyboardType) {
 		self.tintColor = .hardColor
 		self.keyboardType = keyboardType
+		self.autocorrectionType = .no
 	}
 	
 	// Ver y Ocultar la Contraseña
