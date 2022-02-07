@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		07AB1FCA27AA9599007771E3 /* BestRatedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB1FC827AA9599007771E3 /* BestRatedCollectionViewCell.swift */; };
 		07AB1FCB27AA9599007771E3 /* BestRatedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB1FC927AA9599007771E3 /* BestRatedCollectionViewCell.xib */; };
-		5E0D53A227AD5D5700978C62 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0D53A127AD5D5700978C62 /* HomeViewController.swift */; };
 		5E123C3B27A2F1E400CF14EE /* FirstRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E123C3A27A2F1E400CF14EE /* FirstRegisterViewController.swift */; };
 		5E123C3D27A2F1F000CF14EE /* SecondRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E123C3C27A2F1F000CF14EE /* SecondRegisterViewController.swift */; };
 		5E123C3F27A3082A00CF14EE /* CustomSegmentedControlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E123C3E27A3082A00CF14EE /* CustomSegmentedControlDelegate.swift */; };
@@ -48,7 +47,6 @@
 /* Begin PBXFileReference section */
 		07AB1FC827AA9599007771E3 /* BestRatedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestRatedCollectionViewCell.swift; sourceTree = "<group>"; };
 		07AB1FC927AA9599007771E3 /* BestRatedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestRatedCollectionViewCell.xib; sourceTree = "<group>"; };
-		5E0D53A127AD5D5700978C62 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5E123C3A27A2F1E400CF14EE /* FirstRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterViewController.swift; sourceTree = "<group>"; };
 		5E123C3C27A2F1F000CF14EE /* SecondRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegisterViewController.swift; sourceTree = "<group>"; };
 		5E123C3E27A3082A00CF14EE /* CustomSegmentedControlDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControlDelegate.swift; sourceTree = "<group>"; };
@@ -189,7 +187,6 @@
 				5E123C3C27A2F1F000CF14EE /* SecondRegisterViewController.swift */,
 				5E2FEE6827A442DA008B0AE1 /* RetrievePasswordViewController.swift */,
 				5E371D2A27A92A5E00446D73 /* TabBarController.swift */,
-				5E0D53A127AD5D5700978C62 /* HomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -401,7 +398,6 @@
 				5ECB28AE279F157C00583F67 /* UIButtonExtension.swift in Sources */,
 				5ECF53F3278C3AB8005F6D01 /* AuthViewController.swift in Sources */,
 				5E2FEE6927A442DA008B0AE1 /* RetrievePasswordViewController.swift in Sources */,
-				5E0D53A227AD5D5700978C62 /* HomeViewController.swift in Sources */,
 				5ECB28AC279F0F5200583F67 /* UITextFieldExtension.swift in Sources */,
 				5EA1A67327A7E7990096754C /* DbResponse.swift in Sources */,
 				5ECF53EF278C3AB8005F6D01 /* AppDelegate.swift in Sources */,
