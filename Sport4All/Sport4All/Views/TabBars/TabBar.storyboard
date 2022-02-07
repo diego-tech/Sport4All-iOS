@@ -5,26 +5,137 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Bold.otf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+        <array key="SF-Pro-Display-Medium.otf">
+            <string>SFProDisplay-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="eOS-ad-cKz">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ocH-f2-IL7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="QOh-bd-z95" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="se5-8l-CJz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Inicio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wJ-aA-ucF">
+                                <rect key="frame" x="20" y="80" width="54" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="22"/>
+                                <color key="textColor" name="CorporativeColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Go Map" translatesAutoresizingMaskIntoConstraints="NO" id="W86-po-hNW">
+                                <rect key="frame" x="319" y="77" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="jVV-x2-xwH">
+                                <rect key="frame" x="367" y="77" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="qrS-Wt-GFE">
+                                <rect key="frame" x="0.0" y="117" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Z5Z-oE-dwE">
+                                <rect key="frame" x="22" y="195" width="370" height="32"/>
+                                <segments>
+                                    <segment title="Clubes"/>
+                                    <segment title="Partidos"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" name="SearchColor"/>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mejor Valorados" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCy-be-K6u">
+                                <rect key="frame" x="22" y="249" width="119" height="21"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="17"/>
+                                <color key="textColor" name="HardColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ifS-Gr-Cms">
+                                <rect key="frame" x="10" y="278" width="394" height="142"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="142" id="Gc4-vb-9qO"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KSh-DF-JsC">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="lHx-o7-k2q" customClass="BestRatedCollectionViewCell" customModule="Sport4All" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="g2p-GM-6uk">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="amg-ie-YHA">
+                                <rect key="frame" x="0.0" y="429" width="414" height="2"/>
+                                <color key="backgroundColor" name="SoftBlue"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="BRB-dQ-Tua">
+                                <rect key="frame" x="0.0" y="438" width="414" height="418"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="418" id="ifp-Ni-8fK"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="OJh-9D-5Hw">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OJh-9D-5Hw" id="7w5-pK-h8P">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="o6R-2W-K6i"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BRB-dQ-Tua" firstAttribute="centerX" secondItem="ifS-Gr-Cms" secondAttribute="centerX" id="05v-ye-cku"/>
+                            <constraint firstItem="mCy-be-K6u" firstAttribute="top" secondItem="Z5Z-oE-dwE" secondAttribute="bottom" constant="23" id="429-9w-Pbe"/>
+                            <constraint firstItem="BRB-dQ-Tua" firstAttribute="leading" secondItem="o6R-2W-K6i" secondAttribute="leading" id="4Fm-eE-2Gt"/>
+                            <constraint firstItem="BRB-dQ-Tua" firstAttribute="leading" secondItem="qrS-Wt-GFE" secondAttribute="leading" id="5DH-JL-as0"/>
+                            <constraint firstItem="BRB-dQ-Tua" firstAttribute="leading" secondItem="amg-ie-YHA" secondAttribute="leading" id="6Lt-3n-uha"/>
+                            <constraint firstItem="Z5Z-oE-dwE" firstAttribute="top" secondItem="se5-8l-CJz" secondAttribute="top" constant="195" id="73A-RY-Lag"/>
+                            <constraint firstItem="amg-ie-YHA" firstAttribute="centerX" secondItem="ifS-Gr-Cms" secondAttribute="centerX" id="G6Y-6W-b9J"/>
+                            <constraint firstItem="BRB-dQ-Tua" firstAttribute="top" secondItem="amg-ie-YHA" secondAttribute="bottom" constant="7" id="N9A-jS-pcU"/>
+                            <constraint firstItem="Z5Z-oE-dwE" firstAttribute="leading" secondItem="mCy-be-K6u" secondAttribute="leading" id="QL0-gG-4R0"/>
+                            <constraint firstItem="amg-ie-YHA" firstAttribute="top" secondItem="se5-8l-CJz" secondAttribute="top" constant="429" id="Rab-ta-73m"/>
+                            <constraint firstItem="amg-ie-YHA" firstAttribute="top" secondItem="ifS-Gr-Cms" secondAttribute="bottom" constant="9" id="Rvk-0x-jWW"/>
+                            <constraint firstItem="BRB-dQ-Tua" firstAttribute="trailing" secondItem="qrS-Wt-GFE" secondAttribute="trailing" id="XXP-uV-2Ht"/>
+                            <constraint firstItem="Z5Z-oE-dwE" firstAttribute="centerX" secondItem="ifS-Gr-Cms" secondAttribute="centerX" id="YL8-wk-QMj"/>
+                            <constraint firstItem="BRB-dQ-Tua" firstAttribute="centerX" secondItem="Z5Z-oE-dwE" secondAttribute="centerX" id="Yzl-0f-zkb"/>
+                            <constraint firstItem="Z5Z-oE-dwE" firstAttribute="leading" secondItem="o6R-2W-K6i" secondAttribute="leading" constant="22" id="fB0-3e-BVb"/>
+                            <constraint firstItem="BRB-dQ-Tua" firstAttribute="centerX" secondItem="se5-8l-CJz" secondAttribute="centerX" id="hIj-v0-Tlt"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="BRB-dQ-Tua" secondAttribute="bottom" constant="-43" id="ksf-Eu-UAQ"/>
+                            <constraint firstItem="BRB-dQ-Tua" firstAttribute="trailing" secondItem="amg-ie-YHA" secondAttribute="trailing" id="vuW-7g-v7S"/>
+                            <constraint firstItem="ifS-Gr-Cms" firstAttribute="leading" secondItem="o6R-2W-K6i" secondAttribute="leading" constant="10" id="wSB-V0-CPD"/>
+                            <constraint firstItem="Z5Z-oE-dwE" firstAttribute="top" secondItem="qrS-Wt-GFE" secondAttribute="bottom" constant="27" id="xyd-EW-QBV"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="-1" title="" image="HomeLogo" selectedImage="HomeLogo" id="8y9-DF-9qg" userLabel="Home Tab Bar Item">
                         <color key="badgeColor" name="CorporativeColor"/>
                     </tabBarItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ocH-f2-IL7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-349" y="258"/>
+            <point key="canvasLocation" x="-181.15942028985509" y="551.11607142857144"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="fzq-c3-zRf">
@@ -42,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fuH-n6-Zit" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-349" y="942"/>
+            <point key="canvasLocation" x="-1465" y="1015"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Z9f-y3-8oK">
@@ -60,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xLF-3S-CvM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-348" y="-379"/>
+            <point key="canvasLocation" x="-181" y="-382"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="BB5-hN-sAE">
@@ -83,14 +194,28 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Go Map" width="30" height="30"/>
         <image name="HomeLogo" width="34" height="34.5"/>
         <image name="ProfileActive" width="34" height="36"/>
         <image name="SocialActive" width="40" height="36"/>
+        <image name="Star" width="34" height="30"/>
         <namedColor name="BackgroundColor">
             <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="CorporativeColor">
             <color red="0.20000000000000001" green="0.36862745098039218" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="HardColor">
+            <color red="0.19607843137254902" green="0.26666666666666666" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SearchColor">
+            <color red="0.53725490196078429" green="0.67450980392156867" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SoftBlue">
+            <color red="0.91764705882352937" green="0.93333333333333335" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
