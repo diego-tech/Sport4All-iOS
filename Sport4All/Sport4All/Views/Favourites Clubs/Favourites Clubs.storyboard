@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Bold.otf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TX2-0a-24d" userLabel="GoBackButton">
+                                <rect key="frame" x="12" y="60" width="56" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TX2-0a-24d" secondAttribute="height" multiplier="56:61" id="7By-oB-fvC"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="ArrowBackMain"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CLUBES FAVORITOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5e-Ml-HOB">
+                                <rect key="frame" x="113" y="78" width="188" height="24"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="20"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.36862745098039218" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kWf-bA-h0k">
+                                <rect key="frame" x="0.0" y="163" width="414" height="659"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kWf-bA-h0k" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="89N-8u-gW2"/>
+                            <constraint firstItem="f5e-Ml-HOB" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="34" id="HRh-E7-y7j"/>
+                            <constraint firstItem="kWf-bA-h0k" firstAttribute="top" secondItem="TX2-0a-24d" secondAttribute="bottom" constant="42" id="HfS-Cj-RwJ"/>
+                            <constraint firstItem="kWf-bA-h0k" firstAttribute="top" secondItem="f5e-Ml-HOB" secondAttribute="bottom" constant="61" id="Mgq-4i-4Ni"/>
+                            <constraint firstItem="kWf-bA-h0k" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="N2P-n2-DF7"/>
+                            <constraint firstItem="f5e-Ml-HOB" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="cSY-jg-YZN"/>
+                            <constraint firstItem="TX2-0a-24d" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="ebG-Qp-C4A"/>
+                            <constraint firstItem="TX2-0a-24d" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="12" id="muE-Mj-oGO"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="kWf-bA-h0k" secondAttribute="bottom" constant="40" id="z74-KP-YGi"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="97.767857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ArrowBackMain" width="32" height="30"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
