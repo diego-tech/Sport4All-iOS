@@ -27,16 +27,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Inicio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wJ-aA-ucF">
-                                <rect key="frame" x="20" y="80" width="54" height="26"/>
+                                <rect key="frame" x="22" y="80" width="54" height="26"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="22"/>
                                 <color key="textColor" name="CorporativeColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Go Map" translatesAutoresizingMaskIntoConstraints="NO" id="W86-po-hNW">
-                                <rect key="frame" x="304" y="77" width="30" height="30"/>
+                                <rect key="frame" x="310" y="80" width="30" height="30"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="jVV-x2-xwH">
-                                <rect key="frame" x="352" y="77" width="34" height="30"/>
+                                <rect key="frame" x="358" y="80" width="34" height="30"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pe5-hc-JAQ" userLabel="Interface Segmented" customClass="CustomGenreSegmentedControl" customModule="Sport4All" customModuleProvider="target">
                                 <rect key="frame" x="22" y="188" width="370" height="35"/>
@@ -66,18 +66,20 @@
                         <constraints>
                             <constraint firstItem="d1u-QF-wz9" firstAttribute="top" secondItem="se5-8l-CJz" secondAttribute="top" constant="246" id="3lP-TX-PvW"/>
                             <constraint firstItem="pe5-hc-JAQ" firstAttribute="top" secondItem="Iq7-L6-5bP" secondAttribute="bottom" constant="20" id="8HU-H0-Wmd"/>
-                            <constraint firstItem="9wJ-aA-ucF" firstAttribute="leading" secondItem="o6R-2W-K6i" secondAttribute="leading" constant="20" id="Dcs-WS-7HD"/>
+                            <constraint firstItem="9wJ-aA-ucF" firstAttribute="leading" secondItem="o6R-2W-K6i" secondAttribute="leading" constant="22" id="Dcs-WS-7HD"/>
                             <constraint firstItem="d1u-QF-wz9" firstAttribute="centerX" secondItem="pe5-hc-JAQ" secondAttribute="centerX" id="F9T-1l-OZY"/>
+                            <constraint firstItem="Iq7-L6-5bP" firstAttribute="top" secondItem="W86-po-hNW" secondAttribute="bottom" constant="23" id="HM2-DF-Rz6"/>
                             <constraint firstItem="Iq7-L6-5bP" firstAttribute="leading" secondItem="o6R-2W-K6i" secondAttribute="leading" constant="22" id="KGU-R4-5i4"/>
-                            <constraint firstItem="o6R-2W-K6i" firstAttribute="trailing" secondItem="jVV-x2-xwH" secondAttribute="trailing" constant="28" id="MDX-Dl-F3S"/>
+                            <constraint firstItem="Iq7-L6-5bP" firstAttribute="top" secondItem="jVV-x2-xwH" secondAttribute="bottom" constant="23" id="LFi-GO-wZK"/>
+                            <constraint firstItem="o6R-2W-K6i" firstAttribute="trailing" secondItem="jVV-x2-xwH" secondAttribute="trailing" constant="22" id="MDX-Dl-F3S"/>
                             <constraint firstItem="d1u-QF-wz9" firstAttribute="leading" secondItem="o6R-2W-K6i" secondAttribute="leading" id="Qkb-dZ-Bxp"/>
                             <constraint firstAttribute="bottomMargin" secondItem="d1u-QF-wz9" secondAttribute="bottom" constant="-83" id="Qtx-4g-AQ6"/>
                             <constraint firstItem="o6R-2W-K6i" firstAttribute="trailing" secondItem="Iq7-L6-5bP" secondAttribute="trailing" constant="22" id="VcR-hV-Zcu"/>
                             <constraint firstItem="9wJ-aA-ucF" firstAttribute="top" secondItem="o6R-2W-K6i" secondAttribute="top" constant="36" id="X77-CE-Lif"/>
-                            <constraint firstItem="W86-po-hNW" firstAttribute="top" secondItem="o6R-2W-K6i" secondAttribute="top" constant="33" id="aya-Ze-5bh"/>
+                            <constraint firstItem="W86-po-hNW" firstAttribute="top" secondItem="o6R-2W-K6i" secondAttribute="top" constant="36" id="aya-Ze-5bh"/>
                             <constraint firstItem="Iq7-L6-5bP" firstAttribute="top" secondItem="9wJ-aA-ucF" secondAttribute="bottom" constant="27" id="g8t-GV-fed"/>
                             <constraint firstItem="o6R-2W-K6i" firstAttribute="trailing" secondItem="pe5-hc-JAQ" secondAttribute="trailing" constant="22" id="jap-Jf-tLI"/>
-                            <constraint firstItem="jVV-x2-xwH" firstAttribute="top" secondItem="o6R-2W-K6i" secondAttribute="top" constant="33" id="r8Z-qu-Z0F"/>
+                            <constraint firstItem="jVV-x2-xwH" firstAttribute="top" secondItem="o6R-2W-K6i" secondAttribute="top" constant="36" id="r8Z-qu-Z0F"/>
                             <constraint firstItem="pe5-hc-JAQ" firstAttribute="leading" secondItem="o6R-2W-K6i" secondAttribute="leading" constant="22" id="rW8-Er-jlx"/>
                             <constraint firstItem="jVV-x2-xwH" firstAttribute="leading" secondItem="W86-po-hNW" secondAttribute="trailing" constant="18" id="rzb-nC-yLt"/>
                             <constraint firstItem="d1u-QF-wz9" firstAttribute="top" secondItem="pe5-hc-JAQ" secondAttribute="bottom" constant="23" id="xKM-cC-hkj"/>
