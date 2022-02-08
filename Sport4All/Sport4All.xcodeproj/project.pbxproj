@@ -11,14 +11,13 @@
 		07AB1FCB27AA9599007771E3 /* BestRatedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB1FC927AA9599007771E3 /* BestRatedCollectionViewCell.xib */; };
 		5E123C3B27A2F1E400CF14EE /* FirstRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E123C3A27A2F1E400CF14EE /* FirstRegisterViewController.swift */; };
 		5E123C3D27A2F1F000CF14EE /* SecondRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E123C3C27A2F1F000CF14EE /* SecondRegisterViewController.swift */; };
-		5E123C3F27A3082A00CF14EE /* CustomGenreSegmentedControlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E123C3E27A3082A00CF14EE /* CustomGenreSegmentedControlDelegate.swift */; };
 		5E197F01278D7E6F008BBABB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E197F00278D7E6F008BBABB /* Constants.swift */; };
 		5E197F03278D80D4008BBABB /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E197F02278D80D4008BBABB /* ColorExtension.swift */; };
 		5E2FEE6727A43E3E008B0AE1 /* RetrievePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E2FEE6627A43E3E008B0AE1 /* RetrievePassword.storyboard */; };
 		5E2FEE6927A442DA008B0AE1 /* RetrievePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2FEE6827A442DA008B0AE1 /* RetrievePasswordViewController.swift */; };
 		5E371D2927A925F900446D73 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E371D2827A925F900446D73 /* TabBar.storyboard */; };
 		5E371D2B27A92A5E00446D73 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E371D2A27A92A5E00446D73 /* TabBarController.swift */; };
-		5E77E9BD27B12835004195AE /* CustomHomeSegmentedControlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E77E9BC27B12835004195AE /* CustomHomeSegmentedControlDelegate.swift */; };
+		5E7653CE27B2E802000D0A6D /* UISegmentedControlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7653CD27B2E802000D0A6D /* UISegmentedControlExtension.swift */; };
 		5E77E9BF27B1368E004195AE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E77E9BE27B1368E004195AE /* HomeViewController.swift */; };
 		5E9C14C22790358F002D9AF1 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C14BD2790358F002D9AF1 /* SF-Pro-Display-Semibold.otf */; };
 		5E9C14C32790358F002D9AF1 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C14BE2790358F002D9AF1 /* SF-Pro-Display-Regular.otf */; };
@@ -26,6 +25,8 @@
 		5E9C14C52790358F002D9AF1 /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C14C02790358F002D9AF1 /* SF-Pro.ttf */; };
 		5E9C14C62790358F002D9AF1 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C14C12790358F002D9AF1 /* SF-Pro-Display-Bold.otf */; };
 		5E9C14CA279038D0002D9AF1 /* TextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9C14C9279038D0002D9AF1 /* TextStyles.swift */; };
+		5E9E821027B283D700A450E8 /* HomeClubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9E820F27B283D700A450E8 /* HomeClubsViewController.swift */; };
+		5E9E821227B283E200A450E8 /* HomeMatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9E821127B283E200A450E8 /* HomeMatchesViewController.swift */; };
 		5EA1A66C27A7D43C0096754C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5EA1A66B27A7D43C0096754C /* Alamofire */; };
 		5EA1A66F27A7E5D60096754C /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA1A66E27A7E5D60096754C /* NewUser.swift */; };
 		5EA1A67127A7E6970096754C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA1A67027A7E6970096754C /* Data.swift */; };
@@ -52,14 +53,13 @@
 		07AB1FC927AA9599007771E3 /* BestRatedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestRatedCollectionViewCell.xib; sourceTree = "<group>"; };
 		5E123C3A27A2F1E400CF14EE /* FirstRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterViewController.swift; sourceTree = "<group>"; };
 		5E123C3C27A2F1F000CF14EE /* SecondRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegisterViewController.swift; sourceTree = "<group>"; };
-		5E123C3E27A3082A00CF14EE /* CustomGenreSegmentedControlDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGenreSegmentedControlDelegate.swift; sourceTree = "<group>"; };
 		5E197F00278D7E6F008BBABB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5E197F02278D80D4008BBABB /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		5E2FEE6627A43E3E008B0AE1 /* RetrievePassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RetrievePassword.storyboard; sourceTree = "<group>"; };
 		5E2FEE6827A442DA008B0AE1 /* RetrievePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrievePasswordViewController.swift; sourceTree = "<group>"; };
 		5E371D2827A925F900446D73 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		5E371D2A27A92A5E00446D73 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		5E77E9BC27B12835004195AE /* CustomHomeSegmentedControlDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHomeSegmentedControlDelegate.swift; sourceTree = "<group>"; };
+		5E7653CD27B2E802000D0A6D /* UISegmentedControlExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentedControlExtension.swift; sourceTree = "<group>"; };
 		5E77E9BE27B1368E004195AE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5E9C14BD2790358F002D9AF1 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		5E9C14BE2790358F002D9AF1 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
@@ -67,6 +67,8 @@
 		5E9C14C02790358F002D9AF1 /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
 		5E9C14C12790358F002D9AF1 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		5E9C14C9279038D0002D9AF1 /* TextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyles.swift; sourceTree = "<group>"; };
+		5E9E820F27B283D700A450E8 /* HomeClubsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeClubsViewController.swift; sourceTree = "<group>"; };
+		5E9E821127B283E200A450E8 /* HomeMatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMatchesViewController.swift; sourceTree = "<group>"; };
 		5EA1A66E27A7E5D60096754C /* NewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
 		5EA1A67027A7E6970096754C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		5EA1A67227A7E7990096754C /* DbResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbResponse.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				5ECB28AB279F0F5200583F67 /* UITextFieldExtension.swift */,
 				5ECB28AD279F157C00583F67 /* UIButtonExtension.swift */,
 				5EC7D59A27B13FCC0085F512 /* UISearchBar.swift */,
+				5E7653CD27B2E802000D0A6D /* UISegmentedControlExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -166,7 +169,6 @@
 			children = (
 				5EF360F527AA9B2B00105AB7 /* CellsView */,
 				5E371D2727A925D900446D73 /* TabBars */,
-				5EA1A66D27A7E26E0096754C /* CustomViews */,
 				5E2FEE6527A43E0F008B0AE1 /* RetrievePassword */,
 				5EFC3CA7279DC09400720905 /* Register */,
 				5E75E4C927999412005B89A3 /* Main */,
@@ -189,12 +191,12 @@
 		5E75E4C6279993E5005B89A3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5E9E820E27B283C700A450E8 /* HomeControllers */,
 				5ECF53F2278C3AB8005F6D01 /* AuthViewController.swift */,
 				5E123C3A27A2F1E400CF14EE /* FirstRegisterViewController.swift */,
 				5E123C3C27A2F1F000CF14EE /* SecondRegisterViewController.swift */,
 				5E2FEE6827A442DA008B0AE1 /* RetrievePasswordViewController.swift */,
 				5E371D2A27A92A5E00446D73 /* TabBarController.swift */,
-				5E77E9BE27B1368E004195AE /* HomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -225,13 +227,14 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		5EA1A66D27A7E26E0096754C /* CustomViews */ = {
+		5E9E820E27B283C700A450E8 /* HomeControllers */ = {
 			isa = PBXGroup;
 			children = (
-				5E123C3E27A3082A00CF14EE /* CustomGenreSegmentedControlDelegate.swift */,
-				5E77E9BC27B12835004195AE /* CustomHomeSegmentedControlDelegate.swift */,
+				5E77E9BE27B1368E004195AE /* HomeViewController.swift */,
+				5E9E820F27B283D700A450E8 /* HomeClubsViewController.swift */,
+				5E9E821127B283E200A450E8 /* HomeMatchesViewController.swift */,
 			);
-			path = CustomViews;
+			path = HomeControllers;
 			sourceTree = "<group>";
 		};
 		5EA50EDB27AD2B6600641F2D /* AuxFunctions */ = {
@@ -403,6 +406,7 @@
 			files = (
 				5EA50EDD27AD2B7900641F2D /* AuxFunctions.swift in Sources */,
 				5E9C14CA279038D0002D9AF1 /* TextStyles.swift in Sources */,
+				5E7653CE27B2E802000D0A6D /* UISegmentedControlExtension.swift in Sources */,
 				5EA1A66F27A7E5D60096754C /* NewUser.swift in Sources */,
 				5ECB28AE279F157C00583F67 /* UIButtonExtension.swift in Sources */,
 				5ECF53F3278C3AB8005F6D01 /* AuthViewController.swift in Sources */,
@@ -410,6 +414,7 @@
 				5ECB28AC279F0F5200583F67 /* UITextFieldExtension.swift in Sources */,
 				5EA1A67327A7E7990096754C /* DbResponse.swift in Sources */,
 				5ECF53EF278C3AB8005F6D01 /* AppDelegate.swift in Sources */,
+				5E9E821227B283E200A450E8 /* HomeMatchesViewController.swift in Sources */,
 				5E371D2B27A92A5E00446D73 /* TabBarController.swift in Sources */,
 				5E123C3B27A2F1E400CF14EE /* FirstRegisterViewController.swift in Sources */,
 				5E77E9BF27B1368E004195AE /* HomeViewController.swift in Sources */,
@@ -417,9 +422,8 @@
 				5EF497A827A55858008B0C37 /* NetworkingProvider.swift in Sources */,
 				5EC7D59B27B13FCC0085F512 /* UISearchBar.swift in Sources */,
 				5EF497A327A5570F008B0C37 /* DateDecoder.swift in Sources */,
-				5E123C3F27A3082A00CF14EE /* CustomGenreSegmentedControlDelegate.swift in Sources */,
 				5E197F01278D7E6F008BBABB /* Constants.swift in Sources */,
-				5E77E9BD27B12835004195AE /* CustomHomeSegmentedControlDelegate.swift in Sources */,
+				5E9E821027B283D700A450E8 /* HomeClubsViewController.swift in Sources */,
 				5EA1A67127A7E6970096754C /* Data.swift in Sources */,
 				5EF497A627A55794008B0C37 /* UserDefaultsProvider.swift in Sources */,
 				5E197F03278D80D4008BBABB /* ColorExtension.swift in Sources */,

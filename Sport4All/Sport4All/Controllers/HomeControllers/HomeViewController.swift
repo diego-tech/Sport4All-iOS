@@ -9,20 +9,21 @@ import UIKit
 
 class HomeViewController: UIViewController {
 	
+	// Variables
+
+
 	// Outlets
 	@IBOutlet weak var searchBar: UITextField!
-	@IBOutlet weak var interfaceSegmented: CustomHomeSegmentedControl! {
-		didSet {
-			interfaceSegmented.setButtonTitles(buttonTitles: ["Clubes", "Partidos"])
-			interfaceSegmented.selectorViewColor = .hardColor!
-			interfaceSegmented.selectorTextColor = .hardColor!
-			interfaceSegmented.backgroundColor = .clear
-		}
-	}
+	@IBOutlet weak var segmentedControl: UISegmentedControl!
+	
+	@IBOutlet weak var firstVC: UIView!
+	@IBOutlet weak var secondVC: UIView!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
+		
+		// MARK: REFACTOR TO EXTENSION
 		
 		let bottomLine = UIView()
 		
@@ -51,5 +52,32 @@ class HomeViewController: UIViewController {
 		image.frame = CGRect(x: -2.0, y: 0.0, width: searchUImage!.size.width, height: searchUImage!.size.height)
 		searchBar.leftView = contentView
 		searchBar.leftViewMode = .always
+		
+		
+		// Segmented Control
+		segmentedControl.addUnderlineForSelectedSegment()
 	}
+	
+	// MARK: Action Functions
+	@IBAction func segmentedControlAction(_ sender: Any) {
+		segmentedControl.changeUnderlinePosition()
+		
+		firstVC.isHidden = true
+		secondVC.isHidden = true
+		
+		if segmentedControl.selectedSegmentIndex == 0 {
+			// Show Home Clubs View Controller
+			firstVC.isHidden = false
+			secondVC.isHidden = true
+		} else if segmentedControl.selectedSegmentIndex == 1{
+			// Show Home Matches View Controller
+			secondVC.isHidden = false
+			firstVC.isHidden = true
+		}
+	}
+	
+	// MARK: Functions
+	
+	// MARK: Styles
+
 }

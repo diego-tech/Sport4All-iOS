@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -169,7 +168,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="Mt8-8i-Ffg">
-                                <rect key="frame" x="20" y="267" width="374" height="363"/>
+                                <rect key="frame" x="20" y="267" width="374" height="359"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-25" translatesAutoresizingMaskIntoConstraints="NO" id="HDO-Yy-02Y" userLabel="Image Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="135.5"/>
@@ -233,7 +232,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RjK-r3-ZWW" userLabel="Genre Stack View">
-                                        <rect key="frame" x="0.0" y="305.5" width="374" height="57.5"/>
+                                        <rect key="frame" x="0.0" y="305.5" width="374" height="53.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Género *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bhd-aQ-ew3">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="14.5"/>
@@ -242,19 +241,20 @@
                                                 <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MA9-7a-s89" customClass="CustomGenreSegmentedControl" customModule="Sport4All" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="22.5" width="374" height="35"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="35" id="BBx-Hp-KXJ"/>
-                                                </constraints>
-                                            </view>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eEY-uI-4Na">
+                                                <rect key="frame" x="0.0" y="22.5" width="374" height="32"/>
+                                                <segments>
+                                                    <segment title="Mujer"/>
+                                                    <segment title="Hombre"/>
+                                                    <segment title="Otro"/>
+                                                </segments>
+                                            </segmentedControl>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZ6-OK-OHS">
-                                <rect key="frame" x="76" y="660" width="262" height="50"/>
+                                <rect key="frame" x="76" y="656" width="262" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Elj-my-qG7"/>
                                 </constraints>
@@ -297,7 +297,7 @@
                     </view>
                     <connections>
                         <outlet property="avatarButton" destination="r72-CY-G2J" id="KTH-b6-C81"/>
-                        <outlet property="interfaceSegmented" destination="MA9-7a-s89" id="E43-FJ-NVj"/>
+                        <outlet property="genreSegmentedControl" destination="eEY-uI-4Na" id="aUy-pr-IvD"/>
                         <outlet property="nameTF" destination="Xex-fo-VcP" id="tub-i6-8pR"/>
                         <outlet property="plusRoundedButton" destination="k3L-O2-Diw" id="RVA-4H-ANf"/>
                         <outlet property="registerButton" destination="KZ6-OK-OHS" id="zUH-RG-TlK"/>
@@ -323,8 +323,5 @@
         <namedColor name="HardColor">
             <color red="0.19607843137254902" green="0.26666666666666666" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

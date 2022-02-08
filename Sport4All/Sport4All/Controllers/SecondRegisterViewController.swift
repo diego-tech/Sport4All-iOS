@@ -25,14 +25,7 @@ class SecondRegisterViewController: UIViewController, UINavigationControllerDele
 	@IBOutlet weak var nameTF: UITextField!
 	@IBOutlet weak var surnamesTF: UITextField!
 	@IBOutlet weak var registerButton: UIButton!
-	@IBOutlet weak var interfaceSegmented: CustomGenreSegmentedControl! {
-		didSet {
-			interfaceSegmented.setButtonTitles(buttonTitles: ["Mujer", "Hombre", "Otro"])
-			interfaceSegmented.selectorViewColor = .hardColor!
-			interfaceSegmented.selectorTextColor = .hardColor!
-			interfaceSegmented.backgroundColor = .clear
-		}
-	}
+	@IBOutlet weak var genreSegmentedControl: UISegmentedControl!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -41,6 +34,7 @@ class SecondRegisterViewController: UIViewController, UINavigationControllerDele
 		// Inicialización Estilos
 		setTextFieldStyles()
 		setButtonStyles()
+		genreSegmentedControl.addUnderlineForSelectedSegment()
 	}
 	
 	
@@ -51,7 +45,6 @@ class SecondRegisterViewController: UIViewController, UINavigationControllerDele
 	
 	@IBAction func registerButtonAction(_ sender: UIButton) {
 		registerApi()
-		print(interfaceSegmented.selectedIndex)
 	}
 	
 	@IBAction func uploadImage(_ sender: UIButton) {
@@ -75,19 +68,19 @@ class SecondRegisterViewController: UIViewController, UINavigationControllerDele
 		if nameTF.text != "" {
 			userName = nameTF.text!
 		}
-		
+
 		if surnamesTF.text != "" {
 			userSurname = surnamesTF.text!
 		}
-		
-		if interfaceSegmented.selectedIndex == 0 {
+
+		if genreSegmentedControl.selectedSegmentIndex == 0 {
 			userGenre = "Mujer"
-		} else if interfaceSegmented.selectedIndex == 1 {
+		} else if genreSegmentedControl.selectedSegmentIndex == 1 {
 			userGenre = "Hombre"
-		} else if interfaceSegmented.selectedIndex == 2 {
+		} else if genreSegmentedControl.selectedSegmentIndex == 2 {
 			userGenre = "Otro"
 		}
-		
+
 		return NewUser(email: registerUserEmail, password: registerUserPassoword, genre: userGenre, name: userName, surname: userSurname, image: imageUrl)
 	}
 	
