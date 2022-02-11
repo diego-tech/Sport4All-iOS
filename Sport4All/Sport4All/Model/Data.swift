@@ -16,9 +16,9 @@ struct Data: Decodable {
 	let genre: String?
 	let updatedAt: Date?
 	let createdAt: Date?
-	
+		
 	// Validator Errors
-//	let errors: [String]?
+	let errors: String?
 	
 	// User Token
 	let token: String?
@@ -30,7 +30,7 @@ struct Data: Decodable {
 		case image
 		case email
 		case genre
-//		case errors
+		case errors
 		case updatedAt = "updated_at"
 		case createdAt = "created_at"
 		case token

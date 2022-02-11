@@ -72,7 +72,7 @@ class AuthViewController: UIViewController {
 					self.message = msg
 				}
 				
-				if self.checkStatusCode(statusCode: statusCode) {
+				if AuxFunctions.checkStatusCode(statusCode: statusCode) {
 					if let authUserToken = responseData?.token {
 						UserDefaultsProvider.setUserDefaults(key: .authUserToken, value: authUserToken)
 					}
@@ -88,17 +88,7 @@ class AuthViewController: UIViewController {
 			}
 		}
 	}
-	
-	private func checkStatusCode(statusCode: Int?) -> Bool {
-		if statusCode == 0 {
-			return false
-		} else if (statusCode == 1) {
-			return true
-		} else {
-			return false
-		}
-	}
-	
+		
 	private func getTextFieldValues() -> UserLogin {
 		if let email = emailTextField.text, let password = passwordTextField.text {
 			userEmail = email

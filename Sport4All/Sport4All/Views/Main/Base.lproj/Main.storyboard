@@ -19,7 +19,7 @@
         <!--Auth View Controller-->
         <scene sceneID="mBz-4k-rN5">
             <objects>
-                <viewController storyboardIdentifier="Login" id="7gE-w9-wFv" customClass="AuthViewController" customModule="Sport4All" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" modalPresentationStyle="fullScreen" id="7gE-w9-wFv" customClass="AuthViewController" customModule="Sport4All" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y8g-dp-gMx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

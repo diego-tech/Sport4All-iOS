@@ -19,7 +19,6 @@ struct Response: Decodable {
 	}
 }
 
-
 struct ListResponse: Decodable {
 	let status: Int?
 	let data: [Data]?
