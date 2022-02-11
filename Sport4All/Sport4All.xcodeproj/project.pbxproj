@@ -14,6 +14,8 @@
 		5999B68527B285640008BE6B /* ClubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5999B68327B285640008BE6B /* ClubTableViewCell.xib */; };
 		5E123C3B27A2F1E400CF14EE /* FirstRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E123C3A27A2F1E400CF14EE /* FirstRegisterViewController.swift */; };
 		5E123C3D27A2F1F000CF14EE /* SecondRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E123C3C27A2F1F000CF14EE /* SecondRegisterViewController.swift */; };
+		5E12C4B327B6582200F4E7EA /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E12C4B227B6582200F4E7EA /* Profile.storyboard */; };
+		5E12C4B527B6583300F4E7EA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E12C4B427B6583300F4E7EA /* ProfileViewController.swift */; };
 		5E197F01278D7E6F008BBABB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E197F00278D7E6F008BBABB /* Constants.swift */; };
 		5E197F03278D80D4008BBABB /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E197F02278D80D4008BBABB /* ColorExtension.swift */; };
 		5E2FEE6727A43E3E008B0AE1 /* RetrievePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E2FEE6627A43E3E008B0AE1 /* RetrievePassword.storyboard */; };
@@ -59,6 +61,8 @@
 		5999B68327B285640008BE6B /* ClubTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClubTableViewCell.xib; sourceTree = "<group>"; };
 		5E123C3A27A2F1E400CF14EE /* FirstRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterViewController.swift; sourceTree = "<group>"; };
 		5E123C3C27A2F1F000CF14EE /* SecondRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegisterViewController.swift; sourceTree = "<group>"; };
+		5E12C4B227B6582200F4E7EA /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		5E12C4B427B6583300F4E7EA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5E197F00278D7E6F008BBABB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5E197F02278D80D4008BBABB /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		5E2FEE6627A43E3E008B0AE1 /* RetrievePassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RetrievePassword.storyboard; sourceTree = "<group>"; };
@@ -126,6 +130,14 @@
 			path = ClubCell;
 			sourceTree = "<group>";
 		};
+		5E12C4B627B6583B00F4E7EA /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				5E12C4B227B6582200F4E7EA /* Profile.storyboard */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		5E197EF9278D7DA3008BBABB /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +202,7 @@
 		5E75E4C4279993CD005B89A3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5E12C4B627B6583B00F4E7EA /* Profile */,
 				5999B67E27B2803E0008BE6B /* FavouritesClubs */,
 				5EF360F527AA9B2B00105AB7 /* CellsView */,
 				5E371D2727A925D900446D73 /* TabBars */,
@@ -221,6 +234,7 @@
 				5E123C3C27A2F1F000CF14EE /* SecondRegisterViewController.swift */,
 				5E2FEE6827A442DA008B0AE1 /* RetrievePasswordViewController.swift */,
 				5E371D2A27A92A5E00446D73 /* TabBarController.swift */,
+				5E12C4B427B6583300F4E7EA /* ProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -419,6 +433,7 @@
 				5999B68027B2805B0008BE6B /* FavouritesClubs.storyboard in Resources */,
 				5EFC3CA9279DC0A100720905 /* Register.storyboard in Resources */,
 				5E9C14C32790358F002D9AF1 /* SF-Pro-Display-Regular.otf in Resources */,
+				5E12C4B327B6582200F4E7EA /* Profile.storyboard in Resources */,
 				5E9C14C62790358F002D9AF1 /* SF-Pro-Display-Bold.otf in Resources */,
 				5ECF53F6278C3AB8005F6D01 /* Main.storyboard in Resources */,
 			);
@@ -449,6 +464,7 @@
 				5EF497A827A55858008B0C37 /* NetworkingProvider.swift in Sources */,
 				5EC7D59B27B13FCC0085F512 /* UISearchBar.swift in Sources */,
 				5EF497A327A5570F008B0C37 /* DateDecoder.swift in Sources */,
+				5E12C4B527B6583300F4E7EA /* ProfileViewController.swift in Sources */,
 				5E197F01278D7E6F008BBABB /* Constants.swift in Sources */,
 				5E9E821027B283D700A450E8 /* HomeClubsViewController.swift in Sources */,
 				5EA1A67127A7E6970096754C /* Data.swift in Sources */,
