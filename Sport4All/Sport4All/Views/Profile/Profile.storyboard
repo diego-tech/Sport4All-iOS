@@ -28,70 +28,110 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jcj-HX-Scm">
-                                <rect key="frame" x="143" y="126" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PERFIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vp3-X3-uU8">
-                                <rect key="frame" x="20" y="78" width="71" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PERFIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vp3-X3-uU8">
+                                <rect key="frame" x="20" y="78" width="71" height="26.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="71" id="4lK-xc-KkG"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="22"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.36862745099999999" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rodrigo Díaz de Vivar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bnp-cg-UIY">
-                                <rect key="frame" x="121" y="262" width="173" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jqy-FB-yJx">
+                                <rect key="frame" x="353" y="69" width="56" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="QsB-k8-Glf"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="HamburguerIcon" title=""/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rodrigo Díaz de Vivar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bnp-cg-UIY">
+                                <rect key="frame" x="120.5" y="262" width="173" height="21.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="173" id="NV3-eA-Ji0"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="18"/>
                                 <color key="textColor" red="0.19607843137254902" green="0.26666666666666666" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jqy-FB-yJx">
-                                <rect key="frame" x="353" y="69" width="56" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="HamburguerIcon" title=""/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blc-GJ-QyD">
-                                <rect key="frame" x="6" y="303" width="175" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="RightArrowYourClub" imagePlacement="trailing" title="Eventos pendientes">
-                                    <fontDescription key="titleFontDescription" name="SFPro-Regular" family="SF Pro" pointSize="14"/>
-                                    <color key="baseForegroundColor" red="0.19607843137254902" green="0.26666666666666666" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
-                                </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72I-Ok-DAM">
-                                <rect key="frame" x="7" y="498" width="173" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="RightArrowYourClub" imagePlacement="trailing" title="Eventos finalizados">
-                                    <fontDescription key="titleFontDescription" name="SFPro-Regular" family="SF Pro" pointSize="14"/>
-                                    <color key="baseForegroundColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
-                                </buttonConfiguration>
-                            </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4vR-nY-t5F">
-                                <rect key="frame" x="7" y="349" width="402" height="141"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="BN5-UX-sM7">
-                                <rect key="frame" x="6" y="544" width="402" height="141"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mri-oy-dwk">
-                                <rect key="frame" x="7" y="715" width="133" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="RightArrowYourClub" imagePlacement="trailing" title="TU CLUB">
-                                    <fontDescription key="titleFontDescription" name="SFPro-Bold" family="SF Pro" pointSize="20"/>
-                                    <color key="baseForegroundColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
-                                </buttonConfiguration>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ldq-u5-eqa">
+                                <rect key="frame" x="0.0" y="303" width="414" height="501"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="84t-zu-XRY">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="501"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blc-GJ-QyD">
+                                                <rect key="frame" x="0.0" y="0.0" width="175" height="83.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="RightArrowYourClub" imagePlacement="trailing" title="Eventos pendientes">
+                                                    <fontDescription key="titleFontDescription" name="SFPro-Regular" family="SF Pro" pointSize="14"/>
+                                                    <color key="baseForegroundColor" red="0.19607843137254902" green="0.26666666666666666" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4vR-nY-t5F">
+                                                <rect key="frame" x="0.0" y="83.5" width="414" height="83.5"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </tableView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72I-Ok-DAM">
+                                                <rect key="frame" x="0.0" y="167" width="172.5" height="83.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="RightArrowYourClub" imagePlacement="trailing" title="Eventos finalizados">
+                                                    <fontDescription key="titleFontDescription" name="SFPro-Regular" family="SF Pro" pointSize="14"/>
+                                                    <color key="baseForegroundColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="BN5-UX-sM7">
+                                                <rect key="frame" x="0.0" y="250.5" width="414" height="83.5"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </tableView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mri-oy-dwk">
+                                                <rect key="frame" x="0.0" y="334" width="131.5" height="83.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="RightArrowYourClub" imagePlacement="trailing" title="TU CLUB">
+                                                    <fontDescription key="titleFontDescription" name="SFPro-Semibold" family="SF Pro" pointSize="20"/>
+                                                    <color key="baseForegroundColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WCx-Ig-HQt">
+                                                <rect key="frame" x="0.0" y="417.5" width="414" height="83.5"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </tableView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="lrL-L7-fIy" firstAttribute="trailing" secondItem="84t-zu-XRY" secondAttribute="trailing" id="0SH-xp-F71"/>
+                                    <constraint firstAttribute="height" constant="501" id="7f3-SW-sTb"/>
+                                    <constraint firstItem="84t-zu-XRY" firstAttribute="leading" secondItem="lrL-L7-fIy" secondAttribute="leading" id="DCw-aS-TmM"/>
+                                    <constraint firstItem="84t-zu-XRY" firstAttribute="top" secondItem="lrL-L7-fIy" secondAttribute="top" id="cx3-9M-Lku"/>
+                                    <constraint firstItem="lrL-L7-fIy" firstAttribute="bottom" secondItem="84t-zu-XRY" secondAttribute="bottom" id="jIT-DK-HZ2"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="MMX-sr-dWM"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="lrL-L7-fIy"/>
+                            </scrollView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jcj-HX-Scm">
+                                <rect key="frame" x="143" y="126" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Jcj-HX-Scm" secondAttribute="height" multiplier="1:1" id="C8g-Hh-2FT"/>
+                                    <constraint firstAttribute="height" constant="128" id="j7a-zS-fPp"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ldq-u5-eqa" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="2Nh-ph-JLT"/>
+                            <constraint firstItem="Ldq-u5-eqa" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Awy-UP-WTg"/>
+                            <constraint firstItem="vp3-X3-uU8" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="-356.75" id="J5Y-CZ-Chz"/>
+                            <constraint firstItem="Jqy-FB-yJx" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="-357" id="MYR-Ri-Svr"/>
+                            <constraint firstItem="Ldq-u5-eqa" firstAttribute="top" secondItem="Bnp-cg-UIY" secondAttribute="bottom" constant="19.5" id="Ne8-ep-ZvM"/>
+                            <constraint firstItem="Bnp-cg-UIY" firstAttribute="top" secondItem="Jcj-HX-Scm" secondAttribute="bottom" constant="8" symbolic="YES" id="aLb-aW-2XM"/>
+                            <constraint firstItem="vp3-X3-uU8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="cec-ho-eug"/>
+                            <constraint firstItem="Bnp-cg-UIY" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="cgx-3w-Hkn"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Jqy-FB-yJx" secondAttribute="trailing" constant="5" id="dKz-od-JDw"/>
+                            <constraint firstItem="Jcj-HX-Scm" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="-258" id="dPY-17-BQI"/>
+                            <constraint firstItem="Jcj-HX-Scm" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="wsk-7Y-kDd"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
