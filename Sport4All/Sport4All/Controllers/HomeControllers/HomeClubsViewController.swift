@@ -9,9 +9,27 @@ import UIKit
 
 class HomeClubsViewController: UIViewController {
 
-    override func viewDidLoad() {
+	// Variables
+	
+	// Outlets
+	@IBOutlet weak var searchBar: UITextField!
+	
+	override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 		
+		view.backgroundColor = .systemYellow
+		// Custom Search Bar
+//		searchBar.bottomBorder(color: .hardColor ?? .black)
+//		searchBar.placeholderStyles(placeHolderText: "Búsqueda")
+//		searchBar.textStyles(keyboardType: .webSearch)
+		
+		searchBar.customSearch()
     }
+	
+	// MARK: Action Functions
+	
+	// MARK: Functions
+	
+	// MARK: Styles
 }

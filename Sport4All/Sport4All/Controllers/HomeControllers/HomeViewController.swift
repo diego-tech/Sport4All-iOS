@@ -13,7 +13,6 @@ class HomeViewController: UIViewController {
 
 
 	// Outlets
-	@IBOutlet weak var searchBar: UITextField!
 	@IBOutlet weak var segmentedControl: UISegmentedControl!
 	
 	@IBOutlet weak var firstVC: UIView!
@@ -23,8 +22,8 @@ class HomeViewController: UIViewController {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
 		
-		// Custom Search Bar
-		searchBar.customSearch()
+		// Set First View Controller
+		firstVC.isHidden = false
 		
 		// Segmented Control
 		segmentedControl.setUpView()
@@ -36,7 +35,7 @@ class HomeViewController: UIViewController {
 		
 		firstVC.isHidden = true
 		secondVC.isHidden = true
-		
+
 		if segmentedControl.selectedSegmentIndex == 0 {
 			// Show Home Clubs View Controller
 			firstVC.isHidden = false

@@ -53,6 +53,10 @@ class SecondRegisterViewController: UIViewController, UINavigationControllerDele
 		present(pickerController, animated: true, completion: nil)
 	}
 	
+	@IBAction func genreSegmentedControl(_ sender: UISegmentedControl) {
+		genreSegmentedControl.changeUnderlinePosition()
+	}
+	
 	// MARK: Functions
 	private func uploadImage() {
 		let url = "\(Constants.kBaseURL)/getUploadImage"
