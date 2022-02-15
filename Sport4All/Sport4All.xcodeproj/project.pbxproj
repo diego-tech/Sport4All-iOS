@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		07AB1FCA27AA9599007771E3 /* BestRatedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB1FC827AA9599007771E3 /* BestRatedCollectionViewCell.swift */; };
 		07AB1FCB27AA9599007771E3 /* BestRatedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB1FC927AA9599007771E3 /* BestRatedCollectionViewCell.xib */; };
+		5959268727BBABE100702369 /* ModifyPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5959268627BBABE100702369 /* ModifyPassword.storyboard */; };
 		5999B68027B2805B0008BE6B /* FavouritesClubs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5999B67F27B2805B0008BE6B /* FavouritesClubs.storyboard */; };
 		5999B68427B285640008BE6B /* ClubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999B68227B285640008BE6B /* ClubTableViewCell.swift */; };
 		5999B68527B285640008BE6B /* ClubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5999B68327B285640008BE6B /* ClubTableViewCell.xib */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		07AB1FC827AA9599007771E3 /* BestRatedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestRatedCollectionViewCell.swift; sourceTree = "<group>"; };
 		07AB1FC927AA9599007771E3 /* BestRatedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestRatedCollectionViewCell.xib; sourceTree = "<group>"; };
+		5959268627BBABE100702369 /* ModifyPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModifyPassword.storyboard; sourceTree = "<group>"; };
 		5999B67F27B2805B0008BE6B /* FavouritesClubs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavouritesClubs.storyboard; sourceTree = "<group>"; };
 		5999B68227B285640008BE6B /* ClubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubTableViewCell.swift; sourceTree = "<group>"; };
 		5999B68327B285640008BE6B /* ClubTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClubTableViewCell.xib; sourceTree = "<group>"; };
@@ -113,6 +115,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5959268527BBABB700702369 /* ModifyPassword */ = {
+			isa = PBXGroup;
+			children = (
+				5959268627BBABE100702369 /* ModifyPassword.storyboard */,
+			);
+			path = ModifyPassword;
+			sourceTree = "<group>";
+		};
 		5999B67E27B2803E0008BE6B /* FavouritesClubs */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +212,7 @@
 		5E75E4C4279993CD005B89A3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5959268527BBABB700702369 /* ModifyPassword */,
 				5E12C4B627B6583B00F4E7EA /* Profile */,
 				5999B67E27B2803E0008BE6B /* FavouritesClubs */,
 				5EF360F527AA9B2B00105AB7 /* CellsView */,
@@ -432,6 +443,7 @@
 				5ECF53F8278C3AB9005F6D01 /* Assets.xcassets in Resources */,
 				5999B68027B2805B0008BE6B /* FavouritesClubs.storyboard in Resources */,
 				5EFC3CA9279DC0A100720905 /* Register.storyboard in Resources */,
+				5959268727BBABE100702369 /* ModifyPassword.storyboard in Resources */,
 				5E9C14C32790358F002D9AF1 /* SF-Pro-Display-Regular.otf in Resources */,
 				5E12C4B327B6582200F4E7EA /* Profile.storyboard in Resources */,
 				5E9C14C62790358F002D9AF1 /* SF-Pro-Display-Bold.otf in Resources */,
