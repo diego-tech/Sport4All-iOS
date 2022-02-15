@@ -21,8 +21,6 @@ class HomeViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
-
-		var prueba = "Prueba"
 		
 		// Set First View Controller
 		firstVC.isHidden = false
