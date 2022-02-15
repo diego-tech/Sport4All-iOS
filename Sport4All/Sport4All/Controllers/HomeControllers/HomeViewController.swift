@@ -22,6 +22,8 @@ class HomeViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
+
+		var prueba = "Prueba"
 		
 		// Custom Search Bar
 		searchBar.customSearch()
