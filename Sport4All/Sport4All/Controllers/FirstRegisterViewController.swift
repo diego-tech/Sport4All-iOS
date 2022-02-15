@@ -79,8 +79,7 @@ class FirstRegisterViewController: UIViewController {
 	}
 	
 	private func navigateToSecondRegister() {
-		let storyboard = UIStoryboard(name: "Register", bundle: nil)
-		let vc = storyboard.instantiateViewController(withIdentifier: "SecondRegister") as! SecondRegisterViewController
+		let vc = UIStoryboard(name: "Register", bundle: nil).instantiateViewController(withIdentifier: "SecondRegister") as! SecondRegisterViewController
 		
 		if firstEmailTF.text != "" {
 			vc.registerUserEmail = firstEmailTF.text!

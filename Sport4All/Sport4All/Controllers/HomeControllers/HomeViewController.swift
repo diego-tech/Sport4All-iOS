@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
 	}
 	
 	// MARK: Action Functions
-	@IBAction func segmentedControlAction(_ sender: Any) {
+	@IBAction func segmentedControlAction(_ sender: UISegmentedControl) {
 		segmentedControl.changeUnderlinePosition()
 		
 		firstVC.isHidden = true
@@ -45,6 +45,11 @@ class HomeViewController: UIViewController {
 			secondVC.isHidden = false
 			firstVC.isHidden = true
 		}
+	}
+	
+	@IBAction func favClubButtonAction(_ sender: UIButton) {
+		let vc = UIStoryboard(name: "FavouritesClubs", bundle: nil).instantiateViewController(withIdentifier: "FavClub")
+		show(vc, sender: self)
 	}
 	
 	// MARK: Functions
