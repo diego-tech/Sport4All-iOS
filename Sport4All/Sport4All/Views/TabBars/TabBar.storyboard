@@ -44,6 +44,9 @@
                                 <rect key="frame" x="298" y="73" width="54" height="44"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="Go Map"/>
+                                <connections>
+                                    <action selector="testButtonAction:" destination="QOh-bd-z95" eventType="touchUpInside" id="fk8-kj-ShI"/>
+                                </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yBk-V6-iqJ">
                                 <rect key="frame" x="22" y="134" width="370" height="32"/>

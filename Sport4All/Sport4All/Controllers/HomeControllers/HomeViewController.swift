@@ -52,6 +52,11 @@ class HomeViewController: UIViewController {
 		show(vc, sender: self)
 	}
 	
+	@IBAction func testButtonAction(_ sender: Any) {
+		let vc = UIStoryboard(name: "InfoClub", bundle: nil).instantiateViewController(withIdentifier: "InfoClub")
+		show(vc, sender: self)
+	}
+	
 	// MARK: Functions
 	
 	// MARK: Styles

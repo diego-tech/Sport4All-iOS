@@ -26,6 +26,8 @@
 		5E371D2B27A92A5E00446D73 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E371D2A27A92A5E00446D73 /* TabBarController.swift */; };
 		5E51235127BBC7430047EE44 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5E51235027BBC7430047EE44 /* IQKeyboardManagerSwift */; };
 		5E51235327BBC7E60047EE44 /* FavouriteClubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E51235227BBC7E60047EE44 /* FavouriteClubsViewController.swift */; };
+		5E51235E27BBD5D70047EE44 /* InfoClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E51235D27BBD5D70047EE44 /* InfoClubViewController.swift */; };
+		5E51236227BBD8010047EE44 /* InfoClub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E51236127BBD8010047EE44 /* InfoClub.storyboard */; };
 		5E7653CE27B2E802000D0A6D /* UISegmentedControlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7653CD27B2E802000D0A6D /* UISegmentedControlExtension.swift */; };
 		5E77E9BF27B1368E004195AE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E77E9BE27B1368E004195AE /* HomeViewController.swift */; };
 		5E9C14C22790358F002D9AF1 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C14BD2790358F002D9AF1 /* SF-Pro-Display-Semibold.otf */; };
@@ -75,6 +77,8 @@
 		5E371D2827A925F900446D73 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		5E371D2A27A92A5E00446D73 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		5E51235227BBC7E60047EE44 /* FavouriteClubsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteClubsViewController.swift; sourceTree = "<group>"; };
+		5E51235D27BBD5D70047EE44 /* InfoClubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoClubViewController.swift; sourceTree = "<group>"; };
+		5E51236127BBD8010047EE44 /* InfoClub.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InfoClub.storyboard; sourceTree = "<group>"; };
 		5E7653CD27B2E802000D0A6D /* UISegmentedControlExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentedControlExtension.swift; sourceTree = "<group>"; };
 		5E77E9BE27B1368E004195AE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5E9C14BD2790358F002D9AF1 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
@@ -220,9 +224,18 @@
 			path = TabBars;
 			sourceTree = "<group>";
 		};
+		5E51235C27BBD5C90047EE44 /* InfoClub */ = {
+			isa = PBXGroup;
+			children = (
+				5E51236127BBD8010047EE44 /* InfoClub.storyboard */,
+			);
+			path = InfoClub;
+			sourceTree = "<group>";
+		};
 		5E75E4C4279993CD005B89A3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5E51235C27BBD5C90047EE44 /* InfoClub */,
 				5959268827BBB83200702369 /* Event */,
 				5959268527BBABB700702369 /* ModifyPassword */,
 				5E12C4B627B6583B00F4E7EA /* Profile */,
@@ -259,6 +272,7 @@
 				5E371D2A27A92A5E00446D73 /* TabBarController.swift */,
 				5E12C4B427B6583300F4E7EA /* ProfileViewController.swift */,
 				5E51235227BBC7E60047EE44 /* FavouriteClubsViewController.swift */,
+				5E51235D27BBD5D70047EE44 /* InfoClubViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -462,6 +476,7 @@
 				5E9C14C32790358F002D9AF1 /* SF-Pro-Display-Regular.otf in Resources */,
 				5E12C4B327B6582200F4E7EA /* Profile.storyboard in Resources */,
 				5E9C14C62790358F002D9AF1 /* SF-Pro-Display-Bold.otf in Resources */,
+				5E51236227BBD8010047EE44 /* InfoClub.storyboard in Resources */,
 				5ECF53F6278C3AB8005F6D01 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,6 +512,7 @@
 				5EF497A627A55794008B0C37 /* UserDefaultsProvider.swift in Sources */,
 				5E197F03278D80D4008BBABB /* ColorExtension.swift in Sources */,
 				5E123C3D27A2F1F000CF14EE /* SecondRegisterViewController.swift in Sources */,
+				5E51235E27BBD5D70047EE44 /* InfoClubViewController.swift in Sources */,
 				5EA1A67527A7EDCF0096754C /* UserLogin.swift in Sources */,
 				07AB1FCA27AA9599007771E3 /* BestRatedCollectionViewCell.swift in Sources */,
 				5E51235327BBC7E60047EE44 /* FavouriteClubsViewController.swift in Sources */,
