@@ -24,6 +24,8 @@
 		5E2FEE6927A442DA008B0AE1 /* RetrievePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2FEE6827A442DA008B0AE1 /* RetrievePasswordViewController.swift */; };
 		5E371D2927A925F900446D73 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E371D2827A925F900446D73 /* TabBar.storyboard */; };
 		5E371D2B27A92A5E00446D73 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E371D2A27A92A5E00446D73 /* TabBarController.swift */; };
+		5E51235127BBC7430047EE44 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5E51235027BBC7430047EE44 /* IQKeyboardManagerSwift */; };
+		5E51235327BBC7E60047EE44 /* FavouriteClubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E51235227BBC7E60047EE44 /* FavouriteClubsViewController.swift */; };
 		5E7653CE27B2E802000D0A6D /* UISegmentedControlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7653CD27B2E802000D0A6D /* UISegmentedControlExtension.swift */; };
 		5E77E9BF27B1368E004195AE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E77E9BE27B1368E004195AE /* HomeViewController.swift */; };
 		5E9C14C22790358F002D9AF1 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C14BD2790358F002D9AF1 /* SF-Pro-Display-Semibold.otf */; };
@@ -40,7 +42,6 @@
 		5EA1A67327A7E7990096754C /* DbResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA1A67227A7E7990096754C /* DbResponse.swift */; };
 		5EA1A67527A7EDCF0096754C /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA1A67427A7EDCF0096754C /* UserLogin.swift */; };
 		5EA50EDD27AD2B7900641F2D /* AuxFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA50EDC27AD2B7900641F2D /* AuxFunctions.swift */; };
-		5EC7D59B27B13FCC0085F512 /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC7D59A27B13FCC0085F512 /* UISearchBar.swift */; };
 		5ECB28AC279F0F5200583F67 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB28AB279F0F5200583F67 /* UITextFieldExtension.swift */; };
 		5ECB28AE279F157C00583F67 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB28AD279F157C00583F67 /* UIButtonExtension.swift */; };
 		5ECF53EF278C3AB8005F6D01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECF53EE278C3AB8005F6D01 /* AppDelegate.swift */; };
@@ -73,6 +74,7 @@
 		5E2FEE6827A442DA008B0AE1 /* RetrievePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrievePasswordViewController.swift; sourceTree = "<group>"; };
 		5E371D2827A925F900446D73 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		5E371D2A27A92A5E00446D73 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		5E51235227BBC7E60047EE44 /* FavouriteClubsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteClubsViewController.swift; sourceTree = "<group>"; };
 		5E7653CD27B2E802000D0A6D /* UISegmentedControlExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentedControlExtension.swift; sourceTree = "<group>"; };
 		5E77E9BE27B1368E004195AE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5E9C14BD2790358F002D9AF1 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
@@ -88,7 +90,6 @@
 		5EA1A67227A7E7990096754C /* DbResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbResponse.swift; sourceTree = "<group>"; };
 		5EA1A67427A7EDCF0096754C /* UserLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
 		5EA50EDC27AD2B7900641F2D /* AuxFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuxFunctions.swift; sourceTree = "<group>"; };
-		5EC7D59A27B13FCC0085F512 /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
 		5ECB28AB279F0F5200583F67 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		5ECB28AD279F157C00583F67 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		5ECF53EB278C3AB8005F6D01 /* Sport4All.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sport4All.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +112,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EA1A66C27A7D43C0096754C /* Alamofire in Frameworks */,
+				5E51235127BBC7430047EE44 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +199,6 @@
 				5E197F02278D80D4008BBABB /* ColorExtension.swift */,
 				5ECB28AB279F0F5200583F67 /* UITextFieldExtension.swift */,
 				5ECB28AD279F157C00583F67 /* UIButtonExtension.swift */,
-				5EC7D59A27B13FCC0085F512 /* UISearchBar.swift */,
 				5E7653CD27B2E802000D0A6D /* UISegmentedControlExtension.swift */,
 			);
 			path = Extension;
@@ -257,6 +258,7 @@
 				5E2FEE6827A442DA008B0AE1 /* RetrievePasswordViewController.swift */,
 				5E371D2A27A92A5E00446D73 /* TabBarController.swift */,
 				5E12C4B427B6583300F4E7EA /* ProfileViewController.swift */,
+				5E51235227BBC7E60047EE44 /* FavouriteClubsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -396,6 +398,7 @@
 			name = Sport4All;
 			packageProductDependencies = (
 				5EA1A66B27A7D43C0096754C /* Alamofire */,
+				5E51235027BBC7430047EE44 /* IQKeyboardManagerSwift */,
 			);
 			productName = Sport4All;
 			productReference = 5ECF53EB278C3AB8005F6D01 /* Sport4All.app */;
@@ -426,8 +429,8 @@
 			);
 			mainGroup = 5ECF53E2278C3AB8005F6D01;
 			packageReferences = (
-				5EF497AC27A558B7008B0C37 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				5EA1A66A27A7D43C0096754C /* XCRemoteSwiftPackageReference "Alamofire" */,
+				5E51234F27BBC7430047EE44 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 5ECF53EC278C3AB8005F6D01 /* Products */;
 			projectDirPath = "";
@@ -486,7 +489,6 @@
 				5E77E9BF27B1368E004195AE /* HomeViewController.swift in Sources */,
 				5ECF53F1278C3AB8005F6D01 /* SceneDelegate.swift in Sources */,
 				5EF497A827A55858008B0C37 /* NetworkingProvider.swift in Sources */,
-				5EC7D59B27B13FCC0085F512 /* UISearchBar.swift in Sources */,
 				5EF497A327A5570F008B0C37 /* DateDecoder.swift in Sources */,
 				5E12C4B527B6583300F4E7EA /* ProfileViewController.swift in Sources */,
 				5E197F01278D7E6F008BBABB /* Constants.swift in Sources */,
@@ -497,6 +499,7 @@
 				5E123C3D27A2F1F000CF14EE /* SecondRegisterViewController.swift in Sources */,
 				5EA1A67527A7EDCF0096754C /* UserLogin.swift in Sources */,
 				07AB1FCA27AA9599007771E3 /* BestRatedCollectionViewCell.swift in Sources */,
+				5E51235327BBC7E60047EE44 /* FavouriteClubsViewController.swift in Sources */,
 				5999B68427B285640008BE6B /* ClubTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -720,6 +723,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5E51234F27BBC7430047EE44 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = exactVersion;
+				version = 6.5.0;
+			};
+		};
 		5EA1A66A27A7D43C0096754C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -728,17 +739,14 @@
 				version = 5.5.0;
 			};
 		};
-		5EF497AC27A558B7008B0C37 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
-			requirement = {
-				kind = exactVersion;
-				version = 6.5.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5E51235027BBC7430047EE44 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E51234F27BBC7430047EE44 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
 		5EA1A66B27A7D43C0096754C /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5EA1A66A27A7D43C0096754C /* XCRemoteSwiftPackageReference "Alamofire" */;

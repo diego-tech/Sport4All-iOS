@@ -13,7 +13,6 @@ class HomeViewController: UIViewController {
 
 
 	// Outlets
-	@IBOutlet weak var searchBar: UITextField!
 	@IBOutlet weak var segmentedControl: UISegmentedControl!
 	
 	@IBOutlet weak var firstVC: UIView!
@@ -25,20 +24,20 @@ class HomeViewController: UIViewController {
 
 		var prueba = "Prueba"
 		
-		// Custom Search Bar
-		searchBar.customSearch()
+		// Set First View Controller
+		firstVC.isHidden = false
 		
 		// Segmented Control
 		segmentedControl.setUpView()
 	}
 	
 	// MARK: Action Functions
-	@IBAction func segmentedControlAction(_ sender: Any) {
+	@IBAction func segmentedControlAction(_ sender: UISegmentedControl) {
 		segmentedControl.changeUnderlinePosition()
 		
 		firstVC.isHidden = true
 		secondVC.isHidden = true
-		
+
 		if segmentedControl.selectedSegmentIndex == 0 {
 			// Show Home Clubs View Controller
 			firstVC.isHidden = false
@@ -48,6 +47,11 @@ class HomeViewController: UIViewController {
 			secondVC.isHidden = false
 			firstVC.isHidden = true
 		}
+	}
+	
+	@IBAction func favClubButtonAction(_ sender: UIButton) {
+		let vc = UIStoryboard(name: "FavouritesClubs", bundle: nil).instantiateViewController(withIdentifier: "FavClub")
+		show(vc, sender: self)
 	}
 	
 	// MARK: Functions

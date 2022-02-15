@@ -53,6 +53,10 @@ class SecondRegisterViewController: UIViewController, UINavigationControllerDele
 		present(pickerController, animated: true, completion: nil)
 	}
 	
+	@IBAction func genreSegmentedControl(_ sender: UISegmentedControl) {
+		genreSegmentedControl.changeUnderlinePosition() 
+	}
+	
 	// MARK: Functions
 	private func uploadImage() {
 		let url = "\(Constants.kBaseURL)/getUploadImage"
@@ -103,8 +107,7 @@ class SecondRegisterViewController: UIViewController, UINavigationControllerDele
 	}
 	
 	private func navigateToAuthController() {
-		let storyboard = UIStoryboard(name: "Main", bundle: nil)
-		let vc = storyboard.instantiateViewController(withIdentifier: "Login")
+		let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login")
 		present(vc, animated: true, completion: nil)
 	}
 	

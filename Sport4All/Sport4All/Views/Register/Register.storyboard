@@ -248,6 +248,9 @@
                                                     <segment title="Hombre"/>
                                                     <segment title="Otro"/>
                                                 </segments>
+                                                <connections>
+                                                    <action selector="genreSegmentedControl:" destination="K2x-Il-VBK" eventType="valueChanged" id="3Pj-vs-HLn"/>
+                                                </connections>
                                             </segmentedControl>
                                         </subviews>
                                     </stackView>

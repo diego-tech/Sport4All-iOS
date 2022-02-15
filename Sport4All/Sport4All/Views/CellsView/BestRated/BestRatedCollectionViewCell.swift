@@ -8,10 +8,20 @@
 import UIKit
 
 class BestRatedCollectionViewCell: UICollectionViewCell {
-
+	
+	// Variables
+	
+	// Outlets
+	@IBOutlet weak var bestRatedView: UIView!
+	@IBOutlet weak var bestRatedIV: UIImageView!
+	@IBOutlet weak var bestRatedLabel: UILabel!
+	@IBOutlet weak var bestRatedReserveBTN: UIButton!
+	
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+		
+		bestRatedView.layer.cornerCurve = .circular
+		bestRatedView.layer.cornerRadius = 10
     }
-
 }

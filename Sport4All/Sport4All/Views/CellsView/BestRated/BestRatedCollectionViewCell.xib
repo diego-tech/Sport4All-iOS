@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -8,9 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="SF-Pro-Display-Regular.otf">
-            <string>SFProDisplay-Regular</string>
-        </array>
         <array key="SF-Pro.ttf">
             <string>SFPro-Regular</string>
         </array>
@@ -18,96 +15,26 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="BestRatedCollectionViewCell" customModule="Sport4All" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="192" height="257"/>
-            <autoresizingMask key="autoresizingMask"/>
-            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="192" height="257"/>
-                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Best Valorated" translatesAutoresizingMaskIntoConstraints="NO" id="4LE-Hh-QY1">
-                        <rect key="frame" x="-33" y="-32" width="259" height="321"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gic-df-edc">
-                        <rect key="frame" x="0.0" y="0.0" width="192" height="257"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JZW-lQ-9dQ">
-                                <rect key="frame" x="53" y="26" width="86" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="86" id="FB1-Uu-Uws"/>
-                                    <constraint firstAttribute="height" constant="80" id="JGt-Rg-zng"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eri-Zx-G9B">
-                                <rect key="frame" x="58" y="196" width="76" height="31"/>
-                                <color key="backgroundColor" name="HardColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="76" id="gUZ-XH-Ye3"/>
-                                    <constraint firstAttribute="height" constant="31" id="weR-Py-Rk7"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Reserva">
-                                    <fontDescription key="titleFontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Club Palomitas Moratalaz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxd-Lq-sSg">
-                                <rect key="frame" x="22" y="137" width="148" height="17"/>
-                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
-                                <color key="textColor" name="HardColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" name="Periwinkle"/>
-                        <constraints>
-                            <constraint firstItem="Eri-Zx-G9B" firstAttribute="top" secondItem="gxd-Lq-sSg" secondAttribute="bottom" constant="42" id="IP6-K3-NYY"/>
-                            <constraint firstItem="JZW-lQ-9dQ" firstAttribute="top" secondItem="Gic-df-edc" secondAttribute="top" constant="26" id="IV2-xb-xOI"/>
-                            <constraint firstItem="Eri-Zx-G9B" firstAttribute="centerX" secondItem="Gic-df-edc" secondAttribute="centerX" id="Jmr-GY-S5w"/>
-                            <constraint firstAttribute="height" constant="257" id="YjU-Hy-Saw"/>
-                            <constraint firstItem="JZW-lQ-9dQ" firstAttribute="centerX" secondItem="Gic-df-edc" secondAttribute="centerX" id="hqH-ME-9ti"/>
-                            <constraint firstAttribute="width" constant="192" id="nev-Hj-7WY"/>
-                            <constraint firstItem="gxd-Lq-sSg" firstAttribute="top" secondItem="JZW-lQ-9dQ" secondAttribute="bottom" constant="31" id="s2a-9D-OUF"/>
-                            <constraint firstItem="gxd-Lq-sSg" firstAttribute="centerX" secondItem="Gic-df-edc" secondAttribute="centerX" id="zmf-xP-X4b"/>
-                        </constraints>
-                    </view>
-                </subviews>
-            </view>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <constraints>
-                <constraint firstAttribute="trailing" secondItem="Gic-df-edc" secondAttribute="trailing" id="EEi-IZ-9Va"/>
-                <constraint firstItem="Gic-df-edc" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="EaR-Bf-gNB"/>
-                <constraint firstItem="Gic-df-edc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="NbU-5g-iPu"/>
-                <constraint firstItem="Gic-df-edc" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Woz-uW-nn0"/>
-                <constraint firstItem="Gic-df-edc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ZQs-FT-P8I"/>
-                <constraint firstAttribute="bottom" secondItem="Gic-df-edc" secondAttribute="bottom" id="lsf-fZ-W5G"/>
-            </constraints>
-            <size key="customSize" width="192" height="257"/>
-            <point key="canvasLocation" x="54" y="184"/>
-        </collectionViewCell>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Fr5-ST-Xi2" customClass="BestRatedCollectionViewCell" customModule="Sport4All" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Fr5-ST-Xi2" customClass="BestRatedCollectionViewCell" customModule="Sport4All" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="100" height="125"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="100" height="125"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.34999999403953552" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Best Valorated" translatesAutoresizingMaskIntoConstraints="NO" id="j79-cA-UPg">
-                        <rect key="frame" x="-33" y="-32" width="259" height="321"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k02-2M-EMD">
                         <rect key="frame" x="0.0" y="0.0" width="100" height="125"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image Best Valorated" id="jmZ-Nh-Gcp">
-                                <rect key="frame" x="25" y="8" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7p-Pk-HnA">
-                                <rect key="frame" x="5" y="61" width="90" height="29"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image Best Valorated" translatesAutoresizingMaskIntoConstraints="NO" id="jmZ-Nh-Gcp">
+                                <rect key="frame" x="31" y="10" width="38" height="38"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="1LK-Vv-crU"/>
+                                    <constraint firstAttribute="width" constant="38" id="HeT-RR-ruj"/>
+                                    <constraint firstAttribute="height" constant="38" id="asu-H8-Wif"/>
                                 </constraints>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7p-Pk-HnA">
+                                <rect key="frame" x="5" y="58" width="90" height="27"/>
                                 <string key="text">Club Palomitas
 Moratalaz</string>
                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="8.5"/>
@@ -115,8 +42,11 @@ Moratalaz</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nac-HE-RGX">
-                                <rect key="frame" x="20" y="98" width="60" height="19"/>
+                                <rect key="frame" x="20" y="95" width="60" height="20"/>
                                 <color key="backgroundColor" name="HardColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="fq4-8L-WRH"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="11"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Reserva">
@@ -124,38 +54,47 @@ Moratalaz</string>
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" name="Periwinkle"/>
+                        <color key="backgroundColor" name="SoftBlue"/>
                         <constraints>
-                            <constraint firstItem="nac-HE-RGX" firstAttribute="top" secondItem="B7p-Pk-HnA" secondAttribute="bottom" constant="8" symbolic="YES" id="GN6-Bt-tI4"/>
-                            <constraint firstItem="nac-HE-RGX" firstAttribute="bottom" secondItem="k02-2M-EMD" secondAttribute="bottomMargin" id="MKy-Yp-Mrp"/>
-                            <constraint firstItem="nac-HE-RGX" firstAttribute="centerX" secondItem="B7p-Pk-HnA" secondAttribute="centerX" id="Od3-Tv-CW2"/>
-                            <constraint firstItem="nac-HE-RGX" firstAttribute="leading" secondItem="k02-2M-EMD" secondAttribute="leading" constant="20" id="USo-IF-sjC"/>
-                            <constraint firstItem="B7p-Pk-HnA" firstAttribute="top" secondItem="jmZ-Nh-Gcp" secondAttribute="bottom" constant="3" id="VMu-l0-8eE"/>
-                            <constraint firstItem="B7p-Pk-HnA" firstAttribute="leading" secondItem="k02-2M-EMD" secondAttribute="leading" constant="5" id="Wu7-Ou-2WB"/>
-                            <constraint firstAttribute="trailing" secondItem="B7p-Pk-HnA" secondAttribute="trailing" constant="5" id="vnN-3I-hqa"/>
+                            <constraint firstItem="nac-HE-RGX" firstAttribute="top" secondItem="B7p-Pk-HnA" secondAttribute="bottom" constant="10" id="3cX-5z-o1O"/>
+                            <constraint firstItem="jmZ-Nh-Gcp" firstAttribute="centerX" secondItem="k02-2M-EMD" secondAttribute="centerX" id="9nN-Ji-oHM"/>
+                            <constraint firstAttribute="trailing" secondItem="nac-HE-RGX" secondAttribute="trailing" constant="20" id="Ge3-Io-xfb"/>
+                            <constraint firstItem="B7p-Pk-HnA" firstAttribute="top" secondItem="jmZ-Nh-Gcp" secondAttribute="bottom" constant="10" id="JZ6-V0-ZO4"/>
+                            <constraint firstItem="jmZ-Nh-Gcp" firstAttribute="top" secondItem="k02-2M-EMD" secondAttribute="top" constant="10" id="NHm-DD-xBb"/>
+                            <constraint firstAttribute="width" constant="100" id="Osf-H9-ovF"/>
+                            <constraint firstAttribute="bottom" secondItem="nac-HE-RGX" secondAttribute="bottom" constant="10" id="P30-Lo-W86"/>
+                            <constraint firstItem="nac-HE-RGX" firstAttribute="leading" secondItem="k02-2M-EMD" secondAttribute="leading" constant="20" id="TGb-1a-uJy"/>
+                            <constraint firstAttribute="trailing" secondItem="B7p-Pk-HnA" secondAttribute="trailing" constant="5" id="VOG-BN-XMw"/>
+                            <constraint firstAttribute="height" constant="125" id="uX6-vp-EzB"/>
+                            <constraint firstItem="B7p-Pk-HnA" firstAttribute="leading" secondItem="k02-2M-EMD" secondAttribute="leading" constant="5" id="xdq-Lt-IU3"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="Jx4-xh-A5F"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="k02-2M-EMD" secondAttribute="trailing" id="Idy-kh-mfJ"/>
-                <constraint firstItem="k02-2M-EMD" firstAttribute="top" secondItem="Fr5-ST-Xi2" secondAttribute="top" id="Jot-Xp-Fg8"/>
-                <constraint firstItem="k02-2M-EMD" firstAttribute="leading" secondItem="Fr5-ST-Xi2" secondAttribute="leading" id="Y89-sN-nDp"/>
-                <constraint firstAttribute="bottom" secondItem="k02-2M-EMD" secondAttribute="bottom" id="yAt-Px-VG5"/>
+                <constraint firstItem="k02-2M-EMD" firstAttribute="leading" secondItem="Fr5-ST-Xi2" secondAttribute="leading" id="8fl-26-3En"/>
+                <constraint firstItem="k02-2M-EMD" firstAttribute="top" secondItem="Fr5-ST-Xi2" secondAttribute="top" id="LVw-Qy-079"/>
+                <constraint firstAttribute="trailing" secondItem="k02-2M-EMD" secondAttribute="trailing" id="Lx3-p6-BrC"/>
+                <constraint firstAttribute="bottom" secondItem="k02-2M-EMD" secondAttribute="bottom" id="U5Q-tz-7W2"/>
             </constraints>
             <size key="customSize" width="192" height="199"/>
-            <point key="canvasLocation" x="450.72463768115944" y="212.36413043478262"/>
+            <connections>
+                <outlet property="bestRatedIV" destination="jmZ-Nh-Gcp" id="NBH-yt-IBm"/>
+                <outlet property="bestRatedLabel" destination="B7p-Pk-HnA" id="CdS-mk-yqY"/>
+                <outlet property="bestRatedReserveBTN" destination="nac-HE-RGX" id="nK9-RJ-4u1"/>
+                <outlet property="bestRatedView" destination="k02-2M-EMD" id="4aR-FG-zAS"/>
+            </connections>
+            <point key="canvasLocation" x="450.72463768115944" y="211.94196428571428"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="Best Valorated" width="110" height="135"/>
         <image name="Image Best Valorated" width="38" height="38"/>
         <namedColor name="HardColor">
             <color red="0.19607843137254902" green="0.26666666666666666" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Periwinkle">
-            <color red="0.81568627450980391" green="0.88235294117647056" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="SoftBlue">
+            <color red="0.91764705882352937" green="0.93333333333333335" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

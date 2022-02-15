@@ -1,13 +1,13 @@
 //
-//  ProfileViewController.swift
+//  FavouriteClubsViewController.swift
 //  Sport4All
 //
-//  Created by Diego Muñoz Herranz on 11/2/22.
+//  Created by Diego Muñoz Herranz on 15/2/22.
 //
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class FavouriteClubsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

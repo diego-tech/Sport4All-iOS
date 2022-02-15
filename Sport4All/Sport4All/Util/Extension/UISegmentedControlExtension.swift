@@ -27,8 +27,7 @@ extension UISegmentedControl {
 	}
 	
 	func addUnderlineForSelectedSegment() {
-		removeBorder()
-		let underlineWidth: CGFloat = self.bounds.size.width / CGFloat(self.numberOfSegments)
+		let underlineWidth: CGFloat = self.frame.size.width
 		let underlineHeight: CGFloat = 2.0
 		let underlineXPosition = CGFloat(selectedSegmentIndex * Int(underlineWidth))
 		let underLineYPosition = self.bounds.size.height - 1.0
@@ -41,7 +40,7 @@ extension UISegmentedControl {
 	}
 	
 	func addAllUnderline() {
-		let underlineWidth = self.bounds.size.width
+		let underlineWidth: CGFloat = self.frame.size.width * CGFloat(numberOfSegments)
 		let underlineHeight: CGFloat = 2.0
 		let underlineXPosition = CGFloat(selectedSegmentIndex * Int(underlineWidth))
 		let underLineYPosition = self.bounds.size.height - 1.0
@@ -52,7 +51,7 @@ extension UISegmentedControl {
 	}
 	
 	func changeUnderlinePosition() {
-		guard let underline = self.viewWithTag(1) else {return}
+		guard let underline = self.viewWithTag(1) else { return }
 		let underlineFinalXPosition = (self.bounds.width / CGFloat(self.numberOfSegments)) * CGFloat(selectedSegmentIndex)
 		
 		UIView.animate(withDuration: 0.1, animations: {

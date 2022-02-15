@@ -29,6 +29,10 @@ class AuthViewController: UIViewController {
 		setTextFieldStyles()
 		setButtonStyles()
 		
+		// Login Test
+		emailTextField.text = "diego171200@gmail.com"
+		passwordTextField.text = "Prueba12345."
+		
 		// Testeo Funciones API
 //		register()
 //		login()
@@ -43,8 +47,7 @@ class AuthViewController: UIViewController {
 	// MARK: Action Functions
 	@IBAction func rememberPasswordButtonAction(_ sender: UIButton) {
 		// Ir a Recuperar Contraseña
-		let storyBoard = UIStoryboard(name: "RetrievePassword", bundle: nil)
-		let vc = storyBoard.instantiateViewController(withIdentifier: "RetrievePassword")
+		let vc = UIStoryboard(name: "RetrievePassword", bundle: nil).instantiateViewController(withIdentifier: "RetrievePassword")
 		present(vc, animated: true, completion: nil)
 	}
 	
@@ -54,8 +57,7 @@ class AuthViewController: UIViewController {
 	
 	@IBAction func goToRegisterButtonAction(_ sender: UIButton) {
 		// Ir a Registro
-		let storyBoard = UIStoryboard(name: "Register", bundle: nil)
-		let vc = storyBoard.instantiateViewController(withIdentifier: "FirstRegister")
+		let vc = UIStoryboard(name: "Register", bundle: nil).instantiateViewController(withIdentifier: "FirstRegister")
 		present(vc, animated: true, completion: nil)
 	}
 	
@@ -76,8 +78,7 @@ class AuthViewController: UIViewController {
 					if let authUserToken = responseData?.token {
 						UserDefaultsProvider.setUserDefaults(key: .authUserToken, value: authUserToken)
 					}
-					let storyBoard = UIStoryboard(name: "TabBar", bundle: nil)
-					let vc = storyBoard.instantiateViewController(withIdentifier: "TabBar")
+					let vc = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBar")
 					self.show(vc, sender: self)
 				}  else {
 					debugPrint("Error")

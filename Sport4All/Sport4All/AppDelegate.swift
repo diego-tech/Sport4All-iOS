@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		// Tiempo de Cargar Launch Screen
 		Thread.sleep(forTimeInterval: 2.0)
+		
+		// Inicializar IQKeyboardManager
+		IQKeyboardManager.shared.enable = true
 		
 		// Override point for customization after application launch.
 		return true
