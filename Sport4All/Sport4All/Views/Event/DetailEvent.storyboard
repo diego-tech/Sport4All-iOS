@@ -27,6 +27,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aC-TH-Fap" userLabel="GoBackButton">
+                                <rect key="frame" x="11" y="61" width="56" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8aC-TH-Fap" secondAttribute="height" multiplier="56:61" id="nUG-g1-AmJ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="ArrowBackMain"/>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TORNEO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00i-Ak-UDx">
                                 <rect key="frame" x="167" y="79" width="80" height="24"/>
                                 <constraints>
@@ -36,21 +44,13 @@
                                 <color key="textColor" red="0.20000000000000001" green="0.36862745099999999" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aC-TH-Fap" userLabel="GoBackButton">
-                                <rect key="frame" x="11" y="61" width="56" height="61"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="8aC-TH-Fap" secondAttribute="height" multiplier="56:61" id="nUG-g1-AmJ"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="ArrowBackMain"/>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6RE-5R-F2C">
                                 <rect key="frame" x="0.0" y="154" width="414" height="165"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="165" id="tD0-un-jK1"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Torneo Navideño V Edición Vallecas" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9SZ-QV-e9D">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Torneo Navideño V Edición Vallecas" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9SZ-QV-e9D">
                                 <rect key="frame" x="37" y="343" width="268" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="268" id="ahb-1w-bCh"/>
@@ -59,18 +59,24 @@
                                 <color key="textColor" red="0.19607843137254902" green="0.26666666666666666" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Día 11 de diciembre 16:30" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQQ-Q5-tEd">
-                                <rect key="frame" x="20" y="439" width="316" height="19.5"/>
-                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="16"/>
-                                <color key="textColor" red="0.15686274509803921" green="0.21176470588235294" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="InfoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="wSS-ZD-qu6">
                                 <rect key="frame" x="338" y="351" width="37" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="wSS-ZD-qu6" secondAttribute="height" multiplier="37:32" id="mbx-z6-bd6"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Día 11 de diciembre 16:30" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQQ-Q5-tEd">
+                                <rect key="frame" x="20" y="439" width="316" height="19.5"/>
+                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="16"/>
+                                <color key="textColor" red="0.15686274509803921" green="0.21176470588235294" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Categorías:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSC-zK-iSS">
+                                <rect key="frame" x="20" y="492" width="94.5" height="19.5"/>
+                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="16"/>
+                                <color key="textColor" red="0.15686274509803921" green="0.21176470588235294" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hHb-fP-D8e">
                                 <rect key="frame" x="62" y="520" width="122" height="78"/>
                                 <subviews>
@@ -124,12 +130,6 @@
                                     <fontDescription key="titleFontDescription" name="SFPro-Bold" family="SF Pro" pointSize="17"/>
                                 </buttonConfiguration>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Categorías:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSC-zK-iSS">
-                                <rect key="frame" x="20" y="492" width="94.5" height="19.5"/>
-                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="16"/>
-                                <color key="textColor" red="0.15686274509803921" green="0.21176470588235294" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
