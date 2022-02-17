@@ -23,5 +23,8 @@ class BestRatedCollectionViewCell: UICollectionViewCell {
 		
 		bestRatedView.layer.cornerCurve = .circular
 		bestRatedView.layer.cornerRadius = 10
+		
+		bestRatedReserveBTN.layer.cornerCurve = .circular
+		bestRatedReserveBTN.layer.cornerRadius = 5
     }
 }

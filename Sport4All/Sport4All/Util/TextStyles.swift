@@ -13,6 +13,7 @@ enum FontType: String {
 	case SFProMedium = "SFPro-Medium"
 	case SFProSemibold = "SFPro-Semibold"
 	case SFProBold = "SFPro-Bold"
+	case SFProLight = "SFPro-Light"
 	case SFProDisplayRegular = "SFProDisplay-Regular"
 	case SFProDisplayMedium = "SFProDisplay-Medium"
 	case SFProDisplaySemibold = "SFProDisplay-Semibold"
