@@ -21,23 +21,10 @@ class HomeClubsViewController: UIViewController {
 		// Do any additional setup after loading the view.
 		
 		// Inicialización Collection View
-		bestRatedCollectionView.dataSource = self
-		bestRatedCollectionView.delegate = self
-		bestRatedCollectionView.isScrollEnabled = true
-		bestRatedCollectionView.register(UINib.init(nibName: "BestRatedCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
-		bestRatedCollectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
-		bestRatedCollectionView.showsVerticalScrollIndicator = false
-		bestRatedCollectionView.showsHorizontalScrollIndicator = false
-
+		initCollectionView()
+		
 		// Inicialización Table View
-		homeClubsTableView.dataSource = self
-		homeClubsTableView.delegate = self
-		homeClubsTableView.isScrollEnabled = true
-		homeClubsTableView.register(UINib.init(nibName: "ClubTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeClubTableViewCell")
-		homeClubsTableView.backgroundColor = UIColor.clear.withAlphaComponent(0)
-		homeClubsTableView.separatorStyle = .none
-		homeClubsTableView.showsHorizontalScrollIndicator = false
-		homeClubsTableView.showsVerticalScrollIndicator = false
+		initTableView()
 		
 		// Custom Search Bar
 		searchBar.customSearch()
@@ -46,6 +33,25 @@ class HomeClubsViewController: UIViewController {
 	// MARK: Action Functions
 	
 	// MARK: Functions
+	private func initTableView() {
+		homeClubsTableView.dataSource = self
+		homeClubsTableView.delegate = self
+		homeClubsTableView.isScrollEnabled = true
+		homeClubsTableView.register(UINib.init(nibName: "ClubTableViewCell", bundle: nil), forCellReuseIdentifier: "ClubTableViewCell")
+		homeClubsTableView.separatorStyle = .none
+		homeClubsTableView.showsHorizontalScrollIndicator = false
+		homeClubsTableView.showsVerticalScrollIndicator = false
+	}
+	
+	private func initCollectionView() {
+		bestRatedCollectionView.dataSource = self
+		bestRatedCollectionView.delegate = self
+		bestRatedCollectionView.isScrollEnabled = true
+		bestRatedCollectionView.register(UINib.init(nibName: "BestRatedCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
+		bestRatedCollectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
+		bestRatedCollectionView.showsVerticalScrollIndicator = false
+		bestRatedCollectionView.showsHorizontalScrollIndicator = false
+	}
 	
 	// MARK: Styles
 }
@@ -73,7 +79,7 @@ extension HomeClubsViewController: UITableViewDataSource, UITableViewDelegate {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = homeClubsTableView.dequeueReusableCell(withIdentifier: "HomeClubTableViewCell") as! ClubTableViewCell
+		let cell = homeClubsTableView.dequeueReusableCell(withIdentifier: "ClubTableViewCell") as! ClubTableViewCell
 		return cell
 	}
 }
