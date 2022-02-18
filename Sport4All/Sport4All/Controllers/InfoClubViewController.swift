@@ -23,7 +23,7 @@ class InfoClubViewController: UIViewController {
 		
 		// Inicialización Estilos
 		buttonStyles()
-		headerUIView?.viewShadow()
+		headerUIView?.bottomShadow()
     }
 
 	

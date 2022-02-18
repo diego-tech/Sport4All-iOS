@@ -24,7 +24,7 @@ class ProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
 		
 		// Inicialización Estilos
-		headerUIView?.viewShadow()
+		headerUIView?.bottomShadow()
     }
 	
 	// MARK: Action Buttons

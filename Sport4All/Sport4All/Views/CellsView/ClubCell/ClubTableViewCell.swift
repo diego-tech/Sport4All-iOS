@@ -18,21 +18,17 @@ class ClubTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
 		
+		// Inicialización Estilos Vista
 		homeClubsUIView.layer.cornerCurve = .circular
 		homeClubsUIView.layer.cornerRadius = 10
+		homeClubsUIView.backgroundColor = .softBlue
+		homeClubsUIView.shadow()
+		
 		self.backgroundColor = .backgroundColor
-		self.contentView.backgroundColor = .softBlue
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
-	
-	override func layoutSubviews() {
-		super.layoutSubviews()
-		
-//		self.contentView.frame = self.contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5))
-	}
 }
