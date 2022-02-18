@@ -260,10 +260,10 @@
 				5EA4967727BFF54D005B6844 /* Register */,
 				5E9E820E27B283C700A450E8 /* HomeControllers */,
 				5E2FEE6827A442DA008B0AE1 /* RetrievePasswordViewController.swift */,
-				5E371D2A27A92A5E00446D73 /* TabBarController.swift */,
 				5E12C4B427B6583300F4E7EA /* ProfileViewController.swift */,
 				5E51235227BBC7E60047EE44 /* FavouriteClubsViewController.swift */,
 				5E51235D27BBD5D70047EE44 /* InfoClubViewController.swift */,
+				5E371D2A27A92A5E00446D73 /* TabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

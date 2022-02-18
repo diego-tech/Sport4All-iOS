@@ -28,10 +28,7 @@ extension UISegmentedControl {
 	
 
 	func addUnderlineForSelectedSegment() {
-		print("Size \(self.frame.size.width)")
 		let underlineWidth: CGFloat = self.frame.size.width / CGFloat(numberOfSegments)
-		print("Size 2 \(underlineWidth)")
-
 		let underlineHeight: CGFloat = 2.0
 		let underLineYPosition = self.bounds.size.height - 1.0
 		let underlineFrame = CGRect(x: 0, y: underLineYPosition, width: underlineWidth, height: underlineHeight)
