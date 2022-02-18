@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UISegmentedControl {
+extension UISegmentedControl {	
 	func setUpView() {
 		removeBorder()
 		addAllUnderline()
@@ -26,25 +26,25 @@ extension UISegmentedControl {
 		self.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.hardColor!], for: .selected)
 	}
 	
+
 	func addUnderlineForSelectedSegment() {
-		let underlineWidth: CGFloat = self.frame.size.width
+		let underlineWidth: CGFloat = self.frame.size.width / CGFloat(numberOfSegments)
 		let underlineHeight: CGFloat = 2.0
-		let underlineXPosition = CGFloat(selectedSegmentIndex * Int(underlineWidth))
 		let underLineYPosition = self.bounds.size.height - 1.0
-		let underlineFrame = CGRect(x: underlineXPosition, y: underLineYPosition, width: underlineWidth, height: underlineHeight)
+		let underlineFrame = CGRect(x: 0, y: underLineYPosition, width: underlineWidth, height: underlineHeight)
 		
 		let underline = UIView(frame: underlineFrame)
 		underline.backgroundColor = UIColor.hardColor
 		underline.tag = 1
+		
 		self.addSubview(underline)
 	}
 	
 	func addAllUnderline() {
-		let underlineWidth: CGFloat = self.frame.size.width * CGFloat(numberOfSegments)
+		let underlineWidth: CGFloat = self.frame.size.width
 		let underlineHeight: CGFloat = 2.0
-		let underlineXPosition = CGFloat(selectedSegmentIndex * Int(underlineWidth))
 		let underLineYPosition = self.bounds.size.height - 1.0
-		let underlineFrame = CGRect(x: underlineXPosition, y: underLineYPosition, width: underlineWidth, height: underlineHeight)
+		let underlineFrame = CGRect(x: 0, y: underLineYPosition, width: underlineWidth, height: underlineHeight)
 		let underline = UIView(frame: underlineFrame)
 		underline.backgroundColor = UIColor.blueLowOpacity
 		self.addSubview(underline)

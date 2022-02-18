@@ -10,7 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
 	
 	// Variables
-
+	private var segmentedSetUp = false
 
 	// Outlets
 	@IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -18,15 +18,24 @@ class HomeViewController: UIViewController {
 	@IBOutlet weak var firstVC: UIView!
 	@IBOutlet weak var secondVC: UIView!
 	
+	// MARK: Frame Cycle Functions
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
 		
 		// Set First View Controller
 		firstVC.isHidden = false
-		
-		// Segmented Control
-		segmentedControl.setUpView()
+	}
+	
+	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
+
+		if segmentedSetUp == false {
+			// Segmented Control
+			segmentedControl.setUpView()
+			segmentedSetUp = true
+		}
 	}
 	
 	// MARK: Action Functions
@@ -52,7 +61,7 @@ class HomeViewController: UIViewController {
 		show(vc, sender: self)
 	}
 	
-	@IBAction func testButtonAction(_ sender: Any) {
+	@IBAction func testButtonAction(_ sender: UIButton) {
 		let vc = UIStoryboard(name: "InfoClub", bundle: nil).instantiateViewController(withIdentifier: "InfoClub")
 		show(vc, sender: self)
 	}
