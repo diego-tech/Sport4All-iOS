@@ -14,11 +14,13 @@ class SecondRegisterViewController: UIViewController, UINavigationControllerDele
 	var registerUserEmail: String = ""
 	var registerUserPassoword: String = ""
 	
-	var userName: String?
-	var userSurname: String?
-	var userGenre: String?
-	var imageUrl: String?
-		
+	private var userName: String?
+	private var userSurname: String?
+	private var userGenre: String?
+	private var imageUrl: String?
+	
+	private var segmentedSetUp = false
+	
 	// Outlets
 	@IBOutlet weak var plusRoundedButton: UIButton!
 	@IBOutlet weak var avatarButton: UIButton!
@@ -27,6 +29,7 @@ class SecondRegisterViewController: UIViewController, UINavigationControllerDele
 	@IBOutlet weak var registerButton: UIButton!
 	@IBOutlet weak var genreSegmentedControl: UISegmentedControl!
 	
+	// MARK: Frame Cycle Functions
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
@@ -34,7 +37,16 @@ class SecondRegisterViewController: UIViewController, UINavigationControllerDele
 		// Inicialización Estilos
 		setTextFieldStyles()
 		setButtonStyles()
-		genreSegmentedControl.addUnderlineForSelectedSegment()
+	}
+	
+	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
+
+		if segmentedSetUp == false {
+			// Segmented Control
+			genreSegmentedControl.setUpView()
+			segmentedSetUp = true
+		}
 	}
 	
 	
