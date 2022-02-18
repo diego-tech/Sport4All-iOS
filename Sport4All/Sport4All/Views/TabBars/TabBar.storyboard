@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -27,17 +26,17 @@
             <objects>
                 <viewController id="QOh-bd-z95" customClass="HomeViewController" customModule="Sport4All" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="se5-8l-CJz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Inicio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wJ-aA-ucF">
-                                <rect key="frame" x="22" y="80" width="54" height="26"/>
+                                <rect key="frame" x="22" y="36" width="52.5" height="26"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="22"/>
                                 <color key="textColor" name="CorporativeColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6x-i0-1m0" userLabel="FavButton">
-                                <rect key="frame" x="346" y="73" width="58" height="44"/>
+                                <rect key="frame" x="532" y="29" width="58" height="44"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="Star"/>
                                 <connections>
@@ -45,7 +44,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0N-HY-CdT" userLabel="MapButton">
-                                <rect key="frame" x="298" y="73" width="54" height="44"/>
+                                <rect key="frame" x="484" y="29" width="54" height="44"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="Go Map"/>
                                 <connections>
@@ -53,7 +52,7 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yBk-V6-iqJ">
-                                <rect key="frame" x="22" y="134" width="370" height="32"/>
+                                <rect key="frame" x="22" y="90" width="556" height="32"/>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
@@ -63,13 +62,13 @@
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xc3-pS-TsJ" userLabel="Home Clubs Container View">
-                                <rect key="frame" x="0.0" y="182" width="414" height="631"/>
+                                <rect key="frame" x="0.0" y="138" width="600" height="413"/>
                                 <connections>
                                     <segue destination="TkY-yn-3wo" kind="embed" id="32U-iF-FNP"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JHs-Hv-nGH" userLabel="Home Matches Container View">
-                                <rect key="frame" x="0.0" y="182" width="414" height="631"/>
+                                <rect key="frame" x="0.0" y="138" width="600" height="413"/>
                                 <connections>
                                     <segue destination="Xfe-cB-3xL" kind="embed" id="IwU-Ie-wfY"/>
                                 </connections>
@@ -101,9 +100,9 @@
                         <color key="badgeColor" name="CorporativeColor"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="changeViewSegmentedControl" destination="yBk-V6-iqJ" id="l6n-zG-xZL"/>
                         <outlet property="firstVC" destination="JHs-Hv-nGH" id="CVQ-pt-dWn"/>
                         <outlet property="secondVC" destination="xc3-pS-TsJ" id="6TQ-z8-m2O"/>
-                        <outlet property="segmentedControl" destination="yBk-V6-iqJ" id="l6n-zG-xZL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ocH-f2-IL7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -115,20 +114,20 @@
             <objects>
                 <viewController id="jt6-XG-Gur" customClass="ProfileViewController" customModule="Sport4All" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hqQ-Wc-Cig">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SeR-6g-nar">
-                                <rect key="frame" x="0.0" y="44" width="414" height="330"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="330"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PERFIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvu-wb-vJi">
-                                        <rect key="frame" x="20" y="44" width="310" height="26"/>
+                                        <rect key="frame" x="20" y="44" width="496" height="26"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="22"/>
                                         <color key="textColor" red="0.20000000000000001" green="0.36862745099999999" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hE5-Vd-lbq" userLabel="SettingsButton">
-                                        <rect key="frame" x="338" y="35" width="56" height="44"/>
+                                        <rect key="frame" x="524" y="35" width="56" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="56" id="xul-pO-oYx"/>
                                         </constraints>
@@ -143,13 +142,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rodrigo Díaz de Vivar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKy-kd-y8y">
-                                        <rect key="frame" x="20" y="268" width="374" height="26"/>
+                                        <rect key="frame" x="20" y="268" width="560" height="26"/>
                                         <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="22"/>
                                         <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HlW-p8-nM3">
-                                        <rect key="frame" x="0.0" y="329" width="414" height="1"/>
+                                        <rect key="frame" x="0.0" y="329" width="600" height="1"/>
                                         <color key="backgroundColor" name="HardColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="J1n-bX-pfm"/>
@@ -176,13 +175,13 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Pm-xW-y5t">
-                                <rect key="frame" x="0.0" y="374" width="414" height="522"/>
+                                <rect key="frame" x="0.0" y="330" width="600" height="270"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P8i-9L-RbM" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4S-0O-VGD">
-                                                <rect key="frame" x="20" y="25" width="190" height="40"/>
+                                                <rect key="frame" x="20" y="25" width="188.5" height="40"/>
                                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="15"/>
                                                 <inset key="imageEdgeInsets" minX="15" minY="0.0" maxX="5" maxY="0.0"/>
                                                 <state key="normal" title="Eventos Pendientes" image="RightArrowAllClubsCard">
@@ -194,7 +193,7 @@
                                                 </buttonConfiguration>
                                             </button>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="m6a-Xy-kH7">
-                                                <rect key="frame" x="0.0" y="80" width="414" height="150"/>
+                                                <rect key="frame" x="0.0" y="80" width="600" height="150"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="WTb-w9-x8Y"/>
@@ -217,7 +216,7 @@
                                                 </cells>
                                             </collectionView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I2w-j3-Ucq">
-                                                <rect key="frame" x="20" y="245" width="190.5" height="40"/>
+                                                <rect key="frame" x="20" y="245" width="188.5" height="40"/>
                                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="15"/>
                                                 <inset key="imageEdgeInsets" minX="15" minY="0.0" maxX="5" maxY="0.0"/>
                                                 <state key="normal" title="Eventos Finalizados" image="RightArrowAllClubsCard">
@@ -229,7 +228,7 @@
                                                 </buttonConfiguration>
                                             </button>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NU9-Zn-c6h">
-                                                <rect key="frame" x="0.0" y="300" width="414" height="150"/>
+                                                <rect key="frame" x="0.0" y="300" width="600" height="150"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="m3x-av-Ehj"/>
@@ -252,14 +251,14 @@
                                                 </cells>
                                             </collectionView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IGM-mE-PH7">
-                                                <rect key="frame" x="0.0" y="470" width="414" height="1"/>
+                                                <rect key="frame" x="0.0" y="470" width="600" height="1"/>
                                                 <color key="backgroundColor" name="HardColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="xnI-9B-TIn"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDN-1F-XH3">
-                                                <rect key="frame" x="20" y="491" width="136.5" height="38"/>
+                                                <rect key="frame" x="20" y="491" width="138.5" height="38"/>
                                                 <fontDescription key="fontDescription" name="SFPro-Semibold" family="SF Pro" pointSize="20"/>
                                                 <inset key="imageEdgeInsets" minX="15" minY="0.0" maxX="5" maxY="0.0"/>
                                                 <state key="normal" title="TU CLUB" image="RightArrowYourClub">
@@ -271,17 +270,17 @@
                                                 </buttonConfiguration>
                                             </button>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="QEg-6C-Lam">
-                                                <rect key="frame" x="10" y="544" width="394" height="326"/>
+                                                <rect key="frame" x="10" y="544" width="580" height="326"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="326" id="D6m-8T-Z2m"/>
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="USK-kq-rBj">
-                                                        <rect key="frame" x="0.0" y="44.5" width="394" height="43.5"/>
+                                                        <rect key="frame" x="0.0" y="44.5" width="580" height="43.5"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="USK-kq-rBj" id="r6d-Ec-xb7">
-                                                            <rect key="frame" x="0.0" y="0.0" width="394" height="43.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="580" height="43.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </tableViewCellContentView>
                                                     </tableViewCell>
@@ -353,7 +352,7 @@
             <objects>
                 <viewController id="a2Z-N8-Dsn" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="geu-BB-Jkw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="XFq-Ej-Eeg"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
@@ -394,13 +393,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mejor Valorados" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QdO-0x-0UR">
-                                <rect key="frame" x="20" y="99" width="118.5" height="20"/>
+                                <rect key="frame" x="20" y="55" width="123.5" height="20"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="17"/>
                                 <color key="textColor" name="HardColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SbO-jq-gAX">
-                                <rect key="frame" x="0.0" y="127" width="414" height="142"/>
+                                <rect key="frame" x="0.0" y="83" width="414" height="142"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="142" id="ncd-xZ-FSB"/>
@@ -424,14 +423,14 @@
                                 </cells>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRh-nE-kZm">
-                                <rect key="frame" x="0.0" y="277" width="414" height="2"/>
+                                <rect key="frame" x="0.0" y="233" width="414" height="2"/>
                                 <color key="backgroundColor" name="SoftBlue"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="RbD-Pq-wpH"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rkM-aR-B3A">
-                                <rect key="frame" x="10" y="287" width="394" height="344"/>
+                                <rect key="frame" x="10" y="243" width="394" height="388"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeClubTableViewCell" id="hWq-hT-0Vz" customClass="ClubTableViewCell" customModule="Sport4All" customModuleProvider="target">
@@ -445,7 +444,7 @@
                                 </prototypes>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lIR-yd-EFz">
-                                <rect key="frame" x="22" y="44" width="370" height="35"/>
+                                <rect key="frame" x="22" y="0.0" width="370" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="thI-ti-83j"/>
                                 </constraints>

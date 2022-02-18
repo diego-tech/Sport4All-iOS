@@ -18,15 +18,21 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HomeClubTableViewCell" rowHeight="100" id="KGk-i7-Jjw" customClass="ClubTableViewCell" customModule="Sport4All" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="340" height="100"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HomeClubTableViewCell" rowHeight="127" id="KGk-i7-Jjw" customClass="ClubTableViewCell" customModule="Sport4All" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="340" height="127"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="340" height="100"/>
+                <rect key="frame" x="0.0" y="0.0" width="340" height="127"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="All Clubs Image" translatesAutoresizingMaskIntoConstraints="NO" id="4Ed-jc-MOL">
+                        <rect key="frame" x="0.0" y="5" width="100" height="120"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="120" id="s8H-8W-Kdz"/>
+                        </constraints>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escuela Tenis Club de Campo Villa de Madrid" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5N-Cq-JB2">
-                        <rect key="frame" x="108" y="8" width="163" height="29"/>
+                        <rect key="frame" x="108" y="23" width="163" height="29"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="163" id="G6X-oK-lgj"/>
                         </constraints>
@@ -35,21 +41,18 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAl-2k-weN" userLabel="GoClubButton">
-                        <rect key="frame" x="279" y="20" width="50" height="61"/>
+                        <rect key="frame" x="279" y="20" width="50" height="91"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="RightArrowAllClubsCard"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+34 666 888 222" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlS-9G-VuF">
-                        <rect key="frame" x="108" y="44.5" width="78" height="11"/>
+                        <rect key="frame" x="108" y="59.5" width="78" height="11"/>
                         <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="9"/>
                         <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="All Clubs Image" translatesAutoresizingMaskIntoConstraints="NO" id="4Ed-jc-MOL">
-                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                    </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="AnT-F5-W5B">
-                        <rect key="frame" x="108" y="69" width="123" height="20"/>
+                        <rect key="frame" x="108" y="84" width="123" height="20"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Wifi" translatesAutoresizingMaskIntoConstraints="NO" id="f8E-fM-RA1">
                                 <rect key="frame" x="0.0" y="0.0" width="21" height="20"/>
@@ -74,10 +77,10 @@
                     <constraint firstAttribute="bottom" secondItem="WAl-2k-weN" secondAttribute="bottom" constant="19" id="0Hz-Ry-AYv"/>
                     <constraint firstItem="YlS-9G-VuF" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="2E3-vf-xFO"/>
                     <constraint firstItem="YlS-9G-VuF" firstAttribute="leading" secondItem="4Ed-jc-MOL" secondAttribute="trailing" constant="8" symbolic="YES" id="9Wg-Ih-6qH"/>
-                    <constraint firstItem="4Ed-jc-MOL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="D9b-9D-WBY"/>
+                    <constraint firstItem="4Ed-jc-MOL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="D9b-9D-WBY"/>
                     <constraint firstItem="4Ed-jc-MOL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="FZG-Qj-EXR"/>
                     <constraint firstItem="AnT-F5-W5B" firstAttribute="leading" secondItem="4Ed-jc-MOL" secondAttribute="trailing" constant="8" symbolic="YES" id="PNB-h2-MUA"/>
-                    <constraint firstAttribute="bottom" secondItem="4Ed-jc-MOL" secondAttribute="bottom" id="Qj4-bt-fwg"/>
+                    <constraint firstAttribute="bottom" secondItem="4Ed-jc-MOL" secondAttribute="bottom" constant="5" id="Qj4-bt-fwg"/>
                     <constraint firstItem="W5N-Cq-JB2" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="-27.5" id="aKg-hc-3p4"/>
                     <constraint firstItem="AnT-F5-W5B" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="29" id="lim-13-GjJ"/>
                     <constraint firstItem="W5N-Cq-JB2" firstAttribute="leading" secondItem="4Ed-jc-MOL" secondAttribute="trailing" constant="8" symbolic="YES" id="wOj-T5-ZfJ"/>
@@ -90,7 +93,7 @@
             <connections>
                 <outlet property="homeClubsUIView" destination="H2p-sc-9uM" id="HRV-7M-7LF"/>
             </connections>
-            <point key="canvasLocation" x="29" y="129"/>
+            <point key="canvasLocation" x="31.884057971014496" y="65.959821428571431"/>
         </tableViewCell>
     </objects>
     <resources>

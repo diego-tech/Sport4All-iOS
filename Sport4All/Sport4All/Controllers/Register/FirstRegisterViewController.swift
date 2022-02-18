@@ -32,6 +32,12 @@ class FirstRegisterViewController: UIViewController {
 		// Inicialización Estilos
 		setTextFieldStyles()
 		setButtonStyles()
+		
+		// Testeo Registro
+		firstEmailTF.text = "prueba3@prueba.com"
+		secondEmailTF.text = "prueba3@prueba.com"
+		firstPasswordTF.text = "Prueba12345."
+		secondPasswordTF.text = "Prueba12345."
 	}
 	
 	// MARK: Action Functions

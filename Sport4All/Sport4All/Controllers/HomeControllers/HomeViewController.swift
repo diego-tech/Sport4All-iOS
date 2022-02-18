@@ -13,13 +13,12 @@ class HomeViewController: UIViewController {
 	private var segmentedSetUp = false
 
 	// Outlets
-	@IBOutlet weak var segmentedControl: UISegmentedControl!
+	@IBOutlet weak var changeViewSegmentedControl: UISegmentedControl!
 	
 	@IBOutlet weak var firstVC: UIView!
 	@IBOutlet weak var secondVC: UIView!
 	
 	// MARK: Frame Cycle Functions
-	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
@@ -33,23 +32,23 @@ class HomeViewController: UIViewController {
 
 		if segmentedSetUp == false {
 			// Segmented Control
-			segmentedControl.setUpView()
+			changeViewSegmentedControl.setUpView()
 			segmentedSetUp = true
 		}
 	}
 	
 	// MARK: Action Functions
 	@IBAction func segmentedControlAction(_ sender: UISegmentedControl) {
-		segmentedControl.changeUnderlinePosition()
+		changeViewSegmentedControl.changeUnderlinePosition()
 		
 		firstVC.isHidden = true
 		secondVC.isHidden = true
 
-		if segmentedControl.selectedSegmentIndex == 0 {
+		if changeViewSegmentedControl.selectedSegmentIndex == 0 {
 			// Show Home Clubs View Controller
 			firstVC.isHidden = false
 			secondVC.isHidden = true
-		} else if segmentedControl.selectedSegmentIndex == 1{
+		} else if changeViewSegmentedControl.selectedSegmentIndex == 1{
 			// Show Home Matches View Controller
 			secondVC.isHidden = false
 			firstVC.isHidden = true
