@@ -61,7 +61,7 @@ class HomeViewController: UIViewController {
 	}
 	
 	@IBAction func testButtonAction(_ sender: UIButton) {
-		let vc = UIStoryboard(name: "InfoClub", bundle: nil).instantiateViewController(withIdentifier: "InfoClub")
+		let vc = UIStoryboard(name: "ModifyPassword", bundle: nil).instantiateViewController(withIdentifier: "ModifyPassword")
 		show(vc, sender: self)
 	}
 	
