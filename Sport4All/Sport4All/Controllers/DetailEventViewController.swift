@@ -14,6 +14,7 @@ class DetailEventViewController: UIViewController {
 	// Outlets
 	@IBOutlet weak var locationBTN: UIButton!
 	@IBOutlet weak var inscribeEventBTN: UIButton!
+	@IBOutlet weak var headerUIView: UIView!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,7 @@ class DetailEventViewController: UIViewController {
 		// Inicialización Estilos
 		locationBTN.contentHorizontalAlignment = .left
 		inscribeButtonStyle()
+		headerUIView.bottomShadow()
     }
 	
 	// MARK: Action Functions

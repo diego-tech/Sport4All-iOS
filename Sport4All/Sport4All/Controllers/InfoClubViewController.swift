@@ -12,10 +12,10 @@ class InfoClubViewController: UIViewController {
 	// Variables
 	
 	// Outlets
-	@IBOutlet weak var headerUIView: UIView?
-	@IBOutlet weak var webContactBTN: UIButton?
-	@IBOutlet weak var phoneContactBTN: UIButton?
-	@IBOutlet weak var reservBTN: UIButton?
+	@IBOutlet weak var headerUIView: UIView!
+	@IBOutlet weak var webContactBTN: UIButton!
+	@IBOutlet weak var phoneContactBTN: UIButton!
+	@IBOutlet weak var reservBTN: UIButton!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class InfoClubViewController: UIViewController {
 		
 		// Inicialización Estilos
 		buttonStyles()
-		headerUIView?.bottomShadow()
+		headerUIView.bottomShadow()
     }
 
 	
