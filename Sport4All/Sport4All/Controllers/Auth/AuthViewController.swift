@@ -44,6 +44,17 @@ class AuthViewController: UIViewController {
 //		clubList()
 	}
 	
+	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
+		
+		if !UserDefaultsProvider.bool(key: .isNewUser) {
+			// Show Onboarding
+			let vc = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
+			vc.modalPresentationStyle = .fullScreen
+			present(vc, animated: true, completion: nil)
+		}
+	}
+	
 	// MARK: Action Functions
 	@IBAction func rememberPasswordButtonAction(_ sender: UIButton) {
 		// Ir a Recuperar Contraseña
