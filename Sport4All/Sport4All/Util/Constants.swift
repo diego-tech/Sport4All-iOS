@@ -10,5 +10,5 @@ import Foundation
 struct Constants {
 	
 	// Networking
-	static let kBaseURL = "http://localhost:8888/Sport4All-API/public/api"
+	static let kBaseURL = "http://localhost:80/api"
 }

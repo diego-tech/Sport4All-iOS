@@ -9,6 +9,7 @@ import Foundation
 
 enum UserDefaultsKey: String {
 	case authUserToken
+	case isNewUser
 }
 
 final class UserDefaultsProvider {
@@ -29,6 +30,10 @@ final class UserDefaultsProvider {
 	
 	static func string(key: UserDefaultsKey) -> String? {
 		return UserDefaults.standard.string(forKey: key.rawValue)
+	}
+	
+	static func bool(key: UserDefaultsKey) -> Bool {
+		return UserDefaults.standard.bool(forKey: key.rawValue)
 	}
 	
 	// Remove All User Defaults

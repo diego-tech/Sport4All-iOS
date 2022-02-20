@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro.ttf">
+            <string>SFPro-Bold</string>
+            <string>SFPro-Regular</string>
+            <string>SFPro-Semibold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Onboarding View Controller-->
+        <scene sceneID="nxq-r3-0tz">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingViewController" id="BgD-u2-eWj" customClass="OnboardingViewController" customModule="Sport4All" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LJT-d2-cWu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6Dh-mS-hjI">
+                                <rect key="frame" x="0.0" y="124" width="414" height="606"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Pw2-ha-yx5">
+                                    <size key="itemSize" width="413" height="667"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OnboardingCollectionViewCell" id="fmb-TI-0j7" customClass="OnboardingCollectionViewCell" customModule="Sport4All" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="-30.5" width="413" height="667"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="60k-Os-zEO">
+                                            <rect key="frame" x="0.0" y="0.0" width="413" height="667"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pdw-5C-R1i">
+                                                    <rect key="frame" x="0.0" y="0.0" width="413" height="507.5"/>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="1Mn-UR-Rt5">
+                                                    <rect key="frame" x="16" y="532.5" width="381" height="109.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick Delivery" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E47-7k-oiW">
+                                                            <rect key="frame" x="0.0" y="0.0" width="381" height="36"/>
+                                                            <fontDescription key="fontDescription" name="SFPro-Bold" family="SF Pro" pointSize="30"/>
+                                                            <color key="textColor" name="CorporativeColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="En el apartado clubes, podrás encontrar información sobre todos los clubes en los que podrás reservar espacios." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMh-Yk-nSU">
+                                                            <rect key="frame" x="0.0" y="52" width="381" height="57.5"/>
+                                                            <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="16"/>
+                                                            <color key="textColor" name="BlueBerry"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="iMh-Yk-nSU" secondAttribute="trailing" id="YRG-X8-EK1"/>
+                                                        <constraint firstItem="E47-7k-oiW" firstAttribute="leading" secondItem="1Mn-UR-Rt5" secondAttribute="leading" id="d7r-6X-P1A"/>
+                                                        <constraint firstAttribute="trailing" secondItem="E47-7k-oiW" secondAttribute="trailing" id="e9j-Sl-ZC8"/>
+                                                        <constraint firstItem="iMh-Yk-nSU" firstAttribute="leading" secondItem="1Mn-UR-Rt5" secondAttribute="leading" id="eCB-TG-nIb"/>
+                                                        <constraint firstItem="iMh-Yk-nSU" firstAttribute="top" secondItem="E47-7k-oiW" secondAttribute="bottom" constant="16" id="fWA-yo-Xxy"/>
+                                                        <constraint firstAttribute="bottom" secondItem="iMh-Yk-nSU" secondAttribute="bottom" id="rVw-13-7rz"/>
+                                                        <constraint firstItem="E47-7k-oiW" firstAttribute="top" secondItem="1Mn-UR-Rt5" secondAttribute="top" id="zXT-SI-Zmq"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="1Mn-UR-Rt5" secondAttribute="bottom" constant="25" id="0qT-MD-9PA"/>
+                                                <constraint firstItem="1Mn-UR-Rt5" firstAttribute="leading" secondItem="60k-Os-zEO" secondAttribute="leading" constant="16" id="EMO-u4-AZB"/>
+                                                <constraint firstItem="1Mn-UR-Rt5" firstAttribute="top" secondItem="pdw-5C-R1i" secondAttribute="bottom" constant="25" id="IUw-9V-vg6"/>
+                                                <constraint firstItem="pdw-5C-R1i" firstAttribute="top" secondItem="60k-Os-zEO" secondAttribute="top" id="M21-ff-8FR"/>
+                                                <constraint firstItem="pdw-5C-R1i" firstAttribute="leading" secondItem="60k-Os-zEO" secondAttribute="leading" id="a8s-FU-e0n"/>
+                                                <constraint firstAttribute="trailing" secondItem="1Mn-UR-Rt5" secondAttribute="trailing" constant="16" id="jxv-dG-Fri"/>
+                                                <constraint firstAttribute="trailing" secondItem="pdw-5C-R1i" secondAttribute="trailing" id="zvR-ju-sfP"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" name="SoftBlue"/>
+                                        <size key="customSize" width="413" height="667"/>
+                                        <connections>
+                                            <outlet property="slideDescriptionLbl" destination="iMh-Yk-nSU" id="3Jb-0A-RJO"/>
+                                            <outlet property="slideImageView" destination="pdw-5C-R1i" id="EMp-qK-gLZ"/>
+                                            <outlet property="slideTitleLbl" destination="E47-7k-oiW" id="CNd-9t-n9B"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUr-26-G7j">
+                                <rect key="frame" x="132" y="772" width="150" height="50"/>
+                                <color key="backgroundColor" name="Periwinkle"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="Ffx-HH-z3O"/>
+                                    <constraint firstAttribute="height" constant="50" id="y6R-Lp-gVs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFPro-Bold" family="SF Pro" pointSize="17"/>
+                                <state key="normal" title="SIGUIENTE">
+                                    <color key="titleColor" name="HardColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="nextButtonAction:" destination="BgD-u2-eWj" eventType="touchUpInside" id="OY1-6f-OxT"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="8hY-dF-QeO">
+                                <rect key="frame" x="158.5" y="730" width="97.5" height="26"/>
+                                <color key="pageIndicatorTintColor" systemColor="systemGray5Color"/>
+                                <color key="currentPageIndicatorTintColor" name="CorporativeColor"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9UD-Ip-KxD" userLabel="Skip Button">
+                                <rect key="frame" x="228" y="64" width="166" height="40"/>
+                                <fontDescription key="fontDescription" name="SFPro-Semibold" family="SF Pro" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                <state key="normal" title="Saltar Tutorial" image="RightArrowAllClubsCard">
+                                    <color key="titleColor" name="HardColor"/>
+                                </state>
+                                <buttonConfiguration key="configuration" style="plain" image="RightArrowAllClubsCard" imagePlacement="trailing" title="Saltar Tutorial" imagePadding="10">
+                                    <fontDescription key="titleFontDescription" name="SFPro-Semibold" family="SF Pro" pointSize="16"/>
+                                    <color key="baseForegroundColor" name="HardColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="skipTutorialButtonAction:" destination="BgD-u2-eWj" eventType="touchUpInside" id="tyS-AB-V9X"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="O8D-Wh-tgq"/>
+                        <color key="backgroundColor" name="SoftBlue"/>
+                        <constraints>
+                            <constraint firstItem="6Dh-mS-hjI" firstAttribute="trailing" secondItem="O8D-Wh-tgq" secondAttribute="trailing" id="2uT-zu-qIJ"/>
+                            <constraint firstItem="O8D-Wh-tgq" firstAttribute="trailing" secondItem="9UD-Ip-KxD" secondAttribute="trailing" constant="20" id="3Mu-eX-I9k"/>
+                            <constraint firstItem="8hY-dF-QeO" firstAttribute="top" secondItem="6Dh-mS-hjI" secondAttribute="bottom" id="Hm5-It-UA3"/>
+                            <constraint firstItem="6Dh-mS-hjI" firstAttribute="top" secondItem="9UD-Ip-KxD" secondAttribute="bottom" constant="20" id="J14-oY-vLa"/>
+                            <constraint firstItem="9UD-Ip-KxD" firstAttribute="top" secondItem="O8D-Wh-tgq" secondAttribute="top" constant="20" id="LQC-vU-te7"/>
+                            <constraint firstItem="8hY-dF-QeO" firstAttribute="centerX" secondItem="O8D-Wh-tgq" secondAttribute="centerX" id="MBP-Nr-f1o"/>
+                            <constraint firstItem="VUr-26-G7j" firstAttribute="top" secondItem="8hY-dF-QeO" secondAttribute="bottom" constant="16" id="MaS-tE-xbM"/>
+                            <constraint firstItem="O8D-Wh-tgq" firstAttribute="bottom" secondItem="VUr-26-G7j" secondAttribute="bottom" constant="40" id="UMM-qj-6jp"/>
+                            <constraint firstItem="6Dh-mS-hjI" firstAttribute="leading" secondItem="O8D-Wh-tgq" secondAttribute="leading" id="Z7A-Gu-8UU"/>
+                            <constraint firstItem="VUr-26-G7j" firstAttribute="centerX" secondItem="O8D-Wh-tgq" secondAttribute="centerX" id="kUi-ER-h0H"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nextButton" destination="VUr-26-G7j" id="NQU-HI-jkc"/>
+                        <outlet property="onboardingCollectionView" destination="6Dh-mS-hjI" id="Ouj-cx-NnG"/>
+                        <outlet property="pageControl" destination="8hY-dF-QeO" id="kK2-Jk-FPF"/>
+                        <outlet property="skipButton" destination="9UD-Ip-KxD" id="fPJ-4k-ny2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uKn-Vr-z7n" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1620.289855072464" y="233.70535714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="RightArrowAllClubsCard" width="26" height="26"/>
+        <namedColor name="BlueBerry">
+            <color red="0.30196078431372547" green="0.39215686274509803" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CorporativeColor">
+            <color red="0.20000000000000001" green="0.36862745098039218" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="HardColor">
+            <color red="0.19607843137254902" green="0.26666666666666666" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Periwinkle">
+            <color red="0.81568627450980391" green="0.88235294117647056" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SoftBlue">
+            <color red="0.91764705882352937" green="0.93333333333333335" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

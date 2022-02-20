@@ -46,7 +46,7 @@ class RetrievePasswordViewController: UIViewController {
 	// MARK: Styles
 	private func setTextFieldStyles() {
 		// Estilos Email Text Field
-		emailTF.bottomBorder(color: .hardColor!)
+		emailTF.bottomBorder(color: .hardColor ?? .black)
 		emailTF.placeholderStyles(placeHolderText: "Correo Electrónico")
 		emailTF.textStyles(keyboardType: .emailAddress)
 	}

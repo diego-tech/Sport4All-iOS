@@ -32,6 +32,12 @@ class FirstRegisterViewController: UIViewController {
 		// Inicialización Estilos
 		setTextFieldStyles()
 		setButtonStyles()
+		
+		// Register Test Diego
+//		firstEmailTF.text = "prueba3@prueba.com"
+//		secondEmailTF.text = "prueba3@prueba.com"
+//		firstPasswordTF.text = "Prueba12345."
+//		secondPasswordTF.text = "Prueba12345."
 	}
 	
 	// MARK: Action Functions
@@ -126,22 +132,22 @@ class FirstRegisterViewController: UIViewController {
 	// MARK: Styles
 	private func setTextFieldStyles() {
 		// Estilos Email Text Field
-		firstEmailTF.bottomBorder(color: .hardColor!)
+		firstEmailTF.bottomBorder(color: .hardColor ?? .black)
 		firstEmailTF.placeholderStyles(placeHolderText: "Correo Electrónico")
 		firstEmailTF.textStyles(keyboardType: .emailAddress)
 		
-		secondEmailTF.bottomBorder(color: .hardColor!)
+		secondEmailTF.bottomBorder(color: .hardColor ?? .black)
 		secondEmailTF.placeholderStyles(placeHolderText: "Confirmar Correo Electróncio")
 		secondEmailTF.textStyles(keyboardType: .emailAddress)
 		
 		// Estilos Password Text Field
-		firstPasswordTF.bottomBorder(color: .hardColor!)
+		firstPasswordTF.bottomBorder(color: .hardColor ?? .black)
 		firstPasswordTF.placeholderStyles(placeHolderText: "Contraseña")
 		firstPasswordTF.textStyles(keyboardType: .default)
 		firstPasswordTF.isSecureTextEntry = true
 		firstPasswordTF.showAndHidePassword()
 		
-		secondPasswordTF.bottomBorder(color: .hardColor!)
+		secondPasswordTF.bottomBorder(color: .hardColor ?? .black)
 		secondPasswordTF.placeholderStyles(placeHolderText: "Confirmar Contraseña")
 		secondPasswordTF.textStyles(keyboardType: .default)
 		secondPasswordTF.isSecureTextEntry = true

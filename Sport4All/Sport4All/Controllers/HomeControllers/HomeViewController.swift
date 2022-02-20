@@ -10,37 +10,45 @@ import UIKit
 class HomeViewController: UIViewController {
 	
 	// Variables
-
+	private var segmentedSetUp = false
 
 	// Outlets
-	@IBOutlet weak var segmentedControl: UISegmentedControl!
+	@IBOutlet weak var changeViewSegmentedControl: UISegmentedControl!
 	
 	@IBOutlet weak var firstVC: UIView!
 	@IBOutlet weak var secondVC: UIView!
 	
+	// MARK: Frame Cycle Functions
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
 		
 		// Set First View Controller
 		firstVC.isHidden = false
-		
-		// Segmented Control
-		segmentedControl.setUpView()
+	}
+	
+	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
+
+		if segmentedSetUp == false {
+			// Segmented Control
+			changeViewSegmentedControl.setUpView()
+			segmentedSetUp = true
+		}
 	}
 	
 	// MARK: Action Functions
 	@IBAction func segmentedControlAction(_ sender: UISegmentedControl) {
-		segmentedControl.changeUnderlinePosition()
+		changeViewSegmentedControl.changeUnderlinePosition()
 		
 		firstVC.isHidden = true
 		secondVC.isHidden = true
 
-		if segmentedControl.selectedSegmentIndex == 0 {
+		if changeViewSegmentedControl.selectedSegmentIndex == 0 {
 			// Show Home Clubs View Controller
 			firstVC.isHidden = false
 			secondVC.isHidden = true
-		} else if segmentedControl.selectedSegmentIndex == 1{
+		} else if changeViewSegmentedControl.selectedSegmentIndex == 1{
 			// Show Home Matches View Controller
 			secondVC.isHidden = false
 			firstVC.isHidden = true
@@ -52,8 +60,11 @@ class HomeViewController: UIViewController {
 		show(vc, sender: self)
 	}
 	
-	@IBAction func testButtonAction(_ sender: Any) {
-		let vc = UIStoryboard(name: "InfoClub", bundle: nil).instantiateViewController(withIdentifier: "InfoClub")
+	@IBAction func testButtonAction(_ sender: UIButton) {
+		let vc = UIStoryboard(name: "InfoClub", bundle: nil).instantiateViewController(withIdentifier: "InfoClub") as! InfoClubViewController
+//		let vc = UIStoryboard(name: "DetailEvent", bundle: nil).instantiateViewController(withIdentifier: "DetailEvent") as! DetailEventViewController
+//		let vc = UIStoryboard(name: "ModifyPassword", bundle: nil).instantiateViewController(withIdentifier: "ModifyPassword") as! ModifyPasswordViewController
+
 		show(vc, sender: self)
 	}
 	

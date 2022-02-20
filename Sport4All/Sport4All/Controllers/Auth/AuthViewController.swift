@@ -21,6 +21,11 @@ class AuthViewController: UIViewController {
 	@IBOutlet weak var accessButton: UIButton!
 	@IBOutlet weak var goToRegisterButton: UIButton!
 	
+	override func viewWillLayoutSubviews() {
+		super.viewWillLayoutSubviews()
+
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
@@ -29,9 +34,9 @@ class AuthViewController: UIViewController {
 		setTextFieldStyles()
 		setButtonStyles()
 		
-		// Login Test
-		emailTextField.text = "diego171200@gmail.com"
-		passwordTextField.text = "Prueba12345."
+		// Login Test Diego
+//		emailTextField.text = "diego171200@gmail.com"
+//		passwordTextField.text = "Prueba12345."
 		
 		// Testeo Funciones API
 //		register()
@@ -124,12 +129,12 @@ class AuthViewController: UIViewController {
 	// MARK: Styles
 	private func setTextFieldStyles() {
 		// Estilos Email Text Field
-		emailTextField.bottomBorder(color: .hardColor!)
+		emailTextField.bottomBorder(color: .hardColor ?? .black)
 		emailTextField.placeholderStyles(placeHolderText: "Correo Electrónico")
 		emailTextField.textStyles(keyboardType: .emailAddress)
 		
 		// Estilos Password Text Field
-		passwordTextField.bottomBorder(color: .hardColor!)
+		passwordTextField.bottomBorder(color: .hardColor ?? .black)
 		passwordTextField.placeholderStyles(placeHolderText: "Contraseña")
 		passwordTextField.textStyles(keyboardType: .default)
 		passwordTextField.isSecureTextEntry = true
