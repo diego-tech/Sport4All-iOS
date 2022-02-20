@@ -21,9 +21,10 @@ class SecondRegisterViewController: UIViewController, UINavigationControllerDele
 	
 	private var segmentedSetUp = false
 	
+	let pickerController = UIImagePickerController()
+	
 	// Outlets
-	@IBOutlet weak var plusRoundedButton: UIButton!
-	@IBOutlet weak var avatarButton: UIButton!
+	@IBOutlet weak var avatarImageView: UIImageView!
 	@IBOutlet weak var nameTF: UITextField!
 	@IBOutlet weak var surnamesTF: UITextField!
 	@IBOutlet weak var registerButton: UIButton!
@@ -34,9 +35,18 @@ class SecondRegisterViewController: UIViewController, UINavigationControllerDele
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
 		
+		// Init Image Picker Delegate
+		pickerController.delegate = self
+		
 		// Inicialización Estilos
 		setTextFieldStyles()
 		setButtonStyles()
+		
+		// Selector Image Init
+		let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+		avatarImageView.isUserInteractionEnabled = true
+		avatarImageView.addGestureRecognizer(tapGestureRecognizer)
+		avatarImageView.makeRounds()
 	}
 	
 	override func viewDidLayoutSubviews() {
@@ -59,14 +69,12 @@ class SecondRegisterViewController: UIViewController, UINavigationControllerDele
 		registerApi()
 	}
 	
-	@IBAction func uploadImage(_ sender: UIButton) {
-		let pickerController = UIImagePickerController()
-		pickerController.delegate = self
-		present(pickerController, animated: true, completion: nil)
-	}
-	
 	@IBAction func genreSegmentedControl(_ sender: UISegmentedControl) {
 		genreSegmentedControl.changeUnderlinePosition() 
+	}
+	
+	@objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+		present(pickerController, animated: true, completion: nil)
 	}
 	
 	// MARK: Functions
@@ -149,12 +157,7 @@ extension SecondRegisterViewController: UIImagePickerControllerDelegate {
 		picker.dismiss(animated: true, completion: nil)
 		
 		let image = info[.imageURL] as! URL
-		
-//		Setear Imagen Seleccionada en el Botón
-//
-//		let btnImage = info[.originalImage] as! UIImage
-//		avatarButton.imageView?.image = btnImage
-		
+			
 		NetworkingProvider.shared.uploadImage(userImage: image) { responseData, status, msg in
 			debugPrint(responseData)
 			debugPrint(status)
@@ -165,5 +168,10 @@ extension SecondRegisterViewController: UIImagePickerControllerDelegate {
 		} failure: { error in
 			debugPrint(error)
 		}
+
+//		Setear Imagen Seleccionada en el Botón
+
+//		guard let takeImage = info[.imageURL] as? UIImage else { return }
+//		self.avatarImageView?.image = image
 	}
 }
