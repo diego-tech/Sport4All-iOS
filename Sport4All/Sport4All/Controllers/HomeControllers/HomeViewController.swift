@@ -61,7 +61,9 @@ class HomeViewController: UIViewController {
 	}
 	
 	@IBAction func testButtonAction(_ sender: UIButton) {
-		let vc = UIStoryboard(name: "DetailEvent", bundle: nil).instantiateViewController(withIdentifier: "DetailEvent")
+		let vc = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
+		
+		vc.modalPresentationStyle = .fullScreen
 		show(vc, sender: self)
 	}
 	
