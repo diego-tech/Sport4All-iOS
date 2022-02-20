@@ -71,7 +71,6 @@ class OnboardingViewController: UIViewController {
 	
 	// MARK: Action Functions
 	@IBAction func skipTutorialButtonAction(_ sender: UIButton) {
-		let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
 		navigateToAuth()
 	}
 	

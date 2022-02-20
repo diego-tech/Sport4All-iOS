@@ -134,12 +134,12 @@ class SecondRegisterViewController: UIViewController, UINavigationControllerDele
 	// MARK: Styles
 	private func setTextFieldStyles() {
 		// Estilos Name Text Field
-		nameTF.bottomBorder(color: .hardColor!)
+		nameTF.bottomBorder(color: .hardColor ?? .black)
 		nameTF.placeholderStyles(placeHolderText: "Nombre")
 		nameTF.textStyles(keyboardType: .default)
 		
 		// Estilos Surnames Text Field
-		surnamesTF.bottomBorder(color: .hardColor!)
+		surnamesTF.bottomBorder(color: .hardColor ?? .black)
 		surnamesTF.placeholderStyles(placeHolderText: "Apellidos")
 		surnamesTF.textStyles(keyboardType: .default)
 	}
