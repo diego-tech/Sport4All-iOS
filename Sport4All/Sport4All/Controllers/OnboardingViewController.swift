@@ -71,6 +71,7 @@ class OnboardingViewController: UIViewController {
 	
 	// MARK: Action Functions
 	@IBAction func skipTutorialButtonAction(_ sender: UIButton) {
+		UserDefaultsProvider.setUserDefaults(key: .isNewUser, value: true)
 		navigateToAuth()
 	}
 	

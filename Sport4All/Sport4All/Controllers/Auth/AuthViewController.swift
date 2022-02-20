@@ -21,6 +21,11 @@ class AuthViewController: UIViewController {
 	@IBOutlet weak var accessButton: UIButton!
 	@IBOutlet weak var goToRegisterButton: UIButton!
 	
+	override func viewWillLayoutSubviews() {
+		super.viewWillLayoutSubviews()
+
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
@@ -29,9 +34,9 @@ class AuthViewController: UIViewController {
 		setTextFieldStyles()
 		setButtonStyles()
 		
-		// Login Test
-		emailTextField.text = "diego171200@gmail.com"
-		passwordTextField.text = "Prueba12345."
+		// Login Test Diego
+//		emailTextField.text = "diego171200@gmail.com"
+//		passwordTextField.text = "Prueba12345."
 		
 		// Testeo Funciones API
 //		register()
@@ -42,17 +47,6 @@ class AuthViewController: UIViewController {
 //		modifyPassword()
 //		registerFavClub()
 //		clubList()
-	}
-	
-	override func viewDidLayoutSubviews() {
-		super.viewDidLayoutSubviews()
-		
-		if !UserDefaultsProvider.bool(key: .isNewUser) {
-			// Show Onboarding
-			let vc = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
-			vc.modalPresentationStyle = .fullScreen
-			present(vc, animated: true, completion: nil)
-		}
 	}
 	
 	// MARK: Action Functions
