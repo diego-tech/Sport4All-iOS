@@ -18,43 +18,59 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="68" id="KGk-i7-Jjw" customClass="YourClubEventsTableViewCell" customModule="Sport4All" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="300.5" height="70"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="300.5" height="70"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NIx-Lu-yeI">
-                        <rect key="frame" x="0.0" y="0.0" width="182" height="70"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NIx-Lu-yeI">
+                        <rect key="frame" x="0.0" y="0.0" width="165" height="70"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Clase técnica de volea" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxN-Ya-rXY">
-                                <rect key="frame" x="0.0" y="16" width="182" height="14"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clase técnica de volea" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxN-Ya-rXY">
+                                <rect key="frame" x="0.0" y="16" width="165" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="165" id="Trl-5H-GMU"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
                                 <color key="textColor" name="HardColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="17:30/19:30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6q-cC-f6r">
-                                <rect key="frame" x="-4" y="38" width="186" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17:30/19:30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6q-cC-f6r">
+                                <rect key="frame" x="0.0" y="38" width="165" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="165" id="HOb-3v-s5M"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
                                 <color key="textColor" name="HardColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" name="SoftBlue"/>
+                        <constraints>
+                            <constraint firstItem="e6q-cC-f6r" firstAttribute="leading" secondItem="NIx-Lu-yeI" secondAttribute="leading" id="2DC-Dn-M1f"/>
+                            <constraint firstItem="KxN-Ya-rXY" firstAttribute="leading" secondItem="NIx-Lu-yeI" secondAttribute="leading" id="9IH-DA-yyu"/>
+                            <constraint firstItem="KxN-Ya-rXY" firstAttribute="centerY" secondItem="NIx-Lu-yeI" secondAttribute="centerY" constant="-12" id="9zR-L0-jaX"/>
+                            <constraint firstAttribute="trailing" secondItem="KxN-Ya-rXY" secondAttribute="trailing" id="cdV-5b-Onz"/>
+                            <constraint firstItem="e6q-cC-f6r" firstAttribute="centerY" secondItem="NIx-Lu-yeI" secondAttribute="centerY" constant="10.5" id="dJC-wh-apF"/>
+                            <constraint firstAttribute="width" constant="165" id="n1r-sV-ge4"/>
+                            <constraint firstAttribute="trailing" secondItem="e6q-cC-f6r" secondAttribute="trailing" id="tOI-TN-2du"/>
+                        </constraints>
                     </view>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hV-qA-uzu">
-                        <rect key="frame" x="182" y="35" width="118" height="19"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hV-qA-uzu">
+                        <rect key="frame" x="165" y="29.5" width="136" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="136" id="l4c-QY-XaF"/>
+                        </constraints>
                         <color key="tintColor" name="RedColor"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system" imagePlacement="trailing" title="Cancelación">
                             <fontDescription key="titleFontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
                         </buttonConfiguration>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwH-dB-4d8">
-                        <rect key="frame" x="179" y="12" width="124" height="19"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwH-dB-4d8">
+                        <rect key="frame" x="165" y="7.5" width="136" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="136" id="Rdy-W9-pLt"/>
+                        </constraints>
                         <color key="tintColor" name="HardColor"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system" imagePlacement="trailing" title="Confirmación">
@@ -62,6 +78,16 @@
                         </buttonConfiguration>
                     </button>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="NIx-Lu-yeI" secondAttribute="bottom" id="0bP-vO-Nsc"/>
+                    <constraint firstItem="3hV-qA-uzu" firstAttribute="leading" secondItem="NIx-Lu-yeI" secondAttribute="trailing" id="1sy-4O-JN1"/>
+                    <constraint firstItem="jwH-dB-4d8" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="-12" id="A6d-hk-VW4"/>
+                    <constraint firstItem="NIx-Lu-yeI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="L9y-sV-RPB"/>
+                    <constraint firstItem="3hV-qA-uzu" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="10" id="Q7W-g3-A8K"/>
+                    <constraint firstItem="jwH-dB-4d8" firstAttribute="leading" secondItem="NIx-Lu-yeI" secondAttribute="trailing" id="ptX-qT-doE"/>
+                    <constraint firstItem="NIx-Lu-yeI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="tPY-NG-huK"/>
+                    <constraint firstAttribute="trailing" secondItem="jwH-dB-4d8" secondAttribute="trailing" id="uCq-qV-jyb"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <point key="canvasLocation" x="136.95652173913044" y="83.035714285714278"/>
