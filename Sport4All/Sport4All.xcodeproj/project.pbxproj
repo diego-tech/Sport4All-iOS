@@ -13,6 +13,7 @@
 		5959268A27BBB84A00702369 /* DetailEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5959268927BBB84A00702369 /* DetailEvent.storyboard */; };
 		598E071327C3BC0400D5C185 /* YourClubEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598E071127C3BC0400D5C185 /* YourClubEventsTableViewCell.swift */; };
 		598E071427C3BC0400D5C185 /* YourClubEventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 598E071227C3BC0400D5C185 /* YourClubEventsTableViewCell.xib */; };
+		598E071827C3C58700D5C185 /* YourClub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 598E071727C3C58700D5C185 /* YourClub.storyboard */; };
 		5999B68027B2805B0008BE6B /* FavouritesClubs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5999B67F27B2805B0008BE6B /* FavouritesClubs.storyboard */; };
 		5999B68427B285640008BE6B /* ClubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999B68227B285640008BE6B /* ClubTableViewCell.swift */; };
 		5999B68527B285640008BE6B /* ClubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5999B68327B285640008BE6B /* ClubTableViewCell.xib */; };
@@ -74,6 +75,7 @@
 		5959268927BBB84A00702369 /* DetailEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailEvent.storyboard; sourceTree = "<group>"; };
 		598E071127C3BC0400D5C185 /* YourClubEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourClubEventsTableViewCell.swift; sourceTree = "<group>"; };
 		598E071227C3BC0400D5C185 /* YourClubEventsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YourClubEventsTableViewCell.xib; sourceTree = "<group>"; };
+		598E071727C3C58700D5C185 /* YourClub.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YourClub.storyboard; sourceTree = "<group>"; };
 		5999B67F27B2805B0008BE6B /* FavouritesClubs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavouritesClubs.storyboard; sourceTree = "<group>"; };
 		5999B68227B285640008BE6B /* ClubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubTableViewCell.swift; sourceTree = "<group>"; };
 		5999B68327B285640008BE6B /* ClubTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClubTableViewCell.xib; sourceTree = "<group>"; };
@@ -164,6 +166,14 @@
 				598E071227C3BC0400D5C185 /* YourClubEventsTableViewCell.xib */,
 			);
 			path = "Your Club";
+			sourceTree = "<group>";
+		};
+		598E071627C3C57600D5C185 /* YourClub */ = {
+			isa = PBXGroup;
+			children = (
+				598E071727C3C58700D5C185 /* YourClub.storyboard */,
+			);
+			path = YourClub;
 			sourceTree = "<group>";
 		};
 		5999B67E27B2803E0008BE6B /* FavouritesClubs */ = {
@@ -274,6 +284,7 @@
 		5E75E4C4279993CD005B89A3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				598E071627C3C57600D5C185 /* YourClub */,
 				5E75E4C827999409005B89A3 /* Launch */,
 				5E12F0F727C2891800316D69 /* Onboarding */,
 				5E75E4C927999412005B89A3 /* Auth */,
@@ -538,6 +549,7 @@
 				5E12F0F927C2894900316D69 /* Onboarding.storyboard in Resources */,
 				5E51236227BBD8010047EE44 /* InfoClub.storyboard in Resources */,
 				5ECF53F6278C3AB8005F6D01 /* Main.storyboard in Resources */,
+				598E071827C3C58700D5C185 /* YourClub.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
