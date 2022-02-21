@@ -7,9 +7,19 @@
 
 import UIKit
 
-extension UISegmentedControl {	
+var segmentedSetUp = false
+var underlineSegmented = UIView()
+var underlineAll = UIView()
+
+extension UISegmentedControl {
 	func setUpView() {
-		removeBorder()
+		if segmentedSetUp == false {
+			segmentedSetUp = true
+			self.addSubview(underlineSegmented)
+			self.addSubview(underlineAll)
+			removeBorder()
+		}
+		
 		addAllUnderline()
 		addUnderlineForSelectedSegment()
 	}
@@ -33,11 +43,9 @@ extension UISegmentedControl {
 		let underLineYPosition = self.bounds.size.height - 1.0
 		let underlineFrame = CGRect(x: 0, y: underLineYPosition, width: underlineWidth, height: underlineHeight)
 		
-		let underline = UIView(frame: underlineFrame)
-		underline.backgroundColor = UIColor.hardColor
-		underline.tag = 1
-		
-		self.addSubview(underline)
+		underlineSegmented.frame = underlineFrame
+		underlineSegmented.backgroundColor = UIColor.hardColor
+		underlineSegmented.tag = 1
 	}
 	
 	func addAllUnderline() {
@@ -45,9 +53,9 @@ extension UISegmentedControl {
 		let underlineHeight: CGFloat = 2.0
 		let underLineYPosition = self.bounds.size.height - 1.0
 		let underlineFrame = CGRect(x: 0, y: underLineYPosition, width: underlineWidth, height: underlineHeight)
-		let underline = UIView(frame: underlineFrame)
-		underline.backgroundColor = UIColor.blueLowOpacity
-		self.addSubview(underline)
+		
+		underlineAll.frame = underlineFrame
+		underlineAll.backgroundColor = UIColor.blueLowOpacity
 	}
 	
 	func changeUnderlinePosition() {

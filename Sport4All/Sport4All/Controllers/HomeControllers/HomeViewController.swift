@@ -10,7 +10,6 @@ import UIKit
 class HomeViewController: UIViewController {
 	
 	// Variables
-	private var segmentedSetUp = false
 
 	// Outlets
 	@IBOutlet weak var changeViewSegmentedControl: UISegmentedControl!
@@ -29,12 +28,8 @@ class HomeViewController: UIViewController {
 	
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
-
-		if segmentedSetUp == false {
-			// Segmented Control
-			changeViewSegmentedControl.setUpView()
-			segmentedSetUp = true
-		}
+		// Segmented Control
+		changeViewSegmentedControl.setUpView()
 	}
 	
 	// MARK: Action Functions
