@@ -11,6 +11,8 @@
 		07AB1FCB27AA9599007771E3 /* BestRatedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB1FC927AA9599007771E3 /* BestRatedCollectionViewCell.xib */; };
 		5959268727BBABE100702369 /* ModifyPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5959268627BBABE100702369 /* ModifyPassword.storyboard */; };
 		5959268A27BBB84A00702369 /* DetailEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5959268927BBB84A00702369 /* DetailEvent.storyboard */; };
+		598E071327C3BC0400D5C185 /* YourClubEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598E071127C3BC0400D5C185 /* YourClubEventsTableViewCell.swift */; };
+		598E071427C3BC0400D5C185 /* YourClubEventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 598E071227C3BC0400D5C185 /* YourClubEventsTableViewCell.xib */; };
 		5999B68027B2805B0008BE6B /* FavouritesClubs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5999B67F27B2805B0008BE6B /* FavouritesClubs.storyboard */; };
 		5999B68427B285640008BE6B /* ClubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999B68227B285640008BE6B /* ClubTableViewCell.swift */; };
 		5999B68527B285640008BE6B /* ClubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5999B68327B285640008BE6B /* ClubTableViewCell.xib */; };
@@ -70,6 +72,8 @@
 		07AB1FC927AA9599007771E3 /* BestRatedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestRatedCollectionViewCell.xib; sourceTree = "<group>"; };
 		5959268627BBABE100702369 /* ModifyPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModifyPassword.storyboard; sourceTree = "<group>"; };
 		5959268927BBB84A00702369 /* DetailEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailEvent.storyboard; sourceTree = "<group>"; };
+		598E071127C3BC0400D5C185 /* YourClubEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourClubEventsTableViewCell.swift; sourceTree = "<group>"; };
+		598E071227C3BC0400D5C185 /* YourClubEventsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YourClubEventsTableViewCell.xib; sourceTree = "<group>"; };
 		5999B67F27B2805B0008BE6B /* FavouritesClubs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavouritesClubs.storyboard; sourceTree = "<group>"; };
 		5999B68227B285640008BE6B /* ClubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubTableViewCell.swift; sourceTree = "<group>"; };
 		5999B68327B285640008BE6B /* ClubTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClubTableViewCell.xib; sourceTree = "<group>"; };
@@ -151,6 +155,15 @@
 				5959268927BBB84A00702369 /* DetailEvent.storyboard */,
 			);
 			path = Event;
+			sourceTree = "<group>";
+		};
+		598E071527C3C20C00D5C185 /* Your Club */ = {
+			isa = PBXGroup;
+			children = (
+				598E071127C3BC0400D5C185 /* YourClubEventsTableViewCell.swift */,
+				598E071227C3BC0400D5C185 /* YourClubEventsTableViewCell.xib */,
+			);
+			path = "Your Club";
 			sourceTree = "<group>";
 		};
 		5999B67E27B2803E0008BE6B /* FavouritesClubs */ = {
@@ -400,6 +413,7 @@
 		5EF360F527AA9B2B00105AB7 /* CellsView */ = {
 			isa = PBXGroup;
 			children = (
+				598E071527C3C20C00D5C185 /* Your Club */,
 				5999B68127B285380008BE6B /* ClubCell */,
 				5EF360F627AA9B3300105AB7 /* BestRated */,
 			);
@@ -515,6 +529,7 @@
 				5ECF53FB278C3AB9005F6D01 /* LaunchScreen.storyboard in Resources */,
 				5E9C14C52790358F002D9AF1 /* SF-Pro.ttf in Resources */,
 				5ECF53F8278C3AB9005F6D01 /* Assets.xcassets in Resources */,
+				598E071427C3BC0400D5C185 /* YourClubEventsTableViewCell.xib in Resources */,
 				5999B68027B2805B0008BE6B /* FavouritesClubs.storyboard in Resources */,
 				5EFC3CA9279DC0A100720905 /* Register.storyboard in Resources */,
 				5959268727BBABE100702369 /* ModifyPassword.storyboard in Resources */,
@@ -564,6 +579,7 @@
 				5E197F03278D80D4008BBABB /* ColorExtension.swift in Sources */,
 				5E123C3D27A2F1F000CF14EE /* SecondRegisterViewController.swift in Sources */,
 				5E51235E27BBD5D70047EE44 /* InfoClubViewController.swift in Sources */,
+				598E071327C3BC0400D5C185 /* YourClubEventsTableViewCell.swift in Sources */,
 				5EA1A67527A7EDCF0096754C /* UserLogin.swift in Sources */,
 				07AB1FCA27AA9599007771E3 /* BestRatedCollectionViewCell.swift in Sources */,
 				5E51235327BBC7E60047EE44 /* FavouriteClubsViewController.swift in Sources */,
