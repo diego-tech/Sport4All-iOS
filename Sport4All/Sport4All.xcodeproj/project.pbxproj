@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		07AB1FCA27AA9599007771E3 /* BestRatedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB1FC827AA9599007771E3 /* BestRatedCollectionViewCell.swift */; };
 		07AB1FCB27AA9599007771E3 /* BestRatedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB1FC927AA9599007771E3 /* BestRatedCollectionViewCell.xib */; };
+		07BE152327BE6A6900AE8930 /* payResume.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07BE152227BE6A6900AE8930 /* payResume.storyboard */; };
 		5959268727BBABE100702369 /* ModifyPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5959268627BBABE100702369 /* ModifyPassword.storyboard */; };
 		5959268A27BBB84A00702369 /* DetailEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5959268927BBB84A00702369 /* DetailEvent.storyboard */; };
 		5999B68027B2805B0008BE6B /* FavouritesClubs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5999B67F27B2805B0008BE6B /* FavouritesClubs.storyboard */; };
@@ -61,6 +62,7 @@
 /* Begin PBXFileReference section */
 		07AB1FC827AA9599007771E3 /* BestRatedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestRatedCollectionViewCell.swift; sourceTree = "<group>"; };
 		07AB1FC927AA9599007771E3 /* BestRatedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestRatedCollectionViewCell.xib; sourceTree = "<group>"; };
+		07BE152227BE6A6900AE8930 /* payResume.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = payResume.storyboard; sourceTree = "<group>"; };
 		5959268627BBABE100702369 /* ModifyPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModifyPassword.storyboard; sourceTree = "<group>"; };
 		5959268927BBB84A00702369 /* DetailEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailEvent.storyboard; sourceTree = "<group>"; };
 		5999B67F27B2805B0008BE6B /* FavouritesClubs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavouritesClubs.storyboard; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 				5E197EFB278D7DBA008BBABB /* SupportingFiles */,
 				5E75E4C7279993F2005B89A3 /* Provider */,
 				5E197EF9278D7DA3008BBABB /* Util */,
+				07BE152227BE6A6900AE8930 /* payResume.storyboard */,
 			);
 			path = Sport4All;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				5E371D2927A925F900446D73 /* TabBar.storyboard in Resources */,
 				5E2FEE6727A43E3E008B0AE1 /* RetrievePassword.storyboard in Resources */,
 				5E9C14C22790358F002D9AF1 /* SF-Pro-Display-Semibold.otf in Resources */,
+				07BE152327BE6A6900AE8930 /* payResume.storyboard in Resources */,
 				5959268A27BBB84A00702369 /* DetailEvent.storyboard in Resources */,
 				5ECF53FB278C3AB9005F6D01 /* LaunchScreen.storyboard in Resources */,
 				5E9C14C52790358F002D9AF1 /* SF-Pro.ttf in Resources */,
