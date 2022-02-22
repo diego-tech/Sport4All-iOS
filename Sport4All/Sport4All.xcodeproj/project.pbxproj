@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		07AB1FCA27AA9599007771E3 /* BestRatedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB1FC827AA9599007771E3 /* BestRatedCollectionViewCell.swift */; };
 		07AB1FCB27AA9599007771E3 /* BestRatedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB1FC927AA9599007771E3 /* BestRatedCollectionViewCell.xib */; };
+		592748E927C4E45C00C535F1 /* EventPengingDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 592748E827C4E45C00C535F1 /* EventPengingDetail.storyboard */; };
 		5959268727BBABE100702369 /* ModifyPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5959268627BBABE100702369 /* ModifyPassword.storyboard */; };
 		5959268A27BBB84A00702369 /* DetailEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5959268927BBB84A00702369 /* DetailEvent.storyboard */; };
 		598E071327C3BC0400D5C185 /* YourClubEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598E071127C3BC0400D5C185 /* YourClubEventsTableViewCell.swift */; };
@@ -71,6 +72,7 @@
 /* Begin PBXFileReference section */
 		07AB1FC827AA9599007771E3 /* BestRatedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestRatedCollectionViewCell.swift; sourceTree = "<group>"; };
 		07AB1FC927AA9599007771E3 /* BestRatedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestRatedCollectionViewCell.xib; sourceTree = "<group>"; };
+		592748E827C4E45C00C535F1 /* EventPengingDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventPengingDetail.storyboard; sourceTree = "<group>"; };
 		5959268627BBABE100702369 /* ModifyPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModifyPassword.storyboard; sourceTree = "<group>"; };
 		5959268927BBB84A00702369 /* DetailEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailEvent.storyboard; sourceTree = "<group>"; };
 		598E071127C3BC0400D5C185 /* YourClubEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourClubEventsTableViewCell.swift; sourceTree = "<group>"; };
@@ -143,6 +145,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		592748E627C4E3EB00C535F1 /* EventsPending */ = {
+			isa = PBXGroup;
+			children = (
+				592748E827C4E45C00C535F1 /* EventPengingDetail.storyboard */,
+			);
+			path = EventsPending;
+			sourceTree = "<group>";
+		};
 		5959268527BBABB700702369 /* ModifyPassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +294,7 @@
 		5E75E4C4279993CD005B89A3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				592748E627C4E3EB00C535F1 /* EventsPending */,
 				598E071627C3C57600D5C185 /* YourClub */,
 				5E75E4C827999409005B89A3 /* Launch */,
 				5E12F0F727C2891800316D69 /* Onboarding */,
@@ -536,6 +547,7 @@
 				5E371D2927A925F900446D73 /* TabBar.storyboard in Resources */,
 				5E2FEE6727A43E3E008B0AE1 /* RetrievePassword.storyboard in Resources */,
 				5E9C14C22790358F002D9AF1 /* SF-Pro-Display-Semibold.otf in Resources */,
+				592748E927C4E45C00C535F1 /* EventPengingDetail.storyboard in Resources */,
 				5959268A27BBB84A00702369 /* DetailEvent.storyboard in Resources */,
 				5ECF53FB278C3AB9005F6D01 /* LaunchScreen.storyboard in Resources */,
 				5E9C14C52790358F002D9AF1 /* SF-Pro.ttf in Resources */,
