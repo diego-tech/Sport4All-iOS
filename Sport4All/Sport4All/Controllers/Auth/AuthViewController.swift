@@ -35,8 +35,8 @@ class AuthViewController: UIViewController {
 		setButtonStyles()
 		
 		// Login Test Diego
-//		emailTextField.text = "diego171200@gmail.com"
-//		passwordTextField.text = "Prueba12345."
+		emailTextField.text = "diego171200@gmail.com"
+		passwordTextField.text = "Prueba12345."
 		
 		// Testeo Funciones API
 //		register()

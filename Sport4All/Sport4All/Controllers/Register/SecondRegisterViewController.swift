@@ -19,8 +19,6 @@ class SecondRegisterViewController: UIViewController, UINavigationControllerDele
 	private var userGenre: String?
 	private var imageUrl: String?
 	
-	private var segmentedSetUp = false
-	
 	let pickerController = UIImagePickerController()
 	
 	// Outlets
@@ -51,12 +49,8 @@ class SecondRegisterViewController: UIViewController, UINavigationControllerDele
 	
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
-
-		if segmentedSetUp == false {
-			// Segmented Control
-			genreSegmentedControl.setUpView()
-			segmentedSetUp = true
-		}
+		// Segmented Control
+		genreSegmentedControl.setUpView()
 	}
 	
 	

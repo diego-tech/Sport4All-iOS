@@ -55,8 +55,8 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yBk-V6-iqJ">
                                 <rect key="frame" x="22" y="134" width="370" height="32"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Clubes"/>
+                                    <segment title="Partidos"/>
                                 </segments>
                                 <connections>
                                     <action selector="segmentedControlAction:" destination="QOh-bd-z95" eventType="valueChanged" id="B3b-Bx-0LZ"/>

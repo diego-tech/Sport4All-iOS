@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -21,10 +20,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Your Club View Controller-->
         <scene sceneID="IC4-sT-kCo">
             <objects>
-                <viewController storyboardIdentifier="DetailEvent" modalPresentationStyle="fullScreen" id="duA-YW-ahk" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YourClub" modalPresentationStyle="fullScreen" id="duA-YW-ahk" customClass="YourClubViewController" customModule="Sport4All" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A9U-Fd-etj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -91,8 +90,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ik1-ZS-o7h">
                                 <rect key="frame" x="0.0" y="414" width="414" height="448"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jfr-Nm-YWh">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="700"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jfr-Nm-YWh" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="750"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calendario de Eventos" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99o-jD-wbY">
                                                 <rect key="frame" x="20" y="20" width="374" height="20.5"/>
@@ -100,101 +99,103 @@
                                                 <color key="textColor" name="HardColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rCf-af-Mlv" userLabel="First View Separator">
+                                                <rect key="frame" x="0.0" y="164.5" width="414" height="1"/>
+                                                <color key="backgroundColor" name="HardColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="3eq-AY-E7M"/>
+                                                </constraints>
+                                            </view>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sEW-pl-nHI">
+                                                <rect key="frame" x="0.0" y="169.5" width="414" height="277"/>
+                                                <color key="backgroundColor" name="BackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="277" id="AdM-Rn-UfR"/>
+                                                </constraints>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="YourClubEventsTBC" id="cmT-Fx-6Vw" customClass="YourClubEventsTableViewCell" customModule="Sport4All" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cmT-Fx-6Vw" id="9h3-LG-Xwn">
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                            </tableView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NOu-tc-ceq" userLabel="Second View Separator">
+                                                <rect key="frame" x="0.0" y="454.5" width="414" height="1"/>
+                                                <color key="backgroundColor" name="HardColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="Rce-U0-dP6"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacta con tu club" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAg-L3-mnU">
+                                                <rect key="frame" x="20" y="475.5" width="374" height="20.5"/>
+                                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
+                                                <color key="textColor" name="HardColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-120" translatesAutoresizingMaskIntoConstraints="NO" id="BHg-1X-st2" userLabel="Contact Stack View">
+                                                <rect key="frame" x="20" y="531" width="374" height="99"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faV-AS-tjl">
+                                                        <rect key="frame" x="0.0" y="0.0" width="247" height="99"/>
+                                                        <fontDescription key="fontDescription" name="SFPro-Light" family="SF Pro" pointSize="15"/>
+                                                        <state key="normal" title="WEB" image="Web">
+                                                            <color key="titleColor" name="BlueBerry"/>
+                                                        </state>
+                                                        <buttonConfiguration key="configuration" style="plain" image="Web" imagePlacement="top" title="WEB" imagePadding="8">
+                                                            <fontDescription key="titleFontDescription" name="SFPro-Light" family="SF Pro" pointSize="15"/>
+                                                            <color key="baseForegroundColor" name="BlueBerry"/>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="364-lr-rnS">
+                                                        <rect key="frame" x="127" y="0.0" width="247" height="99"/>
+                                                        <fontDescription key="fontDescription" name="SFPro-Light" family="SF Pro" pointSize="15"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
+                                                        <state key="normal" title="LLAMAR" image="Phone">
+                                                            <color key="titleColor" name="BlueBerry"/>
+                                                        </state>
+                                                        <buttonConfiguration key="configuration" style="plain" image="Phone" imagePlacement="top" title="LLAMAR" imagePadding="8">
+                                                            <fontDescription key="titleFontDescription" name="SFPro-Light" family="SF Pro" pointSize="15"/>
+                                                            <color key="baseForegroundColor" name="BlueBerry"/>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" name="BackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="rCf-af-Mlv" firstAttribute="leading" secondItem="sEW-pl-nHI" secondAttribute="leading" id="37Y-fi-jJu"/>
+                                            <constraint firstAttribute="trailing" secondItem="BHg-1X-st2" secondAttribute="trailing" constant="20" id="3It-PL-sth"/>
+                                            <constraint firstItem="BHg-1X-st2" firstAttribute="leading" secondItem="Jfr-Nm-YWh" secondAttribute="leading" constant="20" id="3ej-Bs-zYf"/>
+                                            <constraint firstItem="sEW-pl-nHI" firstAttribute="top" secondItem="rCf-af-Mlv" secondAttribute="bottom" constant="4" id="9XM-Ld-lpa"/>
+                                            <constraint firstItem="rCf-af-Mlv" firstAttribute="top" secondItem="99o-jD-wbY" secondAttribute="bottom" constant="124" id="BxK-HC-f0n"/>
+                                            <constraint firstItem="NOu-tc-ceq" firstAttribute="top" secondItem="sEW-pl-nHI" secondAttribute="bottom" constant="8" symbolic="YES" id="ByZ-y8-PC1"/>
+                                            <constraint firstItem="rCf-af-Mlv" firstAttribute="leading" secondItem="NOu-tc-ceq" secondAttribute="leading" id="CUx-2U-5Dj"/>
+                                            <constraint firstAttribute="bottom" secondItem="BHg-1X-st2" secondAttribute="bottom" constant="120" id="Slj-iU-roC"/>
+                                            <constraint firstItem="rCf-af-Mlv" firstAttribute="trailing" secondItem="sEW-pl-nHI" secondAttribute="trailing" id="UFW-1D-BaO"/>
+                                            <constraint firstAttribute="trailing" secondItem="sEW-pl-nHI" secondAttribute="trailing" id="YQ7-eK-GJY"/>
+                                            <constraint firstItem="sAg-L3-mnU" firstAttribute="top" secondItem="NOu-tc-ceq" secondAttribute="bottom" constant="20" id="byq-Qi-rkx"/>
+                                            <constraint firstItem="BHg-1X-st2" firstAttribute="top" secondItem="sAg-L3-mnU" secondAttribute="bottom" constant="35" id="c41-YJ-zkx"/>
                                             <constraint firstAttribute="trailing" secondItem="99o-jD-wbY" secondAttribute="trailing" constant="20" id="d2t-ir-w8W"/>
+                                            <constraint firstItem="sAg-L3-mnU" firstAttribute="leading" secondItem="Jfr-Nm-YWh" secondAttribute="leading" constant="20" id="egN-kn-6N3"/>
+                                            <constraint firstItem="sEW-pl-nHI" firstAttribute="leading" secondItem="Jfr-Nm-YWh" secondAttribute="leading" id="ep3-Ng-2xF"/>
+                                            <constraint firstAttribute="trailing" secondItem="sAg-L3-mnU" secondAttribute="trailing" constant="20" id="i26-rn-TmP"/>
                                             <constraint firstItem="99o-jD-wbY" firstAttribute="top" secondItem="Jfr-Nm-YWh" secondAttribute="top" constant="20" id="n40-cu-SvX"/>
-                                            <constraint firstAttribute="height" constant="700" id="rLN-is-wu6"/>
+                                            <constraint firstAttribute="height" constant="750" id="rLN-is-wu6"/>
                                             <constraint firstItem="99o-jD-wbY" firstAttribute="leading" secondItem="Jfr-Nm-YWh" secondAttribute="leading" constant="20" id="tr4-3A-kgy"/>
+                                            <constraint firstItem="rCf-af-Mlv" firstAttribute="trailing" secondItem="NOu-tc-ceq" secondAttribute="trailing" id="vx5-eg-gQ1"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rCf-af-Mlv">
-                                        <rect key="frame" x="0.0" y="223.5" width="414" height="1"/>
-                                        <color key="backgroundColor" name="HardColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="3eq-AY-E7M"/>
-                                        </constraints>
-                                    </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sEW-pl-nHI">
-                                        <rect key="frame" x="0.0" y="224.5" width="414" height="200"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="AdM-Rn-UfR"/>
-                                        </constraints>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="cmT-Fx-6Vw">
-                                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cmT-Fx-6Vw" id="9h3-LG-Xwn">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </tableViewCellContentView>
-                                            </tableViewCell>
-                                        </prototypes>
-                                    </tableView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NOu-tc-ceq">
-                                        <rect key="frame" x="0.0" y="424.5" width="414" height="1"/>
-                                        <color key="backgroundColor" name="HardColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="Rce-U0-dP6"/>
-                                        </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacta con tu club" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAg-L3-mnU">
-                                        <rect key="frame" x="20" y="445.5" width="374" height="20.5"/>
-                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
-                                        <color key="textColor" name="HardColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BHg-1X-st2" userLabel="Contact Stack View">
-                                        <rect key="frame" x="125" y="486" width="164" height="85"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faV-AS-tjl">
-                                                <rect key="frame" x="0.0" y="0.0" width="82" height="85"/>
-                                                <fontDescription key="fontDescription" name="SFPro-Light" family="SF Pro" pointSize="15"/>
-                                                <state key="normal" title="WEB" image="Web">
-                                                    <color key="titleColor" name="BlueBerry"/>
-                                                </state>
-                                                <buttonConfiguration key="configuration" style="plain" image="Web" imagePlacement="top" title="WEB" imagePadding="8">
-                                                    <fontDescription key="titleFontDescription" name="SFPro-Light" family="SF Pro" pointSize="15"/>
-                                                    <color key="baseForegroundColor" name="BlueBerry"/>
-                                                </buttonConfiguration>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="364-lr-rnS">
-                                                <rect key="frame" x="82" y="0.0" width="82" height="85"/>
-                                                <fontDescription key="fontDescription" name="SFPro-Light" family="SF Pro" pointSize="15"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
-                                                <state key="normal" title="LLAMAR" image="Phone">
-                                                    <color key="titleColor" name="BlueBerry"/>
-                                                </state>
-                                                <buttonConfiguration key="configuration" style="plain" image="Phone" imagePlacement="top" title="LLAMAR" imagePadding="8">
-                                                    <fontDescription key="titleFontDescription" name="SFPro-Light" family="SF Pro" pointSize="15"/>
-                                                    <color key="baseForegroundColor" name="BlueBerry"/>
-                                                </buttonConfiguration>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="NOu-tc-ceq" firstAttribute="leading" secondItem="ik1-ZS-o7h" secondAttribute="leading" id="BMv-mh-iqm"/>
-                                    <constraint firstItem="rCf-af-Mlv" firstAttribute="leading" secondItem="ik1-ZS-o7h" secondAttribute="leading" id="IGl-77-xa9"/>
-                                    <constraint firstAttribute="trailing" secondItem="NOu-tc-ceq" secondAttribute="trailing" id="J01-km-hKs"/>
-                                    <constraint firstAttribute="trailing" secondItem="rCf-af-Mlv" secondAttribute="trailing" id="KAE-d3-FMG"/>
-                                    <constraint firstItem="BHg-1X-st2" firstAttribute="top" secondItem="sAg-L3-mnU" secondAttribute="bottom" constant="20" id="KkZ-7m-SVg"/>
-                                    <constraint firstItem="sAg-L3-mnU" firstAttribute="top" secondItem="NOu-tc-ceq" secondAttribute="bottom" constant="20" id="OjF-3Q-dLA"/>
                                     <constraint firstAttribute="trailing" secondItem="Jfr-Nm-YWh" secondAttribute="trailing" id="R82-II-ZU5"/>
-                                    <constraint firstAttribute="bottom" secondItem="Jfr-Nm-YWh" secondAttribute="bottom" id="Ysf-j7-kZC"/>
-                                    <constraint firstAttribute="trailing" secondItem="sEW-pl-nHI" secondAttribute="trailing" id="ZcU-BI-ez0"/>
+                                    <constraint firstAttribute="bottom" secondItem="Jfr-Nm-YWh" secondAttribute="bottom" constant="-48" id="Ysf-j7-kZC"/>
                                     <constraint firstItem="Jfr-Nm-YWh" firstAttribute="top" secondItem="ik1-ZS-o7h" secondAttribute="top" id="aSl-OU-SAm"/>
-                                    <constraint firstItem="sEW-pl-nHI" firstAttribute="top" secondItem="rCf-af-Mlv" secondAttribute="bottom" id="ceY-wE-t4U"/>
-                                    <constraint firstAttribute="trailing" secondItem="sAg-L3-mnU" secondAttribute="trailing" constant="20" id="dxC-X8-zkq"/>
-                                    <constraint firstItem="sAg-L3-mnU" firstAttribute="leading" secondItem="ik1-ZS-o7h" secondAttribute="leading" constant="20" id="fEO-YF-xKk"/>
-                                    <constraint firstItem="BHg-1X-st2" firstAttribute="centerX" secondItem="ik1-ZS-o7h" secondAttribute="centerX" id="j7c-xf-j68"/>
                                     <constraint firstItem="Jfr-Nm-YWh" firstAttribute="leading" secondItem="ik1-ZS-o7h" secondAttribute="leading" id="lO1-U5-g7Q"/>
-                                    <constraint firstItem="NOu-tc-ceq" firstAttribute="top" secondItem="sEW-pl-nHI" secondAttribute="bottom" id="mSv-HY-4Nu"/>
                                     <constraint firstItem="Jfr-Nm-YWh" firstAttribute="centerX" secondItem="ik1-ZS-o7h" secondAttribute="centerX" id="qFm-y4-CAZ"/>
-                                    <constraint firstItem="rCf-af-Mlv" firstAttribute="centerY" secondItem="ik1-ZS-o7h" secondAttribute="centerY" id="qvJ-7l-zKI"/>
-                                    <constraint firstItem="sEW-pl-nHI" firstAttribute="leading" secondItem="ik1-ZS-o7h" secondAttribute="leading" id="rGm-hN-FjY"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -211,12 +212,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="headerUIView" destination="Sdb-xW-PNY" id="uyf-kZ-ZvU"/>
+                        <outlet property="yourEventsTableView" destination="sEW-pl-nHI" id="TTe-G1-HO7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6K9-h8-hjx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="66"/>
+            <point key="canvasLocation" x="34.782608695652179" y="65.625"/>
         </scene>
     </scenes>
     <resources>
@@ -236,8 +237,5 @@
         <namedColor name="HardColor">
             <color red="0.19607843137254902" green="0.26666666666666666" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
