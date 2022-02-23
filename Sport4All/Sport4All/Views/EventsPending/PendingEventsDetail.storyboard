@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,10 +17,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Pending Events View Controller-->
         <scene sceneID="TH3-wB-UJp">
             <objects>
-                <viewController storyboardIdentifier="DetailEvent" modalPresentationStyle="fullScreen" id="LIB-Z2-L5f" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PendingEvents" modalPresentationStyle="fullScreen" id="LIB-Z2-L5f" customClass="PendingEventsViewController" customModule="Sport4All" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mNi-VH-Rhk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,30 +49,27 @@
                                             <constraint firstAttribute="height" constant="1" id="eWb-yj-AKO"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9r6-KY-wJr">
-                                        <rect key="frame" x="119.5" y="128" width="175" height="175"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0ln-nM-WUE">
+                                        <rect key="frame" x="132" y="160.5" width="150" height="148.5"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="175" id="SUB-3B-NWH"/>
-                                            <constraint firstAttribute="width" secondItem="9r6-KY-wJr" secondAttribute="height" multiplier="1:1" id="UKI-ow-WEU"/>
+                                            <constraint firstAttribute="height" constant="150" id="CSA-LT-cNs"/>
+                                            <constraint firstAttribute="width" constant="150" id="ELx-dn-Uyu"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="">
-                                            <backgroundConfiguration key="background" image="All Clubs Image"/>
-                                        </buttonConfiguration>
-                                    </button>
+                                        <imageReference key="image" image="barcode.viewfinder" catalog="system" renderingMode="original"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" name="BackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="AaD-qh-Rq6" firstAttribute="top" secondItem="eeS-DU-5pB" secondAttribute="top" constant="44" id="0Ln-Rp-UIo"/>
                                     <constraint firstAttribute="trailing" secondItem="eQb-XY-Bad" secondAttribute="trailing" id="7oN-JQ-gOl"/>
-                                    <constraint firstItem="9r6-KY-wJr" firstAttribute="top" secondItem="AaD-qh-Rq6" secondAttribute="bottom" constant="40" id="CSq-1f-fZZ"/>
                                     <constraint firstItem="eQb-XY-Bad" firstAttribute="leading" secondItem="eeS-DU-5pB" secondAttribute="leading" id="ETh-od-hDS"/>
                                     <constraint firstItem="AaD-qh-Rq6" firstAttribute="leading" secondItem="eeS-DU-5pB" secondAttribute="leading" constant="20" symbolic="YES" id="Q7b-H8-tp6"/>
-                                    <constraint firstItem="9r6-KY-wJr" firstAttribute="centerX" secondItem="eeS-DU-5pB" secondAttribute="centerX" id="Rch-Ha-xO6"/>
                                     <constraint firstAttribute="trailing" secondItem="AaD-qh-Rq6" secondAttribute="trailing" constant="20" symbolic="YES" id="Tt4-DJ-QIN"/>
                                     <constraint firstAttribute="bottom" secondItem="eQb-XY-Bad" secondAttribute="bottom" id="XI5-T1-FVn"/>
                                     <constraint firstAttribute="height" constant="370" id="iGK-Wj-sVZ"/>
                                     <constraint firstItem="mPr-66-P7E" firstAttribute="top" secondItem="eeS-DU-5pB" secondAttribute="top" constant="44" id="lUz-qu-n1t"/>
+                                    <constraint firstItem="0ln-nM-WUE" firstAttribute="centerX" secondItem="eeS-DU-5pB" secondAttribute="centerX" id="oGE-Ms-mrm"/>
+                                    <constraint firstItem="eQb-XY-Bad" firstAttribute="top" secondItem="0ln-nM-WUE" secondAttribute="bottom" constant="59" id="tC8-n6-X48"/>
                                     <constraint firstItem="mPr-66-P7E" firstAttribute="leading" secondItem="eeS-DU-5pB" secondAttribute="leading" constant="20" id="xhY-0s-tAg"/>
                                 </constraints>
                             </view>
@@ -79,28 +77,28 @@
                                 <rect key="frame" x="0.0" y="414" width="414" height="448"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mq2-XD-433">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="700"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Club Pádel Usera" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJ0-Q9-lzv">
-                                                <rect key="frame" x="20" y="20" width="374" height="20.5"/>
+                                                <rect key="frame" x="20" y="40" width="374" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
                                                 <color key="textColor" name="HardColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pista 1 (Cubierta)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9R3-9w-Yb6">
-                                                <rect key="frame" x="20" y="60.5" width="131" height="20.5"/>
+                                                <rect key="frame" x="20" y="80.5" width="374" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
                                                 <color key="textColor" name="HardColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usuarios con los que juega:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxo-SY-IaB">
-                                                <rect key="frame" x="20" y="101" width="209.5" height="20.5"/>
+                                                <rect key="frame" x="20" y="121" width="374" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
                                                 <color key="textColor" name="HardColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="T1C-gd-rge">
-                                                <rect key="frame" x="40" y="156.5" width="354" height="190"/>
+                                                <rect key="frame" x="40" y="176.5" width="354" height="190"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" id="zme-zM-f9x">
                                                         <rect key="frame" x="0.0" y="0.0" width="153" height="50"/>
@@ -181,7 +179,7 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YK7-WZ-yRT">
-                                                <rect key="frame" x="20" y="396.5" width="374" height="50.5"/>
+                                                <rect key="frame" x="20" y="416.5" width="374" height="50.5"/>
                                                 <string key="text">Este código QR es personal e intransferible
 preséntelo a la entrada o use el lector de la entrada del establecimiento</string>
                                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="14"/>
@@ -191,8 +189,10 @@ preséntelo a la entrada o use el lector de la entrada del establecimiento</stri
                                         </subviews>
                                         <color key="backgroundColor" name="BackgroundColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="9R3-9w-Yb6" secondAttribute="trailing" constant="20" id="1fA-as-hRe"/>
                                             <constraint firstItem="9R3-9w-Yb6" firstAttribute="top" secondItem="dJ0-Q9-lzv" secondAttribute="bottom" constant="20" id="9FN-cb-seY"/>
-                                            <constraint firstItem="dJ0-Q9-lzv" firstAttribute="top" secondItem="Mq2-XD-433" secondAttribute="top" constant="20" id="EJT-SP-dTM"/>
+                                            <constraint firstItem="dJ0-Q9-lzv" firstAttribute="top" secondItem="Mq2-XD-433" secondAttribute="top" constant="40" id="EJT-SP-dTM"/>
+                                            <constraint firstAttribute="trailing" secondItem="gxo-SY-IaB" secondAttribute="trailing" constant="20" id="Ecp-t9-3lj"/>
                                             <constraint firstItem="gxo-SY-IaB" firstAttribute="leading" secondItem="Mq2-XD-433" secondAttribute="leading" constant="20" id="HYu-DO-6HD"/>
                                             <constraint firstAttribute="trailing" secondItem="T1C-gd-rge" secondAttribute="trailing" constant="20" id="Soz-0K-ZP1"/>
                                             <constraint firstItem="dJ0-Q9-lzv" firstAttribute="leading" secondItem="Mq2-XD-433" secondAttribute="leading" constant="20" id="WsP-mm-9rc"/>
@@ -200,7 +200,7 @@ preséntelo a la entrada o use el lector de la entrada del establecimiento</stri
                                             <constraint firstItem="T1C-gd-rge" firstAttribute="top" secondItem="gxo-SY-IaB" secondAttribute="bottom" constant="35" id="Ytz-d8-yoy"/>
                                             <constraint firstItem="gxo-SY-IaB" firstAttribute="top" secondItem="9R3-9w-Yb6" secondAttribute="bottom" constant="20" id="aAP-xu-niH"/>
                                             <constraint firstAttribute="trailing" secondItem="dJ0-Q9-lzv" secondAttribute="trailing" constant="20" id="eE0-PZ-nvW"/>
-                                            <constraint firstAttribute="height" constant="700" id="epd-Gn-n7J"/>
+                                            <constraint firstAttribute="height" constant="600" id="epd-Gn-n7J"/>
                                             <constraint firstItem="9R3-9w-Yb6" firstAttribute="leading" secondItem="Mq2-XD-433" secondAttribute="leading" constant="20" id="kQB-PI-LOb"/>
                                             <constraint firstAttribute="trailing" secondItem="YK7-WZ-yRT" secondAttribute="trailing" constant="20" id="rxp-n8-7yi"/>
                                             <constraint firstItem="T1C-gd-rge" firstAttribute="leading" secondItem="Mq2-XD-433" secondAttribute="leading" constant="40" id="u2p-Oh-5si"/>
@@ -213,7 +213,7 @@ preséntelo a la entrada o use el lector de la entrada del establecimiento</stri
                                     <constraint firstItem="Mq2-XD-433" firstAttribute="centerX" secondItem="D4u-kZ-oNm" secondAttribute="centerX" id="GbE-hi-xT1"/>
                                     <constraint firstAttribute="trailing" secondItem="Mq2-XD-433" secondAttribute="trailing" id="Mar-bC-U3M"/>
                                     <constraint firstItem="Mq2-XD-433" firstAttribute="top" secondItem="D4u-kZ-oNm" secondAttribute="top" id="Tqt-NW-M8Z"/>
-                                    <constraint firstAttribute="bottom" secondItem="Mq2-XD-433" secondAttribute="bottom" id="yLv-Ja-QXF"/>
+                                    <constraint firstAttribute="bottom" secondItem="Mq2-XD-433" secondAttribute="bottom" constant="-48" id="yLv-Ja-QXF"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -229,9 +229,6 @@ preséntelo a la entrada o use el lector de la entrada del establecimiento</stri
                             <constraint firstItem="D4u-kZ-oNm" firstAttribute="leading" secondItem="eeS-DU-5pB" secondAttribute="leading" id="uRS-A3-gaB"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="headerUIView" destination="eeS-DU-5pB" id="nGZ-bV-4tM"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Tm-ti-2n0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -239,8 +236,8 @@ preséntelo a la entrada o use el lector de la entrada del establecimiento</stri
         </scene>
     </scenes>
     <resources>
-        <image name="All Clubs Image" width="100" height="100"/>
         <image name="ArrowBackMain" width="32" height="30"/>
+        <image name="barcode.viewfinder" catalog="system" width="128" height="115"/>
         <namedColor name="BackgroundColor">
             <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
