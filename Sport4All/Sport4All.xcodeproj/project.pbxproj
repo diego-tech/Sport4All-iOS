@@ -39,6 +39,7 @@
 		5E77E9BF27B1368E004195AE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E77E9BE27B1368E004195AE /* HomeViewController.swift */; };
 		5E8C23BD27C0DC9400763D49 /* ModifyPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8C23BC27C0DC9400763D49 /* ModifyPasswordViewController.swift */; };
 		5E8C23BF27C0EF0600763D49 /* DetailEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8C23BE27C0EF0600763D49 /* DetailEventViewController.swift */; };
+		5E96407F27C68D2700387BFD /* YourClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E96407E27C68D2700387BFD /* YourClubViewController.swift */; };
 		5E9C14C22790358F002D9AF1 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C14BD2790358F002D9AF1 /* SF-Pro-Display-Semibold.otf */; };
 		5E9C14C32790358F002D9AF1 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C14BE2790358F002D9AF1 /* SF-Pro-Display-Regular.otf */; };
 		5E9C14C42790358F002D9AF1 /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C14BF2790358F002D9AF1 /* SF-Pro-Display-Medium.otf */; };
@@ -100,6 +101,7 @@
 		5E77E9BE27B1368E004195AE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5E8C23BC27C0DC9400763D49 /* ModifyPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPasswordViewController.swift; sourceTree = "<group>"; };
 		5E8C23BE27C0EF0600763D49 /* DetailEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventViewController.swift; sourceTree = "<group>"; };
+		5E96407E27C68D2700387BFD /* YourClubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourClubViewController.swift; sourceTree = "<group>"; };
 		5E9C14BD2790358F002D9AF1 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		5E9C14BE2790358F002D9AF1 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		5E9C14BF2790358F002D9AF1 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 				5E371D2A27A92A5E00446D73 /* TabBarController.swift */,
 				5E8C23BC27C0DC9400763D49 /* ModifyPasswordViewController.swift */,
 				5E8C23BE27C0EF0600763D49 /* DetailEventViewController.swift */,
+				5E96407E27C68D2700387BFD /* YourClubViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				5ECF53F1278C3AB8005F6D01 /* SceneDelegate.swift in Sources */,
 				5E212AFE27C2709A0013E1BE /* UIImageViewExtension.swift in Sources */,
 				5EF497A827A55858008B0C37 /* NetworkingProvider.swift in Sources */,
+				5E96407F27C68D2700387BFD /* YourClubViewController.swift in Sources */,
 				5EC1EFDF27BFB7C90089C436 /* UIViewExtension.swift in Sources */,
 				5EF497A327A5570F008B0C37 /* DateDecoder.swift in Sources */,
 				5E12C4B527B6583300F4E7EA /* ProfileViewController.swift in Sources */,
