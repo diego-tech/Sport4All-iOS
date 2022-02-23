@@ -67,6 +67,7 @@
 		5ECF53F8278C3AB9005F6D01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ECF53F7278C3AB9005F6D01 /* Assets.xcassets */; };
 		5ECF53FB278C3AB9005F6D01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ECF53F9278C3AB9005F6D01 /* LaunchScreen.storyboard */; };
 		5EDC2CE027C6A2E1007EE2C0 /* PayResumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDC2CDF27C6A2E1007EE2C0 /* PayResumeViewController.swift */; };
+		5EDC2CE727C6AFF3007EE2C0 /* EventPendingList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDC2CE627C6AFF3007EE2C0 /* EventPendingList.storyboard */; };
 		5EF497A327A5570F008B0C37 /* DateDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A227A5570F008B0C37 /* DateDecoder.swift */; };
 		5EF497A627A55794008B0C37 /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A527A55794008B0C37 /* UserDefaultsProvider.swift */; };
 		5EF497A827A55858008B0C37 /* NetworkingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A727A55858008B0C37 /* NetworkingProvider.swift */; };
@@ -134,6 +135,7 @@
 		5ECF53FA278C3AB9005F6D01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5ECF53FC278C3AB9005F6D01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EDC2CDF27C6A2E1007EE2C0 /* PayResumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayResumeViewController.swift; sourceTree = "<group>"; };
+		5EDC2CE627C6AFF3007EE2C0 /* EventPendingList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventPendingList.storyboard; sourceTree = "<group>"; };
 		5EF497A227A5570F008B0C37 /* DateDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDecoder.swift; sourceTree = "<group>"; };
 		5EF497A527A55794008B0C37 /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
 		5EF497A727A55858008B0C37 /* NetworkingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProvider.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 		5E75E4C4279993CD005B89A3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5EDC2CE527C6AFE4007EE2C0 /* EventsPendingList */,
 				5EDC2CDE27C6A01C007EE2C0 /* PayResume */,
 				592748E627C4E3EB00C535F1 /* EventsPending */,
 				598E071627C3C57600D5C185 /* YourClub */,
@@ -452,6 +455,14 @@
 			path = PayResume;
 			sourceTree = "<group>";
 		};
+		5EDC2CE527C6AFE4007EE2C0 /* EventsPendingList */ = {
+			isa = PBXGroup;
+			children = (
+				5EDC2CE627C6AFF3007EE2C0 /* EventPendingList.storyboard */,
+			);
+			path = EventsPendingList;
+			sourceTree = "<group>";
+		};
 		5EF360F527AA9B2B00105AB7 /* CellsView */ = {
 			isa = PBXGroup;
 			children = (
@@ -579,6 +590,7 @@
 				5959268727BBABE100702369 /* ModifyPassword.storyboard in Resources */,
 				5E9C14C32790358F002D9AF1 /* SF-Pro-Display-Regular.otf in Resources */,
 				5E9C14C62790358F002D9AF1 /* SF-Pro-Display-Bold.otf in Resources */,
+				5EDC2CE727C6AFF3007EE2C0 /* EventPendingList.storyboard in Resources */,
 				5E12F0F927C2894900316D69 /* Onboarding.storyboard in Resources */,
 				5E51236227BBD8010047EE44 /* InfoClub.storyboard in Resources */,
 				5ECF53F6278C3AB8005F6D01 /* Main.storyboard in Resources */,
