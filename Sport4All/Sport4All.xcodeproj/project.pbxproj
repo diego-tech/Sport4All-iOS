@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		07AB1FCA27AA9599007771E3 /* BestRatedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB1FC827AA9599007771E3 /* BestRatedCollectionViewCell.swift */; };
 		07AB1FCB27AA9599007771E3 /* BestRatedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB1FC927AA9599007771E3 /* BestRatedCollectionViewCell.xib */; };
-		07BE152327BE6A6900AE8930 /* payResume.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07BE152227BE6A6900AE8930 /* payResume.storyboard */; };
+		07BE152327BE6A6900AE8930 /* PayResume.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07BE152227BE6A6900AE8930 /* PayResume.storyboard */; };
 		5959268727BBABE100702369 /* ModifyPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5959268627BBABE100702369 /* ModifyPassword.storyboard */; };
 		5959268A27BBB84A00702369 /* DetailEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5959268927BBB84A00702369 /* DetailEvent.storyboard */; };
 		5999B68027B2805B0008BE6B /* FavouritesClubs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5999B67F27B2805B0008BE6B /* FavouritesClubs.storyboard */; };
@@ -53,6 +53,7 @@
 		5ECF53F6278C3AB8005F6D01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ECF53F4278C3AB8005F6D01 /* Main.storyboard */; };
 		5ECF53F8278C3AB9005F6D01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ECF53F7278C3AB9005F6D01 /* Assets.xcassets */; };
 		5ECF53FB278C3AB9005F6D01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ECF53F9278C3AB9005F6D01 /* LaunchScreen.storyboard */; };
+		5EDC2CE027C6A2E1007EE2C0 /* PayResumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDC2CDF27C6A2E1007EE2C0 /* PayResumeViewController.swift */; };
 		5EF497A327A5570F008B0C37 /* DateDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A227A5570F008B0C37 /* DateDecoder.swift */; };
 		5EF497A627A55794008B0C37 /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A527A55794008B0C37 /* UserDefaultsProvider.swift */; };
 		5EF497A827A55858008B0C37 /* NetworkingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A727A55858008B0C37 /* NetworkingProvider.swift */; };
@@ -62,7 +63,7 @@
 /* Begin PBXFileReference section */
 		07AB1FC827AA9599007771E3 /* BestRatedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestRatedCollectionViewCell.swift; sourceTree = "<group>"; };
 		07AB1FC927AA9599007771E3 /* BestRatedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestRatedCollectionViewCell.xib; sourceTree = "<group>"; };
-		07BE152227BE6A6900AE8930 /* payResume.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = payResume.storyboard; sourceTree = "<group>"; };
+		07BE152227BE6A6900AE8930 /* PayResume.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PayResume.storyboard; sourceTree = "<group>"; };
 		5959268627BBABE100702369 /* ModifyPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModifyPassword.storyboard; sourceTree = "<group>"; };
 		5959268927BBB84A00702369 /* DetailEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailEvent.storyboard; sourceTree = "<group>"; };
 		5999B67F27B2805B0008BE6B /* FavouritesClubs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavouritesClubs.storyboard; sourceTree = "<group>"; };
@@ -106,6 +107,7 @@
 		5ECF53F7278C3AB9005F6D01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5ECF53FA278C3AB9005F6D01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5ECF53FC278C3AB9005F6D01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EDC2CDF27C6A2E1007EE2C0 /* PayResumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayResumeViewController.swift; sourceTree = "<group>"; };
 		5EF497A227A5570F008B0C37 /* DateDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDecoder.swift; sourceTree = "<group>"; };
 		5EF497A527A55794008B0C37 /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
 		5EF497A727A55858008B0C37 /* NetworkingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProvider.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 		5E75E4C4279993CD005B89A3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5EDC2CDE27C6A01C007EE2C0 /* PayResume */,
 				5E51235C27BBD5C90047EE44 /* InfoClub */,
 				5959268827BBB83200702369 /* Event */,
 				5959268527BBABB700702369 /* ModifyPassword */,
@@ -275,6 +278,7 @@
 				5E12C4B427B6583300F4E7EA /* ProfileViewController.swift */,
 				5E51235227BBC7E60047EE44 /* FavouriteClubsViewController.swift */,
 				5E51235D27BBD5D70047EE44 /* InfoClubViewController.swift */,
+				5EDC2CDF27C6A2E1007EE2C0 /* PayResumeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -350,9 +354,16 @@
 				5E197EFB278D7DBA008BBABB /* SupportingFiles */,
 				5E75E4C7279993F2005B89A3 /* Provider */,
 				5E197EF9278D7DA3008BBABB /* Util */,
-				07BE152227BE6A6900AE8930 /* payResume.storyboard */,
 			);
 			path = Sport4All;
+			sourceTree = "<group>";
+		};
+		5EDC2CDE27C6A01C007EE2C0 /* PayResume */ = {
+			isa = PBXGroup;
+			children = (
+				07BE152227BE6A6900AE8930 /* PayResume.storyboard */,
+			);
+			path = PayResume;
 			sourceTree = "<group>";
 		};
 		5EF360F527AA9B2B00105AB7 /* CellsView */ = {
@@ -469,7 +480,7 @@
 				5E371D2927A925F900446D73 /* TabBar.storyboard in Resources */,
 				5E2FEE6727A43E3E008B0AE1 /* RetrievePassword.storyboard in Resources */,
 				5E9C14C22790358F002D9AF1 /* SF-Pro-Display-Semibold.otf in Resources */,
-				07BE152327BE6A6900AE8930 /* payResume.storyboard in Resources */,
+				07BE152327BE6A6900AE8930 /* PayResume.storyboard in Resources */,
 				5959268A27BBB84A00702369 /* DetailEvent.storyboard in Resources */,
 				5ECF53FB278C3AB9005F6D01 /* LaunchScreen.storyboard in Resources */,
 				5E9C14C52790358F002D9AF1 /* SF-Pro.ttf in Resources */,
@@ -514,6 +525,7 @@
 				5E9E821027B283D700A450E8 /* HomeClubsViewController.swift in Sources */,
 				5EA1A67127A7E6970096754C /* Data.swift in Sources */,
 				5EF497A627A55794008B0C37 /* UserDefaultsProvider.swift in Sources */,
+				5EDC2CE027C6A2E1007EE2C0 /* PayResumeViewController.swift in Sources */,
 				5E197F03278D80D4008BBABB /* ColorExtension.swift in Sources */,
 				5E123C3D27A2F1F000CF14EE /* SecondRegisterViewController.swift in Sources */,
 				5E51235E27BBD5D70047EE44 /* InfoClubViewController.swift in Sources */,
