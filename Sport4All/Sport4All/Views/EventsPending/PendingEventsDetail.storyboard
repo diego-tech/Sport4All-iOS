@@ -229,6 +229,10 @@ preséntelo a la entrada o use el lector de la entrada del establecimiento</stri
                             <constraint firstItem="D4u-kZ-oNm" firstAttribute="leading" secondItem="eeS-DU-5pB" secondAttribute="leading" id="uRS-A3-gaB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="barcodeIV" destination="0ln-nM-WUE" id="aT2-V6-eXg"/>
+                        <outlet property="headerUIView" destination="eeS-DU-5pB" id="uLF-CF-X9s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Tm-ti-2n0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
