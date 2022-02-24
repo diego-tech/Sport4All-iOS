@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Bold.otf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+        <array key="SF-Pro.ttf">
+            <string>SFPro-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tCz-yX-sWu">
+            <objects>
+                <viewController storyboardIdentifier="SecondRegister" modalPresentationStyle="fullScreen" id="mMl-J7-5yi" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xnp-t9-oN0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rTs-Jr-kqe" userLabel="GoBackButton">
+                                <rect key="frame" x="20" y="84" width="56" height="44"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="ArrowBackMain"/>
+                                <connections>
+                                    <action selector="goBackButtonAction:" destination="mMl-J7-5yi" eventType="touchUpInside" id="y8O-qT-xzC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="REGISTRO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7a-Ji-0jF">
+                                <rect key="frame" x="147" y="92" width="120.5" height="28.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28.5" id="Dic-C5-x7J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="25"/>
+                                <color key="textColor" name="CorporativeColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Foto De Perfil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCx-Ek-TXf">
+                                <rect key="frame" x="20" y="148" width="374" height="14.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="Ifa-hW-lpr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
+                                <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="DMc-xH-HGQ">
+                                <rect key="frame" x="147.5" y="182.5" width="119" height="119"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="DMc-xH-HGQ" secondAttribute="height" multiplier="1:1" id="Lgi-Kb-xDI"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="H6B-lY-eYa">
+                                <rect key="frame" x="20" y="321.5" width="374" height="444"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Le3-86-Z7e">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="14.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
+                                        <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NLg-d2-kyV">
+                                        <rect key="frame" x="0.0" y="41" width="374" height="34.5"/>
+                                        <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apellidos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dbv-S3-KEN">
+                                        <rect key="frame" x="0.0" y="102" width="374" height="14.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
+                                        <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apellidos" textAlignment="natural" minimumFontSize="17" id="mcz-hq-nhC">
+                                        <rect key="frame" x="0.0" y="143" width="374" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correo Electrónico" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MbR-IT-K7k">
+                                        <rect key="frame" x="0.0" y="203.5" width="374" height="14.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
+                                        <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Correo Electrónico" textAlignment="natural" minimumFontSize="17" id="BKi-Zn-2sL">
+                                        <rect key="frame" x="0.0" y="244.5" width="374" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lP3-B1-iba">
+                                        <rect key="frame" x="0.0" y="305" width="374" height="40.5"/>
+                                        <color key="tintColor" name="HardColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="ChangePassword" imagePlacement="trailing" title="Cambiar Contraseña" imagePadding="200">
+                                            <fontDescription key="titleFontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Género" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jcQ-WH-Txh">
+                                        <rect key="frame" x="0.0" y="372" width="374" height="14.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
+                                        <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="A5j-VX-CDd">
+                                        <rect key="frame" x="0.0" y="413" width="374" height="32"/>
+                                        <segments>
+                                            <segment title="Mujer"/>
+                                            <segment title="Hombre"/>
+                                            <segment title="Otro"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="genreSegmentedControl:" destination="mMl-J7-5yi" eventType="valueChanged" id="CCi-63-f47"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dga-br-G7g">
+                                <rect key="frame" x="139" y="795.5" width="136.5" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="136.5" id="W9U-qm-oke"/>
+                                    <constraint firstAttribute="height" constant="50" id="ndp-2T-azn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="17"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="ACCEDER">
+                                    <color key="titleColor" name="HardColor"/>
+                                </state>
+                                <buttonConfiguration key="configuration" style="plain" title="REGISTRARSE">
+                                    <fontDescription key="titleFontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="17"/>
+                                    <color key="baseForegroundColor" name="HardColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="registerButtonAction:" destination="mMl-J7-5yi" eventType="touchUpInside" id="5Gu-bV-hAc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1H2-Fq-LGM"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="H6B-lY-eYa" firstAttribute="leading" secondItem="1H2-Fq-LGM" secondAttribute="leading" constant="20" id="6xb-ov-iJG"/>
+                            <constraint firstItem="DMc-xH-HGQ" firstAttribute="centerX" secondItem="xnp-t9-oN0" secondAttribute="centerX" id="DUe-r5-yxa"/>
+                            <constraint firstItem="1H2-Fq-LGM" firstAttribute="trailing" secondItem="H6B-lY-eYa" secondAttribute="trailing" constant="20" id="G2I-tF-HMd"/>
+                            <constraint firstItem="H6B-lY-eYa" firstAttribute="top" secondItem="DMc-xH-HGQ" secondAttribute="bottom" constant="20" id="KI2-QS-PcT"/>
+                            <constraint firstItem="VCx-Ek-TXf" firstAttribute="leading" secondItem="1H2-Fq-LGM" secondAttribute="leading" constant="20" id="MRH-Do-Fek"/>
+                            <constraint firstItem="1H2-Fq-LGM" firstAttribute="trailing" secondItem="dga-br-G7g" secondAttribute="trailing" constant="138.5" id="OvH-v7-L65"/>
+                            <constraint firstItem="rTs-Jr-kqe" firstAttribute="leading" secondItem="1H2-Fq-LGM" secondAttribute="leading" constant="20" id="Q1h-6l-wsI"/>
+                            <constraint firstItem="dga-br-G7g" firstAttribute="leading" secondItem="1H2-Fq-LGM" secondAttribute="leading" constant="139" id="RCM-pL-yNN"/>
+                            <constraint firstItem="VCx-Ek-TXf" firstAttribute="top" secondItem="rTs-Jr-kqe" secondAttribute="bottom" constant="20" id="cTQ-YD-pDX"/>
+                            <constraint firstItem="rTs-Jr-kqe" firstAttribute="top" secondItem="1H2-Fq-LGM" secondAttribute="top" constant="40" id="ddb-Q8-LOV"/>
+                            <constraint firstItem="DMc-xH-HGQ" firstAttribute="top" secondItem="VCx-Ek-TXf" secondAttribute="bottom" constant="20" id="mT7-d5-KYE"/>
+                            <constraint firstItem="c7a-Ji-0jF" firstAttribute="centerX" secondItem="xnp-t9-oN0" secondAttribute="centerX" id="t1A-PP-6Sx"/>
+                            <constraint firstItem="c7a-Ji-0jF" firstAttribute="top" secondItem="1H2-Fq-LGM" secondAttribute="top" constant="48" id="tSP-DF-2Dg"/>
+                            <constraint firstItem="dga-br-G7g" firstAttribute="top" secondItem="H6B-lY-eYa" secondAttribute="bottom" constant="30" id="ydX-jw-Fo4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="avatarImageView" destination="DMc-xH-HGQ" id="BTI-mm-uUo"/>
+                        <outlet property="genreSegmentedControl" destination="A5j-VX-CDd" id="whT-qa-6uK"/>
+                        <outlet property="nameTF" destination="NLg-d2-kyV" id="VQO-qx-XxL"/>
+                        <outlet property="registerButton" destination="dga-br-G7g" id="87h-VJ-ORs"/>
+                        <outlet property="surnamesTF" destination="mcz-hq-nhC" id="yM3-cL-HmP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="91Q-IM-Obl" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-314.49275362318843" y="4.6875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ArrowBackMain" width="32" height="30"/>
+        <image name="Avatar" width="118" height="119"/>
+        <image name="ChangePassword" width="18" height="26"/>
+        <namedColor name="BackgroundColor">
+            <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CorporativeColor">
+            <color red="0.20000000000000001" green="0.36862745098039218" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="HardColor">
+            <color red="0.19607843137254902" green="0.26666666666666666" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
