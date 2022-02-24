@@ -159,6 +159,7 @@ extension SecondRegisterViewController: UIImagePickerControllerDelegate {
 			if let msg = msg {
 				self.imageUrl = msg
 			}
+			
 		} failure: { error in
 			debugPrint(error)
 		}

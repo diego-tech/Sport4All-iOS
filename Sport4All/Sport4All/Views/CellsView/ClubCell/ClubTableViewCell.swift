@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ClubTableViewCell: UITableViewCell {
 
@@ -13,6 +14,10 @@ class ClubTableViewCell: UITableViewCell {
 
 	// Outlets
 	@IBOutlet weak var homeClubsUIView: UIView!
+	@IBOutlet weak var clubImageView: UIImageView!
+	@IBOutlet weak var clubNameLabel: UILabel!
+	@IBOutlet weak var clubPhoneLabel: UILabel!
+	@IBOutlet weak var servicesStackView: UIStackView!
 	
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,9 +31,21 @@ class ClubTableViewCell: UITableViewCell {
 		
 		self.backgroundColor = .backgroundColor
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
-    }
+	
+	func setCellWithValueOf(_ club: Club) {
+		updateUI(clubName: club.name, clubPhone: club.tlf, clubImageView: club.club_banner)
+	}
+	
+	private func updateUI(clubName: String?, clubPhone: String?, clubImageView: String?) {
+		self.clubNameLabel.text = clubName
+		self.clubPhoneLabel.text = clubPhone
+		
+		let url = URL(string: clubImageView!)
+		self.clubImageView.kf.setImage(with: url)
+	}
 }
+
+/**
+ let url = URL(string: "https://example.com/image.png")
+ imageView.kf.setImage(with: url)
+ */

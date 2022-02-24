@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Club: Decodable {
+struct Club: Codable {
 	let id: Int?
 	let name: String?
 	let club_img: String?
@@ -15,12 +15,18 @@ struct Club: Decodable {
 	let direction: String?
 	let tlf: String?
 	let email: String?
-	let createdAt: Date?
-	let updatedAt: Date?
-	
-	enum CodingKeys: String, CodingKey {
-		case id, name, club_img, club_banner, direction, tlf, email
-		case createdAt = "created_at"
-		case updatedAt = "updated_at"
-	}
+	let created_at: String?
+	let updated_at: String?
 }
+
+/**
+ "id": 1,
+			 "name": "Club Prueba 1",
+			 "club_img": "club.png",
+			 "club_banner": "clubebanner.ong",
+			 "direction": "Hola",
+			 "tlf": "123123121",
+			 "email": "pepe@pepe.com",
+			 "created_at": "2022-02-24T11:12:01.000000Z",
+			 "updated_at": "2022-02-24T11:12:01.000000Z"
+ */

@@ -29,6 +29,7 @@
 		5E12F10027C290BA00316D69 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E12F0FF27C290BA00316D69 /* OnboardingCollectionViewCell.swift */; };
 		5E197F01278D7E6F008BBABB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E197F00278D7E6F008BBABB /* Constants.swift */; };
 		5E197F03278D80D4008BBABB /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E197F02278D80D4008BBABB /* ColorExtension.swift */; };
+		5E1D04A427C7BB9000FE6E80 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5E1D04A327C7BB9000FE6E80 /* Kingfisher */; };
 		5E212AFE27C2709A0013E1BE /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E212AFD27C2709A0013E1BE /* UIImageViewExtension.swift */; };
 		5E2FEE6727A43E3E008B0AE1 /* RetrievePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E2FEE6627A43E3E008B0AE1 /* RetrievePassword.storyboard */; };
 		5E2FEE6927A442DA008B0AE1 /* RetrievePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2FEE6827A442DA008B0AE1 /* RetrievePasswordViewController.swift */; };
@@ -157,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E1D04A427C7BB9000FE6E80 /* Kingfisher in Frameworks */,
 				5EA1A66C27A7D43C0096754C /* Alamofire in Frameworks */,
 				5E51235127BBC7430047EE44 /* IQKeyboardManagerSwift in Frameworks */,
 			);
@@ -287,6 +289,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		5E1D04A127C7996300FE6E80 /* HomeClubs */ = {
+			isa = PBXGroup;
+			children = (
+				5E9E820F27B283D700A450E8 /* HomeClubsViewController.swift */,
+				5E9661D127C78DAF00EEFC14 /* ClubListViewModel.swift */,
+			);
+			path = HomeClubs;
+			sourceTree = "<group>";
+		};
 		5E2FEE6527A43E0F008B0AE1 /* RetrievePassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -414,10 +425,9 @@
 		5E9E820E27B283C700A450E8 /* HomeControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5E1D04A127C7996300FE6E80 /* HomeClubs */,
 				5E77E9BE27B1368E004195AE /* HomeViewController.swift */,
-				5E9E820F27B283D700A450E8 /* HomeClubsViewController.swift */,
 				5E9E821127B283E200A450E8 /* HomeMatchesViewController.swift */,
-				5E9661D127C78DAF00EEFC14 /* ClubListViewModel.swift */,
 			);
 			path = HomeControllers;
 			sourceTree = "<group>";
@@ -548,6 +558,7 @@
 			packageProductDependencies = (
 				5EA1A66B27A7D43C0096754C /* Alamofire */,
 				5E51235027BBC7430047EE44 /* IQKeyboardManagerSwift */,
+				5E1D04A327C7BB9000FE6E80 /* Kingfisher */,
 			);
 			productName = Sport4All;
 			productReference = 5ECF53EB278C3AB8005F6D01 /* Sport4All.app */;
@@ -580,6 +591,7 @@
 			packageReferences = (
 				5EA1A66A27A7D43C0096754C /* XCRemoteSwiftPackageReference "Alamofire" */,
 				5E51234F27BBC7430047EE44 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				5E1D04A227C7BB9000FE6E80 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 5ECF53EC278C3AB8005F6D01 /* Products */;
 			projectDirPath = "";
@@ -895,6 +907,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5E1D04A227C7BB9000FE6E80 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = exactVersion;
+				version = 7.1.2;
+			};
+		};
 		5E51234F27BBC7430047EE44 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
@@ -914,6 +934,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5E1D04A327C7BB9000FE6E80 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E1D04A227C7BB9000FE6E80 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		5E51235027BBC7430047EE44 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5E51234F27BBC7430047EE44 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;

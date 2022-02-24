@@ -192,16 +192,16 @@ final class NetworkingProvider {
 	// Lista de Clubes
 	func clubList(serverResponse: @escaping (_ responseData: [Club]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/listclubs"
-		let headers: HTTPHeaders = [.authorization(bearerToken: kTestUserToken!)]
+		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.string(key: .authUserToken)!)]
 		
-		AF.request(url, method: .get, headers: headers).responseDecodable(of: ClubListResponse.self, decoder: DateDecoder()) {
+		AF.request(url, method: .get, headers: headers).responseDecodable(of: ClubListResponse.self) {
 			response in
 			
 			// Handle Response Data && Status Code && Message
 			if let data = response.value?.data, let status = response.value?.status, let msg = response.value?.msg {
 				serverResponse(data, status, msg)
 			}
-			
+
 			// Handle Alamofire Error
 			if let error = response.error {
 				failure(error)

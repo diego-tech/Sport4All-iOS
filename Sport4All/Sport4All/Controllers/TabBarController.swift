@@ -17,9 +17,7 @@ class TabBarController: UITabBarController {
 		self.selectedIndex = 1
 		
 		self.setUpTabBarUI()
-		self.addCustomTabBarView()
-		
-		print(UserDefaultsProvider.string(key: .authUserToken))
+		self.addCustomTabBarView()		
 	}
 	
 	override func viewDidLayoutSubviews() {

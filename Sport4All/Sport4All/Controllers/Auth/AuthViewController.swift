@@ -21,11 +21,6 @@ class AuthViewController: UIViewController {
 	@IBOutlet weak var accessButton: UIButton!
 	@IBOutlet weak var goToRegisterButton: UIButton!
 	
-	override func viewWillLayoutSubviews() {
-		super.viewWillLayoutSubviews()
-
-	}
-	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
@@ -82,9 +77,10 @@ class AuthViewController: UIViewController {
 				if AuxFunctions.checkStatusCode(statusCode: statusCode) {
 					if let authUserToken = responseData?.token {
 						UserDefaultsProvider.setUserDefaults(key: .authUserToken, value: authUserToken)
+						
+						let vc = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBar")
+						self.show(vc, sender: self)
 					}
-					let vc = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBar")
-					self.show(vc, sender: self)
 				}  else {
 					debugPrint("Error")
 				}
@@ -227,13 +223,13 @@ class AuthViewController: UIViewController {
 //		}
 //	}
 //
-//		private func clubList() {
-//			NetworkingProvider.shared.clubList { responseData, status, msg in
-//				print(responseData)
-//				print(status)
-//				print(msg)
-//			} failure: { error in
-//				print(error)
-//			}
+//	private func clubList() {
+//		NetworkingProvider.shared.clubList { responseData, status, msg in
+//			print(responseData)
+//			print(status)
+//			print(msg)
+//		} failure: { error in
+//			print(error)
 //		}
+//	}
 }

@@ -10,11 +10,18 @@ import UIKit
 class HomeClubsViewController: UIViewController {
 	
 	// Variables
+	private var clubViewModel = ClubListViewModel()
+	private var club: Club?
 	
 	// Outlets
 	@IBOutlet weak var searchBar: UITextField!
 	@IBOutlet weak var bestRatedCollectionView: UICollectionView!
 	@IBOutlet weak var homeClubsTableView: UITableView!
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		clubList()
+	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -24,7 +31,7 @@ class HomeClubsViewController: UIViewController {
 		initCollectionView()
 		
 		// Inicialización Table View
-		initTableView()
+//		initTableView()
 		
 		// Custom Search Bar
 		searchBar.customSearch()
@@ -33,6 +40,12 @@ class HomeClubsViewController: UIViewController {
 	// MARK: Action Functions
 	
 	// MARK: Functions
+	private func clubList() {
+		clubViewModel.fetchClubList { status in
+			self.initTableView()
+		}
+	}
+	
 	private func initTableView() {
 		homeClubsTableView.dataSource = self
 		homeClubsTableView.delegate = self
@@ -41,6 +54,7 @@ class HomeClubsViewController: UIViewController {
 		homeClubsTableView.separatorStyle = .none
 		homeClubsTableView.showsHorizontalScrollIndicator = false
 		homeClubsTableView.showsVerticalScrollIndicator = false
+		homeClubsTableView.reloadData()
 	}
 	
 	private func initCollectionView() {
@@ -75,11 +89,14 @@ extension HomeClubsViewController: UICollectionViewDelegate, UICollectionViewDel
 
 extension HomeClubsViewController: UITableViewDataSource, UITableViewDelegate {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 10
+		return clubViewModel.numberOfRowsInSection(section: section)
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = homeClubsTableView.dequeueReusableCell(withIdentifier: "ClubTableViewCell") as! ClubTableViewCell
+		
+		club = clubViewModel.cellForRowAt(indexPath: indexPath)
+		cell.setCellWithValueOf(club!)
 		return cell
 	}
 }
