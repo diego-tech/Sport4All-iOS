@@ -34,6 +34,7 @@
 		5E2FEE6927A442DA008B0AE1 /* RetrievePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2FEE6827A442DA008B0AE1 /* RetrievePasswordViewController.swift */; };
 		5E371D2927A925F900446D73 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E371D2827A925F900446D73 /* TabBar.storyboard */; };
 		5E371D2B27A92A5E00446D73 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E371D2A27A92A5E00446D73 /* TabBarController.swift */; };
+		5E4ED8C127C7F61300679524 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4ED8C027C7F61300679524 /* EditProfileViewController.swift */; };
 		5E51235127BBC7430047EE44 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5E51235027BBC7430047EE44 /* IQKeyboardManagerSwift */; };
 		5E51235327BBC7E60047EE44 /* FavouriteClubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E51235227BBC7E60047EE44 /* FavouriteClubsViewController.swift */; };
 		5E51235E27BBD5D70047EE44 /* InfoClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E51235D27BBD5D70047EE44 /* InfoClubViewController.swift */; };
@@ -104,6 +105,7 @@
 		5E2FEE6827A442DA008B0AE1 /* RetrievePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrievePasswordViewController.swift; sourceTree = "<group>"; };
 		5E371D2827A925F900446D73 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		5E371D2A27A92A5E00446D73 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		5E4ED8C027C7F61300679524 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		5E51235227BBC7E60047EE44 /* FavouriteClubsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteClubsViewController.swift; sourceTree = "<group>"; };
 		5E51235D27BBD5D70047EE44 /* InfoClubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoClubViewController.swift; sourceTree = "<group>"; };
 		5E51236127BBD8010047EE44 /* InfoClub.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InfoClub.storyboard; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 				5E8C23BE27C0EF0600763D49 /* DetailEventViewController.swift */,
 				5E96407E27C68D2700387BFD /* YourClubViewController.swift */,
 				5E96408027C69AE100387BFD /* PendingEventsViewController.swift */,
+				5E4ED8C027C7F61300679524 /* EditProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -640,6 +643,7 @@
 				5E77E9BF27B1368E004195AE /* HomeViewController.swift in Sources */,
 				5ECF53F1278C3AB8005F6D01 /* SceneDelegate.swift in Sources */,
 				5E212AFE27C2709A0013E1BE /* UIImageViewExtension.swift in Sources */,
+				5E4ED8C127C7F61300679524 /* EditProfileViewController.swift in Sources */,
 				5EF497A827A55858008B0C37 /* NetworkingProvider.swift in Sources */,
 				5E96407F27C68D2700387BFD /* YourClubViewController.swift in Sources */,
 				5EC1EFDF27BFB7C90089C436 /* UIViewExtension.swift in Sources */,
