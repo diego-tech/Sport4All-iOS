@@ -16,10 +16,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Event Pending List View Controller-->
+        <!--Register In Event View Controller-->
         <scene sceneID="icB-V8-6xE">
             <objects>
-                <viewController storyboardIdentifier="EventPendingList" modalPresentationStyle="fullScreen" id="wqZ-oC-qSd" customClass="EventPendingListViewController" customModule="Sport4All" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterInEvent" modalPresentationStyle="fullScreen" id="wqZ-oC-qSd" customClass="RegisterInEventViewController" customModule="Sport4All" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PbZ-WR-hci">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,7 +46,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Blv-9d-ZPw">
-                                <rect key="frame" x="40" y="163" width="334" height="40"/>
+                                <rect key="frame" x="20" y="163" width="374" height="40"/>
                                 <color key="tintColor" name="HardColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="RightArrowAllClubsCard" imagePlacement="trailing" title="Categoría" imagePadding="200">
@@ -54,7 +54,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7a-48-MVT">
-                                <rect key="frame" x="40" y="213" width="334" height="40"/>
+                                <rect key="frame" x="20" y="213" width="374" height="40"/>
                                 <color key="tintColor" name="HardColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="RightArrowAllClubsCard" imagePlacement="trailing" title="Género" imagePadding="220">
@@ -69,7 +69,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jugador 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jfp-cv-kMx">
-                                <rect key="frame" x="40" y="294" width="85" height="24"/>
+                                <rect key="frame" x="20" y="294" width="374" height="24"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="20"/>
                                 <color key="textColor" name="HardColor"/>
                                 <nil key="highlightedColor"/>
@@ -82,17 +82,17 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre Jugador 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o1o-lt-pBT">
-                                <rect key="frame" x="40" y="359" width="334" height="34"/>
+                                <rect key="frame" x="20" y="359" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="DNI Jugador 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aqd-4W-7BU">
-                                <rect key="frame" x="40" y="403" width="334" height="34"/>
+                                <rect key="frame" x="20" y="403" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Correo Electrónico Jugador 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KO8-97-nc0">
-                                <rect key="frame" x="40" y="447" width="334" height="34"/>
+                                <rect key="frame" x="20" y="447" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -104,7 +104,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jugador 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5DJ-cl-UfB">
-                                <rect key="frame" x="40" y="522" width="88" height="24"/>
+                                <rect key="frame" x="20" y="522" width="374" height="24"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="20"/>
                                 <color key="textColor" name="HardColor"/>
                                 <nil key="highlightedColor"/>
@@ -117,22 +117,22 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre Jugador 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xau-5y-Cce">
-                                <rect key="frame" x="40" y="587" width="334" height="34"/>
+                                <rect key="frame" x="20" y="587" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="DNI Jugador 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0ff-2U-xhi">
-                                <rect key="frame" x="40" y="631" width="334" height="34"/>
+                                <rect key="frame" x="20" y="631" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Correo Electrónico Jugador 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N3C-b8-EQI">
-                                <rect key="frame" x="40" y="675" width="334" height="34"/>
+                                <rect key="frame" x="20" y="675" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPQ-z8-5f3">
-                                <rect key="frame" x="76" y="759" width="262" height="50"/>
+                                <rect key="frame" x="76" y="749" width="262" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="262" id="UA5-KG-P3F"/>
                                     <constraint firstAttribute="height" constant="50" id="Wuq-sW-QPk"/>
@@ -151,34 +151,36 @@
                         <viewLayoutGuide key="safeArea" id="DPK-41-lx3"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="DPK-41-lx3" firstAttribute="trailing" secondItem="Jfp-cv-kMx" secondAttribute="trailing" constant="20" id="0MV-hn-erd"/>
                             <constraint firstItem="Jfp-cv-kMx" firstAttribute="top" secondItem="ViU-GN-0w9" secondAttribute="bottom" constant="20" id="0hD-63-FXb"/>
                             <constraint firstItem="Aqd-4W-7BU" firstAttribute="top" secondItem="o1o-lt-pBT" secondAttribute="bottom" constant="10" id="0yg-xv-U8g"/>
                             <constraint firstAttribute="trailing" secondItem="ViU-GN-0w9" secondAttribute="trailing" id="1Mb-9o-0EY"/>
-                            <constraint firstItem="DPK-41-lx3" firstAttribute="trailing" secondItem="Blv-9d-ZPw" secondAttribute="trailing" constant="40" id="2Ej-4N-dyg"/>
-                            <constraint firstItem="5DJ-cl-UfB" firstAttribute="leading" secondItem="DPK-41-lx3" secondAttribute="leading" constant="40" id="3Rt-Mi-1hl"/>
+                            <constraint firstItem="DPK-41-lx3" firstAttribute="trailing" secondItem="Blv-9d-ZPw" secondAttribute="trailing" constant="20" id="2Ej-4N-dyg"/>
+                            <constraint firstItem="5DJ-cl-UfB" firstAttribute="leading" secondItem="DPK-41-lx3" secondAttribute="leading" constant="20" id="3Rt-Mi-1hl"/>
                             <constraint firstItem="Mvs-cE-t6Z" firstAttribute="leading" secondItem="DPK-41-lx3" secondAttribute="leading" constant="20" id="3V8-4L-4Ic"/>
-                            <constraint firstItem="zPQ-z8-5f3" firstAttribute="top" secondItem="N3C-b8-EQI" secondAttribute="bottom" constant="50" id="4PM-XE-iSM"/>
-                            <constraint firstItem="DPK-41-lx3" firstAttribute="trailing" secondItem="N3C-b8-EQI" secondAttribute="trailing" constant="40" id="85B-Xr-Vmu"/>
+                            <constraint firstItem="zPQ-z8-5f3" firstAttribute="top" secondItem="N3C-b8-EQI" secondAttribute="bottom" constant="40" id="4PM-XE-iSM"/>
+                            <constraint firstItem="DPK-41-lx3" firstAttribute="trailing" secondItem="5DJ-cl-UfB" secondAttribute="trailing" constant="20" id="7Dw-ZW-wne"/>
+                            <constraint firstItem="DPK-41-lx3" firstAttribute="trailing" secondItem="N3C-b8-EQI" secondAttribute="trailing" constant="20" id="85B-Xr-Vmu"/>
                             <constraint firstItem="h7a-48-MVT" firstAttribute="top" secondItem="Blv-9d-ZPw" secondAttribute="bottom" constant="10" id="8Lg-zy-aZ4"/>
                             <constraint firstItem="PCE-Ic-VMP" firstAttribute="top" secondItem="5DJ-cl-UfB" secondAttribute="bottom" constant="20" id="8V1-kz-OlC"/>
-                            <constraint firstItem="DPK-41-lx3" firstAttribute="trailing" secondItem="h7a-48-MVT" secondAttribute="trailing" constant="40" id="95z-o5-0ke"/>
+                            <constraint firstItem="DPK-41-lx3" firstAttribute="trailing" secondItem="h7a-48-MVT" secondAttribute="trailing" constant="20" id="95z-o5-0ke"/>
                             <constraint firstItem="13O-cq-eRR" firstAttribute="top" secondItem="DPK-41-lx3" secondAttribute="top" constant="44" id="9lw-pD-zSG"/>
                             <constraint firstAttribute="trailing" secondItem="2YG-pL-fjb" secondAttribute="trailing" id="AjG-Zp-J0L"/>
-                            <constraint firstItem="DPK-41-lx3" firstAttribute="trailing" secondItem="KO8-97-nc0" secondAttribute="trailing" constant="40" id="CLx-Il-TFf"/>
+                            <constraint firstItem="DPK-41-lx3" firstAttribute="trailing" secondItem="KO8-97-nc0" secondAttribute="trailing" constant="20" id="CLx-Il-TFf"/>
                             <constraint firstItem="gj6-SP-EQw" firstAttribute="leading" secondItem="PbZ-WR-hci" secondAttribute="leading" id="DCh-iU-AUB"/>
                             <constraint firstItem="2YG-pL-fjb" firstAttribute="leading" secondItem="PbZ-WR-hci" secondAttribute="leading" id="EoZ-Cv-mny"/>
                             <constraint firstItem="N3C-b8-EQI" firstAttribute="top" secondItem="0ff-2U-xhi" secondAttribute="bottom" constant="10" id="Fsv-NJ-0ya"/>
                             <constraint firstItem="DPK-41-lx3" firstAttribute="trailing" secondItem="13O-cq-eRR" secondAttribute="trailing" constant="20" id="FwD-Bo-W17"/>
                             <constraint firstItem="Mvs-cE-t6Z" firstAttribute="top" secondItem="DPK-41-lx3" secondAttribute="top" constant="44" id="H7K-lO-687"/>
-                            <constraint firstItem="Jfp-cv-kMx" firstAttribute="leading" secondItem="DPK-41-lx3" secondAttribute="leading" constant="40" id="HSf-Dz-rgo"/>
+                            <constraint firstItem="Jfp-cv-kMx" firstAttribute="leading" secondItem="DPK-41-lx3" secondAttribute="leading" constant="20" id="HSf-Dz-rgo"/>
                             <constraint firstItem="13O-cq-eRR" firstAttribute="leading" secondItem="DPK-41-lx3" secondAttribute="leading" constant="20" id="HUe-Ow-B7f"/>
                             <constraint firstItem="tkv-Ft-SXM" firstAttribute="top" secondItem="Jfp-cv-kMx" secondAttribute="bottom" constant="20" id="JXx-ER-z1d"/>
                             <constraint firstItem="xau-5y-Cce" firstAttribute="top" secondItem="PCE-Ic-VMP" secondAttribute="bottom" constant="20" id="Jbi-jQ-w8D"/>
-                            <constraint firstItem="DPK-41-lx3" firstAttribute="trailing" secondItem="Aqd-4W-7BU" secondAttribute="trailing" constant="40" id="JkD-YN-tui"/>
+                            <constraint firstItem="DPK-41-lx3" firstAttribute="trailing" secondItem="Aqd-4W-7BU" secondAttribute="trailing" constant="20" id="JkD-YN-tui"/>
                             <constraint firstItem="PCE-Ic-VMP" firstAttribute="leading" secondItem="PbZ-WR-hci" secondAttribute="leading" id="KO4-Ms-t5r"/>
                             <constraint firstItem="ViU-GN-0w9" firstAttribute="top" secondItem="h7a-48-MVT" secondAttribute="bottom" constant="20" id="Ll2-Kd-fGR"/>
-                            <constraint firstItem="h7a-48-MVT" firstAttribute="leading" secondItem="DPK-41-lx3" secondAttribute="leading" constant="40" id="Luf-fb-u1a"/>
-                            <constraint firstItem="N3C-b8-EQI" firstAttribute="leading" secondItem="DPK-41-lx3" secondAttribute="leading" constant="40" id="N4C-GH-YWx"/>
+                            <constraint firstItem="h7a-48-MVT" firstAttribute="leading" secondItem="DPK-41-lx3" secondAttribute="leading" constant="20" id="Luf-fb-u1a"/>
+                            <constraint firstItem="N3C-b8-EQI" firstAttribute="leading" secondItem="DPK-41-lx3" secondAttribute="leading" constant="20" id="N4C-GH-YWx"/>
                             <constraint firstItem="KO8-97-nc0" firstAttribute="top" secondItem="Aqd-4W-7BU" secondAttribute="bottom" constant="10" id="NMz-Lv-c5P"/>
                             <constraint firstAttribute="trailing" secondItem="gj6-SP-EQw" secondAttribute="trailing" id="OYn-ug-5TR"/>
                             <constraint firstItem="0ff-2U-xhi" firstAttribute="top" secondItem="xau-5y-Cce" secondAttribute="bottom" constant="10" id="Pdw-gw-k6U"/>
@@ -189,17 +191,17 @@
                             <constraint firstItem="Blv-9d-ZPw" firstAttribute="top" secondItem="2YG-pL-fjb" secondAttribute="bottom" constant="20" id="Wb9-tj-NFy"/>
                             <constraint firstAttribute="trailing" secondItem="tkv-Ft-SXM" secondAttribute="trailing" id="YGt-aL-qVu"/>
                             <constraint firstItem="o1o-lt-pBT" firstAttribute="top" secondItem="tkv-Ft-SXM" secondAttribute="bottom" constant="20" id="Zbi-lb-UNl"/>
-                            <constraint firstItem="xau-5y-Cce" firstAttribute="leading" secondItem="DPK-41-lx3" secondAttribute="leading" constant="40" id="bcD-P6-VBW"/>
-                            <constraint firstItem="Blv-9d-ZPw" firstAttribute="leading" secondItem="DPK-41-lx3" secondAttribute="leading" constant="40" id="bch-N3-hS8"/>
-                            <constraint firstItem="Aqd-4W-7BU" firstAttribute="leading" secondItem="DPK-41-lx3" secondAttribute="leading" constant="40" id="dzH-bs-d2C"/>
-                            <constraint firstItem="o1o-lt-pBT" firstAttribute="leading" secondItem="DPK-41-lx3" secondAttribute="leading" constant="40" id="i8k-RG-Ea1"/>
+                            <constraint firstItem="xau-5y-Cce" firstAttribute="leading" secondItem="DPK-41-lx3" secondAttribute="leading" constant="20" id="bcD-P6-VBW"/>
+                            <constraint firstItem="Blv-9d-ZPw" firstAttribute="leading" secondItem="DPK-41-lx3" secondAttribute="leading" constant="20" id="bch-N3-hS8"/>
+                            <constraint firstItem="Aqd-4W-7BU" firstAttribute="leading" secondItem="DPK-41-lx3" secondAttribute="leading" constant="20" id="dzH-bs-d2C"/>
+                            <constraint firstItem="o1o-lt-pBT" firstAttribute="leading" secondItem="DPK-41-lx3" secondAttribute="leading" constant="20" id="i8k-RG-Ea1"/>
                             <constraint firstItem="zPQ-z8-5f3" firstAttribute="leading" secondItem="DPK-41-lx3" secondAttribute="leading" constant="76" id="m3e-iT-bHc"/>
-                            <constraint firstItem="DPK-41-lx3" firstAttribute="trailing" secondItem="o1o-lt-pBT" secondAttribute="trailing" constant="40" id="nAD-Mr-NPW"/>
-                            <constraint firstItem="KO8-97-nc0" firstAttribute="leading" secondItem="DPK-41-lx3" secondAttribute="leading" constant="40" id="sBF-ip-oCC"/>
-                            <constraint firstItem="DPK-41-lx3" firstAttribute="trailing" secondItem="xau-5y-Cce" secondAttribute="trailing" constant="40" id="tDK-3I-wEX"/>
+                            <constraint firstItem="DPK-41-lx3" firstAttribute="trailing" secondItem="o1o-lt-pBT" secondAttribute="trailing" constant="20" id="nAD-Mr-NPW"/>
+                            <constraint firstItem="KO8-97-nc0" firstAttribute="leading" secondItem="DPK-41-lx3" secondAttribute="leading" constant="20" id="sBF-ip-oCC"/>
+                            <constraint firstItem="DPK-41-lx3" firstAttribute="trailing" secondItem="xau-5y-Cce" secondAttribute="trailing" constant="20" id="tDK-3I-wEX"/>
                             <constraint firstItem="5DJ-cl-UfB" firstAttribute="top" secondItem="gj6-SP-EQw" secondAttribute="bottom" constant="20" id="ubU-Sx-jGZ"/>
-                            <constraint firstItem="DPK-41-lx3" firstAttribute="trailing" secondItem="0ff-2U-xhi" secondAttribute="trailing" constant="40" id="usa-GG-2xD"/>
-                            <constraint firstItem="0ff-2U-xhi" firstAttribute="leading" secondItem="DPK-41-lx3" secondAttribute="leading" constant="40" id="uuN-c7-UlU"/>
+                            <constraint firstItem="DPK-41-lx3" firstAttribute="trailing" secondItem="0ff-2U-xhi" secondAttribute="trailing" constant="20" id="usa-GG-2xD"/>
+                            <constraint firstItem="0ff-2U-xhi" firstAttribute="leading" secondItem="DPK-41-lx3" secondAttribute="leading" constant="20" id="uuN-c7-UlU"/>
                             <constraint firstItem="ViU-GN-0w9" firstAttribute="leading" secondItem="PbZ-WR-hci" secondAttribute="leading" id="vEN-7m-Kjm"/>
                             <constraint firstItem="tkv-Ft-SXM" firstAttribute="leading" secondItem="PbZ-WR-hci" secondAttribute="leading" id="xFV-58-dTy"/>
                         </constraints>
