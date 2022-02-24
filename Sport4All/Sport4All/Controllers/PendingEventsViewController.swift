@@ -22,4 +22,10 @@ class PendingEventsViewController: UIViewController {
 		// Inicialización de Estilos
 		headerUIView.bottomShadow()
     }
+	
+	// MARK: Action Functions
+	
+	// MARK: Functions
+	
+	// MARK: Styles
 }

@@ -13,11 +13,21 @@ class YourClubViewController: UIViewController {
 	
 	// Outlets
 	@IBOutlet weak var yourEventsTableView: UITableView!
+	@IBOutlet weak var headerUIView: UIView!
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 		
+		// Inicialización de Estilos
+		headerUIView.bottomShadow()
+		initTableView()
+    }
+	
+	// MARK: Action Functions
+	
+	// MARK: Functions
+	private func initTableView() {
 		yourEventsTableView.dataSource = self
 		yourEventsTableView.delegate = self
 		yourEventsTableView.isScrollEnabled = true
@@ -25,7 +35,10 @@ class YourClubViewController: UIViewController {
 		yourEventsTableView.separatorStyle = .none
 		yourEventsTableView.showsHorizontalScrollIndicator = false
 		yourEventsTableView.showsVerticalScrollIndicator = false
-    }
+	}
+	
+	
+	// MARK: Styles
 }
 
 extension YourClubViewController: UITableViewDataSource, UITableViewDelegate {
