@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		077D5F1627C77821008D50AD /* finishEventDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 077D5F1527C77821008D50AD /* finishEventDetail.storyboard */; };
 		07AB1FCA27AA9599007771E3 /* BestRatedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB1FC827AA9599007771E3 /* BestRatedCollectionViewCell.swift */; };
 		07AB1FCB27AA9599007771E3 /* BestRatedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB1FC927AA9599007771E3 /* BestRatedCollectionViewCell.xib */; };
 		592748E927C4E45C00C535F1 /* EventPengingDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 592748E827C4E45C00C535F1 /* EventPengingDetail.storyboard */; };
@@ -70,6 +71,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		077D5F1527C77821008D50AD /* finishEventDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = finishEventDetail.storyboard; sourceTree = "<group>"; };
 		07AB1FC827AA9599007771E3 /* BestRatedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestRatedCollectionViewCell.swift; sourceTree = "<group>"; };
 		07AB1FC927AA9599007771E3 /* BestRatedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestRatedCollectionViewCell.xib; sourceTree = "<group>"; };
 		592748E827C4E45C00C535F1 /* EventPengingDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventPengingDetail.storyboard; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 				5E197EFB278D7DBA008BBABB /* SupportingFiles */,
 				5E75E4C7279993F2005B89A3 /* Provider */,
 				5E197EF9278D7DA3008BBABB /* Util */,
+				077D5F1527C77821008D50AD /* finishEventDetail.storyboard */,
 			);
 			path = Sport4All;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				07AB1FCB27AA9599007771E3 /* BestRatedCollectionViewCell.xib in Resources */,
 				5E371D2927A925F900446D73 /* TabBar.storyboard in Resources */,
 				5E2FEE6727A43E3E008B0AE1 /* RetrievePassword.storyboard in Resources */,
+				077D5F1627C77821008D50AD /* finishEventDetail.storyboard in Resources */,
 				5E9C14C22790358F002D9AF1 /* SF-Pro-Display-Semibold.otf in Resources */,
 				592748E927C4E45C00C535F1 /* EventPengingDetail.storyboard in Resources */,
 				5959268A27BBB84A00702369 /* DetailEvent.storyboard in Resources */,
