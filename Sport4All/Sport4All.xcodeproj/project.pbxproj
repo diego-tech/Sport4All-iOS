@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		077D5F1627C77821008D50AD /* finishEventDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 077D5F1527C77821008D50AD /* finishEventDetail.storyboard */; };
+		077D5F1627C77821008D50AD /* FinishEventDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 077D5F1527C77821008D50AD /* FinishEventDetail.storyboard */; };
 		07AB1FCA27AA9599007771E3 /* BestRatedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB1FC827AA9599007771E3 /* BestRatedCollectionViewCell.swift */; };
 		07AB1FCB27AA9599007771E3 /* BestRatedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB1FC927AA9599007771E3 /* BestRatedCollectionViewCell.xib */; };
 		07BE152327BE6A6900AE8930 /* PayResume.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07BE152227BE6A6900AE8930 /* PayResume.storyboard */; };
@@ -44,6 +44,7 @@
 		5E8C23BF27C0EF0600763D49 /* DetailEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8C23BE27C0EF0600763D49 /* DetailEventViewController.swift */; };
 		5E96407F27C68D2700387BFD /* YourClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E96407E27C68D2700387BFD /* YourClubViewController.swift */; };
 		5E96408127C69AE100387BFD /* PendingEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E96408027C69AE100387BFD /* PendingEventsViewController.swift */; };
+		5E9661D027C7849B00EEFC14 /* FinishEventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9661CF27C7849B00EEFC14 /* FinishEventDetailViewController.swift */; };
 		5E9C14C22790358F002D9AF1 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C14BD2790358F002D9AF1 /* SF-Pro-Display-Semibold.otf */; };
 		5E9C14C32790358F002D9AF1 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C14BE2790358F002D9AF1 /* SF-Pro-Display-Regular.otf */; };
 		5E9C14C42790358F002D9AF1 /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C14BF2790358F002D9AF1 /* SF-Pro-Display-Medium.otf */; };
@@ -77,7 +78,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		077D5F1527C77821008D50AD /* finishEventDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = finishEventDetail.storyboard; sourceTree = "<group>"; };
+		077D5F1527C77821008D50AD /* FinishEventDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FinishEventDetail.storyboard; sourceTree = "<group>"; };
 		07AB1FC827AA9599007771E3 /* BestRatedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestRatedCollectionViewCell.swift; sourceTree = "<group>"; };
 		07AB1FC927AA9599007771E3 /* BestRatedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestRatedCollectionViewCell.xib; sourceTree = "<group>"; };
 		07BE152227BE6A6900AE8930 /* PayResume.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PayResume.storyboard; sourceTree = "<group>"; };
@@ -113,6 +114,7 @@
 		5E8C23BE27C0EF0600763D49 /* DetailEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventViewController.swift; sourceTree = "<group>"; };
 		5E96407E27C68D2700387BFD /* YourClubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourClubViewController.swift; sourceTree = "<group>"; };
 		5E96408027C69AE100387BFD /* PendingEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingEventsViewController.swift; sourceTree = "<group>"; };
+		5E9661CF27C7849B00EEFC14 /* FinishEventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishEventDetailViewController.swift; sourceTree = "<group>"; };
 		5E9C14BD2790358F002D9AF1 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		5E9C14BE2790358F002D9AF1 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		5E9C14BF2790358F002D9AF1 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 		5E75E4C4279993CD005B89A3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5E9661CE27C7848400EEFC14 /* FinishEventDetail */,
 				5EDC2CE527C6AFE4007EE2C0 /* EventsPendingList */,
 				5EDC2CDE27C6A01C007EE2C0 /* PayResume */,
 				592748E627C4E3EB00C535F1 /* EventsPending */,
@@ -356,6 +359,7 @@
 				5E8C23BE27C0EF0600763D49 /* DetailEventViewController.swift */,
 				5E96407E27C68D2700387BFD /* YourClubViewController.swift */,
 				5E96408027C69AE100387BFD /* PendingEventsViewController.swift */,
+				5E9661CF27C7849B00EEFC14 /* FinishEventDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -392,6 +396,14 @@
 				5ECF53F2278C3AB8005F6D01 /* AuthViewController.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		5E9661CE27C7848400EEFC14 /* FinishEventDetail */ = {
+			isa = PBXGroup;
+			children = (
+				077D5F1527C77821008D50AD /* FinishEventDetail.storyboard */,
+			);
+			path = FinishEventDetail;
 			sourceTree = "<group>";
 		};
 		5E9E820E27B283C700A450E8 /* HomeControllers */ = {
@@ -448,7 +460,6 @@
 				5E197EFB278D7DBA008BBABB /* SupportingFiles */,
 				5E75E4C7279993F2005B89A3 /* Provider */,
 				5E197EF9278D7DA3008BBABB /* Util */,
-				077D5F1527C77821008D50AD /* finishEventDetail.storyboard */,
 			);
 			path = Sport4All;
 			sourceTree = "<group>";
@@ -583,7 +594,7 @@
 				07AB1FCB27AA9599007771E3 /* BestRatedCollectionViewCell.xib in Resources */,
 				5E371D2927A925F900446D73 /* TabBar.storyboard in Resources */,
 				5E2FEE6727A43E3E008B0AE1 /* RetrievePassword.storyboard in Resources */,
-				077D5F1627C77821008D50AD /* finishEventDetail.storyboard in Resources */,
+				077D5F1627C77821008D50AD /* FinishEventDetail.storyboard in Resources */,
 				5E9C14C22790358F002D9AF1 /* SF-Pro-Display-Semibold.otf in Resources */,
 				07BE152327BE6A6900AE8930 /* PayResume.storyboard in Resources */,
 				592748E927C4E45C00C535F1 /* PendingEventsDetail.storyboard in Resources */,
@@ -653,6 +664,7 @@
 				5E51235327BBC7E60047EE44 /* FavouriteClubsViewController.swift in Sources */,
 				5999B68427B285640008BE6B /* ClubTableViewCell.swift in Sources */,
 				5E12F10027C290BA00316D69 /* OnboardingCollectionViewCell.swift in Sources */,
+				5E9661D027C7849B00EEFC14 /* FinishEventDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
