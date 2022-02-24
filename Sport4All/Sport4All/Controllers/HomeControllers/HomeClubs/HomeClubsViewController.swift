@@ -20,6 +20,8 @@ class HomeClubsViewController: UIViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
+		
+		// Inicialización Table View
 		clubList()
 	}
 	
@@ -29,10 +31,7 @@ class HomeClubsViewController: UIViewController {
 		
 		// Inicialización Collection View
 		initCollectionView()
-		
-		// Inicialización Table View
-//		initTableView()
-		
+				
 		// Custom Search Bar
 		searchBar.customSearch()
 	}
