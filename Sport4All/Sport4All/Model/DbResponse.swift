@@ -9,7 +9,7 @@ import Foundation
 
 struct Response: Decodable {
 	let status: Int?
-	let data: Data?
+	let data: User?
 	let msg: String?
 	
 	enum CodingKeys: String, CodingKey {
@@ -19,12 +19,14 @@ struct Response: Decodable {
 	}
 }
 
-struct ListResponse: Decodable {
+struct ClubListResponse: Codable {
+	let message: String?
 	let status: Int?
-	let data: [Data]?
+	let data: [Club]?
 	let msg: String?
 	
 	enum CodingKeys: String, CodingKey {
+		case message
 		case status
 		case data
 		case msg

@@ -26,9 +26,11 @@ class InfoClubViewController: UIViewController {
 		headerUIView.bottomShadow()
     }
 
+	// MARK: Action Functions
+	
+	// MARK: Functions
 	
 	// MARK: Styles
-	
 	private func buttonStyles() {
 		// Botón Reservar
 		reservBTN?.round()

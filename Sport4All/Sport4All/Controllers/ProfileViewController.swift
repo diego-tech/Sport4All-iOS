@@ -27,7 +27,10 @@ class ProfileViewController: UIViewController {
 		headerUIView?.bottomShadow()
     }
 	
-	// MARK: Action Buttons
+	// MARK: Action Functions
+	
+	
+	// MARK: Functions
 
 	// MARK: Styles
 }

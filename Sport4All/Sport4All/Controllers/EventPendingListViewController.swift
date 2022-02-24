@@ -26,6 +26,12 @@ class EventPendingListViewController: UIViewController {
 		pendingEventsList.showsHorizontalScrollIndicator = false
 		pendingEventsList.showsVerticalScrollIndicator = false
     }
+	
+	// MARK: Action Functions
+	
+	// MARK: Functions
+	
+	// MARK: Styles
 }
 
 extension EventPendingListViewController: UITableViewDelegate, UITableViewDataSource {

@@ -212,6 +212,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="headerUIView" destination="Sdb-xW-PNY" id="Fke-1b-VYr"/>
                         <outlet property="yourEventsTableView" destination="sEW-pl-nHI" id="TTe-G1-HO7"/>
                     </connections>
                 </viewController>
