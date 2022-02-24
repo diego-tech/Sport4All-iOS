@@ -14,6 +14,7 @@
 		592748E927C4E45C00C535F1 /* PendingEventsDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 592748E827C4E45C00C535F1 /* PendingEventsDetail.storyboard */; };
 		5959268727BBABE100702369 /* ModifyPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5959268627BBABE100702369 /* ModifyPassword.storyboard */; };
 		5959268A27BBB84A00702369 /* DetailEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5959268927BBB84A00702369 /* DetailEvent.storyboard */; };
+		5965E8AF27C779D700862B62 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5965E8AE27C779D700862B62 /* EditProfile.storyboard */; };
 		598E071327C3BC0400D5C185 /* YourClubEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598E071127C3BC0400D5C185 /* YourClubEventsTableViewCell.swift */; };
 		598E071427C3BC0400D5C185 /* YourClubEventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 598E071227C3BC0400D5C185 /* YourClubEventsTableViewCell.xib */; };
 		598E071827C3C58700D5C185 /* YourClub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 598E071727C3C58700D5C185 /* YourClub.storyboard */; };
@@ -35,6 +36,7 @@
 		5E2FEE6927A442DA008B0AE1 /* RetrievePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2FEE6827A442DA008B0AE1 /* RetrievePasswordViewController.swift */; };
 		5E371D2927A925F900446D73 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E371D2827A925F900446D73 /* TabBar.storyboard */; };
 		5E371D2B27A92A5E00446D73 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E371D2A27A92A5E00446D73 /* TabBarController.swift */; };
+		5E4ED8C127C7F61300679524 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4ED8C027C7F61300679524 /* EditProfileViewController.swift */; };
 		5E51235127BBC7430047EE44 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5E51235027BBC7430047EE44 /* IQKeyboardManagerSwift */; };
 		5E51235327BBC7E60047EE44 /* FavouriteClubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E51235227BBC7E60047EE44 /* FavouriteClubsViewController.swift */; };
 		5E51235E27BBD5D70047EE44 /* InfoClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E51235D27BBD5D70047EE44 /* InfoClubViewController.swift */; };
@@ -88,6 +90,7 @@
 		592748E827C4E45C00C535F1 /* PendingEventsDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PendingEventsDetail.storyboard; sourceTree = "<group>"; };
 		5959268627BBABE100702369 /* ModifyPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModifyPassword.storyboard; sourceTree = "<group>"; };
 		5959268927BBB84A00702369 /* DetailEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailEvent.storyboard; sourceTree = "<group>"; };
+		5965E8AE27C779D700862B62 /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		598E071127C3BC0400D5C185 /* YourClubEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourClubEventsTableViewCell.swift; sourceTree = "<group>"; };
 		598E071227C3BC0400D5C185 /* YourClubEventsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YourClubEventsTableViewCell.xib; sourceTree = "<group>"; };
 		598E071727C3C58700D5C185 /* YourClub.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YourClub.storyboard; sourceTree = "<group>"; };
@@ -108,6 +111,7 @@
 		5E2FEE6827A442DA008B0AE1 /* RetrievePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrievePasswordViewController.swift; sourceTree = "<group>"; };
 		5E371D2827A925F900446D73 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		5E371D2A27A92A5E00446D73 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		5E4ED8C027C7F61300679524 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		5E51235227BBC7E60047EE44 /* FavouriteClubsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteClubsViewController.swift; sourceTree = "<group>"; };
 		5E51235D27BBD5D70047EE44 /* InfoClubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoClubViewController.swift; sourceTree = "<group>"; };
 		5E51236127BBD8010047EE44 /* InfoClub.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InfoClub.storyboard; sourceTree = "<group>"; };
@@ -189,6 +193,14 @@
 				5959268927BBB84A00702369 /* DetailEvent.storyboard */,
 			);
 			path = Event;
+			sourceTree = "<group>";
+		};
+		5965E8AD27C779C400862B62 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				5965E8AE27C779D700862B62 /* EditProfile.storyboard */,
+			);
+			path = EditProfile;
 			sourceTree = "<group>";
 		};
 		598E071527C3C20C00D5C185 /* Your Club */ = {
@@ -326,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				5E9661CE27C7848400EEFC14 /* FinishEventDetail */,
+				5965E8AD27C779C400862B62 /* EditProfile */,
 				5EDC2CE527C6AFE4007EE2C0 /* EventsPendingList */,
 				5EDC2CDE27C6A01C007EE2C0 /* PayResume */,
 				592748E627C4E3EB00C535F1 /* EventsPending */,
@@ -376,6 +389,7 @@
 				5E96407E27C68D2700387BFD /* YourClubViewController.swift */,
 				5E96408027C69AE100387BFD /* PendingEventsViewController.swift */,
 				5E9661CF27C7849B00EEFC14 /* FinishEventDetailViewController.swift */,
+				5E4ED8C027C7F61300679524 /* EditProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -620,6 +634,7 @@
 				5ECF53FB278C3AB9005F6D01 /* LaunchScreen.storyboard in Resources */,
 				5E9C14C52790358F002D9AF1 /* SF-Pro.ttf in Resources */,
 				5ECF53F8278C3AB9005F6D01 /* Assets.xcassets in Resources */,
+				5965E8AF27C779D700862B62 /* EditProfile.storyboard in Resources */,
 				598E071427C3BC0400D5C185 /* YourClubEventsTableViewCell.xib in Resources */,
 				5999B68027B2805B0008BE6B /* FavouritesClubs.storyboard in Resources */,
 				5EFC3CA9279DC0A100720905 /* Register.storyboard in Resources */,
@@ -662,6 +677,7 @@
 				5E77E9BF27B1368E004195AE /* HomeViewController.swift in Sources */,
 				5ECF53F1278C3AB8005F6D01 /* SceneDelegate.swift in Sources */,
 				5E212AFE27C2709A0013E1BE /* UIImageViewExtension.swift in Sources */,
+				5E4ED8C127C7F61300679524 /* EditProfileViewController.swift in Sources */,
 				5EF497A827A55858008B0C37 /* NetworkingProvider.swift in Sources */,
 				5E96407F27C68D2700387BFD /* YourClubViewController.swift in Sources */,
 				5EC1EFDF27BFB7C90089C436 /* UIViewExtension.swift in Sources */,
