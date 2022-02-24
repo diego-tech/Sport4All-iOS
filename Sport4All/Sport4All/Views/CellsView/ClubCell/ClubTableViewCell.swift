@@ -33,14 +33,14 @@ class ClubTableViewCell: UITableViewCell {
 	
 	// MARK: Functions
 	func setCellWithValueOf(_ club: Club) {
-		updateUI(clubName: club.name, clubPhone: club.tlf, clubImageView: club.club_banner)
+		updateUI(clubName: club.name, clubPhone: club.tlf, clubImageView: club.club_img)
 	}
 	
 	private func updateUI(clubName: String?, clubPhone: String?, clubImageView: String?) {
 		guard let clubImageView = clubImageView else { return }
 
 		self.clubNameLabel.text = clubName
-		self.clubPhoneLabel.text = clubPhone		
+		self.clubPhoneLabel.text = clubPhone
 
 		let url = URL(string: clubImageView)
 		self.clubImageView.kf.setImage(with: url, placeholder: UIImage(named: "All Clubs Image"))
