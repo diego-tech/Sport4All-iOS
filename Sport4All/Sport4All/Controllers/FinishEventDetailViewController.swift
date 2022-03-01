@@ -9,9 +9,9 @@ import UIKit
 
 class FinishEventDetailViewController: UIViewController {
 
-	// Variables
+	// MARK: Variables
 	
-	// Outlets
+	// MARK: Outlets
 	@IBOutlet weak var headerUIView: UIView!
 	@IBOutlet weak var opinionTextView: UITextView!
 	@IBOutlet weak var sendButton: UIButton!

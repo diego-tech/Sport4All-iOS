@@ -9,9 +9,9 @@ import UIKit
 
 class InfoClubViewController: UIViewController {
 
-	// Variables
+	// MARK: Variables
 	
-	// Outlets
+	// MARK: Outlets
 	@IBOutlet weak var headerUIView: UIView!
 	@IBOutlet weak var webContactBTN: UIButton!
 	@IBOutlet weak var phoneContactBTN: UIButton!

@@ -9,8 +9,19 @@ import UIKit
 
 class HomeMatchesViewController: UIViewController {
 
+	// MARK: Variables
+	
+	// MARK: Outlets
+	
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+	
+	// MARK: Action Functions
+	
+	
+	// MARK: Functions
+	
+	// MARK: Styles
 }

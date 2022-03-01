@@ -9,9 +9,9 @@ import UIKit
 
 class YourClubViewController: UIViewController {
 	
-	// Variables
+	// MARK: Variables
 	
-	// Outlets
+	// MARK: Outlets
 	@IBOutlet weak var yourEventsTableView: UITableView!
 	@IBOutlet weak var headerUIView: UIView!
 	

@@ -10,9 +10,11 @@ import Foundation
 
 class ClubListViewModel {
 	
+	// MARK: Variables
 	private var clubList = [Club]()
 	private var status = Int()
 	
+	// MARK: Fetch Club List
 	func fetchClubList(completion: @escaping (_ status: Int?) -> ()) {
 		NetworkingProvider.shared.clubList { responseData, status, msg in
 			guard let responseList = responseData else { return }
@@ -25,6 +27,7 @@ class ClubListViewModel {
 		}
 	}
 	
+	// MARK: DataSource & Delegate Functions
 	func numberOfRowsInSection(section: Int) -> Int {
 		if clubList.count != 0 {
 			return clubList.count

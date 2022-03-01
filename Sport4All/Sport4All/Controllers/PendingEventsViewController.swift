@@ -9,9 +9,9 @@ import UIKit
 
 class PendingEventsViewController: UIViewController {
 	
-	// Variables
+	// MARK: Variables
 	
-	// Outlets
+	// MARK: Outlets
 	@IBOutlet weak var headerUIView: UIView!
 	@IBOutlet weak var barcodeIV: UIImageView!
 	

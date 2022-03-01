@@ -9,9 +9,9 @@ import UIKit
 
 class ModifyPasswordViewController: UIViewController {
 	
-	// Variables
+	// MARK: Variables
 	
-	// Outlets
+	// MARK: Outlets
 	@IBOutlet weak var goBackBTN: UIButton!
 	@IBOutlet weak var savePasswordBTN: UIButton!
 	@IBOutlet weak var firstPasswordTF: UITextField!

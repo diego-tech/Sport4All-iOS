@@ -9,9 +9,9 @@ import UIKit
 
 class EventPendingListViewController: UIViewController {
 	
-	// Variables
+	// MARK: Variables
 	
-	// Outlets
+	// MARK: Outlets
 	@IBOutlet weak var pendingEventsList: UITableView!
 	
     override func viewDidLoad() {

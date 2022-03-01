@@ -9,11 +9,11 @@ import UIKit
 
 class HomeClubsViewController: UIViewController {
 	
-	// Variables
+	// MARK: Variables
 	private var clubViewModel = ClubListViewModel()
 	private var club: Club?
 	
-	// Outlets
+	// MARK: Outlets
 	@IBOutlet weak var searchBar: UITextField!
 	@IBOutlet weak var bestRatedCollectionView: UICollectionView!
 	@IBOutlet weak var homeClubsTableView: UITableView!

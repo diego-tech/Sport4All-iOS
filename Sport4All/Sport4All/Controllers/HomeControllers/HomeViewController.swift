@@ -9,11 +9,10 @@ import UIKit
 
 class HomeViewController: UIViewController {
 	
-	// Variables
+	// MARK: Variables
 
-	// Outlets
+	// MARK: Outlets
 	@IBOutlet weak var changeViewSegmentedControl: UISegmentedControl!
-	
 	@IBOutlet weak var firstVC: UIView!
 	@IBOutlet weak var secondVC: UIView!
 	
@@ -78,14 +77,14 @@ class HomeViewController: UIViewController {
 	
 	// MARK: Styles
 	private func configureNavbar() {
-		// Images and Label
+		// Images and Title Label
 		let locationImage = UIImage(systemName: "location.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20))
 
 		let starImage = UIImage(systemName: "star.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20))
-		let textLabel = UILabel()
-		textLabel.textColor = .corporativeColor
-		textLabel.font = UIFont(name: FontType.SFProDisplayBold.rawValue, size: 22)
-		textLabel.text = "Inicio"
+		let titleLabel = UILabel()
+		titleLabel.textColor = .corporativeColor
+		titleLabel.font = UIFont(name: FontType.SFProDisplayBold.rawValue, size: 22)
+		titleLabel.text = "Inicio"
 
 		// UIBarButtonItem
 		let locationButtonItem = UIBarButtonItem(image: locationImage, style: .plain, target: self, action: #selector(locationButtonTapped(tapGestureRecognizer:)))
@@ -95,7 +94,7 @@ class HomeViewController: UIViewController {
 		starButtonItem.tintColor = .goldColor
 		
 		// Set Navigation Items
-		self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: textLabel)
+		self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: titleLabel)
 		self.navigationItem.rightBarButtonItems = [
 			starButtonItem,
 			locationButtonItem

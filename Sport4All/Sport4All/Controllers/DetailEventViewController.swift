@@ -9,9 +9,9 @@ import UIKit
 
 class DetailEventViewController: UIViewController {
 	
-	// Variables
+	// MARK: Variables
 	
-	// Outlets
+	// MARK: Outlets
 	@IBOutlet weak var locationBTN: UIButton!
 	@IBOutlet weak var inscribeEventBTN: UIButton!
 	@IBOutlet weak var headerUIView: UIView!

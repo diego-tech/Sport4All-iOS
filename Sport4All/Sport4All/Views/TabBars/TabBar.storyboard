@@ -295,23 +295,21 @@
             </objects>
             <point key="canvasLocation" x="-555.07246376811599" y="1197.9910714285713"/>
         </scene>
-        <!--View Controller-->
+        <!--Social View Controller-->
         <scene sceneID="Z9f-y3-8oK">
             <objects>
-                <viewController id="a2Z-N8-Dsn" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SocialViewController" id="a2Z-N8-Dsn" customClass="SocialViewController" customModule="Sport4All" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="geu-BB-Jkw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="XFq-Ej-Eeg"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="SocialActive" selectedImage="SocialActive" id="TsN-rA-7mJ" userLabel="Social Tab Bar Item">
-                        <color key="badgeColor" name="CorporativeColor"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="lo5-hY-m1d"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xLF-3S-CvM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-181" y="-382"/>
+            <point key="canvasLocation" x="728.98550724637687" y="-382.36607142857139"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="BB5-hN-sAE">
@@ -323,7 +321,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="a2Z-N8-Dsn" kind="relationship" relationship="viewControllers" id="P8K-Bz-WQ3"/>
+                        <segue destination="eyJ-bC-Ull" kind="relationship" relationship="viewControllers" id="P8K-Bz-WQ3"/>
                         <segue destination="u6H-df-nCh" kind="relationship" relationship="viewControllers" id="IHc-qt-ZPp"/>
                         <segue destination="x56-Lk-m0E" kind="relationship" relationship="viewControllers" id="hX9-hk-52B"/>
                     </connections>
@@ -486,6 +484,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S95-Dy-XdC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-181.15942028985509" y="551.11607142857144"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="p9v-1r-SrT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eyJ-bC-Ull" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="SocialActive" selectedImage="SocialActive" id="TsN-rA-7mJ" userLabel="Social Tab Bar Item">
+                        <color key="badgeColor" name="CorporativeColor"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z3U-Eg-hNY">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="a2Z-N8-Dsn" kind="relationship" relationship="rootViewController" id="YHc-fC-Kg3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pyd-Qh-QiN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-181.15942028985509" y="-382.36607142857139"/>
         </scene>
     </scenes>
     <resources>

@@ -10,13 +10,12 @@ import Kingfisher
 
 class ProfileViewController: UIViewController {
 	
-	// Variables
+	// MARK: Variables
 	private var userImage: String?
 	private var userName: String?
 	
-	// Outlets
+	// MARK: Outlets
 	@IBOutlet weak var headerUIView: UIView!
-	@IBOutlet weak var settingsBTN: UIButton!
 	@IBOutlet weak var pendingEventsBTN: UIButton!
 	@IBOutlet weak var completedEventsBTN: UIButton!
 	@IBOutlet weak var yourClubBTN: UIButton!
@@ -42,6 +41,9 @@ class ProfileViewController: UIViewController {
 	}
 	
 	// MARK: Action Functions
+	@objc func settingsButtonTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+		debugPrint("Pulsado")
+	}
 	
 	// MARK: Functions
 	private func fetchUserInfo() {
@@ -63,13 +65,13 @@ class ProfileViewController: UIViewController {
 	// MARK: Styles
 	private func configureNavbar() {
 		let hamburguerImage = UIImage(systemName: "line.3.horizontal", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20))
-		let textLabel = UILabel()
-		textLabel.textColor = .corporativeColor
-		textLabel.font = UIFont(name: FontType.SFProDisplayBold.rawValue, size: 22)
-		textLabel.text = "Perfil"
+		let titleLabel = UILabel()
+		titleLabel.textColor = .corporativeColor
+		titleLabel.font = UIFont(name: FontType.SFProDisplayBold.rawValue, size: 22)
+		titleLabel.text = "Perfil"
 		
-		self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: textLabel)
-		self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: hamburguerImage, style: .plain, target: self, action: nil)
+		self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: titleLabel)
+		self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: hamburguerImage, style: .plain, target: self, action: #selector(settingsButtonTapped(tapGestureRecognizer: )))
 
 		navigationController?.navigationBar.tintColor = .corporativeColor
 	}
