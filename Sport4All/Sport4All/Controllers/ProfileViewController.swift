@@ -23,15 +23,19 @@ class ProfileViewController: UIViewController {
 	@IBOutlet weak var userImageView: UIImageView!
 	@IBOutlet weak var userNameLabel: UILabel!
 	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		// Api
+		fetchUserInfo()
+	}
+	
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 		
 		// Inicialización Estilos
 		headerUIView?.bottomShadow()
-		
-		// Api
-		fetchUserInfo()
     }
 	
 	// MARK: Action Functions
