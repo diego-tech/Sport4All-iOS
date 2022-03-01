@@ -30,13 +30,16 @@ class ProfileViewController: UIViewController {
 		fetchUserInfo()
 	}
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		// Do any additional setup after loading the view.
+		
+		// Configure Navbar
+		configureNavbar()
 		
 		// Inicialización Estilos
 		headerUIView?.bottomShadow()
-    }
+	}
 	
 	// MARK: Action Functions
 	
@@ -56,6 +59,20 @@ class ProfileViewController: UIViewController {
 			print(error)
 		}
 	}
+	
+	private func configureNavbar() {
+		let hamburguerImage = UIImage(systemName: "line.3.horizontal", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25))
+		let label = UILabel()
+		label.textColor = .corporativeColor
+		label.font = UIFont(name: FontType.SFProDisplayBold.rawValue, size: 22)
+		label.text = "PERFIL"
+		
+		self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: label)
+		self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: hamburguerImage, style: .plain, target: self, action: nil)
 
+		navigationController?.navigationBar.tintColor = .corporativeColor
+		navigationController?.navigationBar.translatesAutoresizingMaskIntoConstraints = false
+	}
+	
 	// MARK: Styles
 }
