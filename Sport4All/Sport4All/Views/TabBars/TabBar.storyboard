@@ -10,9 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="SF-Pro-Display-Bold.otf">
-            <string>SFProDisplay-Bold</string>
-        </array>
         <array key="SF-Pro-Display-Medium.otf">
             <string>SFProDisplay-Medium</string>
         </array>
@@ -30,30 +27,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Inicio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wJ-aA-ucF">
-                                <rect key="frame" x="22" y="80" width="54" height="26"/>
-                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="22"/>
-                                <color key="textColor" name="CorporativeColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6x-i0-1m0" userLabel="FavButton">
-                                <rect key="frame" x="346" y="73" width="58" height="44"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="Star"/>
-                                <connections>
-                                    <action selector="favClubButtonAction:" destination="QOh-bd-z95" eventType="touchUpInside" id="yN6-4c-Xpy"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0N-HY-CdT" userLabel="MapButton">
-                                <rect key="frame" x="298" y="73" width="54" height="44"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="Go Map"/>
-                                <connections>
-                                    <action selector="testButtonAction:" destination="QOh-bd-z95" eventType="touchUpInside" id="fk8-kj-ShI"/>
-                                </connections>
-                            </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yBk-V6-iqJ">
-                                <rect key="frame" x="22" y="134" width="370" height="32"/>
+                                <rect key="frame" x="22" y="108" width="370" height="32"/>
                                 <segments>
                                     <segment title="Clubes"/>
                                     <segment title="Partidos"/>
@@ -63,13 +38,13 @@
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xc3-pS-TsJ" userLabel="Home Clubs Container View">
-                                <rect key="frame" x="0.0" y="182" width="414" height="631"/>
+                                <rect key="frame" x="0.0" y="159" width="414" height="654"/>
                                 <connections>
                                     <segue destination="TkY-yn-3wo" kind="embed" id="32U-iF-FNP"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JHs-Hv-nGH" userLabel="Home Matches Container View">
-                                <rect key="frame" x="0.0" y="182" width="414" height="631"/>
+                                <rect key="frame" x="0.0" y="159" width="414" height="654"/>
                                 <connections>
                                     <segue destination="Xfe-cB-3xL" kind="embed" id="IwU-Ie-wfY"/>
                                 </connections>
@@ -78,28 +53,20 @@
                         <viewLayoutGuide key="safeArea" id="o6R-2W-K6i"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="X6x-i0-1m0" firstAttribute="top" secondItem="o6R-2W-K6i" secondAttribute="top" constant="29" id="07p-1C-YnR"/>
                             <constraint firstItem="JHs-Hv-nGH" firstAttribute="leading" secondItem="xc3-pS-TsJ" secondAttribute="leading" id="4qO-Ms-5VJ"/>
-                            <constraint firstItem="yBk-V6-iqJ" firstAttribute="top" secondItem="U0N-HY-CdT" secondAttribute="bottom" constant="17" id="A50-5i-ncW"/>
-                            <constraint firstItem="o6R-2W-K6i" firstAttribute="trailing" secondItem="U0N-HY-CdT" secondAttribute="trailing" constant="62" id="BQP-8A-es1"/>
-                            <constraint firstItem="9wJ-aA-ucF" firstAttribute="leading" secondItem="o6R-2W-K6i" secondAttribute="leading" constant="22" id="Dcs-WS-7HD"/>
                             <constraint firstItem="JHs-Hv-nGH" firstAttribute="bottom" secondItem="o6R-2W-K6i" secondAttribute="bottom" id="Fwk-8v-VPW"/>
                             <constraint firstItem="xc3-pS-TsJ" firstAttribute="top" secondItem="JHs-Hv-nGH" secondAttribute="top" id="L72-2u-iXd"/>
                             <constraint firstItem="JHs-Hv-nGH" firstAttribute="leading" secondItem="o6R-2W-K6i" secondAttribute="leading" id="Wpg-Uz-SQ8"/>
-                            <constraint firstItem="9wJ-aA-ucF" firstAttribute="top" secondItem="o6R-2W-K6i" secondAttribute="top" constant="36" id="X77-CE-Lif"/>
-                            <constraint firstItem="JHs-Hv-nGH" firstAttribute="top" secondItem="yBk-V6-iqJ" secondAttribute="bottom" constant="17" id="XwD-Wy-I5f"/>
+                            <constraint firstItem="JHs-Hv-nGH" firstAttribute="top" secondItem="yBk-V6-iqJ" secondAttribute="bottom" constant="20" id="XwD-Wy-I5f"/>
                             <constraint firstItem="xc3-pS-TsJ" firstAttribute="centerX" secondItem="yBk-V6-iqJ" secondAttribute="centerX" id="YEH-NU-fph"/>
                             <constraint firstItem="JHs-Hv-nGH" firstAttribute="trailing" secondItem="xc3-pS-TsJ" secondAttribute="trailing" id="bmF-lC-ERZ"/>
-                            <constraint firstItem="U0N-HY-CdT" firstAttribute="top" secondItem="o6R-2W-K6i" secondAttribute="top" constant="29" id="dfR-6c-lD5"/>
+                            <constraint firstItem="yBk-V6-iqJ" firstAttribute="top" secondItem="o6R-2W-K6i" secondAttribute="top" constant="20" id="chv-nA-eKH"/>
                             <constraint firstItem="o6R-2W-K6i" firstAttribute="trailing" secondItem="yBk-V6-iqJ" secondAttribute="trailing" constant="22" id="iZC-Lg-LbK"/>
                             <constraint firstItem="yBk-V6-iqJ" firstAttribute="leading" secondItem="o6R-2W-K6i" secondAttribute="leading" constant="22" id="ogW-6W-dYN"/>
-                            <constraint firstItem="o6R-2W-K6i" firstAttribute="trailing" secondItem="X6x-i0-1m0" secondAttribute="trailing" constant="10" id="p8T-R6-bWP"/>
                             <constraint firstItem="JHs-Hv-nGH" firstAttribute="bottom" secondItem="xc3-pS-TsJ" secondAttribute="bottom" id="vP9-5G-QfT"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="-1" title="" image="HomeLogo" selectedImage="HomeLogo" id="8y9-DF-9qg" userLabel="Home Tab Bar Item">
-                        <color key="badgeColor" name="CorporativeColor"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="tIh-yh-VZF"/>
                     <connections>
                         <outlet property="changeViewSegmentedControl" destination="yBk-V6-iqJ" id="l6n-zG-xZL"/>
                         <outlet property="firstVC" destination="JHs-Hv-nGH" id="CVQ-pt-dWn"/>
@@ -108,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ocH-f2-IL7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-181.15942028985509" y="551.11607142857144"/>
+            <point key="canvasLocation" x="728.98550724637687" y="551.11607142857144"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="fzq-c3-zRf">
@@ -357,7 +324,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="a2Z-N8-Dsn" kind="relationship" relationship="viewControllers" id="P8K-Bz-WQ3"/>
-                        <segue destination="QOh-bd-z95" kind="relationship" relationship="viewControllers" id="IHc-qt-ZPp"/>
+                        <segue destination="u6H-df-nCh" kind="relationship" relationship="viewControllers" id="IHc-qt-ZPp"/>
                         <segue destination="x56-Lk-m0E" kind="relationship" relationship="viewControllers" id="hX9-hk-52B"/>
                     </connections>
                 </tabBarController>
@@ -370,7 +337,7 @@
             <objects>
                 <viewController id="Xfe-cB-3xL" customClass="HomeClubsViewController" customModule="Sport4All" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zwy-XK-wLu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="631"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="654"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mejor Valorados" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QdO-0x-0UR">
@@ -411,7 +378,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rkM-aR-B3A">
-                                <rect key="frame" x="10" y="287" width="394" height="319"/>
+                                <rect key="frame" x="10" y="287" width="394" height="342"/>
                                 <color key="backgroundColor" name="BackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ClubTableViewCell" id="hWq-hT-0Vz" customClass="ClubTableViewCell" customModule="Sport4All" customModuleProvider="target">
@@ -461,14 +428,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vd9-zY-2mx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="660.86956521739137" y="434.93303571428572"/>
+            <point key="canvasLocation" x="1571.0144927536232" y="434.93303571428572"/>
         </scene>
         <!--Home Matches View Controller-->
         <scene sceneID="P3z-W9-k1D">
             <objects>
                 <viewController id="TkY-yn-3wo" customClass="HomeMatchesViewController" customModule="Sport4All" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yie-1L-eJg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="631"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="654"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="5IF-K6-Jce"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
@@ -476,7 +443,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6p9-q2-tin" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1571.0144927536232" y="960.60267857142856"/>
+            <point key="canvasLocation" x="2481.1594202898555" y="960.60267857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="z6z-jQ-5MC">
@@ -499,16 +466,35 @@
             </objects>
             <point key="canvasLocation" x="-1465.217391304348" y="1197.9910714285713"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Y1O-lp-Cor">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="u6H-df-nCh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="-1" title="" image="HomeLogo" selectedImage="HomeLogo" id="8y9-DF-9qg" userLabel="Home Tab Bar Item">
+                        <color key="badgeColor" name="CorporativeColor"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Xv-Cm-Pf3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QOh-bd-z95" kind="relationship" relationship="rootViewController" id="cBI-QZ-Wp1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S95-Dy-XdC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-181.15942028985509" y="551.11607142857144"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Avatar" width="118" height="119"/>
-        <image name="Go Map" width="30" height="30"/>
         <image name="HomeLogo" width="34" height="34.5"/>
         <image name="ProfileActive" width="34" height="36"/>
         <image name="RightArrowAllClubsCard" width="26" height="26"/>
         <image name="RightArrowYourClub" width="24" height="24"/>
         <image name="SocialActive" width="40" height="36"/>
-        <image name="Star" width="34" height="30"/>
         <namedColor name="BackgroundColor">
             <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

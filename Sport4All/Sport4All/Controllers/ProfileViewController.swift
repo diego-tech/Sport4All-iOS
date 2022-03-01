@@ -60,19 +60,17 @@ class ProfileViewController: UIViewController {
 		}
 	}
 	
+	// MARK: Styles
 	private func configureNavbar() {
-		let hamburguerImage = UIImage(systemName: "line.3.horizontal", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25))
-		let label = UILabel()
-		label.textColor = .corporativeColor
-		label.font = UIFont(name: FontType.SFProDisplayBold.rawValue, size: 22)
-		label.text = "PERFIL"
+		let hamburguerImage = UIImage(systemName: "line.3.horizontal", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20))
+		let textLabel = UILabel()
+		textLabel.textColor = .corporativeColor
+		textLabel.font = UIFont(name: FontType.SFProDisplayBold.rawValue, size: 22)
+		textLabel.text = "Perfil"
 		
-		self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: label)
+		self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: textLabel)
 		self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: hamburguerImage, style: .plain, target: self, action: nil)
 
 		navigationController?.navigationBar.tintColor = .corporativeColor
-		navigationController?.navigationBar.translatesAutoresizingMaskIntoConstraints = false
 	}
-	
-	// MARK: Styles
 }
