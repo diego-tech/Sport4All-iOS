@@ -21,11 +21,22 @@ class PendingEventsViewController: UIViewController {
 		
 		// Inicialización de Estilos
 		headerUIView.bottomShadow()
+		barcodeIVStyle()
+		
+		// Generado de QR Prueba
+		testQRCodeGen()
     }
 	
 	// MARK: Action Functions
 	
 	// MARK: Functions
+	private func testQRCodeGen() {
+		barcodeIV.image = GenQRCode.generateQRCodeImage(reservationCode: "test")
+	}
 	
 	// MARK: Styles
+	private func barcodeIVStyle() {
+		barcodeIV.frame = CGRect(x: 0, y: 0, width: 175, height: 175)
+		barcodeIV.layer.magnificationFilter = CALayerContentsFilter.nearest
+	}
 }
