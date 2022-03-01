@@ -22,6 +22,7 @@
 		5999B68027B2805B0008BE6B /* FavouritesClubs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5999B67F27B2805B0008BE6B /* FavouritesClubs.storyboard */; };
 		5999B68427B285640008BE6B /* ClubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999B68227B285640008BE6B /* ClubTableViewCell.swift */; };
 		5999B68527B285640008BE6B /* ClubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5999B68327B285640008BE6B /* ClubTableViewCell.xib */; };
+		59C5BAA327CE847700DF8796 /* FinishEventList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C5BAA227CE847700DF8796 /* FinishEventList.storyboard */; };
 		5E123C3B27A2F1E400CF14EE /* FirstRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E123C3A27A2F1E400CF14EE /* FirstRegisterViewController.swift */; };
 		5E123C3D27A2F1F000CF14EE /* SecondRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E123C3C27A2F1F000CF14EE /* SecondRegisterViewController.swift */; };
 		5E12C4B527B6583300F4E7EA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E12C4B427B6583300F4E7EA /* ProfileViewController.swift */; };
@@ -100,6 +101,7 @@
 		5999B67F27B2805B0008BE6B /* FavouritesClubs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavouritesClubs.storyboard; sourceTree = "<group>"; };
 		5999B68227B285640008BE6B /* ClubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubTableViewCell.swift; sourceTree = "<group>"; };
 		5999B68327B285640008BE6B /* ClubTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClubTableViewCell.xib; sourceTree = "<group>"; };
+		59C5BAA227CE847700DF8796 /* FinishEventList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FinishEventList.storyboard; sourceTree = "<group>"; };
 		5E123C3A27A2F1E400CF14EE /* FirstRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterViewController.swift; sourceTree = "<group>"; };
 		5E123C3C27A2F1F000CF14EE /* SecondRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegisterViewController.swift; sourceTree = "<group>"; };
 		5E12C4B427B6583300F4E7EA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -249,6 +251,14 @@
 			path = ClubCell;
 			sourceTree = "<group>";
 		};
+		59C5BAA127CE845600DF8796 /* FinishEventList */ = {
+			isa = PBXGroup;
+			children = (
+				59C5BAA227CE847700DF8796 /* FinishEventList.storyboard */,
+			);
+			path = FinishEventList;
+			sourceTree = "<group>";
+		};
 		5E12F0F727C2891800316D69 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,6 +359,7 @@
 		5E75E4C4279993CD005B89A3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				59C5BAA127CE845600DF8796 /* FinishEventList */,
 				5E9661CE27C7848400EEFC14 /* FinishEventDetail */,
 				5965E8AD27C779C400862B62 /* EditProfile */,
 				5965E8B127C79CFE00862B62 /* RegisterInEvent */,
@@ -650,6 +661,7 @@
 				5ECF53F8278C3AB9005F6D01 /* Assets.xcassets in Resources */,
 				5965E8AF27C779D700862B62 /* EditProfile.storyboard in Resources */,
 				598E071427C3BC0400D5C185 /* YourClubEventsTableViewCell.xib in Resources */,
+				59C5BAA327CE847700DF8796 /* FinishEventList.storyboard in Resources */,
 				5999B68027B2805B0008BE6B /* FavouritesClubs.storyboard in Resources */,
 				5EFC3CA9279DC0A100720905 /* Register.storyboard in Resources */,
 				5959268727BBABE100702369 /* ModifyPassword.storyboard in Resources */,
