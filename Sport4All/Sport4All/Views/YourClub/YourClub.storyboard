@@ -8,9 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="SF-Pro-Display-Bold.otf">
-            <string>SFProDisplay-Bold</string>
-        </array>
         <array key="SF-Pro-Display-Medium.otf">
             <string>SFProDisplay-Medium</string>
         </array>
@@ -29,37 +26,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sdb-xW-PNY">
-                                <rect key="frame" x="0.0" y="44" width="414" height="370"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="267"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSr-19-MPP">
-                                        <rect key="frame" x="20" y="44" width="56" height="44"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="ArrowBackMain"/>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TU CLUB" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ez2-GZ-XLd">
-                                        <rect key="frame" x="20" y="44" width="374" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="zVL-KQ-jLw"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="20"/>
-                                        <color key="textColor" name="CorporativeColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InfoClubImg" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qak-f9-KpC">
-                                        <rect key="frame" x="0.0" y="123" width="414" height="150"/>
+                                        <rect key="frame" x="0.0" y="20" width="414" height="150"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="3oG-f1-gy1"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROK-li-hz0">
-                                        <rect key="frame" x="0.0" y="369" width="414" height="1"/>
+                                        <rect key="frame" x="0.0" y="266" width="414" height="1"/>
                                         <color key="backgroundColor" name="HardColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="uqD-AG-YFL"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Club Deportivo Fariones" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Skk-2q-3ZQ">
-                                        <rect key="frame" x="45" y="289" width="324" height="60"/>
+                                        <rect key="frame" x="45" y="186" width="324" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="55N-Fq-AS0"/>
                                         </constraints>
@@ -73,22 +56,17 @@
                                     <constraint firstItem="Skk-2q-3ZQ" firstAttribute="top" secondItem="qak-f9-KpC" secondAttribute="bottom" constant="16" id="19V-CO-7Ic"/>
                                     <constraint firstAttribute="trailing" secondItem="ROK-li-hz0" secondAttribute="trailing" id="2P0-DA-t2u"/>
                                     <constraint firstItem="Skk-2q-3ZQ" firstAttribute="leading" secondItem="Sdb-xW-PNY" secondAttribute="leading" constant="45" id="3JD-54-X1c"/>
-                                    <constraint firstItem="ez2-GZ-XLd" firstAttribute="top" secondItem="Sdb-xW-PNY" secondAttribute="top" constant="44" id="4dq-X1-ZAw"/>
-                                    <constraint firstAttribute="height" constant="370" id="86I-CC-xi7"/>
-                                    <constraint firstItem="qak-f9-KpC" firstAttribute="top" secondItem="nSr-19-MPP" secondAttribute="bottom" constant="35" id="9tU-Zi-Ua1"/>
+                                    <constraint firstAttribute="height" constant="267" id="86I-CC-xi7"/>
                                     <constraint firstAttribute="trailing" secondItem="Skk-2q-3ZQ" secondAttribute="trailing" constant="45" id="Pfx-TA-3F8"/>
-                                    <constraint firstAttribute="trailing" secondItem="ez2-GZ-XLd" secondAttribute="trailing" constant="20" symbolic="YES" id="Xrp-VB-Nva"/>
-                                    <constraint firstItem="ez2-GZ-XLd" firstAttribute="leading" secondItem="Sdb-xW-PNY" secondAttribute="leading" constant="20" symbolic="YES" id="gb8-e4-UBD"/>
+                                    <constraint firstItem="qak-f9-KpC" firstAttribute="top" secondItem="Sdb-xW-PNY" secondAttribute="top" constant="20" id="hP6-el-x1p"/>
                                     <constraint firstAttribute="trailing" secondItem="qak-f9-KpC" secondAttribute="trailing" id="ksQ-Af-oBv"/>
-                                    <constraint firstItem="nSr-19-MPP" firstAttribute="leading" secondItem="Sdb-xW-PNY" secondAttribute="leading" constant="20" id="nnK-OQ-k2e"/>
-                                    <constraint firstAttribute="bottom" secondItem="ROK-li-hz0" secondAttribute="bottom" id="qUo-cN-zaP"/>
+                                    <constraint firstItem="ROK-li-hz0" firstAttribute="top" secondItem="Skk-2q-3ZQ" secondAttribute="bottom" constant="20" id="oOw-wX-dZc"/>
                                     <constraint firstItem="qak-f9-KpC" firstAttribute="leading" secondItem="Sdb-xW-PNY" secondAttribute="leading" id="uYH-Qy-cML"/>
                                     <constraint firstItem="ROK-li-hz0" firstAttribute="leading" secondItem="Sdb-xW-PNY" secondAttribute="leading" id="uog-aX-cDy"/>
-                                    <constraint firstItem="nSr-19-MPP" firstAttribute="top" secondItem="Sdb-xW-PNY" secondAttribute="top" constant="44" id="zv5-gM-Kfv"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ik1-ZS-o7h">
-                                <rect key="frame" x="0.0" y="414" width="414" height="448"/>
+                                <rect key="frame" x="0.0" y="355" width="414" height="507"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jfr-Nm-YWh" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="750"/>
@@ -211,6 +189,7 @@
                             <constraint firstItem="ik1-ZS-o7h" firstAttribute="leading" secondItem="A9U-Fd-etj" secondAttribute="leading" id="oY6-Bq-vQS"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="56u-Zk-Lgi"/>
                     <connections>
                         <outlet property="headerUIView" destination="Sdb-xW-PNY" id="Fke-1b-VYr"/>
                         <outlet property="yourEventsTableView" destination="sEW-pl-nHI" id="TTe-G1-HO7"/>
@@ -218,11 +197,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6K9-h8-hjx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="944.92753623188412" y="65.625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5Vq-M2-T5w">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e5v-va-S9F" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QVn-GH-OZA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="duA-YW-ahk" kind="relationship" relationship="rootViewController" id="a4h-w8-11v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ngh-lG-eIc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="34.782608695652179" y="65.625"/>
         </scene>
     </scenes>
     <resources>
-        <image name="ArrowBackMain" width="32" height="30"/>
         <image name="InfoClubImg" width="375" height="150"/>
         <image name="Phone" width="45" height="45"/>
         <image name="Web" width="45" height="45"/>
@@ -231,9 +227,6 @@
         </namedColor>
         <namedColor name="BlueBerry">
             <color red="0.30196078431372547" green="0.39215686274509803" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="CorporativeColor">
-            <color red="0.20000000000000001" green="0.36862745098039218" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="HardColor">
             <color red="0.19607843137254902" green="0.26666666666666666" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

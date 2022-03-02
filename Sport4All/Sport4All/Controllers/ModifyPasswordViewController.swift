@@ -89,7 +89,7 @@ class ModifyPasswordViewController: UIViewController {
 		
 		title = "CAMBIAR CONTRASEÑA"
 		
-		let yourBackImage = UIImage(systemName: "arrowshape.turn.up.backward.fill", withConfiguration:  UIImage.SymbolConfiguration(pointSize: 20))
+		let yourBackImage = UIImage(systemName: "arrowshape.turn.up.backward.fill", withConfiguration:  UIImage.SymbolConfiguration(pointSize: 18))
 		let backButtonItem = UIBarButtonItem(image: yourBackImage, style: .plain, target: self, action: #selector(popView(tapGestureRecognizer:)))
 		backButtonItem.tintColor = .corporativeColor
 
