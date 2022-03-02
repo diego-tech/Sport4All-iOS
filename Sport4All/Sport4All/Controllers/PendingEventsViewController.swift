@@ -19,6 +19,9 @@ class PendingEventsViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 		
+		// Configure Navbar
+		configureNavbar()
+		
 		// Inicialización de Estilos
 		headerUIView.bottomShadow()
 		barcodeIVStyle()
@@ -38,5 +41,26 @@ class PendingEventsViewController: UIViewController {
 	private func barcodeIVStyle() {
 		barcodeIV.frame = CGRect(x: 0, y: 0, width: 175, height: 175)
 		barcodeIV.layer.magnificationFilter = CALayerContentsFilter.nearest
+	}
+	
+	private func configureNavbar() {
+		self.navigationController!.navigationBar.titleTextAttributes = [
+			.foregroundColor: UIColor.corporativeColor ?? .black,
+			.font: UIFont(name: FontType.SFProDisplayBold.rawValue, size: 22) ?? .systemFont(ofSize: 22, weight: .bold)
+		]
+		
+		title = "INFORMACION"
+		
+		let yourBackImage = UIImage(systemName: "arrowshape.turn.up.backward.fill", withConfiguration:  UIImage.SymbolConfiguration(pointSize: 18))
+		let backButtonItem = UIBarButtonItem(image: yourBackImage, style: .plain, target: self, action: #selector(popView(tapGestureRecognizer:)))
+		backButtonItem.tintColor = .corporativeColor
+
+		self.navigationItem.leftBarButtonItem = backButtonItem
+
+		self.navigationItem.setHidesBackButton(true, animated: true)
+	}
+	
+	@objc func popView(tapGestureRecognizer: UITapGestureRecognizer) {
+		self.navigationController?.popViewController(animated: true)
 	}
 }

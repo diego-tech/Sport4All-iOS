@@ -32,7 +32,7 @@ class SocialViewController: UIViewController {
 		// Title Label
 		let titleLabel = UILabel()
 		titleLabel.textColor = .corporativeColor
-		titleLabel.font = UIFont(name: FontType.SFProDisplayBold.rawValue, size: 22)
+		titleLabel.font = UIFont(name: FontType.SFProDisplayBold.rawValue, size: 22) ?? .systemFont(ofSize: 22, weight: .bold)
 		titleLabel.text = "Eventos"
 		
 		// Set Navigation Item

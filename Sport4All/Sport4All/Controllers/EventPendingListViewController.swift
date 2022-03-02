@@ -18,6 +18,10 @@ class EventPendingListViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 		
+		// Configure Navbar
+		configureNavbar()
+		
+		// Init Table
 		pendingEventsList.dataSource = self
 		pendingEventsList.delegate = self
 		pendingEventsList.isScrollEnabled = true
@@ -32,6 +36,27 @@ class EventPendingListViewController: UIViewController {
 	// MARK: Functions
 	
 	// MARK: Styles
+	private func configureNavbar() {
+		self.navigationController!.navigationBar.titleTextAttributes = [
+			.foregroundColor: UIColor.corporativeColor ?? .black,
+			.font: UIFont(name: FontType.SFProDisplayBold.rawValue, size: 22) ?? .systemFont(ofSize: 22, weight: .bold)
+		]
+		self.navigationController?.navigationBar.setTitleVerticalPositionAdjustment(.zero, for: .default)
+		
+		title = "EVENTOS PENDIENTES"
+		
+		let yourBackImage = UIImage(systemName: "arrowshape.turn.up.backward.fill", withConfiguration:  UIImage.SymbolConfiguration(pointSize: 18))
+		let backButtonItem = UIBarButtonItem(image: yourBackImage, style: .plain, target: self, action: #selector(popView(tapGestureRecognizer:)))
+		backButtonItem.tintColor = .corporativeColor
+
+		self.navigationItem.leftBarButtonItem = backButtonItem
+
+		self.navigationItem.setHidesBackButton(true, animated: true)
+	}
+	
+	@objc func popView(tapGestureRecognizer: UITapGestureRecognizer) {
+		self.navigationController?.popViewController(animated: true)
+	}
 }
 
 extension EventPendingListViewController: UITableViewDelegate, UITableViewDataSource {

@@ -112,7 +112,7 @@ extension UITextField {
 		self.textStyles(keyboardType: .default)
 		
 		let image = UIImageView()
-		let imageConfiguration = UIImage.SymbolConfiguration(pointSize: 17, weight: .medium, scale: .unspecified)
+		let imageConfiguration = UIImage.SymbolConfiguration(pointSize: 18, weight: .medium, scale: .unspecified)
 		let searchUImage = UIImage(systemName: "magnifyingglass", withConfiguration: imageConfiguration)
 		image.image = searchUImage
 		

@@ -24,35 +24,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sc9-5n-ApO" userLabel="Go Back Button">
-                                <rect key="frame" x="20" y="88" width="56" height="44"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="ArrowBackMain"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Editar Perfil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6e-kU-Ix5">
-                                <rect key="frame" x="20" y="88" width="374" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="G8v-c3-3Bi"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="20"/>
-                                <color key="textColor" name="CorporativeColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Foto De Perfil *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NpT-dw-6nx">
-                                <rect key="frame" x="20" y="152" width="374" height="14.5"/>
+                                <rect key="frame" x="20" y="108" width="374" height="14.5"/>
                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
                                 <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="msK-v1-oaH">
-                                <rect key="frame" x="148" y="186.5" width="118" height="118"/>
+                                <rect key="frame" x="148" y="142.5" width="118" height="118"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="118" id="PUi-3y-dgO"/>
                                     <constraint firstAttribute="width" constant="118" id="Qij-W3-3pj"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VRQ-3A-cPD">
-                                <rect key="frame" x="20" y="313.5" width="374" height="343"/>
+                                <rect key="frame" x="20" y="269.5" width="374" height="343"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="W0K-HN-cKn" userLabel="Name Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="56.5"/>
@@ -141,7 +127,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KxE-yQ-Se0">
-                                <rect key="frame" x="76" y="681.5" width="262" height="50"/>
+                                <rect key="frame" x="76" y="637.5" width="262" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Vrf-q3-1FB"/>
                                 </constraints>
@@ -159,40 +145,50 @@
                         <viewLayoutGuide key="safeArea" id="Nlo-3r-Ul7"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Sc9-5n-ApO" firstAttribute="top" secondItem="Nlo-3r-Ul7" secondAttribute="top" constant="44" id="64Y-9M-Y85"/>
                             <constraint firstItem="NpT-dw-6nx" firstAttribute="leading" secondItem="Nlo-3r-Ul7" secondAttribute="leading" constant="20" id="8sY-cb-B3O"/>
                             <constraint firstItem="Nlo-3r-Ul7" firstAttribute="trailing" secondItem="VRQ-3A-cPD" secondAttribute="trailing" constant="20" id="B5K-wr-ICv"/>
                             <constraint firstItem="msK-v1-oaH" firstAttribute="top" secondItem="NpT-dw-6nx" secondAttribute="bottom" constant="20" id="C9v-Ox-SXh"/>
+                            <constraint firstItem="NpT-dw-6nx" firstAttribute="top" secondItem="Nlo-3r-Ul7" secondAttribute="top" constant="20" id="Hle-xK-MHq"/>
                             <constraint firstItem="Nlo-3r-Ul7" firstAttribute="trailing" secondItem="KxE-yQ-Se0" secondAttribute="trailing" constant="76" id="Jj1-hN-PMZ"/>
-                            <constraint firstItem="c6e-kU-Ix5" firstAttribute="top" secondItem="Nlo-3r-Ul7" secondAttribute="top" constant="44" id="QCs-1L-fLa"/>
-                            <constraint firstItem="NpT-dw-6nx" firstAttribute="top" secondItem="Sc9-5n-ApO" secondAttribute="bottom" constant="20" id="Ugo-Zj-Xqo"/>
                             <constraint firstItem="Nlo-3r-Ul7" firstAttribute="trailing" secondItem="msK-v1-oaH" secondAttribute="trailing" constant="148" id="VKD-nx-W7q"/>
-                            <constraint firstItem="Nlo-3r-Ul7" firstAttribute="trailing" secondItem="c6e-kU-Ix5" secondAttribute="trailing" constant="20" id="baq-mT-Zvb"/>
                             <constraint firstItem="Nlo-3r-Ul7" firstAttribute="trailing" secondItem="NpT-dw-6nx" secondAttribute="trailing" constant="20" id="cID-YD-fZZ"/>
                             <constraint firstItem="VRQ-3A-cPD" firstAttribute="leading" secondItem="Nlo-3r-Ul7" secondAttribute="leading" constant="20" id="fnt-gq-Jd8"/>
-                            <constraint firstItem="Sc9-5n-ApO" firstAttribute="leading" secondItem="Nlo-3r-Ul7" secondAttribute="leading" constant="20" id="gg4-fY-WhA"/>
                             <constraint firstItem="KxE-yQ-Se0" firstAttribute="top" secondItem="VRQ-3A-cPD" secondAttribute="bottom" constant="25" id="khJ-2p-QvC"/>
                             <constraint firstItem="msK-v1-oaH" firstAttribute="leading" secondItem="Nlo-3r-Ul7" secondAttribute="leading" constant="148" id="pS0-dL-BCk"/>
                             <constraint firstItem="KxE-yQ-Se0" firstAttribute="leading" secondItem="Nlo-3r-Ul7" secondAttribute="leading" constant="76" id="pXb-gv-JOq"/>
-                            <constraint firstItem="c6e-kU-Ix5" firstAttribute="leading" secondItem="Nlo-3r-Ul7" secondAttribute="leading" constant="20" id="ywS-gy-ZI5"/>
                             <constraint firstItem="VRQ-3A-cPD" firstAttribute="top" secondItem="msK-v1-oaH" secondAttribute="bottom" constant="9" id="zuP-E8-gf9"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="mhE-ha-fm2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgk-7x-1Mr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1379.7101449275362" y="4.6875"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Mqq-9P-LpC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KMD-2e-Szb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Axx-85-N48">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="asV-lo-0f6" kind="relationship" relationship="rootViewController" id="b1l-4b-FfR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PNU-oz-aai" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="469.56521739130437" y="4.6875"/>
         </scene>
     </scenes>
     <resources>
-        <image name="ArrowBackMain" width="32" height="30"/>
         <image name="Avatar" width="118" height="119"/>
         <image name="ChangePassword" width="18" height="26"/>
         <namedColor name="BackgroundColor">
             <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="CorporativeColor">
-            <color red="0.20000000000000001" green="0.36862745098039218" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="HardColor">
             <color red="0.19607843137254902" green="0.26666666666666666" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
