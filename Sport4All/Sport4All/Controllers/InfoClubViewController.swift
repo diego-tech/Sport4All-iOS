@@ -42,7 +42,7 @@ class InfoClubViewController: UIViewController {
 	private func configureNavbar() {
 		self.navigationController!.navigationBar.titleTextAttributes = [
 			.foregroundColor: UIColor.corporativeColor ?? .black,
-			.font: UIFont(name: FontType.SFProDisplayBold.rawValue, size: 22) ?? .systemFont(ofSize: 22)
+			.font: UIFont(name: FontType.SFProDisplayBold.rawValue, size: 22) ?? .systemFont(ofSize: 22, weight: .bold)
 		]
 		
 		title = "INFORMACION"

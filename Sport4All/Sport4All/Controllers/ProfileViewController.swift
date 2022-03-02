@@ -67,7 +67,7 @@ class ProfileViewController: UIViewController {
 		let hamburguerImage = UIImage(systemName: "line.3.horizontal", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20))
 		let titleLabel = UILabel()
 		titleLabel.textColor = .corporativeColor
-		titleLabel.font = UIFont(name: FontType.SFProDisplayBold.rawValue, size: 22)
+		titleLabel.font = UIFont(name: FontType.SFProDisplayBold.rawValue, size: 22) ?? .systemFont(ofSize: 22, weight: .bold)
 		titleLabel.text = "Perfil"
 		
 		self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: titleLabel)
