@@ -11,6 +11,7 @@ import Kingfisher
 class ClubTableViewCell: UITableViewCell {
 
 	// Variables
+	public var isLoading: Bool = true
 	
 	// Outlets
 	@IBOutlet weak var homeClubsUIView: UIView!

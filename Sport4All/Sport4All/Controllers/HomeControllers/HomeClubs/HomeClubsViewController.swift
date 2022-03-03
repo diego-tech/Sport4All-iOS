@@ -12,6 +12,7 @@ class HomeClubsViewController: UIViewController {
 	// MARK: Variables
 	private var clubViewModel = ClubListViewModel()
 	private var club: Club?
+	private var clubTableView = ClubTableViewCell()
 	
 	// MARK: Outlets
 	@IBOutlet weak var searchBar: UITextField!
@@ -40,7 +41,7 @@ class HomeClubsViewController: UIViewController {
 	
 	// MARK: Functions
 	private func clubList() {
-		clubViewModel.fetchClubList { status in
+		clubViewModel.fetchClubList { [self] status in
 			self.initTableView()
 		}
 	}
