@@ -307,7 +307,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="J9K-Hf-zlh"/>
                     <connections>
+                        <outlet property="clubBannerImageView" destination="tB0-d6-gXh" id="U4Z-En-qOv"/>
+                        <outlet property="clubInfoTextView" destination="VYi-m6-Du3" id="h2s-Lc-YZY"/>
+                        <outlet property="clubServicesStackView" destination="oBQ-xm-3j3" id="3EF-2I-JQh"/>
+                        <outlet property="clubTitleLabel" destination="hbE-RV-hQK" id="N0Z-dN-uN1"/>
+                        <outlet property="goWebClubButton" destination="UyV-1q-pYF" id="Vdz-lx-ytO"/>
                         <outlet property="headerUIView" destination="fGc-4M-tfH" id="UFI-TO-bDi"/>
+                        <outlet property="phoneClubButton" destination="UyO-fv-Ezk" id="e5T-XU-vpi"/>
                         <outlet property="phoneContactBTN" destination="UyO-fv-Ezk" id="DRn-1I-Pql"/>
                         <outlet property="reservBTN" destination="hNr-Ye-GUh" id="PgJ-AW-sNj"/>
                         <outlet property="webContactBTN" destination="UyV-1q-pYF" id="S2V-pK-72E"/>

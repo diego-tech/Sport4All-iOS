@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class InfoClubViewController: UIViewController {
 
@@ -16,6 +17,12 @@ class InfoClubViewController: UIViewController {
 	@IBOutlet weak var webContactBTN: UIButton!
 	@IBOutlet weak var phoneContactBTN: UIButton!
 	@IBOutlet weak var reservBTN: UIButton!
+	@IBOutlet weak var clubBannerImageView: UIImageView!
+	@IBOutlet weak var clubTitleLabel: UILabel!
+	@IBOutlet weak var clubInfoTextView: UITextView!
+	@IBOutlet weak var clubServicesStackView: UIStackView!
+	@IBOutlet weak var goWebClubButton: UIButton!
+	@IBOutlet weak var phoneClubButton: UIButton!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +39,12 @@ class InfoClubViewController: UIViewController {
 	// MARK: Action Functions
 	
 	// MARK: Functions
+	func configure(with model: Club) {
+		clubTitleLabel.text = model.name
+		guard let banner = model.club_banner else { return }
+		let url = URL(string: banner)
+		clubBannerImageView.kf.setImage(with: url, placeholder: UIImage(named: "InfoClubImg"))
+	}
 	
 	// MARK: Styles
 	private func buttonStyles() {
