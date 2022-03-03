@@ -72,6 +72,6 @@ class ClubTableViewCell: UITableViewCell {
 		homeClubsUIView.layer.cornerCurve = .circular
 		homeClubsUIView.layer.cornerRadius = 10
 		homeClubsUIView.backgroundColor = .softBlue
-		homeClubsUIView.shadow()
+		homeClubsUIView.shadow(shadowOpacity: 0.15, shadowRadius: 4)
 	}
 }

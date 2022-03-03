@@ -21,10 +21,16 @@ class BestRatedCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
 		
-		bestRatedView.layer.cornerCurve = .circular
-		bestRatedView.layer.cornerRadius = 10
-		
+		uiViewStyles()
 		bestRatedReserveBTN.layer.cornerCurve = .circular
 		bestRatedReserveBTN.layer.cornerRadius = 5
     }
+	
+	// MARK: Styles
+	private func uiViewStyles() {
+		bestRatedView.layer.cornerCurve = .circular
+		bestRatedView.layer.cornerRadius = 10
+		bestRatedView.backgroundColor = .softBlue
+		bestRatedView.shadow(shadowOpacity: 0.15, shadowRadius: 4)
+	}
 }
