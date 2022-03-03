@@ -82,6 +82,7 @@
 		5EDC2CE027C6A2E1007EE2C0 /* PayResumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDC2CDF27C6A2E1007EE2C0 /* PayResumeViewController.swift */; };
 		5EDC2CE727C6AFF3007EE2C0 /* EventPendingList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDC2CE627C6AFF3007EE2C0 /* EventPendingList.storyboard */; };
 		5EDC2CE927C6B04A007EE2C0 /* EventPendingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDC2CE827C6B04A007EE2C0 /* EventPendingListViewController.swift */; };
+		5EF3B74827D0B95A00FB33DC /* GetServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF3B74727D0B95A00FB33DC /* GetServices.swift */; };
 		5EF497A327A5570F008B0C37 /* DateDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A227A5570F008B0C37 /* DateDecoder.swift */; };
 		5EF497A627A55794008B0C37 /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A527A55794008B0C37 /* UserDefaultsProvider.swift */; };
 		5EF497A827A55858008B0C37 /* NetworkingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A727A55858008B0C37 /* NetworkingProvider.swift */; };
@@ -163,6 +164,7 @@
 		5EDC2CDF27C6A2E1007EE2C0 /* PayResumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayResumeViewController.swift; sourceTree = "<group>"; };
 		5EDC2CE627C6AFF3007EE2C0 /* EventPendingList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventPendingList.storyboard; sourceTree = "<group>"; };
 		5EDC2CE827C6B04A007EE2C0 /* EventPendingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPendingListViewController.swift; sourceTree = "<group>"; };
+		5EF3B74727D0B95A00FB33DC /* GetServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetServices.swift; sourceTree = "<group>"; };
 		5EF497A227A5570F008B0C37 /* DateDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDecoder.swift; sourceTree = "<group>"; };
 		5EF497A527A55794008B0C37 /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
 		5EF497A727A55858008B0C37 /* NetworkingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProvider.swift; sourceTree = "<group>"; };
@@ -442,6 +444,7 @@
 				5EF497A427A55778008B0C37 /* UserDefaults */,
 				5EF497A127A55703008B0C37 /* Decoder */,
 				5EF497A727A55858008B0C37 /* NetworkingProvider.swift */,
+				5EF3B74727D0B95A00FB33DC /* GetServices.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -716,6 +719,7 @@
 				5EA1A67327A7E7990096754C /* DbResponse.swift in Sources */,
 				5ECF53EF278C3AB8005F6D01 /* AppDelegate.swift in Sources */,
 				5E9E821227B283E200A450E8 /* HomeMatchesViewController.swift in Sources */,
+				5EF3B74827D0B95A00FB33DC /* GetServices.swift in Sources */,
 				5E371D2B27A92A5E00446D73 /* TabBarController.swift in Sources */,
 				5E123C3B27A2F1E400CF14EE /* FirstRegisterViewController.swift in Sources */,
 				5E674C2C27CE7FB800791D7D /* GenQRCode.swift in Sources */,

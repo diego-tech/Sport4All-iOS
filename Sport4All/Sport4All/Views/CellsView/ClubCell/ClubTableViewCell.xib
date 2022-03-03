@@ -42,25 +42,11 @@
                                 <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="r5A-Ae-48h" userLabel="Services Stack View">
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="r5A-Ae-48h" userLabel="Services Stack View">
                                 <rect key="frame" x="108" y="64" width="123" height="20"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" image="Wifi" translatesAutoresizingMaskIntoConstraints="NO" id="L9K-7y-PUe">
-                                        <rect key="frame" x="0.0" y="0.0" width="21" height="20"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Eat" translatesAutoresizingMaskIntoConstraints="NO" id="Jhv-3b-Iqy">
-                                        <rect key="frame" x="26" y="0.0" width="21" height="20"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Parking" translatesAutoresizingMaskIntoConstraints="NO" id="riw-yb-M8c">
-                                        <rect key="frame" x="52" y="0.0" width="20" height="20"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Shop" translatesAutoresizingMaskIntoConstraints="NO" id="kUm-su-Qvy">
-                                        <rect key="frame" x="77" y="0.0" width="21" height="20"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="FirstAidKit" translatesAutoresizingMaskIntoConstraints="NO" id="7NL-93-OEQ">
-                                        <rect key="frame" x="103" y="0.0" width="20" height="20"/>
-                                    </imageView>
-                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="au3-XC-Pu5"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyr-BW-v76" userLabel="GoClubButton">
                                 <rect key="frame" x="282" y="30" width="50" height="40"/>
@@ -85,6 +71,7 @@
                             <constraint firstItem="r5A-Ae-48h" firstAttribute="leading" secondItem="gbU-xK-JAj" secondAttribute="trailing" constant="8" symbolic="YES" id="R13-b4-Qqj"/>
                             <constraint firstItem="r5A-Ae-48h" firstAttribute="top" secondItem="vFQ-04-CDN" secondAttribute="bottom" constant="8.5" id="aeU-xb-XBZ"/>
                             <constraint firstAttribute="bottom" secondItem="qyr-BW-v76" secondAttribute="bottom" constant="30" id="dL8-wp-fnp"/>
+                            <constraint firstAttribute="bottom" secondItem="r5A-Ae-48h" secondAttribute="bottom" constant="16" id="hDb-Mp-ZxW"/>
                             <constraint firstItem="qyr-BW-v76" firstAttribute="top" secondItem="SkI-ni-Gxx" secondAttribute="top" constant="30" id="u0d-9F-D22"/>
                             <constraint firstItem="vFQ-04-CDN" firstAttribute="leading" secondItem="gbU-xK-JAj" secondAttribute="trailing" constant="8" symbolic="YES" id="y1J-JC-46F"/>
                             <constraint firstItem="S4l-we-IhJ" firstAttribute="leading" secondItem="gbU-xK-JAj" secondAttribute="trailing" constant="8" symbolic="YES" id="zfE-EI-4SK"/>
@@ -111,11 +98,6 @@
     </objects>
     <resources>
         <image name="All Clubs Image" width="100" height="100"/>
-        <image name="Eat" width="21" height="20"/>
-        <image name="FirstAidKit" width="20" height="20"/>
-        <image name="Parking" width="20" height="20"/>
         <image name="RightArrowAllClubsCard" width="26" height="26"/>
-        <image name="Shop" width="21" height="20"/>
-        <image name="Wifi" width="21" height="20"/>
     </resources>
 </document>

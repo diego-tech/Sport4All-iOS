@@ -12,6 +12,7 @@ class ClubTableViewCell: UITableViewCell {
 
 	// Variables
 
+	
 	// Outlets
 	@IBOutlet weak var homeClubsUIView: UIView!
 	@IBOutlet weak var clubImageView: UIImageView!
@@ -33,17 +34,37 @@ class ClubTableViewCell: UITableViewCell {
 	
 	// MARK: Functions
 	func setCellWithValueOf(_ club: Club) {
-		updateUI(clubName: club.name, clubPhone: club.tlf, clubImageView: club.club_img)
+		updateUI(clubName: club.name, clubPhone: club.tlf, clubImageView: club.club_img, services: club.services)
 	}
 	
-	private func updateUI(clubName: String?, clubPhone: String?, clubImageView: String?) {
+	private func updateUI(clubName: String?, clubPhone: String?, clubImageView: String?, services: [ClubService]?) {
 		guard let clubImageView = clubImageView else { return }
+		guard let services = services else { return }
 
 		self.clubNameLabel.text = clubName
 		self.clubPhoneLabel.text = clubPhone
+		self.setStackView(services: services)
 
 		let url = URL(string: clubImageView)
 		self.clubImageView.kf.setImage(with: url, placeholder: UIImage(named: "All Clubs Image"))
+	}
+	
+	private func setStackView(services: [ClubService]) {
+		var servicesImages = [UIImage()]
+		
+		for service in services {
+			servicesImages.append(GetServices.getServices(clubService: service))
+		}
+				
+		for servicesImage in servicesImages {
+			let serviceImageView: UIImageView = {
+				let image = UIImageView(frame: CGRect(x: 0, y: 0, width: 21, height: 20))
+				image.tintColor = .corporativeColor
+				return image
+			}()
+			serviceImageView.image = servicesImage
+			servicesStackView.addArrangedSubview(serviceImageView)
+		}
 	}
 	
 	// MARK: Styles
