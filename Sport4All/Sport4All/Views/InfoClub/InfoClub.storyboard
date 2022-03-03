@@ -307,7 +307,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="J9K-Hf-zlh"/>
                     <connections>
-                        <outlet property="clubBannerImageView" destination="tB0-d6-gXh" id="U4Z-En-qOv"/>
+                        <outlet property="clubBannerImageView" destination="tB0-d6-gXh" id="S4I-pO-w52"/>
                         <outlet property="clubInfoTextView" destination="VYi-m6-Du3" id="h2s-Lc-YZY"/>
                         <outlet property="clubServicesStackView" destination="oBQ-xm-3j3" id="3EF-2I-JQh"/>
                         <outlet property="clubTitleLabel" destination="hbE-RV-hQK" id="N0Z-dN-uN1"/>

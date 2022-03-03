@@ -11,6 +11,7 @@ import Kingfisher
 class InfoClubViewController: UIViewController {
 
 	// MARK: Variables
+	var club: Club?
 	
 	// MARK: Outlets
 	@IBOutlet weak var headerUIView: UIView!
@@ -27,6 +28,7 @@ class InfoClubViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+		configure()
 		
 		// Configure NavBar
 		configureNavbar()
@@ -39,9 +41,11 @@ class InfoClubViewController: UIViewController {
 	// MARK: Action Functions
 	
 	// MARK: Functions
-	func configure(with model: Club) {
-		clubTitleLabel.text = model.name
-		guard let banner = model.club_banner else { return }
+	func configure() {
+		guard let club = club else { return }
+		guard let banner = club.club_banner else { return }
+
+		clubTitleLabel.text = club.name
 		let url = URL(string: banner)
 		clubBannerImageView.kf.setImage(with: url, placeholder: UIImage(named: "InfoClubImg"))
 	}

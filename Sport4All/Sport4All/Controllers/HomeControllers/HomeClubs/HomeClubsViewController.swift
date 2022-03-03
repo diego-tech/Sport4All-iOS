@@ -103,8 +103,9 @@ extension HomeClubsViewController: UITableViewDataSource, UITableViewDelegate {
 		tableView.deselectRow(at: indexPath, animated: true)
 		
 		let club = clubViewModel.cellForRowAt(indexPath: indexPath)
-		let vc = InfoClubViewController()
-		vc.configure(with: club)
+		
+		let vc = UIStoryboard(name: "InfoClub", bundle: nil).instantiateViewController(withIdentifier: "InfoClub") as! InfoClubViewController
+		vc.club = club
 		navigationController?.pushViewController(vc, animated: true)
 	}
 }

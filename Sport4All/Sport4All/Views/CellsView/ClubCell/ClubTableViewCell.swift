@@ -11,7 +11,6 @@ import Kingfisher
 class ClubTableViewCell: UITableViewCell {
 
 	// Variables
-
 	
 	// Outlets
 	@IBOutlet weak var homeClubsUIView: UIView!
@@ -50,6 +49,8 @@ class ClubTableViewCell: UITableViewCell {
 	}
 	
 	private func setStackView(services: [ClubService]) {
+		servicesStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+		
 		var servicesImages = [UIImage()]
 		
 		for service in services {
