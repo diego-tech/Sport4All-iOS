@@ -38,6 +38,7 @@ class ProfileViewController: UIViewController {
 		
 		// Inicialización Estilos
 		headerUIView?.bottomShadow()
+		userImageView.makeRounds()
 	}
 	
 	// MARK: Action Functions
