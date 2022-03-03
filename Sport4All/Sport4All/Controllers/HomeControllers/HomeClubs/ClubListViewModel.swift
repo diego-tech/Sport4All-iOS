@@ -21,7 +21,6 @@ class ClubListViewModel {
 			guard let status = status else { return }
 			self.status = status
 			self.clubList = responseList
-			print(responseData)
 			completion(status)
 		} failure: { error in
 			debugPrint(error)

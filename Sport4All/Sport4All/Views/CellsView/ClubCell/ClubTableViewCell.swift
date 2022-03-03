@@ -33,18 +33,18 @@ class ClubTableViewCell: UITableViewCell {
 	
 	// MARK: Functions
 	func setCellWithValueOf(_ club: Club) {
-		updateUI(clubName: club.name, clubPhone: club.tlf, clubImageView: club.club_img, services: club.services)
+		updateUI(clubName: club.name, clubPhone: club.tlf, clubImageStr: club.club_img, services: club.services)
 	}
 	
-	private func updateUI(clubName: String?, clubPhone: String?, clubImageView: String?, services: [ClubService]?) {
-		guard let clubImageView = clubImageView else { return }
+	private func updateUI(clubName: String?, clubPhone: String?, clubImageStr: String?, services: [ClubService]?) {
+		guard let clubImageStr = clubImageStr else { return }
 		guard let services = services else { return }
 
 		self.clubNameLabel.text = clubName
 		self.clubPhoneLabel.text = clubPhone
 		self.setStackView(services: services)
-
-		let url = URL(string: clubImageView)
+		
+		let url = URL(string: clubImageStr)
 		self.clubImageView.kf.setImage(with: url, placeholder: UIImage(named: "All Clubs Image"))
 	}
 	

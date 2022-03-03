@@ -20,7 +20,7 @@ class HomeClubsViewController: UIViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		
+				
 		// Inicialización Table View
 		clubList()
 	}
