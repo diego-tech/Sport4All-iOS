@@ -19,7 +19,7 @@ class ProfileViewController: UIViewController {
 	@IBOutlet weak var pendingEventsBTN: UIButton!
 	@IBOutlet weak var completedEventsBTN: UIButton!
 	@IBOutlet weak var yourClubBTN: UIButton!
-	@IBOutlet weak var userImageView: UIImageView!
+	@IBOutlet weak var userImageView: LazyImageView!
 	@IBOutlet weak var userNameLabel: UILabel!
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -52,12 +52,12 @@ class ProfileViewController: UIViewController {
 			guard let userName = responseData?.name else { return }
 			guard let userImage = responseData?.image else { return }
 			guard let userSurname = responseData?.surname else { return }
+			guard let url = URL(string: Constants.kStorageURL + userImage) else { return }
 			
 			let allUserName = userName + " " + userSurname
 			self.userNameLabel.text = allUserName
 			
-			let url = URL(string: Constants.kStorageURL + userImage)
-			self.userImageView.kf.setImage(with: url, placeholder: UIImage(named: "Avatar"))
+			self.userImageView.loadImage(fromURL: url, placeHolderImage: "HomeLogo")
 		} failure: { error in
 			print(error)
 		}
@@ -73,7 +73,7 @@ class ProfileViewController: UIViewController {
 		
 		self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: titleLabel)
 		self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: hamburguerImage, style: .plain, target: self, action: #selector(settingsButtonTapped(tapGestureRecognizer: )))
-
+		
 		navigationController?.navigationBar.tintColor = .corporativeColor
 	}
 }

@@ -18,7 +18,7 @@ class InfoClubViewController: UIViewController {
 	@IBOutlet weak var webContactBTN: UIButton!
 	@IBOutlet weak var phoneContactBTN: UIButton!
 	@IBOutlet weak var reservBTN: UIButton!
-	@IBOutlet weak var clubBannerImageView: UIImageView!
+	@IBOutlet weak var clubBannerImageView: LazyImageView!
 	@IBOutlet weak var clubTitleLabel: UILabel!
 	@IBOutlet weak var clubInfoTextView: UITextView!
 	@IBOutlet weak var clubServicesStackView: UIStackView!
@@ -44,10 +44,9 @@ class InfoClubViewController: UIViewController {
 	func configure() {
 		guard let club = club else { return }
 		guard let banner = club.club_banner else { return }
-
+		guard let url = URL(string: Constants.kStorageURL + banner) else { return }
 		clubTitleLabel.text = club.name
-		let url = URL(string: banner)
-		clubBannerImageView.kf.setImage(with: url, placeholder: UIImage(named: "InfoClubImg"))
+		clubBannerImageView.loadImage(fromURL: url, placeHolderImage: "HomeLogo")
 	}
 	
 	// MARK: Styles

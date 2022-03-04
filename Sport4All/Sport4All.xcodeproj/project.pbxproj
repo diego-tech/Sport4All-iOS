@@ -33,7 +33,6 @@
 		5E12F10027C290BA00316D69 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E12F0FF27C290BA00316D69 /* OnboardingCollectionViewCell.swift */; };
 		5E197F01278D7E6F008BBABB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E197F00278D7E6F008BBABB /* Constants.swift */; };
 		5E197F03278D80D4008BBABB /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E197F02278D80D4008BBABB /* ColorExtension.swift */; };
-		5E1D04A427C7BB9000FE6E80 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5E1D04A327C7BB9000FE6E80 /* Kingfisher */; };
 		5E212AFE27C2709A0013E1BE /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E212AFD27C2709A0013E1BE /* UIImageViewExtension.swift */; };
 		5E2FEE6727A43E3E008B0AE1 /* RetrievePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E2FEE6627A43E3E008B0AE1 /* RetrievePassword.storyboard */; };
 		5E2FEE6927A442DA008B0AE1 /* RetrievePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2FEE6827A442DA008B0AE1 /* RetrievePasswordViewController.swift */; };
@@ -86,6 +85,7 @@
 		5EF497A327A5570F008B0C37 /* DateDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A227A5570F008B0C37 /* DateDecoder.swift */; };
 		5EF497A627A55794008B0C37 /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A527A55794008B0C37 /* UserDefaultsProvider.swift */; };
 		5EF497A827A55858008B0C37 /* NetworkingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A727A55858008B0C37 /* NetworkingProvider.swift */; };
+		5EF61CC827D25FBF00F4AB8F /* LazyImageViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF61CC727D25FBF00F4AB8F /* LazyImageViewManager.swift */; };
 		5EFC3CA9279DC0A100720905 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EFC3CA8279DC0A100720905 /* Register.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -168,6 +168,7 @@
 		5EF497A227A5570F008B0C37 /* DateDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDecoder.swift; sourceTree = "<group>"; };
 		5EF497A527A55794008B0C37 /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
 		5EF497A727A55858008B0C37 /* NetworkingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProvider.swift; sourceTree = "<group>"; };
+		5EF61CC727D25FBF00F4AB8F /* LazyImageViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyImageViewManager.swift; sourceTree = "<group>"; };
 		5EFC3CA8279DC0A100720905 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,7 +177,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E1D04A427C7BB9000FE6E80 /* Kingfisher in Frameworks */,
 				5EA1A66C27A7D43C0096754C /* Alamofire in Frameworks */,
 				5E51235127BBC7430047EE44 /* IQKeyboardManagerSwift in Frameworks */,
 			);
@@ -445,6 +445,7 @@
 				5EF497A127A55703008B0C37 /* Decoder */,
 				5EF497A727A55858008B0C37 /* NetworkingProvider.swift */,
 				5EF3B74727D0B95A00FB33DC /* GetServices.swift */,
+				5EF61CC727D25FBF00F4AB8F /* LazyImageViewManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -617,7 +618,6 @@
 			packageProductDependencies = (
 				5EA1A66B27A7D43C0096754C /* Alamofire */,
 				5E51235027BBC7430047EE44 /* IQKeyboardManagerSwift */,
-				5E1D04A327C7BB9000FE6E80 /* Kingfisher */,
 			);
 			productName = Sport4All;
 			productReference = 5ECF53EB278C3AB8005F6D01 /* Sport4All.app */;
@@ -650,7 +650,6 @@
 			packageReferences = (
 				5EA1A66A27A7D43C0096754C /* XCRemoteSwiftPackageReference "Alamofire" */,
 				5E51234F27BBC7430047EE44 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
-				5E1D04A227C7BB9000FE6E80 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 5ECF53EC278C3AB8005F6D01 /* Products */;
 			projectDirPath = "";
@@ -718,6 +717,7 @@
 				5E9661D427C78E2000EEFC14 /* Club.swift in Sources */,
 				5EA1A67327A7E7990096754C /* DbResponse.swift in Sources */,
 				5ECF53EF278C3AB8005F6D01 /* AppDelegate.swift in Sources */,
+				5EF61CC827D25FBF00F4AB8F /* LazyImageViewManager.swift in Sources */,
 				5E9E821227B283E200A450E8 /* HomeMatchesViewController.swift in Sources */,
 				5EF3B74827D0B95A00FB33DC /* GetServices.swift in Sources */,
 				5E371D2B27A92A5E00446D73 /* TabBarController.swift in Sources */,
@@ -977,14 +977,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5E1D04A227C7BB9000FE6E80 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = exactVersion;
-				version = 7.1.2;
-			};
-		};
 		5E51234F27BBC7430047EE44 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
@@ -1004,11 +996,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5E1D04A327C7BB9000FE6E80 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5E1D04A227C7BB9000FE6E80 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
 		5E51235027BBC7430047EE44 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5E51234F27BBC7430047EE44 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;

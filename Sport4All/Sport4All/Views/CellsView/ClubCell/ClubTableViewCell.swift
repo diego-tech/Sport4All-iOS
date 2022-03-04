@@ -15,7 +15,7 @@ class ClubTableViewCell: UITableViewCell {
 	
 	// Outlets
 	@IBOutlet weak var homeClubsUIView: UIView!
-	@IBOutlet weak var clubImageView: UIImageView!
+	@IBOutlet weak var clubImageView: LazyImageView!
 	@IBOutlet weak var clubNameLabel: UILabel!
 	@IBOutlet weak var clubPhoneLabel: UILabel!
 	@IBOutlet weak var servicesStackView: UIStackView!
@@ -40,13 +40,12 @@ class ClubTableViewCell: UITableViewCell {
 	private func updateUI(clubName: String?, clubPhone: String?, clubImageStr: String?, services: [ClubService]?) {
 		guard let clubImageStr = clubImageStr else { return }
 		guard let services = services else { return }
+		guard let url = URL(string: Constants.kStorageURL + clubImageStr) else { return }
 
 		self.clubNameLabel.text = clubName
 		self.clubPhoneLabel.text = clubPhone
 		self.setStackView(services: services)
-		
-		let url = URL(string: clubImageStr)
-		self.clubImageView.kf.setImage(with: url, placeholder: UIImage(named: "All Clubs Image"))
+		self.clubImageView.loadImage(fromURL: url, placeHolderImage: "")
 	}
 	
 	private func setStackView(services: [ClubService]) {

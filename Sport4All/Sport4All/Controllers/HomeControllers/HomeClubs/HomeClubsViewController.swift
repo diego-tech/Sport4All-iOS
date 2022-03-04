@@ -41,8 +41,8 @@ class HomeClubsViewController: UIViewController {
 	
 	// MARK: Functions
 	private func clubList() {
-		clubViewModel.fetchClubList { [self] status in
-			self.initTableView()
+		clubViewModel.fetchClubList { [weak self] status in
+			self?.initTableView()
 		}
 	}
 	

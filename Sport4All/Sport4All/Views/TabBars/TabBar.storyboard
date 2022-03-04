@@ -88,7 +88,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SeR-6g-nar">
                                 <rect key="frame" x="0.0" y="88" width="414" height="240"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="g6D-Tw-DJx">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g6D-Tw-DJx" customClass="LazyImageView" customModule="Sport4All" customModuleProvider="target">
                                         <rect key="frame" x="143" y="30" width="128" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="128" id="N0v-vl-DtA"/>
@@ -375,7 +375,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rkM-aR-B3A">
-                                <rect key="frame" x="0.0" y="287" width="414" height="342"/>
+                                <rect key="frame" x="0.0" y="279" width="414" height="350"/>
                                 <color key="backgroundColor" name="BackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ClubTableViewCell" id="hWq-hT-0Vz" customClass="ClubTableViewCell" customModule="Sport4All" customModuleProvider="target">
@@ -408,13 +408,13 @@
                             <constraint firstItem="QdO-0x-0UR" firstAttribute="leading" secondItem="hr8-gr-d3N" secondAttribute="leading" constant="20" id="QLI-jg-4Eh"/>
                             <constraint firstItem="rkM-aR-B3A" firstAttribute="bottom" secondItem="hr8-gr-d3N" secondAttribute="bottom" constant="-25" id="TKH-rt-jeT"/>
                             <constraint firstItem="QdO-0x-0UR" firstAttribute="top" secondItem="lIR-yd-EFz" secondAttribute="bottom" constant="20" id="VYf-jX-EXd"/>
-                            <constraint firstItem="rkM-aR-B3A" firstAttribute="top" secondItem="dRh-nE-kZm" secondAttribute="bottom" constant="8" symbolic="YES" id="XwS-5T-bpu"/>
                             <constraint firstItem="SbO-jq-gAX" firstAttribute="leading" secondItem="dRh-nE-kZm" secondAttribute="leading" id="ZRR-BT-QUc"/>
                             <constraint firstItem="dRh-nE-kZm" firstAttribute="centerX" secondItem="Zwy-XK-wLu" secondAttribute="centerX" id="fMk-zK-fuA"/>
                             <constraint firstItem="hr8-gr-d3N" firstAttribute="trailing" secondItem="lIR-yd-EFz" secondAttribute="trailing" constant="22" id="fUU-zK-pdh"/>
                             <constraint firstItem="lIR-yd-EFz" firstAttribute="leading" secondItem="hr8-gr-d3N" secondAttribute="leading" constant="22" id="ni5-IA-KRV"/>
                             <constraint firstItem="hr8-gr-d3N" firstAttribute="trailing" secondItem="rkM-aR-B3A" secondAttribute="trailing" id="q5f-UC-RMA"/>
                             <constraint firstItem="dRh-nE-kZm" firstAttribute="top" secondItem="SbO-jq-gAX" secondAttribute="bottom" constant="8" id="rK8-qg-5Nh"/>
+                            <constraint firstItem="rkM-aR-B3A" firstAttribute="top" secondItem="dRh-nE-kZm" secondAttribute="bottom" id="tSo-bv-3Dr"/>
                         </constraints>
                     </view>
                     <connections>
@@ -507,7 +507,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Avatar" width="118" height="119"/>
         <image name="HomeLogo" width="34" height="34.5"/>
         <image name="ProfileActive" width="34" height="36"/>
         <image name="RightArrowAllClubsCard" width="26" height="26"/>
