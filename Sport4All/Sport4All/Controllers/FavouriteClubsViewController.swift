@@ -10,10 +10,11 @@ import UIKit
 class FavouriteClubsViewController: UIViewController {
 	
 	// MARK: Variables
+	private var clubViewModel = ClubListViewModel()
+	private var club: Club?
 	
 	// MARK: Outlets
 	@IBOutlet weak var favouritesTableView: UITableView!
-	@IBOutlet weak var goBackBTN: UIButton!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -67,11 +68,24 @@ class FavouriteClubsViewController: UIViewController {
 
 extension FavouriteClubsViewController: UITableViewDataSource, UITableViewDelegate {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 20
+		return clubViewModel.numberOfRowsInSection(section: section)
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = favouritesTableView.dequeueReusableCell(withIdentifier: "ClubTableViewCell", for: indexPath) as! ClubTableViewCell
+		let cell = tableView.dequeueReusableCell(withIdentifier: "ClubTableViewCell") as! ClubTableViewCell
+		
+		club = clubViewModel.cellForRowAt(indexPath: indexPath)
+		cell.setCellWithValueOf(club!)
 		return cell
+	}
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true)
+		
+		let club = clubViewModel.cellForRowAt(indexPath: indexPath)
+		
+		let vc = UIStoryboard(name: "InfoClub", bundle: nil).instantiateViewController(withIdentifier: "InfoClub") as! InfoClubViewController
+		vc.club = club
+		navigationController?.pushViewController(vc, animated: true)
 	}
 }

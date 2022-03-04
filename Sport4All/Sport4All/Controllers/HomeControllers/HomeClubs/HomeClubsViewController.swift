@@ -12,7 +12,6 @@ class HomeClubsViewController: UIViewController {
 	// MARK: Variables
 	private var clubViewModel = ClubListViewModel()
 	private var club: Club?
-	private var clubTableView = ClubTableViewCell()
 	
 	// MARK: Outlets
 	@IBOutlet weak var searchBar: UITextField!
