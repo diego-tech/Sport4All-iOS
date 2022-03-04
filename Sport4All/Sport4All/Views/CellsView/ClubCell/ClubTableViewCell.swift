@@ -11,7 +11,6 @@ import Kingfisher
 class ClubTableViewCell: UITableViewCell {
 
 	// Variables
-	public var isLoading: Bool = true
 	
 	// Outlets
 	@IBOutlet weak var homeClubsUIView: UIView!
@@ -38,9 +37,9 @@ class ClubTableViewCell: UITableViewCell {
 	}
 	
 	private func updateUI(clubName: String?, clubPhone: String?, clubImageStr: String?, services: [ClubService]?) {
-		guard let clubImageStr = clubImageStr else { return }
-		guard let services = services else { return }
-		guard let url = URL(string: Constants.kStorageURL + clubImageStr) else { return }
+		guard let clubImageStr = clubImageStr else { return print("Hola") }
+		guard let services = services else { return print("Hola") }
+		guard let url = URL(string: Constants.kStorageURL + clubImageStr) else { return print("Hola") }
 
 		self.clubNameLabel.text = clubName
 		self.clubPhoneLabel.text = clubPhone

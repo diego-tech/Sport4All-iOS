@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -59,7 +60,13 @@
                                             <constraint firstAttribute="width" constant="56" id="WTJ-qT-cXD"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="Heart"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <imageReference key="image" image="suit.heart" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            <color key="baseForegroundColor" name="HardColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="addToFavouriteButtonAction:" destination="I1b-qx-IuD" eventType="touchUpInside" id="aVD-7M-FDN"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="BackgroundColor"/>
@@ -258,6 +265,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="J9K-Hf-zlh"/>
                     <connections>
+                        <outlet property="addFavouriteButton" destination="h7I-te-nec" id="OqH-7q-PeO"/>
                         <outlet property="clubBannerImageView" destination="tB0-d6-gXh" id="S4I-pO-w52"/>
                         <outlet property="clubInfoTextView" destination="VYi-m6-Du3" id="h2s-Lc-YZY"/>
                         <outlet property="clubServicesStackView" destination="oBQ-xm-3j3" id="3EF-2I-JQh"/>
@@ -296,7 +304,6 @@
     <resources>
         <image name="Eat" width="21" height="20"/>
         <image name="FirstAidKit" width="20" height="20"/>
-        <image name="Heart" width="32" height="31"/>
         <image name="InfoClubImg" width="375" height="150"/>
         <image name="Map-1" width="375" height="160"/>
         <image name="Parking" width="20" height="20"/>
@@ -304,6 +311,7 @@
         <image name="Shop" width="21" height="20"/>
         <image name="Web" width="45" height="45"/>
         <image name="Wifi" width="21" height="20"/>
+        <image name="suit.heart" catalog="system" width="128" height="109"/>
         <namedColor name="BackgroundColor">
             <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

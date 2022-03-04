@@ -76,7 +76,7 @@ class AuthViewController: UIViewController {
 				
 				if AuxFunctions.checkStatusCode(statusCode: statusCode) {
 					if let authUserToken = responseData?.token {
-						UserDefaultsProvider.setUserDefaults(key: .authUserToken, value: authUserToken)
+						UserDefaultsProvider.shared.setUserDefaults(key: .authUserToken, value: authUserToken)
 						
 						let vc = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBar")
 						self.show(vc, sender: self)

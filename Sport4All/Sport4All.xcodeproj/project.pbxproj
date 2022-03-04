@@ -440,12 +440,8 @@
 		5E75E4C7279993F2005B89A3 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				5E674C2A27CE7FA000791D7D /* QrCode */,
-				5EF497A427A55778008B0C37 /* UserDefaults */,
-				5EF497A127A55703008B0C37 /* Decoder */,
+				5EF61CC927D26ADB00F4AB8F /* Aux */,
 				5EF497A727A55858008B0C37 /* NetworkingProvider.swift */,
-				5EF3B74727D0B95A00FB33DC /* GetServices.swift */,
-				5EF61CC727D25FBF00F4AB8F /* LazyImageViewManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -589,6 +585,18 @@
 				5EF497A527A55794008B0C37 /* UserDefaultsProvider.swift */,
 			);
 			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		5EF61CC927D26ADB00F4AB8F /* Aux */ = {
+			isa = PBXGroup;
+			children = (
+				5EF3B74727D0B95A00FB33DC /* GetServices.swift */,
+				5EF61CC727D25FBF00F4AB8F /* LazyImageViewManager.swift */,
+				5EF497A427A55778008B0C37 /* UserDefaults */,
+				5EF497A127A55703008B0C37 /* Decoder */,
+				5E674C2A27CE7FA000791D7D /* QrCode */,
+			);
+			path = Aux;
 			sourceTree = "<group>";
 		};
 		5EFC3CA7279DC09400720905 /* Register */ = {

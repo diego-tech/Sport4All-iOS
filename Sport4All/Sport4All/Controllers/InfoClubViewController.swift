@@ -24,11 +24,14 @@ class InfoClubViewController: UIViewController {
 	@IBOutlet weak var clubServicesStackView: UIStackView!
 	@IBOutlet weak var goWebClubButton: UIButton!
 	@IBOutlet weak var phoneClubButton: UIButton!
+	@IBOutlet weak var addFavouriteButton: UIButton!
 	
-    override func viewDidLoad() {
+	override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 		configure()
+		
+		addFavouriteButton.setImage(UIImage(systemName: "suit.heart", withConfiguration: UIImage.SymbolConfiguration(pointSize: 18)), for: .normal)
 		
 		// Configure NavBar
 		configureNavbar()
@@ -39,6 +42,9 @@ class InfoClubViewController: UIViewController {
     }
 
 	// MARK: Action Functions
+	@IBAction func addToFavouriteButtonAction(_ sender: UIButton) {
+		callAddToFavourite()
+	}
 	
 	// MARK: Functions
 	func configure() {
@@ -47,6 +53,18 @@ class InfoClubViewController: UIViewController {
 		guard let url = URL(string: Constants.kStorageURL + banner) else { return }
 		clubTitleLabel.text = club.name
 		clubBannerImageView.loadImage(fromURL: url, placeHolderImage: "HomeLogo")
+	}
+	
+	func callAddToFavourite() {
+		guard let id = club?.id else { return }
+		NetworkingProvider.shared.registerFavClub(clubId: id) { responseData, status, msg in
+			self.addFavouriteButton.setImage(UIImage(systemName: "suit.heart.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 18)), for: .normal)
+			print(responseData)
+			print(status)
+			print(msg)
+		} failure: { error in
+			print(error)
+		}
 	}
 	
 	// MARK: Styles

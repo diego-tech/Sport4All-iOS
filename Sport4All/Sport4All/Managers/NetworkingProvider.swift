@@ -11,7 +11,7 @@ import Alamofire
 final class NetworkingProvider {
 	static let shared = NetworkingProvider()
 	
-	let kTestUserToken = UserDefaultsProvider.string(key: .authUserToken)
+	let kUserToken = UserDefaultsProvider.shared.string(key: .authUserToken)
 	
 	// MARK: Register User
 	func register(newUser: NewUser, serverResponse: @escaping (_ responseData: User?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
@@ -94,7 +94,7 @@ final class NetworkingProvider {
 	// MARK: Show Profile
 	func userInfo(serverResponse: @escaping (_ responseData: User?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/userinfo"
-		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.string(key: .authUserToken)!)]
+		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
 		AF.request(url, method: .get, headers: headers).responseDecodable(of: Response.self, decoder: DateDecoder()) { response in
 			
 			// Handle Response Data && Status Code && Message
@@ -131,7 +131,7 @@ final class NetworkingProvider {
 	// MARK: Modify Data
 	func modifyData(userModify: NewUser, serverResponse: @escaping (_ responseData: User?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/usermodify"
-		let headers: HTTPHeaders = [.authorization(bearerToken: kTestUserToken!)]
+		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
 		
 		AF.request(url, method: .post, parameters: userModify, encoder: JSONParameterEncoder.default, headers: headers).responseDecodable(of: Response.self, decoder: DateDecoder()) {
 			response in
@@ -151,7 +151,7 @@ final class NetworkingProvider {
 	// MARK: Modify Password
 	func modifyPassword(newPassword: String, serverResponse: @escaping (_ responseData: User?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/passmodify"
-		let headers: HTTPHeaders = [.authorization(bearerToken: kTestUserToken!)]
+		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
 		
 		AF.request(url, method: .post, parameters: ["password": newPassword], encoding: JSONEncoding.default, headers: headers).responseDecodable(of: Response.self, decoder: DateDecoder()) {
 			response in
@@ -171,7 +171,7 @@ final class NetworkingProvider {
 	// MARK: Favourite Club
 	func registerFavClub(clubId: Int, serverResponse: @escaping (_ responseData: User?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/registerfavclub"
-		let headers: HTTPHeaders = [.authorization(bearerToken: kTestUserToken!)]
+		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
 		
 		AF.request(url, method: .post, parameters: ["club_id": clubId], encoding: JSONEncoding.default, headers: headers).responseDecodable(of: Response.self, decoder: DateDecoder()) {
 			response in
@@ -191,7 +191,27 @@ final class NetworkingProvider {
 	// MARK: List Club
 	func clubList(serverResponse: @escaping (_ responseData: [Club]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/listclubs"
-		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.string(key: .authUserToken)!)]
+		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
+		
+		AF.request(url, method: .get, headers: headers).responseDecodable(of: ClubListResponse.self) {
+			response in
+			
+			// Handle Response Data && Status Code && Message
+			if let data = response.value?.data, let status = response.value?.status, let msg = response.value?.msg {
+				serverResponse(data, status, msg)
+			}
+
+			// Handle Alamofire Error
+			if let error = response.error {
+				failure(error)
+			}
+		}
+	}
+	
+	// MARK: Club Favourite Clubs	
+	func clubFavouriteList(serverResponse: @escaping (_ responseData: [Club]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+		let url = "\(Constants.kBaseURL)/listfavs"
+		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
 		
 		AF.request(url, method: .get, headers: headers).responseDecodable(of: ClubListResponse.self) {
 			response in
@@ -208,19 +228,3 @@ final class NetworkingProvider {
 		}
 	}
 }
-
-
-/**
- Registro de Usuarios: /register
- Login de Usuarios: /login
- Ver Perfil: /userinfo (Token)
- Recuperar Contraseña: /recoverpass
- Modificar Datos: /usermodify (Token)
- Modificar Contraseña: /passmodify (Token)
- Registar Club Como Favorito: /registerfavclub (Token)
- Upload Image: /getUploadImage
- CheckEmailFirstRegister: /checkIfUserExists
- 
- Registro de Clubs: /registerclub
- Lista de Clubes: /listclubs (Token)
- */
