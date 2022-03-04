@@ -11,7 +11,6 @@ class HomeClubsViewController: UIViewController {
 	
 	// MARK: Variables
 	private var clubViewModel = ClubListViewModel()
-	private var club: Club?
 	
 	// MARK: Outlets
 	@IBOutlet weak var searchBar: UITextField!
@@ -92,10 +91,10 @@ extension HomeClubsViewController: UITableViewDataSource, UITableViewDelegate {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = homeClubsTableView.dequeueReusableCell(withIdentifier: "ClubTableViewCell") as! ClubTableViewCell
-		
-		club = clubViewModel.cellForRowAt(indexPath: indexPath)
-		cell.setCellWithValueOf(club!)
+		guard let cell = homeClubsTableView.dequeueReusableCell(withIdentifier: "ClubTableViewCell") as? ClubTableViewCell else { return UITableViewCell() }
+		let club = clubViewModel.cellForRowAt(indexPath: indexPath)
+
+		cell.setCellWithValueOf(club)
 		return cell
 	}
 	

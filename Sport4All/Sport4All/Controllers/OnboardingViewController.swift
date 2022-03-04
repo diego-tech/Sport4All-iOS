@@ -71,13 +71,13 @@ class OnboardingViewController: UIViewController {
 	
 	// MARK: Action Functions
 	@IBAction func skipTutorialButtonAction(_ sender: UIButton) {
-		UserDefaultsProvider.setUserDefaults(key: .isNewUser, value: true)
+		UserDefaultsProvider.shared.setUserDefaults(key: .isNewUser, value: true)
 		navigateToAuth()
 	}
 	
 	@IBAction func nextButtonAction(_ sender: UIButton) {
 		if currentPage == slides.count - 1 {
-			UserDefaultsProvider.setUserDefaults(key: .isNewUser, value: true)
+			UserDefaultsProvider.shared.setUserDefaults(key: .isNewUser, value: true)
 			navigateToAuth()
 		} else {
 			currentPage += 1

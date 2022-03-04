@@ -53,7 +53,7 @@ class HomeViewController: UIViewController {
 	}
 	
 	@objc func startButtonTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-		let vc = UIStoryboard(name: "FavouritesClubs", bundle: nil).instantiateViewController(withIdentifier: "FavClub")
+		let vc = UIStoryboard(name: "FavouritesClubs", bundle: nil).instantiateViewController(withIdentifier: "FavClub") as! FavouriteClubsViewController
 		navigationController?.pushViewController(vc, animated: true)
 	}
 	

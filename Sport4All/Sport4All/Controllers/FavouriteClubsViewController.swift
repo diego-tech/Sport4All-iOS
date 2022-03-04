@@ -11,8 +11,7 @@ class FavouriteClubsViewController: UIViewController {
 	
 	// MARK: Variables
 	private var clubViewModel = ClubListViewModel()
-	private var club: Club?
-	
+
 	// MARK: Outlets
 	@IBOutlet weak var favouritesTableView: UITableView!
 	
@@ -20,11 +19,11 @@ class FavouriteClubsViewController: UIViewController {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
 		
+		// Inicialización Table View
+		clubFavouriteList()
+		
 		// Configure Navbar
 		configureNavbar()
-		
-		// Inicialización Table View
-		initTableView()
 	}
 	
 	// MARK: Action Functions
@@ -33,14 +32,21 @@ class FavouriteClubsViewController: UIViewController {
 	}
 	
 	// MARK: Functions
+	private func clubFavouriteList() {
+		clubViewModel.fetchFavouriteClubList { [weak self] status in
+			self?.initTableView()
+		}
+	}
+	
 	private func initTableView() {
 		favouritesTableView.dataSource = self
 		favouritesTableView.delegate = self
 		favouritesTableView.isScrollEnabled = true
-		favouritesTableView.register(UINib(nibName: "ClubTableViewCell", bundle: nil), forCellReuseIdentifier: "ClubTableViewCell")
+		favouritesTableView.register(UINib.init(nibName: "ClubTableViewCell", bundle: nil), forCellReuseIdentifier: "ClubTableViewCell")
 		favouritesTableView.separatorStyle = .none
 		favouritesTableView.showsHorizontalScrollIndicator = false
 		favouritesTableView.showsVerticalScrollIndicator = false
+		favouritesTableView.reloadData()
 	}
 	
 	// MARK: Styles
@@ -72,10 +78,10 @@ extension FavouriteClubsViewController: UITableViewDataSource, UITableViewDelega
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "ClubTableViewCell") as! ClubTableViewCell
-		
-		club = clubViewModel.cellForRowAt(indexPath: indexPath)
-		cell.setCellWithValueOf(club!)
+		guard let cell = favouritesTableView.dequeueReusableCell(withIdentifier: "ClubTableViewCell") as? ClubTableViewCell else { return UITableViewCell() }
+		let club = clubViewModel.cellForRowAt(indexPath: indexPath)
+
+		cell.setCellWithValueOf(club)
 		return cell
 	}
 	
@@ -89,3 +95,4 @@ extension FavouriteClubsViewController: UITableViewDataSource, UITableViewDelega
 		navigationController?.pushViewController(vc, animated: true)
 	}
 }
+

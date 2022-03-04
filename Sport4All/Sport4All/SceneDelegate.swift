@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		guard let _ = (scene as? UIWindowScene) else { return }
 		
 		/* Lanzar Onboarding */
-		if !UserDefaultsProvider.bool(key: .isNewUser) {
+		if !UserDefaultsProvider.shared.bool(key: .isNewUser) {
 			// Show Onboarding
 			let vc = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
 			vc.modalPresentationStyle = .fullScreen
