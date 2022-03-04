@@ -59,12 +59,11 @@
                                     <action selector="rememberPasswordButtonAction:" destination="7gE-w9-wFv" eventType="touchUpInside" id="b38-VK-O3C"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4n3-PN-LaW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4n3-PN-LaW">
                                 <rect key="frame" x="76" y="563" width="262" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="FmF-cv-ajJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="17"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="ACCEDER">
                                     <color key="titleColor" name="HardColor"/>

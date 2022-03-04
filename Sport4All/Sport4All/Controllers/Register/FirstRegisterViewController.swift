@@ -14,11 +14,11 @@ struct FirstRegisterDataModel: Encodable {
 
 class FirstRegisterViewController: UIViewController {
 	
-	// Variables
+	// MARK: Variables
 	var registerUserEmail: String?
 	var registerUserPassword: String?
 	
-	// Outlets
+	// MARK: Outlets
 	@IBOutlet weak var firstEmailTF: UITextField!
 	@IBOutlet weak var secondEmailTF: UITextField!
 	@IBOutlet weak var firstPasswordTF: UITextField!

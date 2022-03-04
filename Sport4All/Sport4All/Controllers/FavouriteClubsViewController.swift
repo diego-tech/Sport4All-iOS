@@ -9,9 +9,9 @@ import UIKit
 
 class FavouriteClubsViewController: UIViewController {
 	
-	// Variables
+	// MARK: Variables
 	
-	// Outlets
+	// MARK: Outlets
 	@IBOutlet weak var favouritesTableView: UITableView!
 	@IBOutlet weak var goBackBTN: UIButton!
 	

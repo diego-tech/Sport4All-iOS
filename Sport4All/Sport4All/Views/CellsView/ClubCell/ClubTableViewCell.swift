@@ -11,10 +11,11 @@ import Kingfisher
 class ClubTableViewCell: UITableViewCell {
 
 	// Variables
-
+	public var isLoading: Bool = true
+	
 	// Outlets
 	@IBOutlet weak var homeClubsUIView: UIView!
-	@IBOutlet weak var clubImageView: UIImageView!
+	@IBOutlet weak var clubImageView: LazyImageView!
 	@IBOutlet weak var clubNameLabel: UILabel!
 	@IBOutlet weak var clubPhoneLabel: UILabel!
 	@IBOutlet weak var servicesStackView: UIStackView!
@@ -33,17 +34,38 @@ class ClubTableViewCell: UITableViewCell {
 	
 	// MARK: Functions
 	func setCellWithValueOf(_ club: Club) {
-		updateUI(clubName: club.name, clubPhone: club.tlf, clubImageView: club.club_img)
+		updateUI(clubName: club.name, clubPhone: club.tlf, clubImageStr: club.club_img, services: club.services)
 	}
 	
-	private func updateUI(clubName: String?, clubPhone: String?, clubImageView: String?) {
-		guard let clubImageView = clubImageView else { return }
+	private func updateUI(clubName: String?, clubPhone: String?, clubImageStr: String?, services: [ClubService]?) {
+		guard let clubImageStr = clubImageStr else { return }
+		guard let services = services else { return }
+		guard let url = URL(string: Constants.kStorageURL + clubImageStr) else { return }
 
 		self.clubNameLabel.text = clubName
 		self.clubPhoneLabel.text = clubPhone
-
-		let url = URL(string: clubImageView)
-		self.clubImageView.kf.setImage(with: url, placeholder: UIImage(named: "All Clubs Image"))
+		self.setStackView(services: services)
+		self.clubImageView.loadImage(fromURL: url, placeHolderImage: "")
+	}
+	
+	private func setStackView(services: [ClubService]) {
+		servicesStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+		
+		var servicesImages = [UIImage()]
+		
+		for service in services {
+			servicesImages.append(GetServices.getServices(clubService: service))
+		}
+				
+		for servicesImage in servicesImages {
+			let serviceImageView: UIImageView = {
+				let image = UIImageView(frame: CGRect(x: 0, y: 0, width: 21, height: 20))
+				image.tintColor = .corporativeColor
+				return image
+			}()
+			serviceImageView.image = servicesImage
+			servicesStackView.addArrangedSubview(serviceImageView)
+		}
 	}
 	
 	// MARK: Styles
@@ -51,6 +73,6 @@ class ClubTableViewCell: UITableViewCell {
 		homeClubsUIView.layer.cornerCurve = .circular
 		homeClubsUIView.layer.cornerRadius = 10
 		homeClubsUIView.backgroundColor = .softBlue
-		homeClubsUIView.shadow()
+		homeClubsUIView.shadow(shadowOpacity: 0.15, shadowRadius: 4)
 	}
 }

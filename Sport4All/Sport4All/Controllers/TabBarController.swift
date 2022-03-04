@@ -9,6 +9,7 @@ import UIKit
 
 class TabBarController: UITabBarController {
 	
+	// MARK: Variables
 	var customTabBarView = UIView(frame: .zero)
 	
 	override func viewDidLoad() {

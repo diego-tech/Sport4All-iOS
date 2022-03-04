@@ -9,12 +9,12 @@ import UIKit
 
 class AuthViewController: UIViewController {
 	
-	// Variables
+	// MARK: Variables
 	var userEmail: String?
 	var userPassword: String?
 	var message: String?
 	
-	// Outlets
+	// MARK: Outlets
 	@IBOutlet weak var emailTextField: UITextField!
 	@IBOutlet weak var passwordTextField: UITextField!
 	@IBOutlet weak var rememberPasswordButton: UIButton!

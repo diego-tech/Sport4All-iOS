@@ -9,9 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="SF-Pro-Display-Bold.otf">
-            <string>SFProDisplay-Bold</string>
-        </array>
         <array key="SF-Pro.ttf">
             <string>SFPro-Regular</string>
         </array>
@@ -26,55 +23,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eeS-DU-5pB">
-                                <rect key="frame" x="0.0" y="44" width="414" height="370"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="256"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPr-66-P7E">
-                                        <rect key="frame" x="20" y="44" width="56" height="44"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="ArrowBackMain"/>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EVENTOS PENDIENTES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AaD-qh-Rq6">
-                                        <rect key="frame" x="20" y="44" width="374" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="4nu-9u-88y"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="20"/>
-                                        <color key="textColor" name="CorporativeColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQb-XY-Bad">
-                                        <rect key="frame" x="0.0" y="369" width="414" height="1"/>
+                                        <rect key="frame" x="0.0" y="255" width="414" height="1"/>
                                         <color key="backgroundColor" name="HardColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="eWb-yj-AKO"/>
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0ln-nM-WUE">
-                                        <rect key="frame" x="132" y="160.5" width="150" height="148.5"/>
+                                        <rect key="frame" x="119.5" y="40.5" width="175" height="173.5"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="150" id="CSA-LT-cNs"/>
-                                            <constraint firstAttribute="width" constant="150" id="ELx-dn-Uyu"/>
+                                            <constraint firstAttribute="width" constant="175" id="k4d-nD-qrs"/>
+                                            <constraint firstAttribute="height" constant="175" id="mxt-dB-p9j"/>
                                         </constraints>
                                         <imageReference key="image" image="barcode.viewfinder" catalog="system" renderingMode="original"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" name="BackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="AaD-qh-Rq6" firstAttribute="top" secondItem="eeS-DU-5pB" secondAttribute="top" constant="44" id="0Ln-Rp-UIo"/>
+                                    <constraint firstItem="0ln-nM-WUE" firstAttribute="centerX" secondItem="eeS-DU-5pB" secondAttribute="centerX" id="2bl-x6-n2a"/>
                                     <constraint firstAttribute="trailing" secondItem="eQb-XY-Bad" secondAttribute="trailing" id="7oN-JQ-gOl"/>
                                     <constraint firstItem="eQb-XY-Bad" firstAttribute="leading" secondItem="eeS-DU-5pB" secondAttribute="leading" id="ETh-od-hDS"/>
-                                    <constraint firstItem="AaD-qh-Rq6" firstAttribute="leading" secondItem="eeS-DU-5pB" secondAttribute="leading" constant="20" symbolic="YES" id="Q7b-H8-tp6"/>
-                                    <constraint firstAttribute="trailing" secondItem="AaD-qh-Rq6" secondAttribute="trailing" constant="20" symbolic="YES" id="Tt4-DJ-QIN"/>
-                                    <constraint firstAttribute="bottom" secondItem="eQb-XY-Bad" secondAttribute="bottom" id="XI5-T1-FVn"/>
-                                    <constraint firstAttribute="height" constant="370" id="iGK-Wj-sVZ"/>
-                                    <constraint firstItem="mPr-66-P7E" firstAttribute="top" secondItem="eeS-DU-5pB" secondAttribute="top" constant="44" id="lUz-qu-n1t"/>
-                                    <constraint firstItem="0ln-nM-WUE" firstAttribute="centerX" secondItem="eeS-DU-5pB" secondAttribute="centerX" id="oGE-Ms-mrm"/>
-                                    <constraint firstItem="eQb-XY-Bad" firstAttribute="top" secondItem="0ln-nM-WUE" secondAttribute="bottom" constant="59" id="tC8-n6-X48"/>
-                                    <constraint firstItem="mPr-66-P7E" firstAttribute="leading" secondItem="eeS-DU-5pB" secondAttribute="leading" constant="20" id="xhY-0s-tAg"/>
+                                    <constraint firstItem="eQb-XY-Bad" firstAttribute="top" secondItem="0ln-nM-WUE" secondAttribute="bottom" constant="40" id="SjE-Ia-tgh"/>
+                                    <constraint firstAttribute="height" constant="256" id="iGK-Wj-sVZ"/>
+                                    <constraint firstItem="0ln-nM-WUE" firstAttribute="top" secondItem="eeS-DU-5pB" secondAttribute="top" constant="40" id="pdZ-4t-L4b"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4u-kZ-oNm">
-                                <rect key="frame" x="0.0" y="414" width="414" height="448"/>
+                                <rect key="frame" x="0.0" y="344" width="414" height="518"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mq2-XD-433">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
@@ -229,6 +207,7 @@ preséntelo a la entrada o use el lector de la entrada del establecimiento</stri
                             <constraint firstItem="D4u-kZ-oNm" firstAttribute="leading" secondItem="eeS-DU-5pB" secondAttribute="leading" id="uRS-A3-gaB"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="BJx-do-v6M"/>
                     <connections>
                         <outlet property="barcodeIV" destination="0ln-nM-WUE" id="aT2-V6-eXg"/>
                         <outlet property="headerUIView" destination="eeS-DU-5pB" id="uLF-CF-X9s"/>
@@ -236,17 +215,31 @@ preséntelo a la entrada o use el lector de la entrada del establecimiento</stri
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Tm-ti-2n0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="42" y="-80"/>
+            <point key="canvasLocation" x="950.72463768115949" y="-80.357142857142847"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CZg-14-HYH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j2U-OP-cqK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="k4X-MK-BGA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LIB-Z2-L5f" kind="relationship" relationship="rootViewController" id="LtC-EM-Qg4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ufq-mP-Taq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="40.579710144927539" y="-80.357142857142847"/>
         </scene>
     </scenes>
     <resources>
-        <image name="ArrowBackMain" width="32" height="30"/>
         <image name="barcode.viewfinder" catalog="system" width="128" height="115"/>
         <namedColor name="BackgroundColor">
             <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="CorporativeColor">
-            <color red="0.20000000000000001" green="0.36862745098039218" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="HardColor">
             <color red="0.19607843137254902" green="0.26666666666666666" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

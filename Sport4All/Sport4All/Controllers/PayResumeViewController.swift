@@ -9,9 +9,9 @@ import UIKit
 
 class PayResumeViewController: UIViewController {
 	
-	// Variables
+	// MARK: Variables
 	
-	// Outlets
+	// MARK: Outlets
 
     override func viewDidLoad() {
         super.viewDidLoad()

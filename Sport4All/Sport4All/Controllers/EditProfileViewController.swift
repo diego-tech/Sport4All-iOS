@@ -9,21 +9,41 @@ import UIKit
 
 class EditProfileViewController: UIViewController {
 
+	// MARK: Variables
+	
+	// MARK: Outles
+	
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+		
+		// Configure Navbar
+		configureNavbar()
     }
-    
+	
+	// MARK: Action Functions
+	
+	// MARK: Functions
+	
+	// MARK: Styles
+	private func configureNavbar() {
+		self.navigationController!.navigationBar.titleTextAttributes = [
+			.foregroundColor: UIColor.corporativeColor ?? .black,
+			.font: UIFont(name: FontType.SFProDisplayBold.rawValue, size: 22) ?? .systemFont(ofSize: 22, weight: .bold)
+		]
+		
+		title = "EDITAR PERFIL"
+		
+		let yourBackImage = UIImage(systemName: "arrowshape.turn.up.backward.fill", withConfiguration:  UIImage.SymbolConfiguration(pointSize: 18))
+		let backButtonItem = UIBarButtonItem(image: yourBackImage, style: .plain, target: self, action: #selector(popView(tapGestureRecognizer:)))
+		backButtonItem.tintColor = .corporativeColor
 
-    /*
-    // MARK: - Navigation
+		self.navigationItem.leftBarButtonItem = backButtonItem
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+		self.navigationItem.setHidesBackButton(true, animated: true)
+	}
+	
+	@objc func popView(tapGestureRecognizer: UITapGestureRecognizer) {
+		self.navigationController?.popViewController(animated: true)
+	}
 }

@@ -9,7 +9,7 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
 
-	// Variables
+	// MARK: Variables
 	var slides: [OnboardingSlide] = []
 	var currentPage = 0 {
 		didSet {
@@ -22,7 +22,7 @@ class OnboardingViewController: UIViewController {
 		}
 	}
 	
-	// Outlets
+	// MARK: Outlets
 	@IBOutlet weak var skipButton: UIButton!
 	@IBOutlet weak var onboardingCollectionView: UICollectionView!
 	@IBOutlet weak var pageControl: UIPageControl!

@@ -9,18 +9,19 @@ import UIKit
 
 class HomeClubsViewController: UIViewController {
 	
-	// Variables
+	// MARK: Variables
 	private var clubViewModel = ClubListViewModel()
 	private var club: Club?
+	private var clubTableView = ClubTableViewCell()
 	
-	// Outlets
+	// MARK: Outlets
 	@IBOutlet weak var searchBar: UITextField!
 	@IBOutlet weak var bestRatedCollectionView: UICollectionView!
 	@IBOutlet weak var homeClubsTableView: UITableView!
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		
+				
 		// Inicialización Table View
 		clubList()
 	}
@@ -40,8 +41,8 @@ class HomeClubsViewController: UIViewController {
 	
 	// MARK: Functions
 	private func clubList() {
-		clubViewModel.fetchClubList { status in
-			self.initTableView()
+		clubViewModel.fetchClubList { [weak self] status in
+			self?.initTableView()
 		}
 	}
 	
@@ -97,5 +98,15 @@ extension HomeClubsViewController: UITableViewDataSource, UITableViewDelegate {
 		club = clubViewModel.cellForRowAt(indexPath: indexPath)
 		cell.setCellWithValueOf(club!)
 		return cell
+	}
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true)
+		
+		let club = clubViewModel.cellForRowAt(indexPath: indexPath)
+		
+		let vc = UIStoryboard(name: "InfoClub", bundle: nil).instantiateViewController(withIdentifier: "InfoClub") as! InfoClubViewController
+		vc.club = club
+		navigationController?.pushViewController(vc, animated: true)
 	}
 }

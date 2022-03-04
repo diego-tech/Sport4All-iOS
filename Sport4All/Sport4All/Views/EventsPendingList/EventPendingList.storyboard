@@ -7,11 +7,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="SF-Pro-Display-Bold.otf">
-            <string>SFProDisplay-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Event Pending List View Controller-->
         <scene sceneID="rWN-aA-kVF">
@@ -21,22 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cwz-bi-ZFq">
-                                <rect key="frame" x="20" y="88" width="56" height="44"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="ArrowBackMain"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EVENTOS PENDIENTES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgr-Cb-BKB">
-                                <rect key="frame" x="20" y="88" width="374" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="c6l-XG-ELK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="20"/>
-                                <color key="textColor" name="CorporativeColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8yp-Ng-gFa">
-                                <rect key="frame" x="10" y="147" width="394" height="676"/>
+                                <rect key="frame" x="10" y="44" width="394" height="818"/>
                                 <color key="backgroundColor" name="BackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ClubTableViewCell" id="WPf-dG-NMK" customClass="ClubTableViewCell" customModule="Sport4All" customModuleProvider="target">
@@ -53,14 +34,9 @@
                         <viewLayoutGuide key="safeArea" id="LI3-7I-zwc"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="LI3-7I-zwc" firstAttribute="trailing" secondItem="cgr-Cb-BKB" secondAttribute="trailing" constant="20" id="5Ic-dw-iOv"/>
-                            <constraint firstItem="LI3-7I-zwc" firstAttribute="bottom" secondItem="8yp-Ng-gFa" secondAttribute="bottom" constant="39" id="88s-Ex-xP8"/>
-                            <constraint firstItem="Cwz-bi-ZFq" firstAttribute="leading" secondItem="LI3-7I-zwc" secondAttribute="leading" constant="20" id="BPC-Yi-utf"/>
+                            <constraint firstItem="8yp-Ng-gFa" firstAttribute="top" secondItem="LI3-7I-zwc" secondAttribute="top" id="44V-jI-OYI"/>
+                            <constraint firstItem="LI3-7I-zwc" firstAttribute="bottom" secondItem="8yp-Ng-gFa" secondAttribute="bottom" id="88s-Ex-xP8"/>
                             <constraint firstItem="8yp-Ng-gFa" firstAttribute="leading" secondItem="LI3-7I-zwc" secondAttribute="leading" constant="10" id="DzE-D0-WPR"/>
-                            <constraint firstItem="8yp-Ng-gFa" firstAttribute="top" secondItem="Cwz-bi-ZFq" secondAttribute="bottom" constant="15" id="KbJ-6p-wDi"/>
-                            <constraint firstItem="Cwz-bi-ZFq" firstAttribute="top" secondItem="LI3-7I-zwc" secondAttribute="top" constant="44" id="OCt-bn-8bq"/>
-                            <constraint firstItem="cgr-Cb-BKB" firstAttribute="top" secondItem="LI3-7I-zwc" secondAttribute="top" constant="44" id="PvI-dG-GwZ"/>
-                            <constraint firstItem="cgr-Cb-BKB" firstAttribute="leading" secondItem="LI3-7I-zwc" secondAttribute="leading" constant="20" id="qiG-W3-05s"/>
                             <constraint firstItem="LI3-7I-zwc" firstAttribute="trailing" secondItem="8yp-Ng-gFa" secondAttribute="trailing" constant="10" id="r8E-QU-G7h"/>
                         </constraints>
                     </view>
@@ -74,12 +50,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ArrowBackMain" width="32" height="30"/>
         <namedColor name="BackgroundColor">
             <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="CorporativeColor">
-            <color red="0.20000000000000001" green="0.36862745098039218" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

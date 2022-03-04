@@ -9,9 +9,9 @@ import UIKit
 
 class RetrievePasswordViewController: UIViewController {
 
-	// Variables
+	// MARK: Variables
 	
-	// Outlets
+	// MARK: Outlets
 	@IBOutlet weak var emailTF: UITextField!
 	@IBOutlet weak var sendButton: UIButton!
 	

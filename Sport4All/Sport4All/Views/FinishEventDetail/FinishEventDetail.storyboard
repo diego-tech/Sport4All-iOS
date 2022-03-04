@@ -8,9 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="SF-Pro-Display-Bold.otf">
-            <string>SFProDisplay-Bold</string>
-        </array>
         <array key="SF-Pro-Display-Medium.otf">
             <string>SFProDisplay-Medium</string>
         </array>
@@ -31,30 +28,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7h-Ui-V7v">
-                                <rect key="frame" x="0.0" y="44" width="414" height="370"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="281"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6c-Gz-ptP" userLabel="Go Back Button">
-                                        <rect key="frame" x="20" y="44" width="56" height="44"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="ArrowBackMain"/>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EVENTO FINALIZADO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0Q-E9-R4Z">
-                                        <rect key="frame" x="20" y="44" width="374" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="91U-qv-fZL"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="20"/>
-                                        <color key="textColor" name="CorporativeColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InfoClubImg" translatesAutoresizingMaskIntoConstraints="NO" id="WNm-LW-rFa">
-                                        <rect key="frame" x="0.0" y="108" width="414" height="166"/>
+                                        <rect key="frame" x="0.0" y="20" width="414" height="166"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="166" id="dgD-W7-qWi"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Club Deportivo Fariones" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIH-Cf-YEf">
-                                        <rect key="frame" x="20" y="290" width="374" height="59"/>
+                                        <rect key="frame" x="20" y="202" width="374" height="59"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="59" id="YrS-VR-wM4"/>
                                         </constraints>
@@ -63,7 +46,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rh0-9H-AWX">
-                                        <rect key="frame" x="0.0" y="369" width="414" height="1"/>
+                                        <rect key="frame" x="0.0" y="280" width="414" height="1"/>
                                         <color key="backgroundColor" name="HardColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="xd1-Xr-pGg"/>
@@ -73,24 +56,19 @@
                                 <color key="backgroundColor" name="BackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="eIH-Cf-YEf" firstAttribute="leading" secondItem="o7h-Ui-V7v" secondAttribute="leading" constant="20" symbolic="YES" id="1bd-mh-3q5"/>
-                                    <constraint firstItem="S0Q-E9-R4Z" firstAttribute="top" secondItem="o7h-Ui-V7v" secondAttribute="top" constant="44" id="3ep-tX-eHG"/>
-                                    <constraint firstItem="B6c-Gz-ptP" firstAttribute="top" secondItem="o7h-Ui-V7v" secondAttribute="top" constant="44" id="5n6-eQ-tRO"/>
                                     <constraint firstAttribute="trailing" secondItem="rh0-9H-AWX" secondAttribute="trailing" id="8Vj-FJ-GF5"/>
-                                    <constraint firstItem="B6c-Gz-ptP" firstAttribute="leading" secondItem="o7h-Ui-V7v" secondAttribute="leading" constant="20" id="AEF-sG-aW9"/>
-                                    <constraint firstAttribute="height" constant="370" id="AEl-Nb-apK"/>
+                                    <constraint firstAttribute="height" constant="281" id="AEl-Nb-apK"/>
                                     <constraint firstAttribute="trailing" secondItem="eIH-Cf-YEf" secondAttribute="trailing" constant="20" id="E2w-Xg-XtT"/>
                                     <constraint firstItem="rh0-9H-AWX" firstAttribute="leading" secondItem="o7h-Ui-V7v" secondAttribute="leading" id="FjO-fj-L4C"/>
-                                    <constraint firstAttribute="trailing" secondItem="S0Q-E9-R4Z" secondAttribute="trailing" constant="20" id="NFx-kl-Ld8"/>
                                     <constraint firstAttribute="bottom" secondItem="rh0-9H-AWX" secondAttribute="bottom" id="T1F-Sz-byp"/>
+                                    <constraint firstItem="WNm-LW-rFa" firstAttribute="top" secondItem="o7h-Ui-V7v" secondAttribute="top" constant="20" id="VER-yb-h1K"/>
                                     <constraint firstAttribute="trailing" secondItem="WNm-LW-rFa" secondAttribute="trailing" id="YFC-ki-tW7"/>
                                     <constraint firstItem="eIH-Cf-YEf" firstAttribute="top" secondItem="WNm-LW-rFa" secondAttribute="bottom" constant="16" id="dOH-ij-LsO"/>
-                                    <constraint firstItem="WNm-LW-rFa" firstAttribute="top" secondItem="B6c-Gz-ptP" secondAttribute="bottom" constant="20" id="elH-UR-4Q8"/>
                                     <constraint firstItem="WNm-LW-rFa" firstAttribute="leading" secondItem="o7h-Ui-V7v" secondAttribute="leading" id="gJC-4a-zxr"/>
-                                    <constraint firstItem="S0Q-E9-R4Z" firstAttribute="leading" secondItem="o7h-Ui-V7v" secondAttribute="leading" constant="20" id="yWC-bp-NPx"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJs-kF-KJC">
-                                <rect key="frame" x="0.0" y="414" width="414" height="399"/>
+                                <rect key="frame" x="0.0" y="369" width="414" height="444"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cL6-DG-aJG" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
@@ -250,6 +228,7 @@ UG9zaWNpw7NuIE4PwrogOiAyIC8gMTU
                         </constraints>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="rB9-AG-lUh"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="headerUIView" destination="o7h-Ui-V7v" id="q3F-O8-DdI"/>
@@ -259,11 +238,28 @@ UG9zaWNpw7NuIE4PwrogOiAyIC8gMTU
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PyW-k6-s8y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-60.869565217391312" y="-253.125"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tPg-3K-fM6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cJG-er-oeb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ah1-49-qP1">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yeJ-m4-QN1" kind="relationship" relationship="rootViewController" id="UxF-Uq-v3u"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gSd-Bc-22K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="-971.01449275362324" y="-253.125"/>
         </scene>
     </scenes>
     <resources>
-        <image name="ArrowBackMain" width="32" height="30"/>
         <image name="Avatar" width="118" height="119"/>
         <image name="InfoClubImg" width="375" height="150"/>
         <image name="RightArrowAllClubsCard" width="26" height="26"/>

@@ -9,9 +9,9 @@ import UIKit
 
 class ModifyPasswordViewController: UIViewController {
 	
-	// Variables
+	// MARK: Variables
 	
-	// Outlets
+	// MARK: Outlets
 	@IBOutlet weak var goBackBTN: UIButton!
 	@IBOutlet weak var savePasswordBTN: UIButton!
 	@IBOutlet weak var firstPasswordTF: UITextField!
@@ -20,6 +20,9 @@ class ModifyPasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+		
+		// Configure Navbar
+		configureNavbar()
 		
 		// Inicialización Estilos
 		setTextFieldStyles()
@@ -76,5 +79,26 @@ class ModifyPasswordViewController: UIViewController {
 		// Estilos Save Password Button
 		savePasswordBTN.round()
 		savePasswordBTN.colors()
+	}
+	
+	private func configureNavbar() {
+		self.navigationController!.navigationBar.titleTextAttributes = [
+			.foregroundColor: UIColor.corporativeColor ?? .black,
+			.font: UIFont(name: FontType.SFProDisplayBold.rawValue, size: 22) ?? .systemFont(ofSize: 22, weight: .bold)
+		]
+		
+		title = "CAMBIAR CONTRASEÑA"
+		
+		let yourBackImage = UIImage(systemName: "arrowshape.turn.up.backward.fill", withConfiguration:  UIImage.SymbolConfiguration(pointSize: 18))
+		let backButtonItem = UIBarButtonItem(image: yourBackImage, style: .plain, target: self, action: #selector(popView(tapGestureRecognizer:)))
+		backButtonItem.tintColor = .corporativeColor
+
+		self.navigationItem.leftBarButtonItem = backButtonItem
+
+		self.navigationItem.setHidesBackButton(true, animated: true)
+	}
+	
+	@objc func popView(tapGestureRecognizer: UITapGestureRecognizer) {
+		self.navigationController?.popViewController(animated: true)
 	}
 }

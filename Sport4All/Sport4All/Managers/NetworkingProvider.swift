@@ -13,7 +13,7 @@ final class NetworkingProvider {
 	
 	let kTestUserToken = UserDefaultsProvider.string(key: .authUserToken)
 	
-	// Registro de Usuario
+	// MARK: Register User
 	func register(newUser: NewUser, serverResponse: @escaping (_ responseData: User?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/register"
 		
@@ -31,7 +31,7 @@ final class NetworkingProvider {
 		}
 	}
 	
-	// Upload User Image
+	// MARK: Upload Image
 	func uploadImage(userImage: URL, serverResponse: @escaping (_ responseData: User?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/getUploadImage"
 		
@@ -52,7 +52,7 @@ final class NetworkingProvider {
 		}
 	}
 	
-	// Check If User Exists
+	// MARK: Check User Exists
 	func checkUserExists(firstRegisterData: FirstRegisterDataModel, serverResponse: @escaping (_ responseData: User?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/checkIfUserExists"
 		
@@ -71,7 +71,7 @@ final class NetworkingProvider {
 		}
 	}
 	
-	// Logeo de Usuario
+	// MARK: User Login
 	func login(userLogin: UserLogin, serverResponse: @escaping (_ responseData: User?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/login"
 		
@@ -91,11 +91,10 @@ final class NetworkingProvider {
 		}
 	}
 	
-	// Ver Perfil
+	// MARK: Show Profile
 	func userInfo(serverResponse: @escaping (_ responseData: User?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/userinfo"
-		let headers: HTTPHeaders = [.authorization(bearerToken: kTestUserToken!)]
-		
+		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.string(key: .authUserToken)!)]
 		AF.request(url, method: .get, headers: headers).responseDecodable(of: Response.self, decoder: DateDecoder()) { response in
 			
 			// Handle Response Data && Status Code && Message
@@ -110,7 +109,7 @@ final class NetworkingProvider {
 		}
 	}
 	
-	// Recuperar Contraseña
+	// MARK: Retrieve Password
 	func retrievePassword(email: String, serverResponse: @escaping (_ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()){
 		let url = "\(Constants.kBaseURL)/recoverpass"
 		
@@ -129,7 +128,7 @@ final class NetworkingProvider {
 		}
 	}
 	
-	// Modificar Datos del Usuario
+	// MARK: Modify Data
 	func modifyData(userModify: NewUser, serverResponse: @escaping (_ responseData: User?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/usermodify"
 		let headers: HTTPHeaders = [.authorization(bearerToken: kTestUserToken!)]
@@ -149,7 +148,7 @@ final class NetworkingProvider {
 		}
 	}
 	
-	// Modificar Contraseña
+	// MARK: Modify Password
 	func modifyPassword(newPassword: String, serverResponse: @escaping (_ responseData: User?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/passmodify"
 		let headers: HTTPHeaders = [.authorization(bearerToken: kTestUserToken!)]
@@ -169,7 +168,7 @@ final class NetworkingProvider {
 		}
 	}
 	
-	// Registrar Un Club Como Favorito
+	// MARK: Favourite Club
 	func registerFavClub(clubId: Int, serverResponse: @escaping (_ responseData: User?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/registerfavclub"
 		let headers: HTTPHeaders = [.authorization(bearerToken: kTestUserToken!)]
@@ -189,7 +188,7 @@ final class NetworkingProvider {
 		}
 	}
 	
-	// Lista de Clubes
+	// MARK: List Club
 	func clubList(serverResponse: @escaping (_ responseData: [Club]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/listclubs"
 		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.string(key: .authUserToken)!)]

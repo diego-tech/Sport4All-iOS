@@ -9,9 +9,9 @@ import UIKit
 
 class FinishEventDetailViewController: UIViewController {
 
-	// Variables
+	// MARK: Variables
 	
-	// Outlets
+	// MARK: Outlets
 	@IBOutlet weak var headerUIView: UIView!
 	@IBOutlet weak var opinionTextView: UITextView!
 	@IBOutlet weak var sendButton: UIButton!
@@ -19,6 +19,10 @@ class FinishEventDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+		
+		
+		// Configure Navbar
+		configureNavbar()
 		
 		// Inicialización de Estilos
 		headerUIView.bottomShadow()
@@ -53,5 +57,26 @@ class FinishEventDetailViewController: UIViewController {
 			string: "Este evento...",
 			attributes: attributes as [NSAttributedString.Key : Any]
 		)
+	}
+	
+	private func configureNavbar() {
+		self.navigationController!.navigationBar.titleTextAttributes = [
+			.foregroundColor: UIColor.corporativeColor ?? .black,
+			.font: UIFont(name: FontType.SFProDisplayBold.rawValue, size: 22) ?? .systemFont(ofSize: 22, weight: .bold)
+		]
+		
+		title = "INSCRIPCION"
+		
+		let yourBackImage = UIImage(systemName: "arrowshape.turn.up.backward.fill", withConfiguration:  UIImage.SymbolConfiguration(pointSize: 18))
+		let backButtonItem = UIBarButtonItem(image: yourBackImage, style: .plain, target: self, action: #selector(popView(tapGestureRecognizer:)))
+		backButtonItem.tintColor = .corporativeColor
+
+		self.navigationItem.leftBarButtonItem = backButtonItem
+
+		self.navigationItem.setHidesBackButton(true, animated: true)
+	}
+	
+	@objc func popView(tapGestureRecognizer: UITapGestureRecognizer) {
+		self.navigationController?.popViewController(animated: true)
 	}
 }
