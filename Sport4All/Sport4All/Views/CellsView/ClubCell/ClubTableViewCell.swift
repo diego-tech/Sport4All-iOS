@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 class ClubTableViewCell: UITableViewCell {
 
@@ -43,29 +42,10 @@ class ClubTableViewCell: UITableViewCell {
 
 		self.clubNameLabel.text = clubName
 		self.clubPhoneLabel.text = clubPhone
-		self.setStackView(services: services)
+		self.servicesStackView.setServicesInStackView(services: services, imageSize: CGRect(x: 0, y: 0, width: 50, height: 50))
 		self.clubImageView.loadImage(fromURL: url, placeHolderImage: "")
 	}
 	
-	private func setStackView(services: [ClubService]) {
-		servicesStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
-		
-		var servicesImages = [UIImage()]
-		
-		for service in services {
-			servicesImages.append(GetServices.getServices(clubService: service))
-		}
-				
-		for servicesImage in servicesImages {
-			let serviceImageView: UIImageView = {
-				let image = UIImageView(frame: CGRect(x: 0, y: 0, width: 21, height: 20))
-				image.tintColor = .corporativeColor
-				return image
-			}()
-			serviceImageView.image = servicesImage
-			servicesStackView.addArrangedSubview(serviceImageView)
-		}
-	}
 	
 	// MARK: Styles
 	private func uiViewStyles() {

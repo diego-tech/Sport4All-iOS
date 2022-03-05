@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 class InfoClubViewController: UIViewController {
 
@@ -48,11 +47,16 @@ class InfoClubViewController: UIViewController {
 	
 	// MARK: Functions
 	func configure() {
-		guard let club = club else { return }
-		guard let banner = club.club_banner else { return }
-		guard let url = URL(string: Constants.kStorageURL + banner) else { return }
-		clubTitleLabel.text = club.name
-		clubBannerImageView.loadImage(fromURL: url, placeHolderImage: "HomeLogo")
+		guard let club = club else { return debugPrint("Error Club")}
+		guard let banner = club.club_banner else { return debugPrint("Error Banner")}
+		guard let url = URL(string: Constants.kStorageURL + banner) else { return debugPrint("Error Url Imagen") }
+		guard let description = club.description else { return debugPrint("Error Desc")}
+		guard let services = club.services else { return debugPrint("Error Servicios")}
+		
+		self.clubTitleLabel.text = club.name
+		self.clubBannerImageView.loadImage(fromURL: url, placeHolderImage: "HomeLogo")
+		self.clubInfoTextView.text = description
+		self.clubServicesStackView.setServicesInStackView(services: services, imageSize: CGRect(x: 0, y: 0, width: 50, height: 50))
 	}
 	
 	func callAddToFavourite() {

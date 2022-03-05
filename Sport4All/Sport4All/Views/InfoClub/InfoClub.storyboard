@@ -108,54 +108,22 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VYi-m6-Du3">
-                                                <rect key="frame" x="20" y="114" width="374" height="128"/>
+                                                <rect key="frame" x="20" y="114" width="374" height="97"/>
                                                 <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at augue magna. Aliquam non dictum velit. Pellentesque feugiat lectus vitae purus ullamcorper, in rhoncus diam malesuada. Aliquam fringilla eros vel ex congue, eget maximus est mollis. Nam et arcu ligula.</string>
                                                 <color key="textColor" name="BlueBerry"/>
                                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Servicios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Rb-xh-WcQ">
-                                                <rect key="frame" x="20" y="267" width="374" height="24"/>
+                                                <rect key="frame" x="20" y="236" width="374" height="24"/>
                                                 <fontDescription key="fontDescription" name="SFPro-Medium" family="SF Pro" pointSize="20"/>
                                                 <color key="textColor" name="HardColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="oBQ-xm-3j3" userLabel="Servicies Stack View">
-                                                <rect key="frame" x="55.5" y="309" width="303" height="35"/>
-                                                <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Wifi" translatesAutoresizingMaskIntoConstraints="NO" id="FKV-2j-gQU">
-                                                        <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="35" id="uqt-sb-9Vu"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Eat" translatesAutoresizingMaskIntoConstraints="NO" id="ckZ-Jj-GIt">
-                                                        <rect key="frame" x="67" y="0.0" width="35" height="35"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="35" id="W0N-lK-OKf"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Parking" translatesAutoresizingMaskIntoConstraints="NO" id="RPl-87-nDR">
-                                                        <rect key="frame" x="134" y="0.0" width="35" height="35"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="35" id="ofc-Zu-0LJ"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Shop" translatesAutoresizingMaskIntoConstraints="NO" id="tz3-Ru-bGu">
-                                                        <rect key="frame" x="201" y="0.0" width="35" height="35"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="35" id="t8s-iw-Dho"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="FirstAidKit" translatesAutoresizingMaskIntoConstraints="NO" id="K1N-iJ-MIa">
-                                                        <rect key="frame" x="268" y="0.0" width="35" height="35"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="35" id="6I1-fn-3E4"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                </subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="LZ7-F6-fhm" userLabel="Services Stack View">
+                                                <rect key="frame" x="20" y="288" width="374" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="35" id="hpj-m8-Hna"/>
+                                                    <constraint firstAttribute="height" constant="50" id="DTi-lN-N4m"/>
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Como Llegar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mct-Mu-u73">
@@ -211,7 +179,7 @@
                                         <color key="backgroundColor" name="BackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="NrA-G2-8SW" firstAttribute="top" secondItem="hNr-Ye-GUh" secondAttribute="bottom" constant="20" id="04U-CJ-pvT"/>
-                                            <constraint firstItem="oBQ-xm-3j3" firstAttribute="centerX" secondItem="mhZ-dE-hRX" secondAttribute="centerX" id="0ye-3z-hzl"/>
+                                            <constraint firstItem="LZ7-F6-fhm" firstAttribute="centerX" secondItem="mhZ-dE-hRX" secondAttribute="centerX" id="1IK-a5-qVu"/>
                                             <constraint firstAttribute="trailing" secondItem="ec7-HD-mEm" secondAttribute="trailing" id="8Zk-mE-y5X"/>
                                             <constraint firstAttribute="height" constant="900" id="993-KE-yx6"/>
                                             <constraint firstAttribute="trailing" secondItem="6Rb-xh-WcQ" secondAttribute="trailing" constant="20" id="9EC-03-3kA"/>
@@ -225,17 +193,17 @@
                                             <constraint firstItem="VYi-m6-Du3" firstAttribute="leading" secondItem="mhZ-dE-hRX" secondAttribute="leading" constant="20" id="Zfo-ae-YY9"/>
                                             <constraint firstItem="sJM-sp-o8y" firstAttribute="top" secondItem="ec7-HD-mEm" secondAttribute="bottom" constant="20" id="bk3-mB-naF"/>
                                             <constraint firstItem="ec7-HD-mEm" firstAttribute="leading" secondItem="mhZ-dE-hRX" secondAttribute="leading" id="bkE-4o-Avl"/>
-                                            <constraint firstItem="oBQ-xm-3j3" firstAttribute="top" secondItem="6Rb-xh-WcQ" secondAttribute="bottom" constant="18" id="c40-eD-Cdo"/>
                                             <constraint firstItem="sJM-sp-o8y" firstAttribute="trailing" secondItem="Mct-Mu-u73" secondAttribute="trailing" id="dB5-4Q-81u"/>
                                             <constraint firstItem="7DR-DN-2WM" firstAttribute="leading" secondItem="mhZ-dE-hRX" secondAttribute="leading" constant="115" id="eKp-P0-7tX"/>
-                                            <constraint firstItem="Mct-Mu-u73" firstAttribute="top" secondItem="oBQ-xm-3j3" secondAttribute="bottom" constant="22" id="fZB-Su-VmD"/>
                                             <constraint firstAttribute="bottom" secondItem="7DR-DN-2WM" secondAttribute="bottom" constant="165" id="ggb-Lx-ZZd"/>
                                             <constraint firstItem="7DR-DN-2WM" firstAttribute="top" secondItem="sJM-sp-o8y" secondAttribute="bottom" constant="20" id="gsp-r2-2LX"/>
                                             <constraint firstAttribute="trailing" secondItem="7DR-DN-2WM" secondAttribute="trailing" constant="115" id="hB1-zi-vhq"/>
                                             <constraint firstItem="6Rb-xh-WcQ" firstAttribute="leading" secondItem="mhZ-dE-hRX" secondAttribute="leading" constant="20" id="iV5-E4-n96"/>
                                             <constraint firstAttribute="trailing" secondItem="hNr-Ye-GUh" secondAttribute="trailing" constant="137" id="jOI-YD-ErN"/>
                                             <constraint firstItem="hNr-Ye-GUh" firstAttribute="leading" secondItem="mhZ-dE-hRX" secondAttribute="leading" constant="137" id="mYj-Ei-wbO"/>
+                                            <constraint firstItem="LZ7-F6-fhm" firstAttribute="top" secondItem="6Rb-xh-WcQ" secondAttribute="bottom" constant="28" id="nlu-Ft-DNX"/>
                                             <constraint firstItem="Mct-Mu-u73" firstAttribute="leading" secondItem="mhZ-dE-hRX" secondAttribute="leading" constant="20" id="nxH-2e-FNl"/>
+                                            <constraint firstItem="Mct-Mu-u73" firstAttribute="top" secondItem="LZ7-F6-fhm" secondAttribute="bottom" constant="28" id="pOj-nE-TT5"/>
                                             <constraint firstItem="ec7-HD-mEm" firstAttribute="top" secondItem="Mct-Mu-u73" secondAttribute="bottom" constant="20" id="q90-Mg-vDQ"/>
                                             <constraint firstItem="VYi-m6-Du3" firstAttribute="top" secondItem="NrA-G2-8SW" secondAttribute="bottom" constant="10" id="v1R-9I-bku"/>
                                         </constraints>
@@ -268,7 +236,7 @@
                         <outlet property="addFavouriteButton" destination="h7I-te-nec" id="OqH-7q-PeO"/>
                         <outlet property="clubBannerImageView" destination="tB0-d6-gXh" id="S4I-pO-w52"/>
                         <outlet property="clubInfoTextView" destination="VYi-m6-Du3" id="h2s-Lc-YZY"/>
-                        <outlet property="clubServicesStackView" destination="oBQ-xm-3j3" id="3EF-2I-JQh"/>
+                        <outlet property="clubServicesStackView" destination="LZ7-F6-fhm" id="Kga-ZG-4Fe"/>
                         <outlet property="clubTitleLabel" destination="hbE-RV-hQK" id="N0Z-dN-uN1"/>
                         <outlet property="goWebClubButton" destination="UyV-1q-pYF" id="Vdz-lx-ytO"/>
                         <outlet property="headerUIView" destination="fGc-4M-tfH" id="UFI-TO-bDi"/>
@@ -302,15 +270,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Eat" width="21" height="20"/>
-        <image name="FirstAidKit" width="20" height="20"/>
         <image name="InfoClubImg" width="375" height="150"/>
         <image name="Map-1" width="375" height="160"/>
-        <image name="Parking" width="20" height="20"/>
         <image name="Phone" width="45" height="45"/>
-        <image name="Shop" width="21" height="20"/>
         <image name="Web" width="45" height="45"/>
-        <image name="Wifi" width="21" height="20"/>
         <image name="suit.heart" catalog="system" width="128" height="109"/>
         <namedColor name="BackgroundColor">
             <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
