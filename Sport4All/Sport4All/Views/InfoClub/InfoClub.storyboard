@@ -62,7 +62,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <imageReference key="image" image="suit.heart" catalog="system" symbolScale="large" renderingMode="template"/>
-                                            <color key="baseForegroundColor" name="HardColor"/>
+                                            <color key="baseForegroundColor" name="GoldColor"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="addToFavouriteButtonAction:" destination="I1b-qx-IuD" eventType="touchUpInside" id="aVD-7M-FDN"/>
@@ -132,12 +132,12 @@
                                                 <color key="textColor" name="HardColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Map-1" translatesAutoresizingMaskIntoConstraints="NO" id="ec7-HD-mEm" userLabel="MapIv">
-                                                <rect key="frame" x="0.0" y="410" width="414" height="176"/>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="viY-mV-DAp">
+                                                <rect key="frame" x="20" y="410" width="374" height="176"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="176" id="li8-pL-kJg"/>
+                                                    <constraint firstAttribute="height" constant="176" id="p2r-e3-YVZ"/>
                                                 </constraints>
-                                            </imageView>
+                                            </mapView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJM-sp-o8y">
                                                 <rect key="frame" x="20" y="606" width="374" height="24"/>
                                                 <fontDescription key="fontDescription" name="SFPro-Medium" family="SF Pro" pointSize="20"/>
@@ -145,10 +145,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7DR-DN-2WM" userLabel="Contact Stack View">
-                                                <rect key="frame" x="115" y="650" width="184" height="85"/>
+                                                <rect key="frame" x="20" y="650" width="374" height="85"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UyV-1q-pYF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="92" height="85"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="187" height="85"/>
                                                         <fontDescription key="fontDescription" name="SFPro-Light" family="SF Pro" pointSize="15"/>
                                                         <state key="normal" title="WEB" image="Web">
                                                             <color key="titleColor" name="BlueBerry"/>
@@ -158,11 +158,11 @@
                                                             <color key="baseForegroundColor" name="BlueBerry"/>
                                                         </buttonConfiguration>
                                                         <connections>
-                                                            <action selector="testAction:" destination="I1b-qx-IuD" eventType="touchUpInside" id="b8m-O0-uvc"/>
+                                                            <action selector="goToWebButtonAction:" destination="I1b-qx-IuD" eventType="touchUpInside" id="8fT-kx-nE2"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UyO-fv-Ezk">
-                                                        <rect key="frame" x="92" y="0.0" width="92" height="85"/>
+                                                        <rect key="frame" x="187" y="0.0" width="187" height="85"/>
                                                         <fontDescription key="fontDescription" name="SFPro-Light" family="SF Pro" pointSize="15"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
                                                         <state key="normal" title="LLAMAR" image="Phone">
@@ -172,6 +172,9 @@
                                                             <fontDescription key="titleFontDescription" name="SFPro-Light" family="SF Pro" pointSize="15"/>
                                                             <color key="baseForegroundColor" name="BlueBerry"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="goToCallButtonAction:" destination="I1b-qx-IuD" eventType="touchUpInside" id="J5T-lf-6oF"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -180,7 +183,7 @@
                                         <constraints>
                                             <constraint firstItem="NrA-G2-8SW" firstAttribute="top" secondItem="hNr-Ye-GUh" secondAttribute="bottom" constant="20" id="04U-CJ-pvT"/>
                                             <constraint firstItem="LZ7-F6-fhm" firstAttribute="centerX" secondItem="mhZ-dE-hRX" secondAttribute="centerX" id="1IK-a5-qVu"/>
-                                            <constraint firstAttribute="trailing" secondItem="ec7-HD-mEm" secondAttribute="trailing" id="8Zk-mE-y5X"/>
+                                            <constraint firstItem="sJM-sp-o8y" firstAttribute="top" secondItem="viY-mV-DAp" secondAttribute="bottom" constant="20" id="431-h2-9gK"/>
                                             <constraint firstAttribute="height" constant="900" id="993-KE-yx6"/>
                                             <constraint firstAttribute="trailing" secondItem="6Rb-xh-WcQ" secondAttribute="trailing" constant="20" id="9EC-03-3kA"/>
                                             <constraint firstItem="6Rb-xh-WcQ" firstAttribute="top" secondItem="VYi-m6-Du3" secondAttribute="bottom" constant="25" id="9qi-BN-GnG"/>
@@ -191,20 +194,20 @@
                                             <constraint firstItem="NrA-G2-8SW" firstAttribute="leading" secondItem="mhZ-dE-hRX" secondAttribute="leading" constant="20" id="XJA-c6-kCP"/>
                                             <constraint firstAttribute="trailing" secondItem="NrA-G2-8SW" secondAttribute="trailing" constant="20" id="ZOq-bV-FUa"/>
                                             <constraint firstItem="VYi-m6-Du3" firstAttribute="leading" secondItem="mhZ-dE-hRX" secondAttribute="leading" constant="20" id="Zfo-ae-YY9"/>
-                                            <constraint firstItem="sJM-sp-o8y" firstAttribute="top" secondItem="ec7-HD-mEm" secondAttribute="bottom" constant="20" id="bk3-mB-naF"/>
-                                            <constraint firstItem="ec7-HD-mEm" firstAttribute="leading" secondItem="mhZ-dE-hRX" secondAttribute="leading" id="bkE-4o-Avl"/>
                                             <constraint firstItem="sJM-sp-o8y" firstAttribute="trailing" secondItem="Mct-Mu-u73" secondAttribute="trailing" id="dB5-4Q-81u"/>
-                                            <constraint firstItem="7DR-DN-2WM" firstAttribute="leading" secondItem="mhZ-dE-hRX" secondAttribute="leading" constant="115" id="eKp-P0-7tX"/>
+                                            <constraint firstItem="7DR-DN-2WM" firstAttribute="leading" secondItem="mhZ-dE-hRX" secondAttribute="leading" constant="20" id="eKp-P0-7tX"/>
                                             <constraint firstAttribute="bottom" secondItem="7DR-DN-2WM" secondAttribute="bottom" constant="165" id="ggb-Lx-ZZd"/>
                                             <constraint firstItem="7DR-DN-2WM" firstAttribute="top" secondItem="sJM-sp-o8y" secondAttribute="bottom" constant="20" id="gsp-r2-2LX"/>
-                                            <constraint firstAttribute="trailing" secondItem="7DR-DN-2WM" secondAttribute="trailing" constant="115" id="hB1-zi-vhq"/>
+                                            <constraint firstAttribute="trailing" secondItem="7DR-DN-2WM" secondAttribute="trailing" constant="20" id="hB1-zi-vhq"/>
+                                            <constraint firstAttribute="trailing" secondItem="viY-mV-DAp" secondAttribute="trailing" constant="20" symbolic="YES" id="hWq-Fj-Y0M"/>
                                             <constraint firstItem="6Rb-xh-WcQ" firstAttribute="leading" secondItem="mhZ-dE-hRX" secondAttribute="leading" constant="20" id="iV5-E4-n96"/>
                                             <constraint firstAttribute="trailing" secondItem="hNr-Ye-GUh" secondAttribute="trailing" constant="137" id="jOI-YD-ErN"/>
                                             <constraint firstItem="hNr-Ye-GUh" firstAttribute="leading" secondItem="mhZ-dE-hRX" secondAttribute="leading" constant="137" id="mYj-Ei-wbO"/>
                                             <constraint firstItem="LZ7-F6-fhm" firstAttribute="top" secondItem="6Rb-xh-WcQ" secondAttribute="bottom" constant="28" id="nlu-Ft-DNX"/>
                                             <constraint firstItem="Mct-Mu-u73" firstAttribute="leading" secondItem="mhZ-dE-hRX" secondAttribute="leading" constant="20" id="nxH-2e-FNl"/>
+                                            <constraint firstItem="viY-mV-DAp" firstAttribute="top" secondItem="Mct-Mu-u73" secondAttribute="bottom" constant="20" id="oCg-rw-oDG"/>
+                                            <constraint firstItem="viY-mV-DAp" firstAttribute="leading" secondItem="mhZ-dE-hRX" secondAttribute="leading" constant="20" symbolic="YES" id="pDS-6G-b4f"/>
                                             <constraint firstItem="Mct-Mu-u73" firstAttribute="top" secondItem="LZ7-F6-fhm" secondAttribute="bottom" constant="28" id="pOj-nE-TT5"/>
-                                            <constraint firstItem="ec7-HD-mEm" firstAttribute="top" secondItem="Mct-Mu-u73" secondAttribute="bottom" constant="20" id="q90-Mg-vDQ"/>
                                             <constraint firstItem="VYi-m6-Du3" firstAttribute="top" secondItem="NrA-G2-8SW" secondAttribute="bottom" constant="10" id="v1R-9I-bku"/>
                                         </constraints>
                                     </view>
@@ -238,12 +241,11 @@
                         <outlet property="clubInfoTextView" destination="VYi-m6-Du3" id="h2s-Lc-YZY"/>
                         <outlet property="clubServicesStackView" destination="LZ7-F6-fhm" id="Kga-ZG-4Fe"/>
                         <outlet property="clubTitleLabel" destination="hbE-RV-hQK" id="N0Z-dN-uN1"/>
-                        <outlet property="goWebClubButton" destination="UyV-1q-pYF" id="Vdz-lx-ytO"/>
+                        <outlet property="goWebClubButton" destination="UyV-1q-pYF" id="Sel-mH-62S"/>
                         <outlet property="headerUIView" destination="fGc-4M-tfH" id="UFI-TO-bDi"/>
-                        <outlet property="phoneClubButton" destination="UyO-fv-Ezk" id="e5T-XU-vpi"/>
-                        <outlet property="phoneContactBTN" destination="UyO-fv-Ezk" id="DRn-1I-Pql"/>
+                        <outlet property="locationMapView" destination="viY-mV-DAp" id="cpe-0E-il2"/>
+                        <outlet property="phoneClubButton" destination="UyO-fv-Ezk" id="hnJ-JR-QhC"/>
                         <outlet property="reservBTN" destination="hNr-Ye-GUh" id="PgJ-AW-sNj"/>
-                        <outlet property="webContactBTN" destination="UyV-1q-pYF" id="S2V-pK-72E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MZQ-5i-b9v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -271,7 +273,6 @@
     </scenes>
     <resources>
         <image name="InfoClubImg" width="375" height="150"/>
-        <image name="Map-1" width="375" height="160"/>
         <image name="Phone" width="45" height="45"/>
         <image name="Web" width="45" height="45"/>
         <image name="suit.heart" catalog="system" width="128" height="109"/>
@@ -283,6 +284,9 @@
         </namedColor>
         <namedColor name="CorporativeColor">
             <color red="0.20000000000000001" green="0.36862745098039218" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="GoldColor">
+            <color red="0.92941176470588238" green="0.72156862745098038" blue="0.23921568627450981" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="HardColor">
             <color red="0.19607843137254902" green="0.26666666666666666" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

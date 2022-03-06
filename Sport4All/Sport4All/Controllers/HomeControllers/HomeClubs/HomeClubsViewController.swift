@@ -28,6 +28,8 @@ class HomeClubsViewController: UIViewController {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
 		
+		searchBar.delegate = self
+		
 		// Inicialización Collection View
 		initCollectionView()
 				
@@ -106,5 +108,22 @@ extension HomeClubsViewController: UITableViewDataSource, UITableViewDelegate {
 		let vc = UIStoryboard(name: "InfoClub", bundle: nil).instantiateViewController(withIdentifier: "InfoClub") as! InfoClubViewController
 		vc.club = club
 		navigationController?.pushViewController(vc, animated: true)
+	}
+}
+
+extension HomeClubsViewController: UITextFieldDelegate {
+	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+		guard let query = textField.text else { return false }
+		
+		if query.count >= 3 {
+			// Test Search Route
+			clubViewModel.fetchSearchClub(with: query) { [weak self] status in
+				self?.initTableView()
+			}
+		} else {
+			initTableView()
+		}
+		
+		return true
 	}
 }

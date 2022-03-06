@@ -40,6 +40,19 @@ class ClubListViewModel {
 		}
 	}
 	
+	// MARK: Fetch Search Club
+	func fetchSearchClub(with query: String, completion: @escaping (_ status: Int?) -> ()) {
+		NetworkingProvider.shared.searchClubs(with: query) { responseData, status, msg in
+			guard let responseList = responseData else { return }
+			guard let status = status else { return }
+			self.status = status
+			self.clubList = responseList
+			completion(status)
+		} failure: { error in
+			debugPrint(error)
+		}
+	}
+	
 	// MARK: DataSource & Delegate Functions
 	func numberOfRowsInSection(section: Int) -> Int {
 		if clubList.count != 0 {
