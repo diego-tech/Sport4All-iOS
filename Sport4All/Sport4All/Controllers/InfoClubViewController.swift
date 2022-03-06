@@ -17,8 +17,6 @@ class InfoClubViewController: UIViewController {
 	
 	// MARK: Outlets
 	@IBOutlet weak var headerUIView: UIView!
-	@IBOutlet weak var webContactBTN: UIButton!
-	@IBOutlet weak var phoneContactBTN: UIButton!
 	@IBOutlet weak var reservBTN: UIButton!
 	@IBOutlet weak var clubBannerImageView: LazyImageView!
 	@IBOutlet weak var clubTitleLabel: UILabel!
@@ -34,8 +32,6 @@ class InfoClubViewController: UIViewController {
 		// Do any additional setup after loading the view.
 		
 		locationMapView.delegate = self
-		
-		//		locationMapView.addAnnotation(location!)
 		
 		// Configure Models
 		configure()
@@ -54,6 +50,20 @@ class InfoClubViewController: UIViewController {
 	// MARK: Action Functions
 	@IBAction func addToFavouriteButtonAction(_ sender: UIButton) {
 		callAddToFavourite()
+	}
+	
+	@IBAction func goToWebButtonAction(_ sender: UIButton) {
+		guard let tlf = club?.tlf else { return }
+		if let urlToOpen = URL(string: tlf) {
+			UIApplication.shared.open(urlToOpen, options: [:], completionHandler: nil )
+		}
+	}
+	
+	@IBAction func goToCallButtonAction(_ sender: UIButton) {
+		guard let tlf = club?.tlf else { return }
+		if let urlToOpen = URL(string: tlf) {
+			UIApplication.shared.open(urlToOpen, options: [:], completionHandler: nil )
+		}
 	}
 	
 	// MARK: Functions

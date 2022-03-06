@@ -158,7 +158,7 @@
                                                             <color key="baseForegroundColor" name="BlueBerry"/>
                                                         </buttonConfiguration>
                                                         <connections>
-                                                            <action selector="testAction:" destination="I1b-qx-IuD" eventType="touchUpInside" id="b8m-O0-uvc"/>
+                                                            <action selector="goToWebButtonAction:" destination="I1b-qx-IuD" eventType="touchUpInside" id="8fT-kx-nE2"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UyO-fv-Ezk">
@@ -172,6 +172,9 @@
                                                             <fontDescription key="titleFontDescription" name="SFPro-Light" family="SF Pro" pointSize="15"/>
                                                             <color key="baseForegroundColor" name="BlueBerry"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="goToCallButtonAction:" destination="I1b-qx-IuD" eventType="touchUpInside" id="J5T-lf-6oF"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -238,13 +241,11 @@
                         <outlet property="clubInfoTextView" destination="VYi-m6-Du3" id="h2s-Lc-YZY"/>
                         <outlet property="clubServicesStackView" destination="LZ7-F6-fhm" id="Kga-ZG-4Fe"/>
                         <outlet property="clubTitleLabel" destination="hbE-RV-hQK" id="N0Z-dN-uN1"/>
-                        <outlet property="goWebClubButton" destination="UyV-1q-pYF" id="Vdz-lx-ytO"/>
+                        <outlet property="goWebClubButton" destination="UyV-1q-pYF" id="Sel-mH-62S"/>
                         <outlet property="headerUIView" destination="fGc-4M-tfH" id="UFI-TO-bDi"/>
                         <outlet property="locationMapView" destination="viY-mV-DAp" id="cpe-0E-il2"/>
-                        <outlet property="phoneClubButton" destination="UyO-fv-Ezk" id="e5T-XU-vpi"/>
-                        <outlet property="phoneContactBTN" destination="UyO-fv-Ezk" id="DRn-1I-Pql"/>
+                        <outlet property="phoneClubButton" destination="UyO-fv-Ezk" id="hnJ-JR-QhC"/>
                         <outlet property="reservBTN" destination="hNr-Ye-GUh" id="PgJ-AW-sNj"/>
-                        <outlet property="webContactBTN" destination="UyV-1q-pYF" id="S2V-pK-72E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MZQ-5i-b9v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
