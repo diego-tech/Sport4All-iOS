@@ -174,7 +174,7 @@ final class NetworkingProvider {
 		let url = "\(Constants.kBaseURL)/listclubs"
 		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
 		
-		AF.request(url, method: .get, headers: headers).responseDecodable(of: ClubListResponse.self) {
+		AF.request(url, method: .get, headers: headers).responseDecodable(of: ClubListResponse.self, decoder: DateDecoder()) {
 			response in
 			
 			// Handle Response Data && Status Code && Message
@@ -194,7 +194,7 @@ final class NetworkingProvider {
 		let url = "\(Constants.kBaseURL)/listfavs"
 		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
 		
-		AF.request(url, method: .get, headers: headers).responseDecodable(of: ClubListResponse.self) {
+		AF.request(url, method: .get, headers: headers).responseDecodable(of: ClubListResponse.self, decoder: DateDecoder()) {
 			response in
 			
 			// Handle Response Data && Status Code && Message
@@ -208,4 +208,36 @@ final class NetworkingProvider {
 			}
 		}
 	}
+	
+	// MARK: Search Club
+	func searchClubs(with query: String, serverResponse: @escaping (_ responseData: [Club]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+		let url = "\(Constants.kBaseURL)/searchclubs"
+		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
+		
+		AF.request(url, method: .get, parameters: ["name": query], headers: headers).responseDecodable(of: ClubListResponse.self, decoder: DateDecoder()) {
+			response in
+			
+			// Handel Response Data && Status Code && Message
+			if let data = response.value?.data, let status = response.value?.status, let msg = response.value?.msg {
+				serverResponse(data, status, msg)
+			}
+			
+			// Handle Alamofire Error
+			if let error = response.error {
+				failure(error)
+			}
+		}
+	}
 }
+
+/**
+ ROUTES:
+ - List Events: /listevents
+ - Search Clubs: /searchclubs
+ - Join Event: /joinevent
+ - Match Inscription: /matchinscription
+ - Court Reserve: /courtreserve
+ - Ended Matches: /endedmatches
+ - Ended Events: /endedevents
+ - Free Courts: /freecourts
+ */

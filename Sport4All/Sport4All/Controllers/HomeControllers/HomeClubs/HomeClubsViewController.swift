@@ -28,6 +28,15 @@ class HomeClubsViewController: UIViewController {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
 		
+		// Test Search Route
+		NetworkingProvider.shared.searchClubs(with: "Club") { responseData, status, msg in
+			print(responseData)
+			print(status)
+			print(msg)
+		} failure: { error in
+			print(error)
+		}
+		
 		// Inicialización Collection View
 		initCollectionView()
 				
