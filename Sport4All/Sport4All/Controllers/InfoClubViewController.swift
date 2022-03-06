@@ -7,7 +7,7 @@
 
 import UIKit
 import MapKit
-import CoreLocation
+import Contacts
 
 class InfoClubViewController: UIViewController {
 	
@@ -34,6 +34,8 @@ class InfoClubViewController: UIViewController {
 		// Do any additional setup after loading the view.
 		
 		locationMapView.delegate = self
+		
+		//		locationMapView.addAnnotation(location!)
 		
 		// Configure Models
 		configure()
@@ -92,19 +94,22 @@ class InfoClubViewController: UIViewController {
 	}
 	
 	private func configureMapView() {
-		guard let coordinates = location?.coordinates else { return }
 		locationMapView.removeAnnotations(locationMapView.annotations)
+		guard let coordinates = location?.coordinates else { return }
+		guard let locationName = location?.title else { return }
+		guard let placeName = club?.name else { return }
 		
-		let pin = MKPointAnnotation()
-		pin.coordinate = coordinates
-		
+		let annotation = Annotation(coordinate: coordinates, title: placeName, subtitle: locationName)
 		locationMapView.isZoomEnabled = false
-		locationMapView.addAnnotation(pin)
+		locationMapView.isScrollEnabled = false
+		locationMapView.isPitchEnabled = false
+		locationMapView.isRotateEnabled = false
+		locationMapView.addAnnotation(annotation)
 		locationMapView.setRegion(MKCoordinateRegion(
 			center: coordinates,
 			span: MKCoordinateSpan(
-				latitudeDelta: 0.001,
-				longitudeDelta: 0.001)
+				latitudeDelta: 0.01,
+				longitudeDelta: 0.01)
 		), animated: true)
 	}
 	
@@ -130,7 +135,7 @@ class InfoClubViewController: UIViewController {
 		
 		self.navigationItem.setHidesBackButton(true, animated: true)
 	}
-
+	
 	@objc func popView(tapGestureRecognizer: UITapGestureRecognizer) {
 		self.navigationController?.popViewController(animated: true)
 	}
@@ -139,7 +144,43 @@ class InfoClubViewController: UIViewController {
 extension InfoClubViewController: MKMapViewDelegate {
 	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
 		let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "something")
+		let mapsButton = UIButton(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 48, height: 48)))
+		mapsButton.setBackgroundImage(UIImage(named: "Map"), for: .normal)
+		
 		annotationView.markerTintColor = .corporativeColor
+		annotationView.canShowCallout = true
+		annotationView.calloutOffset = CGPoint(x: -5, y: 5)
+		annotationView.rightCalloutAccessoryView = mapsButton
+		annotationView.backgroundColor = .softBlue
 		return annotationView
+	}
+	
+	func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+		guard let place = view.annotation as? Annotation else { return }
+		let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+		place.mapItem?.openInMaps(launchOptions: launchOptions)
+	}
+}
+
+class Annotation: NSObject, MKAnnotation {
+	var coordinate: CLLocationCoordinate2D
+	var title: String?
+	var subtitle: String?
+	
+	init(coordinate: CLLocationCoordinate2D, title: String, subtitle: String) {
+		self.coordinate = coordinate
+		self.title = title
+		self.subtitle = subtitle
+		
+		super.init()
+	}
+	
+	var mapItem: MKMapItem? {
+		guard let location = title else { return nil }
+		let addressDict = [CNPostalAddressStreetKey: location]
+		let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: addressDict)
+		let mapItem = MKMapItem(placemark: placemark)
+		mapItem.name = title
+		return mapItem
 	}
 }
