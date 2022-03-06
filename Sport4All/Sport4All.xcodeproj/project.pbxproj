@@ -47,6 +47,7 @@
 		5E674C2927CE7AC100791D7D /* SocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E674C2827CE7AC100791D7D /* SocialViewController.swift */; };
 		5E7653CE27B2E802000D0A6D /* UISegmentedControlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7653CD27B2E802000D0A6D /* UISegmentedControlExtension.swift */; };
 		5E77E9BF27B1368E004195AE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E77E9BE27B1368E004195AE /* HomeViewController.swift */; };
+		5E7FF13B27D4DA0900D4D576 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7FF13A27D4DA0900D4D576 /* LocationProvider.swift */; };
 		5E8C23BD27C0DC9400763D49 /* ModifyPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8C23BC27C0DC9400763D49 /* ModifyPasswordViewController.swift */; };
 		5E8C23BF27C0EF0600763D49 /* DetailEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8C23BE27C0EF0600763D49 /* DetailEventViewController.swift */; };
 		5E96407F27C68D2700387BFD /* YourClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E96407E27C68D2700387BFD /* YourClubViewController.swift */; };
@@ -128,6 +129,7 @@
 		5E674C2827CE7AC100791D7D /* SocialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialViewController.swift; sourceTree = "<group>"; };
 		5E7653CD27B2E802000D0A6D /* UISegmentedControlExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentedControlExtension.swift; sourceTree = "<group>"; };
 		5E77E9BE27B1368E004195AE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5E7FF13A27D4DA0900D4D576 /* LocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
 		5E8C23BC27C0DC9400763D49 /* ModifyPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPasswordViewController.swift; sourceTree = "<group>"; };
 		5E8C23BE27C0EF0600763D49 /* DetailEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventViewController.swift; sourceTree = "<group>"; };
 		5E96407E27C68D2700387BFD /* YourClubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourClubViewController.swift; sourceTree = "<group>"; };
@@ -435,6 +437,7 @@
 				5EF497A427A55778008B0C37 /* UserDefaults */,
 				5EF497A127A55703008B0C37 /* Decoder */,
 				5EF497A727A55858008B0C37 /* NetworkingProvider.swift */,
+				5E7FF13A27D4DA0900D4D576 /* LocationProvider.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -702,6 +705,7 @@
 				5E12F0FE27C28FEF00316D69 /* OnboardingSlide.swift in Sources */,
 				5EA50EDD27AD2B7900641F2D /* AuxFunctions.swift in Sources */,
 				5E9C14CA279038D0002D9AF1 /* TextStyles.swift in Sources */,
+				5E7FF13B27D4DA0900D4D576 /* LocationProvider.swift in Sources */,
 				5E7653CE27B2E802000D0A6D /* UISegmentedControlExtension.swift in Sources */,
 				5E12F0FB27C2896000316D69 /* OnboardingViewController.swift in Sources */,
 				5EA1A66F27A7E5D60096754C /* NewUser.swift in Sources */,
