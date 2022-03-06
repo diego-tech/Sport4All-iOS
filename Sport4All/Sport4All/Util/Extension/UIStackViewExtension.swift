@@ -16,7 +16,7 @@ extension UIStackView {
 		var servicesImages = [UIImage()]
 		
 		for service in services {
-			servicesImages.append(GetServices.getServices(clubService: service))
+			servicesImages.append(AuxFunctions.getServices(clubService: service))
 		}
 				
 		for servicesImage in servicesImages {
