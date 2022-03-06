@@ -52,25 +52,6 @@ final class NetworkingProvider {
 		}
 	}
 	
-	// MARK: Check User Exists
-	func checkUserExists(firstRegisterData: FirstRegisterDataModel, serverResponse: @escaping (_ responseData: User?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
-		let url = "\(Constants.kBaseURL)/checkIfUserExists"
-		
-		AF.request(url, method: .post, parameters: firstRegisterData, encoder: JSONParameterEncoder.default).responseDecodable(of: Response.self, decoder: DateDecoder()) {
-			response in
-			
-			// Handle Response Data && Status Code && Message
-			if let data = response.value?.data, let status = response.value?.status, let msg = response.value?.msg {
-				serverResponse(data, status, msg)
-			}
-			
-			// Handle Alamofire Error
-			if let error = response.error {
-				failure(error)
-			}
-		}
-	}
-	
 	// MARK: User Login
 	func login(userLogin: UserLogin, serverResponse: @escaping (_ responseData: User?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/login"

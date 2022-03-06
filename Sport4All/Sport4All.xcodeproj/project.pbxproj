@@ -407,15 +407,16 @@
 			children = (
 				5E12F0FC27C28FDA00316D69 /* Onboarding */,
 				5E933A7827C2A71F0087A8EB /* Auth */,
-				5EA4967727BFF54D005B6844 /* Register */,
 				5E9E820E27B283C700A450E8 /* HomeControllers */,
 				5E2FEE6827A442DA008B0AE1 /* RetrievePasswordViewController.swift */,
 				5E12C4B427B6583300F4E7EA /* ProfileViewController.swift */,
 				5E51235227BBC7E60047EE44 /* FavouriteClubsViewController.swift */,
+				5E123C3A27A2F1E400CF14EE /* FirstRegisterViewController.swift */,
 				5E51235D27BBD5D70047EE44 /* InfoClubViewController.swift */,
 				5EDC2CDF27C6A2E1007EE2C0 /* PayResumeViewController.swift */,
 				5E371D2A27A92A5E00446D73 /* TabBarController.swift */,
 				5E8C23BC27C0DC9400763D49 /* ModifyPasswordViewController.swift */,
+				5E123C3C27A2F1F000CF14EE /* SecondRegisterViewController.swift */,
 				5EDC2CE827C6B04A007EE2C0 /* EventPendingListViewController.swift */,
 				5E8C23BE27C0EF0600763D49 /* DetailEventViewController.swift */,
 				5E96407E27C68D2700387BFD /* YourClubViewController.swift */,
@@ -490,15 +491,6 @@
 				5E9E821127B283E200A450E8 /* HomeMatchesViewController.swift */,
 			);
 			path = HomeControllers;
-			sourceTree = "<group>";
-		};
-		5EA4967727BFF54D005B6844 /* Register */ = {
-			isa = PBXGroup;
-			children = (
-				5E123C3A27A2F1E400CF14EE /* FirstRegisterViewController.swift */,
-				5E123C3C27A2F1F000CF14EE /* SecondRegisterViewController.swift */,
-			);
-			path = Register;
 			sourceTree = "<group>";
 		};
 		5EA50EDB27AD2B6600641F2D /* AuxFunctions */ = {

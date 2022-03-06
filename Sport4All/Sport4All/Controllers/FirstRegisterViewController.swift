@@ -44,7 +44,7 @@ class FirstRegisterViewController: UIViewController {
 	@IBAction func nextButtonAction(_ sender: UIButton) {
 		if !firstEmailTF.checkIfIsEmpty(placeHolderText: "Introduzca el Correo Electrónico") && !secondEmailTF.checkIfIsEmpty(placeHolderText: "Introduzca el Correo Electrónico") && !firstPasswordTF.checkIfIsEmpty(placeHolderText: "Introduzca la Contraseña") && !secondPasswordTF.checkIfIsEmpty(placeHolderText: "Introduzca la Contraseña") {
 			if (checkIfEmailIsSame() && checkIfPassIsSame()) {
-				checkUserExists()
+				registerApi()
 			}
 		}
 	}
@@ -54,47 +54,35 @@ class FirstRegisterViewController: UIViewController {
 	}
 	
 	// MARK: Functions
-	private func getTFValues() -> FirstRegisterDataModel{		
+	private func getTFValues() -> NewUser {
 		if let email = secondEmailTF.text, let password = secondPasswordTF.text {
 			registerUserEmail = email
 			registerUserPassword = password
 		}
 		
-		return FirstRegisterDataModel(email: registerUserEmail, password: registerUserPassword)
+		return NewUser(email: registerUserEmail, password: registerUserPassword, genre: nil, name: nil, surname: nil, image: nil)
 	}
 	
-	private func checkUserExists() {
-		let firstRegisterData = getTFValues()
-		
-		NetworkingProvider.shared.checkUserExists(firstRegisterData: firstRegisterData) { responseData, status, msg in
-			let statusCode = status
+	private func registerApi() {
+		let newUser = getTFValues()
+
+		NetworkingProvider.shared.register(newUser: newUser) { responseData, status, msg in
+			print(responseData)
+			print(status)
+			print(msg)
 			
+			let statusCode = status
+		
 			if AuxFunctions.checkStatusCode(statusCode: statusCode) {
-				self.navigateToSecondRegister()
-			} else {
-				let response = responseData
-				debugPrint(response)
-				
-				let message = msg
-				self.alertFunction(title: "Error", msg: message!)
+				self.navigateToAuthController()
 			}
 		} failure: { error in
-			let err = error
-			debugPrint(err)
+			print(error)
 		}
 	}
 	
-	private func navigateToSecondRegister() {
-		let vc = UIStoryboard(name: "Register", bundle: nil).instantiateViewController(withIdentifier: "SecondRegister") as! SecondRegisterViewController
-		
-		if firstEmailTF.text != "" {
-			vc.registerUserEmail = firstEmailTF.text!
-		}
-		
-		if firstPasswordTF.text != "" {
-			vc.registerUserPassoword = firstPasswordTF.text!
-		}
-		
+	private func navigateToAuthController() {
+		let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login")
 		present(vc, animated: true, completion: nil)
 	}
 	
