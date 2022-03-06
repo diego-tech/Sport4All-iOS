@@ -62,7 +62,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <imageReference key="image" image="suit.heart" catalog="system" symbolScale="large" renderingMode="template"/>
-                                            <color key="baseForegroundColor" name="HardColor"/>
+                                            <color key="baseForegroundColor" name="GoldColor"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="addToFavouriteButtonAction:" destination="I1b-qx-IuD" eventType="touchUpInside" id="aVD-7M-FDN"/>
@@ -283,6 +283,9 @@
         </namedColor>
         <namedColor name="CorporativeColor">
             <color red="0.20000000000000001" green="0.36862745098039218" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="GoldColor">
+            <color red="0.92941176470588238" green="0.72156862745098038" blue="0.23921568627450981" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="HardColor">
             <color red="0.19607843137254902" green="0.26666666666666666" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -30,7 +30,7 @@ class InfoClubViewController: UIViewController {
         // Do any additional setup after loading the view.
 		configure()
 		
-		addFavouriteButton.setImage(UIImage(systemName: "suit.heart", withConfiguration: UIImage.SymbolConfiguration(pointSize: 18)), for: .normal)
+		addFavouriteButton.setImage(UIImage(systemName: "star", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), for: .normal)
 		
 		// Configure NavBar
 		configureNavbar()
@@ -62,7 +62,7 @@ class InfoClubViewController: UIViewController {
 	func callAddToFavourite() {
 		guard let id = club?.id else { return }
 		NetworkingProvider.shared.registerFavClub(clubId: id) { responseData, status, msg in
-			self.addFavouriteButton.setImage(UIImage(systemName: "suit.heart.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 18)), for: .normal)
+			self.addFavouriteButton.setImage(UIImage(systemName: "star.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), for: .normal)
 			print(responseData)
 			print(status)
 			print(msg)
