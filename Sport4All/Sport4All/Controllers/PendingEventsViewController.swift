@@ -34,7 +34,7 @@ class PendingEventsViewController: UIViewController {
 	
 	// MARK: Functions
 	private func testQRCodeGen() {
-		barcodeIV.image = GenQRCode.generateQRCodeImage(reservationCode: "test")
+		barcodeIV.image = AuxFunctions.generateQRCodeImage(reservationCode: "test")
 	}
 	
 	// MARK: Styles

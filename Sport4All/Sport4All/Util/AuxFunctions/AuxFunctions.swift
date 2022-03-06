@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreImage.CIFilterBuiltins
 
 final class AuxFunctions {
 	
@@ -39,5 +40,20 @@ final class AuxFunctions {
 		default:
 			return UIImage(systemName: "house.circle.fill")!
 		}
+	}
+	
+	// Generate QR Code Image
+	static func generateQRCodeImage(reservationCode: String) -> UIImage {
+		let context = CIContext()
+		let filter = CIFilter.qrCodeGenerator()
+		let data = Data(reservationCode.utf8)
+		filter.setValue(data, forKey: "inputMessage")
+		
+		if let qrCodeImage = filter.outputImage {
+			if let qrCodeCgImage = context.createCGImage(qrCodeImage, from: qrCodeImage.extent) {
+				return UIImage(cgImage: qrCodeCgImage)
+			}
+		}
+		return UIImage(systemName: "xmark.circle.fill") ?? UIImage()
 	}
 }
