@@ -10,6 +10,8 @@ import UIKit
 class ClubTableViewCell: UITableViewCell {
 
 	// Variables
+	var blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
+	var blurEffectView = UIVisualEffectView()
 	
 	// Outlets
 	@IBOutlet weak var homeClubsUIView: UIView!
@@ -21,6 +23,11 @@ class ClubTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+		
+		blurEffectView.effect = blurEffect
+		blurEffectView.frame = clubImageView.bounds
+		blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+		clubImageView.addSubview(blurEffectView)
 		
 		// Inicialización Estilos
 		uiViewStyles()
@@ -43,7 +50,12 @@ class ClubTableViewCell: UITableViewCell {
 		self.clubNameLabel.text = clubName
 		self.clubPhoneLabel.text = clubPhone
 		self.servicesStackView.setServicesInStackView(services: services, imageSize: CGRect(x: 0, y: 0, width: 50, height: 50))
-		self.clubImageView.loadImage(fromURL: url, placeHolderImage: "")
+		self.clubImageView.loadImage(fromURL: url)
+		UIView.animate(withDuration: 0.2, delay: 0.2, options: .curveEaseInOut) {
+			self.blurEffectView.alpha = 0
+		} completion: { finished in
+			print("Finish Anim")
+		}
 	}
 	
 	

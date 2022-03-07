@@ -76,7 +76,7 @@ class InfoClubViewController: UIViewController {
 		guard let location = club.direction else { return debugPrint("Error Dirección") }
 		
 		self.clubTitleLabel.text = club.name
-		self.clubBannerImageView.loadImage(fromURL: url, placeHolderImage: "HomeLogo")
+		self.clubBannerImageView.loadImage(fromURL: url)
 		self.clubInfoTextView.text = description
 		self.clubServicesStackView.setServicesInStackView(services: services, imageSize: CGRect(x: 0, y: 0, width: 50, height: 50))
 		self.callFindLocation(locationName: location)

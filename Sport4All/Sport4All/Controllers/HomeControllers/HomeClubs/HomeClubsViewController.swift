@@ -20,8 +20,15 @@ class HomeClubsViewController: UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		
+		searchBar.text = ""
+		
 		// Inicialización Table View
 		clubList()
+	}
+	
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+		view.endEditing(true)
+		super.touchesBegan(touches, with: event)
 	}
 	
 	override func viewDidLoad() {

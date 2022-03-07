@@ -35,7 +35,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="WhiteLogo" width="665.5" height="665.5"/>
+        <image name="WhiteLogo" width="666" height="666"/>
         <namedColor name="CorporativeColor">
             <color red="0.20000000000000001" green="0.36862745098039218" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

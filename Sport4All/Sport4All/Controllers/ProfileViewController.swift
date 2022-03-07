@@ -56,7 +56,7 @@ class ProfileViewController: UIViewController {
 			let allUserName = userName + " " + userSurname
 			self.userNameLabel.text = allUserName
 			
-			self.userImageView.loadImage(fromURL: url, placeHolderImage: "HomeLogo")
+			self.userImageView.loadImage(fromURL: url)
 		} failure: { error in
 			print(error)
 		}
