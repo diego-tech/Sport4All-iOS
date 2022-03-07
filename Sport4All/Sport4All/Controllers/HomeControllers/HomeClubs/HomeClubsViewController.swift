@@ -11,8 +11,6 @@ class HomeClubsViewController: UIViewController {
 	
 	// MARK: Variables
 	private var clubViewModel = ClubListViewModel()
-	private var club: Club?
-	private var clubTableView = ClubTableViewCell()
 	
 	// MARK: Outlets
 	@IBOutlet weak var searchBar: UITextField!
@@ -21,7 +19,7 @@ class HomeClubsViewController: UIViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-				
+		
 		// Inicialización Table View
 		clubList()
 	}
@@ -30,9 +28,11 @@ class HomeClubsViewController: UIViewController {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
 		
+		searchBar.delegate = self
+		
 		// Inicialización Collection View
 		initCollectionView()
-				
+		
 		// Custom Search Bar
 		searchBar.customSearch()
 	}
@@ -93,10 +93,10 @@ extension HomeClubsViewController: UITableViewDataSource, UITableViewDelegate {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = homeClubsTableView.dequeueReusableCell(withIdentifier: "ClubTableViewCell") as! ClubTableViewCell
+		guard let cell = homeClubsTableView.dequeueReusableCell(withIdentifier: "ClubTableViewCell") as? ClubTableViewCell else { return UITableViewCell() }
+		let club = clubViewModel.cellForRowAt(indexPath: indexPath)
 		
-		club = clubViewModel.cellForRowAt(indexPath: indexPath)
-		cell.setCellWithValueOf(club!)
+		cell.setCellWithValueOf(club)
 		return cell
 	}
 	
@@ -108,5 +108,21 @@ extension HomeClubsViewController: UITableViewDataSource, UITableViewDelegate {
 		let vc = UIStoryboard(name: "InfoClub", bundle: nil).instantiateViewController(withIdentifier: "InfoClub") as! InfoClubViewController
 		vc.club = club
 		navigationController?.pushViewController(vc, animated: true)
+	}
+}
+
+extension HomeClubsViewController: UITextFieldDelegate {
+	func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+		guard let query = textField.text else { return false }
+		
+		if query.count >= 3 {
+			// Test Search Route
+			clubViewModel.fetchSearchClub(with: query) { [weak self] status in
+				self?.initTableView()
+			}
+		} else {
+			initTableView()
+		}
+		return true
 	}
 }
