@@ -14,6 +14,7 @@ class InfoClubViewController: UIViewController {
 	// MARK: Variables
 	var club: Club?
 	var location: Location?
+	private var isFavourite: Bool = false
 	
 	// MARK: Outlets
 	@IBOutlet weak var headerUIView: UIView!
@@ -49,7 +50,9 @@ class InfoClubViewController: UIViewController {
 	
 	// MARK: Action Functions
 	@IBAction func addToFavouriteButtonAction(_ sender: UIButton) {
-		callAddToFavourite()
+//		callAddToFavourite()
+		setFavouriteButton()		
+		self.addFavouriteButton.setImage(UIImage(systemName: !isFavourite ? "star" : "star.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), for: .normal)
 	}
 	
 	@IBAction func goToWebButtonAction(_ sender: UIButton) {
@@ -127,6 +130,14 @@ class InfoClubViewController: UIViewController {
 				latitudeDelta: 0.01,
 				longitudeDelta: 0.01)
 		), animated: true)
+	}
+	
+	private func setFavouriteButton() {
+		if isFavourite {
+			isFavourite = false
+		} else {
+			isFavourite = true
+		}
 	}
 	
 	// MARK: Styles
