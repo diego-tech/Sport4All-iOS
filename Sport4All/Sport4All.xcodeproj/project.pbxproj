@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070B1E9C27D615B500B3DA5E /* matchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070B1E9A27D615B500B3DA5E /* matchListTableViewCell.swift */; };
+		070B1E9D27D615B500B3DA5E /* matchListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070B1E9B27D615B500B3DA5E /* matchListTableViewCell.xib */; };
 		077D5F1627C77821008D50AD /* FinishEventDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 077D5F1527C77821008D50AD /* FinishEventDetail.storyboard */; };
 		07AB1FCA27AA9599007771E3 /* BestRatedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB1FC827AA9599007771E3 /* BestRatedCollectionViewCell.swift */; };
 		07AB1FCB27AA9599007771E3 /* BestRatedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB1FC927AA9599007771E3 /* BestRatedCollectionViewCell.xib */; };
@@ -90,6 +92,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		070B1E9A27D615B500B3DA5E /* matchListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = matchListTableViewCell.swift; path = ../../../../../../../Desktop/matchListTableViewCell.swift; sourceTree = "<group>"; };
+		070B1E9B27D615B500B3DA5E /* matchListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = matchListTableViewCell.xib; path = ../../../../../../../Desktop/matchListTableViewCell.xib; sourceTree = "<group>"; };
+		070B1E9E27D615C200B3DA5E /* matchListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = matchListTableViewCell.xib; sourceTree = "<group>"; };
+		070B1E9F27D615C200B3DA5E /* matchListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = matchListTableViewCell.swift; sourceTree = "<group>"; };
 		077D5F1527C77821008D50AD /* FinishEventDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FinishEventDetail.storyboard; sourceTree = "<group>"; };
 		07AB1FC827AA9599007771E3 /* BestRatedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestRatedCollectionViewCell.swift; sourceTree = "<group>"; };
 		07AB1FC927AA9599007771E3 /* BestRatedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestRatedCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -185,6 +191,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		070B1EA027D615C800B3DA5E /* matchList */ = {
+			isa = PBXGroup;
+			children = (
+				070B1E9F27D615C200B3DA5E /* matchListTableViewCell.swift */,
+				070B1E9E27D615C200B3DA5E /* matchListTableViewCell.xib */,
+			);
+			path = matchList;
+			sourceTree = "<group>";
+		};
 		592748E627C4E3EB00C535F1 /* EventsPending */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +306,8 @@
 				5E197EFD278D7E36008BBABB /* Extension */,
 				5E197F00278D7E6F008BBABB /* Constants.swift */,
 				5E9C14C9279038D0002D9AF1 /* TextStyles.swift */,
+				070B1E9A27D615B500B3DA5E /* matchListTableViewCell.swift */,
+				070B1E9B27D615B500B3DA5E /* matchListTableViewCell.xib */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -551,6 +568,7 @@
 		5EF360F527AA9B2B00105AB7 /* CellsView */ = {
 			isa = PBXGroup;
 			children = (
+				070B1EA027D615C800B3DA5E /* matchList */,
 				598E071527C3C20C00D5C185 /* Your Club */,
 				5999B68127B285380008BE6B /* ClubCell */,
 				5EF360F627AA9B3300105AB7 /* BestRated */,
@@ -660,6 +678,7 @@
 				5E9C14C42790358F002D9AF1 /* SF-Pro-Display-Medium.otf in Resources */,
 				5999B68527B285640008BE6B /* ClubTableViewCell.xib in Resources */,
 				07AB1FCB27AA9599007771E3 /* BestRatedCollectionViewCell.xib in Resources */,
+				070B1E9D27D615B500B3DA5E /* matchListTableViewCell.xib in Resources */,
 				5E371D2927A925F900446D73 /* TabBar.storyboard in Resources */,
 				5E2FEE6727A43E3E008B0AE1 /* RetrievePassword.storyboard in Resources */,
 				077D5F1627C77821008D50AD /* FinishEventDetail.storyboard in Resources */,
@@ -725,6 +744,7 @@
 				5E96407F27C68D2700387BFD /* YourClubViewController.swift in Sources */,
 				5EC1EFDF27BFB7C90089C436 /* UIViewExtension.swift in Sources */,
 				5E9661D227C78DAF00EEFC14 /* ClubListViewModel.swift in Sources */,
+				070B1E9C27D615B500B3DA5E /* matchListTableViewCell.swift in Sources */,
 				5EF497A327A5570F008B0C37 /* DateDecoder.swift in Sources */,
 				5E96408127C69AE100387BFD /* PendingEventsViewController.swift in Sources */,
 				5E12C4B527B6583300F4E7EA /* ProfileViewController.swift in Sources */,
