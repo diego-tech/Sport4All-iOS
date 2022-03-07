@@ -90,6 +90,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		070B1E9E27D615C200B3DA5E /* MatchListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchListTableViewCell.xib; sourceTree = "<group>"; };
 		077D5F1527C77821008D50AD /* FinishEventDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FinishEventDetail.storyboard; sourceTree = "<group>"; };
 		07AB1FC827AA9599007771E3 /* BestRatedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestRatedCollectionViewCell.swift; sourceTree = "<group>"; };
 		07AB1FC927AA9599007771E3 /* BestRatedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestRatedCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -185,6 +186,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		070B1EA027D615C800B3DA5E /* MatchList */ = {
+			isa = PBXGroup;
+			children = (
+				070B1E9E27D615C200B3DA5E /* MatchListTableViewCell.xib */,
+			);
+			path = MatchList;
+			sourceTree = "<group>";
+		};
 		592748E627C4E3EB00C535F1 /* EventsPending */ = {
 			isa = PBXGroup;
 			children = (
@@ -551,6 +560,7 @@
 		5EF360F527AA9B2B00105AB7 /* CellsView */ = {
 			isa = PBXGroup;
 			children = (
+				070B1EA027D615C800B3DA5E /* MatchList */,
 				598E071527C3C20C00D5C185 /* Your Club */,
 				5999B68127B285380008BE6B /* ClubCell */,
 				5EF360F627AA9B3300105AB7 /* BestRated */,
