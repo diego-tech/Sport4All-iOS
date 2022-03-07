@@ -33,13 +33,13 @@ class InfoClubViewController: UIViewController {
 		// Do any additional setup after loading the view.
 		
 		locationMapView.delegate = self
-		
+	
 		// Configure Models
 		configure()
 		
-		// Configure Add Favourite Button
-		addFavouriteButton.setImage(UIImage(systemName: "star", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), for: .normal)
-		
+		// Configure Favourite
+		setFavouriteButton()
+
 		// Configure NavBar
 		configureNavbar()
 		
@@ -51,8 +51,12 @@ class InfoClubViewController: UIViewController {
 	// MARK: Action Functions
 	@IBAction func addToFavouriteButtonAction(_ sender: UIButton) {
 //		callAddToFavourite()
-		setFavouriteButton()		
-		self.addFavouriteButton.setImage(UIImage(systemName: !isFavourite ? "star" : "star.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), for: .normal)
+		if isFavourite {
+			isFavourite = false
+		} else {
+			isFavourite = true
+		}
+		setFavouriteButton()
 	}
 	
 	@IBAction func goToWebButtonAction(_ sender: UIButton) {
@@ -80,6 +84,7 @@ class InfoClubViewController: UIViewController {
 		guard let description = club.description else { return debugPrint("Error Desc") }
 		guard let services = club.services else { return debugPrint("Error Servicios") }
 		guard let location = club.direction else { return debugPrint("Error Dirección") }
+		guard let fav = club.fav else { return debugPrint("Error Fav")}
 		
 		self.clubTitleLabel.text = club.name
 		
@@ -89,6 +94,12 @@ class InfoClubViewController: UIViewController {
 		self.clubInfoTextView.text = description
 		self.clubServicesStackView.setServicesInStackView(services: services, imageSize: CGRect(x: 0, y: 0, width: 50, height: 50))
 		self.callFindLocation(locationName: location)
+		
+		if fav {
+			isFavourite = true
+		} else {
+			isFavourite = false
+		}
 	}
 	
 	private func callFindLocation(locationName: String) {
@@ -103,7 +114,6 @@ class InfoClubViewController: UIViewController {
 	private func callAddToFavourite() {
 		guard let id = club?.id else { return }
 		NetworkingProvider.shared.registerFavClub(clubId: id) { responseData, status, msg in
-			self.addFavouriteButton.setImage(UIImage(systemName: "star.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), for: .normal)
 			print(responseData)
 			print(status)
 			print(msg)
@@ -133,11 +143,7 @@ class InfoClubViewController: UIViewController {
 	}
 	
 	private func setFavouriteButton() {
-		if isFavourite {
-			isFavourite = false
-		} else {
-			isFavourite = true
-		}
+		self.addFavouriteButton.setImage(UIImage(systemName: !isFavourite ? "star" : "star.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), for: .normal)
 	}
 	
 	// MARK: Styles

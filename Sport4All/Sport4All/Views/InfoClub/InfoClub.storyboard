@@ -61,7 +61,8 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
-                                            <imageReference key="image" image="suit.heart" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            <imageReference key="image" image="star" catalog="system" symbolScale="large" renderingMode="template"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
                                             <color key="baseForegroundColor" name="GoldColor"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -274,7 +275,7 @@
     <resources>
         <image name="Phone" width="45" height="45"/>
         <image name="Web" width="45" height="45"/>
-        <image name="suit.heart" catalog="system" width="128" height="109"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <namedColor name="BackgroundColor">
             <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
