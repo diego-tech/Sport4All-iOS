@@ -36,27 +36,27 @@ class OnboardingViewController: UIViewController {
 			OnboardingSlide(
 				title: "Screen 1",
 				description: "En el apartado clubes, podrás encontrar información sobre los clubes en los que podrás reservar espacios deportivos.",
-				image: UIImage(named: "WhiteLogo")!),
+				image: UIImage(named: "LaunchLogo")!),
 			OnboardingSlide(
 				title: "Screen 2",
 				description: "En el apartado partidos podrás jugar con otros usuarios que necesiten compañeros en sus partidos.",
-				image: UIImage(named: "WhiteLogo")!),
+				image: UIImage(named: "LaunchLogo")!),
 			OnboardingSlide(
 				title: "Screen 3",
 				description: "Acceda fácilmente a los establecimientos identificándose con el código Qr que se le facilitará al realizar la reserva.",
-				image: UIImage(named: "WhiteLogo")!),
+				image: UIImage(named: "LaunchLogo")!),
 			OnboardingSlide(
 				title: "Screen 4",
 				description: "Podrá registrarse en los eventos que los clubes realizan, como torneos, partidos amistosos, webinars y muchas más actividades.",
-				image: UIImage(named: "WhiteLogo")!),
+				image: UIImage(named: "LaunchLogo")!),
 			OnboardingSlide(
 				title: "Screen 5",
 				description: "Controle los eventos personalizados que su club le proporcione.",
-				image: UIImage(named: "WhiteLogo")!),
+				image: UIImage(named: "LaunchLogo")!),
 			OnboardingSlide(
 				title: "Screen 6",
 				description: "Registresé en nuesta aplicación y disfrute de la diversión de hacer deporte.",
-				image: UIImage(named: "WhiteLogo")!)
+				image: UIImage(named: "LaunchLogo")!)
 		]
 		
 		

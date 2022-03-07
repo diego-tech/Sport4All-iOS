@@ -12,7 +12,7 @@ class LazyImageView: UIImageView {
 	private let imageCache = NSCache<AnyObject, UIImage>()
 	
 	func loadImage(fromURL imageURL: URL)
-	{
+	{		
 		if let cachedImage = self.imageCache.object(forKey: imageURL as AnyObject)
 		{
 			self.image = cachedImage

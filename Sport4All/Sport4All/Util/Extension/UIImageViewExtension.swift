@@ -38,8 +38,9 @@ extension UIImageView {
 		self.addSubview(blurEffectView)
 	}
 	
+	// Efecto Blur Alpha 0
 	func setBlurAlpha0Effect() {
-		UIView.animate(withDuration: 0.3, delay: 0.3, options: .curveEaseInOut) {
+		UIView.animate(withDuration: 0.4, delay: 0.4, options: .curveEaseInOut) {
 			blurEffectView.alpha = 0
 		}
 	}
