@@ -19,7 +19,7 @@ class HomeClubsViewController: UIViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-				
+		
 		// Inicialización Table View
 		clubList()
 	}
@@ -32,7 +32,7 @@ class HomeClubsViewController: UIViewController {
 		
 		// Inicialización Collection View
 		initCollectionView()
-				
+		
 		// Custom Search Bar
 		searchBar.customSearch()
 	}
@@ -95,7 +95,7 @@ extension HomeClubsViewController: UITableViewDataSource, UITableViewDelegate {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = homeClubsTableView.dequeueReusableCell(withIdentifier: "ClubTableViewCell") as? ClubTableViewCell else { return UITableViewCell() }
 		let club = clubViewModel.cellForRowAt(indexPath: indexPath)
-
+		
 		cell.setCellWithValueOf(club)
 		return cell
 	}
@@ -112,7 +112,7 @@ extension HomeClubsViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension HomeClubsViewController: UITextFieldDelegate {
-	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+	func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
 		guard let query = textField.text else { return false }
 		
 		if query.count >= 3 {
@@ -123,7 +123,6 @@ extension HomeClubsViewController: UITextFieldDelegate {
 		} else {
 			initTableView()
 		}
-		
 		return true
 	}
 }

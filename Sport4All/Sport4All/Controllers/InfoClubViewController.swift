@@ -151,6 +151,7 @@ class InfoClubViewController: UIViewController {
 	}
 }
 
+// MARK: MKMapView Extension
 extension InfoClubViewController: MKMapViewDelegate {
 	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
 		let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "something")
@@ -172,6 +173,7 @@ extension InfoClubViewController: MKMapViewDelegate {
 	}
 }
 
+// MARK: Annotation Class
 class Annotation: NSObject, MKAnnotation {
 	var coordinate: CLLocationCoordinate2D
 	var title: String?

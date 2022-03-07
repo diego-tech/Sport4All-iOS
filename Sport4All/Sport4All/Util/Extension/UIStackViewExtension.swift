@@ -22,11 +22,13 @@ extension UIStackView {
 		for servicesImage in servicesImages {
 			let serviceImageView: UIImageView = {
 				let image = UIImageView(frame: imageSize)
+				image.contentMode = .scaleToFill
 				image.tintColor = .corporativeColor
 				return image
 			}()
 			serviceImageView.image = servicesImage
 			self.addArrangedSubview(serviceImageView)
+			print(serviceImageView.frame)
 		}
 	}
 }
