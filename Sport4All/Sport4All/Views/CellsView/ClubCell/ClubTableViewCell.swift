@@ -9,9 +9,9 @@ import UIKit
 
 class ClubTableViewCell: UITableViewCell {
 
-	// Variables
+	// MARK: Variables
 	
-	// Outlets
+	// MARK: Outlets
 	@IBOutlet weak var homeClubsUIView: UIView!
 	@IBOutlet weak var clubImageView: LazyImageView!
 	@IBOutlet weak var clubNameLabel: UILabel!
