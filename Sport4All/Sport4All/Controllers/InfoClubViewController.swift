@@ -68,6 +68,9 @@ class InfoClubViewController: UIViewController {
 	
 	// MARK: Functions
 	private func configure() {
+		// Load Blur Effect
+		self.clubBannerImageView.setBlurEffect()
+		
 		guard let club = club else { return debugPrint("Error Club") }
 		guard let banner = club.club_banner else { return debugPrint("Error Banner") }
 		guard let url = URL(string: Constants.kStorageURL + banner) else { return debugPrint("Error Url Imagen") }
@@ -76,7 +79,10 @@ class InfoClubViewController: UIViewController {
 		guard let location = club.direction else { return debugPrint("Error Dirección") }
 		
 		self.clubTitleLabel.text = club.name
+		
 		self.clubBannerImageView.loadImage(fromURL: url)
+		self.clubBannerImageView.setBlurAlpha0Effect()
+
 		self.clubInfoTextView.text = description
 		self.clubServicesStackView.setServicesInStackView(services: services, imageSize: CGRect(x: 0, y: 0, width: 50, height: 50))
 		self.callFindLocation(locationName: location)

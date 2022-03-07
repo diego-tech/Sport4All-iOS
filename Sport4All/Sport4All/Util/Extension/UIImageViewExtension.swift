@@ -7,6 +7,9 @@
 
 import UIKit
 
+var blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
+var blurEffectView = UIVisualEffectView()
+
 extension UIImageView {
 	
 	// Imagen Redonda
@@ -18,12 +21,26 @@ extension UIImageView {
 	}
 	
 	// Redondeo de dos bordes
-	public func roundOnlyTwoCorners(_ corners: UIRectCorner, radius: CGFloat) {
+	func roundOnlyTwoCorners(_ corners: UIRectCorner, radius: CGFloat) {
 		let maskPath = UIBezierPath(roundedRect: bounds,
 									byRoundingCorners: corners,
 									cornerRadii: CGSize(width: radius, height: radius))
 		let shape = CAShapeLayer()
 		shape.path = maskPath.cgPath
 		layer.mask = shape
+	}
+	
+	// Efecto Blur cuando carguen las imágenes
+	func setBlurEffect() {
+		blurEffectView.effect = blurEffect
+		blurEffectView.frame = self.bounds
+		blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+		self.addSubview(blurEffectView)
+	}
+	
+	func setBlurAlpha0Effect() {
+		UIView.animate(withDuration: 0.3, delay: 0.3, options: .curveEaseInOut) {
+			blurEffectView.alpha = 0
+		}
 	}
 }

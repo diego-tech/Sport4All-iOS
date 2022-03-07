@@ -95,8 +95,11 @@
                                             <constraint firstAttribute="height" constant="128" id="dB9-xr-zfG"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rodrigo Díaz de Vivar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKy-kd-y8y">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKy-kd-y8y">
                                         <rect key="frame" x="20" y="178" width="374" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="26" id="61b-vt-XeK"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="22"/>
                                         <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>

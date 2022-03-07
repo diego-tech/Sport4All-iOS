@@ -128,7 +128,7 @@ extension HomeClubsViewController: UITextFieldDelegate {
 				self?.initTableView()
 			}
 		} else {
-			initTableView()
+			clubList()
 		}
 		return true
 	}

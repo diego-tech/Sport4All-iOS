@@ -10,8 +10,6 @@ import UIKit
 class ClubTableViewCell: UITableViewCell {
 
 	// Variables
-	var blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
-	var blurEffectView = UIVisualEffectView()
 	
 	// Outlets
 	@IBOutlet weak var homeClubsUIView: UIView!
@@ -23,12 +21,7 @@ class ClubTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-		
-		blurEffectView.effect = blurEffect
-		blurEffectView.frame = clubImageView.bounds
-		blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-		clubImageView.addSubview(blurEffectView)
-		
+
 		// Inicialización Estilos
 		uiViewStyles()
 		clubImageView.roundOnlyTwoCorners([.bottomLeft, .topLeft], radius: 10)
@@ -43,6 +36,8 @@ class ClubTableViewCell: UITableViewCell {
 	}
 	
 	private func updateUI(clubName: String?, clubPhone: String?, clubImageStr: String?, services: [ClubService]?) {
+		clubImageView.setBlurEffect()
+		
 		guard let clubImageStr = clubImageStr else { return print("Hola") }
 		guard let services = services else { return print("Hola") }
 		guard let url = URL(string: Constants.kStorageURL + clubImageStr) else { return print("Hola") }
@@ -51,11 +46,7 @@ class ClubTableViewCell: UITableViewCell {
 		self.clubPhoneLabel.text = clubPhone
 		self.servicesStackView.setServicesInStackView(services: services, imageSize: CGRect(x: 0, y: 0, width: 50, height: 50))
 		self.clubImageView.loadImage(fromURL: url)
-		UIView.animate(withDuration: 0.2, delay: 0.2, options: .curveEaseInOut) {
-			self.blurEffectView.alpha = 0
-		} completion: { finished in
-			print("Finish Anim")
-		}
+		self.clubImageView.setBlurAlpha0Effect()
 	}
 	
 	

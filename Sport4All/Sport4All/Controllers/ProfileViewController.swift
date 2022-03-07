@@ -48,6 +48,9 @@ class ProfileViewController: UIViewController {
 	// MARK: Functions
 	private func fetchUserInfo() {
 		NetworkingProvider.shared.userInfo { responseData, status, msg in
+			// Image Blur Effect
+			self.userImageView.setBlurEffect()
+			
 			guard let userName = responseData?.name else { return }
 			guard let userImage = responseData?.image else { return }
 			guard let userSurname = responseData?.surname else { return }
@@ -57,6 +60,7 @@ class ProfileViewController: UIViewController {
 			self.userNameLabel.text = allUserName
 			
 			self.userImageView.loadImage(fromURL: url)
+			self.userImageView.setBlurAlpha0Effect()
 		} failure: { error in
 			print(error)
 		}
