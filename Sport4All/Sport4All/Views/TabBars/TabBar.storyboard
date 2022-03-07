@@ -218,6 +218,9 @@
                                                     <fontDescription key="titleFontDescription" name="SFPro-Semibold" family="SF Pro" pointSize="20"/>
                                                     <color key="baseForegroundColor" name="HardColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="yourClubButtonAction:" destination="jt6-XG-Gur" eventType="touchUpInside" id="BZ5-lC-s7y"/>
+                                                </connections>
                                             </button>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="QEg-6C-Lam">
                                                 <rect key="frame" x="10" y="544" width="394" height="326"/>

@@ -45,6 +45,11 @@ class ProfileViewController: UIViewController {
 		debugPrint("Pulsado")
 	}
 	
+	@IBAction func yourClubButtonAction(_ sender: UIButton) {
+		let vc = UIStoryboard(name: "YourClub", bundle: nil).instantiateViewController(withIdentifier: "YourClub") as! YourClubViewController
+		navigationController?.pushViewController(vc, animated: true)
+	}
+	
 	// MARK: Functions
 	private func fetchUserInfo() {
 		NetworkingProvider.shared.userInfo { responseData, status, msg in
