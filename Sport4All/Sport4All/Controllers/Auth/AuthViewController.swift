@@ -44,6 +44,11 @@ class AuthViewController: UIViewController {
 //		clubList()
 	}
 	
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+		view.endEditing(true)
+		super.touchesBegan(touches, with: event)
+	}
+	
 	// MARK: Action Functions
 	@IBAction func rememberPasswordButtonAction(_ sender: UIButton) {
 		// Ir a Recuperar Contraseña

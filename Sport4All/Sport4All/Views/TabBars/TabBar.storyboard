@@ -339,7 +339,7 @@
         <!--Home Clubs View Controller-->
         <scene sceneID="8GI-5i-dzO">
             <objects>
-                <viewController id="Xfe-cB-3xL" customClass="HomeClubsViewController" customModule="Sport4All" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeClubs" id="Xfe-cB-3xL" customClass="HomeClubsViewController" customModule="Sport4All" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zwy-XK-wLu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="654"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

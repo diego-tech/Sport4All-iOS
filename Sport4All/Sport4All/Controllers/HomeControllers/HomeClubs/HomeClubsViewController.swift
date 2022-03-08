@@ -98,6 +98,15 @@ extension HomeClubsViewController: UICollectionViewDelegate, UICollectionViewDel
 		return cell
 	}
 	
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		collectionView.deselectItem(at: indexPath, animated: true)
+		
+		let club = collectionViewModel.cellForItemAt(indexPath: indexPath)
+		let vc = UIStoryboard(name: "InfoClub", bundle: nil).instantiateViewController(withIdentifier: "InfoClub") as! InfoClubViewController
+		vc.club = club
+		navigationController?.pushViewController(vc, animated: true)
+	}
+	
 	/* Márgenes entre las celdas */
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
 		let inset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)

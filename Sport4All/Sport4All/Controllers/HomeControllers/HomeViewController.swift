@@ -57,6 +57,10 @@ class HomeViewController: UIViewController {
 		navigationController?.pushViewController(vc, animated: true)
 	}
 	
+	@objc func titleButtonTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+		print("Tap")
+	}
+	
 	@objc func locationButtonTapped(tapGestureRecognizer: UITapGestureRecognizer) {
 //		let vc = UIStoryboard(name: "InfoClub", bundle: nil).instantiateViewController(withIdentifier: "InfoClub") as! InfoClubViewController
 //		let vc = UIStoryboard(name: "DetailEvent", bundle: nil).instantiateViewController(withIdentifier: "DetailEvent") as! DetailEventViewController
@@ -69,11 +73,11 @@ class HomeViewController: UIViewController {
 //		let vc = UIStoryboard(name: "EditProfile", bundle: nil).instantiateViewController(withIdentifier: "EditProfile") as! EditProfileViewController
 //		let vc = UIStoryboard(name: "RegisterInEvent", bundle: nil).instantiateViewController(withIdentifier: "RegisterInEvent") as! RegisterInEventViewController
 //		let vc = UIStoryboard(name: "FinishEventDetail", bundle: nil).instantiateViewController(withIdentifier: "FinishEventDetail") as! FinishEventDetailViewController
-//		let vc = UIStoryboard(name: "FinishEventList", bundle: nil).instantiateViewController(withIdentifier: "FinishEventList") as! FinishEventListViewController
+		let vc = UIStoryboard(name: "FinishEventList", bundle: nil).instantiateViewController(withIdentifier: "FinishEventList") as! FinishEventListViewController
 //		let vc = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: "Settings") as! SettingsViewController
 
-		let vc = UIStoryboard(name: "ReservesScreen", bundle: nil).instantiateViewController(withIdentifier: "ReservesScreen") as! ReservesViewController
-		navigationController?.pushViewController(vc, animated: true)
+//		let vc = UIStoryboard(name: "ReservesScreen", bundle: nil).instantiateViewController(withIdentifier: "ReservesScreen") as! ReservesViewController
+//		navigationController?.pushViewController(vc, animated: true)
 		modalPresentationStyle = .automatic
 //		self.present(vc, animated: true, completion: nil)
 	}
@@ -98,8 +102,12 @@ class HomeViewController: UIViewController {
 		let starButtonItem = UIBarButtonItem(image: starImage, style: .plain, target: self, action: #selector(startButtonTapped(tapGestureRecognizer:)))
 		starButtonItem.tintColor = .goldColor
 		
+		let titleButton = UIBarButtonItem.init(customView: titleLabel)
+		titleButton.action = #selector(titleButtonTapped(tapGestureRecognizer:))
+		titleButton.target = self
+		
 		// Set Navigation Items
-		self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: titleLabel)
+		self.navigationItem.leftBarButtonItem = titleButton
 		self.navigationItem.rightBarButtonItems = [
 			starButtonItem,
 			locationButtonItem
