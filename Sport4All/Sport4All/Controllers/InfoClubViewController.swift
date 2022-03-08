@@ -39,6 +39,7 @@ class InfoClubViewController: UIViewController {
 		
 		// Configure Favourite
 		setFavouriteButton()
+		print("Favorito 1: \(isFavourite)")
 
 		// Configure NavBar
 		configureNavbar()
@@ -50,18 +51,22 @@ class InfoClubViewController: UIViewController {
 	
 	// MARK: Action Functions
 	@IBAction func addToFavouriteButtonAction(_ sender: UIButton) {
-//		callAddToFavourite()
 		if isFavourite {
 			isFavourite = false
 		} else {
 			isFavourite = true
 		}
+		print("Favorito 2: \(isFavourite)")
+
+		callAddToFavourite()
 		setFavouriteButton()
+		print("Favorito 3: \(isFavourite)")
+
 	}
 	
 	@IBAction func goToWebButtonAction(_ sender: UIButton) {
-		guard let tlf = club?.tlf else { return }
-		if let urlToOpen = URL(string: tlf) {
+		guard let web = club?.web else { return }
+		if let urlToOpen = URL(string: web) {
 			UIApplication.shared.open(urlToOpen, options: [:], completionHandler: nil )
 		}
 	}
@@ -84,7 +89,7 @@ class InfoClubViewController: UIViewController {
 		guard let description = club.description else { return debugPrint("Error Desc") }
 		guard let services = club.services else { return debugPrint("Error Servicios") }
 		guard let location = club.direction else { return debugPrint("Error Dirección") }
-		guard let fav = club.fav else { return debugPrint("Error Fav")}
+		guard let fav = club.fav else { return debugPrint("Error Fav") }
 		
 		self.clubTitleLabel.text = club.name
 		
@@ -113,12 +118,23 @@ class InfoClubViewController: UIViewController {
 	
 	private func callAddToFavourite() {
 		guard let id = club?.id else { return }
-		NetworkingProvider.shared.registerFavClub(clubId: id) { responseData, status, msg in
-			print(responseData)
-			print(status)
-			print(msg)
-		} failure: { error in
-			print(error)
+		
+		if !isFavourite {
+			NetworkingProvider.shared.deleteFavouriteClub(clubId: id) { responseData, status, msg in
+				print(responseData)
+				print(status)
+				print(msg)
+			} failure: { error in
+				print(error)
+			}
+		} else {
+			NetworkingProvider.shared.registerFavClub(clubId: id) { responseData, status, msg in
+				print(responseData)
+				print(status)
+				print(msg)
+			} failure: { error in
+				print(error)
+			}
 		}
 	}
 	

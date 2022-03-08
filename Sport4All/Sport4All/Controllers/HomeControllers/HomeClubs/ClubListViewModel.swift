@@ -64,4 +64,8 @@ class ClubListViewModel {
 	func cellForRowAt(indexPath: IndexPath) -> Club {
 		return clubList[indexPath.row]
 	}
+	
+	func removeForRowAt(indexPath: IndexPath) {
+		clubList.remove(at: indexPath.row)
+	}
 }
