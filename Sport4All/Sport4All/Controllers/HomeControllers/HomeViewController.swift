@@ -70,8 +70,11 @@ class HomeViewController: UIViewController {
 //		let vc = UIStoryboard(name: "RegisterInEvent", bundle: nil).instantiateViewController(withIdentifier: "RegisterInEvent") as! RegisterInEventViewController
 //		let vc = UIStoryboard(name: "FinishEventDetail", bundle: nil).instantiateViewController(withIdentifier: "FinishEventDetail") as! FinishEventDetailViewController
 		let vc = UIStoryboard(name: "FinishEventList", bundle: nil).instantiateViewController(withIdentifier: "FinishEventList") as! FinishEventListViewController
-
+//		let vc = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: "Settings") as! SettingsViewController
+//
 		navigationController?.pushViewController(vc, animated: true)
+		modalPresentationStyle = .automatic
+//		self.present(vc, animated: true, completion: nil)
 	}
 	
 	// MARK: Functions

@@ -42,7 +42,10 @@ class ProfileViewController: UIViewController {
 	
 	// MARK: Action Functions
 	@objc func settingsButtonTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-		debugPrint("Pulsado")
+		let vc = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: "Settings") as! SettingsViewController
+		
+		vc.modalPresentationStyle = .automatic
+		present(vc, animated: true, completion: nil)
 	}
 	
 	@IBAction func yourClubButtonAction(_ sender: UIButton) {
