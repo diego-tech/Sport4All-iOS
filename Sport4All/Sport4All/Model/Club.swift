@@ -17,6 +17,8 @@ struct Club: Codable {
 	let tlf: String?
 	let description: String?
 	let services: [ClubService]?
+	let fav: Bool?
+	let web: String?
 	let created_at: String?
 	let updated_at: String?
 }

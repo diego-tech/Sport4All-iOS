@@ -90,13 +90,17 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g6D-Tw-DJx" customClass="LazyImageView" customModule="Sport4All" customModuleProvider="target">
                                         <rect key="frame" x="143" y="30" width="128" height="128"/>
+                                        <color key="tintColor" name="HardColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="128" id="N0v-vl-DtA"/>
                                             <constraint firstAttribute="height" constant="128" id="dB9-xr-zfG"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rodrigo Díaz de Vivar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKy-kd-y8y">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKy-kd-y8y">
                                         <rect key="frame" x="20" y="178" width="374" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="26" id="61b-vt-XeK"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="22"/>
                                         <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -215,6 +219,9 @@
                                                     <fontDescription key="titleFontDescription" name="SFPro-Semibold" family="SF Pro" pointSize="20"/>
                                                     <color key="baseForegroundColor" name="HardColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="yourClubButtonAction:" destination="jt6-XG-Gur" eventType="touchUpInside" id="BZ5-lC-s7y"/>
+                                                </connections>
                                             </button>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="QEg-6C-Lam">
                                                 <rect key="frame" x="10" y="544" width="394" height="326"/>

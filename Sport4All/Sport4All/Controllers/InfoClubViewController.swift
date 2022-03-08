@@ -14,6 +14,7 @@ class InfoClubViewController: UIViewController {
 	// MARK: Variables
 	var club: Club?
 	var location: Location?
+	private var isFavourite: Bool = false
 	
 	// MARK: Outlets
 	@IBOutlet weak var headerUIView: UIView!
@@ -32,13 +33,13 @@ class InfoClubViewController: UIViewController {
 		// Do any additional setup after loading the view.
 		
 		locationMapView.delegate = self
-		
+	
 		// Configure Models
 		configure()
 		
-		// Configure Add Favourite Button
-		addFavouriteButton.setImage(UIImage(systemName: "star", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), for: .normal)
-		
+		// Configure Favourite
+		setFavouriteButton()
+
 		// Configure NavBar
 		configureNavbar()
 		
@@ -49,12 +50,19 @@ class InfoClubViewController: UIViewController {
 	
 	// MARK: Action Functions
 	@IBAction func addToFavouriteButtonAction(_ sender: UIButton) {
-		callAddToFavourite()
+		if isFavourite {
+			isFavourite = false
+		} else {
+			isFavourite = true
+		}
+
+		callAddFavorRemove()
+		setFavouriteButton()
 	}
 	
 	@IBAction func goToWebButtonAction(_ sender: UIButton) {
-		guard let tlf = club?.tlf else { return }
-		if let urlToOpen = URL(string: tlf) {
+		guard let web = club?.web else { return }
+		if let urlToOpen = URL(string: web) {
 			UIApplication.shared.open(urlToOpen, options: [:], completionHandler: nil )
 		}
 	}
@@ -74,12 +82,21 @@ class InfoClubViewController: UIViewController {
 		guard let description = club.description else { return debugPrint("Error Desc") }
 		guard let services = club.services else { return debugPrint("Error Servicios") }
 		guard let location = club.direction else { return debugPrint("Error Dirección") }
+		guard let fav = club.fav else { return debugPrint("Error Fav") }
 		
 		self.clubTitleLabel.text = club.name
-		self.clubBannerImageView.loadImage(fromURL: url, placeHolderImage: "HomeLogo")
+		
+		self.clubBannerImageView.loadImage(fromURL: url)
+
 		self.clubInfoTextView.text = description
 		self.clubServicesStackView.setServicesInStackView(services: services, imageSize: CGRect(x: 0, y: 0, width: 50, height: 50))
 		self.callFindLocation(locationName: location)
+		
+		if fav {
+			isFavourite = true
+		} else {
+			isFavourite = false
+		}
 	}
 	
 	private func callFindLocation(locationName: String) {
@@ -91,15 +108,25 @@ class InfoClubViewController: UIViewController {
 		}
 	}
 	
-	private func callAddToFavourite() {
+	private func callAddFavorRemove() {
 		guard let id = club?.id else { return }
-		NetworkingProvider.shared.registerFavClub(clubId: id) { responseData, status, msg in
-			self.addFavouriteButton.setImage(UIImage(systemName: "star.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), for: .normal)
-			print(responseData)
-			print(status)
-			print(msg)
-		} failure: { error in
-			print(error)
+		
+		if !isFavourite {
+			NetworkingProvider.shared.deleteFavouriteClub(clubId: id) { responseData, status, msg in
+				print(responseData)
+				print(status)
+				print(msg)
+			} failure: { error in
+				print(error)
+			}
+		} else {
+			NetworkingProvider.shared.registerFavClub(clubId: id) { responseData, status, msg in
+				print(responseData)
+				print(status)
+				print(msg)
+			} failure: { error in
+				print(error)
+			}
 		}
 	}
 	
@@ -121,6 +148,10 @@ class InfoClubViewController: UIViewController {
 				latitudeDelta: 0.01,
 				longitudeDelta: 0.01)
 		), animated: true)
+	}
+	
+	private func setFavouriteButton() {
+		self.addFavouriteButton.setImage(UIImage(systemName: !isFavourite ? "star" : "star.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), for: .normal)
 	}
 	
 	// MARK: Styles

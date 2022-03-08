@@ -9,15 +9,27 @@ import UIKit
 
 class YourClubEventsTableViewCell: UITableViewCell {
 
+	// MARK: Variables
+	
+	// MARK: Outlets
+	@IBOutlet weak var yourEventUIView: UIView!
+	
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+		
+		// Inicialización Estilos
+		uiViewStyles()
+		self.backgroundColor = .backgroundColor
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
-    }
-    
+	
+	// MARK: Styles
+	private func uiViewStyles() {
+		yourEventUIView.layer.cornerCurve = .circular
+		yourEventUIView.layer.cornerRadius = 10
+		yourEventUIView.backgroundColor = .softBlue
+		yourEventUIView.shadow(shadowOpacity: 0.15, shadowRadius: 4)
+	}
 }

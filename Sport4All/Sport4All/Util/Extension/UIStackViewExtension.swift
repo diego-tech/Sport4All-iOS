@@ -28,7 +28,6 @@ extension UIStackView {
 			}()
 			serviceImageView.image = servicesImage
 			self.addArrangedSubview(serviceImageView)
-			print(serviceImageView.frame)
 		}
 	}
 }

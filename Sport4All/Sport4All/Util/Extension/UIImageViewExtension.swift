@@ -18,7 +18,7 @@ extension UIImageView {
 	}
 	
 	// Redondeo de dos bordes
-	public func roundOnlyTwoCorners(_ corners: UIRectCorner, radius: CGFloat) {
+	func roundOnlyTwoCorners(_ corners: UIRectCorner, radius: CGFloat) {
 		let maskPath = UIBezierPath(roundedRect: bounds,
 									byRoundingCorners: corners,
 									cornerRadii: CGSize(width: radius, height: radius))

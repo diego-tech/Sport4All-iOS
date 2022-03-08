@@ -11,7 +11,7 @@ class FavouriteClubsViewController: UIViewController {
 	
 	// MARK: Variables
 	private var clubViewModel = ClubListViewModel()
-
+	
 	// MARK: Outlets
 	@IBOutlet weak var favouritesTableView: UITableView!
 	
@@ -61,9 +61,9 @@ class FavouriteClubsViewController: UIViewController {
 		let yourBackImage = UIImage(systemName: "arrowshape.turn.up.backward.fill", withConfiguration:  UIImage.SymbolConfiguration(pointSize: 18))
 		let backButtonItem = UIBarButtonItem(image: yourBackImage, style: .plain, target: self, action: #selector(popView(tapGestureRecognizer:)))
 		backButtonItem.tintColor = .corporativeColor
-
+		
 		self.navigationItem.leftBarButtonItem = backButtonItem
-
+		
 		self.navigationItem.setHidesBackButton(true, animated: true)
 	}
 	
@@ -80,7 +80,7 @@ extension FavouriteClubsViewController: UITableViewDataSource, UITableViewDelega
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = favouritesTableView.dequeueReusableCell(withIdentifier: "ClubTableViewCell") as? ClubTableViewCell else { return UITableViewCell() }
 		let club = clubViewModel.cellForRowAt(indexPath: indexPath)
-
+		
 		cell.setCellWithValueOf(club)
 		return cell
 	}
@@ -94,5 +94,27 @@ extension FavouriteClubsViewController: UITableViewDataSource, UITableViewDelega
 		vc.club = club
 		navigationController?.pushViewController(vc, animated: true)
 	}
+	
+	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+		let club = clubViewModel.cellForRowAt(indexPath: indexPath)
+		guard let clubId = club.id else { return }
+		switch editingStyle {
+		case .delete:
+			NetworkingProvider.shared.deleteFavouriteClub(clubId: clubId) { responseData, status, msg in
+				print(responseData)
+				print(status)
+				print(msg)
+			} failure: { error in
+				print(error)
+			}
+			clubViewModel.removeForRowAt(indexPath: indexPath)
+			tableView.deleteRows(at: [indexPath], with: .fade)
+		default:
+			break
+		}
+	}
+	
+	func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+		return "Eliminar"
+	}
 }
-

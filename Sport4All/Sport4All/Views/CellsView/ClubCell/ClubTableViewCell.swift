@@ -9,9 +9,9 @@ import UIKit
 
 class ClubTableViewCell: UITableViewCell {
 
-	// Variables
+	// MARK: Variables
 	
-	// Outlets
+	// MARK: Outlets
 	@IBOutlet weak var homeClubsUIView: UIView!
 	@IBOutlet weak var clubImageView: LazyImageView!
 	@IBOutlet weak var clubNameLabel: UILabel!
@@ -21,7 +21,7 @@ class ClubTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-		
+
 		// Inicialización Estilos
 		uiViewStyles()
 		clubImageView.roundOnlyTwoCorners([.bottomLeft, .topLeft], radius: 10)
@@ -35,7 +35,7 @@ class ClubTableViewCell: UITableViewCell {
 		updateUI(clubName: club.name, clubPhone: club.tlf, clubImageStr: club.club_img, services: club.services)
 	}
 	
-	private func updateUI(clubName: String?, clubPhone: String?, clubImageStr: String?, services: [ClubService]?) {
+	private func updateUI(clubName: String?, clubPhone: String?, clubImageStr: String?, services: [ClubService]?) {		
 		guard let clubImageStr = clubImageStr else { return print("Hola") }
 		guard let services = services else { return print("Hola") }
 		guard let url = URL(string: Constants.kStorageURL + clubImageStr) else { return print("Hola") }
@@ -43,7 +43,7 @@ class ClubTableViewCell: UITableViewCell {
 		self.clubNameLabel.text = clubName
 		self.clubPhoneLabel.text = clubPhone
 		self.servicesStackView.setServicesInStackView(services: services, imageSize: CGRect(x: 0, y: 0, width: 50, height: 50))
-		self.clubImageView.loadImage(fromURL: url, placeHolderImage: "")
+		self.clubImageView.loadImage(fromURL: url)
 	}
 	
 	

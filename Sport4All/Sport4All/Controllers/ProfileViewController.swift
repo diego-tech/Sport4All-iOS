@@ -42,7 +42,15 @@ class ProfileViewController: UIViewController {
 	
 	// MARK: Action Functions
 	@objc func settingsButtonTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-		debugPrint("Pulsado")
+		let vc = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: "Settings") as! SettingsViewController
+		
+		vc.modalPresentationStyle = .automatic
+		present(vc, animated: true, completion: nil)
+	}
+	
+	@IBAction func yourClubButtonAction(_ sender: UIButton) {
+		let vc = UIStoryboard(name: "YourClub", bundle: nil).instantiateViewController(withIdentifier: "YourClub") as! YourClubViewController
+		navigationController?.pushViewController(vc, animated: true)
 	}
 	
 	// MARK: Functions
@@ -56,7 +64,7 @@ class ProfileViewController: UIViewController {
 			let allUserName = userName + " " + userSurname
 			self.userNameLabel.text = allUserName
 			
-			self.userImageView.loadImage(fromURL: url, placeHolderImage: "HomeLogo")
+			self.userImageView.loadImage(fromURL: url)
 		} failure: { error in
 			print(error)
 		}

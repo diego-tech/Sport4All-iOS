@@ -20,7 +20,7 @@ extension UITextField {
 		bottomLine.backgroundColor = color
 		
 		self.addSubview(bottomLine)
-		bottomLine.topAnchor.constraint(equalTo: self.bottomAnchor, constant: 10).isActive = true
+		bottomLine.topAnchor.constraint(equalTo: self.bottomAnchor, constant: 5).isActive = true
 		bottomLine.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
 		bottomLine.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
 		bottomLine.heightAnchor.constraint(equalToConstant: 1.5).isActive = true
