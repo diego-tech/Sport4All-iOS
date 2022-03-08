@@ -39,7 +39,6 @@ class InfoClubViewController: UIViewController {
 		
 		// Configure Favourite
 		setFavouriteButton()
-		print("Favorito 1: \(isFavourite)")
 
 		// Configure NavBar
 		configureNavbar()
@@ -56,12 +55,9 @@ class InfoClubViewController: UIViewController {
 		} else {
 			isFavourite = true
 		}
-		print("Favorito 2: \(isFavourite)")
 
-		callAddToFavourite()
+		callAddFavorRemove()
 		setFavouriteButton()
-		print("Favorito 3: \(isFavourite)")
-
 	}
 	
 	@IBAction func goToWebButtonAction(_ sender: UIButton) {
@@ -80,9 +76,6 @@ class InfoClubViewController: UIViewController {
 	
 	// MARK: Functions
 	private func configure() {
-		// Load Blur Effect
-		self.clubBannerImageView.setBlurEffect()
-		
 		guard let club = club else { return debugPrint("Error Club") }
 		guard let banner = club.club_banner else { return debugPrint("Error Banner") }
 		guard let url = URL(string: Constants.kStorageURL + banner) else { return debugPrint("Error Url Imagen") }
@@ -94,7 +87,6 @@ class InfoClubViewController: UIViewController {
 		self.clubTitleLabel.text = club.name
 		
 		self.clubBannerImageView.loadImage(fromURL: url)
-		self.clubBannerImageView.setBlurAlpha0Effect()
 
 		self.clubInfoTextView.text = description
 		self.clubServicesStackView.setServicesInStackView(services: services, imageSize: CGRect(x: 0, y: 0, width: 50, height: 50))
@@ -116,7 +108,7 @@ class InfoClubViewController: UIViewController {
 		}
 	}
 	
-	private func callAddToFavourite() {
+	private func callAddFavorRemove() {
 		guard let id = club?.id else { return }
 		
 		if !isFavourite {

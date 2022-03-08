@@ -7,9 +7,6 @@
 
 import UIKit
 
-var blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
-var blurEffectView = UIVisualEffectView()
-
 extension UIImageView {
 	
 	// Imagen Redonda
@@ -28,20 +25,5 @@ extension UIImageView {
 		let shape = CAShapeLayer()
 		shape.path = maskPath.cgPath
 		layer.mask = shape
-	}
-	
-	// Efecto Blur cuando carguen las imágenes
-	func setBlurEffect() {
-		blurEffectView.effect = blurEffect
-		blurEffectView.frame = self.bounds
-		blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-		self.addSubview(blurEffectView)
-	}
-	
-	// Efecto Blur Alpha 0
-	func setBlurAlpha0Effect() {
-		UIView.animate(withDuration: 0.4, delay: 0.4, options: .curveEaseInOut) {
-			blurEffectView.alpha = 0
-		}
 	}
 }
