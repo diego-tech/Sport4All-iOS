@@ -10,7 +10,8 @@ import UIKit
 class HomeClubsViewController: UIViewController {
 	
 	// MARK: Variables
-	private var clubViewModel = ClubListViewModel()
+	private var tableViewModel = ListViewModel()
+	private var collectionViewModel = CollectionViewModel()
 	
 	// MARK: Outlets
 	@IBOutlet weak var searchBar: UITextField!
@@ -20,10 +21,14 @@ class HomeClubsViewController: UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		
+		// Set Empty Text in SearchBar when load view
 		searchBar.text = ""
 		
 		// Inicialización Table View
 		clubList()
+		
+		// Inicialización Collection View
+		mostRatedCollectionList()
 	}
 	
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -37,9 +42,6 @@ class HomeClubsViewController: UIViewController {
 		
 		searchBar.delegate = self
 		
-		// Inicialización Collection View
-		initCollectionView()
-		
 		// Custom Search Bar
 		searchBar.customSearch()
 	}
@@ -48,8 +50,14 @@ class HomeClubsViewController: UIViewController {
 	
 	// MARK: Functions
 	private func clubList() {
-		clubViewModel.fetchClubList { [weak self] status in
+		tableViewModel.fetchClubList { [weak self] status in
 			self?.initTableView()
+		}
+	}
+	
+	private func mostRatedCollectionList() {
+		collectionViewModel.fetchMostRated { [weak self] status in
+			self?.initCollectionView()
 		}
 	}
 	
@@ -77,13 +85,16 @@ class HomeClubsViewController: UIViewController {
 	// MARK: Styles
 }
 
+// MARK: Collection View
 extension HomeClubsViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return 10
+		return collectionViewModel.numberOfItemsInSection(section: section)
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! BestRatedCollectionViewCell
+		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? BestRatedCollectionViewCell else { return UICollectionViewCell() }
+		let club = collectionViewModel.cellForItemAt(indexPath: indexPath)
+		cell.setItemWithValueOf(club)
 		return cell
 	}
 	
@@ -94,14 +105,15 @@ extension HomeClubsViewController: UICollectionViewDelegate, UICollectionViewDel
 	}
 }
 
+// MARK: Table View
 extension HomeClubsViewController: UITableViewDataSource, UITableViewDelegate {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return clubViewModel.numberOfRowsInSection(section: section)
+		return tableViewModel.numberOfRowsInSection(section: section)
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = homeClubsTableView.dequeueReusableCell(withIdentifier: "ClubTableViewCell") as? ClubTableViewCell else { return UITableViewCell() }
-		let club = clubViewModel.cellForRowAt(indexPath: indexPath)
+		let club = tableViewModel.cellForRowAt(indexPath: indexPath)
 		cell.setCellWithValueOf(club)
 		return cell
 	}
@@ -109,7 +121,7 @@ extension HomeClubsViewController: UITableViewDataSource, UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
 		
-		let club = clubViewModel.cellForRowAt(indexPath: indexPath)
+		let club = tableViewModel.cellForRowAt(indexPath: indexPath)
 
 		let vc = UIStoryboard(name: "InfoClub", bundle: nil).instantiateViewController(withIdentifier: "InfoClub") as! InfoClubViewController
 		vc.club = club
@@ -117,13 +129,14 @@ extension HomeClubsViewController: UITableViewDataSource, UITableViewDelegate {
 	}
 }
 
+// MARK: TextField
 extension HomeClubsViewController: UITextFieldDelegate {
 	func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
 		guard let query = textField.text else { return false }
 		
 		if query.count >= 3 {
 			// Test Search Route
-			clubViewModel.fetchSearchClub(with: query) { [weak self] status in
+			tableViewModel.fetchSearchClub(with: query) { [weak self] status in
 				self?.initTableView()
 			}
 		} else {

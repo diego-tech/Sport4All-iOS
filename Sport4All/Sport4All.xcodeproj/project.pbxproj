@@ -48,13 +48,14 @@
 		5E674C2927CE7AC100791D7D /* SocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E674C2827CE7AC100791D7D /* SocialViewController.swift */; };
 		5E7653CE27B2E802000D0A6D /* UISegmentedControlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7653CD27B2E802000D0A6D /* UISegmentedControlExtension.swift */; };
 		5E77E9BF27B1368E004195AE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E77E9BE27B1368E004195AE /* HomeViewController.swift */; };
+		5E7DFEC627D7E5F500CF9425 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7DFEC527D7E5F500CF9425 /* CollectionViewModel.swift */; };
 		5E7FF13B27D4DA0900D4D576 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7FF13A27D4DA0900D4D576 /* LocationProvider.swift */; };
 		5E8C23BD27C0DC9400763D49 /* ModifyPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8C23BC27C0DC9400763D49 /* ModifyPasswordViewController.swift */; };
 		5E8C23BF27C0EF0600763D49 /* DetailEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8C23BE27C0EF0600763D49 /* DetailEventViewController.swift */; };
 		5E96407F27C68D2700387BFD /* YourClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E96407E27C68D2700387BFD /* YourClubViewController.swift */; };
 		5E96408127C69AE100387BFD /* PendingEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E96408027C69AE100387BFD /* PendingEventsViewController.swift */; };
 		5E9661D027C7849B00EEFC14 /* FinishEventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9661CF27C7849B00EEFC14 /* FinishEventDetailViewController.swift */; };
-		5E9661D227C78DAF00EEFC14 /* ClubListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9661D127C78DAF00EEFC14 /* ClubListViewModel.swift */; };
+		5E9661D227C78DAF00EEFC14 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9661D127C78DAF00EEFC14 /* ListViewModel.swift */; };
 		5E9661D427C78E2000EEFC14 /* Club.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9661D327C78E2000EEFC14 /* Club.swift */; };
 		5E9C14C22790358F002D9AF1 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C14BD2790358F002D9AF1 /* SF-Pro-Display-Semibold.otf */; };
 		5E9C14C32790358F002D9AF1 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C14BE2790358F002D9AF1 /* SF-Pro-Display-Regular.otf */; };
@@ -135,13 +136,14 @@
 		5E674C2827CE7AC100791D7D /* SocialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialViewController.swift; sourceTree = "<group>"; };
 		5E7653CD27B2E802000D0A6D /* UISegmentedControlExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentedControlExtension.swift; sourceTree = "<group>"; };
 		5E77E9BE27B1368E004195AE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5E7DFEC527D7E5F500CF9425 /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
 		5E7FF13A27D4DA0900D4D576 /* LocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
 		5E8C23BC27C0DC9400763D49 /* ModifyPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPasswordViewController.swift; sourceTree = "<group>"; };
 		5E8C23BE27C0EF0600763D49 /* DetailEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventViewController.swift; sourceTree = "<group>"; };
 		5E96407E27C68D2700387BFD /* YourClubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourClubViewController.swift; sourceTree = "<group>"; };
 		5E96408027C69AE100387BFD /* PendingEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingEventsViewController.swift; sourceTree = "<group>"; };
 		5E9661CF27C7849B00EEFC14 /* FinishEventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishEventDetailViewController.swift; sourceTree = "<group>"; };
-		5E9661D127C78DAF00EEFC14 /* ClubListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubListViewModel.swift; sourceTree = "<group>"; };
+		5E9661D127C78DAF00EEFC14 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		5E9661D327C78E2000EEFC14 /* Club.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Club.swift; sourceTree = "<group>"; };
 		5E9C14BD2790358F002D9AF1 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		5E9C14BE2790358F002D9AF1 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
@@ -354,7 +356,8 @@
 			isa = PBXGroup;
 			children = (
 				5E9E820F27B283D700A450E8 /* HomeClubsViewController.swift */,
-				5E9661D127C78DAF00EEFC14 /* ClubListViewModel.swift */,
+				5E9661D127C78DAF00EEFC14 /* ListViewModel.swift */,
+				5E7DFEC527D7E5F500CF9425 /* CollectionViewModel.swift */,
 			);
 			path = HomeClubs;
 			sourceTree = "<group>";
@@ -777,7 +780,7 @@
 				5EF497A827A55858008B0C37 /* NetworkingProvider.swift in Sources */,
 				5E96407F27C68D2700387BFD /* YourClubViewController.swift in Sources */,
 				5EC1EFDF27BFB7C90089C436 /* UIViewExtension.swift in Sources */,
-				5E9661D227C78DAF00EEFC14 /* ClubListViewModel.swift in Sources */,
+				5E9661D227C78DAF00EEFC14 /* ListViewModel.swift in Sources */,
 				5EF497A327A5570F008B0C37 /* DateDecoder.swift in Sources */,
 				5E96408127C69AE100387BFD /* PendingEventsViewController.swift in Sources */,
 				5E12C4B527B6583300F4E7EA /* ProfileViewController.swift in Sources */,
@@ -795,6 +798,7 @@
 				07AB1FCA27AA9599007771E3 /* BestRatedCollectionViewCell.swift in Sources */,
 				5EDC2CE927C6B04A007EE2C0 /* EventPendingListViewController.swift in Sources */,
 				5E51235327BBC7E60047EE44 /* FavouriteClubsViewController.swift in Sources */,
+				5E7DFEC627D7E5F500CF9425 /* CollectionViewModel.swift in Sources */,
 				5999B68427B285640008BE6B /* ClubTableViewCell.swift in Sources */,
 				5E12F10027C290BA00316D69 /* OnboardingCollectionViewCell.swift in Sources */,
 				5E9661D027C7849B00EEFC14 /* FinishEventDetailViewController.swift in Sources */,

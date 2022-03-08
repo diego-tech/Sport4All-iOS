@@ -189,6 +189,27 @@ final class NetworkingProvider {
 		}
 	}
 	
+	
+	// MARK: Most Rated List
+	func mostRatedList(serverResponse: @escaping (_ responseData: [Club]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+		let url = "\(Constants.kBaseURL)/mostrated"
+		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
+		
+		AF.request(url, method: .get, headers: headers).responseDecodable(of: ClubListResponse.self, decoder: DateDecoder()) {
+			response in
+			
+			// Handle Response Data && Status Code && Message
+			if let data = response.value?.data, let status = response.value?.status, let msg = response.value?.msg {
+				serverResponse(data, status, msg)
+			}
+			
+			// Handle Alamofire Error
+			if let error = response.error {
+				failure(error)
+			}
+		}
+	}
+	
 	// MARK: Club Favourite Clubs	
 	func clubFavouriteList(serverResponse: @escaping (_ responseData: [Club]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/listfavs"
@@ -260,4 +281,5 @@ final class NetworkingProvider {
  - Ended Matches: /endedmatches
  - Ended Events: /endedevents
  - Free Courts: /freecourts
+ - Most Rated: /mostrated
  */
