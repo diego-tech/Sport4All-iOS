@@ -24,11 +24,11 @@ class HomeClubsViewController: UIViewController {
 		// Set Empty Text in SearchBar when load view
 		searchBar.text = ""
 		
-		// Inicialización Table View
-		clubList()
-		
 		// Inicialización Collection View
 		mostRatedCollectionList()
+		
+		// Inicialización Table View
+		clubList()
 	}
 	
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

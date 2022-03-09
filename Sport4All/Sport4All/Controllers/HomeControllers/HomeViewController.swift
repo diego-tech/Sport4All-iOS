@@ -57,10 +57,6 @@ class HomeViewController: UIViewController {
 		navigationController?.pushViewController(vc, animated: true)
 	}
 	
-	@objc func titleButtonTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-		print("Tap")
-	}
-	
 	@objc func locationButtonTapped(tapGestureRecognizer: UITapGestureRecognizer) {
 //		let vc = UIStoryboard(name: "InfoClub", bundle: nil).instantiateViewController(withIdentifier: "InfoClub") as! InfoClubViewController
 //		let vc = UIStoryboard(name: "DetailEvent", bundle: nil).instantiateViewController(withIdentifier: "DetailEvent") as! DetailEventViewController
@@ -103,12 +99,8 @@ class HomeViewController: UIViewController {
 		let starButtonItem = UIBarButtonItem(image: starImage, style: .plain, target: self, action: #selector(startButtonTapped(tapGestureRecognizer:)))
 		starButtonItem.tintColor = .goldColor
 		
-		let titleButton = UIBarButtonItem.init(customView: titleLabel)
-		titleButton.action = #selector(titleButtonTapped(tapGestureRecognizer:))
-		titleButton.target = self
-		
 		// Set Navigation Items
-		self.navigationItem.leftBarButtonItem = titleButton
+		self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: titleLabel	)
 		self.navigationItem.rightBarButtonItems = [
 			starButtonItem,
 			locationButtonItem

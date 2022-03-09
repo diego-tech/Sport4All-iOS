@@ -58,7 +58,9 @@ class SettingsViewController: UIViewController {
 	func configure() {
 		models.append(SettingsSection(title: "Configuración", options: [
 			SettingsOption(title: "Editar Perfil", icon: UIImage(systemName: "pencil.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .hardColor ?? .black) {
-				print("tapped")
+				let vc = UIStoryboard(name: "EditProfile", bundle: nil).instantiateViewController(withIdentifier: "EditProfile") as! EditProfileViewController
+
+				self.navigationController?.pushViewController(vc, animated: true)
 			},
 			SettingsOption(title: "Contacta con Nosotros", icon: UIImage(systemName: "person.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .hardColor ?? .black) {
 				print("tapped")
