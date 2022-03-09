@@ -14,18 +14,20 @@ class ReservesViewController: UIViewController {
 	var formatter = DateFormatter()
 	
 	// MARK: Outlets
-	@IBOutlet weak var scrollView: UIScrollView!
+	@IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
+	@IBOutlet weak var timePicker: UIDatePicker!
 	@IBOutlet weak var calendar: FSCalendar!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
 		
-		calendar.appearance.titleFont = UIFont(name: FontType.SFProDisplaySemibold.rawValue, size: 15)
-		calendar.appearance.headerTitleFont = UIFont(name: FontType.SFProSemibold.rawValue, size: 15)
-		calendar.appearance.weekdayFont = UIFont(name: FontType.SFProSemibold.rawValue, size: 10)
-		self.calendar.scope = .week
+//		calendar.appearance.titleFont = UIFont(name: FontType.SFProDisplaySemibold.rawValue, size: 15)
+//		calendar.appearance.headerTitleFont = UIFont(name: FontType.SFProSemibold.rawValue, size: 18)
+//		calendar.appearance.weekdayFont = UIFont(name: FontType.SFProSemibold.rawValue, size: 15)
+//		calendar.appearance.subtitleFont = UIFont(name: FontType.SFProSemibold.rawValue, size: 15)
 		
+		calendar.scope = .week
 		calendar.backgroundColor = .clear
 		calendar.appearance.todayColor = .hardColor
 		calendar.appearance.titleTodayColor = .backgroundColor
@@ -36,9 +38,15 @@ class ReservesViewController: UIViewController {
 		calendar.appearance.titlePlaceholderColor = .blueLowOpacity
 		calendar.appearance.subtitlePlaceholderColor = .blueLowOpacity
 		calendar.allowsMultipleSelection = false
+		calendar.scrollEnabled = true
+		calendar.scrollDirection = .horizontal
 		
 		calendar.dataSource = self
 		calendar.delegate = self
+		
+		timePicker.tintColor = .hardColor
+		timePicker.subviews.first?.semanticContentAttribute = .forceRightToLeft
+
 		
 		// Configure Navbar
 		configureNavbar()
@@ -85,24 +93,20 @@ extension ReservesViewController: FSCalendarDelegate, FSCalendarDataSource {
 	
 	// MARK: Delegate
 	func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-		formatter.dateFormat = "dd-MMM-yyyy"
+		calendar.today = nil
+		formatter.dateFormat = "yyyy/MM/dd"
 		print("Date Selected == \(formatter.string(from: date))")
 	}
 	
 	func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
-		formatter.dateFormat = "dd-MMM-yyyy"
+		calendar.today = nil
+		formatter.dateFormat = "yyyy/MM/dd"
 		print("Date Selected == \(formatter.string(from: date))")
 	}
 	
-	func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
-		formatter.dateFormat = "dd-MMM-yyyy"
-		
-		guard let excludedDate = formatter.date(from: "23-03-2022") else { return true }
-		
-		if date.compare(excludedDate) == .orderedSame {
-			return false
-		}
-		
-		return true
+	func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
+		self.calendarHeightConstraint.constant = bounds.height
+		self.view.layoutIfNeeded()
 	}
+ 
 }
