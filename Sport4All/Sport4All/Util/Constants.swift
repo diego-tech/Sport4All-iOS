@@ -11,5 +11,5 @@ struct Constants {
 	
 	// Networking
 	static let kBaseURL = "http://localhost:80/api"
-	static let kStorageURL = "http://localhost/storage/profileImages/"
+	static let kStorageURL = "http://localhost/storage/"
 }

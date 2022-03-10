@@ -80,6 +80,7 @@ class HomeClubsViewController: UIViewController {
 		bestRatedCollectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
 		bestRatedCollectionView.showsVerticalScrollIndicator = false
 		bestRatedCollectionView.showsHorizontalScrollIndicator = false
+		bestRatedCollectionView.reloadData()
 	}
 	
 	// MARK: Styles

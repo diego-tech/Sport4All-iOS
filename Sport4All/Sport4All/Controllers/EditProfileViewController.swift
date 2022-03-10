@@ -16,7 +16,6 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
 	private var imageUrl: String?
 	private var userEmail: String?
 	
-	private var originalUrl: URL?
 	let pickerController = UIImagePickerController()
 	
 	// MARK: Outles
@@ -69,7 +68,7 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
 	}
 	
 	@IBAction func editButtonAction(_ sender: UIButton) {
-		print("Edit User")
+		editUser()
 	}
 	
 	// MARK: Functions
@@ -93,13 +92,14 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
 		if userEmailTF.text != "" {
 			userEmail = userEmailTF.text
 		}
-		
+
 		return NewUser(email: userEmail, password: nil, genre: userGenre, name: userName, surname: userSurname, image: imageUrl)
 	}
 	
-	private func uploadImage() {
-		guard let url = originalUrl else { return }
-		NetworkingProvider.shared.uploadImage(userImage: url) { responseData, status, msg in
+	private func editUser() {
+		let editUser = getValues()
+		
+		NetworkingProvider.shared.modifyData(userModify: editUser) { responseData, status, msg in
 			print(responseData)
 			print(status)
 			print(msg)
@@ -107,8 +107,6 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
 			print(error)
 		}
 	}
-	
-	
 	
 	// MARK: Styles
 	private func configureNavbar() {
@@ -161,10 +159,19 @@ extension EditProfileViewController: UIImagePickerControllerDelegate {
 		picker.dismiss(animated: true, completion: nil)
 		
 		let image = info[.imageURL] as! URL
-		originalUrl = image
+		
+		NetworkingProvider.shared.uploadImage(userImage: image) { responseData, status, msg in
+			print(responseData)
+			print(status)
+			if let msg = msg {
+				self.imageUrl = msg
+			}
+		} failure: { error in
+			print(error)
+		}
+		
 		
 		guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
 		userImageView.image = image
-		
 	}
 }

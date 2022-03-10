@@ -81,7 +81,6 @@
 		5ECF53F6278C3AB8005F6D01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ECF53F4278C3AB8005F6D01 /* Main.storyboard */; };
 		5ECF53F8278C3AB9005F6D01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ECF53F7278C3AB9005F6D01 /* Assets.xcassets */; };
 		5ECF53FB278C3AB9005F6D01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ECF53F9278C3AB9005F6D01 /* LaunchScreen.storyboard */; };
-		5EDA40D127D9F6E8003066EE /* SecondRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA40D027D9F6E8003066EE /* SecondRegisterViewController.swift */; };
 		5EDC2CE027C6A2E1007EE2C0 /* PayResumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDC2CDF27C6A2E1007EE2C0 /* PayResumeViewController.swift */; };
 		5EDC2CE727C6AFF3007EE2C0 /* EventPendingList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDC2CE627C6AFF3007EE2C0 /* EventPendingList.storyboard */; };
 		5EDC2CE927C6B04A007EE2C0 /* EventPendingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDC2CE827C6B04A007EE2C0 /* EventPendingListViewController.swift */; };
@@ -176,7 +175,6 @@
 		5ECF53F7278C3AB9005F6D01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5ECF53FA278C3AB9005F6D01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5ECF53FC278C3AB9005F6D01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5EDA40D027D9F6E8003066EE /* SecondRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondRegisterViewController.swift; sourceTree = "<group>"; };
 		5EDC2CDF27C6A2E1007EE2C0 /* PayResumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayResumeViewController.swift; sourceTree = "<group>"; };
 		5EDC2CE627C6AFF3007EE2C0 /* EventPendingList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventPendingList.storyboard; sourceTree = "<group>"; };
 		5EDC2CE827C6B04A007EE2C0 /* EventPendingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPendingListViewController.swift; sourceTree = "<group>"; };
@@ -442,7 +440,6 @@
 				5E12C4B427B6583300F4E7EA /* ProfileViewController.swift */,
 				5E51235227BBC7E60047EE44 /* FavouriteClubsViewController.swift */,
 				5E123C3A27A2F1E400CF14EE /* FirstRegisterViewController.swift */,
-				5EDA40D027D9F6E8003066EE /* SecondRegisterViewController.swift */,
 				5E51235D27BBD5D70047EE44 /* InfoClubViewController.swift */,
 				5EDC2CDF27C6A2E1007EE2C0 /* PayResumeViewController.swift */,
 				5E371D2A27A92A5E00446D73 /* TabBarController.swift */,
@@ -777,7 +774,6 @@
 				5ECF53EF278C3AB8005F6D01 /* AppDelegate.swift in Sources */,
 				5EF61CC827D25FBF00F4AB8F /* LazyImageView.swift in Sources */,
 				5E9E821227B283E200A450E8 /* HomeMatchesViewController.swift in Sources */,
-				5EDA40D127D9F6E8003066EE /* SecondRegisterViewController.swift in Sources */,
 				5E371D2B27A92A5E00446D73 /* TabBarController.swift in Sources */,
 				5E123C3B27A2F1E400CF14EE /* FirstRegisterViewController.swift in Sources */,
 				5ECB5E8527D3560F003498BF /* UIStackViewExtension.swift in Sources */,
