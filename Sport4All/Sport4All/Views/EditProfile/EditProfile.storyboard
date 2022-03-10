@@ -104,6 +104,9 @@
                                         <buttonConfiguration key="configuration" style="plain" image="ChangePassword" imagePlacement="trailing" title="Cambiar Contraseña" imagePadding="200">
                                             <fontDescription key="titleFontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="goToChangePasswordButtonAction:" destination="asV-lo-0f6" eventType="touchUpInside" id="50C-Su-Aem"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tDT-mW-s3m" userLabel="Genre Stack View">
                                         <rect key="frame" x="0.0" y="321.5" width="374" height="53.5"/>
@@ -122,6 +125,9 @@
                                                     <segment title="Hombre"/>
                                                     <segment title="Otro"/>
                                                 </segments>
+                                                <connections>
+                                                    <action selector="genreSegmentedControl:" destination="asV-lo-0f6" eventType="valueChanged" id="f2h-Ij-RJl"/>
+                                                </connections>
                                             </segmentedControl>
                                         </subviews>
                                     </stackView>
@@ -142,10 +148,13 @@
                                 <state key="normal" title="ACCEDER">
                                     <color key="titleColor" name="HardColor"/>
                                 </state>
-                                <buttonConfiguration key="configuration" style="plain" title="REGISTRARSE">
+                                <buttonConfiguration key="configuration" style="plain" title="EDITAR">
                                     <fontDescription key="titleFontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="17"/>
                                     <color key="baseForegroundColor" name="HardColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="editButtonAction:" destination="asV-lo-0f6" eventType="touchUpInside" id="6hZ-sz-sQl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Nlo-3r-Ul7"/>

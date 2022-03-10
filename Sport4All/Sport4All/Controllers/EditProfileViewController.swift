@@ -60,6 +60,18 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
 		present(pickerController, animated: true, completion: nil)
 	}
 	
+	@IBAction func genreSegmentedControl(_ sender: UISegmentedControl) {
+		genreSegmentedControl.changeUnderlinePosition()
+	}
+	
+	@IBAction func goToChangePasswordButtonAction(_ sender: UIButton) {
+		print("Go Change Password")
+	}
+	
+	@IBAction func editButtonAction(_ sender: UIButton) {
+		print("Edit User")
+	}
+	
 	// MARK: Functions
 	private func getValues() -> NewUser {
 		if userNameTF.text != "" {

@@ -94,6 +94,7 @@
 		5EF497A827A55858008B0C37 /* NetworkingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A727A55858008B0C37 /* NetworkingProvider.swift */; };
 		5EF61CC827D25FBF00F4AB8F /* LazyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF61CC727D25FBF00F4AB8F /* LazyImageView.swift */; };
 		5EFA865127D9FD9D00FE220F /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFA865027D9FD9D00FE220F /* CustomSegmentedControl.swift */; };
+		5EFA865527D9FFAF00FE220F /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFA865427D9FFAF00FE220F /* UIImageExtension.swift */; };
 		5EFC3CA9279DC0A100720905 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EFC3CA8279DC0A100720905 /* Register.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -184,6 +185,7 @@
 		5EF497A727A55858008B0C37 /* NetworkingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProvider.swift; sourceTree = "<group>"; };
 		5EF61CC727D25FBF00F4AB8F /* LazyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyImageView.swift; sourceTree = "<group>"; };
 		5EFA865027D9FD9D00FE220F /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
+		5EFA865427D9FFAF00FE220F /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		5EFC3CA8279DC0A100720905 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -351,6 +353,7 @@
 				5EC1EFDE27BFB7C90089C436 /* UIViewExtension.swift */,
 				5E212AFD27C2709A0013E1BE /* UIImageViewExtension.swift */,
 				5ECB5E8427D3560F003498BF /* UIStackViewExtension.swift */,
+				5EFA865427D9FFAF00FE220F /* UIImageExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -779,6 +782,7 @@
 				5E123C3B27A2F1E400CF14EE /* FirstRegisterViewController.swift in Sources */,
 				5ECB5E8527D3560F003498BF /* UIStackViewExtension.swift in Sources */,
 				5E8C23BF27C0EF0600763D49 /* DetailEventViewController.swift in Sources */,
+				5EFA865527D9FFAF00FE220F /* UIImageExtension.swift in Sources */,
 				5E77E9BF27B1368E004195AE /* HomeViewController.swift in Sources */,
 				5EA12C9927D766F900774428 /* SettingsViewController.swift in Sources */,
 				5ECF53F1278C3AB8005F6D01 /* SceneDelegate.swift in Sources */,
