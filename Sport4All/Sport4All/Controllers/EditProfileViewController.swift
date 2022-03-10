@@ -64,7 +64,8 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
 	}
 	
 	@IBAction func goToChangePasswordButtonAction(_ sender: UIButton) {
-		print("Go Change Password")
+		let vc = UIStoryboard(name: "ModifyPassword", bundle: nil).instantiateViewController(withIdentifier: "ModifyPassword") as! ModifyPasswordViewController
+		navigationController?.pushViewController(vc, animated: true)
 	}
 	
 	@IBAction func editButtonAction(_ sender: UIButton) {
