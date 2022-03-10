@@ -26,7 +26,7 @@ class SecondRegisterViewController: UIViewController, UINavigationControllerDele
 	@IBOutlet weak var nameTF: UITextField!
 	@IBOutlet weak var surnamesTF: UITextField!
 	@IBOutlet weak var registerButton: UIButton!
-	@IBOutlet weak var genreSegmentedControl: UISegmentedControl!
+	@IBOutlet weak var genreSegmentedControl: CustomSegmentedControl!
 	
 	// MARK: Frame Cycle Functions
 	override func viewDidLoad() {
@@ -50,6 +50,7 @@ class SecondRegisterViewController: UIViewController, UINavigationControllerDele
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
 		// Segmented Control
+		genreSegmentedControl
 		genreSegmentedControl.setUpView()
 	}
 	
