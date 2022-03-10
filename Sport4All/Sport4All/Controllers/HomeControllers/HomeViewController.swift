@@ -72,7 +72,6 @@ class HomeViewController: UIViewController {
 //		let vc = UIStoryboard(name: "FinishEventList", bundle: nil).instantiateViewController(withIdentifier: "FinishEventList") as! FinishEventListViewController
 //		let vc = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: "Settings") as! SettingsViewController
 //		let vc = UIStoryboard(name: "ReservesScreen", bundle: nil).instantiateViewController(withIdentifier: "ReservesScreen") as! ReservesViewController
-//		let vc = UIStoryboard(name: "ReservesScreen", bundle: nil).instantiateViewController(withIdentifier: "ReservesScreen") as! ReservesViewController
 		
 		navigationController?.pushViewController(vc, animated: true)
 //		modalPresentationStyle = .automatic

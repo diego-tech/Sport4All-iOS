@@ -97,6 +97,19 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
 		return NewUser(email: userEmail, password: nil, genre: userGenre, name: userName, surname: userSurname, image: imageUrl)
 	}
 	
+	private func uploadImage() {
+		guard let url = originalUrl else { return }
+		NetworkingProvider.shared.uploadImage(userImage: url) { responseData, status, msg in
+			print(responseData)
+			print(status)
+			print(msg)
+		} failure: { error in
+			print(error)
+		}
+	}
+	
+	
+	
 	// MARK: Styles
 	private func configureNavbar() {
 		self.navigationController!.navigationBar.titleTextAttributes = [
