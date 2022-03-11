@@ -23,6 +23,8 @@
 		5999B68427B285640008BE6B /* ClubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999B68227B285640008BE6B /* ClubTableViewCell.swift */; };
 		5999B68527B285640008BE6B /* ClubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5999B68327B285640008BE6B /* ClubTableViewCell.xib */; };
 		59C5BAA327CE847700DF8796 /* FinishEventList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C5BAA227CE847700DF8796 /* FinishEventList.storyboard */; };
+		59DA0AD127DB4248007D18BC /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA0ACF27DB4248007D18BC /* EventCollectionViewCell.swift */; };
+		59DA0AD227DB4248007D18BC /* EventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59DA0AD027DB4248007D18BC /* EventCollectionViewCell.xib */; };
 		5E105D3727CFF2820037A071 /* FinishEventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E105D3627CFF2820037A071 /* FinishEventListViewController.swift */; };
 		5E123C3B27A2F1E400CF14EE /* FirstRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E123C3A27A2F1E400CF14EE /* FirstRegisterViewController.swift */; };
 		5E123C3D27A2F1F000CF14EE /* SecondRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E123C3C27A2F1F000CF14EE /* SecondRegisterViewController.swift */; };
@@ -112,6 +114,8 @@
 		5999B68227B285640008BE6B /* ClubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubTableViewCell.swift; sourceTree = "<group>"; };
 		5999B68327B285640008BE6B /* ClubTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClubTableViewCell.xib; sourceTree = "<group>"; };
 		59C5BAA227CE847700DF8796 /* FinishEventList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FinishEventList.storyboard; sourceTree = "<group>"; };
+		59DA0ACF27DB4248007D18BC /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
+		59DA0AD027DB4248007D18BC /* EventCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCollectionViewCell.xib; sourceTree = "<group>"; };
 		5E105D3627CFF2820037A071 /* FinishEventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishEventListViewController.swift; sourceTree = "<group>"; };
 		5E123C3A27A2F1E400CF14EE /* FirstRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterViewController.swift; sourceTree = "<group>"; };
 		5E123C3C27A2F1F000CF14EE /* SecondRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegisterViewController.swift; sourceTree = "<group>"; };
@@ -284,6 +288,15 @@
 				59C5BAA227CE847700DF8796 /* FinishEventList.storyboard */,
 			);
 			path = FinishEventList;
+			sourceTree = "<group>";
+		};
+		59DA0ACE27DB4207007D18BC /* EventCell */ = {
+			isa = PBXGroup;
+			children = (
+				59DA0ACF27DB4248007D18BC /* EventCollectionViewCell.swift */,
+				59DA0AD027DB4248007D18BC /* EventCollectionViewCell.xib */,
+			);
+			path = EventCell;
 			sourceTree = "<group>";
 		};
 		5E12F0F727C2891800316D69 /* Onboarding */ = {
@@ -598,6 +611,7 @@
 		5EF360F527AA9B2B00105AB7 /* CellsView */ = {
 			isa = PBXGroup;
 			children = (
+				59DA0ACE27DB4207007D18BC /* EventCell */,
 				5EA12C9D27D7690100774428 /* SettingsCell */,
 				070B1EA027D615C800B3DA5E /* MatchList */,
 				598E071527C3C20C00D5C185 /* Your Club */,
@@ -735,6 +749,7 @@
 				598E071827C3C58700D5C185 /* YourClub.storyboard in Resources */,
 				5965E8B327C79D1400862B62 /* RegisterInEvent.storyboard in Resources */,
 				5EA12C9C27D7670D00774428 /* Settings.storyboard in Resources */,
+				59DA0AD227DB4248007D18BC /* EventCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -761,6 +776,7 @@
 				5ECB28AC279F0F5200583F67 /* UITextFieldExtension.swift in Sources */,
 				5E9661D427C78E2000EEFC14 /* Club.swift in Sources */,
 				5EA1A67327A7E7990096754C /* DbResponse.swift in Sources */,
+				59DA0AD127DB4248007D18BC /* EventCollectionViewCell.swift in Sources */,
 				5ECF53EF278C3AB8005F6D01 /* AppDelegate.swift in Sources */,
 				5EF61CC827D25FBF00F4AB8F /* LazyImageView.swift in Sources */,
 				5E9E821227B283E200A450E8 /* HomeMatchesViewController.swift in Sources */,
