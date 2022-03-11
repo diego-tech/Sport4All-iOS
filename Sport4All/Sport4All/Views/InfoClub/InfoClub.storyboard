@@ -121,10 +121,11 @@
                                                 <color key="textColor" name="HardColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="LZ7-F6-fhm" userLabel="Services Stack View">
-                                                <rect key="frame" x="20" y="288" width="374" height="50"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LZ7-F6-fhm" userLabel="Services Stack View">
+                                                <rect key="frame" x="47" y="288" width="320" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="DTi-lN-N4m"/>
+                                                    <constraint firstAttribute="width" constant="320" id="z6S-lG-fXs"/>
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Como Llegar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mct-Mu-u73">
@@ -183,7 +184,6 @@
                                         <color key="backgroundColor" name="BackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="NrA-G2-8SW" firstAttribute="top" secondItem="hNr-Ye-GUh" secondAttribute="bottom" constant="20" id="04U-CJ-pvT"/>
-                                            <constraint firstItem="LZ7-F6-fhm" firstAttribute="centerX" secondItem="mhZ-dE-hRX" secondAttribute="centerX" id="1IK-a5-qVu"/>
                                             <constraint firstItem="sJM-sp-o8y" firstAttribute="top" secondItem="viY-mV-DAp" secondAttribute="bottom" constant="20" id="431-h2-9gK"/>
                                             <constraint firstAttribute="height" constant="900" id="993-KE-yx6"/>
                                             <constraint firstAttribute="trailing" secondItem="6Rb-xh-WcQ" secondAttribute="trailing" constant="20" id="9EC-03-3kA"/>
@@ -233,6 +233,7 @@
                             <constraint firstItem="C4f-ng-1NO" firstAttribute="trailing" secondItem="2gg-cf-Uga" secondAttribute="trailing" id="ghJ-Gj-B2X"/>
                             <constraint firstItem="C4f-ng-1NO" firstAttribute="leading" secondItem="2gg-cf-Uga" secondAttribute="leading" id="giP-Nf-FAg"/>
                             <constraint firstItem="2gg-cf-Uga" firstAttribute="bottom" secondItem="C4f-ng-1NO" secondAttribute="bottom" id="qgt-zT-UVd"/>
+                            <constraint firstItem="LZ7-F6-fhm" firstAttribute="centerX" secondItem="2gg-cf-Uga" secondAttribute="centerX" id="r1I-kK-1q5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="J9K-Hf-zlh"/>

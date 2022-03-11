@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -36,7 +35,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escuela de Tenis Club De Campo Villa de Madrid" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPt-u0-YwW">
-                                        <rect key="frame" x="20" y="202" width="324" height="59"/>
+                                        <rect key="frame" x="20" y="202" width="374" height="59"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="59" id="fRR-AJ-v5j"/>
                                         </constraints>
@@ -51,32 +50,18 @@
                                             <constraint firstAttribute="height" constant="1" id="j9N-x5-n5i"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k76-29-Qrb" userLabel="Favourite Button">
-                                        <rect key="frame" x="348" y="209" width="56" height="45"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="NmB-eM-XJ7"/>
-                                            <constraint firstAttribute="width" constant="56" id="SIu-2h-oSp"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain">
-                                            <imageReference key="image" image="map.fill" catalog="system" symbolScale="large" renderingMode="template"/>
-                                            <color key="baseForegroundColor" name="CorporativeColor"/>
-                                        </buttonConfiguration>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" name="BackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="u7H-Pk-TkR" firstAttribute="top" secondItem="k76-29-Qrb" secondAttribute="bottom" constant="27" id="8lh-E8-plS"/>
                                     <constraint firstItem="IPt-u0-YwW" firstAttribute="top" secondItem="XyD-EH-tFr" secondAttribute="bottom" constant="16" id="GTW-H6-SSw"/>
-                                    <constraint firstAttribute="trailing" secondItem="k76-29-Qrb" secondAttribute="trailing" constant="10" id="KUw-Rf-oO3"/>
                                     <constraint firstAttribute="trailing" secondItem="u7H-Pk-TkR" secondAttribute="trailing" id="N90-II-SCq"/>
                                     <constraint firstAttribute="trailing" secondItem="XyD-EH-tFr" secondAttribute="trailing" id="aB1-TO-hUb"/>
                                     <constraint firstItem="IPt-u0-YwW" firstAttribute="leading" secondItem="i0V-mw-tU9" secondAttribute="leading" constant="20" symbolic="YES" id="aWX-wR-TWC"/>
                                     <constraint firstItem="u7H-Pk-TkR" firstAttribute="leading" secondItem="i0V-mw-tU9" secondAttribute="leading" id="bT7-QE-GIV"/>
                                     <constraint firstItem="XyD-EH-tFr" firstAttribute="top" secondItem="i0V-mw-tU9" secondAttribute="top" constant="20" id="nFa-pM-f1D"/>
-                                    <constraint firstItem="k76-29-Qrb" firstAttribute="top" secondItem="XyD-EH-tFr" secondAttribute="bottom" constant="23" id="nXG-JQ-CM9"/>
                                     <constraint firstItem="XyD-EH-tFr" firstAttribute="leading" secondItem="i0V-mw-tU9" secondAttribute="leading" id="pnm-zd-WEc"/>
-                                    <constraint firstAttribute="trailing" secondItem="IPt-u0-YwW" secondAttribute="trailing" constant="70" id="zz4-EQ-1bR"/>
+                                    <constraint firstItem="u7H-Pk-TkR" firstAttribute="top" secondItem="IPt-u0-YwW" secondAttribute="bottom" constant="20" id="qE3-Fa-SJq"/>
+                                    <constraint firstAttribute="trailing" secondItem="IPt-u0-YwW" secondAttribute="trailing" constant="20" id="zz4-EQ-1bR"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RqB-ac-Knu">
@@ -189,6 +174,8 @@
                     <connections>
                         <outlet property="calendar" destination="OQy-2b-3Re" id="miC-13-Mbi"/>
                         <outlet property="calendarHeightConstraint" destination="3kB-Nd-fnK" id="VPp-Hu-jUA"/>
+                        <outlet property="clubBannerImageView" destination="XyD-EH-tFr" id="ylh-xV-nFy"/>
+                        <outlet property="clubNameLabel" destination="IPt-u0-YwW" id="CMj-2n-m4w"/>
                         <outlet property="timePicker" destination="KT1-qk-o9q" id="D0O-Lk-pI4"/>
                     </connections>
                 </viewController>
@@ -217,12 +204,8 @@
     </scenes>
     <resources>
         <image name="InfoClubImg" width="375" height="150"/>
-        <image name="map.fill" catalog="system" width="128" height="110"/>
         <namedColor name="BackgroundColor">
             <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="CorporativeColor">
-            <color red="0.20000000000000001" green="0.36862745098039218" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="HardColor">
             <color red="0.19607843137254902" green="0.26666666666666666" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -118,8 +118,10 @@ extension HomeClubsViewController: UICollectionViewDelegate, UICollectionViewDel
 
 // MARK: Custom Button Delegate
 extension HomeClubsViewController: ReserveButtonTap{
-	func buttonTapped(_ cell: UICollectionViewCell, clubID: Int) {
-		print(clubID)
+	func buttonTapped(_ cell: UICollectionViewCell, club: Club) {
+		let vc = UIStoryboard(name: "ReservesScreen", bundle: nil).instantiateViewController(withIdentifier: "ReservesScreen") as! ReservesViewController
+		vc.club = club
+		navigationController?.pushViewController(vc, animated: true)
 	}
 }
 

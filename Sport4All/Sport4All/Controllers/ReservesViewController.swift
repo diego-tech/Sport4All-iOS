@@ -12,16 +12,22 @@ class ReservesViewController: UIViewController {
 	
 	// MARK: Variables
 	var formatter = DateFormatter()
+	var club: Club?
 	
 	// MARK: Outlets
 	@IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
 	@IBOutlet weak var timePicker: UIDatePicker!
 	@IBOutlet weak var calendar: FSCalendar!
+	@IBOutlet weak var clubBannerImageView: LazyImageView!
+	@IBOutlet weak var clubNameLabel: UILabel!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view.
-		
+		// Do any additional setup after loading the view.s
+
+		// Configure Models
+		configure()
+	
 		// Configure Navbar
 		configureNavbar()
 		
@@ -33,11 +39,17 @@ class ReservesViewController: UIViewController {
 		timePicker.subviews.first?.semanticContentAttribute = .forceRightToLeft
 	}
 	
-	@IBAction func buttonTest(_ sender: Any) {
-		print("Tap")
-	}
+	// MARK: Action Functions
 	
 	// MARK: Functions
+	private func configure() {
+		guard let club = club else { return debugPrint("Error Club") }
+		guard let banner = club.club_banner else { return debugPrint("Error Banner") }
+		guard let name = club.name else { return debugPrint("Error Name") }
+		guard let bannerUrl = URL(string: Constants.kStorageURL + banner) else { return debugPrint("Error Url Imagen") }
+		self.clubBannerImageView.loadImage(fromURL: bannerUrl)
+		self.clubNameLabel.text = name
+	}
 	
 	// MARK: Styles
 	private func calendarStyles() {

@@ -78,7 +78,7 @@ class InfoClubViewController: UIViewController {
 	private func configure() {
 		guard let club = club else { return debugPrint("Error Club") }
 		guard let banner = club.club_banner else { return debugPrint("Error Banner") }
-		guard let url = URL(string: Constants.kStorageURL + banner) else { return debugPrint("Error Url Imagen") }
+		guard let bannerUrl = URL(string: Constants.kStorageURL + banner) else { return debugPrint("Error Url Imagen") }
 		guard let description = club.description else { return debugPrint("Error Desc") }
 		guard let services = club.services else { return debugPrint("Error Servicios") }
 		guard let location = club.direction else { return debugPrint("Error Dirección") }
@@ -86,7 +86,7 @@ class InfoClubViewController: UIViewController {
 		
 		self.clubTitleLabel.text = club.name
 		
-		self.clubBannerImageView.loadImage(fromURL: url)
+		self.clubBannerImageView.loadImage(fromURL: bannerUrl)
 
 		self.clubInfoTextView.text = description
 		self.clubServicesStackView.setServicesInStackView(services: services, imageSize: CGRect(x: 0, y: 0, width: 50, height: 50))

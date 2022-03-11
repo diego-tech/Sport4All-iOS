@@ -8,14 +8,14 @@
 import UIKit
 
 protocol ReserveButtonTap {
-	func buttonTapped(_ cell: UICollectionViewCell, clubID: Int)
+	func buttonTapped(_ cell: UICollectionViewCell, club: Club)
 }
 
 class BestRatedCollectionViewCell: UICollectionViewCell {
 	
 	// Variables
 	var reserveButtonDelegate: ReserveButtonTap?
-	var clubId: Int?
+	var reserveClub: Club?
 	
 	// Outlets
 	@IBOutlet weak var bestRatedView: UIView!
@@ -34,15 +34,15 @@ class BestRatedCollectionViewCell: UICollectionViewCell {
     }
 	
 	@IBAction func reserveButtonAction(_ sender: UIButton) {
-		guard let finalClubID = clubId else { return }
-		reserveButtonDelegate?.buttonTapped(self, clubID: finalClubID)
+		guard let reserveClub = reserveClub else { return }
+
+		reserveButtonDelegate?.buttonTapped(self, club: reserveClub)
 	}
 	
 	// MARK: Functions
 	func setItemWithValueOf(_ club: Club) {
 		updateUI(clubName: club.name, clubImageStr: club.club_img)
-		guard let club_id = club.id else { return }
-		clubId = club_id
+		reserveClub = club
 	}
 	
 	private func updateUI(clubName: String?, clubImageStr: String?) {
