@@ -12,6 +12,7 @@ class SocialViewController: UIViewController {
 	// MARK: Variables
 	
 	// MARK: Outlets
+	@IBOutlet weak var eventsTableView: UITableView!
 	
 	// MARK: Frame Cycle Functions
     override func viewDidLoad() {
