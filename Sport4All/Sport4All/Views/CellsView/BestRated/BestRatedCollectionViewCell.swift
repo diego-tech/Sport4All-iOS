@@ -35,7 +35,6 @@ class BestRatedCollectionViewCell: UICollectionViewCell {
 	
 	@IBAction func reserveButtonAction(_ sender: UIButton) {
 		guard let reserveClub = reserveClub else { return }
-
 		reserveButtonDelegate?.buttonTapped(self, club: reserveClub)
 	}
 	

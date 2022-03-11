@@ -16,7 +16,11 @@ struct SettingsOption {
 	let title: String
 	let icon: UIImage?
 	let tintColor: UIColor
-	let handler: (() -> Void)
+	let handler: ((SettingsOption) -> Void)
+}
+
+protocol SettingsViewControllerDelegate {
+	func settingsViewController(_ settingsViewController: SettingsViewController, didSelectOption option: SettingsOption)
 }
 
 class SettingsViewController: UIViewController {
@@ -29,6 +33,8 @@ class SettingsViewController: UIViewController {
 	}()
 	
 	var models = [SettingsSection]()
+	
+	var settingsDelegate: SettingsViewControllerDelegate?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -57,19 +63,17 @@ class SettingsViewController: UIViewController {
 	
 	func configure() {
 		models.append(SettingsSection(title: "Configuración", options: [
-			SettingsOption(title: "Editar Perfil", icon: UIImage(systemName: "pencil.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .hardColor ?? .black) {
-				let vc = UIStoryboard(name: "EditProfile", bundle: nil).instantiateViewController(withIdentifier: "EditProfile") as! EditProfileViewController
-
-				self.navigationController?.pushViewController(vc, animated: true)
+			SettingsOption(title: "Editar Perfil", icon: UIImage(systemName: "pencil.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .hardColor ?? .black) { [self] option in
+				settingsDelegate?.settingsViewController(self, didSelectOption: option)
 			},
-			SettingsOption(title: "Contacta con Nosotros", icon: UIImage(systemName: "person.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .hardColor ?? .black) {
+			SettingsOption(title: "Contacta con Nosotros", icon: UIImage(systemName: "person.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .hardColor ?? .black) { option in
 				print("tapped")
 			},
-			SettingsOption(title: "Ver Tutorial", icon: UIImage(systemName: "eye.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .hardColor ?? .black) {
+			SettingsOption(title: "Ver Tutorial", icon: UIImage(systemName: "eye.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .hardColor ?? .black) { option in
 				print("tapped")
 				
 			},
-			SettingsOption(title: "Cerrar Sesión", icon: UIImage(systemName: "xmark.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .red) {
+			SettingsOption(title: "Cerrar Sesión", icon: UIImage(systemName: "xmark.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .red) { option in
 				print("tapped")
 			}
 		]))
@@ -97,7 +101,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let model = models[indexPath.section].options[indexPath.row]
-		model.handler()
+		model.handler(model)
 	}
 	
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

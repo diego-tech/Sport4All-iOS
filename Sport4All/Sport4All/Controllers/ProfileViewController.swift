@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, SettingsViewControllerDelegate {
 	
 	// MARK: Variables
 	private var userImage: String?
@@ -45,12 +45,19 @@ class ProfileViewController: UIViewController {
 		let vc = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: "Settings") as! SettingsViewController
 		
 		vc.modalPresentationStyle = .automatic
+		vc.settingsDelegate = self
 		present(vc, animated: true, completion: nil)
 	}
 	
 	@IBAction func yourClubButtonAction(_ sender: UIButton) {
 		let vc = UIStoryboard(name: "YourClub", bundle: nil).instantiateViewController(withIdentifier: "YourClub") as! YourClubViewController
 		navigationController?.pushViewController(vc, animated: true)
+	}
+	
+	func settingsViewController(_ settingsViewController: SettingsViewController, didSelectOption option: SettingsOption) {
+		let vc = UIStoryboard(name: "EditProfile", bundle: nil).instantiateViewController(withIdentifier: "EditProfile") as! EditProfileViewController
+
+		self.navigationController?.pushViewController(vc, animated: true)
 	}
 	
 	// MARK: Functions

@@ -97,6 +97,9 @@ extension HomeClubsViewController: UICollectionViewDelegate, UICollectionViewDel
 		let club = collectionViewModel.cellForItemAt(indexPath: indexPath)
 		cell.setItemWithValueOf(club)
 		cell.reserveButtonDelegate = self
+		cell.alpha = 0
+		
+		UIView.animate(withDuration: 1.5, animations: { cell.alpha = 1 })
 		return cell
 	}
 	
@@ -135,6 +138,9 @@ extension HomeClubsViewController: UITableViewDataSource, UITableViewDelegate {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "ClubTableViewCell") as? ClubTableViewCell else { return UITableViewCell() }
 		let club = tableViewModel.cellForRowAt(indexPath: indexPath)
 		cell.setCellWithValueOf(club)
+		cell.alpha = 0
+		
+		UIView.animate(withDuration: 1.5, animations: { cell.alpha = 1 })
 		return cell
 	}
 	

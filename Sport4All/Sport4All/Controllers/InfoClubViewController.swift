@@ -74,6 +74,12 @@ class InfoClubViewController: UIViewController {
 		}
 	}
 	
+	@IBAction func reserveButtonAction(_ sender: UIButton) {
+		let vc = UIStoryboard(name: "ReservesScreen", bundle: nil).instantiateViewController(withIdentifier: "ReservesScreen") as! ReservesViewController
+		vc.club = club
+		navigationController?.pushViewController(vc, animated: true)
+	}
+	
 	// MARK: Functions
 	private func configure() {
 		guard let club = club else { return debugPrint("Error Club") }
