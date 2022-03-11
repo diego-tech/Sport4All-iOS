@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol ReserveButtonTap {
+	func buttonTapped(_ cell: UICollectionViewCell, clubID: Int)
+}
+
 class BestRatedCollectionViewCell: UICollectionViewCell {
 	
 	// Variables
+	var reserveButtonDelegate: ReserveButtonTap?
+	var clubId: Int?
 	
 	// Outlets
 	@IBOutlet weak var bestRatedView: UIView!
@@ -27,9 +33,16 @@ class BestRatedCollectionViewCell: UICollectionViewCell {
 		imageViewStyles()
     }
 	
+	@IBAction func reserveButtonAction(_ sender: UIButton) {
+		guard let finalClubID = clubId else { return }
+		reserveButtonDelegate?.buttonTapped(self, clubID: finalClubID)
+	}
+	
 	// MARK: Functions
 	func setItemWithValueOf(_ club: Club) {
 		updateUI(clubName: club.name, clubImageStr: club.club_img)
+		guard let club_id = club.id else { return }
+		clubId = club_id
 	}
 	
 	private func updateUI(clubName: String?, clubImageStr: String?) {

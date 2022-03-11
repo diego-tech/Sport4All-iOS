@@ -52,6 +52,9 @@
                                         <state key="normal" title="Reservar">
                                             <color key="titleColor" red="0.91764705879999997" green="0.93333333330000001" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="reserveButtonAction:" destination="Fr5-ST-Xi2" eventType="touchUpInside" id="Yi5-Gc-TpU"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="SoftBlue"/>

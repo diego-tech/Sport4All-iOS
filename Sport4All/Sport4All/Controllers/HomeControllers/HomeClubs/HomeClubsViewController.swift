@@ -96,6 +96,7 @@ extension HomeClubsViewController: UICollectionViewDelegate, UICollectionViewDel
 		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? BestRatedCollectionViewCell else { return UICollectionViewCell() }
 		let club = collectionViewModel.cellForItemAt(indexPath: indexPath)
 		cell.setItemWithValueOf(club)
+		cell.reserveButtonDelegate = self
 		return cell
 	}
 	
@@ -112,6 +113,13 @@ extension HomeClubsViewController: UICollectionViewDelegate, UICollectionViewDel
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
 		let inset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
 		return inset
+	}
+}
+
+// MARK: Custom Button Delegate
+extension HomeClubsViewController: ReserveButtonTap{
+	func buttonTapped(_ cell: UICollectionViewCell, clubID: Int) {
+		print(clubID)
 	}
 }
 
