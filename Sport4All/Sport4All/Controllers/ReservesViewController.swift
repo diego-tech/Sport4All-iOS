@@ -22,10 +22,32 @@ class ReservesViewController: UIViewController {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
 		
-//		calendar.appearance.titleFont = UIFont(name: FontType.SFProDisplaySemibold.rawValue, size: 15)
-//		calendar.appearance.headerTitleFont = UIFont(name: FontType.SFProSemibold.rawValue, size: 18)
-//		calendar.appearance.weekdayFont = UIFont(name: FontType.SFProSemibold.rawValue, size: 15)
-//		calendar.appearance.subtitleFont = UIFont(name: FontType.SFProSemibold.rawValue, size: 15)
+		// Configure Navbar
+		configureNavbar()
+		
+		// Calendar Styles
+		calendarStyles()
+		
+		// Time Picker Styles
+		timePicker.tintColor = .hardColor
+		timePicker.subviews.first?.semanticContentAttribute = .forceRightToLeft
+	}
+	
+	@IBAction func buttonTest(_ sender: Any) {
+		print("Tap")
+	}
+	
+	// MARK: Functions
+	
+	// MARK: Styles
+	private func calendarStyles() {
+		calendar.appearance.titleFont = UIFont(name: FontType.SFProDisplaySemibold.rawValue, size: 15)
+		
+		calendar.appearance.headerTitleFont = UIFont(name: FontType.SFProSemibold.rawValue, size: 18)
+		
+		calendar.appearance.weekdayFont = UIFont(name: FontType.SFProSemibold.rawValue, size: 12)
+		
+		calendar.appearance.subtitleFont = UIFont(name: FontType.SFProSemibold.rawValue, size: 12)
 		
 		calendar.scope = .week
 		calendar.backgroundColor = .clear
@@ -43,22 +65,8 @@ class ReservesViewController: UIViewController {
 		
 		calendar.dataSource = self
 		calendar.delegate = self
-		
-		timePicker.tintColor = .hardColor
-		timePicker.subviews.first?.semanticContentAttribute = .forceRightToLeft
-
-		
-		// Configure Navbar
-		configureNavbar()
 	}
 	
-	@IBAction func buttonTest(_ sender: Any) {
-		print("Tap")
-	}
-	
-	// MARK: Functions
-	
-	// MARK: Styles
 	private func configureNavbar() {
 		self.navigationController!.navigationBar.titleTextAttributes = [
 			.foregroundColor: UIColor.corporativeColor ?? .black,
@@ -85,10 +93,6 @@ extension ReservesViewController: FSCalendarDelegate, FSCalendarDataSource {
 	// MARK: DataSource
 	func minimumDate(for calendar: FSCalendar) -> Date {
 		return Date()
-	}
-	
-	func maximumDate(for calendar: FSCalendar) -> Date {
-		return Date().addingTimeInterval((24 * 60 * 60) * 60)
 	}
 	
 	// MARK: Delegate
