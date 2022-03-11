@@ -88,6 +88,10 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="8mP-TQ-WY6"/>
             <color key="backgroundColor" name="BackgroundColor"/>
+            <connections>
+                <outlet property="eventsIV" destination="dTR-LR-5TP" id="BBd-4L-K4L"/>
+                <outlet property="eventsUIView" destination="wke-Pv-xL5" id="7Gm-96-6Bi"/>
+            </connections>
             <point key="canvasLocation" x="152.17391304347828" y="132.58928571428572"/>
         </tableViewCell>
     </objects>

@@ -68,7 +68,6 @@ final class NetworkingProvider {
 			if let error = response.error {
 				failure(error)
 			}
-			
 		}
 	}
 	
@@ -271,7 +270,7 @@ final class NetworkingProvider {
 	}
 	
 	// MARK: Free Courts
-	func freeCourts() {
+	func freeCourts(clubId: Int) {
 		
 	}
 }

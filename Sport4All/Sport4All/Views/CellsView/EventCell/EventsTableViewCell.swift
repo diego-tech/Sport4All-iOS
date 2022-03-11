@@ -9,15 +9,29 @@ import UIKit
 
 class EventsTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
+	@IBOutlet weak var eventsUIView: UIView!
+	@IBOutlet weak var eventsIV: LazyImageView!
+	
+	override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+		
+		// Inicialización de Estilos
+		uiViewStyles()
+		eventsIV.roundOnlyTwoCorners([.bottomLeft, .topLeft], radius: 10)
+		self.backgroundColor = .backgroundColor
     }
+	
+	// MARK: Functions
+	func setCellWithValueOf() {
+		
+	}
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+	// MARK: Styles
+	private func uiViewStyles() {
+		eventsUIView.layer.cornerCurve = .circular
+		eventsUIView.layer.cornerRadius = 10
+		eventsUIView.backgroundColor = .softBlue
+		eventsUIView.shadow(shadowOpacity: 0.15, shadowRadius: 4)
+	}
 }
