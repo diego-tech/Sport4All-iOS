@@ -13,6 +13,17 @@ class SocialViewController: UIViewController {
 	
 	// MARK: Outlets
 	@IBOutlet weak var eventsTableView: UITableView!
+	@IBOutlet weak var searchBar: UITextField!
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		// Set Empty Text in SearchBar when load view
+		searchBar.text = ""
+		
+		// Inicialización Table View
+		initTableView()
+	}
 	
 	// MARK: Frame Cycle Functions
     override func viewDidLoad() {
@@ -21,12 +32,30 @@ class SocialViewController: UIViewController {
 		
 		// Configure Navbar
 		configureNavbar()
+		
+		// Custom Search Bar
+		searchBar.customSearch()
     }
+	
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+		view.endEditing(true)
+		super.touchesBegan(touches, with: event)
+	}
 	
 	// MARK: Action Functions
 	
 	
 	// MARK: Functions
+	private func initTableView() {
+		eventsTableView.dataSource = self
+		eventsTableView.delegate = self
+		eventsTableView.isScrollEnabled = true
+		eventsTableView.register(UINib.init(nibName: "EventsTableViewCell", bundle: nil), forCellReuseIdentifier: "EventsTableViewCell")
+		eventsTableView.separatorStyle = .none
+		eventsTableView.showsHorizontalScrollIndicator = false
+		eventsTableView.showsVerticalScrollIndicator = false
+		eventsTableView.reloadData()
+	}
 	
 	// MARK: Styles
 	private func configureNavbar() {
@@ -38,5 +67,17 @@ class SocialViewController: UIViewController {
 		
 		// Set Navigation Item
 		self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: titleLabel)
+	}
+}
+
+extension SocialViewController: UITableViewDataSource, UITableViewDelegate {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return 10
+
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		guard let cell = tableView.dequeueReusableCell(withIdentifier: "EventsTableViewCell") as? EventsTableViewCell else { return UITableViewCell() }
+		return cell
 	}
 }
