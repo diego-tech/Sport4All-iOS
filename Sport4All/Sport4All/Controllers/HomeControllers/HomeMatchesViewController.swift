@@ -6,96 +6,78 @@
 //
 
 import UIKit
+import FSCalendar
 
-class Section{
-    let title: String
-    let options: [String]
-    var isOpened: Bool = false
-    
-    init(title: String,
-         options: [String],
-         isOpened: Bool = false
-        ){
-        self.title = title
-        self.options = options
-        self.isOpened = isOpened
-        
-    }
-    
+class HomeMatchesViewController:  UIViewController {
+	
+	// MARK: Variables
+	var formatter = DateFormatter()
+	
+	// MARK: Outlets
+	@IBOutlet weak var calendar: FSCalendar!
+	@IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		// Do any additional setup after loading the view.
+		
+		// Calendar Styles
+		calendarStyles()
+	}
+	
+	// MARK: Action Functions
+	
+	// MARK: Functions
+	
+	// MARK: Styles
+	private func calendarStyles() {
+		calendar.appearance.titleFont = UIFont(name: FontType.SFProDisplaySemibold.rawValue, size: 15)
+		
+		calendar.appearance.headerTitleFont = UIFont(name: FontType.SFProSemibold.rawValue, size: 18)
+		
+		calendar.appearance.weekdayFont = UIFont(name: FontType.SFProSemibold.rawValue, size: 12)
+		
+		calendar.appearance.subtitleFont = UIFont(name: FontType.SFProSemibold.rawValue, size: 12)
+		
+		calendar.scope = .week
+		calendar.backgroundColor = .clear
+		calendar.appearance.todayColor = .hardColor
+		calendar.appearance.titleTodayColor = .backgroundColor
+		calendar.appearance.titleDefaultColor = .hardColor
+		calendar.appearance.headerTitleColor = .hardColor
+		calendar.appearance.weekdayTextColor = .blueLowOpacity
+		calendar.appearance.selectionColor = .hardColor
+		calendar.appearance.titlePlaceholderColor = .blueLowOpacity
+		calendar.appearance.subtitlePlaceholderColor = .blueLowOpacity
+		calendar.allowsMultipleSelection = false
+		calendar.scrollEnabled = true
+		calendar.scrollDirection = .horizontal
+		
+		calendar.dataSource = self
+		calendar.delegate = self
+	}
 }
-class HomeMatchesViewController:  UIViewController, UITableViewDelegate, UITableViewDataSource {
-   
-    private let tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.register(UITableViewCell.self,
-                                                forCellReuseIdentifier: "matchesCell")
-        return tableView
-    }()
-    
-    private var sections = [Section]()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-        //set up models
-        sections = [
-            Section(title: "Section 1", options: [1, 2, 3].compactMap({return "matchesCell \($0)" })),
-            Section(title: "Section 2", options: [1, 2, 3].compactMap({return "matchesCell \($0)" })),
-            Section(title: "Section 3", options: [1, 2, 3].compactMap({return "matchesCell \($0)" })),
-            Section(title: "Section 4", options: [1, 2, 3].compactMap({return "matchesCell \($0)" })),
-        ]
-        
-        view.addSubview(tableView)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.frame = view.bounds
-    }
-    
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let section = sections[section]
-        
-        if section.isOpened{
-            return section.options.count + 1
-        }else{
-            return 1
-        }
-    }
-    
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "matchesCell",
-                                                 for: indexPath)
-        
-        if indexPath.row == 0{
-            cell.textLabel?.text = sections[indexPath.section].title
-            cell.backgroundColor = .systemGray
-          
-        }else{
-            cell.textLabel?.text = sections[indexPath.section].options[indexPath.row - 1]
-            
-            
-        }
-        
-       return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.row == 0{
-            sections[indexPath.section].isOpened = !sections[indexPath.section].isOpened
-            tableView.reloadSections([indexPath.section], with: .none)
-        
-        }else{
-                print("tapped sub cell")
-        }
-     }
+
+extension HomeMatchesViewController: FSCalendarDelegate, FSCalendarDataSource {
 	
+	func minimumDate(for calendar: FSCalendar) -> Date {
+		return Date()
+	}
 	
+	func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+		calendar.today = nil
+		formatter.dateFormat = "yyyy/MM/dd"
+		print("Date Selected == \(formatter.string(from: date))")
+	}
+	
+	func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
+		calendar.today = nil
+		formatter.dateFormat = "yyyy/MM/dd"
+		print("Date Selected == \(formatter.string(from: date))")
+	}
+	
+	func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
+		self.calendarHeightConstraint.constant = bounds.height
+		self.view.layoutIfNeeded()
+	}
 }

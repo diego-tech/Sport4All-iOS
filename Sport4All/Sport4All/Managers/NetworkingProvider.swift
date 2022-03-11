@@ -269,6 +269,11 @@ final class NetworkingProvider {
 			}
 		}
 	}
+	
+	// MARK: Free Courts
+	func freeCourts() {
+		
+	}
 }
 
 /**
