@@ -20,6 +20,7 @@ class ReservesViewController: UIViewController {
 	@IBOutlet weak var calendar: FSCalendar!
 	@IBOutlet weak var clubBannerImageView: LazyImageView!
 	@IBOutlet weak var clubNameLabel: UILabel!
+	@IBOutlet weak var reservesTableView: UITableView!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -37,6 +38,16 @@ class ReservesViewController: UIViewController {
 		// Time Picker Styles
 		timePicker.tintColor = .hardColor
 		timePicker.subviews.first?.semanticContentAttribute = .forceRightToLeft
+		
+		// Init Table View
+		reservesTableView.dataSource = self
+		reservesTableView.delegate = self
+		reservesTableView.isScrollEnabled = true
+		reservesTableView.register(UINib.init(nibName: "ReservesTableViewCell", bundle: nil), forCellReuseIdentifier: "ReservesTableViewCell")
+		reservesTableView.separatorStyle = .none
+		reservesTableView.showsHorizontalScrollIndicator = false
+		reservesTableView.showsVerticalScrollIndicator = false
+		reservesTableView.reloadData()
 	}
 	
 	// MARK: Action Functions
@@ -101,6 +112,7 @@ class ReservesViewController: UIViewController {
 	}
 }
 
+// MARK: FS Calendar Delegate and Data Source
 extension ReservesViewController: FSCalendarDelegate, FSCalendarDataSource {
 	// MARK: DataSource
 	func minimumDate(for calendar: FSCalendar) -> Date {
@@ -125,4 +137,16 @@ extension ReservesViewController: FSCalendarDelegate, FSCalendarDataSource {
 		self.view.layoutIfNeeded()
 	}
  
+}
+
+// MARK: TableView Delegate and DataSource
+extension ReservesViewController: UITableViewDelegate, UITableViewDataSource {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return 3
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReservesTableViewCell") as? ReservesTableViewCell else { return UITableViewCell() }
+		return cell
+	}
 }
