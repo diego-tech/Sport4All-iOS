@@ -7,14 +7,14 @@
 
 import UIKit
 
-protocol ReserveButtonTap {
-	func buttonTapped(_ cell: UICollectionViewCell, club: Club)
+protocol BestRatedCollectionViewCellDelegate {
+	func bestRatedCollectionViewCell(_ cell: UICollectionViewCell, club: Club)
 }
 
 class BestRatedCollectionViewCell: UICollectionViewCell {
 	
 	// Variables
-	var reserveButtonDelegate: ReserveButtonTap?
+	var reserveButtonDelegate: BestRatedCollectionViewCellDelegate?
 	var reserveClub: Club?
 	
 	// Outlets
@@ -35,7 +35,7 @@ class BestRatedCollectionViewCell: UICollectionViewCell {
 	
 	@IBAction func reserveButtonAction(_ sender: UIButton) {
 		guard let reserveClub = reserveClub else { return }
-		reserveButtonDelegate?.buttonTapped(self, club: reserveClub)
+		reserveButtonDelegate?.bestRatedCollectionViewCell(self, club: reserveClub)
 	}
 	
 	// MARK: Functions
