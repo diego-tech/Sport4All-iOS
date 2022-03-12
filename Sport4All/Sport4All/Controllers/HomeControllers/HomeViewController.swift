@@ -28,14 +28,14 @@ class HomeViewController: UIViewController {
 		configureNavbar()
 		
 		
-		// Test Free Court List
-		NetworkingProvider.shared.freeCourts { responseData, status, msg in
-			print("Free Court \(responseData)")
-			print("Free Court \(status)")
-			print("Free Court \(msg)")
-		} failure: { error in
-			print("Free Court \(error)")
-		}
+//		// Test Free Court List
+//		NetworkingProvider.shared.freeCourts { responseData, status, msg in
+//			print("Free Court \(responseData)")
+//			print("Free Court \(status)")
+//			print("Free Court \(msg)")
+//		} failure: { error in
+//			print("Free Court \(error)")
+//		}
 	}
 	
 	override func viewDidLayoutSubviews() {

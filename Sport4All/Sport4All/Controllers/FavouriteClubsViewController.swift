@@ -10,7 +10,7 @@ import UIKit
 class FavouriteClubsViewController: UIViewController {
 	
 	// MARK: Variables
-	private var clubViewModel = ListViewModel()
+	private var clubViewModel = HomeListViewModel()
 	
 	// MARK: Outlets
 	@IBOutlet weak var favouritesTableView: UITableView!
