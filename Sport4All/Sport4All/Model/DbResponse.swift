@@ -36,10 +36,21 @@ struct FreeCourtsResponse: Codable {
 	let data: [Court]?
 	let msg: String?
 	
-	enum Codingkeys: String, CodingKey {
+	enum CodingKeys: String, CodingKey {
 		case status
 		case data
 		case msg
 	}
 }
 
+struct EventListResponse: Codable {
+	let status: Int?
+	let data: [Event]?
+	let msg: String?
+	
+	enum CodingKeys: String, CodingKey {
+		case status
+		case data
+		case msg
+	}
+}

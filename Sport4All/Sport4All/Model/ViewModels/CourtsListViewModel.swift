@@ -22,12 +22,12 @@ class CourtsListViewModel {
 			print("Court List \(responseList)")
 			completion(status)
 		} failure: { error in
-			print(error)
+			debugPrint(error)
 		}
 	}
 	
 	// MARK: DataSource && Delegate Functions Court List
-	func numberOfRowsInSectionCourt(section: Int) -> Int {
+	func numberOfRowsInSection(section: Int) -> Int {
 		let section = courtList[section]
 		
 		if section.isOpened {
@@ -37,7 +37,7 @@ class CourtsListViewModel {
 		}
 	}
 	
-	func cellForRowAtCourt(indexPath: IndexPath) -> Court {
+	func cellForRowAt(indexPath: IndexPath) -> Court {
 		return courtList[indexPath.row]
 	}
 	

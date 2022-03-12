@@ -174,13 +174,13 @@ extension ReservesViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return tableViewModel.numberOfRowsInSectionCourt(section: section)
+		return tableViewModel.numberOfRowsInSection(section: section)
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		if indexPath.row == 0 {
 			guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReservesTableViewCell") as? ReservesTableViewCell else { return UITableViewCell() }
-			let court = tableViewModel.cellForRowAtCourt(indexPath: indexPath)
+			let court = tableViewModel.cellForRowAt(indexPath: indexPath)
 			
 			self.prices = court.prices
 			cell.setCellWithValueOf(court)

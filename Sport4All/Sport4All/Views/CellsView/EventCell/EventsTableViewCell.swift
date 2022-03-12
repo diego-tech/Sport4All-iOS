@@ -9,8 +9,14 @@ import UIKit
 
 class EventsTableViewCell: UITableViewCell {
 
+	// MARK: Variables
+	
+	// MARK: Outlets
 	@IBOutlet weak var eventsUIView: UIView!
 	@IBOutlet weak var eventsIV: LazyImageView!
+	@IBOutlet weak var eventImageView: LazyImageView!
+	@IBOutlet weak var eventNameLabel: UILabel!
+	@IBOutlet weak var clubNameLabel: UILabel!
 	
 	override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,8 +29,19 @@ class EventsTableViewCell: UITableViewCell {
     }
 	
 	// MARK: Functions
-	func setCellWithValueOf() {
+	func setCellWithValueOf(_ event: Event) {
+		updateUI(eventName: event.name, clubName: "Prueba", eventImageStr: "hRb1PgQSdUKaWDe2adsiKfy9XpOLDjOZspMhklKK.jpg")
+	}
+	
+	private func updateUI(eventName: String?, clubName: String?, eventImageStr: String?) {
+		guard let eventName = eventName else { return }
+		guard let clubName = clubName else { return }
+		guard let eventImageStr = eventImageStr else { return }
+		guard let url = URL(string: Constants.kStorageURL + eventImageStr) else { return }
 		
+		self.eventNameLabel.text = eventName
+		self.clubNameLabel.text = clubName
+		self.eventImageView.loadImage(fromURL: url)
 	}
 
 	// MARK: Styles

@@ -97,6 +97,8 @@
 		5EDE04E727D8AE41006EDE1E /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 5EDE04E627D8AE41006EDE1E /* FSCalendar */; };
 		5EDE04EA27D8AE8C006EDE1E /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 5EDE04E927D8AE8C006EDE1E /* SPIndicator */; };
 		5EE2A17E27DCDCAF00575BAF /* CourtsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2A17D27DCDCAF00575BAF /* CourtsListViewModel.swift */; };
+		5EE2A18227DCEDCF00575BAF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2A18127DCEDCF00575BAF /* Event.swift */; };
+		5EE2A18427DCEE9C00575BAF /* EventsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2A18327DCEE9C00575BAF /* EventsListViewModel.swift */; };
 		5EF497A327A5570F008B0C37 /* DateDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A227A5570F008B0C37 /* DateDecoder.swift */; };
 		5EF497A627A55794008B0C37 /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A527A55794008B0C37 /* UserDefaultsProvider.swift */; };
 		5EF497A827A55858008B0C37 /* NetworkingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A727A55858008B0C37 /* NetworkingProvider.swift */; };
@@ -196,6 +198,8 @@
 		5EDC2CE627C6AFF3007EE2C0 /* EventPendingList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventPendingList.storyboard; sourceTree = "<group>"; };
 		5EDC2CE827C6B04A007EE2C0 /* EventPendingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPendingListViewController.swift; sourceTree = "<group>"; };
 		5EE2A17D27DCDCAF00575BAF /* CourtsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtsListViewModel.swift; sourceTree = "<group>"; };
+		5EE2A18127DCEDCF00575BAF /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		5EE2A18327DCEE9C00575BAF /* EventsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListViewModel.swift; sourceTree = "<group>"; };
 		5EF497A227A5570F008B0C37 /* DateDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDecoder.swift; sourceTree = "<group>"; };
 		5EF497A527A55794008B0C37 /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
 		5EF497A727A55858008B0C37 /* NetworkingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProvider.swift; sourceTree = "<group>"; };
@@ -481,6 +485,7 @@
 				5EA1A67427A7EDCF0096754C /* UserLogin.swift */,
 				5E9661D327C78E2000EEFC14 /* Club.swift */,
 				5ECF963727DB5B3C002AAD79 /* Court.swift */,
+				5EE2A18127DCEDCF00575BAF /* Event.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -663,6 +668,7 @@
 				5E9661D127C78DAF00EEFC14 /* HomeListViewModel.swift */,
 				5E7DFEC527D7E5F500CF9425 /* HomeCollectionViewModel.swift */,
 				5EE2A17D27DCDCAF00575BAF /* CourtsListViewModel.swift */,
+				5EE2A18327DCEE9C00575BAF /* EventsListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -870,6 +876,7 @@
 				5EC9E1AA27DB5274002D0FFA /* EventsTableViewCell.swift in Sources */,
 				5E12C4B527B6583300F4E7EA /* ProfileViewController.swift in Sources */,
 				5E197F01278D7E6F008BBABB /* Constants.swift in Sources */,
+				5EE2A18227DCEDCF00575BAF /* Event.swift in Sources */,
 				5E9E821027B283D700A450E8 /* HomeClubsViewController.swift in Sources */,
 				5EA1A67127A7E6970096754C /* User.swift in Sources */,
 				5EA12CA527D78DC300774428 /* ReservesViewController.swift in Sources */,
@@ -885,6 +892,7 @@
 				5E7DFEC627D7E5F500CF9425 /* HomeCollectionViewModel.swift in Sources */,
 				5999B68427B285640008BE6B /* ClubTableViewCell.swift in Sources */,
 				5E12F10027C290BA00316D69 /* OnboardingCollectionViewCell.swift in Sources */,
+				5EE2A18427DCEE9C00575BAF /* EventsListViewModel.swift in Sources */,
 				5E9661D027C7849B00EEFC14 /* FinishEventDetailViewController.swift in Sources */,
 				5E105D3727CFF2820037A071 /* FinishEventListViewController.swift in Sources */,
 			);
