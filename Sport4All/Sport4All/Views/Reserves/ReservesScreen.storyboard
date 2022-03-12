@@ -126,24 +126,25 @@
                                                             <subviews>
                                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kr7-kj-8oB">
                                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
-                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    <color key="backgroundColor" name="BackgroundColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="110" id="mk8-J5-Ka5"/>
                                                                     </constraints>
-                                                                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G2h-Pe-wHF">
+                                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G2h-Pe-wHF">
                                                                         <size key="itemSize" width="128" height="128"/>
                                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                     </collectionViewFlowLayout>
                                                                     <cells>
-                                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="DhS-oi-GYv">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PriceCollectionViewCell" id="DhS-oi-GYv" customClass="PriceCollectionViewCell" customModule="Sport4All" customModuleProvider="target">
+                                                                            <rect key="frame" x="0.0" y="20" width="100" height="80"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="SPZ-eR-nzv">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                             </collectionViewCellContentView>
+                                                                            <size key="customSize" width="100" height="80"/>
                                                                         </collectionViewCell>
                                                                     </cells>
                                                                 </collectionView>
@@ -155,6 +156,7 @@
                                                                 <constraint firstItem="kr7-kj-8oB" firstAttribute="leading" secondItem="nlG-T3-jBT" secondAttribute="leading" id="mFN-Gb-iIJ"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <color key="backgroundColor" name="BackgroundColor"/>
                                                         <connections>
                                                             <outlet property="pricesCollectionView" destination="kr7-kj-8oB" id="jp7-0M-1fb"/>
                                                         </connections>
