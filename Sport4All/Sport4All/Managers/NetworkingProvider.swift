@@ -270,8 +270,29 @@ final class NetworkingProvider {
 	}
 	
 	// MARK: Free Courts
-	func freeCourts(clubId: Int) {
+	func freeCourts(serverResponse: @escaping (_ responseData: [Court]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+		let url = "\(Constants.kBaseURL)/freecourts"
+		let header: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
 		
+		let parameters = [
+			"club_id": 2,
+			"day": "2022-03-13",
+			"start_time": "13:00:00"
+		] as [String : Any]
+		
+		AF.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: header).responseDecodable(of: FreeCourtsResponse.self, decoder: DateDecoder()) {
+			response in
+			
+			// Handle Response Data && Status Code && Message
+			if let data = response.value?.data, let status = response.value?.status, let msg = response.value?.msg {
+				serverResponse(data, status, msg)
+			}
+			
+			// Handle Alamofire Error
+			if let error = response.error {
+				failure(error)
+			}
+		}
 	}
 }
 

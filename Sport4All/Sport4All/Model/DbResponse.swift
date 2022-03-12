@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Response: Decodable {
+struct Response: Codable {
 	let status: Int?
 	let data: User?
 	let msg: String?
@@ -20,13 +20,23 @@ struct Response: Decodable {
 }
 
 struct ClubListResponse: Codable {
-	let message: String?
 	let status: Int?
 	let data: [Club]?
 	let msg: String?
 	
 	enum CodingKeys: String, CodingKey {
-		case message
+		case status
+		case data
+		case msg
+	}
+}
+
+struct FreeCourtsResponse: Codable {
+	let status: Int?
+	let data: [Court]?
+	let msg: String?
+	
+	enum Codingkeys: String, CodingKey {
 		case status
 		case data
 		case msg

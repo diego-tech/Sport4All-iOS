@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Court {
-	let club_id: Int?
+struct Court: Codable {
+	let club_id: Int
 	let name: String?
 	let type: String?
-	let price: Int?
+	let prices: [Price]
 	let id: Int?
 	let updatedAt: Date?
 	let createdAt: Date?
@@ -20,8 +20,24 @@ struct Court {
 		case club_id
 		case name
 		case type
-		case price
+		case prices
 		case id
+		case updatedAt = "updated_at"
+		case createdAt = "created_at"
+	}
+}
+
+struct Price: Codable {
+	let id: Int
+	let price: Double
+	let time: Double
+	let updatedAt: Date?
+	let createdAt: Date?
+	
+	enum CodingKeys: String, CodingKey {
+		case id
+		case price
+		case time
 		case updatedAt = "updated_at"
 		case createdAt = "created_at"
 	}
