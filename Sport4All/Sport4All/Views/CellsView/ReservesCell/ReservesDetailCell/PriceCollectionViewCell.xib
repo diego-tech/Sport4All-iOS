@@ -62,6 +62,8 @@
             </constraints>
             <connections>
                 <outlet property="priceCVCView" destination="F3o-mh-sR9" id="6c2-gx-zHl"/>
+                <outlet property="priceLabel" destination="K6B-bN-hr2" id="6PH-BK-xmb"/>
+                <outlet property="timeLabel" destination="Zpx-oI-eCC" id="riX-Uz-zDf"/>
             </connections>
             <point key="canvasLocation" x="132" y="84"/>
         </collectionViewCell>

@@ -65,11 +65,11 @@
                                     <constraint firstAttribute="trailing" secondItem="IPt-u0-YwW" secondAttribute="trailing" constant="20" id="zz4-EQ-1bR"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RqB-ac-Knu">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RqB-ac-Knu">
                                 <rect key="frame" x="0.0" y="371" width="414" height="491"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wkt-kx-t3y" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQy-2b-3Re" customClass="FSCalendar">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
@@ -114,7 +114,7 @@
                                                 </constraints>
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dJk-ix-05Y">
-                                                <rect key="frame" x="0.0" y="398" width="414" height="331"/>
+                                                <rect key="frame" x="0.0" y="398" width="414" height="172"/>
                                                 <color key="backgroundColor" name="BackgroundColor"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReservesDetailTableViewCell" rowHeight="120" id="JeR-no-DVf" customClass="ReservesDetailTableViewCell" customModule="Sport4All" customModuleProvider="target">
@@ -173,9 +173,9 @@
                                             <constraint firstItem="BI7-g2-dL2" firstAttribute="leading" secondItem="Wkt-kx-t3y" secondAttribute="leading" id="B7F-U2-ujH"/>
                                             <constraint firstItem="OQy-2b-3Re" firstAttribute="leading" secondItem="Wkt-kx-t3y" secondAttribute="leading" id="Ejm-4A-OUJ"/>
                                             <constraint firstAttribute="trailing" secondItem="dJk-ix-05Y" secondAttribute="trailing" id="EkK-PL-9pB"/>
-                                            <constraint firstAttribute="height" constant="900" id="Ey0-pD-99u"/>
+                                            <constraint firstAttribute="height" constant="600" id="Ey0-pD-99u"/>
                                             <constraint firstAttribute="trailing" secondItem="BI7-g2-dL2" secondAttribute="trailing" id="KAn-RA-Vhq"/>
-                                            <constraint firstAttribute="bottom" secondItem="dJk-ix-05Y" secondAttribute="bottom" constant="171" id="Kao-Wq-vk6"/>
+                                            <constraint firstAttribute="bottom" secondItem="dJk-ix-05Y" secondAttribute="bottom" constant="30" id="Kao-Wq-vk6"/>
                                             <constraint firstItem="Mff-ml-TfI" firstAttribute="leading" secondItem="Wkt-kx-t3y" secondAttribute="leading" id="TgZ-Ne-43H"/>
                                             <constraint firstItem="gLn-vB-V4q" firstAttribute="centerX" secondItem="Wkt-kx-t3y" secondAttribute="centerX" id="YcC-l5-CEh"/>
                                             <constraint firstItem="gLn-vB-V4q" firstAttribute="top" secondItem="Mff-ml-TfI" secondAttribute="bottom" constant="10" id="luj-rl-1ph"/>

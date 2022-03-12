@@ -30,6 +30,8 @@ class ReservesViewController: UIViewController {
 		sections = [
 			Section(title: "Section 1", options: [1], isOpened: true),
 			Section(title: "Section 2", options: [1]),
+			Section(title: "Section 3", options: [1]),
+			Section(title: "Section 3", options: [1]),
 			Section(title: "Section 3", options: [1])
 		]
 		
@@ -53,7 +55,7 @@ class ReservesViewController: UIViewController {
 		reservesTableView.register(UINib.init(nibName: "ReservesTableViewCell", bundle: nil), forCellReuseIdentifier: "ReservesTableViewCell")
 		reservesTableView.separatorStyle = .none
 		reservesTableView.showsHorizontalScrollIndicator = false
-		reservesTableView.showsVerticalScrollIndicator = false
+		reservesTableView.showsVerticalScrollIndicator = true
 		reservesTableView.reloadData()
 	}
 	

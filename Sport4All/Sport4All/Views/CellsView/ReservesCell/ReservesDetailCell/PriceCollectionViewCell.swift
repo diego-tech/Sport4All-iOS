@@ -13,6 +13,8 @@ class PriceCollectionViewCell: UICollectionViewCell {
 	
 	// MARK: Outlets
 	@IBOutlet weak var priceCVCView: UIView!
+	@IBOutlet weak var priceLabel: UILabel!
+	@IBOutlet weak var timeLabel: UILabel!
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
