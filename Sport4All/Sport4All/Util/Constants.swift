@@ -12,4 +12,12 @@ struct Constants {
 	// Networking
 	static let kBaseURL = "http://localhost:80/api"
 	static let kStorageURL = "http://localhost/storage/"
+	
+	// Services Enum Strings
+	static let parking = "Parking"
+	static let coffeeShop = "Cafeteria"
+	static let nursing = "Enfermeria"
+	static let shop = "Tienda"
+	static let internet = "Wifi"
+	static let changingRooms = "Vestuarios"
 }

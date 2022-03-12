@@ -25,17 +25,17 @@ final class AuxFunctions {
 	// Comprobar Servicios que recibo para devolver imagen correspondiente
 	static func getServices(clubService: ClubService) -> UIImage {
 		switch clubService.name {
-		case "Parking":
+		case Constants.parking:
 			return UIImage(systemName: "parkingsign.circle.fill")!
-		case "Cafeteria":
+		case Constants.coffeeShop:
 			return UIImage(systemName: "fork.knife.circle.fill")!
-		case "Enfermeria":
+		case Constants.nursing:
 			return UIImage(systemName: "cross.case.fill")!
-		case "Tienda":
+		case Constants.shop:
 			return UIImage(systemName: "cart.circle.fill")!
-		case "Wifi":
+		case Constants.internet:
 			return UIImage(systemName: "wifi.circle.fill")!
-		case "Vestuarios":
+		case Constants.changingRooms:
 			return UIImage(systemName: "tshirt.fill")!
 		default:
 			return UIImage(systemName: "house.circle.fill")!
