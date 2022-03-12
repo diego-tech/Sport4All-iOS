@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController, SettingsViewControllerDelegate {
+class ProfileViewController: UIViewController {
 	
 	// MARK: Variables
 	private var userImage: String?
@@ -54,12 +54,6 @@ class ProfileViewController: UIViewController, SettingsViewControllerDelegate {
 		navigationController?.pushViewController(vc, animated: true)
 	}
 	
-	func settingsViewController(_ settingsViewController: SettingsViewController, didSelectOption option: SettingsOption) {
-		let vc = UIStoryboard(name: "EditProfile", bundle: nil).instantiateViewController(withIdentifier: "EditProfile") as! EditProfileViewController
-
-		self.navigationController?.pushViewController(vc, animated: true)
-	}
-	
 	// MARK: Functions
 	private func fetchUserInfo() {
 		NetworkingProvider.shared.userInfo { responseData, status, msg in
@@ -89,5 +83,23 @@ class ProfileViewController: UIViewController, SettingsViewControllerDelegate {
 		self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: hamburguerImage, style: .plain, target: self, action: #selector(settingsButtonTapped(tapGestureRecognizer: )))
 		
 		navigationController?.navigationBar.tintColor = .corporativeColor
+	}
+}
+
+// MARK: Settings Delegate
+extension ProfileViewController: SettingsViewControllerDelegate {
+	func settingsViewController(_ settingsViewController: SettingsViewController, didSelectOption option: SettingsOption) {
+		let vc = UIStoryboard(name: "EditProfile", bundle: nil).instantiateViewController(withIdentifier: "EditProfile") as! EditProfileViewController
+		
+		switch option.optionType {
+		case .EditProfile:
+			self.navigationController?.pushViewController(vc, animated: true)
+		case .ContactUs:
+			print("Contacta Con Nosotros")
+		case .ShowTutorial:
+			print("Ver Tutorial")
+		case .LogOut:
+			print("Cerrar Sesión")
+		}
 	}
 }
