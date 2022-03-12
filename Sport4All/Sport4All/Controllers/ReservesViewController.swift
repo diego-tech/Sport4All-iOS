@@ -11,12 +11,13 @@ import FSCalendar
 class ReservesViewController: UIViewController {
 	
 	// MARK: Variables
-	var formatter = DateFormatter()
 	var club: Club?
-	private var sections = [Section]()
-	private var tableViewModel = CourtsListViewModel()
 
+	private var formatter = DateFormatter()
+	private var tableViewModel = CourtsListViewModel()
 	private var prices = [Price]()
+	private var pickedDate: String?
+	private var pickedTime: String?
 	
 	// MARK: Outlets
 	@IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
@@ -42,12 +43,17 @@ class ReservesViewController: UIViewController {
 		// Time Picker Styles
 		timePicker.tintColor = .hardColor
 		timePicker.subviews.first?.semanticContentAttribute = .forceRightToLeft
+	}
+	
+	// MARK: Action Functions
+	@IBAction func timePickerAction(_ sender: UIDatePicker) {
+		let date = sender.date
+		formatter.dateFormat = "HH:mm:ss"
+		pickedTime = formatter.string(from: date)
 		
 		// Init Table View
 		courtList()
 	}
-	
-	// MARK: Action Functions
 	
 	// MARK: Functions
 	private func configure() {
@@ -60,7 +66,13 @@ class ReservesViewController: UIViewController {
 	}
 	
 	private func courtList() {
-		tableViewModel.fetchFreeCourts { [weak self] status in
+		var queryCourt: QueryCourt?
+		if let clubId = club?.id, let day = pickedDate, let time = pickedTime {
+			queryCourt = QueryCourt(club_id: clubId, day: day, start_time: time)
+		}
+		guard let queryCourt = queryCourt else { return }
+
+		tableViewModel.fetchFreeCourts(queryCourt: queryCourt) { [weak self] status in
 			self?.initTableView()
 		}
 	}
@@ -136,13 +148,15 @@ extension ReservesViewController: FSCalendarDelegate, FSCalendarDataSource {
 	// MARK: Delegate
 	func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
 		calendar.today = nil
-		formatter.dateFormat = "yyyy/MM/dd"
+		formatter.dateFormat = "yyyy-MM-dd"
+		pickedDate = formatter.string(from: date)
 		print("Date Selected == \(formatter.string(from: date))")
 	}
 	
 	func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
 		calendar.today = nil
-		formatter.dateFormat = "yyyy/MM/dd"
+		formatter.dateFormat = "yyyy-MM-dd"
+		pickedDate = formatter.string(from: date)
 		print("Date Selected == \(formatter.string(from: date))")
 	}
 	

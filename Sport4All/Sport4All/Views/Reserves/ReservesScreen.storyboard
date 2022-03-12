@@ -100,6 +100,9 @@
                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="KT1-qk-o9q">
                                                         <rect key="frame" x="73" y="0.0" width="86" height="56"/>
                                                         <locale key="locale" localeIdentifier="es"/>
+                                                        <connections>
+                                                            <action selector="timePickerAction:" destination="jkf-qn-Xek" eventType="valueChanged" id="Xa8-Pr-xMi"/>
+                                                        </connections>
                                                     </datePicker>
                                                 </subviews>
                                                 <constraints>

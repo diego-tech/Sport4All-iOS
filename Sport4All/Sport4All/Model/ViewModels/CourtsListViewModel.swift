@@ -13,8 +13,8 @@ class CourtsListViewModel {
 	private var status = Int()
 
 	// MARK: Free Courts List
-	func fetchFreeCourts(completion: @escaping (_ status: Int?) -> ()) {
-		NetworkingProvider.shared.freeCourts() { responseData, status, msg in
+	func fetchFreeCourts(queryCourt: QueryCourt, completion: @escaping (_ status: Int?) -> ()) {
+		NetworkingProvider.shared.freeCourts(courtsParameters: queryCourt) { responseData, status, msg in
 			guard let responseList = responseData else { return }
 			guard let status = status else { return }
 			self.status = status

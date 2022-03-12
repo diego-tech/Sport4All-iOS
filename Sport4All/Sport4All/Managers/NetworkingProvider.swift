@@ -270,20 +270,14 @@ final class NetworkingProvider {
 	}
 	
 	// MARK: Free Courts
-	func freeCourts(serverResponse: @escaping (_ responseData: [Court]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+	func freeCourts(courtsParameters: QueryCourt, serverResponse: @escaping (_ responseData: [Court]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/freecourts"
 		let header: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
 		
-//		let parameters = [
-//			"club_id": courtsParameters.club_id,
-//			"day": courtsParameters.day,
-//			"start_time": courtsParameters.start_time
-//		] as [String : Any]
-		
 		let parameters = [
-			"club_id": 2,
-			"day": "2022-03-13",
-			"start_time": "13:00:00"
+			"club_id": courtsParameters.club_id,
+			"day": courtsParameters.day,
+			"start_time": courtsParameters.start_time
 		] as [String : Any]
 		
 		AF.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: header).responseDecodable(of: FreeCourtsResponse.self, decoder: DateDecoder()) {
