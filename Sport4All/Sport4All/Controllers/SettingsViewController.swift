@@ -16,7 +16,15 @@ struct SettingsOption {
 	let title: String
 	let icon: UIImage?
 	let tintColor: UIColor
+	let optionType: SettingsOptionEnum
 	let handler: ((SettingsOption) -> Void)
+}
+
+enum SettingsOptionEnum {
+	case EditProfile
+	case ContactUs
+	case ShowTutorial
+	case LogOut
 }
 
 protocol SettingsViewControllerDelegate {
@@ -63,18 +71,21 @@ class SettingsViewController: UIViewController {
 	
 	func configure() {
 		models.append(SettingsSection(title: "Configuración", options: [
-			SettingsOption(title: "Editar Perfil", icon: UIImage(systemName: "pencil.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .hardColor ?? .black) { [self] option in
+			SettingsOption(title: "Editar Perfil", icon: UIImage(systemName: "pencil.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .hardColor ?? .black, optionType: .EditProfile) { [self] option in
 				settingsDelegate?.settingsViewController(self, didSelectOption: option)
+				dismiss(animated: true, completion: nil)
 			},
-			SettingsOption(title: "Contacta con Nosotros", icon: UIImage(systemName: "person.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .hardColor ?? .black) { option in
-				print("tapped")
+			SettingsOption(title: "Contacta con Nosotros", icon: UIImage(systemName: "person.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .hardColor ?? .black, optionType: .ContactUs) { [self] option in
+				settingsDelegate?.settingsViewController(self, didSelectOption: option)
+				dismiss(animated: true, completion: nil)
 			},
-			SettingsOption(title: "Ver Tutorial", icon: UIImage(systemName: "eye.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .hardColor ?? .black) { option in
-				print("tapped")
-				
+			SettingsOption(title: "Ver Tutorial", icon: UIImage(systemName: "eye.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .hardColor ?? .black, optionType: .ShowTutorial) { [self] option in
+				settingsDelegate?.settingsViewController(self, didSelectOption: option)
+				dismiss(animated: true, completion: nil)
 			},
-			SettingsOption(title: "Cerrar Sesión", icon: UIImage(systemName: "xmark.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .red) { option in
-				print("tapped")
+			SettingsOption(title: "Cerrar Sesión", icon: UIImage(systemName: "xmark.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .red, optionType: .LogOut) { [self] option in
+				settingsDelegate?.settingsViewController(self, didSelectOption: option)
+				dismiss(animated: true, completion: nil)
 			}
 		]))
 	}
