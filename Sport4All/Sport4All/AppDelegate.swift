@@ -7,15 +7,29 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import Alamofire
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-		
+		let reachabilityManager = NetworkReachabilityManager(host: "www.google.com")
+
+		reachabilityManager?.startListening { status in
+			switch status {
+			case .notReachable:
+				print("No Internet")
+			case .unknown:
+				print("Unknown")
+			case .reachable(.cellular):
+				print("Cellular")
+			case .reachable(.ethernetOrWiFi):
+				print("Wifi")
+			}
+		}
 		// Tiempo de Cargar Launch Screen
 		Thread.sleep(forTimeInterval: 2.0)
-		
+				
 		// Inicializar IQKeyboardManager
 		IQKeyboardManager.shared.enable = true
 		
