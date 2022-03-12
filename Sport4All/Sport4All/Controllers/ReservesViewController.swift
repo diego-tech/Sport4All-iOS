@@ -13,6 +13,7 @@ class ReservesViewController: UIViewController {
 	// MARK: Variables
 	var formatter = DateFormatter()
 	var club: Club?
+	private var sections = [Section]()
 	
 	// MARK: Outlets
 	@IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
@@ -24,11 +25,17 @@ class ReservesViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view.s
-
+		// Do any additional setup after loading the view.
+		
+		sections = [
+			Section(title: "Section 1", options: [1], isOpened: true),
+			Section(title: "Section 2", options: [1]),
+			Section(title: "Section 3", options: [1])
+		]
+		
 		// Configure Models
 		configure()
-	
+		
 		// Configure Navbar
 		configureNavbar()
 		
@@ -136,17 +143,49 @@ extension ReservesViewController: FSCalendarDelegate, FSCalendarDataSource {
 		self.calendarHeightConstraint.constant = bounds.height
 		self.view.layoutIfNeeded()
 	}
- 
+	
 }
 
 // MARK: TableView Delegate and DataSource
 extension ReservesViewController: UITableViewDelegate, UITableViewDataSource {
+	func numberOfSections(in tableView: UITableView) -> Int {
+		return sections.count
+	}
+	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 3
+		let section = sections[section]
+
+		if section.isOpened {
+			return section.options.count + 1
+		} else {
+			return 1
+		}
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReservesTableViewCell") as? ReservesTableViewCell else { return UITableViewCell() }
-		return cell
+		if indexPath.row == 0 {
+			guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReservesTableViewCell") as? ReservesTableViewCell else { return UITableViewCell() }
+			return cell
+		} else {
+			guard let detailCell = tableView.dequeueReusableCell(withIdentifier: "ReservesDetailTableViewCell") as? ReservesDetailTableViewCell else { return UITableViewCell() }
+			return detailCell
+		}
 	}
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true)
+		
+		if indexPath.row == 0 {
+			sections[indexPath.section].isOpened = !sections[indexPath.section].isOpened
+			self.reservesTableView.reloadSections([indexPath.section], with: .automatic)
+		} else {
+			print("Tap")
+		}
+	}
+}
+
+struct Section{
+	let title: String
+	let options: [Int]
+	var isOpened: Bool = false
 }
