@@ -124,11 +124,10 @@
                                                 <color key="textColor" name="HardColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LZ7-F6-fhm" userLabel="Services Stack View">
-                                                <rect key="frame" x="47" y="288" width="320" height="50"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZ7-F6-fhm" userLabel="Services Stack View">
+                                                <rect key="frame" x="20" y="288" width="374" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="DTi-lN-N4m"/>
-                                                    <constraint firstAttribute="width" constant="320" id="z6S-lG-fXs"/>
+                                                    <constraint firstAttribute="height" constant="50" id="w3f-us-C9G"/>
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Como Llegar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mct-Mu-u73">
@@ -195,11 +194,13 @@
                                             <constraint firstItem="hNr-Ye-GUh" firstAttribute="top" secondItem="mhZ-dE-hRX" secondAttribute="top" constant="20" id="Gzk-R1-Yaj"/>
                                             <constraint firstItem="sJM-sp-o8y" firstAttribute="leading" secondItem="Mct-Mu-u73" secondAttribute="leading" id="PhH-nV-5p5"/>
                                             <constraint firstAttribute="trailing" secondItem="Mct-Mu-u73" secondAttribute="trailing" constant="20" id="QPS-zC-Lot"/>
+                                            <constraint firstItem="LZ7-F6-fhm" firstAttribute="leading" secondItem="mhZ-dE-hRX" secondAttribute="leading" constant="20" id="UOU-Ua-Qzi"/>
                                             <constraint firstItem="NrA-G2-8SW" firstAttribute="leading" secondItem="mhZ-dE-hRX" secondAttribute="leading" constant="20" id="XJA-c6-kCP"/>
                                             <constraint firstAttribute="trailing" secondItem="NrA-G2-8SW" secondAttribute="trailing" constant="20" id="ZOq-bV-FUa"/>
                                             <constraint firstItem="VYi-m6-Du3" firstAttribute="leading" secondItem="mhZ-dE-hRX" secondAttribute="leading" constant="20" id="Zfo-ae-YY9"/>
                                             <constraint firstItem="sJM-sp-o8y" firstAttribute="trailing" secondItem="Mct-Mu-u73" secondAttribute="trailing" id="dB5-4Q-81u"/>
                                             <constraint firstItem="7DR-DN-2WM" firstAttribute="leading" secondItem="mhZ-dE-hRX" secondAttribute="leading" constant="20" id="eKp-P0-7tX"/>
+                                            <constraint firstAttribute="trailing" secondItem="LZ7-F6-fhm" secondAttribute="trailing" constant="20" id="f04-bG-HpY"/>
                                             <constraint firstAttribute="bottom" secondItem="7DR-DN-2WM" secondAttribute="bottom" constant="165" id="ggb-Lx-ZZd"/>
                                             <constraint firstItem="7DR-DN-2WM" firstAttribute="top" secondItem="sJM-sp-o8y" secondAttribute="bottom" constant="20" id="gsp-r2-2LX"/>
                                             <constraint firstAttribute="trailing" secondItem="7DR-DN-2WM" secondAttribute="trailing" constant="20" id="hB1-zi-vhq"/>

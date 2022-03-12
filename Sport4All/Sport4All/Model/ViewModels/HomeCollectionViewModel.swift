@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class CollectionViewModel {
+class HomeCollectionViewModel {
 	
 	// MARK: Variables
 	public var clubList = [Club]()

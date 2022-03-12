@@ -10,8 +10,8 @@ import UIKit
 class HomeClubsViewController: UIViewController {
 	
 	// MARK: Variables
-	private var tableViewModel = ListViewModel()
-	private var collectionViewModel = CollectionViewModel()
+	private var tableViewModel = HomeListViewModel()
+	private var collectionViewModel = HomeCollectionViewModel()
 	
 	// MARK: Outlets
 	@IBOutlet weak var searchBar: UITextField!

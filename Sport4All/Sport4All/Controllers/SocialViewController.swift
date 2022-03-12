@@ -10,6 +10,7 @@ import UIKit
 class SocialViewController: UIViewController {
 
 	// MARK: Variables
+	private var tableViewModel = EventsListViewModel()
 	
 	// MARK: Outlets
 	@IBOutlet weak var eventsTableView: UITableView!
@@ -22,7 +23,7 @@ class SocialViewController: UIViewController {
 		searchBar.text = ""
 		
 		// Inicialización Table View
-		initTableView()
+		eventsList()
 	}
 	
 	// MARK: Frame Cycle Functions
@@ -46,6 +47,12 @@ class SocialViewController: UIViewController {
 	
 	
 	// MARK: Functions
+	private func eventsList() {
+		tableViewModel.fetchEventList { [weak self] status in
+			self?.initTableView()
+		}
+	}
+	
 	private func initTableView() {
 		eventsTableView.dataSource = self
 		eventsTableView.delegate = self
@@ -72,12 +79,13 @@ class SocialViewController: UIViewController {
 
 extension SocialViewController: UITableViewDataSource, UITableViewDelegate {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 10
-
+		return tableViewModel.numberOfRowInSection(section: section)
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "EventsTableViewCell") as? EventsTableViewCell else { return UITableViewCell() }
+		let event = tableViewModel.cellForRowAt(indexPath: indexPath)
+		cell.setCellWithValueOf(event)
 		return cell
 	}
 }

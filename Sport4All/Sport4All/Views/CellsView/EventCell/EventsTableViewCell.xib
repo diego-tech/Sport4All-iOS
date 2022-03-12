@@ -29,15 +29,12 @@
                         <rect key="frame" x="10" y="10" width="340" height="100"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Torneo Navideño V Edición de Villa de Vallecas" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAL-UU-BcQ">
-                                <rect key="frame" x="108" y="11" width="163" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="163" id="JPe-Zk-EFl"/>
-                                </constraints>
+                                <rect key="frame" x="108" y="11" width="212" height="29"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="12"/>
                                 <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Club de pádel Villa de Vallecas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZH-9C-ami">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Club de pádel Villa de Vallecas" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZH-9C-ami">
                                 <rect key="frame" x="108" y="44.5" width="135" height="11"/>
                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="9"/>
                                 <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -55,7 +52,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="RightArrowAllClubsCard"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Más Información..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjL-5r-IhA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Más Información..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjL-5r-IhA">
                                 <rect key="frame" x="108" y="65.5" width="89.5" height="12"/>
                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="10"/>
                                 <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -65,6 +62,7 @@
                         <color key="backgroundColor" name="SoftBlue"/>
                         <constraints>
                             <constraint firstItem="uZH-9C-ami" firstAttribute="centerY" secondItem="wke-Pv-xL5" secondAttribute="centerY" id="1j8-sp-lZZ"/>
+                            <constraint firstAttribute="trailing" secondItem="dAL-UU-BcQ" secondAttribute="trailing" constant="20" id="5YX-7v-kRb"/>
                             <constraint firstItem="ZjL-5r-IhA" firstAttribute="leading" secondItem="dTR-LR-5TP" secondAttribute="trailing" constant="8" symbolic="YES" id="7ea-XN-Jae"/>
                             <constraint firstAttribute="bottom" secondItem="ajW-BB-ukI" secondAttribute="bottom" constant="30" id="CDl-e7-K2A"/>
                             <constraint firstAttribute="trailing" secondItem="ajW-BB-ukI" secondAttribute="trailing" constant="10" id="DJP-Z6-MQT"/>
@@ -89,6 +87,9 @@
             <viewLayoutGuide key="safeArea" id="8mP-TQ-WY6"/>
             <color key="backgroundColor" name="BackgroundColor"/>
             <connections>
+                <outlet property="clubNameLabel" destination="uZH-9C-ami" id="a5q-g6-pnv"/>
+                <outlet property="eventImageView" destination="dTR-LR-5TP" id="0gO-br-u95"/>
+                <outlet property="eventNameLabel" destination="dAL-UU-BcQ" id="f42-WE-jon"/>
                 <outlet property="eventsIV" destination="dTR-LR-5TP" id="BBd-4L-K4L"/>
                 <outlet property="eventsUIView" destination="wke-Pv-xL5" id="7Gm-96-6Bi"/>
             </connections>

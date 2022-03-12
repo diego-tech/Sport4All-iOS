@@ -11,8 +11,13 @@ import FSCalendar
 class ReservesViewController: UIViewController {
 	
 	// MARK: Variables
-	var formatter = DateFormatter()
 	var club: Club?
+
+	private var formatter = DateFormatter()
+	private var tableViewModel = CourtsListViewModel()
+	private var prices = [Price]()
+	private var pickedDate: String?
+	private var pickedTime: String?
 	
 	// MARK: Outlets
 	@IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
@@ -20,14 +25,15 @@ class ReservesViewController: UIViewController {
 	@IBOutlet weak var calendar: FSCalendar!
 	@IBOutlet weak var clubBannerImageView: LazyImageView!
 	@IBOutlet weak var clubNameLabel: UILabel!
+	@IBOutlet weak var reservesTableView: UITableView!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view.s
-
+		// Do any additional setup after loading the view.
+		
 		// Configure Models
 		configure()
-	
+		
 		// Configure Navbar
 		configureNavbar()
 		
@@ -40,6 +46,14 @@ class ReservesViewController: UIViewController {
 	}
 	
 	// MARK: Action Functions
+	@IBAction func timePickerAction(_ sender: UIDatePicker) {
+		let date = sender.date
+		formatter.dateFormat = "HH:mm:ss"
+		pickedTime = formatter.string(from: date)
+		
+		// Init Table View
+		courtList()
+	}
 	
 	// MARK: Functions
 	private func configure() {
@@ -49,6 +63,18 @@ class ReservesViewController: UIViewController {
 		guard let bannerUrl = URL(string: Constants.kStorageURL + banner) else { return debugPrint("Error Url Imagen") }
 		self.clubBannerImageView.loadImage(fromURL: bannerUrl)
 		self.clubNameLabel.text = name
+	}
+	
+	private func courtList() {
+		var queryCourt: QueryCourt?
+		if let clubId = club?.id, let day = pickedDate, let time = pickedTime {
+			queryCourt = QueryCourt(club_id: clubId, day: day, start_time: time)
+		}
+		guard let queryCourt = queryCourt else { return }
+
+		tableViewModel.fetchFreeCourts(queryCourt: queryCourt) { [weak self] status in
+			self?.initTableView()
+		}
 	}
 	
 	// MARK: Styles
@@ -79,6 +105,17 @@ class ReservesViewController: UIViewController {
 		calendar.delegate = self
 	}
 	
+	private func initTableView() {
+		reservesTableView.dataSource = self
+		reservesTableView.delegate = self
+		reservesTableView.isScrollEnabled = true
+		reservesTableView.register(UINib.init(nibName: "ReservesTableViewCell", bundle: nil), forCellReuseIdentifier: "ReservesTableViewCell")
+		reservesTableView.separatorStyle = .none
+		reservesTableView.showsHorizontalScrollIndicator = false
+		reservesTableView.showsVerticalScrollIndicator = true
+		reservesTableView.reloadData()
+	}
+	
 	private func configureNavbar() {
 		self.navigationController!.navigationBar.titleTextAttributes = [
 			.foregroundColor: UIColor.corporativeColor ?? .black,
@@ -101,6 +138,7 @@ class ReservesViewController: UIViewController {
 	}
 }
 
+// MARK: FS Calendar Delegate and Data Source
 extension ReservesViewController: FSCalendarDelegate, FSCalendarDataSource {
 	// MARK: DataSource
 	func minimumDate(for calendar: FSCalendar) -> Date {
@@ -110,13 +148,15 @@ extension ReservesViewController: FSCalendarDelegate, FSCalendarDataSource {
 	// MARK: Delegate
 	func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
 		calendar.today = nil
-		formatter.dateFormat = "yyyy/MM/dd"
+		formatter.dateFormat = "yyyy-MM-dd"
+		pickedDate = formatter.string(from: date)
 		print("Date Selected == \(formatter.string(from: date))")
 	}
 	
 	func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
 		calendar.today = nil
-		formatter.dateFormat = "yyyy/MM/dd"
+		formatter.dateFormat = "yyyy-MM-dd"
+		pickedDate = formatter.string(from: date)
 		print("Date Selected == \(formatter.string(from: date))")
 	}
 	
@@ -124,5 +164,41 @@ extension ReservesViewController: FSCalendarDelegate, FSCalendarDataSource {
 		self.calendarHeightConstraint.constant = bounds.height
 		self.view.layoutIfNeeded()
 	}
- 
+	
+}
+
+// MARK: TableView Delegate and DataSource
+extension ReservesViewController: UITableViewDelegate, UITableViewDataSource {
+	func numberOfSections(in tableView: UITableView) -> Int {
+		return tableViewModel.numberOfSections()
+	}
+	
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return tableViewModel.numberOfRowsInSection(section: section)
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		if indexPath.row == 0 {
+			guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReservesTableViewCell") as? ReservesTableViewCell else { return UITableViewCell() }
+			let court = tableViewModel.cellForRowAt(indexPath: indexPath)
+			
+			self.prices = court.prices
+			cell.setCellWithValueOf(court)
+			return cell
+		} else {
+			guard let detailCell = tableView.dequeueReusableCell(withIdentifier: "ReservesDetailTableViewCell") as? ReservesDetailTableViewCell else { return UITableViewCell() }
+			
+			detailCell.prices = self.prices
+			return detailCell
+		}
+	}
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true)
+		
+		if indexPath.row == 0 {
+			tableViewModel.reloadSections(indexPath: indexPath)
+			self.reservesTableView.reloadSections([indexPath.section], with: .automatic)
+		}
+	}
 }
