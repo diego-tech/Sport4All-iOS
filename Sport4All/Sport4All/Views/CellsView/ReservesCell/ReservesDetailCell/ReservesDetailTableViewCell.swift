@@ -10,6 +10,7 @@ import UIKit
 class ReservesDetailTableViewCell: UITableViewCell {
 
 	// MARK: Variables
+	var prices = [Price]()
 	
 	// MARK: Outlets
 	@IBOutlet weak var pricesCollectionView: UICollectionView!
@@ -32,7 +33,6 @@ class ReservesDetailTableViewCell: UITableViewCell {
 	
 	// MARK: Functions
 	
-	
 	// MARK: Styles
 
 }
@@ -40,13 +40,15 @@ class ReservesDetailTableViewCell: UITableViewCell {
 // MARK: UICollectionView Delegate && Data Source
 extension ReservesDetailTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return 3
+		return prices.count
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PriceCollectionViewCell", for: indexPath) as? PriceCollectionViewCell else {
 			return UICollectionViewCell()
 		}
+		let price = prices[indexPath.row]
+		cell.setItemWithValueOf(price)
 		return cell
 	}
 	
@@ -54,5 +56,10 @@ extension ReservesDetailTableViewCell: UICollectionViewDelegate, UICollectionVie
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
 		let inset = UIEdgeInsets(top: 15, left: 20, bottom: 15, right: 20)
 		return inset
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		let price = prices[indexPath.row]
+		print("Selected Price \(price)")
 	}
 }

@@ -24,6 +24,16 @@ class ReservesTableViewCell: UITableViewCell {
     }
 	
 	// MARK: Functions
+	func setCellWithValueOf(_ court: Court) {
+		updateUI(courtName: court.name, courtType: court.type)
+	}
+	
+	private func updateUI(courtName: String?, courtType: String?) {
+		guard let courtName = courtName else { return }
+		guard let courtType = courtType else { return }
+		
+		self.courtNameLabel.text = courtName + " " + "(\(courtType))"
+	}
 	
 	
 	// MARK: Styles

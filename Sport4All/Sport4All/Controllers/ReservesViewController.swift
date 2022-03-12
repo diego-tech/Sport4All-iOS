@@ -14,6 +14,9 @@ class ReservesViewController: UIViewController {
 	var formatter = DateFormatter()
 	var club: Club?
 	private var sections = [Section]()
+	private var tableViewModel = CourtsListViewModel()
+
+	private var prices = [Price]()
 	
 	// MARK: Outlets
 	@IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
@@ -26,14 +29,6 @@ class ReservesViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
-		
-		sections = [
-			Section(title: "Section 1", options: [1], isOpened: true),
-			Section(title: "Section 2", options: [1]),
-			Section(title: "Section 3", options: [1]),
-			Section(title: "Section 3", options: [1]),
-			Section(title: "Section 3", options: [1])
-		]
 		
 		// Configure Models
 		configure()
@@ -49,14 +44,7 @@ class ReservesViewController: UIViewController {
 		timePicker.subviews.first?.semanticContentAttribute = .forceRightToLeft
 		
 		// Init Table View
-		reservesTableView.dataSource = self
-		reservesTableView.delegate = self
-		reservesTableView.isScrollEnabled = true
-		reservesTableView.register(UINib.init(nibName: "ReservesTableViewCell", bundle: nil), forCellReuseIdentifier: "ReservesTableViewCell")
-		reservesTableView.separatorStyle = .none
-		reservesTableView.showsHorizontalScrollIndicator = false
-		reservesTableView.showsVerticalScrollIndicator = true
-		reservesTableView.reloadData()
+		courtList()
 	}
 	
 	// MARK: Action Functions
@@ -69,6 +57,12 @@ class ReservesViewController: UIViewController {
 		guard let bannerUrl = URL(string: Constants.kStorageURL + banner) else { return debugPrint("Error Url Imagen") }
 		self.clubBannerImageView.loadImage(fromURL: bannerUrl)
 		self.clubNameLabel.text = name
+	}
+	
+	private func courtList() {
+		tableViewModel.fetchFreeCourts { [weak self] status in
+			self?.initTableView()
+		}
 	}
 	
 	// MARK: Styles
@@ -97,6 +91,17 @@ class ReservesViewController: UIViewController {
 		
 		calendar.dataSource = self
 		calendar.delegate = self
+	}
+	
+	private func initTableView() {
+		reservesTableView.dataSource = self
+		reservesTableView.delegate = self
+		reservesTableView.isScrollEnabled = true
+		reservesTableView.register(UINib.init(nibName: "ReservesTableViewCell", bundle: nil), forCellReuseIdentifier: "ReservesTableViewCell")
+		reservesTableView.separatorStyle = .none
+		reservesTableView.showsHorizontalScrollIndicator = false
+		reservesTableView.showsVerticalScrollIndicator = true
+		reservesTableView.reloadData()
 	}
 	
 	private func configureNavbar() {
@@ -151,25 +156,25 @@ extension ReservesViewController: FSCalendarDelegate, FSCalendarDataSource {
 // MARK: TableView Delegate and DataSource
 extension ReservesViewController: UITableViewDelegate, UITableViewDataSource {
 	func numberOfSections(in tableView: UITableView) -> Int {
-		return sections.count
+		return tableViewModel.numberOfSections()
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		let section = sections[section]
-
-		if section.isOpened {
-			return section.options.count + 1
-		} else {
-			return 1
-		}
+		return tableViewModel.numberOfRowsInSectionCourt(section: section)
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		if indexPath.row == 0 {
 			guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReservesTableViewCell") as? ReservesTableViewCell else { return UITableViewCell() }
+			let court = tableViewModel.cellForRowAtCourt(indexPath: indexPath)
+			
+			self.prices = court.prices
+			cell.setCellWithValueOf(court)
 			return cell
 		} else {
 			guard let detailCell = tableView.dequeueReusableCell(withIdentifier: "ReservesDetailTableViewCell") as? ReservesDetailTableViewCell else { return UITableViewCell() }
+			
+			detailCell.prices = self.prices
 			return detailCell
 		}
 	}
@@ -178,16 +183,8 @@ extension ReservesViewController: UITableViewDelegate, UITableViewDataSource {
 		tableView.deselectRow(at: indexPath, animated: true)
 		
 		if indexPath.row == 0 {
-			sections[indexPath.section].isOpened = !sections[indexPath.section].isOpened
+			tableViewModel.reloadSections(indexPath: indexPath)
 			self.reservesTableView.reloadSections([indexPath.section], with: .automatic)
-		} else {
-			print("Tap")
 		}
 	}
-}
-
-struct Section{
-	let title: String
-	let options: [Int]
-	var isOpened: Bool = false
 }

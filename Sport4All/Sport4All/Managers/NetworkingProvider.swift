@@ -274,6 +274,12 @@ final class NetworkingProvider {
 		let url = "\(Constants.kBaseURL)/freecourts"
 		let header: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
 		
+//		let parameters = [
+//			"club_id": courtsParameters.club_id,
+//			"day": courtsParameters.day,
+//			"start_time": courtsParameters.start_time
+//		] as [String : Any]
+		
 		let parameters = [
 			"club_id": 2,
 			"day": "2022-03-13",

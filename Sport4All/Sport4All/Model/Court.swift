@@ -16,6 +16,9 @@ struct Court: Codable {
 	let updatedAt: Date?
 	let createdAt: Date?
 	
+	// Variable To Make Expandable List
+	var isOpened: Bool = false
+	
 	enum CodingKeys: String, CodingKey {
 		case club_id
 		case name
@@ -41,4 +44,10 @@ struct Price: Codable {
 		case updatedAt = "updated_at"
 		case createdAt = "created_at"
 	}
+}
+
+struct QueryCourt: Codable {
+	let club_id: Int
+	let day: String
+	let start_time: String
 }

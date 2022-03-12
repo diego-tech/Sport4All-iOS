@@ -25,6 +25,18 @@ class PriceCollectionViewCell: UICollectionViewCell {
 	}
 	
 	// MARK: Functions
+	func setItemWithValueOf(_ price: Price) {
+		let stringPrice = String(price.price)
+		let stringTime = String(price.time)
+		updateUI(priceLabel: stringPrice, timeLabel: stringTime)
+	}
+	
+	private func updateUI(priceLabel: String?, timeLabel: String?) {
+		guard let priceLabel = priceLabel else { return }
+		guard let timeLabel = timeLabel else { return }
+		self.priceLabel.text = priceLabel + "Є"
+		self.timeLabel.text = timeLabel + "Min"
+	}
 	
 	// MARK: Styles
 	private func uiViewStyles() {
