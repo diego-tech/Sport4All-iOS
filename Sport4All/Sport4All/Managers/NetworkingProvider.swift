@@ -277,7 +277,7 @@ final class NetworkingProvider {
 		let parameters = [
 			"club_id": courtsParameters.club_id,
 			"day": courtsParameters.day,
-			"start_time": courtsParameters.start_time
+			"hour": courtsParameters.hour
 		] as [String : Any]
 		
 		AF.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: header).responseDecodable(of: FreeCourtsResponse.self, decoder: DateDecoder()) {

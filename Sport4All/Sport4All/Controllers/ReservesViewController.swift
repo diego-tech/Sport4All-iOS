@@ -27,6 +27,12 @@ class ReservesViewController: UIViewController {
 	@IBOutlet weak var clubNameLabel: UILabel!
 	@IBOutlet weak var reservesTableView: UITableView!
 	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		courtList()
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
@@ -68,8 +74,20 @@ class ReservesViewController: UIViewController {
 	private func courtList() {
 		var queryCourt: QueryCourt?
 		if let clubId = club?.id, let day = pickedDate, let time = pickedTime {
-			queryCourt = QueryCourt(club_id: clubId, day: day, start_time: time)
+			queryCourt = QueryCourt(club_id: clubId, day: day, hour: time)
+		} else {
+			guard let id = club?.id else { return }
+			let dateNow = Date()
+			formatter.dateFormat = "yyyy-MM-dd"
+			let dateNowStr = formatter.string(from: dateNow)
+			let hourNow = Date()
+			formatter.dateFormat = "HH:mm:ss"
+			let hourNowStr = formatter.string(from: hourNow)
+
+
+			queryCourt = QueryCourt(club_id: id, day: dateNowStr, hour: hourNowStr)
 		}
+		
 		guard let queryCourt = queryCourt else { return }
 
 		tableViewModel.fetchFreeCourts(queryCourt: queryCourt) { [weak self] status in
@@ -178,12 +196,13 @@ extension ReservesViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
 		if indexPath.row == 0 {
 			guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReservesTableViewCell") as? ReservesTableViewCell else { return UITableViewCell() }
 			let court = tableViewModel.cellForRowAt(indexPath: indexPath)
-			
-			self.prices = court.prices
+			print(court)
 			cell.setCellWithValueOf(court)
+			self.prices = court.prices
 			return cell
 		} else {
 			guard let detailCell = tableView.dequeueReusableCell(withIdentifier: "ReservesDetailTableViewCell") as? ReservesDetailTableViewCell else { return UITableViewCell() }

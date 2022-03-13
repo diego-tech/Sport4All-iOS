@@ -49,5 +49,5 @@ struct Price: Codable {
 struct QueryCourt: Codable {
 	let club_id: Int
 	let day: String
-	let start_time: String
+	let hour: String
 }
