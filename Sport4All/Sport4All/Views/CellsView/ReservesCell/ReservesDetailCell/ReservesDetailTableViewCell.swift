@@ -7,12 +7,15 @@
 
 import UIKit
 
-class ReservesDetailTableViewCell: UITableViewCell {
+protocol ReservesDetailTableViewCellDelegate {
+	func didSelectPrice(_ cell: ReservesDetailTableViewCell, didSelectPrice price: Price)
+}
 
-	#warning("Reusable Cell Not Found Weel Check")
+class ReservesDetailTableViewCell: UITableViewCell {
 	
 	// MARK: Variables
 	private var prices: [Price] = [Price]()
+	var reservesDetailCell: ReservesDetailTableViewCellDelegate?
 	
 	// MARK: Outlets
 	@IBOutlet weak var pricesCollectionView: UICollectionView!
@@ -58,7 +61,6 @@ extension ReservesDetailTableViewCell: UICollectionViewDelegate, UICollectionVie
 			return UICollectionViewCell()
 		}
 		let price = prices[indexPath.row]
-		print("Collection View Price \(price)")
 		cell.setItemWithValueOf(price)
 		return cell
 	}
@@ -71,6 +73,6 @@ extension ReservesDetailTableViewCell: UICollectionViewDelegate, UICollectionVie
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		let price = prices[indexPath.row]
-		print("Selected Price \(price)")
+		reservesDetailCell?.didSelectPrice(self, didSelectPrice: price)
 	}
 }
