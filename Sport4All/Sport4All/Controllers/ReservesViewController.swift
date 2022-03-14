@@ -13,15 +13,14 @@ class ReservesViewController: UIViewController {
 	// MARK: Variables
 	var club: Club?
 	
+	private let today = Date()
 	private var dateFormatter = DateFormatter()
 	private var tableViewModel = CourtsListViewModel()
 	private var pickedDate: String?
 	private var pickedTime: String?
 	private var pickerView = UIPickerView()
-	
 	private var halfMinutes: [String] = ["00", "30"]
 	private var times = [String]()
-	
 	private var hour = String()
 	private var minute = String()
 	
@@ -37,7 +36,6 @@ class ReservesViewController: UIViewController {
 		super.viewWillAppear(animated)
 		
 		// Init Values For First Query
-		let today = Date()
 		dateFormatter.dateFormat = "yyyy-MM-dd"
 		let todayFormat = dateFormatter.string(from: today)
 		pickedDate = todayFormat
@@ -45,7 +43,7 @@ class ReservesViewController: UIViewController {
 		let nowTime = dateFormatter.string(from: today)
 		pickedTime = nowTime
 		hourTextField.text = pickedTime
-		
+	
 		// Init Table View
 		courtList()
 	}
@@ -73,6 +71,14 @@ class ReservesViewController: UIViewController {
 	}
 	
 	// MARK: Action Functions
+	@objc func donePressed() {
+		pickedTime = "\(hour):\(minute):00"
+		hourTextField.text = pickedTime
+		hourTextField.resignFirstResponder()
+		
+		// Init Table View
+		courtList()
+	}
 	
 	// MARK: Functions
 	private func configure() {
@@ -181,21 +187,26 @@ class ReservesViewController: UIViewController {
 		pickerView.backgroundColor = .softBlue
 		pickerView.tintColor = .hardColor
 	}
-	
-	@objc func donePressed() {
-		pickedTime = "\(hour):\(minute):00"
-		hourTextField.text = pickedTime
-		hourTextField.resignFirstResponder()
-		// Init Table View
-		courtList()
-	}
 
 	// MARK: Manager
 	func getTimeList(openingTime: Int, closingTime: Int) -> [String] {
+		dateFormatter.dateFormat = "HH"
+		let nowTime = dateFormatter.string(from: today)
+		let nowTimeInt = Int(nowTime)
+		
+		var startArrayTime: Int = 0
+		
+		if String(openingTime) < nowTime {
+			startArrayTime = nowTimeInt!
+		} else {
+			startArrayTime = openingTime
+		}
+		
 		let hoursList: [String] = [
 			"01", "02", "03", "04", "05", "06",	"07", "08",	"09", "10", "11", "12",	"13", "14",	"15", "16",	"17", "18", "19", "20", "21", "22", "23", "24"]
 		var list: [String] = []
-		for i in openingTime - 1...closingTime - 1 {
+		
+		for i in startArrayTime - 1...closingTime - 1 {
 			list.append(hoursList[i])
 		}
 		return list
@@ -250,6 +261,7 @@ extension ReservesViewController: UITableViewDelegate, UITableViewDataSource {
 			guard let detailCell = tableView.dequeueReusableCell(withIdentifier: "ReservesDetailTableViewCell") as? ReservesDetailTableViewCell else { return UITableViewCell() }
 			let prices = tableViewModel.cellForRowAt(indexPath: indexPath).prices
 			detailCell.configure(prices)
+			detailCell.reservesDetailCell = self
 			return detailCell
 		}
 	}
@@ -266,7 +278,6 @@ extension ReservesViewController: UITableViewDelegate, UITableViewDataSource {
 
 // MARK: UIDatePickerView Delegate and DataSource
 extension ReservesViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-	
 	func numberOfComponents(in pickerView: UIPickerView) -> Int {
 		return 2
 	}
@@ -329,5 +340,12 @@ extension ReservesViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 			string: getTimeList(openingTime: 0, closingTime: 0)[row],
 			attributes: attributes
 		)
+	}
+}
+
+// MARK: ReservesDetailTableViewCell Delegate
+extension ReservesViewController: ReservesDetailTableViewCellDelegate {
+	func didSelectPrice(_ cell: ReservesDetailTableViewCell, didSelectPrice price: Price) {
+		print(price)
 	}
 }

@@ -51,7 +51,7 @@ class SettingsViewController: UIViewController {
 		configure()
 		
 		self.view.addSubview(tableView)
-
+		
 		tableView.delegate = self
 		tableView.dataSource = self
 		
