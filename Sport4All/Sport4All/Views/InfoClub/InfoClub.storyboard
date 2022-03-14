@@ -101,6 +101,9 @@
                                                 <fontDescription key="fontDescription" name="SFPro-Bold" family="SF Pro" pointSize="18"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="RESERVAR"/>
+                                                <connections>
+                                                    <action selector="reserveButtonAction:" destination="I1b-qx-IuD" eventType="touchUpInside" id="NVm-VH-lMY"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Información del Club" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NrA-G2-8SW">
                                                 <rect key="frame" x="20" y="80" width="374" height="24"/>
@@ -121,10 +124,10 @@
                                                 <color key="textColor" name="HardColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="LZ7-F6-fhm" userLabel="Services Stack View">
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZ7-F6-fhm" userLabel="Services Stack View">
                                                 <rect key="frame" x="20" y="288" width="374" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="DTi-lN-N4m"/>
+                                                    <constraint firstAttribute="height" constant="50" id="w3f-us-C9G"/>
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Como Llegar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mct-Mu-u73">
@@ -183,7 +186,6 @@
                                         <color key="backgroundColor" name="BackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="NrA-G2-8SW" firstAttribute="top" secondItem="hNr-Ye-GUh" secondAttribute="bottom" constant="20" id="04U-CJ-pvT"/>
-                                            <constraint firstItem="LZ7-F6-fhm" firstAttribute="centerX" secondItem="mhZ-dE-hRX" secondAttribute="centerX" id="1IK-a5-qVu"/>
                                             <constraint firstItem="sJM-sp-o8y" firstAttribute="top" secondItem="viY-mV-DAp" secondAttribute="bottom" constant="20" id="431-h2-9gK"/>
                                             <constraint firstAttribute="height" constant="900" id="993-KE-yx6"/>
                                             <constraint firstAttribute="trailing" secondItem="6Rb-xh-WcQ" secondAttribute="trailing" constant="20" id="9EC-03-3kA"/>
@@ -192,11 +194,13 @@
                                             <constraint firstItem="hNr-Ye-GUh" firstAttribute="top" secondItem="mhZ-dE-hRX" secondAttribute="top" constant="20" id="Gzk-R1-Yaj"/>
                                             <constraint firstItem="sJM-sp-o8y" firstAttribute="leading" secondItem="Mct-Mu-u73" secondAttribute="leading" id="PhH-nV-5p5"/>
                                             <constraint firstAttribute="trailing" secondItem="Mct-Mu-u73" secondAttribute="trailing" constant="20" id="QPS-zC-Lot"/>
+                                            <constraint firstItem="LZ7-F6-fhm" firstAttribute="leading" secondItem="mhZ-dE-hRX" secondAttribute="leading" constant="20" id="UOU-Ua-Qzi"/>
                                             <constraint firstItem="NrA-G2-8SW" firstAttribute="leading" secondItem="mhZ-dE-hRX" secondAttribute="leading" constant="20" id="XJA-c6-kCP"/>
                                             <constraint firstAttribute="trailing" secondItem="NrA-G2-8SW" secondAttribute="trailing" constant="20" id="ZOq-bV-FUa"/>
                                             <constraint firstItem="VYi-m6-Du3" firstAttribute="leading" secondItem="mhZ-dE-hRX" secondAttribute="leading" constant="20" id="Zfo-ae-YY9"/>
                                             <constraint firstItem="sJM-sp-o8y" firstAttribute="trailing" secondItem="Mct-Mu-u73" secondAttribute="trailing" id="dB5-4Q-81u"/>
                                             <constraint firstItem="7DR-DN-2WM" firstAttribute="leading" secondItem="mhZ-dE-hRX" secondAttribute="leading" constant="20" id="eKp-P0-7tX"/>
+                                            <constraint firstAttribute="trailing" secondItem="LZ7-F6-fhm" secondAttribute="trailing" constant="20" id="f04-bG-HpY"/>
                                             <constraint firstAttribute="bottom" secondItem="7DR-DN-2WM" secondAttribute="bottom" constant="165" id="ggb-Lx-ZZd"/>
                                             <constraint firstItem="7DR-DN-2WM" firstAttribute="top" secondItem="sJM-sp-o8y" secondAttribute="bottom" constant="20" id="gsp-r2-2LX"/>
                                             <constraint firstAttribute="trailing" secondItem="7DR-DN-2WM" secondAttribute="trailing" constant="20" id="hB1-zi-vhq"/>
@@ -233,6 +237,7 @@
                             <constraint firstItem="C4f-ng-1NO" firstAttribute="trailing" secondItem="2gg-cf-Uga" secondAttribute="trailing" id="ghJ-Gj-B2X"/>
                             <constraint firstItem="C4f-ng-1NO" firstAttribute="leading" secondItem="2gg-cf-Uga" secondAttribute="leading" id="giP-Nf-FAg"/>
                             <constraint firstItem="2gg-cf-Uga" firstAttribute="bottom" secondItem="C4f-ng-1NO" secondAttribute="bottom" id="qgt-zT-UVd"/>
+                            <constraint firstItem="LZ7-F6-fhm" firstAttribute="centerX" secondItem="2gg-cf-Uga" secondAttribute="centerX" id="r1I-kK-1q5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="J9K-Hf-zlh"/>

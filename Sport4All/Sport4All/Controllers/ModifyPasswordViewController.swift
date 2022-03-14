@@ -17,9 +17,9 @@ class ModifyPasswordViewController: UIViewController {
 	@IBOutlet weak var firstPasswordTF: UITextField!
 	@IBOutlet weak var checkPasswordTF: UITextField!
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		// Do any additional setup after loading the view.
 		
 		// Configure Navbar
 		configureNavbar()
@@ -27,7 +27,7 @@ class ModifyPasswordViewController: UIViewController {
 		// Inicialización Estilos
 		setTextFieldStyles()
 		setButtonStyles()
-    }
+	}
 	
 	// MARK: Action Functions
 	@IBAction func goBackButtonAction(_ sender: UIButton) {
@@ -42,7 +42,15 @@ class ModifyPasswordViewController: UIViewController {
 	private func changePassword() {
 		if !firstPasswordTF.checkIfIsEmpty(placeHolderText: "Introduzca la Contraseña") && !checkPasswordTF.checkIfIsEmpty(placeHolderText: "Introduzca la Contraseña") {
 			if checkIfPassIsSame() {
-				debugPrint("Contraseña Cambiada")
+				guard let password = checkPasswordTF.text else { return }
+				
+				NetworkingProvider.shared.modifyPassword(newPassword: password) { responseData, status, msg in
+					print(responseData)
+					print(status)
+					print(msg)
+				} failure: { error in
+					print(error)
+				}
 			}
 		}
 	}
@@ -92,9 +100,9 @@ class ModifyPasswordViewController: UIViewController {
 		let yourBackImage = UIImage(systemName: "arrowshape.turn.up.backward.fill", withConfiguration:  UIImage.SymbolConfiguration(pointSize: 18))
 		let backButtonItem = UIBarButtonItem(image: yourBackImage, style: .plain, target: self, action: #selector(popView(tapGestureRecognizer:)))
 		backButtonItem.tintColor = .corporativeColor
-
+		
 		self.navigationItem.leftBarButtonItem = backButtonItem
-
+		
 		self.navigationItem.setHidesBackButton(true, animated: true)
 	}
 	

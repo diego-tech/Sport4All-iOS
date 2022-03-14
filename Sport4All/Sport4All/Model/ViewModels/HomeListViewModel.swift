@@ -8,10 +8,10 @@
 import Alamofire
 import Foundation
 
-class ClubListViewModel {
+class HomeListViewModel {
 	
 	// MARK: Variables
-	public var clubList = [Club]()
+	private var clubList = [Club]()
 	private var status = Int()
 		
 	// MARK: Fetch Club List
@@ -53,7 +53,8 @@ class ClubListViewModel {
 		}
 	}
 	
-	// MARK: DataSource & Delegate Functions
+	
+	// MARK: DataSource && Delegate Functions Club List
 	func numberOfRowsInSection(section: Int) -> Int {
 		if clubList.count != 0 {
 			return clubList.count

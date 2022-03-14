@@ -20,6 +20,8 @@ class ProfileViewController: UIViewController {
 	@IBOutlet weak var yourClubBTN: UIButton!
 	@IBOutlet weak var userImageView: LazyImageView!
 	@IBOutlet weak var userNameLabel: UILabel!
+	@IBOutlet weak var pendingEventsCollectionView: UICollectionView!
+	@IBOutlet weak var finalEventsCollectionView: UICollectionView!
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
@@ -45,6 +47,7 @@ class ProfileViewController: UIViewController {
 		let vc = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: "Settings") as! SettingsViewController
 		
 		vc.modalPresentationStyle = .automatic
+		vc.settingsDelegate = self
 		present(vc, animated: true, completion: nil)
 	}
 	
@@ -70,6 +73,10 @@ class ProfileViewController: UIViewController {
 		}
 	}
 	
+	private func initCollectionView(){
+		
+	}
+	
 	// MARK: Styles
 	private func configureNavbar() {
 		let hamburguerImage = UIImage(systemName: "line.3.horizontal", withConfiguration: UIImage.SymbolConfiguration(pointSize: 18))
@@ -84,3 +91,26 @@ class ProfileViewController: UIViewController {
 		navigationController?.navigationBar.tintColor = .corporativeColor
 	}
 }
+
+// MARK: Settings Delegate
+extension ProfileViewController: SettingsViewControllerDelegate {
+	func settingsViewController(_ settingsViewController: SettingsViewController, didSelectOption option: SettingsOption) {
+		let vc = UIStoryboard(name: "EditProfile", bundle: nil).instantiateViewController(withIdentifier: "EditProfile") as! EditProfileViewController
+		
+		switch option.optionType {
+		case .EditProfile:
+			self.navigationController?.pushViewController(vc, animated: true)
+		case .ContactUs:
+			print("Contacta Con Nosotros")
+		case .ShowTutorial:
+			print("Ver Tutorial")
+		case .LogOut:
+			print("Cerrar Sesión")
+		}
+	}
+}
+
+//// MARK: Pending Events Collection View Delegate and DataSource
+//extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+//
+//}

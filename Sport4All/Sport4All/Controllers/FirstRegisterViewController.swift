@@ -40,6 +40,11 @@ class FirstRegisterViewController: UIViewController {
 		secondPasswordTF.text = "Prueba12345."
 	}
 	
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+		view.endEditing(true)
+		super.touchesBegan(touches, with: event)
+	}
+	
 	// MARK: Action Functions
 	@IBAction func nextButtonAction(_ sender: UIButton) {
 		if !firstEmailTF.checkIfIsEmpty(placeHolderText: "Introduzca el Correo Electrónico") && !secondEmailTF.checkIfIsEmpty(placeHolderText: "Introduzca el Correo Electrónico") && !firstPasswordTF.checkIfIsEmpty(placeHolderText: "Introduzca la Contraseña") && !secondPasswordTF.checkIfIsEmpty(placeHolderText: "Introduzca la Contraseña") {

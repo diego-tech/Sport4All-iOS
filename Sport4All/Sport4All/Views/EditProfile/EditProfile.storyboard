@@ -30,28 +30,22 @@
                                 <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="msK-v1-oaH">
-                                <rect key="frame" x="148" y="142.5" width="118" height="118"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Dty-fF-8te" customClass="LazyImageView" customModule="Sport4All" customModuleProvider="target">
+                                <rect key="frame" x="143" y="132.5" width="120" height="120"/>
+                                <color key="tintColor" name="HardColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="118" id="PUi-3y-dgO"/>
-                                    <constraint firstAttribute="width" constant="118" id="Qij-W3-3pj"/>
+                                    <constraint firstAttribute="height" constant="120" id="hCx-NJ-RGx"/>
+                                    <constraint firstAttribute="width" constant="120" id="nlq-Hm-1fW"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VRQ-3A-cPD">
-                                <rect key="frame" x="20" y="269.5" width="374" height="343"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="VRQ-3A-cPD">
+                                <rect key="frame" x="20" y="267.5" width="374" height="293"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="W0K-HN-cKn" userLabel="Name Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="56.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gF7-NI-Hqf">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="14.5"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
-                                                <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wow-7s-Enj">
-                                                <rect key="frame" x="0.0" y="22.5" width="374" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
                                                 <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
@@ -59,17 +53,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2PQ-ss-LeZ" userLabel="Surname Stack View">
-                                        <rect key="frame" x="0.0" y="76.5" width="374" height="56.5"/>
+                                        <rect key="frame" x="0.0" y="64" width="374" height="34"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apellidos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d3G-FR-aGd">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="14.5"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
-                                                <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apellidos" textAlignment="natural" minimumFontSize="17" id="EqJ-6t-fqS">
-                                                <rect key="frame" x="0.0" y="22.5" width="374" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
@@ -78,17 +65,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Vwl-pV-W9L" userLabel="Email Stack View">
-                                        <rect key="frame" x="0.0" y="153" width="374" height="56.5"/>
+                                        <rect key="frame" x="0.0" y="128" width="374" height="34"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correo Electrónico" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dpe-28-UTx">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="14.5"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
-                                                <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Correo Electrónico" textAlignment="natural" minimumFontSize="17" id="gKX-Gi-R6H">
-                                                <rect key="frame" x="0.0" y="22.5" width="374" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
@@ -97,37 +77,41 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNt-aw-wvv">
-                                        <rect key="frame" x="0.0" y="229.5" width="374" height="40"/>
+                                        <rect key="frame" x="0.0" y="192" width="374" height="40"/>
                                         <color key="tintColor" name="HardColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="ChangePassword" imagePlacement="trailing" title="Cambiar Contraseña" imagePadding="200">
                                             <fontDescription key="titleFontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="goToChangePasswordButtonAction:" destination="asV-lo-0f6" eventType="touchUpInside" id="50C-Su-Aem"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tDT-mW-s3m" userLabel="Genre Stack View">
-                                        <rect key="frame" x="0.0" y="289.5" width="374" height="53.5"/>
+                                        <rect key="frame" x="0.0" y="262" width="374" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Género *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h1z-0e-JvS">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="14.5"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="12"/>
-                                                <color key="textColor" red="0.1960784314" green="0.2666666667" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IRH-l2-WCj">
-                                                <rect key="frame" x="0.0" y="22.5" width="374" height="32"/>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IRH-l2-WCj" customClass="CustomSegmentedControl" customModule="Sport4All" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="32"/>
                                                 <segments>
                                                     <segment title="Mujer"/>
                                                     <segment title="Hombre"/>
                                                     <segment title="Otro"/>
                                                 </segments>
+                                                <connections>
+                                                    <action selector="genreSegmentedControl:" destination="asV-lo-0f6" eventType="valueChanged" id="f2h-Ij-RJl"/>
+                                                </connections>
                                             </segmentedControl>
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="W0K-HN-cKn" firstAttribute="top" secondItem="VRQ-3A-cPD" secondAttribute="top" id="9Ww-XJ-SwS"/>
+                                    <constraint firstAttribute="trailing" secondItem="W0K-HN-cKn" secondAttribute="trailing" id="uEp-7N-HaO"/>
+                                    <constraint firstItem="W0K-HN-cKn" firstAttribute="leading" secondItem="VRQ-3A-cPD" secondAttribute="leading" id="xod-ia-4R2"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KxE-yQ-Se0">
-                                <rect key="frame" x="76" y="637.5" width="262" height="50"/>
+                                <rect key="frame" x="90" y="580.5" width="234" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Vrf-q3-1FB"/>
                                 </constraints>
@@ -136,30 +120,42 @@
                                 <state key="normal" title="ACCEDER">
                                     <color key="titleColor" name="HardColor"/>
                                 </state>
-                                <buttonConfiguration key="configuration" style="plain" title="REGISTRARSE">
+                                <buttonConfiguration key="configuration" style="plain" title="EDITAR">
                                     <fontDescription key="titleFontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="17"/>
                                     <color key="baseForegroundColor" name="HardColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="editButtonAction:" destination="asV-lo-0f6" eventType="touchUpInside" id="6hZ-sz-sQl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Nlo-3r-Ul7"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Dty-fF-8te" firstAttribute="top" secondItem="NpT-dw-6nx" secondAttribute="bottom" constant="10" id="6t3-MZ-yg0"/>
                             <constraint firstItem="NpT-dw-6nx" firstAttribute="leading" secondItem="Nlo-3r-Ul7" secondAttribute="leading" constant="20" id="8sY-cb-B3O"/>
                             <constraint firstItem="Nlo-3r-Ul7" firstAttribute="trailing" secondItem="VRQ-3A-cPD" secondAttribute="trailing" constant="20" id="B5K-wr-ICv"/>
-                            <constraint firstItem="msK-v1-oaH" firstAttribute="top" secondItem="NpT-dw-6nx" secondAttribute="bottom" constant="20" id="C9v-Ox-SXh"/>
                             <constraint firstItem="NpT-dw-6nx" firstAttribute="top" secondItem="Nlo-3r-Ul7" secondAttribute="top" constant="20" id="Hle-xK-MHq"/>
-                            <constraint firstItem="Nlo-3r-Ul7" firstAttribute="trailing" secondItem="KxE-yQ-Se0" secondAttribute="trailing" constant="76" id="Jj1-hN-PMZ"/>
-                            <constraint firstItem="Nlo-3r-Ul7" firstAttribute="trailing" secondItem="msK-v1-oaH" secondAttribute="trailing" constant="148" id="VKD-nx-W7q"/>
+                            <constraint firstItem="Nlo-3r-Ul7" firstAttribute="trailing" secondItem="KxE-yQ-Se0" secondAttribute="trailing" constant="90" id="Jj1-hN-PMZ"/>
+                            <constraint firstItem="VRQ-3A-cPD" firstAttribute="top" secondItem="Dty-fF-8te" secondAttribute="bottom" constant="15" id="PWV-2O-SQJ"/>
                             <constraint firstItem="Nlo-3r-Ul7" firstAttribute="trailing" secondItem="NpT-dw-6nx" secondAttribute="trailing" constant="20" id="cID-YD-fZZ"/>
                             <constraint firstItem="VRQ-3A-cPD" firstAttribute="leading" secondItem="Nlo-3r-Ul7" secondAttribute="leading" constant="20" id="fnt-gq-Jd8"/>
-                            <constraint firstItem="KxE-yQ-Se0" firstAttribute="top" secondItem="VRQ-3A-cPD" secondAttribute="bottom" constant="25" id="khJ-2p-QvC"/>
-                            <constraint firstItem="msK-v1-oaH" firstAttribute="leading" secondItem="Nlo-3r-Ul7" secondAttribute="leading" constant="148" id="pS0-dL-BCk"/>
-                            <constraint firstItem="KxE-yQ-Se0" firstAttribute="leading" secondItem="Nlo-3r-Ul7" secondAttribute="leading" constant="76" id="pXb-gv-JOq"/>
-                            <constraint firstItem="VRQ-3A-cPD" firstAttribute="top" secondItem="msK-v1-oaH" secondAttribute="bottom" constant="9" id="zuP-E8-gf9"/>
+                            <constraint firstItem="KxE-yQ-Se0" firstAttribute="top" secondItem="VRQ-3A-cPD" secondAttribute="bottom" constant="20" id="pMg-1t-bWT"/>
+                            <constraint firstItem="KxE-yQ-Se0" firstAttribute="leading" secondItem="Nlo-3r-Ul7" secondAttribute="leading" constant="90" id="pXb-gv-JOq"/>
+                            <constraint firstItem="Dty-fF-8te" firstAttribute="centerX" secondItem="Nlo-3r-Ul7" secondAttribute="centerX" constant="-4" id="wDh-vG-7dI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mhE-ha-fm2"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="editButton" destination="KxE-yQ-Se0" id="JIP-AH-1dB"/>
+                        <outlet property="genreSegmentedControl" destination="IRH-l2-WCj" id="trV-bd-YvQ"/>
+                        <outlet property="goToChangePasswordBTN" destination="gNt-aw-wvv" id="qj5-j8-SWD"/>
+                        <outlet property="userEmailTF" destination="gKX-Gi-R6H" id="TlA-80-5yZ"/>
+                        <outlet property="userImageView" destination="Dty-fF-8te" id="jXf-Tg-Oyu"/>
+                        <outlet property="userNameTF" destination="wow-7s-Enj" id="gm3-ox-WOX"/>
+                        <outlet property="userSurnameTF" destination="EqJ-6t-fqS" id="Ht4-yB-Cgy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgk-7x-1Mr" sceneMemberID="firstResponder"/>
             </objects>

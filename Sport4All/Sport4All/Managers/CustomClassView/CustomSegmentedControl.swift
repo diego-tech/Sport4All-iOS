@@ -1,17 +1,20 @@
 //
-//  UISegmentedControlExtension.swift
+//  CutomSegmentedControl.swift
 //  Sport4All
 //
-//  Created by Diego Muñoz Herranz on 8/2/22.
+//  Created by Diego Muñoz Herranz on 10/3/22.
 //
 
 import UIKit
 
-var segmentedSetUp = false
-var underlineSegmented = UIView()
-var underlineAll = UIView()
+class CustomSegmentedControl: UISegmentedControl
+{
+	var segmentedSetUp = false
+	var underlineSegmented = UIView()
+	var underlineAll = UIView()
 
-extension UISegmentedControl {
+	static let shared = CustomSegmentedControl()
+	
 	func setUpView() {
 		if segmentedSetUp == false {
 			segmentedSetUp = true
@@ -65,19 +68,5 @@ extension UISegmentedControl {
 		UIView.animate(withDuration: 0.1, animations: {
 			underline.frame.origin.x = underlineFinalXPosition
 		})
-	}
-}
-
-
-extension UIImage {
-	class func getColoredRectImageWith(color: CGColor, andSize size: CGSize) -> UIImage {
-		UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
-		let graphicsContext = UIGraphicsGetCurrentContext()
-		graphicsContext?.setFillColor(color)
-		let rectangle = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
-		graphicsContext?.fill(rectangle)
-		let rectangleImage = UIGraphicsGetImageFromCurrentImageContext()
-		UIGraphicsEndImageContext()
-		return rectangleImage!
 	}
 }

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro.ttf">
+            <string>SFPro-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PriceCollectionViewCell" id="gTV-IL-0wX" customClass="PriceCollectionViewCell" customModule="Sport4All" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F3o-mh-sR9">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10,60 €" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6B-bN-hr2">
+                                <rect key="frame" x="0.0" y="10" width="100" height="24"/>
+                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="20"/>
+                                <color key="textColor" name="HardColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60 Min" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zpx-oI-eCC">
+                                <rect key="frame" x="0.0" y="50.5" width="100" height="19.5"/>
+                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="16"/>
+                                <color key="textColor" name="HardColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="SoftBlue"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="5iS-BT-Vt9"/>
+                            <constraint firstAttribute="height" constant="80" id="ERr-EZ-Dc7"/>
+                            <constraint firstAttribute="trailing" secondItem="K6B-bN-hr2" secondAttribute="trailing" id="bvU-xg-w7Z"/>
+                            <constraint firstItem="K6B-bN-hr2" firstAttribute="top" secondItem="F3o-mh-sR9" secondAttribute="top" constant="10" id="dXS-KB-2uM"/>
+                            <constraint firstAttribute="trailing" secondItem="Zpx-oI-eCC" secondAttribute="trailing" id="e4s-FO-cd5"/>
+                            <constraint firstItem="Zpx-oI-eCC" firstAttribute="leading" secondItem="F3o-mh-sR9" secondAttribute="leading" id="f3L-IR-pEH"/>
+                            <constraint firstItem="K6B-bN-hr2" firstAttribute="leading" secondItem="F3o-mh-sR9" secondAttribute="leading" id="gSc-GY-1Oc"/>
+                            <constraint firstAttribute="bottom" secondItem="Zpx-oI-eCC" secondAttribute="bottom" constant="10" id="oqz-IG-kAn"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" name="BackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="F3o-mh-sR9" secondAttribute="bottom" id="0wt-wW-jXB"/>
+                <constraint firstItem="F3o-mh-sR9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="3Ya-52-jZ4"/>
+                <constraint firstItem="F3o-mh-sR9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="3zh-gk-IwT"/>
+                <constraint firstAttribute="trailing" secondItem="F3o-mh-sR9" secondAttribute="trailing" id="Qjc-Ip-2Ni"/>
+            </constraints>
+            <connections>
+                <outlet property="priceCVCView" destination="F3o-mh-sR9" id="6c2-gx-zHl"/>
+                <outlet property="priceLabel" destination="K6B-bN-hr2" id="6PH-BK-xmb"/>
+                <outlet property="timeLabel" destination="Zpx-oI-eCC" id="riX-Uz-zDf"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="84"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="BackgroundColor">
+            <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="HardColor">
+            <color red="0.19607843137254902" green="0.26666666666666666" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SoftBlue">
+            <color red="0.91764705882352937" green="0.93333333333333335" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

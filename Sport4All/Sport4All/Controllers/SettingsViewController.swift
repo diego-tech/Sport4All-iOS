@@ -16,7 +16,19 @@ struct SettingsOption {
 	let title: String
 	let icon: UIImage?
 	let tintColor: UIColor
-	let handler: (() -> Void)
+	let optionType: SettingsOptionEnum
+	let handler: ((SettingsOption) -> Void)
+}
+
+enum SettingsOptionEnum {
+	case EditProfile
+	case ContactUs
+	case ShowTutorial
+	case LogOut
+}
+
+protocol SettingsViewControllerDelegate {
+	func settingsViewController(_ settingsViewController: SettingsViewController, didSelectOption option: SettingsOption)
 }
 
 class SettingsViewController: UIViewController {
@@ -30,6 +42,8 @@ class SettingsViewController: UIViewController {
 	
 	var models = [SettingsSection]()
 	
+	var settingsDelegate: SettingsViewControllerDelegate?
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
@@ -37,7 +51,7 @@ class SettingsViewController: UIViewController {
 		configure()
 		
 		self.view.addSubview(tableView)
-
+		
 		tableView.delegate = self
 		tableView.dataSource = self
 		
@@ -57,18 +71,21 @@ class SettingsViewController: UIViewController {
 	
 	func configure() {
 		models.append(SettingsSection(title: "Configuración", options: [
-			SettingsOption(title: "Editar Perfil", icon: UIImage(systemName: "pencil.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .hardColor ?? .black) {
-				print("tapped")
+			SettingsOption(title: "Editar Perfil", icon: UIImage(systemName: "pencil.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .hardColor ?? .black, optionType: .EditProfile) { [self] option in
+				settingsDelegate?.settingsViewController(self, didSelectOption: option)
+				dismiss(animated: true, completion: nil)
 			},
-			SettingsOption(title: "Contacta con Nosotros", icon: UIImage(systemName: "person.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .hardColor ?? .black) {
-				print("tapped")
+			SettingsOption(title: "Contacta con Nosotros", icon: UIImage(systemName: "person.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .hardColor ?? .black, optionType: .ContactUs) { [self] option in
+				settingsDelegate?.settingsViewController(self, didSelectOption: option)
+				dismiss(animated: true, completion: nil)
 			},
-			SettingsOption(title: "Ver Tutorial", icon: UIImage(systemName: "eye.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .hardColor ?? .black) {
-				print("tapped")
-				
+			SettingsOption(title: "Ver Tutorial", icon: UIImage(systemName: "eye.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .hardColor ?? .black, optionType: .ShowTutorial) { [self] option in
+				settingsDelegate?.settingsViewController(self, didSelectOption: option)
+				dismiss(animated: true, completion: nil)
 			},
-			SettingsOption(title: "Cerrar Sesión", icon: UIImage(systemName: "xmark.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .red) {
-				print("tapped")
+			SettingsOption(title: "Cerrar Sesión", icon: UIImage(systemName: "xmark.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .red, optionType: .LogOut) { [self] option in
+				settingsDelegate?.settingsViewController(self, didSelectOption: option)
+				dismiss(animated: true, completion: nil)
 			}
 		]))
 	}
@@ -95,7 +112,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let model = models[indexPath.section].options[indexPath.row]
-		model.handler()
+		model.handler(model)
 	}
 	
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

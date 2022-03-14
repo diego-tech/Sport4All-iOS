@@ -28,16 +28,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k02-2M-EMD">
                                 <rect key="frame" x="5" y="8" width="100" height="125"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image Best Valorated" translatesAutoresizingMaskIntoConstraints="NO" id="jmZ-Nh-Gcp">
-                                        <rect key="frame" x="35" y="10" width="30" height="30"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image Best Valorated" translatesAutoresizingMaskIntoConstraints="NO" id="jmZ-Nh-Gcp" customClass="LazyImageView" customModule="Sport4All" customModuleProvider="target">
+                                        <rect key="frame" x="31" y="10" width="38" height="38"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="pAz-tV-Uqz"/>
-                                            <constraint firstAttribute="height" constant="30" id="sGQ-AT-GKy"/>
+                                            <constraint firstAttribute="width" constant="38" id="pAz-tV-Uqz"/>
+                                            <constraint firstAttribute="height" constant="38" id="sGQ-AT-GKy"/>
                                         </constraints>
-                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Escuela Tenis Club de Campo Villa de Vallecas" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7p-Pk-HnA">
-                                        <rect key="frame" x="5" y="47" width="90" height="37"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Escuela Tenis Club de Campo Villa de Vallecas" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7p-Pk-HnA">
+                                        <rect key="frame" x="5" y="55" width="90" height="29"/>
                                         <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="9"/>
                                         <color key="textColor" name="HardColor"/>
                                         <nil key="highlightedColor"/>
@@ -53,6 +52,9 @@
                                         <state key="normal" title="Reservar">
                                             <color key="titleColor" red="0.91764705879999997" green="0.93333333330000001" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="reserveButtonAction:" destination="Fr5-ST-Xi2" eventType="touchUpInside" id="Yi5-Gc-TpU"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="SoftBlue"/>

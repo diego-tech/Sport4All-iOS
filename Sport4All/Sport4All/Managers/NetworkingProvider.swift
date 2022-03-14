@@ -68,7 +68,6 @@ final class NetworkingProvider {
 			if let error = response.error {
 				failure(error)
 			}
-			
 		}
 	}
 	
@@ -189,6 +188,27 @@ final class NetworkingProvider {
 		}
 	}
 	
+	
+	// MARK: Most Rated List
+	func mostRatedList(serverResponse: @escaping (_ responseData: [Club]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+		let url = "\(Constants.kBaseURL)/mostrated"
+		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
+		
+		AF.request(url, method: .get, headers: headers).responseDecodable(of: ClubListResponse.self, decoder: DateDecoder()) {
+			response in
+			
+			// Handle Response Data && Status Code && Message
+			if let data = response.value?.data, let status = response.value?.status, let msg = response.value?.msg {
+				serverResponse(data, status, msg)
+			}
+			
+			// Handle Alamofire Error
+			if let error = response.error {
+				failure(error)
+			}
+		}
+	}
+	
 	// MARK: Club Favourite Clubs	
 	func clubFavouriteList(serverResponse: @escaping (_ responseData: [Club]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/listfavs"
@@ -248,6 +268,51 @@ final class NetworkingProvider {
 			}
 		}
 	}
+	
+	// MARK: Free Courts
+	func freeCourts(courtsParameters: QueryCourt, serverResponse: @escaping (_ responseData: [Court]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+		let url = "\(Constants.kBaseURL)/freecourts"
+		let header: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
+		
+		let parameters = [
+			"club_id": courtsParameters.club_id,
+			"day": courtsParameters.day,
+			"hour": courtsParameters.hour
+		] as [String : Any]
+		
+		AF.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: header).responseDecodable(of: FreeCourtsResponse.self, decoder: DateDecoder()) {
+			response in
+			
+			// Handle Response Data && Status Code && Message
+			if let data = response.value?.data, let status = response.value?.status, let msg = response.value?.msg {
+				serverResponse(data, status, msg)
+			}
+			
+			// Handle Alamofire Error
+			if let error = response.error {
+				failure(error)
+			}
+		}
+	}
+	
+	func listEvents(serverResponse: @escaping (_ responseData: [Event]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+		let url = "\(Constants.kBaseURL)/listevents"
+		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
+		
+		AF.request(url, method: .get, headers: headers).responseDecodable(of: EventListResponse.self, decoder: DateDecoder()) {
+			response in
+			
+			// Handle Response Data && Status Code && Message
+			if let data = response.value?.data, let status = response.value?.status, let msg = response.value?.msg {
+				serverResponse(data, status, msg)
+			}
+			
+			// Handle Alamofire Error
+			if let error = response.error {
+				failure(error)
+			}
+		}
+	}
 }
 
 /**
@@ -260,4 +325,5 @@ final class NetworkingProvider {
  - Ended Matches: /endedmatches
  - Ended Events: /endedevents
  - Free Courts: /freecourts
+ - Most Rated: /mostrated
  */
