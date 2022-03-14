@@ -196,16 +196,16 @@ extension ReservesViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		print(indexPath)
 		if indexPath.row == 0 {
 			guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReservesTableViewCell") as? ReservesTableViewCell else { return UITableViewCell() }
 			let court = tableViewModel.cellForRowAt(indexPath: indexPath)
 			cell.setCellWithValueOf(court)
-			self.prices = court.prices
 			return cell
 		} else {
+			print("Detail Cell Index Path \(indexPath)")
 			guard let detailCell = tableView.dequeueReusableCell(withIdentifier: "ReservesDetailTableViewCell") as? ReservesDetailTableViewCell else { return UITableViewCell() }
-			detailCell.prices = tableViewModel.cellForRowAt(indexPath: indexPath).prices
+			let prices = tableViewModel.cellForRowAt(indexPath: indexPath).prices
+			detailCell.configure(prices)
 			return detailCell
 		}
 	}

@@ -9,8 +9,10 @@ import UIKit
 
 class ReservesDetailTableViewCell: UITableViewCell {
 
+	#warning("Reusable Cell Not Found Weel Check")
+	
 	// MARK: Variables
-	var prices = [Price]()
+	private var prices: [Price] = [Price]()
 	
 	// MARK: Outlets
 	@IBOutlet weak var pricesCollectionView: UICollectionView!
@@ -20,6 +22,19 @@ class ReservesDetailTableViewCell: UITableViewCell {
         // Initialization code
 		
 		// Inicialización Collection View
+		initCollectionView()
+    }
+	
+	// MARK: Functions
+	public func configure(_ prices: [Price]) {
+		self.prices = prices
+		DispatchQueue.main.async { [weak self] in
+			self?.pricesCollectionView.reloadData()
+		}
+	}
+	
+	// MARK: Styles
+	private func initCollectionView() {
 		pricesCollectionView.backgroundColor = .clear
 		pricesCollectionView.dataSource = self
 		pricesCollectionView.delegate = self
@@ -29,15 +44,7 @@ class ReservesDetailTableViewCell: UITableViewCell {
 		pricesCollectionView.showsVerticalScrollIndicator = false
 		pricesCollectionView.showsHorizontalScrollIndicator = false
 		pricesCollectionView.reloadData()
-    }
-	
-	// MARK: Functions
-	func setItemWithValueOf(_ prices: [Price]) {
-		
 	}
-	
-	// MARK: Styles
-
 }
 
 // MARK: UICollectionView Delegate && Data Source
@@ -51,6 +58,7 @@ extension ReservesDetailTableViewCell: UICollectionViewDelegate, UICollectionVie
 			return UICollectionViewCell()
 		}
 		let price = prices[indexPath.row]
+		print("Collection View Price \(price)")
 		cell.setItemWithValueOf(price)
 		return cell
 	}

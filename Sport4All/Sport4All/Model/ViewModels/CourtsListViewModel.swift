@@ -31,7 +31,7 @@ class CourtsListViewModel {
 		let section = courtList[section]
 		
 		if section.isOpened {
-			return courtList.count
+			return 2
 		} else {
 			return 1
 		}
