@@ -34,8 +34,8 @@ class PriceCollectionViewCell: UICollectionViewCell {
 	private func updateUI(priceLabel: String?, timeLabel: String?) {
 		guard let priceLabel = priceLabel else { return }
 		guard let timeLabel = timeLabel else { return }
-		self.priceLabel.text = priceLabel + "Є"
-		self.timeLabel.text = timeLabel + "Min"
+		self.priceLabel.text = priceLabel + " Є"
+		self.timeLabel.text = timeLabel + " Min"
 	}
 	
 	// MARK: Styles

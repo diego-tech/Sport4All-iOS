@@ -13,9 +13,6 @@
         <array key="SF-Pro-Display-Medium.otf">
             <string>SFProDisplay-Medium</string>
         </array>
-        <array key="SF-Pro.ttf">
-            <string>SFPro-Semibold</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Reserves View Controller-->
@@ -85,30 +82,6 @@
                                                     <constraint firstAttribute="height" constant="1" id="ypi-Cq-tpc"/>
                                                 </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="gLn-vB-V4q">
-                                                <rect key="frame" x="127.5" y="321" width="159" height="56"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hora: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lte-0J-14S">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="56"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="60" id="Lc0-GH-Csd"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="SFPro-Semibold" family="SF Pro" pointSize="17"/>
-                                                        <color key="textColor" name="HardColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="KT1-qk-o9q">
-                                                        <rect key="frame" x="73" y="0.0" width="86" height="56"/>
-                                                        <locale key="locale" localeIdentifier="es"/>
-                                                        <connections>
-                                                            <action selector="timePickerAction:" destination="jkf-qn-Xek" eventType="valueChanged" id="Xa8-Pr-xMi"/>
-                                                        </connections>
-                                                    </datePicker>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="159" id="2oT-d8-JAf"/>
-                                                </constraints>
-                                            </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BI7-g2-dL2">
                                                 <rect key="frame" x="0.0" y="387" width="414" height="1"/>
                                                 <color key="backgroundColor" name="HardColor"/>
@@ -166,6 +139,11 @@
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2SQ-3F-bLt">
+                                                <rect key="frame" x="20" y="332" width="374" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" name="BackgroundColor"/>
                                         <constraints>
@@ -179,12 +157,13 @@
                                             <constraint firstAttribute="height" constant="600" id="Ey0-pD-99u"/>
                                             <constraint firstAttribute="trailing" secondItem="BI7-g2-dL2" secondAttribute="trailing" id="KAn-RA-Vhq"/>
                                             <constraint firstAttribute="bottom" secondItem="dJk-ix-05Y" secondAttribute="bottom" constant="30" id="Kao-Wq-vk6"/>
+                                            <constraint firstAttribute="trailing" secondItem="2SQ-3F-bLt" secondAttribute="trailing" constant="20" id="LbX-Us-Nv3"/>
                                             <constraint firstItem="Mff-ml-TfI" firstAttribute="leading" secondItem="Wkt-kx-t3y" secondAttribute="leading" id="TgZ-Ne-43H"/>
-                                            <constraint firstItem="gLn-vB-V4q" firstAttribute="centerX" secondItem="Wkt-kx-t3y" secondAttribute="centerX" id="YcC-l5-CEh"/>
-                                            <constraint firstItem="gLn-vB-V4q" firstAttribute="top" secondItem="Mff-ml-TfI" secondAttribute="bottom" constant="10" id="luj-rl-1ph"/>
+                                            <constraint firstItem="BI7-g2-dL2" firstAttribute="top" secondItem="2SQ-3F-bLt" secondAttribute="bottom" constant="21" id="j7G-rc-b0o"/>
                                             <constraint firstItem="OQy-2b-3Re" firstAttribute="top" secondItem="Wkt-kx-t3y" secondAttribute="top" id="sZV-mv-FMM"/>
+                                            <constraint firstItem="2SQ-3F-bLt" firstAttribute="leading" secondItem="Wkt-kx-t3y" secondAttribute="leading" constant="20" id="thd-Zf-xBF"/>
                                             <constraint firstItem="Mff-ml-TfI" firstAttribute="top" secondItem="OQy-2b-3Re" secondAttribute="bottom" constant="10" id="tmZ-Hv-pOY"/>
-                                            <constraint firstItem="BI7-g2-dL2" firstAttribute="top" secondItem="gLn-vB-V4q" secondAttribute="bottom" constant="10" id="zZy-z4-vVw"/>
+                                            <constraint firstItem="2SQ-3F-bLt" firstAttribute="top" secondItem="Mff-ml-TfI" secondAttribute="bottom" constant="21" id="xkt-6K-IMx"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -216,8 +195,8 @@
                         <outlet property="calendarHeightConstraint" destination="3kB-Nd-fnK" id="VPp-Hu-jUA"/>
                         <outlet property="clubBannerImageView" destination="XyD-EH-tFr" id="ylh-xV-nFy"/>
                         <outlet property="clubNameLabel" destination="IPt-u0-YwW" id="CMj-2n-m4w"/>
+                        <outlet property="hourTextField" destination="2SQ-3F-bLt" id="5Lp-Ao-iRV"/>
                         <outlet property="reservesTableView" destination="dJk-ix-05Y" id="VDv-R0-ZL6"/>
-                        <outlet property="timePicker" destination="KT1-qk-o9q" id="D0O-Lk-pI4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pdl-a7-eVa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

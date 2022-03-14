@@ -9,6 +9,7 @@ import Foundation
 
 class CourtsListViewModel {
 	
+	// MARK: Variables
 	private var courtList = [Court]()
 	private var status = Int()
 
@@ -19,7 +20,6 @@ class CourtsListViewModel {
 			guard let status = status else { return }
 			self.status = status
 			self.courtList = responseList
-			print("Court List \(responseList)")
 			completion(status)
 		} failure: { error in
 			debugPrint(error)
@@ -31,14 +31,14 @@ class CourtsListViewModel {
 		let section = courtList[section]
 		
 		if section.isOpened {
-			return section.prices.count + 1
+			return 2
 		} else {
 			return 1
 		}
 	}
 	
 	func cellForRowAt(indexPath: IndexPath) -> Court {
-		return courtList[indexPath.row]
+		return courtList[indexPath.section]
 	}
 	
 	func numberOfSections() -> Int {

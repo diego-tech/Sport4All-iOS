@@ -7,10 +7,15 @@
 
 import UIKit
 
-class ReservesDetailTableViewCell: UITableViewCell {
+protocol ReservesDetailTableViewCellDelegate {
+	func didSelectPrice(_ cell: ReservesDetailTableViewCell, didSelectPrice price: Price)
+}
 
+class ReservesDetailTableViewCell: UITableViewCell {
+	
 	// MARK: Variables
-	var prices = [Price]()
+	private var prices: [Price] = [Price]()
+	var reservesDetailCell: ReservesDetailTableViewCellDelegate?
 	
 	// MARK: Outlets
 	@IBOutlet weak var pricesCollectionView: UICollectionView!
@@ -20,6 +25,19 @@ class ReservesDetailTableViewCell: UITableViewCell {
         // Initialization code
 		
 		// Inicialización Collection View
+		initCollectionView()
+    }
+	
+	// MARK: Functions
+	public func configure(_ prices: [Price]) {
+		self.prices = prices
+		DispatchQueue.main.async { [weak self] in
+			self?.pricesCollectionView.reloadData()
+		}
+	}
+	
+	// MARK: Styles
+	private func initCollectionView() {
 		pricesCollectionView.backgroundColor = .clear
 		pricesCollectionView.dataSource = self
 		pricesCollectionView.delegate = self
@@ -29,12 +47,7 @@ class ReservesDetailTableViewCell: UITableViewCell {
 		pricesCollectionView.showsVerticalScrollIndicator = false
 		pricesCollectionView.showsHorizontalScrollIndicator = false
 		pricesCollectionView.reloadData()
-    }
-	
-	// MARK: Functions
-	
-	// MARK: Styles
-
+	}
 }
 
 // MARK: UICollectionView Delegate && Data Source
@@ -60,6 +73,6 @@ extension ReservesDetailTableViewCell: UICollectionViewDelegate, UICollectionVie
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		let price = prices[indexPath.row]
-		print("Selected Price \(price)")
+		reservesDetailCell?.didSelectPrice(self, didSelectPrice: price)
 	}
 }

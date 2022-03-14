@@ -20,6 +20,8 @@ class ProfileViewController: UIViewController {
 	@IBOutlet weak var yourClubBTN: UIButton!
 	@IBOutlet weak var userImageView: LazyImageView!
 	@IBOutlet weak var userNameLabel: UILabel!
+	@IBOutlet weak var pendingEventsCollectionView: UICollectionView!
+	@IBOutlet weak var finalEventsCollectionView: UICollectionView!
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
@@ -38,6 +40,9 @@ class ProfileViewController: UIViewController {
 		// Inicialización Estilos
 		headerUIView?.bottomShadow()
 		userImageView.makeRounds()
+		
+		// Inicialización Collection View
+		initCollectionView()
 	}
 	
 	// MARK: Action Functions
@@ -71,6 +76,28 @@ class ProfileViewController: UIViewController {
 		}
 	}
 	
+	private func initCollectionView(){
+		// Pending Events Collection View Cell
+		pendingEventsCollectionView.dataSource = self
+		pendingEventsCollectionView.delegate = self
+		pendingEventsCollectionView.isScrollEnabled = true
+		pendingEventsCollectionView.register(UINib.init(nibName: "EventProfileCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "EventProfileCollectionViewCell")
+		pendingEventsCollectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
+		pendingEventsCollectionView.showsVerticalScrollIndicator = false
+		pendingEventsCollectionView.showsHorizontalScrollIndicator = false
+		pendingEventsCollectionView.reloadData()
+		
+		// Finish Events Collection View Cell
+		finalEventsCollectionView.dataSource = self
+		finalEventsCollectionView.delegate = self
+		finalEventsCollectionView.isScrollEnabled = true
+		finalEventsCollectionView.register(UINib.init(nibName: "EventProfileCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "EventProfileCollectionViewCell")
+		finalEventsCollectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
+		finalEventsCollectionView.showsVerticalScrollIndicator = false
+		finalEventsCollectionView.showsHorizontalScrollIndicator = false
+		finalEventsCollectionView.reloadData()
+	}
+	
 	// MARK: Styles
 	private func configureNavbar() {
 		let hamburguerImage = UIImage(systemName: "line.3.horizontal", withConfiguration: UIImage.SymbolConfiguration(pointSize: 18))
@@ -101,5 +128,28 @@ extension ProfileViewController: SettingsViewControllerDelegate {
 		case .LogOut:
 			print("Cerrar Sesión")
 		}
+	}
+}
+
+// MARK: Pending Events Collection View Delegate and DataSource
+extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		
+		if collectionView == finalEventsCollectionView {
+			return 5
+		}
+		
+		return 10
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EventProfileCollectionViewCell", for: indexPath) as? EventProfileCollectionViewCell else { return UICollectionViewCell() }
+		return cell
+	}
+	
+	/* Margenes entre las celdas */
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+		let inset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 15)
+		return inset
 	}
 }
