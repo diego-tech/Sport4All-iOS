@@ -13,11 +13,11 @@ protocol BestRatedCollectionViewCellDelegate {
 
 class BestRatedCollectionViewCell: UICollectionViewCell {
 	
-	// Variables
+	// MARK: Variables
 	var reserveButtonDelegate: BestRatedCollectionViewCellDelegate?
 	var reserveClub: Club?
 	
-	// Outlets
+	// MARK: Outlets
 	@IBOutlet weak var bestRatedView: UIView!
 	@IBOutlet weak var bestRatedIV: LazyImageView!
 	@IBOutlet weak var bestRatedLabel: UILabel!

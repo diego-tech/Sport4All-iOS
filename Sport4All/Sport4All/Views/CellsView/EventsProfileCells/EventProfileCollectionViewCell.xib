@@ -76,9 +76,9 @@
             </constraints>
             <size key="customSize" width="202" height="207"/>
             <connections>
-                <outlet property="bestRatedIV" destination="SE9-SY-k0Q" id="Fh8-Ll-7DQ"/>
-                <outlet property="bestRatedLabel" destination="Wk1-V0-cN5" id="DNy-VO-ZJb"/>
-                <outlet property="bestRatedView" destination="boU-YB-NdF" id="hDK-iT-Are"/>
+                <outlet property="clubImageView" destination="SE9-SY-k0Q" id="7yd-Us-olR"/>
+                <outlet property="clubNameLabel" destination="Wk1-V0-cN5" id="Yyf-oQ-sya"/>
+                <outlet property="uiViewCollectionViewProfile" destination="boU-YB-NdF" id="QM8-ez-RHh"/>
             </connections>
             <point key="canvasLocation" x="443.47826086956525" y="208.92857142857142"/>
         </collectionViewCell>
