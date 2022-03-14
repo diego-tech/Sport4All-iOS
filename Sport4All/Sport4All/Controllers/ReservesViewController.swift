@@ -12,24 +12,41 @@ class ReservesViewController: UIViewController {
 	
 	// MARK: Variables
 	var club: Club?
-
-	private var formatter = DateFormatter()
+	
+	private var dateFormatter = DateFormatter()
 	private var tableViewModel = CourtsListViewModel()
-	private var prices = [Price]()
 	private var pickedDate: String?
 	private var pickedTime: String?
+	private var pickerView = UIPickerView()
+	
+	private var halfMinutes: [String] = ["00", "30"]
+	private var times = [String]()
+	
+	private var hour = String()
+	private var minute = String()
 	
 	// MARK: Outlets
 	@IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
-	@IBOutlet weak var timePicker: UIDatePicker!
 	@IBOutlet weak var calendar: FSCalendar!
 	@IBOutlet weak var clubBannerImageView: LazyImageView!
 	@IBOutlet weak var clubNameLabel: UILabel!
 	@IBOutlet weak var reservesTableView: UITableView!
+	@IBOutlet weak var hourTextField: UITextField!
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		
+		// Init Values For First Query
+		let today = Date()
+		dateFormatter.dateFormat = "yyyy-MM-dd"
+		let todayFormat = dateFormatter.string(from: today)
+		pickedDate = todayFormat
+		dateFormatter.dateFormat = "HH:mm:ss"
+		let nowTime = dateFormatter.string(from: today)
+		pickedTime = nowTime
+		hourTextField.text = pickedTime
+		
+		// Init Table View
 		courtList()
 	}
 	
@@ -46,20 +63,16 @@ class ReservesViewController: UIViewController {
 		// Calendar Styles
 		calendarStyles()
 		
-		// Time Picker Styles
-		timePicker.tintColor = .hardColor
-		timePicker.subviews.first?.semanticContentAttribute = .forceRightToLeft
+		// Hours
+		times = getTimeList(openingTime: 10, closingTime: 22)
+		
+		// Picker View Delegate, DataSource and Styles
+		pickerView.delegate = self
+		pickerView.dataSource = self
+		pickerViewStyles()
 	}
 	
 	// MARK: Action Functions
-	@IBAction func timePickerAction(_ sender: UIDatePicker) {
-		let date = sender.date
-		formatter.dateFormat = "HH:mm:ss"
-		pickedTime = formatter.string(from: date)
-		
-		// Init Table View
-		courtList()
-	}
 	
 	// MARK: Functions
 	private func configure() {
@@ -75,19 +88,7 @@ class ReservesViewController: UIViewController {
 		var queryCourt: QueryCourt?
 		if let clubId = club?.id, let day = pickedDate, let time = pickedTime {
 			queryCourt = QueryCourt(club_id: clubId, day: day, hour: time)
-		} else {
-			guard let id = club?.id else { return }
-			let dateNow = Date()
-			formatter.dateFormat = "yyyy-MM-dd"
-			let dateNowStr = formatter.string(from: dateNow)
-			let hourNow = Date()
-			formatter.dateFormat = "HH:mm:ss"
-			let hourNowStr = formatter.string(from: hourNow)
-
-
-			queryCourt = QueryCourt(club_id: id, day: dateNowStr, hour: hourNowStr)
-		}
-		
+		}		
 		guard let queryCourt = queryCourt else { return }
 
 		tableViewModel.fetchFreeCourts(queryCourt: queryCourt) { [weak self] status in
@@ -154,6 +155,51 @@ class ReservesViewController: UIViewController {
 	@objc func popView(tapGestureRecognizer: UITapGestureRecognizer) {
 		self.navigationController?.popViewController(animated: true)
 	}
+	
+	private func pickerViewStyles() {
+		// Toolbar
+		let toolBar = UIToolbar()
+		toolBar.setBackgroundImage(UIImage(), forToolbarPosition: .any, barMetrics: .default)
+		toolBar.isTranslucent = true
+		toolBar.backgroundColor = .softBlue
+		toolBar.tintColor = .hardColor
+		toolBar.sizeToFit()
+		
+		// Done Button
+		let doneButton = UIBarButtonItem(title: "Aceptar", style: .done, target: self, action: #selector(donePressed))
+		toolBar.setItems([doneButton], animated: true)
+		
+		// Text Field
+		hourTextField.bottomBorder(color: .hardColor ?? .black)
+		hourTextField.placeholderStyles(placeHolderText: "Hora")
+		hourTextField.textStyles(keyboardType: .default)
+		hourTextField.inputView = pickerView
+		hourTextField.inputAccessoryView = toolBar
+		hourTextField.tintColor = .hardColor
+		
+		// Picker View
+		pickerView.backgroundColor = .softBlue
+		pickerView.tintColor = .hardColor
+	}
+	
+	@objc func donePressed() {
+		pickedTime = "\(hour):\(minute):00"
+		hourTextField.text = pickedTime
+		hourTextField.resignFirstResponder()
+		// Init Table View
+		courtList()
+	}
+
+	// MARK: Manager
+	func getTimeList(openingTime: Int, closingTime: Int) -> [String] {
+		let hoursList: [String] = [
+			"01", "02", "03", "04", "05", "06",	"07", "08",	"09", "10", "11", "12",	"13", "14",	"15", "16",	"17", "18", "19", "20", "21", "22", "23", "24"]
+		var list: [String] = []
+		for i in openingTime - 1...closingTime - 1 {
+			list.append(hoursList[i])
+		}
+		return list
+	}
 }
 
 // MARK: FS Calendar Delegate and Data Source
@@ -166,23 +212,22 @@ extension ReservesViewController: FSCalendarDelegate, FSCalendarDataSource {
 	// MARK: Delegate
 	func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
 		calendar.today = nil
-		formatter.dateFormat = "yyyy-MM-dd"
-		pickedDate = formatter.string(from: date)
-		print("Date Selected == \(formatter.string(from: date))")
+		dateFormatter.dateFormat = "yyyy-MM-dd"
+		pickedDate = dateFormatter.string(from: date)
+		debugPrint("Date Selected == \(dateFormatter.string(from: date))")
 	}
 	
 	func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
 		calendar.today = nil
-		formatter.dateFormat = "yyyy-MM-dd"
-		pickedDate = formatter.string(from: date)
-		print("Date Selected == \(formatter.string(from: date))")
+		dateFormatter.dateFormat = "yyyy-MM-dd"
+		pickedDate = dateFormatter.string(from: date)
+		debugPrint("Date Selected == \(dateFormatter.string(from: date))")
 	}
 	
 	func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
 		self.calendarHeightConstraint.constant = bounds.height
 		self.view.layoutIfNeeded()
 	}
-	
 }
 
 // MARK: TableView Delegate and DataSource
@@ -202,7 +247,6 @@ extension ReservesViewController: UITableViewDelegate, UITableViewDataSource {
 			cell.setCellWithValueOf(court)
 			return cell
 		} else {
-			print("Detail Cell Index Path \(indexPath)")
 			guard let detailCell = tableView.dequeueReusableCell(withIdentifier: "ReservesDetailTableViewCell") as? ReservesDetailTableViewCell else { return UITableViewCell() }
 			let prices = tableViewModel.cellForRowAt(indexPath: indexPath).prices
 			detailCell.configure(prices)
@@ -217,5 +261,73 @@ extension ReservesViewController: UITableViewDelegate, UITableViewDataSource {
 			tableViewModel.reloadSections(indexPath: indexPath)
 			self.reservesTableView.reloadSections([indexPath.section], with: .automatic)
 		}
+	}
+}
+
+// MARK: UIDatePickerView Delegate and DataSource
+extension ReservesViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+	
+	func numberOfComponents(in pickerView: UIPickerView) -> Int {
+		return 2
+	}
+	
+	func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+		switch component {
+		case 0:
+			return times.count
+		case 1:
+			return halfMinutes.count
+		default:
+			return 0
+		}
+	}
+	
+	func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+		var label: UILabel
+
+		if let view = view as? UILabel {
+			label = view
+		} else {
+			label = UILabel()
+		}
+
+		label.textColor = .hardColor
+		label.textAlignment = .center
+		label.font = UIFont(name: FontType.SFProMedium.rawValue, size: 17)
+
+		var text = ""
+
+		switch component {
+		case 0:
+			text = times[row]
+			hour = times[row]
+		case 1:
+			text = halfMinutes[row]
+			minute = halfMinutes[row]
+		default:
+			break
+		}
+
+		label.text = text
+		return label
+	}
+	
+	func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+		if component == 0 {
+			hour = times[row]
+		} else if component == 1 {
+			minute = halfMinutes[row]
+		}
+	}
+	
+	func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+		let attributes = [
+			NSAttributedString.Key.foregroundColor: UIColor.hardColor ?? UIColor.black
+		]
+		
+		return NSAttributedString(
+			string: getTimeList(openingTime: 0, closingTime: 0)[row],
+			attributes: attributes
+		)
 	}
 }
