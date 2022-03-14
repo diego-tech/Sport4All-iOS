@@ -290,8 +290,10 @@
                     <navigationItem key="navigationItem" id="u5a-mo-BRC"/>
                     <connections>
                         <outlet property="completedEventsBTN" destination="I2w-j3-Ucq" id="U3O-Da-adI"/>
+                        <outlet property="finalEventsCollectionView" destination="NU9-Zn-c6h" id="9XO-Pa-q8i"/>
                         <outlet property="headerUIView" destination="SeR-6g-nar" id="Bnj-3x-aU8"/>
                         <outlet property="pendingEventsBTN" destination="g4S-0O-VGD" id="Abi-Vy-mbg"/>
+                        <outlet property="pendingEventsCollectionView" destination="m6a-Xy-kH7" id="JG2-Oc-zI5"/>
                         <outlet property="userImageView" destination="g6D-Tw-DJx" id="j7v-bL-82u"/>
                         <outlet property="userNameLabel" destination="gKy-kd-y8y" id="ijC-uS-MlS"/>
                         <outlet property="yourClubBTN" destination="xDN-1F-XH3" id="AhV-Bj-mTh"/>

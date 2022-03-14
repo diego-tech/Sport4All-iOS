@@ -20,6 +20,8 @@ class ProfileViewController: UIViewController {
 	@IBOutlet weak var yourClubBTN: UIButton!
 	@IBOutlet weak var userImageView: LazyImageView!
 	@IBOutlet weak var userNameLabel: UILabel!
+	@IBOutlet weak var pendingEventsCollectionView: UICollectionView!
+	@IBOutlet weak var finalEventsCollectionView: UICollectionView!
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
@@ -71,6 +73,10 @@ class ProfileViewController: UIViewController {
 		}
 	}
 	
+	private func initCollectionView(){
+		
+	}
+	
 	// MARK: Styles
 	private func configureNavbar() {
 		let hamburguerImage = UIImage(systemName: "line.3.horizontal", withConfiguration: UIImage.SymbolConfiguration(pointSize: 18))
@@ -103,3 +109,8 @@ extension ProfileViewController: SettingsViewControllerDelegate {
 		}
 	}
 }
+
+//// MARK: Pending Events Collection View Delegate and DataSource
+//extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+//
+//}

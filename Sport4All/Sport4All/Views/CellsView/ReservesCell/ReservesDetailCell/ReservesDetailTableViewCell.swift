@@ -32,6 +32,9 @@ class ReservesDetailTableViewCell: UITableViewCell {
     }
 	
 	// MARK: Functions
+	func setItemWithValueOf(_ prices: [Price]) {
+		
+	}
 	
 	// MARK: Styles
 

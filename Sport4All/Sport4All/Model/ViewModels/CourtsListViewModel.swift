@@ -31,14 +31,14 @@ class CourtsListViewModel {
 		let section = courtList[section]
 		
 		if section.isOpened {
-			return section.prices.count
+			return courtList.count
 		} else {
 			return 1
 		}
 	}
 	
 	func cellForRowAt(indexPath: IndexPath) -> Court {
-		return courtList[indexPath.row]
+		return courtList[indexPath.section]
 	}
 	
 	func numberOfSections() -> Int {
