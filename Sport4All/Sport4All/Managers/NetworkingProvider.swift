@@ -334,6 +334,26 @@ final class NetworkingProvider {
 			}
 		}
 	}
+	
+	// MARK: Court Reserve
+	func courtReserve(serverResponse: @escaping (_ responseData: Court?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+		let url = "\(Constants.kBaseURL)/courtreserve"
+		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
+		
+		AF.request(url, method: .post, headers: headers).responseDecodable(of: ClubListResponse.self, decoder: DateDecoder()) {
+			response in
+			
+			// Handle Response Data && Status Code && Message
+			if let data = response.value?.data, let status = response.value?.status, let msg = response.value?.msg {
+				serverResponse(data, status, msg)
+			}
+			
+			// Handle Alamofire Error
+			if let error = response.error {
+				failure(error)
+			}
+		}
+	}
 }
 
 /**
