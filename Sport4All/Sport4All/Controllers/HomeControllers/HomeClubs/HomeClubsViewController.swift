@@ -49,15 +49,25 @@ class HomeClubsViewController: UIViewController {
 		
 		// All Clubs Label Action
 		allClubsLabel.isUserInteractionEnabled = true
-		let tap = UITapGestureRecognizer(target: self, action: #selector(tapFunction(sender:)))
-		allClubsLabel.addGestureRecognizer(tap)
+		let tapClubsLabel = UITapGestureRecognizer(target: self, action: #selector(tapClubsLabel(sender:)))
+		allClubsLabel.addGestureRecognizer(tapClubsLabel)
+		
+		// Best Rated Label Action
+		bestRatedLabel.isUserInteractionEnabled = true
+		let tapBestRatedLabel = UITapGestureRecognizer(target: self, action: #selector(tapBestRatedLabel(sender:)))
+		bestRatedLabel.addGestureRecognizer(tapBestRatedLabel)
 	}
 	
 	// MARK: Action Functions
-	
-	@objc func tapFunction(sender: UITapGestureRecognizer) {
+	@objc func tapClubsLabel(sender: UITapGestureRecognizer) {
 		DispatchQueue.main.async {
 			self.homeClubsTableView.setContentOffset(.zero, animated: true)
+		}
+	}
+	
+	@objc func tapBestRatedLabel(sender: UITapGestureRecognizer) {
+		DispatchQueue.main.async {
+			self.bestRatedCollectionView.setContentOffset(.zero, animated: true)
 		}
 	}
 	
