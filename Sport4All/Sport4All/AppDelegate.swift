@@ -8,6 +8,7 @@
 import UIKit
 import IQKeyboardManagerSwift
 import Alamofire
+import SPIndicator
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,8 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			switch status {
 			case .notReachable:
 				print("No Internet")
+				let indicatorView = SPIndicatorView(title: "No Tienes Conexión a Internet", preset: .error)
+				indicatorView.present(duration: 3)
 			case .unknown:
 				print("Unknown")
+				let indicatorView = SPIndicatorView(title: "No Tienes Conexión a Internet", preset: .error)
+				indicatorView.present(duration: 3)
 			case .reachable(.cellular):
 				print("Cellular")
 			case .reachable(.ethernetOrWiFi):

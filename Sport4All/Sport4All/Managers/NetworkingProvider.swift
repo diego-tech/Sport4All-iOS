@@ -336,7 +336,7 @@ final class NetworkingProvider {
 	}
 	
 	// MARK: Court Reserve
-	func courtReserve(serverResponse: @escaping (_ responseData: Court?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+	func courtReserve(serverResponse: @escaping (_ responseData: [Club]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/courtreserve"
 		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
 		
