@@ -125,6 +125,7 @@ class ReservesViewController: UIViewController {
 		calendar.allowsMultipleSelection = false
 		calendar.scrollEnabled = true
 		calendar.scrollDirection = .horizontal
+		calendar.locale = Locale(identifier: "ES")
 		
 		calendar.dataSource = self
 		calendar.delegate = self
@@ -304,7 +305,7 @@ extension ReservesViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
 		label.textColor = .hardColor
 		label.textAlignment = .center
-		label.font = UIFont(name: FontType.SFProMedium.rawValue, size: 17)
+		label.font = UIFont(name: FontType.SFProMedium.rawValue, size: 20)
 
 		var text = ""
 

@@ -17,6 +17,8 @@ class HomeClubsViewController: UIViewController {
 	@IBOutlet weak var searchBar: UITextField!
 	@IBOutlet weak var bestRatedCollectionView: UICollectionView!
 	@IBOutlet weak var homeClubsTableView: UITableView!
+	@IBOutlet weak var allClubsLabel: UILabel!
+	@IBOutlet weak var bestRatedLabel: UILabel!
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
@@ -44,9 +46,20 @@ class HomeClubsViewController: UIViewController {
 		
 		// Custom Search Bar
 		searchBar.customSearch()
+		
+		// All Clubs Label Action
+		allClubsLabel.isUserInteractionEnabled = true
+		let tap = UITapGestureRecognizer(target: self, action: #selector(tapFunction(sender:)))
+		allClubsLabel.addGestureRecognizer(tap)
 	}
 	
 	// MARK: Action Functions
+	
+	@objc func tapFunction(sender: UITapGestureRecognizer) {
+		DispatchQueue.main.async {
+			self.homeClubsTableView.setContentOffset(.zero, animated: true)
+		}
+	}
 	
 	// MARK: Functions
 	private func clubList() {
@@ -148,7 +161,7 @@ extension HomeClubsViewController: UITableViewDataSource, UITableViewDelegate {
 		tableView.deselectRow(at: indexPath, animated: true)
 		
 		let club = tableViewModel.cellForRowAt(indexPath: indexPath)
-
+		
 		let vc = UIStoryboard(name: "InfoClub", bundle: nil).instantiateViewController(withIdentifier: "InfoClub") as! InfoClubViewController
 		vc.club = club
 		navigationController?.pushViewController(vc, animated: true)

@@ -92,8 +92,6 @@
 		5ECF53FB278C3AB9005F6D01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ECF53F9278C3AB9005F6D01 /* LaunchScreen.storyboard */; };
 		5ECF963827DB5B3C002AAD79 /* Court.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECF963727DB5B3C002AAD79 /* Court.swift */; };
 		5EDC2CE027C6A2E1007EE2C0 /* PayResumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDC2CDF27C6A2E1007EE2C0 /* PayResumeViewController.swift */; };
-		5EDC2CE727C6AFF3007EE2C0 /* EventPendingList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDC2CE627C6AFF3007EE2C0 /* EventPendingList.storyboard */; };
-		5EDC2CE927C6B04A007EE2C0 /* EventPendingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDC2CE827C6B04A007EE2C0 /* EventPendingListViewController.swift */; };
 		5EDE04E127D8ADB2006EDE1E /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5EDE04E027D8ADB2006EDE1E /* IQKeyboardManagerSwift */; };
 		5EDE04E427D8ADC2006EDE1E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5EDE04E327D8ADC2006EDE1E /* Alamofire */; };
 		5EDE04E727D8AE41006EDE1E /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 5EDE04E627D8AE41006EDE1E /* FSCalendar */; };
@@ -199,8 +197,6 @@
 		5ECF53FC278C3AB9005F6D01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5ECF963727DB5B3C002AAD79 /* Court.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Court.swift; sourceTree = "<group>"; };
 		5EDC2CDF27C6A2E1007EE2C0 /* PayResumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayResumeViewController.swift; sourceTree = "<group>"; };
-		5EDC2CE627C6AFF3007EE2C0 /* EventPendingList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventPendingList.storyboard; sourceTree = "<group>"; };
-		5EDC2CE827C6B04A007EE2C0 /* EventPendingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPendingListViewController.swift; sourceTree = "<group>"; };
 		5EE2A17D27DCDCAF00575BAF /* CourtsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtsListViewModel.swift; sourceTree = "<group>"; };
 		5EE2A18127DCEDCF00575BAF /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		5EE2A18327DCEE9C00575BAF /* EventsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListViewModel.swift; sourceTree = "<group>"; };
@@ -469,7 +465,6 @@
 				5E9661CE27C7848400EEFC14 /* FinishEventDetail */,
 				5965E8AD27C779C400862B62 /* EditProfile */,
 				5965E8B127C79CFE00862B62 /* RegisterInEvent */,
-				5EDC2CE527C6AFE4007EE2C0 /* EventsPendingList */,
 				5EDC2CDE27C6A01C007EE2C0 /* PayResume */,
 				592748E627C4E3EB00C535F1 /* EventsPending */,
 				598E071627C3C57600D5C185 /* YourClub */,
@@ -517,7 +512,6 @@
 				5EDC2CDF27C6A2E1007EE2C0 /* PayResumeViewController.swift */,
 				5E371D2A27A92A5E00446D73 /* TabBarController.swift */,
 				5E8C23BC27C0DC9400763D49 /* ModifyPasswordViewController.swift */,
-				5EDC2CE827C6B04A007EE2C0 /* EventPendingListViewController.swift */,
 				5E8C23BE27C0EF0600763D49 /* DetailEventViewController.swift */,
 				5E96407E27C68D2700387BFD /* YourClubViewController.swift */,
 				5E96408027C69AE100387BFD /* PendingEventsViewController.swift */,
@@ -665,14 +659,6 @@
 				07BE152227BE6A6900AE8930 /* PayResume.storyboard */,
 			);
 			path = PayResume;
-			sourceTree = "<group>";
-		};
-		5EDC2CE527C6AFE4007EE2C0 /* EventsPendingList */ = {
-			isa = PBXGroup;
-			children = (
-				5EDC2CE627C6AFF3007EE2C0 /* EventPendingList.storyboard */,
-			);
-			path = EventsPendingList;
 			sourceTree = "<group>";
 		};
 		5EE2A17C27DCDC5D00575BAF /* ViewModels */ = {
@@ -829,7 +815,6 @@
 				5959268727BBABE100702369 /* ModifyPassword.storyboard in Resources */,
 				5E9C14C32790358F002D9AF1 /* SF-Pro-Display-Regular.otf in Resources */,
 				5E9C14C62790358F002D9AF1 /* SF-Pro-Display-Bold.otf in Resources */,
-				5EDC2CE727C6AFF3007EE2C0 /* EventPendingList.storyboard in Resources */,
 				5E12F0F927C2894900316D69 /* Onboarding.storyboard in Resources */,
 				5E51236227BBD8010047EE44 /* InfoClub.storyboard in Resources */,
 				5ECF53F6278C3AB8005F6D01 /* Main.storyboard in Resources */,
@@ -903,7 +888,6 @@
 				598E071327C3BC0400D5C185 /* YourClubEventsTableViewCell.swift in Sources */,
 				5EA1A67527A7EDCF0096754C /* UserLogin.swift in Sources */,
 				07AB1FCA27AA9599007771E3 /* BestRatedCollectionViewCell.swift in Sources */,
-				5EDC2CE927C6B04A007EE2C0 /* EventPendingListViewController.swift in Sources */,
 				5E51235327BBC7E60047EE44 /* FavouriteClubsViewController.swift in Sources */,
 				5E7DFEC627D7E5F500CF9425 /* HomeCollectionViewModel.swift in Sources */,
 				5999B68427B285640008BE6B /* ClubTableViewCell.swift in Sources */,
