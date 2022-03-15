@@ -347,6 +347,10 @@ extension ReservesViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 // MARK: ReservesDetailTableViewCell Delegate
 extension ReservesViewController: ReservesDetailTableViewCellDelegate {
 	func didSelectPrice(_ cell: ReservesDetailTableViewCell, didSelectPrice price: Price) {
+		let vc = UIStoryboard(name: "PayResume", bundle: nil).instantiateViewController(withIdentifier: "PayResume") as! PayResumeViewController
+		modalPresentationStyle = .automatic
+		self.present(vc, animated: true, completion: nil)
+		
 		print(price)
 	}
 }
