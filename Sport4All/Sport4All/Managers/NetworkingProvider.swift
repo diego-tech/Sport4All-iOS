@@ -295,8 +295,29 @@ final class NetworkingProvider {
 		}
 	}
 	
+	// MARK: List All Events
 	func listEvents(serverResponse: @escaping (_ responseData: [Event]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/listevents"
+		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
+		
+		AF.request(url, method: .get, headers: headers).responseDecodable(of: EventListResponse.self, decoder: DateDecoder()) {
+			response in
+			
+			// Handle Response Data && Status Code && Message
+			if let data = response.value?.data, let status = response.value?.status, let msg = response.value?.msg {
+				serverResponse(data, status, msg)
+			}
+			
+			// Handle Alamofire Error
+			if let error = response.error {
+				failure(error)
+			}
+		}
+	}
+	
+	// MARK: List Events For Fav Clubs
+	func listEventsByFav(serverResponse: @escaping (_ responseData: [Event]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+		let url = "\(Constants.kBaseURL)/listfavouritegevents"
 		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
 		
 		AF.request(url, method: .get, headers: headers).responseDecodable(of: EventListResponse.self, decoder: DateDecoder()) {
@@ -324,6 +345,4 @@ final class NetworkingProvider {
  - Court Reserve: /courtreserve
  - Ended Matches: /endedmatches
  - Ended Events: /endedevents
- - Free Courts: /freecourts
- - Most Rated: /mostrated
  */

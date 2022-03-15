@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum Sections: Int {
+	case FavEvents = 0
+	case AllEvents = 1
+}
+
 class SocialViewController: UIViewController {
 
 	// MARK: Variables
@@ -51,6 +56,10 @@ class SocialViewController: UIViewController {
 		tableViewModel.fetchEventList { [weak self] status in
 			self?.initTableView()
 		}
+		
+		tableViewModel.fetchFavEventsList { [weak self] status in
+			self?.initTableView()
+		}
 	}
 	
 	private func initTableView() {
@@ -78,14 +87,31 @@ class SocialViewController: UIViewController {
 }
 
 extension SocialViewController: UITableViewDataSource, UITableViewDelegate {
+	func numberOfSections(in tableView: UITableView) -> Int {
+		return tableViewModel.numberOfSections()
+	}
+	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return tableViewModel.numberOfRowInSection(section: section)
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "EventsTableViewCell") as? EventsTableViewCell else { return UITableViewCell() }
-		let event = tableViewModel.cellForRowAt(indexPath: indexPath)
-		cell.setCellWithValueOf(event)
+
+		switch indexPath.section {
+		case Sections.FavEvents.rawValue:
+			let favEvent = tableViewModel.cellForRowAtFavEventList(indexPath: indexPath)
+			cell.setCellWithValueOf(favEvent)
+		case Sections.AllEvents.rawValue:
+			let event = tableViewModel.cellForRowAtEventList(indexPath: indexPath)
+			cell.setCellWithValueOf(event)
+		default:
+			return UITableViewCell()
+		}
 		return cell
+	}
+	
+	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		return tableViewModel.titleForHeaderInSection(section: section)
 	}
 }
