@@ -32,7 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 				
 		// Inicializar IQKeyboardManager
 		IQKeyboardManager.shared.enable = true
-		
+		IQKeyboardManager.shared.enableAutoToolbar = false
+
 		// Override point for customization after application launch.
 		return true
 	}
