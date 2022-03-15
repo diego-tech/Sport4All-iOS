@@ -114,4 +114,15 @@ extension SocialViewController: UITableViewDataSource, UITableViewDelegate {
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		return tableViewModel.titleForHeaderInSection(section: section)
 	}
+	
+	func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+		guard let header = view as? UITableViewHeaderFooterView else { return }
+		header.textLabel?.font = UIFont(name: FontType.SFProDisplayMedium.rawValue, size: 17)
+		header.textLabel?.textColor = .hardColor
+		header.textLabel?.numberOfLines = 0
+	}
+	
+	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+		return 20
+	}
 }
