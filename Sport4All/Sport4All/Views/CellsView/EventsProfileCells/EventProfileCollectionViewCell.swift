@@ -27,8 +27,9 @@ class EventProfileCollectionViewCell: UICollectionViewCell {
 	}
 	
 	// MARK: Functions
-	func setItemWithValueOf(_ event: Event) {
-		updateUI(eventImage: event.img, eventName: event.name)
+	func setItemWithValueOf(_ pendingMatch: PendingMatch) {
+		updateUI(eventImage: pendingMatch.eventImg, eventName: pendingMatch.eventName)
+//		updateUI(eventImage: pendingMatch.img, pendingMatch.name)
 	}
 	
 	private func updateUI(eventImage: String?, eventName: String?) {

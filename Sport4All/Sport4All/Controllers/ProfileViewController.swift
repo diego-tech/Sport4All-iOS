@@ -32,7 +32,7 @@ class ProfileViewController: UIViewController {
 		fetchUserInfo()
 		
 		// Inicialización Collection View
-		pendingEventsList()
+		pendingList()
 	}
 	
 	override func viewDidLoad() {
@@ -78,8 +78,16 @@ class ProfileViewController: UIViewController {
 		}
 	}
 	
-	private func pendingEventsList() {
+	private func pendingList() {
 		collectionViewModel.fetchPendingEvents { [weak self] status in
+			self?.initPendingCollectionView()
+		}
+		
+		collectionViewModel.fetchPendingMatches { [weak self] status in
+			self?.initPendingCollectionView()
+		}
+		
+		collectionViewModel.fetchPendingReserves { [weak self] status in
 			self?.initPendingCollectionView()
 		}
 	}

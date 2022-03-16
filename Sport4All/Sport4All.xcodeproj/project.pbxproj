@@ -38,6 +38,7 @@
 		5E371D2927A925F900446D73 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E371D2827A925F900446D73 /* TabBar.storyboard */; };
 		5E371D2B27A92A5E00446D73 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E371D2A27A92A5E00446D73 /* TabBarController.swift */; };
 		5E45E90827E2379F004A859C /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E45E90727E2379F004A859C /* Match.swift */; };
+		5E45E90A27E26126004A859C /* PendingMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E45E90927E26126004A859C /* PendingMatch.swift */; };
 		5E4ED8C127C7F61300679524 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4ED8C027C7F61300679524 /* EditProfileViewController.swift */; };
 		5E4ED8C327C7FAE500679524 /* RegisterInEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4ED8C227C7FAE500679524 /* RegisterInEventViewController.swift */; };
 		5E51235327BBC7E60047EE44 /* FavouriteClubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E51235227BBC7E60047EE44 /* FavouriteClubsViewController.swift */; };
@@ -145,6 +146,7 @@
 		5E371D2827A925F900446D73 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		5E371D2A27A92A5E00446D73 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		5E45E90727E2379F004A859C /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		5E45E90927E26126004A859C /* PendingMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingMatch.swift; sourceTree = "<group>"; };
 		5E4ED8C027C7F61300679524 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		5E4ED8C227C7FAE500679524 /* RegisterInEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInEventViewController.swift; sourceTree = "<group>"; };
 		5E51235227BBC7E60047EE44 /* FavouriteClubsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteClubsViewController.swift; sourceTree = "<group>"; };
@@ -496,6 +498,7 @@
 				5ECF963727DB5B3C002AAD79 /* Court.swift */,
 				5EE2A18127DCEDCF00575BAF /* Event.swift */,
 				5E45E90727E2379F004A859C /* Match.swift */,
+				5E45E90927E26126004A859C /* PendingMatch.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -885,6 +888,7 @@
 				5EF61CC827D25FBF00F4AB8F /* LazyImageView.swift in Sources */,
 				5E9E821227B283E200A450E8 /* HomeMatchesViewController.swift in Sources */,
 				5E45E90827E2379F004A859C /* Match.swift in Sources */,
+				5E45E90A27E26126004A859C /* PendingMatch.swift in Sources */,
 				5E371D2B27A92A5E00446D73 /* TabBarController.swift in Sources */,
 				5E123C3B27A2F1E400CF14EE /* FirstRegisterViewController.swift in Sources */,
 				5ECF963827DB5B3C002AAD79 /* Court.swift in Sources */,
