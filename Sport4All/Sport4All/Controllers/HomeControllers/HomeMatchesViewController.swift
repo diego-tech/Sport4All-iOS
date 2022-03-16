@@ -66,6 +66,7 @@ class HomeMatchesViewController:  UIViewController {
 		calendar.allowsMultipleSelection = false
 		calendar.scrollEnabled = true
 		calendar.scrollDirection = .horizontal
+		calendar.locale = Locale(identifier: "ES")
 		
 		calendar.dataSource = self
 		calendar.delegate = self
@@ -98,12 +99,27 @@ extension HomeMatchesViewController: FSCalendarDelegate, FSCalendarDataSource {
 
 // MARK: UITableView Delegate && DataSource
 extension HomeMatchesViewController: UITableViewDelegate, UITableViewDataSource {
+	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 10
+		return 2
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		guard let cell = tableView.dequeueReusableCell(withIdentifier: "MatchesMainTableViewCell") as? MatchesMainTableViewCell else { return UITableViewCell() }
-		return cell
+		
+		if indexPath.row == 0 {
+			guard let cell = tableView.dequeueReusableCell(withIdentifier: "MatchesMainTableViewCell") as? MatchesMainTableViewCell else { return UITableViewCell() }
+			return cell
+		} else {
+			guard let detailCell = tableView.dequeueReusableCell(withIdentifier: "MatchesDetailTableViewCell") as? MatchesDetailTableViewCell else { return UITableViewCell() }
+			return detailCell
+		}
+	}
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true)
+		
+		if indexPath.row == 0 {
+			tableView.reloadSections([indexPath.section], with: .automatic)
+		}
 	}
 }
