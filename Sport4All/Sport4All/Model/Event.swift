@@ -15,6 +15,8 @@ struct Event: Codable {
 	let peopleLeft: Int?
 	let type: String?
 	let price: Int?
+	let img: String?
+	let clubName: String?
 	let startTime: String?
 	let endTime: String?
 	let finalDate: String?
@@ -29,6 +31,8 @@ struct Event: Codable {
 		case peopleLeft = "people_left"
 		case type
 		case price
+		case img
+		case clubName
 		case startTime = "start_time"
 		case endTime = "end_time"
 		case finalDate = "final_time"

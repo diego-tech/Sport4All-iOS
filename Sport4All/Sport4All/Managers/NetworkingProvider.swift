@@ -354,15 +354,54 @@ final class NetworkingProvider {
 			}
 		}
 	}
+	
+	// MARK: Pending Events List
+	func pendingEvents(serverResponse: @escaping (_ responseData: [Event]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+		let url = "\(Constants.kBaseURL)/pendingevents"
+		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
+		
+		AF.request(url, method: .get, headers: headers).responseDecodable(of: EventListResponse.self, decoder: DateDecoder()) {
+			response in
+			
+			// Handle Response Data && Status Code && Message
+			if let data = response.value?.data, let status = response.value?.status, let msg = response.value?.msg {
+				serverResponse(data, status, msg)
+			}
+			
+			// Handle Alamofire Error
+			if let error = response.error {
+				failure(error)
+			}
+		}
+	}
+	
+	// MARK: Finish Events List
+	func finishEvents(serverResponse: @escaping (_ responseData: [Event]?, _ status: Int?, _ msg: String?) ->(), failure: @escaping (_ error: Error?) ->()) {
+		let url = "\(Constants.kBaseURL)/endedevents"
+		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
+		
+		AF.request(url, method: .get, headers: headers).responseDecodable(of: EventListResponse.self, decoder: DateDecoder()) {
+			response in
+			
+			// Handle Response Data && Status Code && Message
+			if let data = response.value?.data, let status = response.value?.status, let msg = response.value?.msg {
+				serverResponse(data, status, msg)
+			}
+			
+			// Handle Alamofire Error
+			if let error = response.error {
+				failure(error)
+			}
+		}
+	}
 }
 
 /**
  ROUTES:
- - List Events: /listevents
- - Search Clubs: /searchclubs
  - Join Event: /joinevent
  - Match Inscription: /matchinscription
  - Court Reserve: /courtreserve
  - Ended Matches: /endedmatches
  - Ended Events: /endedevents
+ - Pending Events: /pendingevents
  */

@@ -13,8 +13,8 @@ class EventProfileCollectionViewCell: UICollectionViewCell {
 	
 	
 	// MARK: Outlets
-	@IBOutlet weak var clubImageView: UIImageView!
-	@IBOutlet weak var clubNameLabel: UILabel!
+	@IBOutlet weak var eventImageView: LazyImageView!
+	@IBOutlet weak var eventNameLabel: UILabel!
 	@IBOutlet weak var uiViewCollectionViewProfile: UIView!
 	
 	override func awakeFromNib() {
@@ -23,8 +23,22 @@ class EventProfileCollectionViewCell: UICollectionViewCell {
 		
 		// Inicialización de Estilos
 		uiViewStyles()
+		imageViewStyles()
 	}
 	
+	// MARK: Functions
+	func setItemWithValueOf(_ event: Event) {
+		updateUI(eventImage: event.img, eventName: event.name)
+	}
+	
+	private func updateUI(eventImage: String?, eventName: String?) {
+		guard let eventName = eventName else { return }
+		guard let eventImage = eventImage else { return }
+		guard let url = URL(string: Constants.kStorageURL + eventImage) else { return }
+		
+		self.eventImageView.loadImage(fromURL: url)
+		self.eventNameLabel.text = eventName
+	}
 	
 	// MARK: Styles
 	private func uiViewStyles() {
@@ -32,5 +46,9 @@ class EventProfileCollectionViewCell: UICollectionViewCell {
 		uiViewCollectionViewProfile.layer.cornerRadius = 10
 		uiViewCollectionViewProfile.backgroundColor = .softBlue
 		uiViewCollectionViewProfile.shadow(shadowOpacity: 0.15, shadowRadius: 4)
+	}
+	
+	private func imageViewStyles() {
+		eventImageView.makeRounds()
 	}
 }

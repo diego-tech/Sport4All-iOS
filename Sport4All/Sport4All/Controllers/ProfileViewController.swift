@@ -13,6 +13,8 @@ class ProfileViewController: UIViewController {
 	private var userImage: String?
 	private var userName: String?
 	
+	private var collectionViewModel = EventsListProfileViewModel()
+	
 	// MARK: Outlets
 	@IBOutlet weak var headerUIView: UIView!
 	@IBOutlet weak var pendingEventsBTN: UIButton!
@@ -28,6 +30,9 @@ class ProfileViewController: UIViewController {
 		
 		// Api
 		fetchUserInfo()
+		
+		// Inicialización Collection View
+		pendingEventsList()
 	}
 	
 	override func viewDidLoad() {
@@ -40,9 +45,6 @@ class ProfileViewController: UIViewController {
 		// Inicialización Estilos
 		headerUIView?.bottomShadow()
 		userImageView.makeRounds()
-		
-		// Inicialización Collection View
-		initCollectionView()
 	}
 	
 	// MARK: Action Functions
@@ -76,7 +78,13 @@ class ProfileViewController: UIViewController {
 		}
 	}
 	
-	private func initCollectionView(){
+	private func pendingEventsList() {
+		collectionViewModel.fetchPendingEvents { [weak self] status in
+			self?.initPendingCollectionView()
+		}
+	}
+	
+	private func initPendingCollectionView(){
 		// Pending Events Collection View Cell
 		pendingEventsCollectionView.dataSource = self
 		pendingEventsCollectionView.delegate = self
@@ -86,7 +94,9 @@ class ProfileViewController: UIViewController {
 		pendingEventsCollectionView.showsVerticalScrollIndicator = false
 		pendingEventsCollectionView.showsHorizontalScrollIndicator = false
 		pendingEventsCollectionView.reloadData()
-		
+	}
+	
+	private func initFinishCollectionView() {
 		// Finish Events Collection View Cell
 		finalEventsCollectionView.dataSource = self
 		finalEventsCollectionView.delegate = self
@@ -133,19 +143,24 @@ extension ProfileViewController: SettingsViewControllerDelegate {
 
 // MARK: Pending Events Collection View Delegate and DataSource
 extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		
-		if collectionView == finalEventsCollectionView {
-			return 5
+		if collectionView == pendingEventsCollectionView {
+			return collectionViewModel.numberOfItemsInSection(section: section)
 		}
-		
 		return 10
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EventProfileCollectionViewCell", for: indexPath) as? EventProfileCollectionViewCell else { return UICollectionViewCell() }
+		
+		if collectionView == pendingEventsCollectionView {
+			let pendingEvent = collectionViewModel.cellForItemAt(indexPath: indexPath)
+			cell.setItemWithValueOf(pendingEvent)
+		}
 		return cell
 	}
+	
 	
 	/* Margenes entre las celdas */
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

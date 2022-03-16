@@ -30,13 +30,13 @@ class EventsTableViewCell: UITableViewCell {
 	
 	// MARK: Functions
 	func setCellWithValueOf(_ event: Event) {
-		updateUI(eventName: event.name, clubName: "Prueba", eventImageStr: "hRb1PgQSdUKaWDe2adsiKfy9XpOLDjOZspMhklKK.jpg")
+		updateUI(eventName: event.name, clubName: event.clubName, eventImageStr: event.img)
 	}
 	
 	private func updateUI(eventName: String?, clubName: String?, eventImageStr: String?) {
-		guard let eventName = eventName else { return }
-		guard let clubName = clubName else { return }
-		guard let eventImageStr = eventImageStr else { return }
+		guard let eventName = eventName else { return print("event name error") }
+		guard let clubName = clubName else { return print("club name error") }
+		guard let eventImageStr = eventImageStr else { return print("event img error") }
 		guard let url = URL(string: Constants.kStorageURL + eventImageStr) else { return }
 		
 		self.eventNameLabel.text = eventName
