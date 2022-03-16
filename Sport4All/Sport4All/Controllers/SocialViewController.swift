@@ -113,6 +113,19 @@ extension SocialViewController: UITableViewDataSource, UITableViewDelegate {
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let vc = UIStoryboard(name: "DetailEvent", bundle: nil).instantiateViewController(withIdentifier: "DetailEvent") as! DetailEventViewController
+		
+		switch indexPath.section {
+		case Sections.FavEvents.rawValue:
+			let favEvent = tableViewModel.cellForRowAtFavEventList(indexPath: indexPath)
+			vc.event = favEvent
+		case Sections.AllEvents.rawValue:
+			let event = tableViewModel.cellForRowAtEventList(indexPath: indexPath)
+			vc.event = event
+		default:
+			break
+			
+		}
+
 		navigationController?.pushViewController(vc, animated: true)
 	}
 	

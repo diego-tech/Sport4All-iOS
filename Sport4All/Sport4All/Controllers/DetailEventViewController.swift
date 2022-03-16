@@ -11,8 +11,11 @@ import MapKit
 class DetailEventViewController: UIViewController {
 	
 	// MARK: Variables
+	var event: Event?
 	
 	// MARK: Outlets
+	@IBOutlet weak var eventNameLabel: UILabel!
+	@IBOutlet weak var eventImageView: LazyImageView!
 	@IBOutlet weak var eventDayLabel: UILabel!
 	@IBOutlet weak var infoEventTextView: UITextView!
 	@IBOutlet weak var clubDirection: MKMapView!
@@ -29,11 +32,25 @@ class DetailEventViewController: UIViewController {
 		// Inicialización Estilos
 		inscribeButtonStyle()
 		headerUIView.bottomShadow()
+		
+		// Configure View
+		configure()
     }
 	
 	// MARK: Action Functions
 	
 	// MARK: Functions
+	private func configure() {
+		guard let event = event else { return }
+		guard let event_img = event.img else { return }
+//		guard let event_desc = event.description else { return }
+//		guard let location = event.clubLocation else { return }
+		guard let eventName = event.name else { return }
+		guard let eventUrl = URL(string: Constants.kStorageURL + event_img) else { return }
+		
+		self.eventImageView.loadImage(fromURL: eventUrl)
+		self.eventNameLabel.text = eventName
+	}
 	
 	// MARK: Styles
 	private func inscribeButtonStyle() {
