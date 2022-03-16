@@ -6,13 +6,16 @@
 //
 
 import UIKit
+import MapKit
 
 class DetailEventViewController: UIViewController {
 	
 	// MARK: Variables
 	
 	// MARK: Outlets
-	@IBOutlet weak var locationBTN: UIButton!
+	@IBOutlet weak var eventDayLabel: UILabel!
+	@IBOutlet weak var infoEventTextView: UITextView!
+	@IBOutlet weak var clubDirection: MKMapView!
 	@IBOutlet weak var inscribeEventBTN: UIButton!
 	@IBOutlet weak var headerUIView: UIView!
 	
@@ -24,7 +27,6 @@ class DetailEventViewController: UIViewController {
 		configureNavbar()
 		
 		// Inicialización Estilos
-		locationBTN.contentHorizontalAlignment = .left
 		inscribeButtonStyle()
 		headerUIView.bottomShadow()
     }

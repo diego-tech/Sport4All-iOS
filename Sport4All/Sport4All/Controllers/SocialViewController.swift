@@ -111,6 +111,11 @@ extension SocialViewController: UITableViewDataSource, UITableViewDelegate {
 		return cell
 	}
 	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let vc = UIStoryboard(name: "DetailEvent", bundle: nil).instantiateViewController(withIdentifier: "DetailEvent") as! DetailEventViewController
+		navigationController?.pushViewController(vc, animated: true)
+	}
+	
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		return tableViewModel.titleForHeaderInSection(section: section)
 	}

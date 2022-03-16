@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -81,84 +81,47 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="700"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Día 11 de diciembre 16:30" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKX-Dq-9ke">
-                                                <rect key="frame" x="20" y="20" width="374" height="19.5"/>
+                                                <rect key="frame" x="20" y="20" width="374" height="19"/>
                                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="16"/>
                                                 <color key="textColor" name="HardColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Información" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cb5-2V-pGk" userLabel="- Info">
-                                                <rect key="frame" x="20" y="59.5" width="374" height="19.5"/>
+                                                <rect key="frame" x="20" y="59" width="374" height="19"/>
                                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="16"/>
                                                 <color key="textColor" name="HardColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9gI-oG-ngg">
-                                                <rect key="frame" x="20" y="89" width="374" height="106"/>
+                                                <rect key="frame" x="20" y="91.5" width="374" height="111"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="111" id="oRb-Vh-H1h"/>
+                                                </constraints>
                                                 <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at augue magna. Aliquam non dictum velit. Pellentesque feugiat lectus vitae purus ullamcorper, in rhoncus diam malesuada. Aliquam fringilla eros vel ex congue, eget maximus est mollis. Nam et arcu ligula.</string>
                                                 <color key="textColor" name="BlueBerry"/>
                                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Categorías:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VY2-kC-dN6">
-                                                <rect key="frame" x="20" y="205" width="374" height="19.5"/>
-                                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="16"/>
-                                                <color key="textColor" name="HardColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZAH-Sh-v73">
-                                                <rect key="frame" x="57" y="244.5" width="300" height="78"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nivel Bajo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hC-Yi-LZx">
-                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="19.5"/>
-                                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="16"/>
-                                                        <color key="textColor" name="BlueBerry"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nivel Medio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZl-Fm-EBl">
-                                                        <rect key="frame" x="0.0" y="19.5" width="300" height="19.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <color key="textColor" name="BlueBerry"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nivel Medio Alto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ah6-OE-kgR">
-                                                        <rect key="frame" x="0.0" y="39" width="300" height="19.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <color key="textColor" name="BlueBerry"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nivel Medio Alto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFg-RJ-QSA">
-                                                        <rect key="frame" x="0.0" y="58.5" width="300" height="19.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <color key="textColor" name="BlueBerry"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="300" id="gaX-tF-cqi"/>
-                                                </constraints>
-                                            </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Cómo llegar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gof-z6-ZWF">
-                                                <rect key="frame" x="20" y="342.5" width="374" height="19.5"/>
+                                                <rect key="frame" x="20" y="222.5" width="374" height="19.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="19.5" id="7aW-8Z-GaT"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="16"/>
                                                 <color key="textColor" name="HardColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGF-wY-Rg2">
-                                                <rect key="frame" x="20" y="382" width="374" height="38"/>
-                                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="16"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="C/ Villa de Vallecas, 33" image="LinkIcon">
-                                                    <color key="titleColor" name="HardColor"/>
-                                                </state>
-                                                <buttonConfiguration key="configuration" style="plain" image="LinkIcon" imagePlacement="leading" title="C/ Villa de Vallecas, 33" imagePadding="15" titleAlignment="trailing">
-                                                    <fontDescription key="titleFontDescription" name="SFPro-Regular" family="SF Pro" pointSize="16"/>
-                                                    <color key="baseForegroundColor" name="BlueBerry"/>
-                                                </buttonConfiguration>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAZ-7X-nG0">
-                                                <rect key="frame" x="100" y="460" width="214" height="50"/>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="V86-5q-lMF">
+                                                <rect key="frame" x="20" y="262" width="374" height="176"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="ord-X2-8Cj"/>
+                                                    <constraint firstAttribute="height" constant="176" id="Jyn-0j-jP9"/>
+                                                </constraints>
+                                            </mapView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAZ-7X-nG0">
+                                                <rect key="frame" x="100" y="488" width="214" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="214" id="KR0-U1-D33"/>
+                                                    <constraint firstAttribute="height" constant="50" id="gAz-gO-XyN"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="SFPro-Bold" family="SF Pro" pointSize="17"/>
                                                 <color key="tintColor" red="0.20000000000000001" green="0.36862745099999999" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -168,32 +131,25 @@
                                         </subviews>
                                         <color key="backgroundColor" name="BackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Cb5-2V-pGk" secondAttribute="trailing" constant="20" id="05C-rt-bHx"/>
-                                            <constraint firstItem="VY2-kC-dN6" firstAttribute="leading" secondItem="JUE-Zb-Ct3" secondAttribute="leading" constant="20" id="0ME-4H-WVG"/>
-                                            <constraint firstItem="9gI-oG-ngg" firstAttribute="leading" secondItem="JUE-Zb-Ct3" secondAttribute="leading" constant="20" id="0bB-UI-J0H"/>
-                                            <constraint firstAttribute="trailing" secondItem="hKX-Dq-9ke" secondAttribute="trailing" constant="20" id="2mG-70-4RS"/>
-                                            <constraint firstAttribute="bottom" secondItem="gAZ-7X-nG0" secondAttribute="bottom" constant="190" id="4HK-kq-hFp"/>
-                                            <constraint firstAttribute="trailing" secondItem="9gI-oG-ngg" secondAttribute="trailing" constant="20" id="9YH-3Y-aGD"/>
-                                            <constraint firstAttribute="trailing" secondItem="kGF-wY-Rg2" secondAttribute="trailing" constant="20" id="GZY-Ex-Sbz"/>
-                                            <constraint firstItem="gAZ-7X-nG0" firstAttribute="leading" secondItem="JUE-Zb-Ct3" secondAttribute="leading" constant="100" id="KLq-OV-TMt"/>
-                                            <constraint firstItem="ZAH-Sh-v73" firstAttribute="leading" secondItem="JUE-Zb-Ct3" secondAttribute="leading" constant="57" id="Mze-37-nnS"/>
-                                            <constraint firstItem="gAZ-7X-nG0" firstAttribute="top" secondItem="kGF-wY-Rg2" secondAttribute="bottom" constant="40" id="Oft-i4-aVd"/>
-                                            <constraint firstAttribute="trailing" secondItem="VY2-kC-dN6" secondAttribute="trailing" constant="20" id="TJW-2F-gAv"/>
-                                            <constraint firstItem="kGF-wY-Rg2" firstAttribute="leading" secondItem="JUE-Zb-Ct3" secondAttribute="leading" constant="20" id="UOx-5o-YB9"/>
-                                            <constraint firstItem="9gI-oG-ngg" firstAttribute="top" secondItem="Cb5-2V-pGk" secondAttribute="bottom" constant="10" id="VOV-Ey-g10"/>
-                                            <constraint firstItem="kGF-wY-Rg2" firstAttribute="top" secondItem="gof-z6-ZWF" secondAttribute="bottom" constant="20" id="XvV-Nx-ScJ"/>
-                                            <constraint firstAttribute="trailing" secondItem="ZAH-Sh-v73" secondAttribute="trailing" constant="57" id="YBI-Jz-HOl"/>
-                                            <constraint firstItem="Cb5-2V-pGk" firstAttribute="leading" secondItem="JUE-Zb-Ct3" secondAttribute="leading" constant="20" id="aZ7-CA-RLp"/>
-                                            <constraint firstItem="VY2-kC-dN6" firstAttribute="top" secondItem="9gI-oG-ngg" secondAttribute="bottom" constant="10" id="dEY-eF-dZ5"/>
+                                            <constraint firstItem="Cb5-2V-pGk" firstAttribute="top" secondItem="hKX-Dq-9ke" secondAttribute="bottom" constant="20" id="3ST-7G-FZo"/>
+                                            <constraint firstItem="hKX-Dq-9ke" firstAttribute="leading" secondItem="JUE-Zb-Ct3" secondAttribute="leading" constant="20" id="A16-oS-Cdt"/>
+                                            <constraint firstAttribute="trailing" secondItem="V86-5q-lMF" secondAttribute="trailing" constant="20" id="B1L-Gs-gW4"/>
+                                            <constraint firstAttribute="trailing" secondItem="9gI-oG-ngg" secondAttribute="trailing" constant="20" id="CO9-R9-PFg"/>
+                                            <constraint firstAttribute="trailing" secondItem="gof-z6-ZWF" secondAttribute="trailing" constant="20" id="DcE-0U-s6e"/>
+                                            <constraint firstItem="V86-5q-lMF" firstAttribute="centerY" secondItem="JUE-Zb-Ct3" secondAttribute="centerY" id="Jml-nm-44W"/>
+                                            <constraint firstItem="gof-z6-ZWF" firstAttribute="leading" secondItem="JUE-Zb-Ct3" secondAttribute="leading" constant="20" id="Jvd-dM-mpA"/>
+                                            <constraint firstAttribute="trailing" secondItem="gAZ-7X-nG0" secondAttribute="trailing" constant="100" id="LQI-TQ-aYi"/>
+                                            <constraint firstItem="V86-5q-lMF" firstAttribute="top" secondItem="gof-z6-ZWF" secondAttribute="bottom" constant="20" id="MLi-3L-ho5"/>
+                                            <constraint firstItem="gAZ-7X-nG0" firstAttribute="leading" secondItem="JUE-Zb-Ct3" secondAttribute="leading" constant="100" id="Mxs-Iv-kkm"/>
+                                            <constraint firstItem="gof-z6-ZWF" firstAttribute="top" secondItem="9gI-oG-ngg" secondAttribute="bottom" constant="20" id="PFb-mW-k2r"/>
+                                            <constraint firstItem="V86-5q-lMF" firstAttribute="leading" secondItem="JUE-Zb-Ct3" secondAttribute="leading" constant="20" id="bXi-ZM-9PX"/>
+                                            <constraint firstAttribute="trailing" secondItem="hKX-Dq-9ke" secondAttribute="trailing" constant="20" id="cEb-yl-MzY"/>
                                             <constraint firstAttribute="height" constant="700" id="eUA-28-ynL"/>
-                                            <constraint firstItem="gof-z6-ZWF" firstAttribute="leading" secondItem="JUE-Zb-Ct3" secondAttribute="leading" constant="20" id="enR-32-roG"/>
-                                            <constraint firstItem="hKX-Dq-9ke" firstAttribute="top" secondItem="JUE-Zb-Ct3" secondAttribute="top" constant="20" id="hBa-mO-6BM"/>
-                                            <constraint firstAttribute="trailing" secondItem="gof-z6-ZWF" secondAttribute="trailing" constant="20" id="jCv-b6-Agh"/>
-                                            <constraint firstAttribute="trailing" secondItem="gAZ-7X-nG0" secondAttribute="trailing" constant="100" id="kaH-mE-0hb"/>
-                                            <constraint firstItem="ZAH-Sh-v73" firstAttribute="top" secondItem="VY2-kC-dN6" secondAttribute="bottom" constant="20" id="qd2-yO-rVC"/>
-                                            <constraint firstItem="hKX-Dq-9ke" firstAttribute="leading" secondItem="JUE-Zb-Ct3" secondAttribute="leading" constant="20" id="uWf-Vs-YBA"/>
-                                            <constraint firstItem="Cb5-2V-pGk" firstAttribute="top" secondItem="hKX-Dq-9ke" secondAttribute="bottom" constant="20" id="vuB-ku-HQv"/>
-                                            <constraint firstItem="gof-z6-ZWF" firstAttribute="top" secondItem="ZAH-Sh-v73" secondAttribute="bottom" constant="20" id="xjM-f4-dTd"/>
+                                            <constraint firstItem="hKX-Dq-9ke" firstAttribute="top" secondItem="JUE-Zb-Ct3" secondAttribute="top" constant="20" id="hqP-iH-H6U"/>
+                                            <constraint firstAttribute="trailing" secondItem="Cb5-2V-pGk" secondAttribute="trailing" constant="20" id="obU-aq-iDN"/>
+                                            <constraint firstItem="9gI-oG-ngg" firstAttribute="leading" secondItem="JUE-Zb-Ct3" secondAttribute="leading" constant="20" id="p5S-aS-HGU"/>
+                                            <constraint firstItem="Cb5-2V-pGk" firstAttribute="leading" secondItem="JUE-Zb-Ct3" secondAttribute="leading" constant="20" id="vYE-jY-sAu"/>
+                                            <constraint firstItem="gAZ-7X-nG0" firstAttribute="top" secondItem="V86-5q-lMF" secondAttribute="bottom" constant="50" id="xaD-zd-SeU"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -221,9 +177,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="fqt-yd-Wd3"/>
                     <connections>
+                        <outlet property="clubDirection" destination="V86-5q-lMF" id="ccK-Tg-bYe"/>
+                        <outlet property="eventDayLabel" destination="hKX-Dq-9ke" id="Bpq-Qj-6KJ"/>
                         <outlet property="headerUIView" destination="pkP-u0-8e7" id="jCs-iO-VUF"/>
+                        <outlet property="infoEventTextView" destination="9gI-oG-ngg" id="fPT-vY-7XK"/>
                         <outlet property="inscribeEventBTN" destination="gAZ-7X-nG0" id="fkd-ac-56G"/>
-                        <outlet property="locationBTN" destination="kGF-wY-Rg2" id="QuF-th-i1A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -251,7 +209,6 @@
     </scenes>
     <resources>
         <image name="InfoIcon" width="37" height="32"/>
-        <image name="LinkIcon" width="26" height="24"/>
         <image name="TorunamentInMG" width="375" height="150"/>
         <namedColor name="BackgroundColor">
             <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
