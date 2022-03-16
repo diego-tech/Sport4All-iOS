@@ -16,6 +16,7 @@ class HomeMatchesViewController:  UIViewController {
 	// MARK: Outlets
 	@IBOutlet weak var calendar: FSCalendar!
 	@IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
+	@IBOutlet weak var matchesTableView: UITableView!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -23,11 +24,24 @@ class HomeMatchesViewController:  UIViewController {
 		
 		// Calendar Styles
 		calendarStyles()
+		
+		// Init Table View
+		initTableView()
 	}
 	
 	// MARK: Action Functions
 	
 	// MARK: Functions
+	private func initTableView() {
+		matchesTableView.dataSource = self
+		matchesTableView.delegate = self
+		matchesTableView.isScrollEnabled = true
+		matchesTableView.register(UINib.init(nibName: "MatchesMainTableViewCell", bundle: nil), forCellReuseIdentifier: "MatchesMainTableViewCell")
+		matchesTableView.separatorStyle = .none
+		matchesTableView.showsHorizontalScrollIndicator = false
+		matchesTableView.showsVerticalScrollIndicator = false
+		matchesTableView.reloadData()
+	}
 	
 	// MARK: Styles
 	private func calendarStyles() {
@@ -58,8 +72,8 @@ class HomeMatchesViewController:  UIViewController {
 	}
 }
 
+// MARK: FSCalendar Delegate && DataSource
 extension HomeMatchesViewController: FSCalendarDelegate, FSCalendarDataSource {
-	
 	func minimumDate(for calendar: FSCalendar) -> Date {
 		return Date()
 	}
@@ -79,5 +93,17 @@ extension HomeMatchesViewController: FSCalendarDelegate, FSCalendarDataSource {
 	func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
 		self.calendarHeightConstraint.constant = bounds.height
 		self.view.layoutIfNeeded()
+	}
+}
+
+// MARK: UITableView Delegate && DataSource
+extension HomeMatchesViewController: UITableViewDelegate, UITableViewDataSource {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return 10
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		guard let cell = tableView.dequeueReusableCell(withIdentifier: "MatchesMainTableViewCell") as? MatchesMainTableViewCell else { return UITableViewCell() }
+		return cell
 	}
 }
