@@ -16,6 +16,7 @@ class HomeMatchesViewController:  UIViewController {
 	// MARK: Outlets
 	@IBOutlet weak var calendar: FSCalendar!
 	@IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
+	@IBOutlet weak var matchesTableView: UITableView!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -23,11 +24,24 @@ class HomeMatchesViewController:  UIViewController {
 		
 		// Calendar Styles
 		calendarStyles()
+		
+		// Init Table View
+		initTableView()
 	}
 	
 	// MARK: Action Functions
 	
 	// MARK: Functions
+	private func initTableView() {
+		matchesTableView.dataSource = self
+		matchesTableView.delegate = self
+		matchesTableView.isScrollEnabled = true
+		matchesTableView.register(UINib.init(nibName: "MatchesMainTableViewCell", bundle: nil), forCellReuseIdentifier: "MatchesMainTableViewCell")
+		matchesTableView.separatorStyle = .none
+		matchesTableView.showsHorizontalScrollIndicator = false
+		matchesTableView.showsVerticalScrollIndicator = false
+		matchesTableView.reloadData()
+	}
 	
 	// MARK: Styles
 	private func calendarStyles() {
@@ -52,14 +66,15 @@ class HomeMatchesViewController:  UIViewController {
 		calendar.allowsMultipleSelection = false
 		calendar.scrollEnabled = true
 		calendar.scrollDirection = .horizontal
+		calendar.locale = Locale(identifier: "ES")
 		
 		calendar.dataSource = self
 		calendar.delegate = self
 	}
 }
 
+// MARK: FSCalendar Delegate && DataSource
 extension HomeMatchesViewController: FSCalendarDelegate, FSCalendarDataSource {
-	
 	func minimumDate(for calendar: FSCalendar) -> Date {
 		return Date()
 	}
@@ -79,5 +94,32 @@ extension HomeMatchesViewController: FSCalendarDelegate, FSCalendarDataSource {
 	func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
 		self.calendarHeightConstraint.constant = bounds.height
 		self.view.layoutIfNeeded()
+	}
+}
+
+// MARK: UITableView Delegate && DataSource
+extension HomeMatchesViewController: UITableViewDelegate, UITableViewDataSource {
+	
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return 2
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		
+		if indexPath.row == 0 {
+			guard let cell = tableView.dequeueReusableCell(withIdentifier: "MatchesMainTableViewCell") as? MatchesMainTableViewCell else { return UITableViewCell() }
+			return cell
+		} else {
+			guard let detailCell = tableView.dequeueReusableCell(withIdentifier: "MatchesDetailTableViewCell") as? MatchesDetailTableViewCell else { return UITableViewCell() }
+			return detailCell
+		}
+	}
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true)
+		
+		if indexPath.row == 0 {
+			tableView.reloadSections([indexPath.section], with: .automatic)
+		}
 	}
 }

@@ -26,6 +26,15 @@ class HomeViewController: UIViewController {
 		
 		// Configure Navbar
 		configureNavbar()
+		
+		// Test Routes
+		NetworkingProvider.shared.matches { responseData, status, msg in
+			print("Respuesta Matches \(responseData)")
+			print(status)
+			print(msg)
+		} failure: { error in
+			print("Error Matches \(error)")
+		}
 	}
 	
 	override func viewDidLayoutSubviews() {
