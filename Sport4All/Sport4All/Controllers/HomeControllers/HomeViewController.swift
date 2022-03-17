@@ -28,13 +28,13 @@ class HomeViewController: UIViewController {
 		configureNavbar()
 		
 		// Test Routes
-		NetworkingProvider.shared.matches { responseData, status, msg in
-			print("Respuesta Matches \(responseData)")
-			print(status)
-			print(msg)
-		} failure: { error in
-			print("Error Matches \(error)")
-		}
+//		NetworkingProvider.shared.matches { responseData, status, msg in
+//			print("Respuesta Matches \(responseData)")
+//			print(status)
+//			print(msg)
+//		} failure: { error in
+//			print("Error Matches \(error)")
+//		}
 
 //		NetworkingProvider.shared.pendingMatches { responseData, status, msg in
 //			dump(responseData)

@@ -28,6 +28,9 @@ struct Match: Codable {
 	let createdAt: Date?
 	let updatedAt: Date?
 	
+	// Variable To Make Expandable List
+	var isOpened: Bool = false
+	
 	enum CodingKeys: String, CodingKey {
 		case id
 		case qr = "QR"

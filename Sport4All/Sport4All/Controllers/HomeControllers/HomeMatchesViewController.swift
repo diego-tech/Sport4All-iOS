@@ -12,6 +12,7 @@ class HomeMatchesViewController:  UIViewController {
 	
 	// MARK: Variables
 	var formatter = DateFormatter()
+	var matchListViewModel = MatchlistViewModel()
 	
 	// MARK: Outlets
 	@IBOutlet weak var calendar: FSCalendar!
@@ -27,6 +28,10 @@ class HomeMatchesViewController:  UIViewController {
 		
 		// Init Table View
 		initTableView()
+		
+		matchListViewModel.fetchMatchList { status in
+			//
+		}
 	}
 	
 	// MARK: Action Functions
