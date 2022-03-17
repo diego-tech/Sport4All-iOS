@@ -16,24 +16,24 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MatchesMainTableViewCell" rowHeight="41" id="KGk-i7-Jjw" customClass="MatchesMainTableViewCell" customModule="Sport4All" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="51"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MatchesMainTableViewCell" rowHeight="50" id="KGk-i7-Jjw" customClass="MatchesMainTableViewCell" customModule="Sport4All" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="51"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VcO-gq-zSD">
-                        <rect key="frame" x="5" y="10" width="310" height="40"/>
+                        <rect key="frame" x="0.0" y="5" width="320" height="40"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="4 Nov / 19:00 - 20:00 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWb-cB-xe7">
-                                <rect key="frame" x="10" y="11" width="261.5" height="18"/>
+                                <rect key="frame" x="10" y="11" width="271.5" height="18"/>
                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="15"/>
                                 <color key="textColor" name="HardColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OT7-So-3eO">
-                                <rect key="frame" x="281.5" y="15" width="18.5" height="10.5"/>
+                                <rect key="frame" x="291.5" y="15" width="18.5" height="10.5"/>
                                 <color key="tintColor" name="HardColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="18.5" id="Op1-rv-l9O"/>
@@ -55,19 +55,19 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="VcO-gq-zSD" secondAttribute="bottom" id="8jE-hP-hmQ"/>
-                    <constraint firstItem="VcO-gq-zSD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="BZp-NL-vzZ"/>
-                    <constraint firstAttribute="trailing" secondItem="VcO-gq-zSD" secondAttribute="trailing" constant="5" id="dYy-Fd-2Te"/>
-                    <constraint firstItem="VcO-gq-zSD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="lVP-zW-PKF"/>
+                    <constraint firstAttribute="bottom" secondItem="VcO-gq-zSD" secondAttribute="bottom" constant="5" id="8jE-hP-hmQ"/>
+                    <constraint firstItem="VcO-gq-zSD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="BZp-NL-vzZ"/>
+                    <constraint firstAttribute="trailing" secondItem="VcO-gq-zSD" secondAttribute="trailing" id="dYy-Fd-2Te"/>
+                    <constraint firstItem="VcO-gq-zSD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="lVP-zW-PKF"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" name="BackgroundColor"/>
             <connections>
                 <outlet property="dayTimeLabel" destination="EWb-cB-xe7" id="D0k-FN-Yu1"/>
-                <outlet property="uiView" destination="VcO-gq-zSD" id="hzD-Lt-NB4"/>
+                <outlet property="uiView" destination="VcO-gq-zSD" id="oH3-15-4G3"/>
             </connections>
-            <point key="canvasLocation" x="131.8840579710145" y="89.397321428571431"/>
+            <point key="canvasLocation" x="131.8840579710145" y="92.410714285714278"/>
         </tableViewCell>
     </objects>
     <resources>

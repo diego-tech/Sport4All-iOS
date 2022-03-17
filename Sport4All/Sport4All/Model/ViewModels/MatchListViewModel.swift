@@ -10,7 +10,7 @@ import Foundation
 class MatchlistViewModel {
 	
 	// MARK: Variables
-	private var matchList = [String: [Match]]()
+	private var matchList = [Match]()
 	private var status = Int()
 	
 	// MARK: Match List
@@ -20,7 +20,6 @@ class MatchlistViewModel {
 			guard let status = status else { return }
 			self.status = status
 			self.matchList = responseList
-			print(responseList)
 			completion(status)
 		} failure: { error in
 			debugPrint(error)
@@ -29,17 +28,25 @@ class MatchlistViewModel {
 	
 	// MARK: DataSource && Delegate Functions MatchList
 	func numberOfRowsInSection(section: Int) -> Int {
-//		let section = ma
-//
-//		if section.isOpened {
-//			return section	.
-//		}
+		let section = matchList[section]
+
+		if section.isOpened {
+			return section.items!.count + 1
+		}
 		
 		return 1
 	}
 	
-//	func cellForRowAt(indexPath: IndexPath) -> [Match] {
-//		return matchList[indexPath.row]
-//	}
+	func cellForRowAt(indexPath: IndexPath) -> Match {
+		return matchList[indexPath.section]
+	}
+	
+	func numberOfSections() -> Int {
+		return matchList.count
+	}
+	
+	func reloadSections(indexPath: IndexPath) {
+		matchList[indexPath.section].isOpened = !matchList[indexPath.section].isOpened
+	}
 }
 

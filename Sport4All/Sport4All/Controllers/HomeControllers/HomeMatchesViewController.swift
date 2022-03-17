@@ -19,6 +19,13 @@ class HomeMatchesViewController:  UIViewController {
 	@IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
 	@IBOutlet weak var matchesTableView: UITableView!
 	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		// Init Match List
+		matchList()
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
@@ -27,11 +34,7 @@ class HomeMatchesViewController:  UIViewController {
 		calendarStyles()
 		
 		// Init Table View
-		initTableView()
-		
-		matchListViewModel.fetchMatchList { status in
-			//
-		}
+//		initTableView()
 	}
 	
 	// MARK: Action Functions
@@ -46,6 +49,12 @@ class HomeMatchesViewController:  UIViewController {
 		matchesTableView.showsHorizontalScrollIndicator = false
 		matchesTableView.showsVerticalScrollIndicator = false
 		matchesTableView.reloadData()
+	}
+	
+	private func matchList() {
+		matchListViewModel.fetchMatchList { [weak self] status in
+			self?.initTableView()
+		}
 	}
 	
 	// MARK: Styles
@@ -104,15 +113,18 @@ extension HomeMatchesViewController: FSCalendarDelegate, FSCalendarDataSource {
 
 // MARK: UITableView Delegate && DataSource
 extension HomeMatchesViewController: UITableViewDelegate, UITableViewDataSource {
+	func numberOfSections(in tableView: UITableView) -> Int {
+		return matchListViewModel.numberOfSections()
+	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 2
+		return matchListViewModel.numberOfRowsInSection(section: section)
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		
 		if indexPath.row == 0 {
 			guard let cell = tableView.dequeueReusableCell(withIdentifier: "MatchesMainTableViewCell") as? MatchesMainTableViewCell else { return UITableViewCell() }
+			let match = matchListViewModel.cellForRowAt(indexPath: indexPath)
 			return cell
 		} else {
 			guard let detailCell = tableView.dequeueReusableCell(withIdentifier: "MatchesDetailTableViewCell") as? MatchesDetailTableViewCell else { return UITableViewCell() }
@@ -123,8 +135,11 @@ extension HomeMatchesViewController: UITableViewDelegate, UITableViewDataSource 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
 		
+		print("Tapped")
+		
 		if indexPath.row == 0 {
-			tableView.reloadSections([indexPath.section], with: .automatic)
+			matchListViewModel.reloadSections(indexPath: indexPath)
+			self.matchesTableView.reloadSections([indexPath.section], with: .automatic)
 		}
 	}
 }
