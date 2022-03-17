@@ -7,12 +7,20 @@
 
 import Foundation
 
-struct MatchHour: Codable {
-	// Hora Que Corresponde
-	let hours: [Match]?
+struct Match: Codable {
+	let startTime: String?
+	let items: [MatchItem]?
+	
+	// Variable To Make Expandable List
+	var isOpened: Bool = false
+	
+	enum CodingKeys: String, CodingKey {
+		case startTime = "start_time"
+		case items
+	}
 }
 
-struct Match: Codable {
+struct MatchItem: Codable {
 	let id: Int?
 	let qr: String?
 	let clubId: Int?
@@ -27,10 +35,7 @@ struct Match: Codable {
 	let users: [User]?
 	let createdAt: Date?
 	let updatedAt: Date?
-	
-	// Variable To Make Expandable List
-	var isOpened: Bool = false
-	
+
 	enum CodingKeys: String, CodingKey {
 		case id
 		case qr = "QR"

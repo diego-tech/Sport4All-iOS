@@ -436,7 +436,7 @@ final class NetworkingProvider {
 	}
 	
 	// MARK: See Matches
-	func matches(serverResponse: @escaping (_ responseData: [String: [Match]]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+	func matches(serverResponse: @escaping (_ responseData: [Match]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/seematches"
 		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
 		
