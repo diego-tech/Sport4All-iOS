@@ -22,7 +22,7 @@ extension UIStackView {
 		for servicesImage in servicesImages {
 			let serviceImageView: UIImageView = {
 				let image = UIImageView(frame: imageSize)
-				image.contentMode = .scaleToFill
+				image.contentMode = .scaleAspectFit
 				image.tintColor = .corporativeColor
 				return image
 			}()
