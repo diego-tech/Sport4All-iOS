@@ -11,16 +11,16 @@ import Alamofire
 class EventsListProfileViewModel {
 	
 	// MARK: Variables
-	private var matchList = [PendingMatch]()
+	public var matchList = [PendingMatch]()
 	private var matchListSort = [PendingMatch]()
 	private var status = Int()
 	
 	// MARK: Fetch Pending Events
 	func fetchPendingEvents(completion: @escaping (_ status: Int?) -> ()) {
+		self.matchList = []
 		NetworkingProvider.shared.pendingEvents { responseData, status, msg in
 			guard let responseList = responseData else { return }
 			guard let status = status else { return }
-			dump(responseList)
 			self.status = status
 			self.matchList += responseList
 			completion(status)
@@ -62,14 +62,14 @@ class EventsListProfileViewModel {
 		df.dateFormat = "yyyy-MM-dd"
 		let todayFormat = df.string(from: today)
 		
-		// let sortedArray = array.sorted {$0.compare($1, options: .numeric) == .orderedDescending}
-
+//		let sortedArray = matchList.sorted {$0.compare($1, options: .numeric) == .orderedDescending}
+//		print(sortedArray)
 	}
 	
 	// MARK: DataSource && Delegate Functions Pending Event List
 	func numberOfItemsInSection(section: Int) -> Int {
-		if matchListSort.count != 0 {
-			return matchListSort.count
+		if matchList.count != 0 {
+			return matchList.count
 		}
 		
 		return 0

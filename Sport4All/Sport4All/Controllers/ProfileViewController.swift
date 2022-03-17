@@ -31,6 +31,8 @@ class ProfileViewController: UIViewController {
 		// Api
 		fetchUserInfo()
 		
+//		collectionViewModel.matchList = []
+		
 		// Inicialización Collection View
 		pendingList()
 	}
@@ -41,6 +43,8 @@ class ProfileViewController: UIViewController {
 		
 		// Configure Navbar
 		configureNavbar()
+		
+		initPendingCollectionView()
 		
 		// Inicialización Estilos
 		headerUIView?.bottomShadow()
@@ -79,29 +83,29 @@ class ProfileViewController: UIViewController {
 	}
 	
 	private func pendingList() {
+		self.pendingEventsCollectionView.dataSource = self
+		self.pendingEventsCollectionView.delegate = self
+		
 		collectionViewModel.fetchPendingEvents { [weak self] status in
-			self?.initPendingCollectionView()
+			self?.pendingEventsCollectionView.reloadData()
 		}
-		
+
 		collectionViewModel.fetchPendingMatches { [weak self] status in
-			self?.initPendingCollectionView()
+			self?.pendingEventsCollectionView.reloadData()
 		}
-		
+
 		collectionViewModel.fetchPendingReserves { [weak self] status in
-			self?.initPendingCollectionView()
+			self?.pendingEventsCollectionView.reloadData()
 		}
 	}
 	
 	private func initPendingCollectionView(){
 		// Pending Events Collection View Cell
-		pendingEventsCollectionView.dataSource = self
-		pendingEventsCollectionView.delegate = self
 		pendingEventsCollectionView.isScrollEnabled = true
 		pendingEventsCollectionView.register(UINib.init(nibName: "EventProfileCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "EventProfileCollectionViewCell")
 		pendingEventsCollectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
 		pendingEventsCollectionView.showsVerticalScrollIndicator = false
 		pendingEventsCollectionView.showsHorizontalScrollIndicator = false
-		pendingEventsCollectionView.reloadData()
 	}
 	
 	private func initFinishCollectionView() {
@@ -164,8 +168,19 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
 		
 		if collectionView == pendingEventsCollectionView {
 			let pendingEvent = collectionViewModel.cellForItemAt(indexPath: indexPath)
-			cell.setItemWithValueOf(pendingEvent)
+			
+			switch pendingEvent.pendingType {
+			case PendingType.event.rawValue :
+				cell.setItemWithValueOf(pendingEvent, pendingType: .event)
+			case PendingType.match.rawValue:
+				cell.setItemWithValueOf(pendingEvent, pendingType: .match)
+			case PendingType.reserve.rawValue:
+				cell.setItemWithValueOf(pendingEvent, pendingType: .reserve)
+			default:
+				break
+			}
 		}
+		
 		return cell
 	}
 	

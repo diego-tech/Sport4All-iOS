@@ -27,14 +27,21 @@ class EventProfileCollectionViewCell: UICollectionViewCell {
 	}
 	
 	// MARK: Functions
-	func setItemWithValueOf(_ pendingMatch: PendingMatch) {
-		updateUI(eventImage: pendingMatch.eventImg, eventName: pendingMatch.eventName)
-//		updateUI(eventImage: pendingMatch.img, pendingMatch.name)
+	func setItemWithValueOf(_ pendingMatch: PendingMatch, pendingType: PendingType) {
+		
+		switch pendingType {
+		case .match:
+			updateUI(eventImage: pendingMatch.clubImg, eventName: pendingMatch.clubName)
+		case .event:
+			updateUI(eventImage: pendingMatch.eventImg, eventName: pendingMatch.eventName)
+		case .reserve:
+			updateUI(eventImage: pendingMatch.clubImg, eventName: pendingMatch.clubName)
+		}
 	}
 	
 	private func updateUI(eventImage: String?, eventName: String?) {
-		guard let eventName = eventName else { return }
-		guard let eventImage = eventImage else { return }
+		guard let eventName = eventName else { return debugPrint("Event Name Error") }
+		guard let eventImage = eventImage else { return debugPrint("Event Image Error") }
 		guard let url = URL(string: Constants.kStorageURL + eventImage) else { return }
 		
 		self.eventImageView.loadImage(fromURL: url)

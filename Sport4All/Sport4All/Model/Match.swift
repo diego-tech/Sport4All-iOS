@@ -9,11 +9,7 @@ import Foundation
 
 struct MatchHour: Codable {
 	// Hora Que Corresponde
-	let hour: [Match]?
-	
-	enum CodingKeys: String, CodingKey {
-		case hour = "13:00:00"
-	}
+	let hours: [Match]?
 }
 
 struct Match: Codable {

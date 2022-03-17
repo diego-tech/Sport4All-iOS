@@ -12,6 +12,7 @@ struct PendingMatch: Codable {
 	let qr: String?
 	let userId: Int?
 	let clubId: Int?
+	let clubImg: String?
 	let courtId: Int?
 	let pricePeople: Int?
 	let lights: Int?
@@ -28,8 +29,13 @@ struct PendingMatch: Codable {
 	let surfaces: String?
 	let createdAt: String?
 	let updatedAt: String?
+	
+	// MARK: Event Values
 	let eventName: String?
 	let eventImg: String?
+	
+	
+	let pendingType: String?
 	
 	enum CodingKeys: String, CodingKey {
 		case id
@@ -40,6 +46,7 @@ struct PendingMatch: Codable {
 		case pricePeople = "price_people"
 		case lights
 		case day
+		case clubImg
 		case eventName
 		case eventImg
 		case startTime = "start_time"
@@ -52,28 +59,14 @@ struct PendingMatch: Codable {
 		case courtType = "type"
 		case sportType = "sport"
 		case surfaces
+		case pendingType = "pending_type"
 		case createdAt = "created_at"
 		case updatedAt = "updated_at"
 	}
 }
 
-/**
- "id": 1,
-			 "QR": "5123",
-			 "user_id": 1,
-			 "court_id": 2,
-			 "lights": 1,
-			 "day": "2022-03-24",
-			 "start_time": "13:00:00",
-			 "end_time": "14:00:00",
-			 "final_time": "2022-03-24 14:00:00",
-			 "start_Datetime": "2022-03-24 13:00:00",
-			 "created_at": "2022-03-16 18:29:18",
-			 "updated_at": "2022-03-16 18:29:18",
-			 "clubName": "Admin",
-			 "clubLocation": null,
-			 "name": "Pista de Prueba 1",
-			 "type": "Outdoor",
-			 "sport": "Tenis",
-			 "surfaces": "Hierba"
- */
+enum PendingType: String {
+	case match
+	case event
+	case reserve
+}

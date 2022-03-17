@@ -57,7 +57,7 @@ struct EventListResponse: Codable {
 
 struct MatchListResponse: Codable {
 	let status: Int?
-	let data: MatchHour?
+	let data: [String: [Match]]?
 	let msg: String?
 	
 	enum CodingKeys: String, CodingKey {

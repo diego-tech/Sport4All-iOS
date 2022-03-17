@@ -28,29 +28,29 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="boU-YB-NdF">
                                 <rect key="frame" x="5" y="8" width="100" height="125"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image Best Valorated" translatesAutoresizingMaskIntoConstraints="NO" id="SE9-SY-k0Q" customClass="LazyImageView" customModule="Sport4All" customModuleProvider="target">
-                                        <rect key="frame" x="35" y="20" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="5DQ-ol-IY2"/>
-                                            <constraint firstAttribute="height" constant="30" id="nyX-Qr-f6C"/>
-                                        </constraints>
-                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Escuela Tenis Club de Campo Villa de Vallecas" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wk1-V0-cN5">
-                                        <rect key="frame" x="5" y="70" width="90" height="32.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Escuela Tenis Club de Campo Villa de Vallecas" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wk1-V0-cN5">
+                                        <rect key="frame" x="5" y="79" width="90" height="32.5"/>
                                         <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="9"/>
                                         <color key="textColor" name="HardColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image Best Valorated" translatesAutoresizingMaskIntoConstraints="NO" id="SE9-SY-k0Q" customClass="LazyImageView" customModule="Sport4All" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="14" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="5DQ-ol-IY2"/>
+                                            <constraint firstAttribute="height" constant="40" id="nyX-Qr-f6C"/>
+                                        </constraints>
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" name="SoftBlue"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="6xE-sC-BF8"/>
-                                    <constraint firstItem="SE9-SY-k0Q" firstAttribute="top" secondItem="boU-YB-NdF" secondAttribute="top" constant="20" id="O1v-BH-ElN"/>
+                                    <constraint firstItem="SE9-SY-k0Q" firstAttribute="top" secondItem="boU-YB-NdF" secondAttribute="top" constant="14" id="O1v-BH-ElN"/>
                                     <constraint firstItem="SE9-SY-k0Q" firstAttribute="centerX" secondItem="Wk1-V0-cN5" secondAttribute="centerX" id="cta-gZ-eVn"/>
                                     <constraint firstAttribute="trailing" secondItem="Wk1-V0-cN5" secondAttribute="trailing" constant="5" id="jPI-PE-Uf0"/>
                                     <constraint firstItem="Wk1-V0-cN5" firstAttribute="leading" secondItem="boU-YB-NdF" secondAttribute="leading" constant="5" id="tqi-kd-pUN"/>
-                                    <constraint firstItem="Wk1-V0-cN5" firstAttribute="top" secondItem="SE9-SY-k0Q" secondAttribute="bottom" constant="20" id="x1d-p0-Wi8"/>
+                                    <constraint firstItem="Wk1-V0-cN5" firstAttribute="top" secondItem="SE9-SY-k0Q" secondAttribute="bottom" constant="25" id="x1d-p0-Wi8"/>
                                     <constraint firstAttribute="width" constant="100" id="ypR-sp-weT"/>
                                 </constraints>
                             </view>
