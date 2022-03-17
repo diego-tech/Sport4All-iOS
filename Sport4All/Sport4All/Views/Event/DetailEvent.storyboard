@@ -178,7 +178,7 @@
                     <navigationItem key="navigationItem" id="fqt-yd-Wd3"/>
                     <connections>
                         <outlet property="clubDirection" destination="V86-5q-lMF" id="ccK-Tg-bYe"/>
-                        <outlet property="eventDayLabel" destination="9SZ-QV-e9D" id="2zV-uf-2WR"/>
+                        <outlet property="eventDayLabel" destination="hKX-Dq-9ke" id="fXS-UN-Jyz"/>
                         <outlet property="eventImageView" destination="6RE-5R-F2C" id="HRT-Pg-iko"/>
                         <outlet property="eventNameLabel" destination="9SZ-QV-e9D" id="6Lv-3Z-UF9"/>
                         <outlet property="headerUIView" destination="pkP-u0-8e7" id="jCs-iO-VUF"/>
