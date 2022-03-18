@@ -11,18 +11,19 @@ import Alamofire
 class EventsListProfileViewModel {
 	
 	// MARK: Variables
-	private var matchList = [PendingEvent]()
-	private var matchListSort = [PendingEvent]()
+	private var pendingSection: [Int] = [0, 1, 2]
+	private var pendingEvent = [PendingEvent]()
+	private var pendingMatch = [PendingEvent]()
+	private var pendingReserve = [PendingEvent]()
 	private var status = Int()
 	
 	// MARK: Fetch Pending Events
 	func fetchPendingEvents(completion: @escaping (_ status: Int?) -> ()) {
-		self.matchList = []
 		NetworkingProvider.shared.pendingEvents { responseData, status, msg in
 			guard let responseList = responseData else { return }
 			guard let status = status else { return }
 			self.status = status
-			self.matchList.append(contentsOf: responseList)
+			self.pendingEvent = responseList
 			completion(status)
 		} failure: { error in
 			print(error)
@@ -35,7 +36,7 @@ class EventsListProfileViewModel {
 			guard let responseList = responseData else { return }
 			guard let status = status else { return }
 			self.status = status
-			self.matchList.append(contentsOf: responseList)
+			self.pendingMatch = responseList
 			completion(status)
 		} failure: { error in
 			print(error)
@@ -48,34 +49,37 @@ class EventsListProfileViewModel {
 			guard let responseList = responseData else { return }
 			guard let status = status else { return }
 			self.status = status
-			self.matchList.append(contentsOf: responseList)
+			self.pendingReserve = responseList
 			completion(status)
 		} failure: { error in
 			print(error)
 		}
 	}
 	
-	// MARK: Functions
-	func sortArray() {
-		let today = Date()
-		let df = DateFormatter()
-		df.dateFormat = "yyyy-MM-dd"
-		let todayFormat = df.string(from: today)
-		
-//		let sortedArray = matchList.sorted {$0.compare($1, options: .numeric) == .orderedDescending}
-//		print(sortedArray)
-	}
-	
 	// MARK: DataSource && Delegate Functions Pending Event List
-	func numberOfItemsInSection(section: Int) -> Int {
-		if matchList.count != 0 {
-			return matchList.count
-		}
-		
-		return 0
+	func numberOfSections() -> Int {
+		return pendingSection.count
 	}
 	
-	func cellForItemAt(indexPath: IndexPath) -> PendingEvent {
-		return matchList[indexPath.item]
+	func numberOfItemsInSection(section: Int) -> Int {
+		if section == 0 {
+			return pendingEvent.count
+		} else if section == 1 {
+			return pendingMatch.count
+		} else {
+			return pendingReserve.count
+		}
+	}
+	
+	func cellForItemAtEvent(indexPath: IndexPath) -> PendingEvent {
+		return pendingEvent[indexPath.item]
+	}
+	
+	func cellForItemAtMatch(indexPath: IndexPath) -> PendingEvent {
+		return pendingMatch[indexPath.item]
+	}
+	
+	func cellForItemAtReserve(indexPath: IndexPath) -> PendingEvent {
+		return pendingReserve[indexPath.item]
 	}
 }
