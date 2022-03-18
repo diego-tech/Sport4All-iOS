@@ -97,7 +97,6 @@
 		5EDC2CE027C6A2E1007EE2C0 /* PayResumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDC2CDF27C6A2E1007EE2C0 /* PayResumeViewController.swift */; };
 		5EDE04E127D8ADB2006EDE1E /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5EDE04E027D8ADB2006EDE1E /* IQKeyboardManagerSwift */; };
 		5EDE04E427D8ADC2006EDE1E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5EDE04E327D8ADC2006EDE1E /* Alamofire */; };
-		5EDE04E727D8AE41006EDE1E /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 5EDE04E627D8AE41006EDE1E /* FSCalendar */; };
 		5EDE04EA27D8AE8C006EDE1E /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 5EDE04E927D8AE8C006EDE1E /* SPIndicator */; };
 		5EE2A17E27DCDCAF00575BAF /* CourtsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2A17D27DCDCAF00575BAF /* CourtsListViewModel.swift */; };
 		5EE2A18227DCEDCF00575BAF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2A18127DCEDCF00575BAF /* Event.swift */; };
@@ -106,6 +105,7 @@
 		5EE5F32E27E1D758005B6A09 /* EventsListProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE5F32D27E1D758005B6A09 /* EventsListProfileViewModel.swift */; };
 		5EE5F33427E20D54005B6A09 /* MatchesMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE5F33227E20D54005B6A09 /* MatchesMainTableViewCell.swift */; };
 		5EE5F33527E20D54005B6A09 /* MatchesMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EE5F33327E20D54005B6A09 /* MatchesMainTableViewCell.xib */; };
+		5EF0690227E4D51B00A6BA0A /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 5EF0690127E4D51B00A6BA0A /* FSCalendar */; };
 		5EF497A327A5570F008B0C37 /* DateDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A227A5570F008B0C37 /* DateDecoder.swift */; };
 		5EF497A627A55794008B0C37 /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A527A55794008B0C37 /* UserDefaultsProvider.swift */; };
 		5EF497A827A55858008B0C37 /* NetworkingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A727A55858008B0C37 /* NetworkingProvider.swift */; };
@@ -228,7 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EDE04E127D8ADB2006EDE1E /* IQKeyboardManagerSwift in Frameworks */,
-				5EDE04E727D8AE41006EDE1E /* FSCalendar in Frameworks */,
+				5EF0690227E4D51B00A6BA0A /* FSCalendar in Frameworks */,
 				5EDE04E427D8ADC2006EDE1E /* Alamofire in Frameworks */,
 				5EDE04EA27D8AE8C006EDE1E /* SPIndicator in Frameworks */,
 			);
@@ -774,8 +774,8 @@
 			packageProductDependencies = (
 				5EDE04E027D8ADB2006EDE1E /* IQKeyboardManagerSwift */,
 				5EDE04E327D8ADC2006EDE1E /* Alamofire */,
-				5EDE04E627D8AE41006EDE1E /* FSCalendar */,
 				5EDE04E927D8AE8C006EDE1E /* SPIndicator */,
+				5EF0690127E4D51B00A6BA0A /* FSCalendar */,
 			);
 			productName = Sport4All;
 			productReference = 5ECF53EB278C3AB8005F6D01 /* Sport4All.app */;
@@ -808,8 +808,8 @@
 			packageReferences = (
 				5EDE04DF27D8ADB2006EDE1E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				5EDE04E227D8ADC2006EDE1E /* XCRemoteSwiftPackageReference "Alamofire" */,
-				5EDE04E527D8AE41006EDE1E /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				5EDE04E827D8AE8C006EDE1E /* XCRemoteSwiftPackageReference "SPIndicator" */,
+				5EF0690027E4D51B00A6BA0A /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = 5ECF53EC278C3AB8005F6D01 /* Products */;
 			projectDirPath = "";
@@ -1179,20 +1179,20 @@
 				version = 5.5.0;
 			};
 		};
-		5EDE04E527D8AE41006EDE1E /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
-			requirement = {
-				kind = exactVersion;
-				version = 2.8.3;
-			};
-		};
 		5EDE04E827D8AE8C006EDE1E /* XCRemoteSwiftPackageReference "SPIndicator" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ivanvorobei/SPIndicator";
 			requirement = {
 				kind = exactVersion;
 				version = 1.6.4;
+			};
+		};
+		5EF0690027E4D51B00A6BA0A /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				kind = exactVersion;
+				version = 2.8.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1208,15 +1208,15 @@
 			package = 5EDE04E227D8ADC2006EDE1E /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		5EDE04E627D8AE41006EDE1E /* FSCalendar */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5EDE04E527D8AE41006EDE1E /* XCRemoteSwiftPackageReference "FSCalendar" */;
-			productName = FSCalendar;
-		};
 		5EDE04E927D8AE8C006EDE1E /* SPIndicator */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5EDE04E827D8AE8C006EDE1E /* XCRemoteSwiftPackageReference "SPIndicator" */;
 			productName = SPIndicator;
+		};
+		5EF0690127E4D51B00A6BA0A /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5EF0690027E4D51B00A6BA0A /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
