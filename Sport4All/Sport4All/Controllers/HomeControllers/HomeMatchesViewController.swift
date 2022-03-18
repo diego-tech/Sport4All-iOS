@@ -125,6 +125,7 @@ extension HomeMatchesViewController: UITableViewDelegate, UITableViewDataSource 
 		if indexPath.row == 0 {
 			guard let cell = tableView.dequeueReusableCell(withIdentifier: "MatchesMainTableViewCell") as? MatchesMainTableViewCell else { return UITableViewCell() }
 			let match = matchListViewModel.cellForRowAt(indexPath: indexPath)
+			cell.setCellWithValueOf(match)
 			return cell
 		} else {
 			guard let detailCell = tableView.dequeueReusableCell(withIdentifier: "MatchesDetailTableViewCell") as? MatchesDetailTableViewCell else { return UITableViewCell() }
@@ -134,8 +135,6 @@ extension HomeMatchesViewController: UITableViewDelegate, UITableViewDataSource 
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
-		
-		print("Tapped")
 		
 		if indexPath.row == 0 {
 			matchListViewModel.reloadSections(indexPath: indexPath)

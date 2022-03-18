@@ -11,7 +11,6 @@ class MatchesDetailTableViewCell: UITableViewCell {
 
 	// MARK: Variables
 	
-	
 	// MARK: Outlets
 	@IBOutlet weak var backgroundUIView: UIView!
 	@IBOutlet weak var mainUiView: UIView!
