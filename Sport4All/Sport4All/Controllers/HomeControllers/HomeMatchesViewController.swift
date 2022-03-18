@@ -7,6 +7,7 @@
 
 import UIKit
 import FSCalendar
+import MapKit
 
 class HomeMatchesViewController:  UIViewController {
 	
@@ -32,9 +33,6 @@ class HomeMatchesViewController:  UIViewController {
 		
 		// Calendar Styles
 		calendarStyles()
-		
-		// Init Table View
-//		initTableView()
 	}
 	
 	// MARK: Action Functions
@@ -125,6 +123,13 @@ extension HomeMatchesViewController: UITableViewDelegate, UITableViewDataSource 
 		if indexPath.row == 0 {
 			guard let cell = tableView.dequeueReusableCell(withIdentifier: "MatchesMainTableViewCell") as? MatchesMainTableViewCell else { return UITableViewCell() }
 			let match = matchListViewModel.cellForRowAt(indexPath: indexPath)
+			
+			if match.isOpened {
+				cell.arrowImageView.image = UIImage(systemName: "chevron.up")
+			} else {
+				cell.arrowImageView.image = UIImage(systemName: "chevron.down")
+			}
+			
 			cell.setCellWithValueOf(match)
 			return cell
 		} else {

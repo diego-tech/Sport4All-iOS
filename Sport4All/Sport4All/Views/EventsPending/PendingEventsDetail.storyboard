@@ -65,7 +65,7 @@
                                     <constraint firstAttribute="trailing" secondItem="usR-tI-Uou" secondAttribute="trailing" id="yHv-Ua-w8i"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eeS-DU-5pB">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eeS-DU-5pB">
                                 <rect key="frame" x="0.0" y="88" width="414" height="256"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQb-XY-Bad">

@@ -30,11 +30,9 @@ class ProfileViewController: UIViewController {
 		
 		// Api
 		fetchUserInfo()
-		
-//		collectionViewModel.matchList = []
-		
+			
 		// Inicialización Collection View
-		pendingList()
+		self.pendingList()
 	}
 	
 	override func viewDidLoad() {
@@ -44,6 +42,7 @@ class ProfileViewController: UIViewController {
 		// Configure Navbar
 		configureNavbar()
 		
+		// Pending Collection View Initialization
 		initPendingCollectionView()
 		
 		// Inicialización Estilos
@@ -87,11 +86,11 @@ class ProfileViewController: UIViewController {
 		self.pendingEventsCollectionView.delegate = self
 		
 		collectionViewModel.fetchPendingEvents { [weak self] status in
-			self?.pendingEventsCollectionView.reloadData()
+//			self?.pendingEventsCollectionView.reloadData()
 		}
 
 		collectionViewModel.fetchPendingMatches { [weak self] status in
-			self?.pendingEventsCollectionView.reloadData()
+//			self?.pendingEventsCollectionView.reloadData()
 		}
 
 		collectionViewModel.fetchPendingReserves { [weak self] status in

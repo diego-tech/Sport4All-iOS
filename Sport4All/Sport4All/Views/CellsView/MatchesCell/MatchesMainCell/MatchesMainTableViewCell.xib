@@ -64,6 +64,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" name="BackgroundColor"/>
             <connections>
+                <outlet property="arrowImageView" destination="OT7-So-3eO" id="iXQ-Wx-hX2"/>
                 <outlet property="dayTimeLabel" destination="EWb-cB-xe7" id="D0k-FN-Yu1"/>
                 <outlet property="uiView" destination="VcO-gq-zSD" id="oH3-15-4G3"/>
             </connections>

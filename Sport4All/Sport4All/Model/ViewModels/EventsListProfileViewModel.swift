@@ -11,7 +11,7 @@ import Alamofire
 class EventsListProfileViewModel {
 	
 	// MARK: Variables
-	public var matchList = [PendingEvent]()
+	private var matchList = [PendingEvent]()
 	private var matchListSort = [PendingEvent]()
 	private var status = Int()
 	
@@ -22,7 +22,7 @@ class EventsListProfileViewModel {
 			guard let responseList = responseData else { return }
 			guard let status = status else { return }
 			self.status = status
-			self.matchList += responseList
+			self.matchList.append(contentsOf: responseList)
 			completion(status)
 		} failure: { error in
 			print(error)
@@ -35,7 +35,7 @@ class EventsListProfileViewModel {
 			guard let responseList = responseData else { return }
 			guard let status = status else { return }
 			self.status = status
-			self.matchList += responseList
+			self.matchList.append(contentsOf: responseList)
 			completion(status)
 		} failure: { error in
 			print(error)
@@ -47,8 +47,8 @@ class EventsListProfileViewModel {
 		NetworkingProvider.shared.pendingReserves { responseData, status, msg in
 			guard let responseList = responseData else { return }
 			guard let status = status else { return }
-			self.matchList += responseList
 			self.status = status
+			self.matchList.append(contentsOf: responseList)
 			completion(status)
 		} failure: { error in
 			print(error)

@@ -15,6 +15,7 @@ class MatchesMainTableViewCell: UITableViewCell {
 	// MARK: Outlets
 	@IBOutlet weak var uiView: UIView!
 	@IBOutlet weak var dayTimeLabel: UILabel!
+	@IBOutlet weak var arrowImageView: UIImageView!
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
@@ -28,7 +29,7 @@ class MatchesMainTableViewCell: UITableViewCell {
 	func setCellWithValueOf(_ match: Match) {
 		self.startTime = match.startTime
 		guard let startTime = startTime else { return }
-
+		
 		let startTimeFormatted = dateFormatter(startTime: startTime)
 		updateUI(dayTime: startTimeFormatted)
 	}
@@ -43,7 +44,7 @@ class MatchesMainTableViewCell: UITableViewCell {
 		let formatter = DateFormatter()
 		formatter.dateFormat = "HH:mm:ss"
 		let startTimeFormat = formatter.date(from: startTime)
-
+		
 		guard let startTimeFormat = startTimeFormat else { return "" }
 		formatter.locale = Locale(identifier: "es_Es")
 		formatter.dateFormat = "HH:mm"

@@ -66,7 +66,7 @@ class PendingEventsViewController: UIViewController {
 		guard let eventName = pendingEvent.eventName else { return debugPrint("Error Nombre de Evento") }
 		
 		self.eventImageView.loadImage(fromURL: imgUrl)
-		self.eventNameLabel.text = eventName
+		self.eventNameLabel.text = eventName 
 	}
 	
 	private func configurePendingMatchOrReserve() {
