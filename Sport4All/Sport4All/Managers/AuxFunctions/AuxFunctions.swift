@@ -56,4 +56,47 @@ final class AuxFunctions {
 		}
 		return UIImage(systemName: "xmark.circle.fill") ?? UIImage()
 	}
+	
+	// Format String to Int
+	static func formatTimeToInt(hour: String) -> Int {
+		let formatter = DateFormatter()
+		formatter.dateFormat = "HH:mm:ss"
+		let dateHour = formatter.date(from: hour)
+		formatter.dateFormat = "HH"
+		
+		guard let dateHour = dateHour else { return 0 }
+
+		let onlyHour = formatter.string(from: dateHour)
+		
+		// Cast String to Int
+		guard let onlyHourInt = Int(onlyHour) else { return 0}
+		
+		return onlyHourInt
+	}
+	
+	// Get Time List
+	static func getTimeList(openingTime: Int, closingTime: Int) -> [String] {
+		var dateFormatter = DateFormatter()
+		let today = Date()
+		dateFormatter.dateFormat = "HH"
+		let nowTime = dateFormatter.string(from: today)
+		let nowTimeInt = Int(nowTime)
+		
+		var startArrayTime: Int = 0
+		
+		if String(openingTime) < nowTime {
+			startArrayTime = nowTimeInt!
+		} else {
+			startArrayTime = openingTime
+		}
+		
+		let hoursList: [String] = [
+			"01", "02", "03", "04", "05", "06",	"07", "08",	"09", "10", "11", "12",	"13", "14",	"15", "16",	"17", "18", "19", "20", "21", "22", "23", "24"]
+		var list: [String] = []
+		
+		for i in startArrayTime - 1...closingTime - 1 {
+			list.append(hoursList[i])
+		}
+		return list
+	}
 }

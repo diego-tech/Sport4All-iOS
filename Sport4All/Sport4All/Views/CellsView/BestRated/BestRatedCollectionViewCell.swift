@@ -40,7 +40,7 @@ class BestRatedCollectionViewCell: UICollectionViewCell {
 	
 	// MARK: Functions
 	func setItemWithValueOf(_ club: Club) {
-		updateUI(clubName: club.name, clubImageStr: club.club_img)
+		updateUI(clubName: club.name, clubImageStr: club.clubImg)
 		reserveClub = club
 	}
 	

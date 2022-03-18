@@ -83,7 +83,7 @@ class InfoClubViewController: UIViewController {
 	// MARK: Functions
 	private func configure() {
 		guard let club = club else { return debugPrint("Error Club") }
-		guard let banner = club.club_banner else { return debugPrint("Error Banner") }
+		guard let banner = club.clubBanner else { return debugPrint("Error Banner") }
 		guard let bannerUrl = URL(string: Constants.kStorageURL + banner) else { return debugPrint("Error Url Imagen") }
 		guard let description = club.description else { return debugPrint("Error Desc") }
 		guard let services = club.services else { return debugPrint("Error Servicios") }

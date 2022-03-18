@@ -12,14 +12,21 @@ class ReservesViewController: UIViewController {
 	
 	// MARK: Variables
 	var club: Club?
+	private var firstHourToReserve: String?
+	private var lastHourToReserve: String?
+	private var firstHourInt: Int = 0
+	private var lastHourInt: Int = 0
 	
 	private let today = Date()
 	private var dateFormatter = DateFormatter()
 	private var tableViewModel = CourtsListViewModel()
+	
 	private var pickedDate: String?
 	private var pickedTime: String?
+	
 	private var pickerView = UIPickerView()
 	private var halfMinutes: [String] = ["00", "30"]
+	
 	private var times = [String]()
 	private var hour = String()
 	private var minute = String()
@@ -61,9 +68,6 @@ class ReservesViewController: UIViewController {
 		// Calendar Styles
 		calendarStyles()
 		
-		// Hours
-		times = getTimeList(openingTime: 10, closingTime: 22)
-		
 		// Picker View Delegate, DataSource and Styles
 		pickerView.delegate = self
 		pickerView.dataSource = self
@@ -83,11 +87,22 @@ class ReservesViewController: UIViewController {
 	// MARK: Functions
 	private func configure() {
 		guard let club = club else { return debugPrint("Error Club") }
-		guard let banner = club.club_banner else { return debugPrint("Error Banner") }
+		guard let banner = club.clubBanner else { return debugPrint("Error Banner") }
 		guard let name = club.name else { return debugPrint("Error Name") }
 		guard let bannerUrl = URL(string: Constants.kStorageURL + banner) else { return debugPrint("Error Url Imagen") }
+		guard let firstHourToReserve = club.firstHourToReserve else { return debugPrint("First Hour Error") }
+		guard let lastHourToReserve = club.lastHourToReserve else { return debugPrint("Last Hour Error") }
+		
+		self.firstHourToReserve = firstHourToReserve
+		self.lastHourToReserve = lastHourToReserve
 		self.clubBannerImageView.loadImage(fromURL: bannerUrl)
 		self.clubNameLabel.text = name
+		
+		firstHourInt = AuxFunctions.formatTimeToInt(hour: firstHourToReserve)
+		lastHourInt = AuxFunctions.formatTimeToInt(hour: lastHourToReserve)
+		
+		// Hours
+		times = AuxFunctions.getTimeList(openingTime: firstHourInt, closingTime: lastHourInt)
 	}
 	
 	private func courtList() {
@@ -187,30 +202,6 @@ class ReservesViewController: UIViewController {
 		// Picker View
 		pickerView.backgroundColor = .softBlue
 		pickerView.tintColor = .hardColor
-	}
-
-	// MARK: Manager
-	func getTimeList(openingTime: Int, closingTime: Int) -> [String] {
-		dateFormatter.dateFormat = "HH"
-		let nowTime = dateFormatter.string(from: today)
-		let nowTimeInt = Int(nowTime)
-		
-		var startArrayTime: Int = 0
-		
-		if String(openingTime) < nowTime {
-			startArrayTime = nowTimeInt!
-		} else {
-			startArrayTime = openingTime
-		}
-		
-		let hoursList: [String] = [
-			"01", "02", "03", "04", "05", "06",	"07", "08",	"09", "10", "11", "12",	"13", "14",	"15", "16",	"17", "18", "19", "20", "21", "22", "23", "24"]
-		var list: [String] = []
-		
-		for i in startArrayTime - 1...closingTime - 1 {
-			list.append(hoursList[i])
-		}
-		return list
 	}
 }
 
@@ -338,7 +329,7 @@ extension ReservesViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 		]
 		
 		return NSAttributedString(
-			string: getTimeList(openingTime: 0, closingTime: 0)[row],
+			string: AuxFunctions.getTimeList(openingTime: firstHourInt, closingTime: lastHourInt)[row],
 			attributes: attributes
 		)
 	}
