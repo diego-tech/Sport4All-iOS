@@ -170,7 +170,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
 			let pendingEvent = collectionViewModel.cellForItemAt(indexPath: indexPath)
 			
 			switch pendingEvent.pendingType {
-			case PendingType.event.rawValue :
+			case PendingType.event.rawValue:
 				cell.setItemWithValueOf(pendingEvent, pendingType: .event)
 			case PendingType.match.rawValue:
 				cell.setItemWithValueOf(pendingEvent, pendingType: .match)
@@ -184,6 +184,34 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
 		return cell
 	}
 	
+	
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		collectionView.deselectItem(at: indexPath, animated: true)
+		
+		if collectionView == pendingEventsCollectionView {
+			let pendingEvent = collectionViewModel.cellForItemAt(indexPath: indexPath)
+			
+			switch pendingEvent.pendingType {
+			case PendingType.event.rawValue:
+				let vc = UIStoryboard(name: "PendingEventsDetail", bundle: nil).instantiateViewController(withIdentifier: "PendingEvents") as! PendingEventsViewController
+				vc.pendingEvent = pendingEvent
+				vc.pendingType = .event
+				self.navigationController?.pushViewController(vc, animated: true)
+			case PendingType.match.rawValue:
+				let vc = UIStoryboard(name: "PendingEventsDetail", bundle: nil).instantiateViewController(withIdentifier: "PendingEvents") as! PendingEventsViewController
+				vc.pendingEvent = pendingEvent
+				vc.pendingType = .match
+				self.navigationController?.pushViewController(vc, animated: true)
+			case PendingType.reserve.rawValue:
+				let vc = UIStoryboard(name: "PendingEventsDetail", bundle: nil).instantiateViewController(withIdentifier: "PendingEvents") as! PendingEventsViewController
+				vc.pendingEvent = pendingEvent
+				vc.pendingType = .reserve
+				self.navigationController?.pushViewController(vc, animated: true)
+			default:
+				break
+			}
+		}
+	}
 	
 	/* Margenes entre las celdas */
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

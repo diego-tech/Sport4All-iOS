@@ -356,7 +356,7 @@ final class NetworkingProvider {
 	}
 	
 	// MARK: Pending Events List
-	func pendingEvents(serverResponse: @escaping (_ responseData: [PendingMatch]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+	func pendingEvents(serverResponse: @escaping (_ responseData: [PendingEvent]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/pendingevents"
 		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
 		
@@ -376,7 +376,7 @@ final class NetworkingProvider {
 	}
 	
 	// MARK: Pending Matches List
-	func pendingMatches(serverResponse: @escaping (_ responseData: [PendingMatch]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+	func pendingMatches(serverResponse: @escaping (_ responseData: [PendingEvent]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/pendingmatches"
 		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
 		
@@ -396,7 +396,7 @@ final class NetworkingProvider {
 	}
 	
 	// MARK: Pending Reserves
-	func pendingReserves(serverResponse: @escaping (_ responseData: [PendingMatch]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+	func pendingReserves(serverResponse: @escaping (_ responseData: [PendingEvent]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/pendingreserves"
 		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
 		

@@ -11,8 +11,8 @@ import Alamofire
 class EventsListProfileViewModel {
 	
 	// MARK: Variables
-	public var matchList = [PendingMatch]()
-	private var matchListSort = [PendingMatch]()
+	public var matchList = [PendingEvent]()
+	private var matchListSort = [PendingEvent]()
 	private var status = Int()
 	
 	// MARK: Fetch Pending Events
@@ -75,7 +75,7 @@ class EventsListProfileViewModel {
 		return 0
 	}
 	
-	func cellForItemAt(indexPath: IndexPath) -> PendingMatch {
+	func cellForItemAt(indexPath: IndexPath) -> PendingEvent {
 		return matchList[indexPath.item]
 	}
 }

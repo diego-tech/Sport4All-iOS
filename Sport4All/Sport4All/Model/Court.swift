@@ -11,7 +11,7 @@ struct Court: Codable {
 	let club_id: Int
 	let name: String?
 	let type: String?
-	let prices: [Price]
+	let prices: [Price]?
 	let id: Int?
 	let updatedAt: Date?
 	let createdAt: Date?

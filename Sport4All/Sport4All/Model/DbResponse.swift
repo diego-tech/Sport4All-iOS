@@ -69,7 +69,7 @@ struct MatchListResponse: Codable {
 
 struct PendingMatchListResponse: Codable {
 	let status: Int?
-	let data: [PendingMatch]?
+	let data: [PendingEvent]?
 	let msg: String?
 	
 	enum CodingKeys: String, CodingKey {

@@ -33,6 +33,8 @@ struct MatchItem: Codable {
 	let finalTime: String?
 	let startDatetime: String?
 	let users: [User]?
+	let court: Court?
+	let club: Club?
 	let createdAt: Date?
 	let updatedAt: Date?
 
@@ -45,6 +47,8 @@ struct MatchItem: Codable {
 		case lights
 		case day
 		case users
+		case court = "courts"
+		case club = "clubs"
 		case startTime = "start_time"
 		case endTime = "end_time"
 		case finalTime = "final_time"

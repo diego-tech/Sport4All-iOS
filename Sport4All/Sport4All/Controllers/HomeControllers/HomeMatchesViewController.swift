@@ -129,6 +129,11 @@ extension HomeMatchesViewController: UITableViewDelegate, UITableViewDataSource 
 			return cell
 		} else {
 			guard let detailCell = tableView.dequeueReusableCell(withIdentifier: "MatchesDetailTableViewCell") as? MatchesDetailTableViewCell else { return UITableViewCell() }
+			
+			if let matches = matchListViewModel.cellForRowAt(indexPath: indexPath).items {
+				let prueba = matches[indexPath.row - 1]
+			}
+			
 			return detailCell
 		}
 	}
@@ -139,6 +144,11 @@ extension HomeMatchesViewController: UITableViewDelegate, UITableViewDataSource 
 		if indexPath.row == 0 {
 			matchListViewModel.reloadSections(indexPath: indexPath)
 			self.matchesTableView.reloadSections([indexPath.section], with: .automatic)
+		} else {
+			if let matches = matchListViewModel.cellForRowAt(indexPath: indexPath).items {
+				let prueba = matches[indexPath.row - 1]
+				dump("Test \(prueba.court?.name)")
+			}
 		}
 	}
 }

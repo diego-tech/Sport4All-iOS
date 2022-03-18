@@ -37,7 +37,7 @@
                                             <constraint firstAttribute="height" constant="166" id="LHc-ZT-gY3"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escuela de Tenis Club De Campo Villa de Madrid" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbE-RV-hQK">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escuela de Tenis Club De Campo Villa de Madrid" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbE-RV-hQK">
                                         <rect key="frame" x="20" y="202" width="324" height="59"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="59" id="44l-cU-iYV"/>

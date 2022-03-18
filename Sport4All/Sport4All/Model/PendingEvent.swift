@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PendingMatch: Codable {
+struct PendingEvent: Codable {
 	let id: Int?
 	let qr: String?
 	let userId: Int?

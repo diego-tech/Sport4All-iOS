@@ -252,8 +252,11 @@ extension ReservesViewController: UITableViewDelegate, UITableViewDataSource {
 		} else {
 			guard let detailCell = tableView.dequeueReusableCell(withIdentifier: "ReservesDetailTableViewCell") as? ReservesDetailTableViewCell else { return UITableViewCell() }
 			let prices = tableViewModel.cellForRowAt(indexPath: indexPath).prices
-			detailCell.configure(prices)
-			detailCell.reservesDetailCell = self
+			if let prices = prices {
+				detailCell.configure(prices)
+				detailCell.reservesDetailCell = self
+			}
+			
 			return detailCell
 		}
 	}

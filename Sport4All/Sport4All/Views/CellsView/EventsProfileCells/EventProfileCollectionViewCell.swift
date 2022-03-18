@@ -27,7 +27,7 @@ class EventProfileCollectionViewCell: UICollectionViewCell {
 	}
 	
 	// MARK: Functions
-	func setItemWithValueOf(_ pendingMatch: PendingMatch, pendingType: PendingType) {
+	func setItemWithValueOf(_ pendingMatch: PendingEvent, pendingType: PendingType) {
 		
 		switch pendingType {
 		case .match:

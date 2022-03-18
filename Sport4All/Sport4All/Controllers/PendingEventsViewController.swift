@@ -10,10 +10,17 @@ import UIKit
 class PendingEventsViewController: UIViewController {
 	
 	// MARK: Variables
+	var pendingEvent: PendingEvent?
+	var pendingType: PendingType?
 	
-	// MARK: Outlets
+	// MARK: Matches and Reserves Outlets
 	@IBOutlet weak var headerUIView: UIView!
-	@IBOutlet weak var barcodeIV: UIImageView!
+	@IBOutlet weak var barcodeImageView: UIImageView!
+	
+	// MARK: Events Outlest
+	@IBOutlet weak var eventHeaderUIView: UIView!
+	@IBOutlet weak var eventImageView: LazyImageView!
+	@IBOutlet weak var eventNameLabel: UILabel!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,23 +31,58 @@ class PendingEventsViewController: UIViewController {
 		
 		// Inicialización de Estilos
 		headerUIView.bottomShadow()
+		eventHeaderUIView.bottomShadow()
 		barcodeIVStyle()
 		
-		// Generado de QR Prueba
-		testQRCodeGen()
+		// Configure
+		configure()
     }
 	
 	// MARK: Action Functions
 	
 	// MARK: Functions
-	private func testQRCodeGen() {
-		barcodeIV.image = AuxFunctions.generateQRCodeImage(reservationCode: "test")
+	private func configure() {
+		switch pendingType {
+		case .event:
+			configurePendingEvent()
+			print("Evento")
+		case .match:
+			configurePendingMatchOrReserve()
+			print("Partido")
+		case .reserve:
+			configurePendingMatchOrReserve()
+			print("Reserva")
+		default:
+			break
+		}
+	}
+	
+	private func configurePendingEvent() {
+		self.headerUIView.isHidden = true
+		
+		guard let pendingEvent = pendingEvent else { return debugPrint("Error Evento") }
+		guard let eventImage = pendingEvent.eventImg else { return debugPrint("Error Event Image") }
+		guard let imgUrl = URL(string: Constants.kStorageURL + eventImage) else { return debugPrint("Error Event URL Image") }
+		guard let eventName = pendingEvent.eventName else { return debugPrint("Error Nombre de Evento") }
+		
+		self.eventImageView.loadImage(fromURL: imgUrl)
+		self.eventNameLabel.text = eventName
+	}
+	
+	private func configurePendingMatchOrReserve() {
+		self.eventHeaderUIView.isHidden = true
+		
+		guard let pendingEvent = pendingEvent else { return debugPrint("Error Evento") }
+		guard let pendingBarcode = pendingEvent.qr else { return debugPrint("Error Qr") }
+		
+		
+		self.barcodeImageView.image = AuxFunctions.generateQRCodeImage(reservationCode: pendingBarcode)
 	}
 	
 	// MARK: Styles
 	private func barcodeIVStyle() {
-		barcodeIV.frame = CGRect(x: 0, y: 0, width: 175, height: 175)
-		barcodeIV.layer.magnificationFilter = CALayerContentsFilter.nearest
+		barcodeImageView.frame = CGRect(x: 0, y: 0, width: 175, height: 175)
+		barcodeImageView.layer.magnificationFilter = CALayerContentsFilter.nearest
 	}
 	
 	private func configureNavbar() {
