@@ -106,6 +106,7 @@
 		5EE5F33427E20D54005B6A09 /* MatchesMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE5F33227E20D54005B6A09 /* MatchesMainTableViewCell.swift */; };
 		5EE5F33527E20D54005B6A09 /* MatchesMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EE5F33327E20D54005B6A09 /* MatchesMainTableViewCell.xib */; };
 		5EF0690227E4D51B00A6BA0A /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 5EF0690127E4D51B00A6BA0A /* FSCalendar */; };
+		5EF0690427E4DD6F00A6BA0A /* QRDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0690327E4DD6F00A6BA0A /* QRDetailViewController.swift */; };
 		5EF497A327A5570F008B0C37 /* DateDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A227A5570F008B0C37 /* DateDecoder.swift */; };
 		5EF497A627A55794008B0C37 /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A527A55794008B0C37 /* UserDefaultsProvider.swift */; };
 		5EF497A827A55858008B0C37 /* NetworkingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A727A55858008B0C37 /* NetworkingProvider.swift */; };
@@ -213,6 +214,7 @@
 		5EE5F32D27E1D758005B6A09 /* EventsListProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListProfileViewModel.swift; sourceTree = "<group>"; };
 		5EE5F33227E20D54005B6A09 /* MatchesMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesMainTableViewCell.swift; sourceTree = "<group>"; };
 		5EE5F33327E20D54005B6A09 /* MatchesMainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchesMainTableViewCell.xib; sourceTree = "<group>"; };
+		5EF0690327E4DD6F00A6BA0A /* QRDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRDetailViewController.swift; sourceTree = "<group>"; };
 		5EF497A227A5570F008B0C37 /* DateDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDecoder.swift; sourceTree = "<group>"; };
 		5EF497A527A55794008B0C37 /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
 		5EF497A727A55858008B0C37 /* NetworkingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProvider.swift; sourceTree = "<group>"; };
@@ -484,6 +486,7 @@
 				5999B67E27B2803E0008BE6B /* FavouritesClubs */,
 				5E2FEE6527A43E0F008B0AE1 /* RetrievePassword */,
 				5EF360F527AA9B2B00105AB7 /* CellsView */,
+				5EF0690327E4DD6F00A6BA0A /* QRDetailViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -878,6 +881,7 @@
 				5EA1A66F27A7E5D60096754C /* NewUser.swift in Sources */,
 				5ECB28AE279F157C00583F67 /* UIButtonExtension.swift in Sources */,
 				5E4ED8C327C7FAE500679524 /* RegisterInEventViewController.swift in Sources */,
+				5EF0690427E4DD6F00A6BA0A /* QRDetailViewController.swift in Sources */,
 				5E703F9E27DFC28600E2FC84 /* EventProfileCollectionViewCell.swift in Sources */,
 				5ECF53F3278C3AB8005F6D01 /* AuthViewController.swift in Sources */,
 				5E6DBA7027DC988700447DBE /* ReservesTableViewCell.swift in Sources */,

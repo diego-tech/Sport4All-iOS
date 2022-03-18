@@ -66,13 +66,13 @@ class HomeViewController: UIViewController {
 		
 //		let vc = UIStoryboard(name: "PayResume", bundle: nil).instantiateViewController(withIdentifier: "PayResume") as! PayResumeViewController
 
-		let vc = UIStoryboard(name: "RegisterInEvent", bundle: nil).instantiateViewController(withIdentifier: "RegisterInEvent") as! RegisterInEventViewController
+//		let vc = UIStoryboard(name: "RegisterInEvent", bundle: nil).instantiateViewController(withIdentifier: "RegisterInEvent") as! RegisterInEventViewController
 //		let vc = UIStoryboard(name: "FinishEventDetail", bundle: nil).instantiateViewController(withIdentifier: "FinishEventDetail") as! FinishEventDetailViewController
 //		let vc = UIStoryboard(name: "FinishEventList", bundle: nil).instantiateViewController(withIdentifier: "FinishEventList") as! FinishEventListViewController
-		
-		navigationController?.pushViewController(vc, animated: true)
+		let vc = QRDetailViewController()
+//		navigationController?.pushViewController(vc, animated: true)
 //		modalPresentationStyle = .automatic
-//		self.present(vc, animated: true, completion: nil)
+		self.present(vc, animated: true, completion: nil)
 	}
 	
 	// MARK: Functions
