@@ -44,6 +44,10 @@ class HomeClubsViewController: UIViewController {
 		
 		searchBar.delegate = self
 		
+		// Init Collection View and Table View
+		initCollectionView()
+		initTableView()
+		
 		// Custom Search Bar
 		searchBar.customSearch()
 		
@@ -74,13 +78,13 @@ class HomeClubsViewController: UIViewController {
 	// MARK: Functions
 	private func clubList() {
 		tableViewModel.fetchClubList { [weak self] status in
-			self?.initTableView()
+			self?.homeClubsTableView.reloadData()
 		}
 	}
 	
 	private func mostRatedCollectionList() {
 		collectionViewModel.fetchMostRated { [weak self] status in
-			self?.initCollectionView()
+			self?.bestRatedCollectionView.reloadData()
 		}
 	}
 	
@@ -105,8 +109,6 @@ class HomeClubsViewController: UIViewController {
 		bestRatedCollectionView.showsHorizontalScrollIndicator = false
 		bestRatedCollectionView.reloadData()
 	}
-	
-	// MARK: Styles
 }
 
 // MARK: Collection View
