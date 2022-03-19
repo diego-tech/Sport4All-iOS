@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 				print("Wifi")
 			}
 		}
+		
 		// Tiempo de Cargar Launch Screen
 		Thread.sleep(forTimeInterval: 2.0)
 				

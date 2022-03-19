@@ -515,7 +515,7 @@
                                                     <rect key="frame" x="17" y="11.5" width="360" height="157"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pista 4 (Cubierta)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwP-kM-ztu">
-                                                            <rect key="frame" x="10" y="131" width="340" height="16"/>
+                                                            <rect key="frame" x="10" y="131" width="107" height="16"/>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="13"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -594,16 +594,23 @@
                                                                 <constraint firstAttribute="width" constant="5" id="mwe-am-j1n"/>
                                                             </constraints>
                                                         </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Precio: 10.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTp-JL-2NW">
+                                                            <rect key="frame" x="279.5" y="131" width="70.5" height="16"/>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="13"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" name="BlueBerry"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="V0P-Kx-tSg" secondAttribute="trailing" constant="25" id="4rA-9l-azS"/>
+                                                        <constraint firstAttribute="bottom" secondItem="xwP-kM-ztu" secondAttribute="bottom" constant="10" id="4sI-Qa-CVK"/>
                                                         <constraint firstAttribute="trailing" secondItem="Imz-eS-wDt" secondAttribute="trailing" constant="10" id="8jx-Fx-a3f"/>
                                                         <constraint firstItem="V0P-Kx-tSg" firstAttribute="leading" secondItem="3Xw-AB-zIo" secondAttribute="trailing" constant="34.5" id="8w3-J4-2xW"/>
                                                         <constraint firstItem="Imz-eS-wDt" firstAttribute="leading" secondItem="rhc-YC-LD2" secondAttribute="trailing" constant="10" id="9mi-Rs-oLS"/>
-                                                        <constraint firstAttribute="trailing" secondItem="xwP-kM-ztu" secondAttribute="trailing" constant="10" id="EXn-3F-7yr"/>
-                                                        <constraint firstItem="xwP-kM-ztu" firstAttribute="leading" secondItem="OeN-aa-ljn" secondAttribute="leading" constant="10" id="I55-U2-p7X"/>
-                                                        <constraint firstAttribute="bottom" secondItem="xwP-kM-ztu" secondAttribute="bottom" constant="10" id="Ig8-HN-Xiq"/>
+                                                        <constraint firstItem="xwP-kM-ztu" firstAttribute="top" secondItem="FlM-hU-zRJ" secondAttribute="bottom" constant="10" id="CXt-d2-ufZ"/>
+                                                        <constraint firstAttribute="bottom" secondItem="mTp-JL-2NW" secondAttribute="bottom" constant="10" id="D6N-sG-yr2"/>
                                                         <constraint firstItem="FlM-hU-zRJ" firstAttribute="top" secondItem="047-nu-X7D" secondAttribute="bottom" constant="20" id="Lkb-Gi-OZb"/>
                                                         <constraint firstItem="3Xw-AB-zIo" firstAttribute="bottom" secondItem="FlM-hU-zRJ" secondAttribute="bottom" id="N3b-IU-OCg"/>
                                                         <constraint firstAttribute="trailing" secondItem="FlM-hU-zRJ" secondAttribute="trailing" id="Qj6-aC-QQf"/>
@@ -611,9 +618,11 @@
                                                         <constraint firstItem="3Xw-AB-zIo" firstAttribute="leading" secondItem="047-nu-X7D" secondAttribute="trailing" constant="34.5" id="c43-KW-kr9"/>
                                                         <constraint firstItem="FlM-hU-zRJ" firstAttribute="top" secondItem="V0P-Kx-tSg" secondAttribute="bottom" constant="20" id="d5J-6U-9nN"/>
                                                         <constraint firstItem="Imz-eS-wDt" firstAttribute="top" secondItem="OeN-aa-ljn" secondAttribute="top" constant="10" id="dxY-v6-AnO"/>
+                                                        <constraint firstItem="mTp-JL-2NW" firstAttribute="top" secondItem="FlM-hU-zRJ" secondAttribute="bottom" constant="10" id="egx-2c-maV"/>
                                                         <constraint firstItem="rhc-YC-LD2" firstAttribute="leading" secondItem="OeN-aa-ljn" secondAttribute="leading" constant="10" id="k8U-4v-qUr"/>
-                                                        <constraint firstItem="xwP-kM-ztu" firstAttribute="top" secondItem="FlM-hU-zRJ" secondAttribute="bottom" constant="10" id="kud-83-VVr"/>
                                                         <constraint firstItem="047-nu-X7D" firstAttribute="leading" secondItem="OeN-aa-ljn" secondAttribute="leading" constant="25" id="nrj-pp-aTX"/>
+                                                        <constraint firstAttribute="trailing" secondItem="mTp-JL-2NW" secondAttribute="trailing" constant="10" id="oBm-JZ-jEs"/>
+                                                        <constraint firstItem="xwP-kM-ztu" firstAttribute="leading" secondItem="OeN-aa-ljn" secondAttribute="leading" constant="10" id="pZ9-gh-201"/>
                                                         <constraint firstItem="047-nu-X7D" firstAttribute="top" secondItem="rhc-YC-LD2" secondAttribute="bottom" constant="18" id="s3J-IC-iku"/>
                                                         <constraint firstItem="3Xw-AB-zIo" firstAttribute="top" secondItem="OeN-aa-ljn" secondAttribute="top" constant="27" id="sIr-wW-EY1"/>
                                                         <constraint firstItem="FlM-hU-zRJ" firstAttribute="leading" secondItem="OeN-aa-ljn" secondAttribute="leading" id="u7J-p7-Xvp"/>
@@ -637,7 +646,10 @@
                                         <color key="backgroundColor" name="BackgroundColor"/>
                                         <connections>
                                             <outlet property="backgroundUIView" destination="bop-Xo-B0g" id="ZN5-0J-l9Q"/>
+                                            <outlet property="clubNameLabel" destination="rhc-YC-LD2" id="ysF-kB-i7y"/>
+                                            <outlet property="courtNameLabel" destination="xwP-kM-ztu" id="2Ql-Kg-yYc"/>
                                             <outlet property="mainUiView" destination="OeN-aa-ljn" id="U74-Un-Pes"/>
+                                            <outlet property="matchPriceLabel" destination="mTp-JL-2NW" id="bD6-kW-OIx"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

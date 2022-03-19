@@ -136,7 +136,8 @@ extension HomeMatchesViewController: UITableViewDelegate, UITableViewDataSource 
 			guard let detailCell = tableView.dequeueReusableCell(withIdentifier: "MatchesDetailTableViewCell") as? MatchesDetailTableViewCell else { return UITableViewCell() }
 			
 			if let matches = matchListViewModel.cellForRowAt(indexPath: indexPath).items {
-				let prueba = matches[indexPath.row - 1]
+				let match = matches[indexPath.row - 1]
+				detailCell.setCellWithValueOf(match)
 			}
 			
 			return detailCell

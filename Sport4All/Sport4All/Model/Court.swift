@@ -8,11 +8,12 @@
 import Foundation
 
 struct Court: Codable {
+	let id: Int?
 	let club_id: Int
 	let name: String?
 	let type: String?
 	let prices: [Price]?
-	let id: Int?
+	let surfaces: String?
 	let updatedAt: Date?
 	let createdAt: Date?
 	
@@ -20,11 +21,12 @@ struct Court: Codable {
 	var isOpened: Bool = false
 	
 	enum CodingKeys: String, CodingKey {
+		case id
 		case club_id
 		case name
 		case type
 		case prices
-		case id
+		case surfaces
 		case updatedAt = "updated_at"
 		case createdAt = "created_at"
 	}
