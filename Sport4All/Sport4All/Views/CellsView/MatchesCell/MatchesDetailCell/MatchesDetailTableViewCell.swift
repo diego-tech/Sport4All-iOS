@@ -98,7 +98,7 @@ extension MatchesDetailTableViewCell: UICollectionViewDelegate, UICollectionView
 	
 	/* Márgenes entre las celdas */
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-		let inset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
+		let inset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 15)
 		return inset
 	}
 }

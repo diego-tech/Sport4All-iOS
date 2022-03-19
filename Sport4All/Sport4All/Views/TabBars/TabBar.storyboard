@@ -572,35 +572,36 @@
                                                                 <constraint firstAttribute="height" constant="83" id="12x-NQ-QZc"/>
                                                             </constraints>
                                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vTW-f2-NUt">
-                                                                <size key="itemSize" width="128" height="50"/>
+                                                                <size key="itemSize" width="70" height="66"/>
                                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             </collectionViewFlowLayout>
                                                             <cells>
                                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UsersMatchCollectionViewCell" id="cSw-bn-49J" customClass="UsersMatchCollectionViewCell" customModule="Sport4All" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="16.5" width="50" height="50"/>
+                                                                    <rect key="frame" x="0.0" y="6.5" width="70" height="70"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FLO-bx-qNb">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="soq-v4-r1W" customClass="LazyImageView" customModule="Sport4All" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="0.5" width="50" height="49"/>
+                                                                                <rect key="frame" x="10" y="10.5" width="50" height="49"/>
                                                                                 <color key="tintColor" name="BackgroundColor"/>
                                                                                 <constraints>
-                                                                                    <constraint firstAttribute="width" constant="50" id="pol-Ib-ekd"/>
-                                                                                    <constraint firstAttribute="height" constant="50" id="uJK-w9-VuU"/>
+                                                                                    <constraint firstAttribute="height" constant="50" id="29b-Rp-WI8"/>
+                                                                                    <constraint firstAttribute="width" constant="50" id="W0p-sh-e2b"/>
                                                                                 </constraints>
                                                                             </imageView>
                                                                         </subviews>
                                                                         <constraints>
-                                                                            <constraint firstItem="soq-v4-r1W" firstAttribute="leading" secondItem="FLO-bx-qNb" secondAttribute="leading" id="4an-wS-yx7"/>
-                                                                            <constraint firstAttribute="trailing" secondItem="soq-v4-r1W" secondAttribute="trailing" id="8LD-93-Jh6"/>
-                                                                            <constraint firstItem="soq-v4-r1W" firstAttribute="top" secondItem="FLO-bx-qNb" secondAttribute="top" id="HxA-AW-sAi"/>
-                                                                            <constraint firstAttribute="bottom" secondItem="soq-v4-r1W" secondAttribute="bottom" id="nBW-FK-1RU"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="soq-v4-r1W" secondAttribute="trailing" constant="10" id="3Wb-2n-XAb"/>
+                                                                            <constraint firstItem="soq-v4-r1W" firstAttribute="top" secondItem="FLO-bx-qNb" secondAttribute="top" constant="10" id="54o-0c-b8c"/>
+                                                                            <constraint firstItem="soq-v4-r1W" firstAttribute="leading" secondItem="FLO-bx-qNb" secondAttribute="leading" constant="10" id="Fqg-45-i7t"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="soq-v4-r1W" secondAttribute="bottom" constant="10" id="dWP-p2-dSZ"/>
                                                                         </constraints>
                                                                     </collectionViewCellContentView>
+                                                                    <size key="customSize" width="70" height="70"/>
                                                                     <connections>
                                                                         <outlet property="collectionViewUserImageView" destination="soq-v4-r1W" id="eo8-fP-7LE"/>
                                                                     </connections>
