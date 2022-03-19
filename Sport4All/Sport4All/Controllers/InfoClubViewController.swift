@@ -32,6 +32,7 @@ class InfoClubViewController: UIViewController {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
 		
+		// Map View Delegate
 		locationMapView.delegate = self
 	
 		// Configure Models
@@ -207,29 +208,5 @@ extension InfoClubViewController: MKMapViewDelegate {
 		guard let place = view.annotation as? Annotation else { return }
 		let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
 		place.mapItem?.openInMaps(launchOptions: launchOptions)
-	}
-}
-
-// MARK: Annotation Class
-class Annotation: NSObject, MKAnnotation {
-	var coordinate: CLLocationCoordinate2D
-	var title: String?
-	var subtitle: String?
-	
-	init(coordinate: CLLocationCoordinate2D, title: String, subtitle: String) {
-		self.coordinate = coordinate
-		self.title = title
-		self.subtitle = subtitle
-		
-		super.init()
-	}
-	
-	var mapItem: MKMapItem? {
-		guard let location = title else { return nil }
-		let addressDict = [CNPostalAddressStreetKey: location]
-		let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: addressDict)
-		let mapItem = MKMapItem(placemark: placemark)
-		mapItem.name = title
-		return mapItem
 	}
 }
