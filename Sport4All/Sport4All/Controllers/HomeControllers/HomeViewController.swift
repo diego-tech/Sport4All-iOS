@@ -57,24 +57,6 @@ class HomeViewController: UIViewController {
 		navigationController?.pushViewController(vc, animated: true)
 	}
 	
-	@objc func locationButtonTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-//		let vc = UIStoryboard(name: "InfoClub", bundle: nil).instantiateViewController(withIdentifier: "InfoClub") as! InfoClubViewController
-//		let vc = UIStoryboard(name: "DetailEvent", bundle: nil).instantiateViewController(withIdentifier: "DetailEvent") as! DetailEventViewController
-//		let vc = UIStoryboard(name: "ModifyPassword", bundle: nil).instantiateViewController(withIdentifier: "ModifyPassword") as! ModifyPasswordViewController
-//		let vc = UIStoryboard(name: "YourClub", bundle: nil).instantiateViewController(withIdentifier: "YourClub") as! YourClubViewController
-//		let vc = UIStoryboard(name: "PendingEventsDetail", bundle: nil).instantiateViewController(withIdentifier: "PendingEvents") as! PendingEventsViewController
-		
-//		let vc = UIStoryboard(name: "PayResume", bundle: nil).instantiateViewController(withIdentifier: "PayResume") as! PayResumeViewController
-
-//		let vc = UIStoryboard(name: "RegisterInEvent", bundle: nil).instantiateViewController(withIdentifier: "RegisterInEvent") as! RegisterInEventViewController
-//		let vc = UIStoryboard(name: "FinishEventDetail", bundle: nil).instantiateViewController(withIdentifier: "FinishEventDetail") as! FinishEventDetailViewController
-//		let vc = UIStoryboard(name: "FinishEventList", bundle: nil).instantiateViewController(withIdentifier: "FinishEventList") as! FinishEventListViewController
-		let vc = QRDetailViewController()
-//		navigationController?.pushViewController(vc, animated: true)
-//		modalPresentationStyle = .automatic
-		self.present(vc, animated: true, completion: nil)
-	}
-	
 	// MARK: Functions
 	
 	// MARK: Styles
@@ -89,17 +71,13 @@ class HomeViewController: UIViewController {
 		titleLabel.text = "Inicio"
 
 		// UIBarButtonItem
-		let locationButtonItem = UIBarButtonItem(image: locationImage, style: .plain, target: self, action: #selector(locationButtonTapped(tapGestureRecognizer:)))
-		locationButtonItem.tintColor = .corporativeColor
-		
 		let starButtonItem = UIBarButtonItem(image: starImage, style: .plain, target: self, action: #selector(startButtonTapped(tapGestureRecognizer:)))
 		starButtonItem.tintColor = .goldColor
 		
 		// Set Navigation Items
 		self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: titleLabel	)
 		self.navigationItem.rightBarButtonItems = [
-			starButtonItem,
-			locationButtonItem
+			starButtonItem
 		]
 	}
 }
