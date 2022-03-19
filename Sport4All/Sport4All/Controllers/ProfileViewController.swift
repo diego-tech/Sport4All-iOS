@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SPIndicator
 
 enum ProfilesSections: Int {
 	case Event = 0
@@ -24,8 +25,6 @@ class ProfileViewController: UIViewController {
 	
 	// MARK: Outlets
 	@IBOutlet weak var headerUIView: UIView!
-	@IBOutlet weak var pendingEventsBTN: UIButton!
-	@IBOutlet weak var completedEventsBTN: UIButton!
 	@IBOutlet weak var yourClubBTN: UIButton!
 	@IBOutlet weak var userImageView: LazyImageView!
 	@IBOutlet weak var userNameLabel: UILabel!
@@ -69,8 +68,18 @@ class ProfileViewController: UIViewController {
 	}
 	
 	@IBAction func yourClubButtonAction(_ sender: UIButton) {
-		let vc = UIStoryboard(name: "YourClub", bundle: nil).instantiateViewController(withIdentifier: "YourClub") as! YourClubViewController
-		navigationController?.pushViewController(vc, animated: true)
+		// Upcoming View
+//		let vc = UIStoryboard(name: "YourClub", bundle: nil).instantiateViewController(withIdentifier: "YourClub") as! YourClubViewController
+//		navigationController?.pushViewController(vc, animated: true)
+		
+		/*
+		 let image = UIImage.init(systemName: "sun.min.fill")!.withTintColor(.systemYellow, renderingMode: .alwaysOriginal)
+		 SPIndicator.present(title: "Custom Image", message: "With tint color", preset: .custom(image)))
+		 */
+		
+		let image = UIImage.init(systemName: "exclamationmark.icloud")!.withTintColor(.red, renderingMode: .alwaysOriginal)
+		let indicatorView = SPIndicatorView(title: "En desarrollo", preset: .custom(image))
+		indicatorView.present(duration: 3)
 	}
 	
 	// MARK: Functions
@@ -166,7 +175,9 @@ extension ProfileViewController: SettingsViewControllerDelegate {
 		case .EditProfile:
 			self.navigationController?.pushViewController(vc, animated: true)
 		case .ContactUs:
-			print("Contacta Con Nosotros")
+			if let urlToOpen = URL(string: Constants.kContactUsWeb) {
+				UIApplication.shared.open(urlToOpen, options: [:], completionHandler: nil )
+			}
 		case .ShowTutorial:
 			print("Ver Tutorial")
 		case .LogOut:
