@@ -47,7 +47,7 @@ struct MatchItem: Codable {
 		case lights
 		case day
 		case users
-		case court = "courts"
+		case court = "match_courts"
 		case club = "clubs"
 		case startTime = "start_time"
 		case endTime = "end_time"
@@ -55,5 +55,21 @@ struct MatchItem: Codable {
 		case startDatetime = "start_Datetime"
 		case createdAt = "created_at"
 		case updatedAt = "updated_at"
+	}
+}
+
+struct MatchInscription: Codable {
+	let id: Int?
+	let matchId: Int?
+	let userId: Int?
+	let updatedAt: Date?
+	let createdAt: Date?
+	
+	enum CodingKeys: String, CodingKey {
+		case id
+		case matchId = "match_id"
+		case userId = "user_id"
+		case updatedAt = "updated_at"
+		case createdAt = "created_at"
 	}
 }
