@@ -90,3 +90,27 @@ struct ReserveResponse: Codable {
 		case msg
 	}
 }
+
+struct MatchInscriptionResponse: Codable {
+	let status: Int?
+	let data: MatchInscription?
+	let msg: String?
+	
+	enum CodingKeys: String, CodingKey {
+		case status
+		case data
+		case msg
+	}
+}
+
+struct InscriptionEventResponse: Codable {
+	let status: Int?
+	let data: Inscription?
+	let msg: String?
+	
+	enum CodingKeys: String, CodingKey {
+		case status
+		case data
+		case msg
+	}
+}
