@@ -247,6 +247,13 @@ extension ReservesViewController: UITableViewDelegate, UITableViewDataSource {
 		if indexPath.row == 0 {
 			guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReservesTableViewCell") as? ReservesTableViewCell else { return UITableViewCell() }
 			let court = tableViewModel.cellForRowAt(indexPath: indexPath)
+			
+			if court.isOpened {
+				cell.arrowDown.image = UIImage(systemName: "chevron.up", withConfiguration: UIImage.SymbolConfiguration(pointSize: 14))
+			} else {
+				cell.arrowDown.image = UIImage(systemName: "chevron.down", withConfiguration: UIImage.SymbolConfiguration(pointSize: 14))
+			}
+			
 			cell.setCellWithValueOf(court)
 			return cell
 		} else {
