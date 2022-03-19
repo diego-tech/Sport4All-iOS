@@ -24,6 +24,12 @@ class HomeMatchesViewController:  UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		
+		// Init Values For First Query
+		let today = Date()
+		formatter.dateFormat = "yyyy-MM-dd"
+		let todayFormat = formatter.string(from: today)
+		pickedDate = todayFormat
+		
 		// Init Match List
 		matchList()
 	}
@@ -168,8 +174,12 @@ extension HomeMatchesViewController: UITableViewDelegate, UITableViewDataSource 
 			self.matchesTableView.reloadSections([indexPath.section], with: .automatic)
 		} else {
 			if let matches = matchListViewModel.cellForRowAt(indexPath: indexPath).items {
-				let prueba = matches[indexPath.row - 1]
-				dump("Test \(prueba.court?.name)")
+				let match = matches[indexPath.row - 1]
+				let vc = UIStoryboard(name: "PayResume", bundle: nil).instantiateViewController(withIdentifier: "PayResume") as! PayResumeViewController
+				vc.reserveType = .matchReserve
+				vc.match = match
+				vc.reserveDay = pickedDate
+				self.present(vc, animated: true)
 			}
 		}
 	}

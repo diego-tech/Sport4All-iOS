@@ -7,12 +7,20 @@
 
 import UIKit
 
+enum ReserveType {
+	case courtReserve
+	case matchReserve
+}
+
 class PayResumeViewController: UIViewController {
 	
 	// MARK: Variables
+	var reserveType: ReserveType?
+	
 	var club: Club?
 	var court: Court?
 	var price: Price?
+	var match: MatchItem?
 	var reserveDay: String?
 	var reserveHour: String?
 	
@@ -20,6 +28,8 @@ class PayResumeViewController: UIViewController {
 	var day: String = ""
 	var start_time: String = ""
 	var time: Int = 0
+	
+	var matchId: Int = 0
 	
 	// MARK: Outlets
 	@IBOutlet weak var clubNameLabel: UILabel!
@@ -54,21 +64,29 @@ class PayResumeViewController: UIViewController {
 	
 	// MARK: Action Functions
 	@IBAction func payButtonAction(_ sender: UIButton) {
-		let reserveQuery = ReserveQuery(court_id: court_id, day: day, start_time: start_time, time: time)
-		
-		print("Reserva \(reserveQuery)")
-		
-		NetworkingProvider.shared.courtReserve(reserveQuery: reserveQuery) { responseData, status, msg in
-			print(responseData)
-			print(status)
-			print(msg)
-		} failure: { error in
-			print(error)
+		switch reserveType {
+		case .courtReserve:
+			courtReservePay()
+		case .matchReserve:
+			matchReservePay()
+		default:
+			break
 		}
 	}
 	
 	// MARK: Functions
 	private func configure() {
+		switch reserveType {
+		case .courtReserve:
+			configureCourtReserve()
+		case .matchReserve:
+			configureMatchReserve()
+		default:
+			break
+		}
+	}
+	
+	private func configureCourtReserve() {
 		guard let club = club else { return }
 		guard let court = court else { return }
 		guard let price = price else { return }
@@ -103,6 +121,57 @@ class PayResumeViewController: UIViewController {
 		
 		guard let priceInt = Int(priceString) else { return }
 		self.time = priceInt
+	}
+	
+	private func configureMatchReserve() {
+		guard let match = match else { return debugPrint("Error Match") }
+		guard let matchId = match.id else { return debugPrint("Error Match id") }
+		guard let clubName = match.club?.name else { return debugPrint("Club Name") }
+		guard let courtName = match.court?.name else { return debugPrint("Court Name") }
+		guard let courtType = match.court?.type else { return debugPrint("Court Type") }
+		guard let courtSport = match.court?.sport else { return debugPrint("Court Sport") }
+		guard let courtSurface = match.court?.surfaces else { return debugPrint("Court Surface") }
+		guard let reserveDay = reserveDay else { return debugPrint("Reserve Day") }
+		guard let price = match.pricePeople else { return debugPrint("Reserve Time") }
+		guard let startTime = match.startTime else { return debugPrint("Start Time") }
+		guard let endTime = match.endTime else { return debugPrint("End Time") }
+		
+		// Setting Values in UI
+		self.clubNameLabel.text = clubName
+		self.courtNameLabel.text = courtName
+		self.courtInfoLabel.text = "\(courtSport): \(courtType), \(courtSurface)"
+		self.reserveDayLabel.text = reserveDay
+		self.reserveHourLabel.text = "\(startTime) - \(endTime)"
+		self.reserveDurationLabel.isHidden = true
+		
+		let priceString = String(price)
+		self.reservePriceLabel.text = priceString + " €"
+		
+		self.matchId = matchId
+	}
+	
+	private func courtReservePay() {
+		let reserveQuery = ReserveQuery(court_id: court_id, day: day, start_time: start_time, time: time)
+		
+		print("Reserva \(reserveQuery)")
+		
+		NetworkingProvider.shared.courtReserve(reserveQuery: reserveQuery) { responseData, status, msg in
+			print(responseData)
+			print(status)
+			print(msg)
+		} failure: { error in
+			print(error)
+		}
+	}
+	
+	private func matchReservePay() {
+		NetworkingProvider.shared.matchInscription(match_id: matchId) { responseData, status, msg in
+			print(responseData)
+			print(status)
+			print(msg)
+		} failure: { error in
+			print(error)
+		}
 	}
 	
 	// MARK: Styles
