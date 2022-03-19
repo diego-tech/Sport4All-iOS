@@ -107,6 +107,7 @@
 		5EEAFDC827E5BEFC00E37F58 /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 5EEAFDC727E5BEFC00E37F58 /* SPIndicator */; };
 		5EEAFDCB27E5BF0A00E37F58 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 5EEAFDCA27E5BF0A00E37F58 /* FSCalendar */; };
 		5EEAFDCD27E5C43B00E37F58 /* FinishListProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEAFDCC27E5C43B00E37F58 /* FinishListProfileViewModel.swift */; };
+		5EEAFDD027E5E14000E37F58 /* UsersMatchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEAFDCF27E5E14000E37F58 /* UsersMatchCollectionViewCell.swift */; };
 		5EF0690427E4DD6F00A6BA0A /* QRDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0690327E4DD6F00A6BA0A /* QRDetailViewController.swift */; };
 		5EF497A327A5570F008B0C37 /* DateDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A227A5570F008B0C37 /* DateDecoder.swift */; };
 		5EF497A627A55794008B0C37 /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF497A527A55794008B0C37 /* UserDefaultsProvider.swift */; };
@@ -216,6 +217,7 @@
 		5EE5F33227E20D54005B6A09 /* MatchesMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesMainTableViewCell.swift; sourceTree = "<group>"; };
 		5EE5F33327E20D54005B6A09 /* MatchesMainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchesMainTableViewCell.xib; sourceTree = "<group>"; };
 		5EEAFDCC27E5C43B00E37F58 /* FinishListProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishListProfileViewModel.swift; sourceTree = "<group>"; };
+		5EEAFDCF27E5E14000E37F58 /* UsersMatchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersMatchCollectionViewCell.swift; sourceTree = "<group>"; };
 		5EF0690327E4DD6F00A6BA0A /* QRDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRDetailViewController.swift; sourceTree = "<group>"; };
 		5EF497A227A5570F008B0C37 /* DateDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDecoder.swift; sourceTree = "<group>"; };
 		5EF497A527A55794008B0C37 /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
@@ -487,8 +489,8 @@
 				5959268527BBABB700702369 /* ModifyPassword */,
 				5999B67E27B2803E0008BE6B /* FavouritesClubs */,
 				5E2FEE6527A43E0F008B0AE1 /* RetrievePassword */,
-				5EF360F527AA9B2B00105AB7 /* CellsView */,
 				5EEAFDBF27E5BC1700E37F58 /* QrDetail */,
+				5EF360F527AA9B2B00105AB7 /* CellsView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -721,9 +723,18 @@
 			path = QrDetail;
 			sourceTree = "<group>";
 		};
+		5EEAFDCE27E5E12500E37F58 /* UsersMatchsCell */ = {
+			isa = PBXGroup;
+			children = (
+				5EEAFDCF27E5E14000E37F58 /* UsersMatchCollectionViewCell.swift */,
+			);
+			path = UsersMatchsCell;
+			sourceTree = "<group>";
+		};
 		5EF360F527AA9B2B00105AB7 /* CellsView */ = {
 			isa = PBXGroup;
 			children = (
+				5EEAFDCE27E5E12500E37F58 /* UsersMatchsCell */,
 				5EE5F32F27E20B8D005B6A09 /* MatchesCell */,
 				5E703F9A27DFC26500E2FC84 /* EventsProfileCells */,
 				5E6DBA6D27DC976000447DBE /* ReservesCell */,
@@ -897,6 +908,7 @@
 				5ECF53F3278C3AB8005F6D01 /* AuthViewController.swift in Sources */,
 				5E6DBA7027DC988700447DBE /* ReservesTableViewCell.swift in Sources */,
 				5E8C23BD27C0DC9400763D49 /* ModifyPasswordViewController.swift in Sources */,
+				5EEAFDD027E5E14000E37F58 /* UsersMatchCollectionViewCell.swift in Sources */,
 				5E2FEE6927A442DA008B0AE1 /* RetrievePasswordViewController.swift in Sources */,
 				5ECB28AC279F0F5200583F67 /* UITextFieldExtension.swift in Sources */,
 				5E9661D427C78E2000EEFC14 /* Club.swift in Sources */,

@@ -60,7 +60,7 @@ extension ReservesDetailTableViewCell: UICollectionViewDelegate, UICollectionVie
 		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PriceCollectionViewCell", for: indexPath) as? PriceCollectionViewCell else {
 			return UICollectionViewCell()
 		}
-		let price = prices[indexPath.row]
+		let price = prices[indexPath.item]
 		cell.setItemWithValueOf(price)
 		return cell
 	}

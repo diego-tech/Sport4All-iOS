@@ -16,6 +16,7 @@ class MatchesMainTableViewCell: UITableViewCell {
 	@IBOutlet weak var uiView: UIView!
 	@IBOutlet weak var dayTimeLabel: UILabel!
 	@IBOutlet weak var arrowImageView: UIImageView!
+	@IBOutlet weak var bottomConstraint: NSLayoutConstraint!
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()

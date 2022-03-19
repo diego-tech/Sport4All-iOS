@@ -126,8 +126,10 @@ extension HomeMatchesViewController: UITableViewDelegate, UITableViewDataSource 
 			
 			if match.isOpened {
 				cell.arrowImageView.image = UIImage(systemName: "chevron.up")
+				cell.bottomConstraint.constant = 0
 			} else {
 				cell.arrowImageView.image = UIImage(systemName: "chevron.down")
+				cell.bottomConstraint.constant = 5
 			}
 			
 			cell.setCellWithValueOf(match)

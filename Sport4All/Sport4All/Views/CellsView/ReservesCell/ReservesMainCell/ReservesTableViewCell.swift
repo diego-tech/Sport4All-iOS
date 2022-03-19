@@ -13,6 +13,7 @@ class ReservesTableViewCell: UITableViewCell {
 	
 	// MARK: Outlets
 	@IBOutlet weak var courtNameLabel: UILabel!
+	@IBOutlet weak var courtSurfaceLabel: UILabel!
 	@IBOutlet weak var arrowDown: UIImageView!
 	
 	override func awakeFromNib() {
@@ -25,14 +26,17 @@ class ReservesTableViewCell: UITableViewCell {
 	
 	// MARK: Functions
 	func setCellWithValueOf(_ court: Court) {
-		updateUI(courtName: court.name, courtType: court.type)
+		updateUI(courtName: court.name, courtType: court.type, courtSurface: court.surfaces, courtSport: court.sport)
 	}
 	
-	private func updateUI(courtName: String?, courtType: String?) {
+	private func updateUI(courtName: String?, courtType: String?, courtSurface: String?, courtSport: String?) {
 		guard let courtName = courtName else { return }
 		guard let courtType = courtType else { return }
+		guard let courtSurface = courtSurface else { return }
+		guard let courtSport = courtSport else { return }
 		
 		self.courtNameLabel.text = courtName + " " + "(\(courtType))"
+		self.courtSurfaceLabel.text = courtSport + ": " + courtSurface
 	}
 	
 	

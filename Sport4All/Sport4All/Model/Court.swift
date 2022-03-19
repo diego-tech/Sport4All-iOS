@@ -14,6 +14,7 @@ struct Court: Codable {
 	let type: String?
 	let prices: [Price]?
 	let surfaces: String?
+	let sport: String?
 	let updatedAt: Date?
 	let createdAt: Date?
 	
@@ -27,6 +28,7 @@ struct Court: Codable {
 		case type
 		case prices
 		case surfaces
+		case sport
 		case updatedAt = "updated_at"
 		case createdAt = "created_at"
 	}

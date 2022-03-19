@@ -65,6 +65,7 @@
             <color key="backgroundColor" name="BackgroundColor"/>
             <connections>
                 <outlet property="arrowImageView" destination="OT7-So-3eO" id="iXQ-Wx-hX2"/>
+                <outlet property="bottomConstraint" destination="8jE-hP-hmQ" id="c8Z-Es-2tk"/>
                 <outlet property="dayTimeLabel" destination="EWb-cB-xe7" id="D0k-FN-Yu1"/>
                 <outlet property="uiView" destination="VcO-gq-zSD" id="oH3-15-4G3"/>
             </connections>
