@@ -7,10 +7,10 @@
 
 import UIKit
 
-enum PendingSections: Int {
-	case PendingEvent = 0
-	case PendingMatch = 1
-	case PendingReserve = 2
+enum ProfilesSections: Int {
+	case Event = 0
+	case Match = 1
+	case Reserve = 2
 }
 
 class ProfileViewController: UIViewController {
@@ -19,7 +19,8 @@ class ProfileViewController: UIViewController {
 	private var userImage: String?
 	private var userName: String?
 	
-	private var collectionViewModel = EventsListProfileViewModel()
+	private var pendingCollectionViewModel = PendingListProfileViewModel()
+	private var finishCollectionViewModel = FinishListProfileViewModel()
 	
 	// MARK: Outlets
 	@IBOutlet weak var headerUIView: UIView!
@@ -39,6 +40,7 @@ class ProfileViewController: UIViewController {
 			
 		// Inicialización Collection View
 		self.pendingList()
+		self.finishList()
 	}
 	
 	override func viewDidLoad() {
@@ -48,8 +50,9 @@ class ProfileViewController: UIViewController {
 		// Configure Navbar
 		configureNavbar()
 		
-		// Pending Collection View Initialization
+		// Collection View Initialization
 		initPendingCollectionView()
+		initFinishCollectionView()
 		
 		// Inicialización Estilos
 		headerUIView?.bottomShadow()
@@ -91,16 +94,33 @@ class ProfileViewController: UIViewController {
 		self.pendingEventsCollectionView.dataSource = self
 		self.pendingEventsCollectionView.delegate = self
 		
-		collectionViewModel.fetchPendingEvents { [weak self] status in
+		pendingCollectionViewModel.fetchPendingEvents { [weak self] status in
 			self?.pendingEventsCollectionView.reloadData()
 		}
 
-		collectionViewModel.fetchPendingMatches { [weak self] status in
+		pendingCollectionViewModel.fetchPendingMatches { [weak self] status in
 			self?.pendingEventsCollectionView.reloadData()
 		}
 
-		collectionViewModel.fetchPendingReserves { [weak self] status in
+		pendingCollectionViewModel.fetchPendingReserves { [weak self] status in
 			self?.pendingEventsCollectionView.reloadData()
+		}
+	}
+	
+	private func finishList() {
+		self.finalEventsCollectionView.dataSource = self
+		self.finalEventsCollectionView.delegate = self
+		
+		finishCollectionViewModel.fetchFinishEvents { [weak self] status in
+			self?.finalEventsCollectionView.reloadData()
+		}
+		
+		finishCollectionViewModel.fetchFinishMatchs { [weak self] status in
+			self?.finalEventsCollectionView.reloadData()
+		}
+		
+		finishCollectionViewModel.fetchFinishReserves { [weak self] status in
+			self?.finalEventsCollectionView.reloadData()
 		}
 	}
 	
@@ -115,14 +135,11 @@ class ProfileViewController: UIViewController {
 	
 	private func initFinishCollectionView() {
 		// Finish Events Collection View Cell
-		finalEventsCollectionView.dataSource = self
-		finalEventsCollectionView.delegate = self
 		finalEventsCollectionView.isScrollEnabled = true
 		finalEventsCollectionView.register(UINib.init(nibName: "EventProfileCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "EventProfileCollectionViewCell")
 		finalEventsCollectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
 		finalEventsCollectionView.showsVerticalScrollIndicator = false
 		finalEventsCollectionView.showsHorizontalScrollIndicator = false
-		finalEventsCollectionView.reloadData()
 	}
 	
 	// MARK: Styles
@@ -163,18 +180,18 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
 	
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
 		if collectionView == pendingEventsCollectionView {
-			return collectionViewModel.numberOfSections()
+			return pendingCollectionViewModel.numberOfSections()
+		} else {
+			return finishCollectionViewModel.numberOfSections()
 		}
-		
-		return 0
 	}
 
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		if collectionView == pendingEventsCollectionView {
-			return collectionViewModel.numberOfItemsInSection(section: section)
+			return pendingCollectionViewModel.numberOfItemsInSection(section: section)
+		} else {
+			return finishCollectionViewModel.numberOfItemsInSection(section: section)
 		}
-		
-		return 0
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -182,15 +199,29 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
 		
 		if collectionView == pendingEventsCollectionView {
 			switch indexPath.section {
-			case PendingSections.PendingEvent.rawValue:
-				let pendingEvent = collectionViewModel.cellForItemAtEvent(indexPath: indexPath)
+			case ProfilesSections.Event.rawValue:
+				let pendingEvent = pendingCollectionViewModel.cellForItemAtEvent(indexPath: indexPath)
 				cell.setItemWithValueOf(pendingEvent, pendingType: .event)
-			case PendingSections.PendingMatch.rawValue:
-				let pendingMatch = collectionViewModel.cellForItemAtMatch(indexPath: indexPath)
+			case ProfilesSections.Match.rawValue:
+				let pendingMatch = pendingCollectionViewModel.cellForItemAtMatch(indexPath: indexPath)
 				cell.setItemWithValueOf(pendingMatch, pendingType: .match)
-			case PendingSections.PendingReserve.rawValue:
-				let pendingReserve = collectionViewModel.cellForItemAtReserve(indexPath: indexPath)
+			case ProfilesSections.Reserve.rawValue:
+				let pendingReserve = pendingCollectionViewModel.cellForItemAtReserve(indexPath: indexPath)
 				cell.setItemWithValueOf(pendingReserve, pendingType: .reserve)
+			default:
+				break
+			}
+		} else {
+			switch indexPath.section {
+			case ProfilesSections.Event.rawValue:
+				let finishEvent = finishCollectionViewModel.cellForItemAtEvent(indexPath: indexPath)
+				cell.setItemWithValueOf(finishEvent, pendingType: .event)
+			case ProfilesSections.Match.rawValue:
+				let finishMatch = finishCollectionViewModel.cellForItemAtMatch(indexPath: indexPath)
+				cell.setItemWithValueOf(finishMatch, pendingType: .match)
+			case ProfilesSections.Reserve.rawValue:
+				let finishReserve = finishCollectionViewModel.cellForItemAtReserve(indexPath: indexPath)
+				cell.setItemWithValueOf(finishReserve, pendingType: .reserve)
 			default:
 				break
 			}
@@ -204,24 +235,22 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
 		collectionView.deselectItem(at: indexPath, animated: true)
 
 		if collectionView == pendingEventsCollectionView {
+			let vc = UIStoryboard(name: "PendingEventsDetail", bundle: nil).instantiateViewController(withIdentifier: "PendingEvents") as! PendingEventsViewController
 			switch indexPath.section {
-			case PendingSections.PendingEvent.rawValue:
-				let pendingEvent = collectionViewModel.cellForItemAtEvent(indexPath: indexPath)
-				let vc = UIStoryboard(name: "PendingEventsDetail", bundle: nil).instantiateViewController(withIdentifier: "PendingEvents") as! PendingEventsViewController
+			case ProfilesSections.Event.rawValue:
+				let pendingEvent = pendingCollectionViewModel.cellForItemAtEvent(indexPath: indexPath)
 				vc.pendingType = .event
 				vc.pendingEvent = pendingEvent
 				self.navigationController?.pushViewController(vc
 															  , animated: true)
-			case PendingSections.PendingMatch.rawValue:
-				let pendingMatch = collectionViewModel.cellForItemAtMatch(indexPath: indexPath)
-				let vc = UIStoryboard(name: "PendingEventsDetail", bundle: nil).instantiateViewController(withIdentifier: "PendingEvents") as! PendingEventsViewController
+			case ProfilesSections.Match.rawValue:
+				let pendingMatch = pendingCollectionViewModel.cellForItemAtMatch(indexPath: indexPath)
 				vc.pendingType = .match
 				vc.pendingEvent = pendingMatch
 				self.navigationController?.pushViewController(vc
 															  , animated: true)
-			case PendingSections.PendingReserve.rawValue:
-				let pendingReserve = collectionViewModel.cellForItemAtReserve(indexPath: indexPath)
-				let vc = UIStoryboard(name: "PendingEventsDetail", bundle: nil).instantiateViewController(withIdentifier: "PendingEvents") as! PendingEventsViewController
+			case ProfilesSections.Reserve.rawValue:
+				let pendingReserve = pendingCollectionViewModel.cellForItemAtReserve(indexPath: indexPath)
 				vc.pendingType = .reserve
 				vc.pendingEvent = pendingReserve
 				self.navigationController?.pushViewController(vc
@@ -229,12 +258,21 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
 			default:
 				break
 			}
+		} else {
+			let vc = UIStoryboard(name: "FinishEventDetail", bundle: nil).instantiateViewController(withIdentifier: "FinishEventDetail") as! FinishEventDetailViewController
+			switch indexPath.section {
+			case ProfilesSections.Event.rawValue:
+				let finishEvent = finishCollectionViewModel.cellForItemAtEvent(indexPath: indexPath)
+				self.navigationController?.pushViewController(vc, animated: true)
+			case ProfilesSections.Match.rawValue:
+				let finishMatch = finishCollectionViewModel.cellForItemAtMatch(indexPath: indexPath)
+				self.navigationController?.pushViewController(vc, animated: true)
+			case ProfilesSections.Reserve.rawValue:
+				let finisReserve = finishCollectionViewModel.cellForItemAtReserve(indexPath: indexPath)
+				self.navigationController?.pushViewController(vc, animated: true)
+			default:
+				break	
+			}
 		}
-	}
-	
-	/* Margenes entre las celdas */
-	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-		let inset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
-		return inset
 	}
 }

@@ -356,11 +356,11 @@ final class NetworkingProvider {
 	}
 	
 	// MARK: Pending Events List
-	func pendingEvents(serverResponse: @escaping (_ responseData: [PendingEvent]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+	func pendingEvents(serverResponse: @escaping (_ responseData: [PendingOrFinishEvent]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/pendingevents"
 		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
 		
-		AF.request(url, method: .get, headers: headers).responseDecodable(of: PendingMatchListResponse.self, decoder: DateDecoder()) {
+		AF.request(url, method: .get, headers: headers).responseDecodable(of: PendingOrFinishListResponse.self, decoder: DateDecoder()) {
 			response in
 			
 			// Handle Response Data && Status Code && Message
@@ -376,11 +376,11 @@ final class NetworkingProvider {
 	}
 	
 	// MARK: Pending Matches List
-	func pendingMatches(serverResponse: @escaping (_ responseData: [PendingEvent]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+	func pendingMatches(serverResponse: @escaping (_ responseData: [PendingOrFinishEvent]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/pendingmatches"
 		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
 		
-		AF.request(url, method: .get, headers: headers).responseDecodable(of: PendingMatchListResponse.self, decoder: DateDecoder()) {
+		AF.request(url, method: .get, headers: headers).responseDecodable(of: PendingOrFinishListResponse.self, decoder: DateDecoder()) {
 			response in
 			
 			// Handle Response Data && Status Code && Message
@@ -396,11 +396,11 @@ final class NetworkingProvider {
 	}
 	
 	// MARK: Pending Reserves
-	func pendingReserves(serverResponse: @escaping (_ responseData: [PendingEvent]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+	func pendingReserves(serverResponse: @escaping (_ responseData: [PendingOrFinishEvent]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/pendingreserves"
 		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
 		
-		AF.request(url, method: .get, headers: headers).responseDecodable(of: PendingMatchListResponse.self, decoder: DateDecoder()) {
+		AF.request(url, method: .get, headers: headers).responseDecodable(of: PendingOrFinishListResponse.self, decoder: DateDecoder()) {
 			response in
 			
 			// Handle Response Data && Status Code && Message
@@ -416,11 +416,51 @@ final class NetworkingProvider {
 	}
 	
 	// MARK: Finish Events List
-	func finishEvents(serverResponse: @escaping (_ responseData: [Event]?, _ status: Int?, _ msg: String?) ->(), failure: @escaping (_ error: Error?) ->()) {
+	func finishEvents(serverResponse: @escaping (_ responseData: [PendingOrFinishEvent]?, _ status: Int?, _ msg: String?) ->(), failure: @escaping (_ error: Error?) ->()) {
 		let url = "\(Constants.kBaseURL)/endedevents"
 		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
 		
-		AF.request(url, method: .get, headers: headers).responseDecodable(of: EventListResponse.self, decoder: DateDecoder()) {
+		AF.request(url, method: .get, headers: headers).responseDecodable(of: PendingOrFinishListResponse.self, decoder: DateDecoder()) {
+			response in
+			
+			// Handle Response Data && Status Code && Message
+			if let data = response.value?.data, let status = response.value?.status, let msg = response.value?.msg {
+				serverResponse(data, status, msg)
+			}
+			
+			// Handle Alamofire Error
+			if let error = response.error {
+				failure(error)
+			}
+		}
+	}
+	
+	// MARK: Finish Match List
+	func finishMatch(serverResponse: @escaping (_ responseData: [PendingOrFinishEvent]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+		let url = "\(Constants.kBaseURL)/endedmatches"
+		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
+		
+		AF.request(url, method: .get, headers: headers).responseDecodable(of: PendingOrFinishListResponse.self, decoder: DateDecoder()) {
+			response in
+			
+			// Handle Response Data && Status Code && Message
+			if let data = response.value?.data, let status = response.value?.status, let msg = response.value?.msg {
+				serverResponse(data, status, msg)
+			}
+			
+			// Handle Alamofire Error
+			if let error = response.error {
+				failure(error)
+			}
+		}
+	}
+	
+	// MARK: Finish Reserve List
+	func finishReserve(serverResponse: @escaping (_ responseData: [PendingOrFinishEvent]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+		let url = "\(Constants.kBaseURL)/endedreserves"
+		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
+		
+		AF.request(url, method: .get, headers: headers).responseDecodable(of: PendingOrFinishListResponse.self, decoder: DateDecoder()) {
 			response in
 			
 			// Handle Response Data && Status Code && Message

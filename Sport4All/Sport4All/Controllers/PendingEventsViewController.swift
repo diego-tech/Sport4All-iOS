@@ -10,7 +10,7 @@ import UIKit
 class PendingEventsViewController: UIViewController {
 	
 	// MARK: Variables
-	var pendingEvent: PendingEvent?
+	var pendingEvent: PendingOrFinishEvent?
 	var pendingType: PendingType?
 	
 	// MARK: Matches and Reserves Outlets

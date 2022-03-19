@@ -1,5 +1,5 @@
 //
-//  EventsListProfileViewModel.swift
+//  PendingListProfileViewModel.swift
 //  Sport4All
 //
 //  Created by Diego Muñoz Herranz on 16/3/22.
@@ -8,13 +8,13 @@
 import Foundation
 import Alamofire
 
-class EventsListProfileViewModel {
+class PendingListProfileViewModel {
 	
 	// MARK: Variables
-	private var pendingSection: [Int] = [0, 1, 2]
-	private var pendingEvent = [PendingEvent]()
-	private var pendingMatch = [PendingEvent]()
-	private var pendingReserve = [PendingEvent]()
+	private var pendingSections: [Int] = [0, 1, 2]
+	private var pendingEvent = [PendingOrFinishEvent]()
+	private var pendingMatch = [PendingOrFinishEvent]()
+	private var pendingReserve = [PendingOrFinishEvent]()
 	private var status = Int()
 	
 	// MARK: Fetch Pending Events
@@ -56,9 +56,9 @@ class EventsListProfileViewModel {
 		}
 	}
 	
-	// MARK: DataSource && Delegate Functions Pending Event List
+	// MARK: DataSource && Delegate Functions
 	func numberOfSections() -> Int {
-		return pendingSection.count
+		return pendingSections.count
 	}
 	
 	func numberOfItemsInSection(section: Int) -> Int {
@@ -71,15 +71,15 @@ class EventsListProfileViewModel {
 		}
 	}
 	
-	func cellForItemAtEvent(indexPath: IndexPath) -> PendingEvent {
+	func cellForItemAtEvent(indexPath: IndexPath) -> PendingOrFinishEvent {
 		return pendingEvent[indexPath.item]
 	}
 	
-	func cellForItemAtMatch(indexPath: IndexPath) -> PendingEvent {
+	func cellForItemAtMatch(indexPath: IndexPath) -> PendingOrFinishEvent {
 		return pendingMatch[indexPath.item]
 	}
 	
-	func cellForItemAtReserve(indexPath: IndexPath) -> PendingEvent {
+	func cellForItemAtReserve(indexPath: IndexPath) -> PendingOrFinishEvent {
 		return pendingReserve[indexPath.item]
 	}
 }

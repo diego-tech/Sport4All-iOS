@@ -27,15 +27,15 @@ class EventProfileCollectionViewCell: UICollectionViewCell {
 	}
 	
 	// MARK: Functions
-	func setItemWithValueOf(_ pendingMatch: PendingEvent, pendingType: PendingType) {
+	func setItemWithValueOf(_ pendingOrFinish: PendingOrFinishEvent, pendingType: PendingType) {
 		
 		switch pendingType {
 		case .match:
-			updateUI(eventImage: pendingMatch.clubImg, eventName: pendingMatch.clubName)
+			updateUI(eventImage: pendingOrFinish.clubImg, eventName: pendingOrFinish.clubName)
 		case .event:
-			updateUI(eventImage: pendingMatch.eventImg, eventName: pendingMatch.eventName)
+			updateUI(eventImage: pendingOrFinish.eventImg, eventName: pendingOrFinish.eventName)
 		case .reserve:
-			updateUI(eventImage: pendingMatch.clubImg, eventName: pendingMatch.clubName)
+			updateUI(eventImage: pendingOrFinish.clubImg, eventName: pendingOrFinish.clubName)
 		}
 	}
 	

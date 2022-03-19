@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PendingEvent: Codable {
+struct PendingOrFinishEvent: Codable {
 	let id: Int?
 	let qr: String?
 	let userId: Int?
@@ -33,7 +33,6 @@ struct PendingEvent: Codable {
 	// MARK: Event Values
 	let eventName: String?
 	let eventImg: String?
-	
 	
 	let pendingType: String?
 	
