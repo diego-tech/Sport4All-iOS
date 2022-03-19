@@ -14,6 +14,7 @@ class HomeMatchesViewController:  UIViewController {
 	// MARK: Variables
 	var formatter = DateFormatter()
 	var matchListViewModel = MatchlistViewModel()
+	var pickedDate: String?
 	
 	// MARK: Outlets
 	@IBOutlet weak var calendar: FSCalendar!
@@ -50,7 +51,17 @@ class HomeMatchesViewController:  UIViewController {
 	}
 	
 	private func matchList() {
-		matchListViewModel.fetchMatchList { [weak self] status in
+		var queryDay: String = ""
+		if let pickedDate = pickedDate {
+			queryDay = pickedDate
+		} else {
+			let today = Date()
+			formatter.dateFormat = "yyyy-MM-dd"
+			let todayFormat = formatter.string(from: today)
+			queryDay = todayFormat
+		}
+		
+		matchListViewModel.fetchMatchList(day: queryDay) { [weak self] status in
 			self?.initTableView()
 		}
 	}
@@ -93,13 +104,16 @@ extension HomeMatchesViewController: FSCalendarDelegate, FSCalendarDataSource {
 	
 	func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
 		calendar.today = nil
-		formatter.dateFormat = "yyyy/MM/dd"
+		formatter.dateFormat = "yyyy-MM-dd"
+		pickedDate = formatter.string(from: date)
+		matchList()
 		print("Date Selected == \(formatter.string(from: date))")
 	}
 	
 	func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
 		calendar.today = nil
-		formatter.dateFormat = "yyyy/MM/dd"
+		formatter.dateFormat = "yyyy-MM-dd"
+		pickedDate = formatter.string(from: date)
 		print("Date Selected == \(formatter.string(from: date))")
 	}
 	

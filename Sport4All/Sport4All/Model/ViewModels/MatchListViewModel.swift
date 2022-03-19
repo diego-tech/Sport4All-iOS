@@ -14,8 +14,8 @@ class MatchlistViewModel {
 	private var status = Int()
 	
 	// MARK: Match List
-	func fetchMatchList(completion: @escaping (_ status: Int) -> ()) {
-		NetworkingProvider.shared.matches { responseData, status, msg in
+	func fetchMatchList(day: String, completion: @escaping (_ status: Int) -> ()) {
+		NetworkingProvider.shared.matches(day: day) { responseData, status, msg in
 			guard let responseList = responseData else { return }
 			guard let status = status else { return }
 			self.status = status

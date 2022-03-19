@@ -476,12 +476,12 @@ final class NetworkingProvider {
 	}
 	
 	// MARK: See Matches
-	func matches(serverResponse: @escaping (_ responseData: [Match]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+	func matches(day: String, serverResponse: @escaping (_ responseData: [Match]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/seematches"
 		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
 		
 		let parameters = [
-			"day": "2022-03-17"
+			"day": day
 		] as [String : Any]
 		
 		AF.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseDecodable(of: MatchListResponse.self, decoder: DateDecoder()) {
