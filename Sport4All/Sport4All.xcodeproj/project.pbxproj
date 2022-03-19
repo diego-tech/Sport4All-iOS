@@ -21,9 +21,7 @@
 		5999B68027B2805B0008BE6B /* FavouritesClubs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5999B67F27B2805B0008BE6B /* FavouritesClubs.storyboard */; };
 		5999B68427B285640008BE6B /* ClubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999B68227B285640008BE6B /* ClubTableViewCell.swift */; };
 		5999B68527B285640008BE6B /* ClubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5999B68327B285640008BE6B /* ClubTableViewCell.xib */; };
-		59C5BAA327CE847700DF8796 /* FinishEventList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C5BAA227CE847700DF8796 /* FinishEventList.storyboard */; };
 		59DA0AD227DB4248007D18BC /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59DA0AD027DB4248007D18BC /* EventsTableViewCell.xib */; };
-		5E105D3727CFF2820037A071 /* FinishEventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E105D3627CFF2820037A071 /* FinishEventListViewController.swift */; };
 		5E123C3B27A2F1E400CF14EE /* FirstRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E123C3A27A2F1E400CF14EE /* FirstRegisterViewController.swift */; };
 		5E12C4B527B6583300F4E7EA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E12C4B427B6583300F4E7EA /* ProfileViewController.swift */; };
 		5E12F0F927C2894900316D69 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E12F0F827C2894900316D69 /* Onboarding.storyboard */; };
@@ -38,6 +36,9 @@
 		5E371D2927A925F900446D73 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E371D2827A925F900446D73 /* TabBar.storyboard */; };
 		5E371D2B27A92A5E00446D73 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E371D2A27A92A5E00446D73 /* TabBarController.swift */; };
 		5E45A2A427E60A4000DB5BF5 /* Reserve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E45A2A327E60A4000DB5BF5 /* Reserve.swift */; };
+		5E45A2A627E63B2300DB5BF5 /* Inscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E45A2A527E63B2300DB5BF5 /* Inscription.swift */; };
+		5E45A2A827E646C200DB5BF5 /* QrDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E45A2A727E646C200DB5BF5 /* QrDetail.storyboard */; };
+		5E45A2AA27E6588F00DB5BF5 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E45A2A927E6588F00DB5BF5 /* Annotation.swift */; };
 		5E45E90827E2379F004A859C /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E45E90727E2379F004A859C /* Match.swift */; };
 		5E45E90A27E26126004A859C /* PendingOrFinishEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E45E90927E26126004A859C /* PendingOrFinishEvent.swift */; };
 		5E4ED8C127C7F61300679524 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4ED8C027C7F61300679524 /* EditProfileViewController.swift */; };
@@ -134,9 +135,7 @@
 		5999B67F27B2805B0008BE6B /* FavouritesClubs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavouritesClubs.storyboard; sourceTree = "<group>"; };
 		5999B68227B285640008BE6B /* ClubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubTableViewCell.swift; sourceTree = "<group>"; };
 		5999B68327B285640008BE6B /* ClubTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClubTableViewCell.xib; sourceTree = "<group>"; };
-		59C5BAA227CE847700DF8796 /* FinishEventList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FinishEventList.storyboard; sourceTree = "<group>"; };
 		59DA0AD027DB4248007D18BC /* EventsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventsTableViewCell.xib; sourceTree = "<group>"; };
-		5E105D3627CFF2820037A071 /* FinishEventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishEventListViewController.swift; sourceTree = "<group>"; };
 		5E123C3A27A2F1E400CF14EE /* FirstRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterViewController.swift; sourceTree = "<group>"; };
 		5E12C4B427B6583300F4E7EA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5E12F0F827C2894900316D69 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
@@ -151,6 +150,9 @@
 		5E371D2827A925F900446D73 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		5E371D2A27A92A5E00446D73 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		5E45A2A327E60A4000DB5BF5 /* Reserve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reserve.swift; sourceTree = "<group>"; };
+		5E45A2A527E63B2300DB5BF5 /* Inscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inscription.swift; sourceTree = "<group>"; };
+		5E45A2A727E646C200DB5BF5 /* QrDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QrDetail.storyboard; sourceTree = "<group>"; };
+		5E45A2A927E6588F00DB5BF5 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		5E45E90727E2379F004A859C /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		5E45E90927E26126004A859C /* PendingOrFinishEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingOrFinishEvent.swift; sourceTree = "<group>"; };
 		5E4ED8C027C7F61300679524 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -319,14 +321,6 @@
 			path = ClubCell;
 			sourceTree = "<group>";
 		};
-		59C5BAA127CE845600DF8796 /* FinishEventList */ = {
-			isa = PBXGroup;
-			children = (
-				59C5BAA227CE847700DF8796 /* FinishEventList.storyboard */,
-			);
-			path = FinishEventList;
-			sourceTree = "<group>";
-		};
 		59DA0ACE27DB4207007D18BC /* EventCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,7 +468,6 @@
 			children = (
 				5EA12CA327D78D0400774428 /* Reserves */,
 				5EA12C9A27D7670100774428 /* Settings */,
-				59C5BAA127CE845600DF8796 /* FinishEventList */,
 				5E9661CE27C7848400EEFC14 /* FinishEventDetail */,
 				5965E8AD27C779C400862B62 /* EditProfile */,
 				5965E8B127C79CFE00862B62 /* RegisterInEvent */,
@@ -511,6 +504,7 @@
 				5E45E90727E2379F004A859C /* Match.swift */,
 				5E45E90927E26126004A859C /* PendingOrFinishEvent.swift */,
 				5E45A2A327E60A4000DB5BF5 /* Reserve.swift */,
+				5E45A2A527E63B2300DB5BF5 /* Inscription.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -536,7 +530,6 @@
 				5E4ED8C027C7F61300679524 /* EditProfileViewController.swift */,
 				5E4ED8C227C7FAE500679524 /* RegisterInEventViewController.swift */,
 				5E674C2827CE7AC100791D7D /* SocialViewController.swift */,
-				5E105D3627CFF2820037A071 /* FinishEventListViewController.swift */,
 				5EA12C9827D766F900774428 /* SettingsViewController.swift */,
 				5EA12CA427D78DC300774428 /* ReservesViewController.swift */,
 			);
@@ -577,6 +570,7 @@
 			children = (
 				5EF61CC727D25FBF00F4AB8F /* LazyImageView.swift */,
 				5EFA865027D9FD9D00FE220F /* CustomSegmentedControl.swift */,
+				5E45A2A927E6588F00DB5BF5 /* Annotation.swift */,
 			);
 			path = CustomClassView;
 			sourceTree = "<group>";
@@ -722,6 +716,7 @@
 			isa = PBXGroup;
 			children = (
 				5EF0690327E4DD6F00A6BA0A /* QRDetailViewController.swift */,
+				5E45A2A727E646C200DB5BF5 /* QrDetail.storyboard */,
 			);
 			path = QrDetail;
 			sourceTree = "<group>";
@@ -873,13 +868,13 @@
 				5EA12CA727D78E4B00774428 /* ReservesScreen.storyboard in Resources */,
 				5965E8AF27C779D700862B62 /* EditProfile.storyboard in Resources */,
 				598E071427C3BC0400D5C185 /* YourClubEventsTableViewCell.xib in Resources */,
-				59C5BAA327CE847700DF8796 /* FinishEventList.storyboard in Resources */,
 				5999B68027B2805B0008BE6B /* FavouritesClubs.storyboard in Resources */,
 				5EFC3CA9279DC0A100720905 /* Register.storyboard in Resources */,
 				5959268727BBABE100702369 /* ModifyPassword.storyboard in Resources */,
 				5E9C14C32790358F002D9AF1 /* SF-Pro-Display-Regular.otf in Resources */,
 				5E9C14C62790358F002D9AF1 /* SF-Pro-Display-Bold.otf in Resources */,
 				5E12F0F927C2894900316D69 /* Onboarding.storyboard in Resources */,
+				5E45A2A827E646C200DB5BF5 /* QrDetail.storyboard in Resources */,
 				5E51236227BBD8010047EE44 /* InfoClub.storyboard in Resources */,
 				5ECF53F6278C3AB8005F6D01 /* Main.storyboard in Resources */,
 				598E071827C3C58700D5C185 /* YourClub.storyboard in Resources */,
@@ -928,6 +923,7 @@
 				5ECF963827DB5B3C002AAD79 /* Court.swift in Sources */,
 				5ECB5E8527D3560F003498BF /* UIStackViewExtension.swift in Sources */,
 				5E8C23BF27C0EF0600763D49 /* DetailEventViewController.swift in Sources */,
+				5E45A2AA27E6588F00DB5BF5 /* Annotation.swift in Sources */,
 				5EFA865527D9FFAF00FE220F /* UIImageExtension.swift in Sources */,
 				5EB655A327E216C4005834F9 /* MatchesDetailTableViewCell.swift in Sources */,
 				5E77E9BF27B1368E004195AE /* HomeViewController.swift in Sources */,
@@ -959,6 +955,7 @@
 				5E45A2A427E60A4000DB5BF5 /* Reserve.swift in Sources */,
 				5E197F03278D80D4008BBABB /* ColorExtension.swift in Sources */,
 				5E51235E27BBD5D70047EE44 /* InfoClubViewController.swift in Sources */,
+				5E45A2A627E63B2300DB5BF5 /* Inscription.swift in Sources */,
 				598E071327C3BC0400D5C185 /* YourClubEventsTableViewCell.swift in Sources */,
 				5EA1A67527A7EDCF0096754C /* UserLogin.swift in Sources */,
 				07AB1FCA27AA9599007771E3 /* BestRatedCollectionViewCell.swift in Sources */,
@@ -968,7 +965,6 @@
 				5E12F10027C290BA00316D69 /* OnboardingCollectionViewCell.swift in Sources */,
 				5EE2A18427DCEE9C00575BAF /* EventsListViewModel.swift in Sources */,
 				5E9661D027C7849B00EEFC14 /* FinishEventDetailViewController.swift in Sources */,
-				5E105D3727CFF2820037A071 /* FinishEventListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -42,6 +42,13 @@ class DetailEventViewController: UIViewController {
 	}
 	
 	// MARK: Action Functions
+	@IBAction func inscribeButtonAction(_ sender: UIButton) {
+		let vc = UIStoryboard(name: "RegisterInEvent", bundle: nil).instantiateViewController(withIdentifier: "RegisterInEvent") as! RegisterInEventViewController
+		if let eventId = event?.id {
+			vc.eventId = eventId
+			self.present(vc, animated: true)
+		}
+	}
 	
 	// MARK: Functions
 	private func configure() {
