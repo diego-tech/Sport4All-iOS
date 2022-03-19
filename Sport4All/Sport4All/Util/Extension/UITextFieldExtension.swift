@@ -108,7 +108,7 @@ extension UITextField {
 		bottomLine.heightAnchor.constraint(equalToConstant: 1.5).isActive = true
 
 		self.placeholderRect(forBounds: CGRect(x: -5.0, y: 0, width: 0, height: 0))
-		self.placeholderStyles(placeHolderText: "Búsqueda")
+		self.placeholderStyles(placeHolderText: "Nombre del club, dirección, país ...")
 		self.textStyles(keyboardType: .default)
 		
 		let image = UIImageView()
