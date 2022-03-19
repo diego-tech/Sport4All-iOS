@@ -34,7 +34,7 @@
                                             <constraint firstAttribute="height" constant="150" id="K3W-Kn-jhE"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Torneo Navideño V Edición Vallecas" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9SZ-QV-e9D">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Torneo Navideño V Edición Vallecas" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9SZ-QV-e9D">
                                         <rect key="frame" x="20" y="186" width="324" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="GG3-ae-53u"/>
@@ -128,6 +128,9 @@
                                                 <color key="tintColor" red="0.20000000000000001" green="0.36862745099999999" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="INSCRÍBETE"/>
+                                                <connections>
+                                                    <action selector="inscribeButtonAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="adx-c7-QIm"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" name="BackgroundColor"/>
