@@ -350,6 +350,7 @@ extension ReservesViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 extension ReservesViewController: ReservesDetailTableViewCellDelegate {
 	func didSelectPrice(_ cell: ReservesDetailTableViewCell, didSelectPrice price: Price, court: Court) {
 		let vc = UIStoryboard(name: "PayResume", bundle: nil).instantiateViewController(withIdentifier: "PayResume") as! PayResumeViewController
+		vc.reserveType = .courtReserve
 		vc.court = court
 		vc.club = club
 		vc.price = price
