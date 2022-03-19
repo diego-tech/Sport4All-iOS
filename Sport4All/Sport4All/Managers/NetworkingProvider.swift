@@ -480,7 +480,7 @@ final class NetworkingProvider {
 	}
 	
 	// MARK: Court Reserve
-	func courtReserve(reserveQuery: ReserveQuery, serverResponse: @escaping (_ responseData: Reserve?, _ status: Int, _ msg: String?) ->(), failure: @escaping (_ error: Error?) -> ()) {
+	func courtReserve(reserveQuery: ReserveQuery, serverResponse: @escaping (_ responseData: Reserve?, _ status: Int?, _ msg: String?) ->(), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/courtreserve"
 		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
 		
@@ -493,6 +493,54 @@ final class NetworkingProvider {
 		] as [String : Any]
 		
 		AF.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseDecodable(of: ReserveResponse.self, decoder: DateDecoder()) {
+			response in
+			
+			// Handle Response Data && Status Code && Message
+			if let data = response.value?.data, let status = response.value?.status, let msg = response.value?.msg {
+				serverResponse(data, status, msg)
+			}
+			
+			// Handle Alamofire Error
+			if let error = response.error {
+				failure(error)
+			}
+		}
+	}
+	
+	// MARK: Match Inscription
+	func matchInscription(match_id: Int, serverResponse: @escaping (_ responseData: MatchInscription?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+		let url = "\(Constants.kBaseURL)/matchinscription"
+		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
+		
+		let parameters = [
+			"match_id": match_id
+		] as [String: Any]
+		
+		AF.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseDecodable(of: MatchInscriptionResponse.self, decoder: DateDecoder()) {
+			response in
+			
+			// Handle Response Data && Status Code && Message
+			if let data = response.value?.data, let status = response.value?.status, let msg = response.value?.msg {
+				serverResponse(data, status, msg)
+			}
+			
+			// Handle Alamofire Error
+			if let error = response.error {
+				failure(error)
+			}
+		}
+	}
+	
+	// MARK: Join Event
+	func joinEvent(event_id: Int, serverResponse: @escaping (_ responseData: Inscription?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+		let url = "\(Constants.kBaseURL)/joinevent"
+		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
+		
+		let parameters = [
+			"id": event_id
+		] as [String: Any]
+		
+		AF.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseDecodable(of: InscriptionEventResponse.self, decoder: DateDecoder()) {
 			response in
 			
 			// Handle Response Data && Status Code && Message
