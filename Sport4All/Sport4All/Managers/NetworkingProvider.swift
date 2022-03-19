@@ -335,26 +335,6 @@ final class NetworkingProvider {
 		}
 	}
 	
-	// MARK: Court Reserve
-	func courtReserve(serverResponse: @escaping (_ responseData: [Club]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
-		let url = "\(Constants.kBaseURL)/courtreserve"
-		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
-		
-		AF.request(url, method: .post, headers: headers).responseDecodable(of: ClubListResponse.self, decoder: DateDecoder()) {
-			response in
-			
-			// Handle Response Data && Status Code && Message
-			if let data = response.value?.data, let status = response.value?.status, let msg = response.value?.msg {
-				serverResponse(data, status, msg)
-			}
-			
-			// Handle Alamofire Error
-			if let error = response.error {
-				failure(error)
-			}
-		}
-	}
-	
 	// MARK: Pending Events List
 	func pendingEvents(serverResponse: @escaping (_ responseData: [PendingOrFinishEvent]?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/pendingevents"
@@ -498,14 +478,32 @@ final class NetworkingProvider {
 			}
 		}
 	}
+	
+	// MARK: Court Reserve
+	func courtReserve(reserveQuery: ReserveQuery, serverResponse: @escaping (_ responseData: Reserve?, _ status: Int, _ msg: String?) ->(), failure: @escaping (_ error: Error?) -> ()) {
+		let url = "\(Constants.kBaseURL)/courtreserve"
+		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
+		
+		let parameters = [
+			"court_id": reserveQuery.court_id,
+			"lights": reserveQuery.lights,
+			"day": reserveQuery.day,
+			"start_time": reserveQuery.start_time,
+			"time": reserveQuery.time
+		] as [String : Any]
+		
+		AF.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseDecodable(of: ReserveResponse.self, decoder: DateDecoder()) {
+			response in
+			
+			// Handle Response Data && Status Code && Message
+			if let data = response.value?.data, let status = response.value?.status, let msg = response.value?.msg {
+				serverResponse(data, status, msg)
+			}
+			
+			// Handle Alamofire Error
+			if let error = response.error {
+				failure(error)
+			}
+		}
+	}
 }
-
-/**
- ROUTES:
- - Join Event: /joinevent
- - Match Inscription: /matchinscription
- - Court Reserve: /courtreserve
- - Ended Matches: /endedmatches
- - Ended Events: /endedevents
- - Pending Events: /pendingevents
- */

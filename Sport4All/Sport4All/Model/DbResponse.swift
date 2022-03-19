@@ -78,3 +78,15 @@ struct PendingOrFinishListResponse: Codable {
 		case msg
 	}
 }
+
+struct ReserveResponse: Codable {
+	let status: Int?
+	let data: Reserve?
+	let msg: String?
+	
+	enum CodingKeys: String, CodingKey {
+		case status
+		case data
+		case msg
+	}
+}

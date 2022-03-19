@@ -259,8 +259,9 @@ extension ReservesViewController: UITableViewDelegate, UITableViewDataSource {
 		} else {
 			guard let detailCell = tableView.dequeueReusableCell(withIdentifier: "ReservesDetailTableViewCell") as? ReservesDetailTableViewCell else { return UITableViewCell() }
 			let prices = tableViewModel.cellForRowAt(indexPath: indexPath).prices
+			let court = tableViewModel.cellForRowAt(indexPath: indexPath)
 			if let prices = prices {
-				detailCell.configure(prices)
+				detailCell.configure(prices, court)
 				detailCell.reservesDetailCell = self
 			}
 			
@@ -347,11 +348,14 @@ extension ReservesViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
 // MARK: ReservesDetailTableViewCell Delegate
 extension ReservesViewController: ReservesDetailTableViewCellDelegate {
-	func didSelectPrice(_ cell: ReservesDetailTableViewCell, didSelectPrice price: Price) {
+	func didSelectPrice(_ cell: ReservesDetailTableViewCell, didSelectPrice price: Price, court: Court) {
 		let vc = UIStoryboard(name: "PayResume", bundle: nil).instantiateViewController(withIdentifier: "PayResume") as! PayResumeViewController
+		vc.court = court
+		vc.club = club
+		vc.price = price
+ 		vc.reserveDay = pickedDate
+		vc.reserveHour = pickedTime
 		modalPresentationStyle = .automatic
 		self.present(vc, animated: true, completion: nil)
-		
-		print(price)
 	}
 }

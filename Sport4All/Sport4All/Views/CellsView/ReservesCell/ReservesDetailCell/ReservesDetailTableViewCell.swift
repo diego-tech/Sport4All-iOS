@@ -8,13 +8,14 @@
 import UIKit
 
 protocol ReservesDetailTableViewCellDelegate {
-	func didSelectPrice(_ cell: ReservesDetailTableViewCell, didSelectPrice price: Price)
+	func didSelectPrice(_ cell: ReservesDetailTableViewCell, didSelectPrice price: Price, court: Court)
 }
 
 class ReservesDetailTableViewCell: UITableViewCell {
 	
 	// MARK: Variables
 	private var prices: [Price] = [Price]()
+	private var court: Court?
 	var reservesDetailCell: ReservesDetailTableViewCellDelegate?
 	
 	// MARK: Outlets
@@ -29,8 +30,9 @@ class ReservesDetailTableViewCell: UITableViewCell {
     }
 	
 	// MARK: Functions
-	public func configure(_ prices: [Price]) {
+	public func configure(_ prices: [Price], _ court: Court) {
 		self.prices = prices
+		self.court = court
 		DispatchQueue.main.async { [weak self] in
 			self?.pricesCollectionView.reloadData()
 		}
@@ -72,7 +74,8 @@ extension ReservesDetailTableViewCell: UICollectionViewDelegate, UICollectionVie
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		guard let court = court else { return }
 		let price = prices[indexPath.row]
-		reservesDetailCell?.didSelectPrice(self, didSelectPrice: price)
+		reservesDetailCell?.didSelectPrice(self, didSelectPrice: price, court: court)
 	}
 }

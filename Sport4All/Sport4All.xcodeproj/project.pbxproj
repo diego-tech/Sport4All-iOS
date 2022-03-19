@@ -37,6 +37,7 @@
 		5E2FEE6927A442DA008B0AE1 /* RetrievePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2FEE6827A442DA008B0AE1 /* RetrievePasswordViewController.swift */; };
 		5E371D2927A925F900446D73 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E371D2827A925F900446D73 /* TabBar.storyboard */; };
 		5E371D2B27A92A5E00446D73 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E371D2A27A92A5E00446D73 /* TabBarController.swift */; };
+		5E45A2A427E60A4000DB5BF5 /* Reserve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E45A2A327E60A4000DB5BF5 /* Reserve.swift */; };
 		5E45E90827E2379F004A859C /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E45E90727E2379F004A859C /* Match.swift */; };
 		5E45E90A27E26126004A859C /* PendingOrFinishEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E45E90927E26126004A859C /* PendingOrFinishEvent.swift */; };
 		5E4ED8C127C7F61300679524 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4ED8C027C7F61300679524 /* EditProfileViewController.swift */; };
@@ -149,6 +150,7 @@
 		5E2FEE6827A442DA008B0AE1 /* RetrievePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrievePasswordViewController.swift; sourceTree = "<group>"; };
 		5E371D2827A925F900446D73 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		5E371D2A27A92A5E00446D73 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		5E45A2A327E60A4000DB5BF5 /* Reserve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reserve.swift; sourceTree = "<group>"; };
 		5E45E90727E2379F004A859C /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		5E45E90927E26126004A859C /* PendingOrFinishEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingOrFinishEvent.swift; sourceTree = "<group>"; };
 		5E4ED8C027C7F61300679524 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -508,6 +510,7 @@
 				5EE2A18127DCEDCF00575BAF /* Event.swift */,
 				5E45E90727E2379F004A859C /* Match.swift */,
 				5E45E90927E26126004A859C /* PendingOrFinishEvent.swift */,
+				5E45A2A327E60A4000DB5BF5 /* Reserve.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -953,6 +956,7 @@
 				5EA12CA527D78DC300774428 /* ReservesViewController.swift in Sources */,
 				5EF497A627A55794008B0C37 /* UserDefaultsProvider.swift in Sources */,
 				5EDC2CE027C6A2E1007EE2C0 /* PayResumeViewController.swift in Sources */,
+				5E45A2A427E60A4000DB5BF5 /* Reserve.swift in Sources */,
 				5E197F03278D80D4008BBABB /* ColorExtension.swift in Sources */,
 				5E51235E27BBD5D70047EE44 /* InfoClubViewController.swift in Sources */,
 				598E071327C3BC0400D5C185 /* YourClubEventsTableViewCell.swift in Sources */,
