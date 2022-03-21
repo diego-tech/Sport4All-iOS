@@ -14,7 +14,6 @@
 		5959268727BBABE100702369 /* ModifyPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5959268627BBABE100702369 /* ModifyPassword.storyboard */; };
 		5959268A27BBB84A00702369 /* DetailEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5959268927BBB84A00702369 /* DetailEvent.storyboard */; };
 		5965E8AF27C779D700862B62 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5965E8AE27C779D700862B62 /* EditProfile.storyboard */; };
-		5965E8B327C79D1400862B62 /* RegisterInEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5965E8B227C79D1400862B62 /* RegisterInEvent.storyboard */; };
 		598E071327C3BC0400D5C185 /* YourClubEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598E071127C3BC0400D5C185 /* YourClubEventsTableViewCell.swift */; };
 		598E071427C3BC0400D5C185 /* YourClubEventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 598E071227C3BC0400D5C185 /* YourClubEventsTableViewCell.xib */; };
 		598E071827C3C58700D5C185 /* YourClub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 598E071727C3C58700D5C185 /* YourClub.storyboard */; };
@@ -42,7 +41,6 @@
 		5E45E90827E2379F004A859C /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E45E90727E2379F004A859C /* Match.swift */; };
 		5E45E90A27E26126004A859C /* PendingOrFinishEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E45E90927E26126004A859C /* PendingOrFinishEvent.swift */; };
 		5E4ED8C127C7F61300679524 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4ED8C027C7F61300679524 /* EditProfileViewController.swift */; };
-		5E4ED8C327C7FAE500679524 /* RegisterInEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4ED8C227C7FAE500679524 /* RegisterInEventViewController.swift */; };
 		5E51235327BBC7E60047EE44 /* FavouriteClubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E51235227BBC7E60047EE44 /* FavouriteClubsViewController.swift */; };
 		5E51235E27BBD5D70047EE44 /* InfoClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E51235D27BBD5D70047EE44 /* InfoClubViewController.swift */; };
 		5E51236227BBD8010047EE44 /* InfoClub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E51236127BBD8010047EE44 /* InfoClub.storyboard */; };
@@ -128,7 +126,6 @@
 		5959268627BBABE100702369 /* ModifyPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModifyPassword.storyboard; sourceTree = "<group>"; };
 		5959268927BBB84A00702369 /* DetailEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailEvent.storyboard; sourceTree = "<group>"; };
 		5965E8AE27C779D700862B62 /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
-		5965E8B227C79D1400862B62 /* RegisterInEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterInEvent.storyboard; sourceTree = "<group>"; };
 		598E071127C3BC0400D5C185 /* YourClubEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourClubEventsTableViewCell.swift; sourceTree = "<group>"; };
 		598E071227C3BC0400D5C185 /* YourClubEventsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YourClubEventsTableViewCell.xib; sourceTree = "<group>"; };
 		598E071727C3C58700D5C185 /* YourClub.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YourClub.storyboard; sourceTree = "<group>"; };
@@ -156,7 +153,6 @@
 		5E45E90727E2379F004A859C /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		5E45E90927E26126004A859C /* PendingOrFinishEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingOrFinishEvent.swift; sourceTree = "<group>"; };
 		5E4ED8C027C7F61300679524 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
-		5E4ED8C227C7FAE500679524 /* RegisterInEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInEventViewController.swift; sourceTree = "<group>"; };
 		5E51235227BBC7E60047EE44 /* FavouriteClubsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteClubsViewController.swift; sourceTree = "<group>"; };
 		5E51235D27BBD5D70047EE44 /* InfoClubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoClubViewController.swift; sourceTree = "<group>"; };
 		5E51236127BBD8010047EE44 /* InfoClub.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InfoClub.storyboard; sourceTree = "<group>"; };
@@ -277,14 +273,6 @@
 				5965E8AE27C779D700862B62 /* EditProfile.storyboard */,
 			);
 			path = EditProfile;
-			sourceTree = "<group>";
-		};
-		5965E8B127C79CFE00862B62 /* RegisterInEvent */ = {
-			isa = PBXGroup;
-			children = (
-				5965E8B227C79D1400862B62 /* RegisterInEvent.storyboard */,
-			);
-			path = RegisterInEvent;
 			sourceTree = "<group>";
 		};
 		598E071527C3C20C00D5C185 /* Your Club */ = {
@@ -470,7 +458,6 @@
 				5EA12C9A27D7670100774428 /* Settings */,
 				5E9661CE27C7848400EEFC14 /* FinishEventDetail */,
 				5965E8AD27C779C400862B62 /* EditProfile */,
-				5965E8B127C79CFE00862B62 /* RegisterInEvent */,
 				5EDC2CDE27C6A01C007EE2C0 /* PayResume */,
 				592748E627C4E3EB00C535F1 /* EventsPending */,
 				598E071627C3C57600D5C185 /* YourClub */,
@@ -528,7 +515,6 @@
 				5E96408027C69AE100387BFD /* PendingEventsViewController.swift */,
 				5E9661CF27C7849B00EEFC14 /* FinishEventDetailViewController.swift */,
 				5E4ED8C027C7F61300679524 /* EditProfileViewController.swift */,
-				5E4ED8C227C7FAE500679524 /* RegisterInEventViewController.swift */,
 				5E674C2827CE7AC100791D7D /* SocialViewController.swift */,
 				5EA12C9827D766F900774428 /* SettingsViewController.swift */,
 				5EA12CA427D78DC300774428 /* ReservesViewController.swift */,
@@ -878,7 +864,6 @@
 				5E51236227BBD8010047EE44 /* InfoClub.storyboard in Resources */,
 				5ECF53F6278C3AB8005F6D01 /* Main.storyboard in Resources */,
 				598E071827C3C58700D5C185 /* YourClub.storyboard in Resources */,
-				5965E8B327C79D1400862B62 /* RegisterInEvent.storyboard in Resources */,
 				5EA12C9C27D7670D00774428 /* Settings.storyboard in Resources */,
 				59DA0AD227DB4248007D18BC /* EventsTableViewCell.xib in Resources */,
 			);
@@ -900,7 +885,6 @@
 				5E12F0FB27C2896000316D69 /* OnboardingViewController.swift in Sources */,
 				5EA1A66F27A7E5D60096754C /* NewUser.swift in Sources */,
 				5ECB28AE279F157C00583F67 /* UIButtonExtension.swift in Sources */,
-				5E4ED8C327C7FAE500679524 /* RegisterInEventViewController.swift in Sources */,
 				5EF0690427E4DD6F00A6BA0A /* QRDetailViewController.swift in Sources */,
 				5E703F9E27DFC28600E2FC84 /* EventProfileCollectionViewCell.swift in Sources */,
 				5ECF53F3278C3AB8005F6D01 /* AuthViewController.swift in Sources */,

@@ -8,6 +8,7 @@
 import UIKit
 import MapKit
 import Contacts
+import SPIndicator
 
 class DetailEventViewController: UIViewController {
 	
@@ -43,10 +44,22 @@ class DetailEventViewController: UIViewController {
 	
 	// MARK: Action Functions
 	@IBAction func inscribeButtonAction(_ sender: UIButton) {
-		let vc = UIStoryboard(name: "RegisterInEvent", bundle: nil).instantiateViewController(withIdentifier: "RegisterInEvent") as! RegisterInEventViewController
-		if let eventId = event?.id {
-			vc.eventId = eventId
-			self.present(vc, animated: true)
+		guard let eventId = event?.id else { return }
+		NetworkingProvider.shared.joinEvent(event_id: eventId) { responseData, status, msg in
+			guard let status = status else { return }
+			guard let msg = msg else { return }
+			
+			if status == 1 {
+				let indicatorView = SPIndicatorView(title: "Registro Realizado Correctamente", message: msg, preset: .done)
+				indicatorView.present(duration: 3)
+				self.dismiss(animated: true, completion: nil)
+			} else {
+				self.dismiss(animated: true)
+				let indicatorView = SPIndicatorView(title: "Error", message: msg, preset: .error)
+				indicatorView.present(duration: 3)
+			}
+		} failure: { error in
+			print(error)
 		}
 	}
 	
