@@ -39,4 +39,7 @@ struct Strings {
 	// MARK: Favourite
 	static let favTitle = "CLUBES FAVORITOS"
 	static let titleForDeleteConfirmation = "Eliminar"
+	
+	// MARK: Info Club
+	static let infoClubTitle = "INFORMACION"
 }
