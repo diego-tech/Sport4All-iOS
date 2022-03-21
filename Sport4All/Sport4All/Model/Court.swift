@@ -37,7 +37,7 @@ struct Court: Codable {
 struct Price: Codable {
 	let id: Int
 	let price: Double
-	let time: Double
+	let time: Int
 	let updatedAt: Date?
 	let createdAt: Date?
 	

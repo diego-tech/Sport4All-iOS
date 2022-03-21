@@ -485,6 +485,7 @@ final class NetworkingProvider {
 		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
 		
 		let parameters = [
+			"club_id": reserveQuery.club_id,
 			"court_id": reserveQuery.court_id,
 			"lights": reserveQuery.lights,
 			"day": reserveQuery.day,

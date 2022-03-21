@@ -104,7 +104,7 @@ class PayResumeViewController: UIViewController {
 
 		let timeString = String(price.time)
 		let priceString = String(price.price)
-
+		
 		// Setting Values in UI
 		self.clubNameLabel.text = clubName
 		self.courtNameLabel.text = courtName
@@ -119,8 +119,8 @@ class PayResumeViewController: UIViewController {
 		self.day = reserveDay
 		self.start_time = reserveHour
 		
-		guard let priceInt = Int(priceString) else { return }
-		self.time = priceInt
+		guard let intTime = Int(timeString) else { return }
+		self.time = intTime
 	}
 	
 	private func configureMatchReserve() {
@@ -151,7 +151,9 @@ class PayResumeViewController: UIViewController {
 	}
 	
 	private func courtReservePay() {
-		let reserveQuery = ReserveQuery(court_id: court_id, day: day, start_time: start_time, time: time)
+		guard let clubId = club?.id else { return }
+		print("Tiempo Variable \(time)")
+		let reserveQuery = ReserveQuery(club_id: clubId, court_id: court_id, day: day, start_time: start_time, time: time)
 		
 		print("Reserva \(reserveQuery)")
 		

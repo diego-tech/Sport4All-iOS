@@ -38,6 +38,7 @@ struct Reserve: Codable {
 }
 
 struct ReserveQuery {
+	let club_id: Int
 	let court_id: Int
 	let lights: Bool = true
 	let day: String
