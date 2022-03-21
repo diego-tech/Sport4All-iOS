@@ -21,6 +21,8 @@ final class LocationProvider: NSObject {
 		
 		geoCoder.geocodeAddressString(locationName) { places, error in
 			guard let places = places, error == nil else {
+				let result = Location(title: "Calle del Carmen, 12 28013 Madrid", coordinates: CLLocationCoordinate2D(latitude: 40.416729, longitude: -3.703339))
+				completion(result)
 				return
 			}
 			

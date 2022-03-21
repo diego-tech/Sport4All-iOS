@@ -29,12 +29,15 @@ struct PendingOrFinishEvent: Codable {
 	let surfaces: String?
 	let createdAt: String?
 	let updatedAt: String?
-	
+		
 	// MARK: Event Values
 	let eventName: String?
 	let eventImg: String?
 	
 	let pendingType: String?
+	
+	// MARK: Finish Events Clubs
+	let clubs: Club?
 	
 	enum CodingKeys: String, CodingKey {
 		case id
@@ -59,6 +62,7 @@ struct PendingOrFinishEvent: Codable {
 		case sportType = "sport"
 		case surfaces
 		case pendingType = "pending_type"
+		case clubs
 		case createdAt = "created_at"
 		case updatedAt = "updated_at"
 	}

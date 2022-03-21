@@ -34,13 +34,13 @@ class InfoClubViewController: UIViewController {
 		
 		// Map View Delegate
 		locationMapView.delegate = self
-	
+		
 		// Configure Models
 		configure()
 		
 		// Configure Favourite
 		setFavouriteButton()
-
+		
 		// Configure NavBar
 		configureNavbar()
 		
@@ -56,7 +56,7 @@ class InfoClubViewController: UIViewController {
 		} else {
 			isFavourite = true
 		}
-
+		
 		callAddFavorRemove()
 		setFavouriteButton()
 	}
@@ -94,9 +94,10 @@ class InfoClubViewController: UIViewController {
 		self.clubTitleLabel.text = club.name
 		
 		self.clubBannerImageView.loadImage(fromURL: bannerUrl)
-
+		
 		self.clubInfoTextView.text = description
 		self.clubServicesStackView.setServicesInStackView(services: services, imageSize: CGRect(x: 0, y: 0, width: 50, height: 50))
+		print("Location \(location)")
 		self.callFindLocation(locationName: location)
 		
 		if fav {

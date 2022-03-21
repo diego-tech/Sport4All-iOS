@@ -85,15 +85,21 @@ class ProfileViewController: UIViewController {
 	// MARK: Functions
 	private func fetchUserInfo() {
 		NetworkingProvider.shared.userInfo { responseData, status, msg in
-			guard let userName = responseData?.name else { return }
-			guard let userImage = responseData?.image else { return }
+			guard let userEmail = responseData?.email else { return }
+			guard let userName = responseData?.name else {
+				self.userNameLabel.text = userEmail
+				return
+			}
+			
+			if let userImage = responseData?.image  {
+				guard let url = URL(string: Constants.kStorageURL + userImage) else { return }
+				self.userImageView.loadImage(fromURL: url)
+			}
+			
 			guard let userSurname = responseData?.surname else { return }
-			guard let url = URL(string: Constants.kStorageURL + userImage) else { return }
 			
 			let allUserName = userName + " " + userSurname
 			self.userNameLabel.text = allUserName
-			
-			self.userImageView.loadImage(fromURL: url)
 		} failure: { error in
 			print(error)
 		}
@@ -241,7 +247,6 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
 		return cell
 	}
 	
-	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		collectionView.deselectItem(at: indexPath, animated: true)
 
@@ -274,12 +279,15 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
 			switch indexPath.section {
 			case ProfilesSections.Event.rawValue:
 				let finishEvent = finishCollectionViewModel.cellForItemAtEvent(indexPath: indexPath)
+				vc.pendingEvent = finishEvent
 				self.navigationController?.pushViewController(vc, animated: true)
 			case ProfilesSections.Match.rawValue:
 				let finishMatch = finishCollectionViewModel.cellForItemAtMatch(indexPath: indexPath)
+				vc.pendingEvent = finishMatch
 				self.navigationController?.pushViewController(vc, animated: true)
 			case ProfilesSections.Reserve.rawValue:
 				let finisReserve = finishCollectionViewModel.cellForItemAtReserve(indexPath: indexPath)
+				vc.pendingEvent = finisReserve
 				self.navigationController?.pushViewController(vc, animated: true)
 			default:
 				break	
