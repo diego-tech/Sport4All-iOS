@@ -20,35 +20,34 @@ class PendingEventsViewController: UIViewController {
 	// MARK: Outlets
 	@IBOutlet weak var headerUIView: UIView!
 	@IBOutlet weak var barcodeImageView: UIImageView!
-	@IBOutlet weak var mapView: MKMapView!
-	@IBOutlet weak var eventHeaderUIView: UIView!
+	@IBOutlet weak var locationMapView: MKMapView!
 	@IBOutlet weak var eventImageView: LazyImageView!
 	@IBOutlet weak var headerTitleLabel: UILabel!
 	@IBOutlet weak var courtInfoLabel: UILabel!
-	@IBOutlet weak var courtLabel: UILabel!
+	@IBOutlet weak var dayLabel: UILabel!
+	@IBOutlet weak var timeLabel: UILabel!
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 		
 		// Map View Delegate
-		mapView.delegate = self
+		locationMapView.delegate = self
+		
+		// Configure
+		configure()
 		
 		// Configure Navbar
 		configureNavbar()
 		
 		// Inicialización de Estilos
 		headerUIView.bottomShadow()
-		eventHeaderUIView.bottomShadow()
 		barcodeIVStyle()
 		
 		// Barcode Image View Action
 		let gesture = UITapGestureRecognizer(target: self, action: #selector(barcodeTapped))
 		barcodeImageView.isUserInteractionEnabled = true
 		barcodeImageView.addGestureRecognizer(gesture)
-		
-		// Configure
-		configure()
     }
 	
 	// MARK: Action Functions
@@ -77,22 +76,22 @@ class PendingEventsViewController: UIViewController {
 	}
 	
 	private func configurePendingEvent() {
-		self.headerUIView.isHidden = true
+		self.barcodeImageView.isHidden = true
 		
 		guard let pendingEvent = pendingEvent else { return debugPrint("Error Evento") }
 		guard let eventImage = pendingEvent.eventImg else { return debugPrint("Error Event Image") }
 		guard let imgUrl = URL(string: Constants.kStorageURL + eventImage) else { return debugPrint("Error Event URL Image") }
 		guard let eventName = pendingEvent.eventName else { return debugPrint("Error Nombre de Evento") }
-		guard let pedingLocation = pendingEvent.clubLocation else { return debugPrint("Error Location") }
+		guard let location = pendingEvent.clubLocation else { return debugPrint("Error Location") }
 		
-		print("Location \(pedingLocation)")
+		print("Location \(location)")
 		self.eventImageView.loadImage(fromURL: imgUrl)
 		self.headerTitleLabel.text = eventName
-		self.callFindLocation(locationName: pedingLocation)
+		self.callFindLocation(locationName: location)
 	}
 	
 	private func configurePendingMatchOrReserve() {
-		self.eventHeaderUIView.isHidden = true
+		self.eventImageView.isHidden = true
 		
 		guard let pendingEvent = pendingEvent else { return debugPrint("Error Evento") }
 		guard let pendingBarcode = pendingEvent.qr else { return debugPrint("Error Qr") }
@@ -100,13 +99,18 @@ class PendingEventsViewController: UIViewController {
 		guard let pendingCourt = pendingEvent.courtName else { return }
 		guard let pendingTypeCourt = pendingEvent.courtType else { return }
 		guard let location = pendingEvent.clubLocation else { return }
+		guard let pendingDay = pendingEvent.day else { return }
+		guard let pendingStartTime = pendingEvent.startTime else { return }
+		guard let pendingEndTime = pendingEvent.endTime else { return }
+		
 		print("Location \(location)")
 
 		self.barcode = pendingBarcode
-		
 		self.barcodeImageView.image = AuxFunctions.generateQRCodeImage(reservationCode: pendingBarcode)
 		self.headerTitleLabel.text = pendingTitle
-		self.courtLabel.text = "- \(pendingCourt) (\(pendingTypeCourt))"
+		self.courtInfoLabel.text = "\(pendingCourt) (\(pendingTypeCourt))"
+		self.dayLabel.text = pendingDay
+		self.timeLabel.text = "\(pendingStartTime) - \(pendingEndTime)"
 		self.callFindLocation(locationName: location)
 	}
 	
@@ -120,20 +124,21 @@ class PendingEventsViewController: UIViewController {
 	}
 	
 	private func configureMapView() {
-		mapView.removeAnnotations(mapView.annotations)
+		locationMapView.removeAnnotations(locationMapView.annotations)
 		guard let coordinates = location?.coordinates else { return }
 		guard let locationName = location?.title else { return }
 		guard let pendingEvent = pendingEvent else { return debugPrint("Error Evento") }
 		
-		guard let placeName = pendingEvent.clubName else { return }
+		guard let placeName = pendingEvent.clubName else { return debugPrint("Error Club Name") }
 		
 		let annotation = Annotation(coordinate: coordinates, title: placeName, subtitle: locationName)
-		mapView.isZoomEnabled = false
-		mapView.isScrollEnabled = false
-		mapView.isPitchEnabled = false
-		mapView.isRotateEnabled = false
-		mapView.addAnnotation(annotation)
-		mapView.setRegion(MKCoordinateRegion(
+		locationMapView.isZoomEnabled = false
+		locationMapView.isScrollEnabled = false
+		locationMapView.isPitchEnabled = false
+		locationMapView.isRotateEnabled = false
+		locationMapView.addAnnotation(annotation)
+		
+		locationMapView.setRegion(MKCoordinateRegion(
 			center: coordinates,
 			span: MKCoordinateSpan(
 				latitudeDelta: 0.01,
