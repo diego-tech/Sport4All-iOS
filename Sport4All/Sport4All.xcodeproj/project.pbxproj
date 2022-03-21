@@ -116,6 +116,7 @@
 		5EFA865127D9FD9D00FE220F /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFA865027D9FD9D00FE220F /* CustomSegmentedControl.swift */; };
 		5EFA865527D9FFAF00FE220F /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFA865427D9FFAF00FE220F /* UIImageExtension.swift */; };
 		5EFC3CA9279DC0A100720905 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EFC3CA8279DC0A100720905 /* Register.storyboard */; };
+		5EFE08B527E8FFF600B02998 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFE08B427E8FFF600B02998 /* Strings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -226,6 +227,7 @@
 		5EFA865027D9FD9D00FE220F /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		5EFA865427D9FFAF00FE220F /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		5EFC3CA8279DC0A100720905 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		5EFE08B427E8FFF600B02998 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -342,6 +344,7 @@
 				5E197EFD278D7E36008BBABB /* Extension */,
 				5E197F00278D7E6F008BBABB /* Constants.swift */,
 				5E9C14C9279038D0002D9AF1 /* TextStyles.swift */,
+				5EFE08B427E8FFF600B02998 /* Strings.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -876,6 +879,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EFE08B527E8FFF600B02998 /* Strings.swift in Sources */,
 				5E12F0FE27C28FEF00316D69 /* OnboardingSlide.swift in Sources */,
 				5EA50EDD27AD2B7900641F2D /* AuxFunctions.swift in Sources */,
 				5EE5F33427E20D54005B6A09 /* MatchesMainTableViewCell.swift in Sources */,
