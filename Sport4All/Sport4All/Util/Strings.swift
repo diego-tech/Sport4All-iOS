@@ -22,4 +22,10 @@ struct Strings {
 	static let slide5Description = "Controle los eventos personalizados que su club le proporcione."
 	static let slide6Title = "Screen 6"
 	static let slide6Description = "Registresé en nuesta aplicación y disfrute de la diversión de hacer deporte."
+	
+	// MARK: Auth
+	static let emailPlaceholder = "Correo Electrónico"
+	static let passwordPlaceholder = "Contraseña"
+	static let emailErrorPlaceholder = "Introduzca el Correo Electrónico"
+	static let passwordErrorPlaceholder = "Introduzca la Contraseña"
 }

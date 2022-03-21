@@ -32,16 +32,6 @@ class AuthViewController: UIViewController {
 		// Login Test Diego
 		emailTextField.text = "diego171200@gmail.com"
 		passwordTextField.text = "Prueba12345."
-		
-		// Testeo Funciones API
-//		register()
-//		login()
-//		userInfo()
-//		retrievePassword()
-//		modifyData()
-//		modifyPassword()
-//		registerFavClub()
-//		clubList()
 	}
 	
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -107,7 +97,7 @@ class AuthViewController: UIViewController {
 	
 	private func emailTFisEmpty() -> Bool {
 		if emailTextField.text == "" {
-			emailTextField.placeholderStyles(placeHolderText: "Introduzca el Correo Electrónico")
+			emailTextField.placeholderStyles(placeHolderText: Strings.emailErrorPlaceholder)
 			emailTextField.bottomBorder(color: .red)
 			return false
 		} else {
@@ -118,7 +108,7 @@ class AuthViewController: UIViewController {
 	
 	private func passwordTFisEmpty() -> Bool {
 		if passwordTextField.text == ""{
-			passwordTextField.placeholderStyles(placeHolderText: "Introduzca la Contraseña")
+			passwordTextField.placeholderStyles(placeHolderText: Strings.passwordErrorPlaceholder)
 			passwordTextField.bottomBorder(color: .red)
 			return false
 		} else {
@@ -131,12 +121,12 @@ class AuthViewController: UIViewController {
 	private func setTextFieldStyles() {
 		// Estilos Email Text Field
 		emailTextField.bottomBorder(color: .hardColor ?? .black)
-		emailTextField.placeholderStyles(placeHolderText: "Correo Electrónico")
+		emailTextField.placeholderStyles(placeHolderText: Strings.emailPlaceholder)
 		emailTextField.textStyles(keyboardType: .emailAddress)
 		
 		// Estilos Password Text Field
 		passwordTextField.bottomBorder(color: .hardColor ?? .black)
-		passwordTextField.placeholderStyles(placeHolderText: "Contraseña")
+		passwordTextField.placeholderStyles(placeHolderText: Strings.passwordPlaceholder)
 		passwordTextField.textStyles(keyboardType: .default)
 		passwordTextField.isSecureTextEntry = true
 		passwordTextField.showAndHidePassword()
