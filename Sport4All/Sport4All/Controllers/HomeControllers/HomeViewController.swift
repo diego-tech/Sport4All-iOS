@@ -62,13 +62,11 @@ class HomeViewController: UIViewController {
 	// MARK: Styles
 	private func configureNavbar() {
 		// Images and Title Label
-		let locationImage = UIImage(systemName: "location.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 18))
-
 		let starImage = UIImage(systemName: "star.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 18))
 		let titleLabel = UILabel()
 		titleLabel.textColor = .corporativeColor
 		titleLabel.font = UIFont(name: FontType.SFProDisplayBold.rawValue, size: 22) ?? .systemFont(ofSize: 22, weight: .bold)
-		titleLabel.text = "Inicio"
+		titleLabel.text = Strings.homeTitle
 
 		// UIBarButtonItem
 		let starButtonItem = UIBarButtonItem(image: starImage, style: .plain, target: self, action: #selector(startButtonTapped(tapGestureRecognizer:)))

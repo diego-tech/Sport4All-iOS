@@ -32,4 +32,11 @@ struct Strings {
 	static let notSamePasswordError = "Las Contraseñas No Coinciden"
 	static let confirmEmailPlaceholder = "Confirmar Correo Electróncio"
 	static let confirmPasswordPlaceholder = "Confirmar Contraseña"
+	
+	// MARK: Home
+	static let homeTitle = "Inicio"
+	
+	// MARK: Favourite
+	static let favTitle = "CLUBES FAVORITOS"
+	static let titleForDeleteConfirmation = "Eliminar"
 }

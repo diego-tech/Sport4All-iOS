@@ -56,7 +56,7 @@ class FavouriteClubsViewController: UIViewController {
 			.font: UIFont(name: FontType.SFProDisplayBold.rawValue, size: 22) ?? .systemFont(ofSize: 22, weight: .bold)
 		]
 		
-		title = "CLUBES FAVORITOS"
+		title = Strings.favTitle
 		
 		let yourBackImage = UIImage(systemName: "arrowshape.turn.up.backward.fill", withConfiguration:  UIImage.SymbolConfiguration(pointSize: 18))
 		let backButtonItem = UIBarButtonItem(image: yourBackImage, style: .plain, target: self, action: #selector(popView(tapGestureRecognizer:)))
@@ -115,6 +115,6 @@ extension FavouriteClubsViewController: UITableViewDataSource, UITableViewDelega
 	}
 	
 	func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
-		return "Eliminar"
+		return Strings.titleForDeleteConfirmation
 	}
 }

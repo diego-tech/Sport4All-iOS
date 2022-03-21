@@ -385,14 +385,6 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		5E1D04A127C7996300FE6E80 /* HomeClubs */ = {
-			isa = PBXGroup;
-			children = (
-				5E9E820F27B283D700A450E8 /* HomeClubsViewController.swift */,
-			);
-			path = HomeClubs;
-			sourceTree = "<group>";
-		};
 		5E2FEE6527A43E0F008B0AE1 /* RetrievePassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -583,7 +575,7 @@
 		5E9E820E27B283C700A450E8 /* HomeControllers */ = {
 			isa = PBXGroup;
 			children = (
-				5E1D04A127C7996300FE6E80 /* HomeClubs */,
+				5E9E820F27B283D700A450E8 /* HomeClubsViewController.swift */,
 				5E77E9BE27B1368E004195AE /* HomeViewController.swift */,
 				5E9E821127B283E200A450E8 /* HomeMatchesViewController.swift */,
 			);
