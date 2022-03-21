@@ -36,7 +36,7 @@ class RetrievePasswordViewController: UIViewController {
 	// MARK: Functions
 	private func checkTextField() {
 		if emailTF.text == "" {
-			emailTF.placeholderStyles(placeHolderText: "Introduzca el Correo Electrónico")
+			emailTF.placeholderStyles(placeHolderText: Strings.emailErrorPlaceholder)
 			emailTF.bottomBorder(color: .red)
 		} else {
 			debugPrint("Continua!!")
@@ -47,7 +47,7 @@ class RetrievePasswordViewController: UIViewController {
 	private func setTextFieldStyles() {
 		// Estilos Email Text Field
 		emailTF.bottomBorder(color: .hardColor ?? .black)
-		emailTF.placeholderStyles(placeHolderText: "Correo Electrónico")
+		emailTF.placeholderStyles(placeHolderText: Strings.emailPlaceholder)
 		emailTF.textStyles(keyboardType: .emailAddress)
 	}
 	
