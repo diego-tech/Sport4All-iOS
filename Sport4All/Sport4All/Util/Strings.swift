@@ -28,4 +28,8 @@ struct Strings {
 	static let passwordPlaceholder = "Contraseña"
 	static let emailErrorPlaceholder = "Introduzca el Correo Electrónico"
 	static let passwordErrorPlaceholder = "Introduzca la Contraseña"
+	static let notSameEmailError = "El Correo Electrónico No Coincide"
+	static let notSamePasswordError = "Las Contraseñas No Coinciden"
+	static let confirmEmailPlaceholder = "Confirmar Correo Electróncio"
+	static let confirmPasswordPlaceholder = "Confirmar Contraseña"
 }

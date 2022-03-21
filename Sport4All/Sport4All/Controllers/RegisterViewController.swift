@@ -1,5 +1,5 @@
 //
-//  FirstRegisterViewController.swift
+//  RegisterViewController.swift
 //  Sport4All
 //
 //  Created by Diego Muñoz Herranz on 27/1/22.
@@ -7,12 +7,7 @@
 
 import UIKit
 
-struct FirstRegisterDataModel: Encodable {
-	let email: String?
-	let password: String?
-}
-
-class FirstRegisterViewController: UIViewController {
+class RegisterViewController: UIViewController {
 	
 	// MARK: Variables
 	var registerUserEmail: String?
@@ -47,7 +42,7 @@ class FirstRegisterViewController: UIViewController {
 	
 	// MARK: Action Functions
 	@IBAction func nextButtonAction(_ sender: UIButton) {
-		if !firstEmailTF.checkIfIsEmpty(placeHolderText: "Introduzca el Correo Electrónico") && !secondEmailTF.checkIfIsEmpty(placeHolderText: "Introduzca el Correo Electrónico") && !firstPasswordTF.checkIfIsEmpty(placeHolderText: "Introduzca la Contraseña") && !secondPasswordTF.checkIfIsEmpty(placeHolderText: "Introduzca la Contraseña") {
+		if !firstEmailTF.checkIfIsEmpty(placeHolderText: Strings.emailErrorPlaceholder) && !secondEmailTF.checkIfIsEmpty(placeHolderText: Strings.emailErrorPlaceholder) && !firstPasswordTF.checkIfIsEmpty(placeHolderText: Strings.passwordErrorPlaceholder) && !secondPasswordTF.checkIfIsEmpty(placeHolderText: Strings.emailErrorPlaceholder) {
 			if (checkIfEmailIsSame() && checkIfPassIsSame()) {
 				registerApi()
 			}
@@ -96,7 +91,7 @@ class FirstRegisterViewController: UIViewController {
 			return true
 		} else {
 			secondEmailTF.text = ""
-			secondEmailTF.placeholderStyles(placeHolderText: "El Correo Electrónico No Coincide")
+			secondEmailTF.placeholderStyles(placeHolderText: Strings.notSameEmailError)
 			secondEmailTF.bottomBorder(color: .red)
 			return false
 		}
@@ -107,7 +102,7 @@ class FirstRegisterViewController: UIViewController {
 			return true
 		} else {
 			secondPasswordTF.text = ""
-			secondPasswordTF.placeholderStyles(placeHolderText: "Las Contraseñas No Coinciden")
+			secondPasswordTF.placeholderStyles(placeHolderText: Strings.notSamePasswordError)
 			secondPasswordTF.bottomBorder(color: .red)
 			return false
 		}
@@ -126,22 +121,22 @@ class FirstRegisterViewController: UIViewController {
 	private func setTextFieldStyles() {
 		// Estilos Email Text Field
 		firstEmailTF.bottomBorder(color: .hardColor ?? .black)
-		firstEmailTF.placeholderStyles(placeHolderText: "Correo Electrónico")
+		firstEmailTF.placeholderStyles(placeHolderText: Strings.emailPlaceholder)
 		firstEmailTF.textStyles(keyboardType: .emailAddress)
 		
 		secondEmailTF.bottomBorder(color: .hardColor ?? .black)
-		secondEmailTF.placeholderStyles(placeHolderText: "Confirmar Correo Electróncio")
+		secondEmailTF.placeholderStyles(placeHolderText: Strings.confirmEmailPlaceholder)
 		secondEmailTF.textStyles(keyboardType: .emailAddress)
 		
 		// Estilos Password Text Field
 		firstPasswordTF.bottomBorder(color: .hardColor ?? .black)
-		firstPasswordTF.placeholderStyles(placeHolderText: "Contraseña")
+		firstPasswordTF.placeholderStyles(placeHolderText: Strings.passwordPlaceholder)
 		firstPasswordTF.textStyles(keyboardType: .default)
 		firstPasswordTF.isSecureTextEntry = true
 		firstPasswordTF.showAndHidePassword()
 		
 		secondPasswordTF.bottomBorder(color: .hardColor ?? .black)
-		secondPasswordTF.placeholderStyles(placeHolderText: "Confirmar Contraseña")
+		secondPasswordTF.placeholderStyles(placeHolderText: Strings.confirmPasswordPlaceholder)
 		secondPasswordTF.textStyles(keyboardType: .default)
 		secondPasswordTF.isSecureTextEntry = true
 		secondPasswordTF.showAndHidePassword()
