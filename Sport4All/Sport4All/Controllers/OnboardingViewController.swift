@@ -34,31 +34,30 @@ class OnboardingViewController: UIViewController {
 		
 		slides = [
 			OnboardingSlide(
-				title: "Screen 1",
-				description: "En el apartado clubes, podrás encontrar información sobre los clubes en los que podrás reservar espacios deportivos.",
+				title: Strings.slide1Title,
+				description: Strings.slide1Description,
 				image: UIImage(named: "LaunchLogo")!),
 			OnboardingSlide(
-				title: "Screen 2",
-				description: "En el apartado partidos podrás jugar con otros usuarios que necesiten compañeros en sus partidos.",
+				title: Strings.slide2Title,
+				description: Strings.slide2Description,
 				image: UIImage(named: "LaunchLogo")!),
 			OnboardingSlide(
-				title: "Screen 3",
-				description: "Acceda fácilmente a los establecimientos identificándose con el código Qr que se le facilitará al realizar la reserva.",
+				title: Strings.slide3Title,
+				description: Strings.slide3Description,
 				image: UIImage(named: "LaunchLogo")!),
 			OnboardingSlide(
-				title: "Screen 4",
-				description: "Podrá registrarse en los eventos que los clubes realizan, como torneos, partidos amistosos, webinars y muchas más actividades.",
+				title: Strings.slide4Title,
+				description: Strings.slide4Description,
 				image: UIImage(named: "LaunchLogo")!),
 			OnboardingSlide(
-				title: "Screen 5",
-				description: "Controle los eventos personalizados que su club le proporcione.",
+				title: Strings.slide5Title,
+				description: Strings.slide5Description,
 				image: UIImage(named: "LaunchLogo")!),
 			OnboardingSlide(
-				title: "Screen 6",
-				description: "Registresé en nuesta aplicación y disfrute de la diversión de hacer deporte.",
+				title: Strings.slide6Title,
+				description: Strings.slide6Description,
 				image: UIImage(named: "LaunchLogo")!)
 		]
-		
 		
 		// Collection View
 		onboardingCollectionView.dataSource = self
