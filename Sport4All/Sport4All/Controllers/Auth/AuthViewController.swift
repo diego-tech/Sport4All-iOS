@@ -41,8 +41,14 @@ class AuthViewController: UIViewController {
 		setButtonStyles()
 		
 		// Login Test Diego
-		emailTextField.text = "diego171200@gmail.com"
-		passwordTextField.text = "Prueba12345."
+//		emailTextField.text = "diego171200@gmail.com"
+//		passwordTextField.text = "Prueba12345."
+		
+		// TextField Delegates
+		emailTextField.delegate = self
+		passwordTextField.delegate = self
+		accessButton.isEnabled = false
+		accessButton.alpha = 0.5
 	}
 	
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -180,3 +186,25 @@ class AuthViewController: UIViewController {
 		accessButton.titleLabel?.font = UIFont(name: FontType.SFProDisplayBold.rawValue, size: 17)
 	}
 }
+
+// MARK: UITextField Delegate
+extension AuthViewController: UITextFieldDelegate {
+	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+		let text = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+
+		if text.isEmpty {
+			UIView.animate(withDuration: 1) {
+				self.accessButton.isEnabled = false
+				self.accessButton.alpha = 0.5
+			}
+		} else {
+			UIView.animate(withDuration: 1) {
+				self.accessButton.isEnabled = true
+				self.accessButton.alpha = 1
+			}
+		}
+	
+		return true
+	}
+}
+
