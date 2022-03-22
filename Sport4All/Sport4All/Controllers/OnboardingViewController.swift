@@ -34,29 +34,25 @@ class OnboardingViewController: UIViewController {
 		
 		slides = [
 			OnboardingSlide(
-				title: Strings.slide1Title,
-				description: Strings.slide1Description,
-				image: UIImage(named: "LaunchLogo")!),
+				title: "Acceso a nuestros clubes",
+				description: "En el apartado clubes, podrás encontrar información sobre los clubes en los que podrás reservar espacios deportivos.",
+				image: UIImage(named: "InfoBlue")!),
 			OnboardingSlide(
-				title: Strings.slide2Title,
-				description: Strings.slide2Description,
-				image: UIImage(named: "LaunchLogo")!),
+				title: "Encuentra compañeros",
+				description: "En el apartado partidos podrás jugar con otros usuarios que necesiten compañeros en sus partidos.",
+				image: UIImage(named: "SocialOnboard")!),
 			OnboardingSlide(
-				title: Strings.slide3Title,
-				description: Strings.slide3Description,
-				image: UIImage(named: "LaunchLogo")!),
+				title: "Fácil acceso",
+				description: "Acceda fácilmente a los establecimientos identificándose con el código Qr que se le facilitará al realizar la reserva.",
+				image: UIImage(named: "QRCode")!),
 			OnboardingSlide(
-				title: Strings.slide4Title,
-				description: Strings.slide4Description,
-				image: UIImage(named: "LaunchLogo")!),
+				title: "Participa en eventos",
+				description: "Podrá registrarse en los eventos que los clubes realizan, como torneos, partidos amistosos, webinars y muchas más actividades.",
+				image: UIImage(named: "Trophy")!),
 			OnboardingSlide(
-				title: Strings.slide5Title,
-				description: Strings.slide5Description,
-				image: UIImage(named: "LaunchLogo")!),
-			OnboardingSlide(
-				title: Strings.slide6Title,
-				description: Strings.slide6Description,
-				image: UIImage(named: "LaunchLogo")!)
+				title: "Gestiona con tu club",
+				description: "Controle los eventos personalizados que su club le proporcione.",
+				image: UIImage(named: "Player")!)
 		]
 		
 		// Collection View
