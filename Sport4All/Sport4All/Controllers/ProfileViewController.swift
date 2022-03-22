@@ -101,7 +101,10 @@ class ProfileViewController: UIViewController {
 			let allUserName = userName + " " + userSurname
 			self.userNameLabel.text = allUserName
 		} failure: { error in
-			print(error)
+			let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
+			vc.modalPresentationStyle = .fullScreen
+			vc.modalTransitionStyle = .flipHorizontal
+			self.present(vc, animated: true, completion: nil)
 		}
 	}
 	

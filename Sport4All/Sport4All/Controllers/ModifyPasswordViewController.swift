@@ -12,7 +12,6 @@ class ModifyPasswordViewController: UIViewController {
 	// MARK: Variables
 	
 	// MARK: Outlets
-	@IBOutlet weak var goBackBTN: UIButton!
 	@IBOutlet weak var savePasswordBTN: UIButton!
 	@IBOutlet weak var firstPasswordTF: UITextField!
 	@IBOutlet weak var checkPasswordTF: UITextField!
@@ -30,10 +29,6 @@ class ModifyPasswordViewController: UIViewController {
 	}
 	
 	// MARK: Action Functions
-	@IBAction func goBackButtonAction(_ sender: UIButton) {
-		dismiss(animated: true, completion: nil)
-	}
-	
 	@IBAction func savePasswordButtonAction(_ sender: UIButton) {
 		changePassword()
 	}

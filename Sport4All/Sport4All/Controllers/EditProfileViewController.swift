@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SPIndicator
 
 class EditProfileViewController: UIViewController, UINavigationControllerDelegate {
 	
@@ -102,9 +103,15 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
 		let editUser = getValues()
 		
 		NetworkingProvider.shared.modifyData(userModify: editUser) { responseData, status, msg in
-			print(responseData)
-			print(status)
-			print(msg)
+			guard let msg = msg else { return }
+			
+			if status == 1 {
+				let indicatorView = SPIndicatorView(title: "Datos Modificados Correctamente", message: msg, preset: .done)
+				indicatorView.present(duration: 3)
+			} else {
+				let indicatorView = SPIndicatorView(title: "Ha ocurrido un error", message: msg, preset: .error)
+				indicatorView.present(duration: 3)
+			}
 		} failure: { error in
 			print(error)
 		}
