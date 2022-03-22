@@ -23,6 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 			// Show Onboarding
 			let vc = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
 			vc.modalPresentationStyle = .fullScreen
+			vc.modalType = .firstLogin
 			window?.rootViewController = vc
 		}
 		

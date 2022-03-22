@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum ModalType {
+	case firstLogin
+	case showTutorial
+}
+
 class OnboardingViewController: UIViewController {
 
 	// MARK: Variables
@@ -21,6 +26,8 @@ class OnboardingViewController: UIViewController {
 			}
 		}
 	}
+	
+	var modalType: ModalType?
 	
 	// MARK: Outlets
 	@IBOutlet weak var skipButton: UIButton!
@@ -73,7 +80,15 @@ class OnboardingViewController: UIViewController {
 	@IBAction func nextButtonAction(_ sender: UIButton) {
 		if currentPage == slides.count - 1 {
 			UserDefaultsProvider.shared.setUserDefaults(key: .isNewUser, value: true)
-			navigateToAuth()
+			
+			switch modalType {
+			case .firstLogin:
+				self.navigateToAuth()
+			case .showTutorial:
+				self.navigateToTabBar()
+			case .none:
+				break
+			}
 		} else {
 			currentPage += 1
 			let indexPath = IndexPath(item: currentPage, section: 0)
@@ -87,6 +102,11 @@ class OnboardingViewController: UIViewController {
 		vc.modalPresentationStyle = .fullScreen
 		vc.modalTransitionStyle = .flipHorizontal
 		present(vc, animated: true, completion: nil)
+		self.dismiss(animated: true)
+	}
+	
+	private func navigateToTabBar() {
+		self.dismiss(animated: true)
 	}
 }
 

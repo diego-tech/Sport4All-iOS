@@ -215,7 +215,10 @@ extension ProfileViewController: SettingsViewControllerDelegate {
 				UIApplication.shared.open(urlToOpen, options: [:], completionHandler: nil )
 			}
 		case .ShowTutorial:
-			print("Ver Tutorial")
+			let vc = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
+			vc.modalPresentationStyle = .fullScreen
+			vc.modalType = .showTutorial
+			self.present(vc, animated: true)
 		case .LogOut:
 			self.logOut()
 		}
