@@ -34,29 +34,25 @@ class OnboardingViewController: UIViewController {
 		
 		slides = [
 			OnboardingSlide(
-				title: "Screen 1",
+				title: "Acceso a nuestros clubes",
 				description: "En el apartado clubes, podrás encontrar información sobre los clubes en los que podrás reservar espacios deportivos.",
-				image: UIImage(named: "LaunchLogo")!),
+				image: UIImage(named: "InfoBlue")!),
 			OnboardingSlide(
-				title: "Screen 2",
+				title: "Encuentra compañeros",
 				description: "En el apartado partidos podrás jugar con otros usuarios que necesiten compañeros en sus partidos.",
-				image: UIImage(named: "LaunchLogo")!),
+				image: UIImage(named: "SocialOnboard")!),
 			OnboardingSlide(
-				title: "Screen 3",
+				title: "Fácil acceso",
 				description: "Acceda fácilmente a los establecimientos identificándose con el código Qr que se le facilitará al realizar la reserva.",
-				image: UIImage(named: "LaunchLogo")!),
+				image: UIImage(named: "QRCode")!),
 			OnboardingSlide(
-				title: "Screen 4",
+				title: "Participa en eventos",
 				description: "Podrá registrarse en los eventos que los clubes realizan, como torneos, partidos amistosos, webinars y muchas más actividades.",
-				image: UIImage(named: "LaunchLogo")!),
+				image: UIImage(named: "Trophy")!),
 			OnboardingSlide(
-				title: "Screen 5",
+				title: "Gestiona con tu club",
 				description: "Controle los eventos personalizados que su club le proporcione.",
-				image: UIImage(named: "LaunchLogo")!),
-			OnboardingSlide(
-				title: "Screen 6",
-				description: "Registresé en nuesta aplicación y disfrute de la diversión de hacer deporte.",
-				image: UIImage(named: "LaunchLogo")!)
+				image: UIImage(named: "Player")!)
 		]
 		
 		
