@@ -8,7 +8,7 @@
 import UIKit
 
 class EditProfileViewController: UIViewController, UINavigationControllerDelegate {
-
+	
 	// MARK: Variables
 	private var userName: String?
 	private var userSurname: String?
@@ -19,7 +19,7 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
 	let pickerController = UIImagePickerController()
 	
 	// MARK: Outles
-	@IBOutlet weak var userImageView: UIImageView!
+	@IBOutlet weak var userImageView: LazyImageView!
 	@IBOutlet weak var userNameTF: UITextField!
 	@IBOutlet weak var userSurnameTF: UITextField!
 	@IBOutlet weak var userEmailTF: UITextField!
@@ -27,13 +27,15 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
 	@IBOutlet weak var genreSegmentedControl: CustomSegmentedControl!
 	@IBOutlet weak var editButton: UIButton!
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		// Do any additional setup after loading the view.
 		
 		// Inicialización Estilos
 		setTextFieldStyles()
 		setButtonStyles()
+		setImageStyles()
+		setSegmentedControl()
 		
 		// Init Image Picker Delegate
 		pickerController.delegate = self
@@ -45,8 +47,7 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
 		let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
 		userImageView.isUserInteractionEnabled = true
 		userImageView.addGestureRecognizer(tapGestureRecognizer)
-		userImageView.makeRounds()
-    }
+	}
 	
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
@@ -83,17 +84,17 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
 		}
 		
 		if genreSegmentedControl.selectedSegmentIndex == 0 {
-			userGenre = "Mujer"
+			userGenre = Strings.womanGenre
 		} else if genreSegmentedControl.selectedSegmentIndex == 1 {
-			userGenre = "Hombre"
+			userGenre = Strings.manGenre
 		} else if genreSegmentedControl.selectedSegmentIndex == 2 {
-			userGenre = "Otro"
+			userGenre = Strings.otherGenre
 		}
 		
 		if userEmailTF.text != "" {
 			userEmail = userEmailTF.text
 		}
-
+		
 		return NewUser(email: userEmail, password: nil, genre: userGenre, name: userName, surname: userSurname, image: imageUrl)
 	}
 	
@@ -121,26 +122,38 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
 		let yourBackImage = UIImage(systemName: "arrowshape.turn.up.backward.fill", withConfiguration:  UIImage.SymbolConfiguration(pointSize: 18))
 		let backButtonItem = UIBarButtonItem(image: yourBackImage, style: .plain, target: self, action: #selector(popView(tapGestureRecognizer:)))
 		backButtonItem.tintColor = .corporativeColor
-
+		
 		self.navigationItem.leftBarButtonItem = backButtonItem
-
+		
 		self.navigationItem.setHidesBackButton(true, animated: true)
 	}
 	
 	private func setTextFieldStyles() {
 		// Estilos Name Text Field
 		userNameTF.bottomBorder(color: .hardColor ?? .black)
-		userNameTF.placeholderStyles(placeHolderText: "Nombre")
+		if let userName = UserDefaultsProvider.shared.string(key: .authUserName) {
+			userNameTF.placeholderStyles(placeHolderText: userName)
+		} else {
+			userNameTF.placeholderStyles(placeHolderText: "Nombre")
+		}
 		userNameTF.textStyles(keyboardType: .default)
 		
 		// Estilos Surname Text Field
 		userSurnameTF.bottomBorder(color: .hardColor ?? .black)
-		userSurnameTF.placeholderStyles(placeHolderText: "Apellidos")
+		if let userSurname = UserDefaultsProvider.shared.string(key: .authUserSurname) {
+			userSurnameTF.placeholderStyles(placeHolderText: userSurname)
+		} else {
+			userSurnameTF.placeholderStyles(placeHolderText: "Apellidos")
+		}
 		userSurnameTF.textStyles(keyboardType: .default)
 		
 		// Estilos Email Text Field
 		userEmailTF.bottomBorder(color: .hardColor ?? .black)
-		userEmailTF.placeholderStyles(placeHolderText: "Correo Electrónico")
+		if let userEmail = UserDefaultsProvider.shared.string(key: .authUserEmail) {
+			userEmailTF.placeholderStyles(placeHolderText: userEmail)
+		} else {
+			userEmailTF.placeholderStyles(placeHolderText: "Correo Electrónico")
+		}
 		userEmailTF.textStyles(keyboardType: .default)
 	}
 	
@@ -148,6 +161,29 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
 		// Estilos Button
 		editButton.round()
 		editButton.colors()
+	}
+	
+	private func setImageStyles() {
+		if let userImage = UserDefaultsProvider.shared.string(key: .authUserImg)  {
+			guard let url = URL(string: Constants.kStorageURL + userImage) else { return }
+			self.userImageView.loadImage(fromURL: url)
+		}
+		userImageView.makeRounds()
+	}
+	
+	private func setSegmentedControl() {
+		if let userGenre = UserDefaultsProvider.shared.string(key: .authUserGenre) {
+			switch userGenre {
+			case Strings.womanGenre:
+				genreSegmentedControl.selectedSegmentIndex = 0
+			case Strings.manGenre:
+				genreSegmentedControl.selectedSegmentIndex = 1
+			case Strings.otherGenre:
+				genreSegmentedControl.selectedSegmentIndex = 2
+			default:
+				break
+			}
+		}
 	}
 	
 	@objc func popView(tapGestureRecognizer: UITapGestureRecognizer) {

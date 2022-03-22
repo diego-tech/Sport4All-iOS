@@ -19,13 +19,9 @@ class SocialViewController: UIViewController {
 	
 	// MARK: Outlets
 	@IBOutlet weak var eventsTableView: UITableView!
-	@IBOutlet weak var searchBar: UITextField!
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		
-		// Set Empty Text in SearchBar when load view
-		searchBar.text = ""
 		
 		// Inicialización Table View
 		eventsList()
@@ -38,9 +34,6 @@ class SocialViewController: UIViewController {
 		
 		// Configure Navbar
 		configureNavbar()
-		
-		// Custom Search Bar
-		searchBar.customSearch()
     }
 	
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

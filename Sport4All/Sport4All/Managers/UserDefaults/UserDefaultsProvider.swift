@@ -9,6 +9,11 @@ import Foundation
 
 enum UserDefaultsKey: String {
 	case authUserToken
+	case authUserName
+	case authUserSurname
+	case authUserEmail
+	case authUserImg
+	case authUserGenre
 	case isNewUser
 }
 

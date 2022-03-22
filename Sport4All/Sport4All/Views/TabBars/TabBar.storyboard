@@ -302,7 +302,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="KEH-2U-aXS">
-                                <rect key="frame" x="0.0" y="147" width="414" height="666"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" name="BackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventsTableViewCell" id="svU-QD-l4W" customClass="EventsTableViewCell" customModule="Sport4All" customModuleProvider="target">
@@ -315,25 +315,14 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a5z-aX-XPy">
-                                <rect key="frame" x="20" y="98" width="374" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="6vz-UN-TeD"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XFq-Ej-Eeg"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="KEH-2U-aXS" firstAttribute="leading" secondItem="XFq-Ej-Eeg" secondAttribute="leading" id="2Gz-L6-PgT"/>
-                            <constraint firstItem="a5z-aX-XPy" firstAttribute="top" secondItem="XFq-Ej-Eeg" secondAttribute="top" constant="10" id="BBj-NF-pIE"/>
-                            <constraint firstItem="a5z-aX-XPy" firstAttribute="leading" secondItem="XFq-Ej-Eeg" secondAttribute="leading" constant="20" id="BVY-7Q-TXd"/>
                             <constraint firstItem="KEH-2U-aXS" firstAttribute="trailing" secondItem="XFq-Ej-Eeg" secondAttribute="trailing" id="G6u-B2-PpJ"/>
+                            <constraint firstItem="KEH-2U-aXS" firstAttribute="top" secondItem="XFq-Ej-Eeg" secondAttribute="top" id="KMB-8p-oFu"/>
                             <constraint firstItem="KEH-2U-aXS" firstAttribute="bottom" secondItem="XFq-Ej-Eeg" secondAttribute="bottom" id="NoA-oW-Zgs"/>
-                            <constraint firstItem="XFq-Ej-Eeg" firstAttribute="trailing" secondItem="a5z-aX-XPy" secondAttribute="trailing" constant="20" id="UNi-VR-ONC"/>
-                            <constraint firstItem="KEH-2U-aXS" firstAttribute="top" secondItem="a5z-aX-XPy" secondAttribute="bottom" constant="14" id="u1Z-gZ-CaB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lo5-hY-m1d">
@@ -341,7 +330,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="eventsTableView" destination="KEH-2U-aXS" id="cGm-kd-9jn"/>
-                        <outlet property="searchBar" destination="a5z-aX-XPy" id="ZC6-m4-O9n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xLF-3S-CvM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

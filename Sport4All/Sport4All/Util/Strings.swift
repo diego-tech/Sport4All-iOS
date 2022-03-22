@@ -42,4 +42,9 @@ struct Strings {
 	
 	// MARK: Info Club
 	static let infoClubTitle = "INFORMACION"
+	
+	// MARK: Edit Profile
+	static let womanGenre = "Mujer"
+	static let manGenre = "Hombre"
+	static let otherGenre = "Otro"
 }
