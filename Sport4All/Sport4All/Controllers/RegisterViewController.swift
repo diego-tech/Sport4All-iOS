@@ -18,7 +18,7 @@ class RegisterViewController: UIViewController {
 	@IBOutlet weak var secondEmailTF: UITextField!
 	@IBOutlet weak var firstPasswordTF: UITextField!
 	@IBOutlet weak var secondPasswordTF: UITextField!
-	@IBOutlet weak var nextButton: UIButton!
+	@IBOutlet weak var registerButton: UIButton!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -33,6 +33,14 @@ class RegisterViewController: UIViewController {
 		secondEmailTF.text = "prueba3@prueba.com"
 		firstPasswordTF.text = "Prueba12345."
 		secondPasswordTF.text = "Prueba12345."
+		
+		// TextField Delegates
+		firstEmailTF.delegate = self
+		secondEmailTF.delegate = self
+		firstPasswordTF.delegate = self
+		secondPasswordTF.delegate = self
+		registerButton.isEnabled = false
+		registerButton.alpha = 0.5
 	}
 	
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -144,7 +152,28 @@ class RegisterViewController: UIViewController {
 	
 	private func setButtonStyles() {
 		// Estilos Next Button
-		nextButton.round()
-		nextButton.colors()
+		registerButton.round()
+		registerButton.colors()
+	}
+}
+
+// MARK: UITextField Delegate
+extension RegisterViewController: UITextFieldDelegate {
+	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+		let text = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+
+		if text.isEmpty {
+			UIView.animate(withDuration: 1) {
+				self.registerButton.isEnabled = false
+				self.registerButton.alpha = 0.5
+			}
+		} else {
+			UIView.animate(withDuration: 1) {
+				self.registerButton.isEnabled = true
+				self.registerButton.alpha = 1
+			}
+		}
+	
+		return true
 	}
 }
