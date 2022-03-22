@@ -65,7 +65,7 @@ final class AuxFunctions {
 		formatter.dateFormat = "HH"
 		
 		guard let dateHour = dateHour else { return 0 }
-
+		
 		let onlyHour = formatter.string(from: dateHour)
 		
 		// Cast String to Int
@@ -76,7 +76,7 @@ final class AuxFunctions {
 	
 	// Get Time List
 	static func getTimeList(openingTime: Int, closingTime: Int) -> [String] {
-		var dateFormatter = DateFormatter()
+		let dateFormatter = DateFormatter()
 		let today = Date()
 		dateFormatter.dateFormat = "HH"
 		let nowTime = dateFormatter.string(from: today)

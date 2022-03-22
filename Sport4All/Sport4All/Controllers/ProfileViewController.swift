@@ -36,7 +36,7 @@ class ProfileViewController: UIViewController {
 		
 		// Api
 		fetchUserInfo()
-			
+		
 		// Inicialización Collection View
 		self.pendingList()
 		self.finishList()
@@ -69,8 +69,8 @@ class ProfileViewController: UIViewController {
 	
 	@IBAction func yourClubButtonAction(_ sender: UIButton) {
 		// Upcoming View
-//		let vc = UIStoryboard(name: "YourClub", bundle: nil).instantiateViewController(withIdentifier: "YourClub") as! YourClubViewController
-//		navigationController?.pushViewController(vc, animated: true)
+		//		let vc = UIStoryboard(name: "YourClub", bundle: nil).instantiateViewController(withIdentifier: "YourClub") as! YourClubViewController
+		//		navigationController?.pushViewController(vc, animated: true)
 		
 		/*
 		 let image = UIImage.init(systemName: "sun.min.fill")!.withTintColor(.systemYellow, renderingMode: .alwaysOriginal)
@@ -103,7 +103,7 @@ class ProfileViewController: UIViewController {
 		} failure: { error in
 			let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
 			vc.modalPresentationStyle = .fullScreen
-			vc.modalTransitionStyle = .flipHorizontal
+			vc.modalTransitionStyle = .coverVertical
 			self.present(vc, animated: true, completion: nil)
 		}
 	}
@@ -115,11 +115,11 @@ class ProfileViewController: UIViewController {
 		pendingCollectionViewModel.fetchPendingEvents { [weak self] status in
 			self?.pendingEventsCollectionView.reloadData()
 		}
-
+		
 		pendingCollectionViewModel.fetchPendingMatches { [weak self] status in
 			self?.pendingEventsCollectionView.reloadData()
 		}
-
+		
 		pendingCollectionViewModel.fetchPendingReserves { [weak self] status in
 			self?.pendingEventsCollectionView.reloadData()
 		}
@@ -160,6 +160,28 @@ class ProfileViewController: UIViewController {
 		finalEventsCollectionView.showsHorizontalScrollIndicator = false
 	}
 	
+	private func logOut() {
+		NetworkingProvider.shared.logOut { status, msg in
+			print(status)
+			
+			if status == 1 {
+				let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
+				vc.modalPresentationStyle = .fullScreen
+				vc.modalTransitionStyle = .coverVertical
+				self.present(vc, animated: true, completion: nil)
+				print(msg)
+			} else {
+				print(msg)
+			}
+		} failure: { error in
+			let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
+			vc.modalPresentationStyle = .fullScreen
+			vc.modalTransitionStyle = .coverVertical
+			vc.errorType = .decodingError
+			self.present(vc, animated: true, completion: nil)
+		}
+	}
+	
 	// MARK: Styles
 	private func configureNavbar() {
 		let hamburguerImage = UIImage(systemName: "line.3.horizontal", withConfiguration: UIImage.SymbolConfiguration(pointSize: 18))
@@ -190,7 +212,7 @@ extension ProfileViewController: SettingsViewControllerDelegate {
 		case .ShowTutorial:
 			print("Ver Tutorial")
 		case .LogOut:
-			print("Cerrar Sesión")
+			self.logOut()
 		}
 	}
 }
@@ -205,7 +227,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
 			return finishCollectionViewModel.numberOfSections()
 		}
 	}
-
+	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		if collectionView == pendingEventsCollectionView {
 			return pendingCollectionViewModel.numberOfItemsInSection(section: section)
@@ -252,7 +274,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		collectionView.deselectItem(at: indexPath, animated: true)
-
+		
 		if collectionView == pendingEventsCollectionView {
 			let vc = UIStoryboard(name: "PendingEventsDetail", bundle: nil).instantiateViewController(withIdentifier: "PendingEvents") as! PendingEventsViewController
 			switch indexPath.section {
@@ -293,7 +315,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
 				vc.pendingEvent = finisReserve
 				self.navigationController?.pushViewController(vc, animated: true)
 			default:
-				break	
+				break
 			}
 		}
 	}

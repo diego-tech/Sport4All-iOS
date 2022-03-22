@@ -555,4 +555,38 @@ final class NetworkingProvider {
 			}
 		}
 	}
+	
+	// MARK: Logout
+	func logOut(serverResponse: @escaping (_ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+		let url = "\(Constants.kBaseURL)/logout"
+		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
+		
+		AF.request(url, method: .post, headers: headers).responseDecodable(of: LogOutResponse.self, decoder: DateDecoder()) {
+			response in
+			
+			// Handle Response Status Code && Message
+			if let status = response.value?.status, let msg = response.value?.msg {
+				serverResponse(status, msg)
+			}
+			
+			// Handle Alamofire Error
+			if let error = response.error {
+				failure(error)
+			}
+		}
+	}
 }
+
+/**
+ $response = ["status" => 1, "msg" => ""];
+		try {
+			$request->user()->currentAccessToken()->delete();
+			$response['msg'] = 'Sesion cerrada correctamente';
+			return response()->json($response, 200);
+		} catch (\Exception $e) {
+			$response['status'] = 0;
+			$response['msg'] = (env('APP_DEBUG') == "true" ? $e->getMessage() : $this->error);
+
+			return response()->json($response, 406);
+		}
+ */

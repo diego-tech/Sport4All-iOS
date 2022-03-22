@@ -6,6 +6,11 @@
 //
 
 import UIKit
+import SPIndicator
+
+enum ErrorType {
+	case decodingError
+}
 
 class AuthViewController: UIViewController {
 	
@@ -13,6 +18,8 @@ class AuthViewController: UIViewController {
 	var userEmail: String?
 	var userPassword: String?
 	var message: String?
+	
+	var errorType: ErrorType?
 	
 	// MARK: Outlets
 	@IBOutlet weak var emailTextField: UITextField!
@@ -86,7 +93,7 @@ class AuthViewController: UIViewController {
 						if let authUserGenre = responseData?.genre {
 							UserDefaultsProvider.shared.setUserDefaults(key: .authUserGenre, value: authUserGenre)
 						}
-							
+						
 						UserDefaultsProvider.shared.setUserDefaults(key: .authUserToken, value: authUserToken)
 						UserDefaultsProvider.shared.setUserDefaults(key: .authUserEmail, value: authUserEmail)
 						
@@ -102,7 +109,7 @@ class AuthViewController: UIViewController {
 			}
 		}
 	}
-		
+	
 	private func getTextFieldValues() -> UserLogin {
 		if let email = emailTextField.text, let password = passwordTextField.text {
 			userEmail = email
@@ -131,6 +138,16 @@ class AuthViewController: UIViewController {
 		} else {
 			passwordTextField.bottomBorder(color: .hardColor!)
 			return true
+		}
+	}
+	
+	private func setIndicatorForErrors() {
+		switch errorType {
+		case .decodingError:
+			let indicatorView = SPIndicatorView(title: "Error", message: "Pruebe a logearse otra vez", preset: .error)
+			indicatorView.present(duration: 3)
+		default:
+			break
 		}
 	}
 	

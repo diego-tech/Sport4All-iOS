@@ -114,3 +114,13 @@ struct InscriptionEventResponse: Codable {
 		case msg
 	}
 }
+
+struct LogOutResponse: Codable {
+	let status: Int?
+	let msg: String?
+
+	enum CodingKeys: String, CodingKey {
+		case status
+		case msg
+	}
+}
