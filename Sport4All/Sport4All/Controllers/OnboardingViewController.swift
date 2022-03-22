@@ -34,24 +34,24 @@ class OnboardingViewController: UIViewController {
 		
 		slides = [
 			OnboardingSlide(
-				title: "Acceso a nuestros clubes",
-				description: "En el apartado clubes, podrás encontrar información sobre los clubes en los que podrás reservar espacios deportivos.",
+				title: Strings.slide1Title,
+				description: Strings.slide1Description,
 				image: UIImage(named: "InfoBlue")!),
 			OnboardingSlide(
-				title: "Encuentra compañeros",
-				description: "En el apartado partidos podrás jugar con otros usuarios que necesiten compañeros en sus partidos.",
+				title: Strings.slide2Title,
+				description: Strings.slide2Description,
 				image: UIImage(named: "SocialOnboard")!),
 			OnboardingSlide(
-				title: "Fácil acceso",
-				description: "Acceda fácilmente a los establecimientos identificándose con el código Qr que se le facilitará al realizar la reserva.",
+				title: Strings.slide3Title,
+				description: Strings.slide3Description,
 				image: UIImage(named: "QRCode")!),
 			OnboardingSlide(
-				title: "Participa en eventos",
-				description: "Podrá registrarse en los eventos que los clubes realizan, como torneos, partidos amistosos, webinars y muchas más actividades.",
+				title: Strings.slide4Title,
+				description: Strings.slide4Description,
 				image: UIImage(named: "Trophy")!),
 			OnboardingSlide(
-				title: "Gestiona con tu club",
-				description: "Controle los eventos personalizados que su club le proporcione.",
+				title: Strings.slide5Title,
+				description: Strings.slide5Description,
 				image: UIImage(named: "Player")!)
 		]
 		
