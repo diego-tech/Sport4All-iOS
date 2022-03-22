@@ -77,8 +77,12 @@ class HomeClubsViewController: UIViewController {
 	
 	// MARK: Functions
 	private func clubList() {
-		tableViewModel.fetchClubList { [weak self] status in
-			self?.homeClubsTableView.reloadData()
+		tableViewModel.fetchClubList { [weak self] status, error  in
+			if error == nil {
+				self?.homeClubsTableView.reloadData()
+			} else {
+				debugPrint("Error \(error)")
+			}
 		}
 	}
 	

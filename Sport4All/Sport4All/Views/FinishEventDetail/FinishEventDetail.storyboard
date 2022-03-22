@@ -135,6 +135,9 @@
                                                             <fontDescription key="titleFontDescription" name="SFPro-Light" family="SF Pro" pointSize="15"/>
                                                             <color key="baseForegroundColor" name="BlueBerry"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="goToInfoWebButtonAction:" destination="yeJ-m4-QN1" eventType="touchUpInside" id="5sF-8B-N9I"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQe-49-DXB">
                                                         <rect key="frame" x="124.5" y="0.0" width="125" height="85"/>
@@ -146,6 +149,9 @@
                                                             <fontDescription key="titleFontDescription" name="SFPro-Light" family="SF Pro" pointSize="15"/>
                                                             <color key="baseForegroundColor" name="BlueBerry"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="goToInfoClubButtonAction:" destination="yeJ-m4-QN1" eventType="touchUpInside" id="H2u-Og-b7Y"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oao-oR-MRA">
                                                         <rect key="frame" x="249.5" y="0.0" width="124.5" height="85"/>
@@ -158,6 +164,9 @@
                                                             <fontDescription key="titleFontDescription" name="SFPro-Light" family="SF Pro" pointSize="15"/>
                                                             <color key="baseForegroundColor" name="BlueBerry"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="goToCallClubButtonAction:" destination="yeJ-m4-QN1" eventType="touchUpInside" id="okN-Vq-PmP"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>

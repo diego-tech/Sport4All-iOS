@@ -10,6 +10,7 @@ import SPIndicator
 
 enum ErrorType {
 	case decodingError
+	case userTokenError
 }
 
 class AuthViewController: UIViewController {
@@ -31,6 +32,9 @@ class AuthViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
+		
+		// Set Up Errors
+		setIndicatorForErrors()
 		
 		// Inicialización Estilos
 		setTextFieldStyles()
@@ -144,8 +148,11 @@ class AuthViewController: UIViewController {
 	private func setIndicatorForErrors() {
 		switch errorType {
 		case .decodingError:
+			print("Error 2")
 			let indicatorView = SPIndicatorView(title: "Error", message: "Pruebe a logearse otra vez", preset: .error)
 			indicatorView.present(duration: 3)
+		case .userTokenError:
+			print("Error 3")
 		default:
 			break
 		}

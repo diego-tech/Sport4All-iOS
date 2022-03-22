@@ -113,7 +113,11 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
 				indicatorView.present(duration: 3)
 			}
 		} failure: { error in
-			print(error)
+			let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
+			vc.modalPresentationStyle = .fullScreen
+			vc.modalTransitionStyle = .coverVertical
+			vc.errorType = .decodingError
+			self.present(vc, animated: true, completion: nil)
 		}
 	}
 	
@@ -211,7 +215,11 @@ extension EditProfileViewController: UIImagePickerControllerDelegate {
 				self.imageUrl = msg
 			}
 		} failure: { error in
-			print(error)
+			let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
+			vc.modalPresentationStyle = .fullScreen
+			vc.modalTransitionStyle = .coverVertical
+			vc.errorType = .decodingError
+			self.present(vc, animated: true, completion: nil)
 		}
 		
 		

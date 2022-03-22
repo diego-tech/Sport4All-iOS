@@ -15,15 +15,15 @@ class HomeListViewModel {
 	private var status = Int()
 		
 	// MARK: Fetch Club List
-	func fetchClubList(completion: @escaping (_ status: Int?) -> ()) {
+	func fetchClubList(completion: @escaping (_ status: Int?, _ error: Error?) -> ()) {
 		NetworkingProvider.shared.clubList { responseData, status, msg in
 			guard let responseList = responseData else { return }
 			guard let status = status else { return }
 			self.status = status
 			self.clubList = responseList
-			completion(status)
+			completion(status, nil)
 		} failure: { error in
-			debugPrint(error)
+			completion(0, error)
 		}
 	}
 	

@@ -85,25 +85,32 @@ class ProfileViewController: UIViewController {
 	// MARK: Functions
 	private func fetchUserInfo() {
 		NetworkingProvider.shared.userInfo { responseData, status, msg in
-			guard let userEmail = responseData?.email else { return }
-			guard let userName = responseData?.name else {
-				self.userNameLabel.text = userEmail
-				return
+			if status == 1 {
+				guard let userEmail = responseData?.email else { return }
+				guard let userName = responseData?.name else {
+					self.userNameLabel.text = userEmail
+					return
+				}
+				
+				if let userImage = responseData?.image  {
+					guard let url = URL(string: Constants.kStorageURL + userImage) else { return }
+					self.userImageView.loadImage(fromURL: url)
+				}
+				
+				guard let userSurname = responseData?.surname else { return }
+				
+				let allUserName = userName + " " + userSurname
+				self.userNameLabel.text = allUserName
+				
+			} else {
+				
 			}
-			
-			if let userImage = responseData?.image  {
-				guard let url = URL(string: Constants.kStorageURL + userImage) else { return }
-				self.userImageView.loadImage(fromURL: url)
-			}
-			
-			guard let userSurname = responseData?.surname else { return }
-			
-			let allUserName = userName + " " + userSurname
-			self.userNameLabel.text = allUserName
 		} failure: { error in
 			let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
 			vc.modalPresentationStyle = .fullScreen
 			vc.modalTransitionStyle = .coverVertical
+			vc.errorType = .decodingError
+			print("Error 1")
 			self.present(vc, animated: true, completion: nil)
 		}
 	}
@@ -178,6 +185,7 @@ class ProfileViewController: UIViewController {
 			vc.modalPresentationStyle = .fullScreen
 			vc.modalTransitionStyle = .coverVertical
 			vc.errorType = .decodingError
+			print("Error 1")
 			self.present(vc, animated: true, completion: nil)
 		}
 	}

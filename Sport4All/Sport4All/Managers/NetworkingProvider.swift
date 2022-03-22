@@ -575,18 +575,24 @@ final class NetworkingProvider {
 			}
 		}
 	}
-}
-
-/**
- $response = ["status" => 1, "msg" => ""];
-		try {
-			$request->user()->currentAccessToken()->delete();
-			$response['msg'] = 'Sesion cerrada correctamente';
-			return response()->json($response, 200);
-		} catch (\Exception $e) {
-			$response['status'] = 0;
-			$response['msg'] = (env('APP_DEBUG') == "true" ? $e->getMessage() : $this->error);
-
-			return response()->json($response, 406);
+	
+	// MARK: Info Club
+	func infoClub(club_id: Int, serverResponse: @escaping (_ responseData: Club?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+		let url = "\(Constants.kBaseURL)/endedinfoclub"
+		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
+		
+		AF.request(url, method: .get, parameters: ["id": club_id], encoding: URLEncoding.default, headers: headers).responseDecodable(of: InfoClubResponse.self, decoder: DateDecoder()) {
+			response in
+			
+			// Handle Response Data && Status Code && Message
+			if let data = response.value?.data, let status = response.value?.status, let msg = response.value?.msg {
+				serverResponse(data, status, msg)
+			}
+			
+			// Handle Alamofire Error
+			if let error = response.error {
+				failure(error)
+			}
 		}
- */
+	}
+}

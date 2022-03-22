@@ -67,8 +67,17 @@ class HomeMatchesViewController:  UIViewController {
 			queryDay = todayFormat
 		}
 		
-		matchListViewModel.fetchMatchList(day: queryDay) { [weak self] status in
-			self?.initTableView()
+		matchListViewModel.fetchMatchList(day: queryDay) { [weak self] status, error  in
+			if error == nil {
+				self?.initTableView()
+			} else {
+				let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
+				vc.modalPresentationStyle = .fullScreen
+				vc.modalTransitionStyle = .coverVertical
+				vc.errorType = .decodingError
+				print("Error 1")
+				self?.present(vc, animated: true, completion: nil)
+			}
 		}
 	}
 	

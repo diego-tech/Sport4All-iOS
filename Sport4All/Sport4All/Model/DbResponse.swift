@@ -124,3 +124,15 @@ struct LogOutResponse: Codable {
 		case msg
 	}
 }
+
+struct InfoClubResponse: Codable {
+	let status: Int?
+	let data: Club?
+	let msg: String?
+	
+	enum CodingKeys: String, CodingKey {
+		case status
+		case data
+		case msg
+	}
+}

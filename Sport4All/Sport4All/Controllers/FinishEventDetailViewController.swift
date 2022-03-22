@@ -12,6 +12,8 @@ class FinishEventDetailViewController: UIViewController {
 	// MARK: Variables
 	var pendingEvent: PendingOrFinishEvent?
 	var pendingType: PendingType?
+	var clubId: Int = 0
+	var club: Club?
 	
 	// MARK: Outlets
 	@IBOutlet weak var headerUIView: UIView!
@@ -24,9 +26,12 @@ class FinishEventDetailViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
-				
+		
 		// Configure View
 		configure()
+		
+		// Fetch Club Info
+		fetchClubInfo()
 		
 		// Configure Navbar
 		configureNavbar()
@@ -36,11 +41,30 @@ class FinishEventDetailViewController: UIViewController {
 	}
 	
 	// MARK: Action Functions
+	@IBAction func goToInfoClubButtonAction(_ sender: UIButton) {
+		let vc = UIStoryboard(name: "InfoClub", bundle: nil).instantiateViewController(withIdentifier: "InfoClub") as! InfoClubViewController
+		vc.club = club
+		navigationController?.pushViewController(vc, animated: true)
+	}
 	
+	@IBAction func goToInfoWebButtonAction(_ sender: UIButton) {
+		guard let web = club?.web else { return }
+		if let urlToOpen = URL(string: web) {
+			UIApplication.shared.open(urlToOpen, options: [:], completionHandler: nil )
+		}
+	}
+	
+	@IBAction func goToCallClubButtonAction(_ sender: UIButton) {
+		guard let tlf = club?.tlf else { return }
+		if let urlToOpen = URL(string: tlf) {
+			UIApplication.shared.open(urlToOpen, options: [:], completionHandler: nil )
+		}
+	}
 	
 	// MARK: Functions
 	private func configure() {
 		guard let pendingEvent = pendingEvent else { return debugPrint("Pending Event Error") }
+		guard let clubId = pendingEvent.clubId else { return debugPrint("Club Id Error") }
 		guard let clubBanner = pendingEvent.clubImg else {
 			return debugPrint("Club Banner Error") }
 		guard let clubName = pendingEvent.clubName else { return debugPrint("Club Name Error") }
@@ -50,11 +74,21 @@ class FinishEventDetailViewController: UIViewController {
 		guard let pendingEndTime = pendingEvent.endTime else { return debugPrint("Hour 2 Error")}
 		guard let imgURL = URL(string: Constants.kStorageURL + clubBanner) else { return debugPrint("URL Error") }
 		
+		self.clubId = clubId
 		self.clubImageView.loadImage(fromURL: imgURL)
 		self.clubNameLabel.text = clubName
 		self.typeEventLabel.text = typeEvent
 		self.dayEventLabel.text = dayEvent
 		self.hourEventLabel.text = "\(pendingStartTime) - \(pendingEndTime)"
+	}
+	
+	private func fetchClubInfo() {
+		NetworkingProvider.shared.infoClub(club_id: clubId) { responseData, status, msg in
+			guard let club = responseData else { return }
+			self.club = club
+		} failure: { error in
+			debugPrint(error)
+		}
 	}
 	
 	// MARK: Styles
