@@ -101,9 +101,6 @@ class ProfileViewController: UIViewController {
 				
 				let allUserName = userName + " " + userSurname
 				self.userNameLabel.text = allUserName
-				
-			} else {
-				
 			}
 		} failure: { error in
 			let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
