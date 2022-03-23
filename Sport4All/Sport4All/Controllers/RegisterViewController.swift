@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SPIndicator
 
 class RegisterViewController: UIViewController {
 	
@@ -75,17 +76,22 @@ class RegisterViewController: UIViewController {
 		let newUser = getTFValues()
 
 		NetworkingProvider.shared.register(newUser: newUser) { responseData, status, msg in
-			print(responseData)
-			print(status)
-			print(msg)
+			guard let status = status else { return }
+			guard let msg = msg else { return }
+			guard let errorMsg = responseData?.errors else { return }
 			
-			let statusCode = status
-		
-			if AuxFunctions.checkStatusCode(statusCode: statusCode) {
-				self.navigateToAuthController()
+			if status == 0 {
+				let indicator = SPIndicatorView(title: msg, message: errorMsg, preset: .error)
+				indicator.present(duration: 2)
+			} else if status == 1{
+				let alertView = UIAlertController(title: msg, message: "Compruebe su bandeja de entrada y valide su correo antes de acceder", preferredStyle: .actionSheet)
+				alertView.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: { _ in
+					self.navigateToAuthController()
+				}))
+				self.present(alertView, animated: true, completion: nil)
 			}
 		} failure: { error in
-			print(error)
+			self.navigateToAuthController()
 		}
 	}
 	
