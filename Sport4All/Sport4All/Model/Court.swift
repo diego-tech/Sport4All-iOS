@@ -26,7 +26,7 @@ struct Court: Codable {
 		case club_id
 		case name
 		case type
-		case prices
+		case prices = "courtprices"
 		case surfaces
 		case sport
 		case updatedAt = "updated_at"
