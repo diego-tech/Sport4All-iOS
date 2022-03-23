@@ -18,14 +18,30 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		// This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 		guard let _ = (scene as? UIWindowScene) else { return }
 		
+		let userDefaultsToken: String = UserDefaultsProvider.shared.string(key: .authUserToken) ?? ""
+		
 		/* Lanzar Onboarding */
 		if !UserDefaultsProvider.shared.bool(key: .isNewUser) {
 			// Show Onboarding
 			let vc = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
-			vc.modalPresentationStyle = .fullScreen
+			vc.modalPresentationStyle = .automatic
 			vc.modalType = .firstLogin
 			window?.rootViewController = vc
 		}
+		
+		if userDefaultsToken != "" {
+			// Show Home Controller
+			let vc = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBar")
+			vc.modalPresentationStyle = .automatic
+			vc.modalTransitionStyle = .coverVertical
+			window?.rootViewController = vc
+		} else {
+		   // Show Auth Controller
+		   let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
+		   vc.modalPresentationStyle = .automatic
+		   vc.modalTransitionStyle = .coverVertical
+		   window?.rootViewController = vc
+	   }
 		
 		window?.makeKeyAndVisible()
 	}

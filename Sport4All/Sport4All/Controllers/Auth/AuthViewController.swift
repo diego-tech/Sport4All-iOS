@@ -106,14 +106,16 @@ class AuthViewController: UIViewController {
 						UserDefaultsProvider.shared.setUserDefaults(key: .authUserToken, value: authUserToken)
 						UserDefaultsProvider.shared.setUserDefaults(key: .authUserEmail, value: authUserEmail)
 						
-						let vc = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBar")
-						self.show(vc, sender: self)
+						guard let vc = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBar") as? TabBarController else {
+							fatalError("Can't load tabbars")
+						}
+//						self.navigationController?.pushViewController(vc, animated: true)
+						self.dismiss(animated: true)
 					}
 				}  else {
 					let indicator = SPIndicatorView(title: msg, message: errorMsg, preset: .error)
 					indicator.present(duration: 2)
 				}
-				
 			} failure: { error in
 				print(error)
 			}

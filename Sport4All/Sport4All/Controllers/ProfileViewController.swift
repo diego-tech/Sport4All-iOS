@@ -61,8 +61,6 @@ class ProfileViewController: UIViewController {
 	// MARK: Action Functions
 	@objc func settingsButtonTapped(tapGestureRecognizer: UITapGestureRecognizer) {
 		let vc = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: "Settings") as! SettingsViewController
-		
-		vc.modalPresentationStyle = .automatic
 		vc.settingsDelegate = self
 		present(vc, animated: true, completion: nil)
 	}
@@ -170,8 +168,9 @@ class ProfileViewController: UIViewController {
 			
 			if status == 1 {
 				let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
-				vc.modalPresentationStyle = .fullScreen
+				vc.modalPresentationStyle = .automatic
 				vc.modalTransitionStyle = .coverVertical
+				vc.isModalInPresentation = true
 				self.present(vc, animated: true, completion: nil)
 				print(msg)
 			} else {
@@ -226,6 +225,7 @@ extension ProfileViewController: SettingsViewControllerDelegate {
 			self.goToOnboarding()
 		case .LogOut:
 			self.logOut()
+			UserDefaultsProvider.shared.remove(key: .authUserToken)
 		}
 	}
 }
