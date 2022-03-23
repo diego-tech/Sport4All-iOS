@@ -152,11 +152,10 @@ class AuthViewController: UIViewController {
 	private func setIndicatorForErrors() {
 		switch errorType {
 		case .decodingError:
-			print("Error 2")
 			let indicatorView = SPIndicatorView(title: "Error", message: "Pruebe a logearse otra vez", preset: .error)
 			indicatorView.present(duration: 3)
 		case .userTokenError:
-			print("Error 3")
+			debugPrint("User Token Error")
 		default:
 			break
 		}

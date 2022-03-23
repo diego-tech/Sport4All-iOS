@@ -85,20 +85,16 @@ class ProfileViewController: UIViewController {
 		NetworkingProvider.shared.userInfo { responseData, status, msg in
 			if status == 1 {
 				guard let userEmail = responseData?.email else { return }
-				guard let userName = responseData?.name else {
+				if let userName = responseData?.name, let userSurname = responseData?.surname {
+					self.userNameLabel.text = userName + " " + userSurname
+				} else {
 					self.userNameLabel.text = userEmail
-					return
 				}
 				
 				if let userImage = responseData?.image  {
 					guard let url = URL(string: Constants.kStorageURL + userImage) else { return }
 					self.userImageView.loadImage(fromURL: url)
 				}
-				
-				guard let userSurname = responseData?.surname else { return }
-				
-				let allUserName = userName + " " + userSurname
-				self.userNameLabel.text = allUserName
 			}
 		} failure: { error in
 			let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
