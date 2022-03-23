@@ -206,9 +206,9 @@ extension EditProfileViewController: UIImagePickerControllerDelegate {
 	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 		picker.dismiss(animated: true, completion: nil)
 		
-		let image = info[.imageURL] as! URL
+		let imageUrl = info[.imageURL] as! URL
 		
-		NetworkingProvider.shared.uploadImage(userImage: image) { responseData, status, msg in
+		NetworkingProvider.shared.uploadImage(userImage: imageUrl) { responseData, status, msg in
 			print(responseData)
 			print(status)
 			if let msg = msg {
@@ -222,8 +222,6 @@ extension EditProfileViewController: UIImagePickerControllerDelegate {
 			self.present(vc, animated: true, completion: nil)
 		}
 		
-		
-		guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
-		userImageView.image = image
+		userImageView.loadImage(fromURL: imageUrl)
 	}
 }
