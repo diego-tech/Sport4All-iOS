@@ -82,9 +82,8 @@ class AuthViewController: UIViewController {
 			NetworkingProvider.shared.login(userLogin: userLogin) { responseData, status, msg in
 				let statusCode = status
 				
-				if let msg = msg {
-					self.message = msg
-				}
+				guard let msg = msg else { return }
+				guard let errorMsg = responseData?.errors else { return }
 				
 				if AuxFunctions.checkStatusCode(statusCode: statusCode) {
 					if let authUserToken = responseData?.token, let authUserEmail = responseData?.email {
@@ -111,7 +110,8 @@ class AuthViewController: UIViewController {
 						self.show(vc, sender: self)
 					}
 				}  else {
-					debugPrint("Error")
+					let indicator = SPIndicatorView(title: msg, message: errorMsg, preset: .error)
+					indicator.present(duration: 2)
 				}
 				
 			} failure: { error in

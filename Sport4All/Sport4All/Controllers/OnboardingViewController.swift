@@ -102,7 +102,6 @@ class OnboardingViewController: UIViewController {
 		vc.modalPresentationStyle = .fullScreen
 		vc.modalTransitionStyle = .flipHorizontal
 		present(vc, animated: true, completion: nil)
-		self.dismiss(animated: true)
 	}
 	
 	private func navigateToTabBar() {

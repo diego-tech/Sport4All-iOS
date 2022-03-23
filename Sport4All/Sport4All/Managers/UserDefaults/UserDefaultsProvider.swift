@@ -15,6 +15,7 @@ enum UserDefaultsKey: String {
 	case authUserImg
 	case authUserGenre
 	case isNewUser
+	case isNewUserEdit
 }
 
 final class UserDefaultsProvider {

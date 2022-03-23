@@ -20,6 +20,21 @@ class HomeViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
+		
+		if !UserDefaultsProvider.shared.bool(key: .isNewUserEdit) {
+			UserDefaultsProvider.shared.setUserDefaults(key: .isNewUserEdit, value: true)
+			let alertView = UIAlertController(title: "BIENVENIDO!!!", message: "Configure su perfil antes de comenzar a jugar.", preferredStyle: .actionSheet)
+			alertView.view.tintColor = .hardColor
+			alertView.addAction(UIAlertAction(title: "CONFIGURAR PERFIL", style: .default, handler: { _ in
+				let vc = UIStoryboard(name: "EditProfile", bundle: nil).instantiateViewController(withIdentifier: "EditProfile") as! EditProfileViewController
+				self.navigationController?.pushViewController(vc, animated: true)
+			}))
+			alertView.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: {
+				action in
+				debugPrint("Dismiss")
+			}))
+			self.present(alertView, animated: true, completion: nil)
+		}
 				
 		// Set First View Controller
 		firstVC.isHidden = false

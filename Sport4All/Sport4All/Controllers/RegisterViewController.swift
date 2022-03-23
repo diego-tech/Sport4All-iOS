@@ -85,7 +85,8 @@ class RegisterViewController: UIViewController {
 				indicator.present(duration: 2)
 			} else if status == 1{
 				let alertView = UIAlertController(title: msg, message: "Compruebe su bandeja de entrada y valide su correo antes de acceder", preferredStyle: .actionSheet)
-				alertView.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: { _ in
+				alertView.view.tintColor = .hardColor
+				alertView.addAction(UIAlertAction(title: "ACEPTAR", style: .default, handler: { _ in
 					self.navigateToAuthController()
 				}))
 				self.present(alertView, animated: true, completion: nil)
