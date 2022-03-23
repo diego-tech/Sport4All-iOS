@@ -10,8 +10,8 @@ import Foundation
 struct Constants {
 	
 	// Networking
-	static let kBaseURL = "http://localhost:80/api"
-	static let kStorageURL = "http://localhost/storage/"
+	static let kBaseURL = "http://ec2-3-8-102-5.eu-west-2.compute.amazonaws.com/api"
+	static let kStorageURL = "http://ec2-3-8-102-5.eu-west-2.compute.amazonaws.com/storage"
 	static let kContactUsWeb = "http://localhost"
 	
 	// Services Enum Strings
