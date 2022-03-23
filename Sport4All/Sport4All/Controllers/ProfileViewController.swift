@@ -187,6 +187,14 @@ class ProfileViewController: UIViewController {
 		}
 	}
 	
+	private func goToOnboarding() {
+		let vc = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
+		vc.modalPresentationStyle = .fullScreen
+		vc.modalTransitionStyle = .coverVertical
+		vc.modalType = .showTutorial
+		self.present(vc, animated: true, completion: nil)
+	}
+	
 	// MARK: Styles
 	private func configureNavbar() {
 		let hamburguerImage = UIImage(systemName: "line.3.horizontal", withConfiguration: UIImage.SymbolConfiguration(pointSize: 18))
@@ -215,10 +223,7 @@ extension ProfileViewController: SettingsViewControllerDelegate {
 				UIApplication.shared.open(urlToOpen, options: [:], completionHandler: nil )
 			}
 		case .ShowTutorial:
-			let vc = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
-			vc.modalPresentationStyle = .fullScreen
-			vc.modalType = .showTutorial
-			self.present(vc, animated: true)
+			self.goToOnboarding()
 		case .LogOut:
 			self.logOut()
 		}
