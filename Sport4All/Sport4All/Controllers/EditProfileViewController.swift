@@ -96,6 +96,8 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
 			userEmail = userEmailTF.text
 		}
 		
+		debugPrint(imageUrl)
+		
 		return NewUser(email: userEmail, password: nil, genre: userGenre, name: userName, surname: userSurname, image: imageUrl)
 	}
 	
@@ -207,14 +209,23 @@ extension EditProfileViewController: UIImagePickerControllerDelegate {
 		picker.dismiss(animated: true, completion: nil)
 		
 		let imageUrl = info[.imageURL] as! URL
+		debugPrint("Imagen URL \(imageUrl)")
 		
-		NetworkingProvider.shared.uploadImage(userImage: imageUrl) { responseData, status, msg in
-			print(responseData)
-			print(status)
-			if let msg = msg {
+		NetworkingProvider.shared.uploadImage(userImage: imageUrl) { status, msg in
+			guard let status = status else { return }
+			guard let msg = msg else { return }
+			debugPrint(msg)
+			if status == 0 {
+				let indicatorView = SPIndicatorView(title: "Ha ocurrido un con la subida de la imagen", message: msg, preset: .error)
+				indicatorView.present(duration: 3)
+				self.editButton.isEnabled = false
+				self.editButton.alpha = 0.5
+			} else {
 				self.imageUrl = msg
 			}
+			
 		} failure: { error in
+			debugPrint("Error \(error.debugDescription)")
 			let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
 			vc.modalPresentationStyle = .fullScreen
 			vc.modalTransitionStyle = .coverVertical

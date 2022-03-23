@@ -32,17 +32,18 @@ final class NetworkingProvider {
 	}
 	
 	// MARK: Upload Image
-	func uploadImage(userImage: URL, serverResponse: @escaping (_ responseData: User?, _ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
+	func uploadImage(userImage: URL, serverResponse: @escaping (_ status: Int?, _ msg: String?) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		let url = "\(Constants.kBaseURL)/getUploadImage"
+		let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultsProvider.shared.string(key: .authUserToken)!)]
 		
 		AF.upload(multipartFormData: { multipartformdata in
 			multipartformdata.append(userImage, withName: "fileName")
-		}, to: url, method: .post).responseDecodable(of: Response.self, decoder: DateDecoder()) {
+		}, to: url, method: .post, headers: headers).responseDecodable(of: UploadImageResponse.self, decoder: DateDecoder()) {
 			response in
 			
-			// Handle Response Data && Status Code && Message
-			if let data = response.value?.data, let status = response.value?.status, let msg = response.value?.msg {
-				serverResponse(data, status, msg)
+			// Handle Status Code && Message
+			if let status = response.value?.status, let msg = response.value?.msg {
+				serverResponse(status, msg)
 			}
 			
 			// Handle Alamofire Error

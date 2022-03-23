@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct UploadImageResponse: Codable {
+	let status: Int?
+	let msg: String?
+}
+
 struct Response: Codable {
 	let status: Int?
 	let data: User?
