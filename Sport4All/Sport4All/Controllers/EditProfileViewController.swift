@@ -50,6 +50,11 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
 		userImageView.addGestureRecognizer(tapGestureRecognizer)
 	}
 	
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+		view.endEditing(true)
+		super.touchesBegan(touches, with: event)
+	}
+	
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
 		// Segmented Control
@@ -95,9 +100,7 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
 		if userEmailTF.text != "" {
 			userEmail = userEmailTF.text
 		}
-		
-		debugPrint(imageUrl)
-		
+				
 		return NewUser(email: userEmail, password: nil, genre: userGenre, name: userName, surname: userSurname, image: imageUrl)
 	}
 	
@@ -209,12 +212,10 @@ extension EditProfileViewController: UIImagePickerControllerDelegate {
 		picker.dismiss(animated: true, completion: nil)
 		
 		let imageUrl = info[.imageURL] as! URL
-		debugPrint("Imagen URL \(imageUrl)")
 		
 		NetworkingProvider.shared.uploadImage(userImage: imageUrl) { status, msg in
 			guard let status = status else { return }
 			guard let msg = msg else { return }
-			debugPrint(msg)
 			if status == 0 {
 				let indicatorView = SPIndicatorView(title: "Ha ocurrido un con la subida de la imagen", message: msg, preset: .error)
 				indicatorView.present(duration: 3)

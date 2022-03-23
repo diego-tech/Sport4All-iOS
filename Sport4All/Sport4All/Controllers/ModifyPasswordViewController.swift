@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SPIndicator
 
 class ModifyPasswordViewController: UIViewController {
 	
@@ -26,6 +27,19 @@ class ModifyPasswordViewController: UIViewController {
 		// Inicialización Estilos
 		setTextFieldStyles()
 		setButtonStyles()
+		
+		// UITextField Delegates
+		firstPasswordTF.delegate = self
+		checkPasswordTF.delegate = self
+		
+		// Configuration Password At First
+		savePasswordBTN.isEnabled = false
+		savePasswordBTN.alpha = 0.5
+	}
+	
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+		view.endEditing(true)
+		super.touchesBegan(touches, with: event)
 	}
 	
 	// MARK: Action Functions
@@ -40,11 +54,28 @@ class ModifyPasswordViewController: UIViewController {
 				guard let password = checkPasswordTF.text else { return }
 				
 				NetworkingProvider.shared.modifyPassword(newPassword: password) { responseData, status, msg in
-					print(responseData)
-					print(status)
-					print(msg)
+					guard let errorMsg = responseData?.errors else { return }
+					guard let status = status else { return }
+					guard let msg = msg else { return }
+					
+					if status == 1 {
+						let indicatorView = SPIndicatorView(title: "Contraseña modificada correctamente", message: msg, preset: .done)
+						indicatorView.present(duration: 3) {
+							let vc = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBar")
+							vc.modalPresentationStyle = .automatic
+							vc.modalTransitionStyle = .coverVertical
+							self.navigationController?.pushViewController(vc, animated: true)
+						}
+					} else {
+						let indicatorView = SPIndicatorView(title: "Ha ocurrido un error", message: errorMsg, preset: .error)
+						indicatorView.present(duration: 3)
+					}
 				} failure: { error in
-					print(error)
+					let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
+					vc.modalPresentationStyle = .fullScreen
+					vc.modalTransitionStyle = .coverVertical
+					vc.errorType = .decodingError
+					self.present(vc, animated: true, completion: nil)
 				}
 			}
 		}
@@ -103,5 +134,26 @@ class ModifyPasswordViewController: UIViewController {
 	
 	@objc func popView(tapGestureRecognizer: UITapGestureRecognizer) {
 		self.navigationController?.popViewController(animated: true)
+	}
+}
+
+// MARK: UITextField Delegate
+extension ModifyPasswordViewController: UITextFieldDelegate {
+	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+		let text = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+
+		if text.isEmpty {
+			UIView.animate(withDuration: 1) {
+				self.savePasswordBTN.isEnabled = false
+				self.savePasswordBTN.alpha = 0.5
+			}
+		} else {
+			UIView.animate(withDuration: 1) {
+				self.savePasswordBTN.isEnabled = true
+				self.savePasswordBTN.alpha = 1
+			}
+		}
+	
+		return true
 	}
 }
