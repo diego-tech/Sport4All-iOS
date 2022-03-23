@@ -109,8 +109,7 @@ class AuthViewController: UIViewController {
 						guard let vc = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBar") as? TabBarController else {
 							fatalError("Can't load tabbars")
 						}
-//						self.navigationController?.pushViewController(vc, animated: true)
-						self.dismiss(animated: true)
+						(UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(vc)
 					}
 				}  else {
 					let indicator = SPIndicatorView(title: msg, message: errorMsg, preset: .error)

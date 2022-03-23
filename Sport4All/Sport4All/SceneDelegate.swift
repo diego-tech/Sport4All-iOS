@@ -29,6 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 			window?.rootViewController = vc
 		}
 		
+		// Show differents view controller if user has token or not
 		if userDefaultsToken != "" {
 			// Show Home Controller
 			let vc = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBar")
@@ -44,6 +45,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	   }
 		
 		window?.makeKeyAndVisible()
+	}
+	
+	
+	/// Change Root View Controller
+	/// - Parameters:
+	///   - vc: The view controller to go when call this function
+	///   - animated: If you have animation or not
+	func changeRootViewController(_ vc: UIViewController, animated: Bool = true) {
+		guard let window = self.window else { return }
+		
+		window.rootViewController = vc
+		
+		UIView.transition(with: window, duration: 0.5, options: [.transitionCrossDissolve], animations: nil, completion: nil)
 	}
 
 	func sceneDidDisconnect(_ scene: UIScene) {

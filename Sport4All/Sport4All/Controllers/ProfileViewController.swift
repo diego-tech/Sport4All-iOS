@@ -168,7 +168,7 @@ class ProfileViewController: UIViewController {
 			
 			if status == 1 {
 				let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
-				vc.modalPresentationStyle = .automatic
+				vc.modalPresentationStyle = .fullScreen
 				vc.modalTransitionStyle = .coverVertical
 				vc.isModalInPresentation = true
 				self.present(vc, animated: true, completion: nil)
