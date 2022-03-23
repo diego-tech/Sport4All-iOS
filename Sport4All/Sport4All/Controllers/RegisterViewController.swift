@@ -20,10 +20,15 @@ class RegisterViewController: UIViewController {
 	@IBOutlet weak var firstPasswordTF: UITextField!
 	@IBOutlet weak var secondPasswordTF: UITextField!
 	@IBOutlet weak var registerButton: UIButton!
+	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
+		
+		// Activity Indicator
+		activityIndicator.stopAnimating()
+		activityIndicator.isHidden = true
 		
 		// Inicialización Estilos
 		setTextFieldStyles()
@@ -73,8 +78,16 @@ class RegisterViewController: UIViewController {
 	}
 	
 	private func registerApi() {
+		UIView.animate(withDuration: 1) {
+			self.registerButton.isEnabled = false
+			self.registerButton.alpha = 0.5
+			// Activity Indicator
+			self.activityIndicator.startAnimating()
+			self.activityIndicator.isHidden = false
+		}
+		
 		let newUser = getTFValues()
-
+		
 		NetworkingProvider.shared.register(newUser: newUser) { responseData, status, msg in
 			guard let status = status else { return }
 			guard let msg = msg else { return }
@@ -91,8 +104,17 @@ class RegisterViewController: UIViewController {
 				}))
 				self.present(alertView, animated: true, completion: nil)
 			}
+			
+			
+			UIView.animate(withDuration: 1) {
+				self.registerButton.isEnabled = true
+				self.registerButton.alpha = 1
+				// Activity Indicator
+				self.activityIndicator.stopAnimating()
+				self.activityIndicator.isHidden = true
+			}
 		} failure: { error in
-			self.navigateToAuthController()	
+			self.navigateToAuthController()
 		}
 	}
 	
@@ -168,7 +190,7 @@ class RegisterViewController: UIViewController {
 extension RegisterViewController: UITextFieldDelegate {
 	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 		let text = (textField.text! as NSString).replacingCharacters(in: range, with: string)
-
+		
 		if text.isEmpty {
 			UIView.animate(withDuration: 1) {
 				self.registerButton.isEnabled = false
@@ -180,7 +202,7 @@ extension RegisterViewController: UITextFieldDelegate {
 				self.registerButton.alpha = 1
 			}
 		}
-	
+		
 		return true
 	}
 }
