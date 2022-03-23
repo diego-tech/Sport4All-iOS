@@ -110,6 +110,7 @@
                             <constraint firstItem="hfM-v6-JvX" firstAttribute="leading" secondItem="7pE-oz-ES7" secondAttribute="leading" constant="20" id="wcP-D7-ceR"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="D8e-2b-AWZ"/>
                     <connections>
                         <outlet property="accessButton" destination="4n3-PN-LaW" id="zBg-7D-Wfc"/>
                         <outlet property="emailTextField" destination="ev0-J8-Gft" id="OBp-eY-L3A"/>
@@ -120,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iLT-um-9YJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1042.0289855072465" y="-109.82142857142857"/>
+            <point key="canvasLocation" x="-131.8840579710145" y="-109.82142857142857"/>
         </scene>
     </scenes>
     <resources>

@@ -38,7 +38,7 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-		
+				
 		slides = [
 			OnboardingSlide(
 				title: Strings.slide1Title,
@@ -68,7 +68,7 @@ class OnboardingViewController: UIViewController {
 		
 		// Page Control
 		pageControl.numberOfPages = slides.count
-    }
+	}
 	
 	
 	// MARK: Action Functions

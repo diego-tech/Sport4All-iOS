@@ -36,7 +36,7 @@ class AuthViewController: UIViewController {
 		// Set Up Errors
 		setIndicatorForErrors()
 		
-		// Inicialización Estilos
+		// Styles Inicialization
 		setTextFieldStyles()
 		setButtonStyles()
 		
@@ -58,25 +58,24 @@ class AuthViewController: UIViewController {
 	
 	// MARK: Action Functions
 	@IBAction func rememberPasswordButtonAction(_ sender: UIButton) {
-		// Ir a Recuperar Contraseña
+		// Go to Recovery Password
 		let vc = UIStoryboard(name: "RetrievePassword", bundle: nil).instantiateViewController(withIdentifier: "RetrievePassword")
 		present(vc, animated: true, completion: nil)
 	}
 	
 	@IBAction func accessButtonAction(_ sender: UIButton) {
-		userLogin()
+		fetchUserLogin()
 	}
 	
 	@IBAction func goToRegisterButtonAction(_ sender: UIButton) {
-		// Ir a Registro
+		// Go To Register Screen
 		let vc = UIStoryboard(name: "Register", bundle: nil).instantiateViewController(withIdentifier: "FirstRegister")
 		present(vc, animated: true, completion: nil)
 	}
 	
 	// MARK: Functions
-	private func userLogin() {
+	private func fetchUserLogin() {
 		let userLogin = getTextFieldValues()
-		print(userLogin)
 		
 		if (emailTFisEmpty() && passwordTFisEmpty()) {
 			NetworkingProvider.shared.login(userLogin: userLogin) { responseData, status, msg in
@@ -106,16 +105,15 @@ class AuthViewController: UIViewController {
 						UserDefaultsProvider.shared.setUserDefaults(key: .authUserToken, value: authUserToken)
 						UserDefaultsProvider.shared.setUserDefaults(key: .authUserEmail, value: authUserEmail)
 						
-						let vc = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBar")
-						self.show(vc, sender: self)
+						self.goToHome()
 					}
 				}  else {
 					let indicator = SPIndicatorView(title: msg, message: errorMsg, preset: .error)
 					indicator.present(duration: 2)
 				}
-				
 			} failure: { error in
-				print(error)
+				guard let error = error else { return }
+				debugPrint("Auth VC Fatal Error \(error)")
 			}
 		}
 	}
@@ -162,6 +160,15 @@ class AuthViewController: UIViewController {
 		default:
 			break
 		}
+	}
+	
+	private func goToHome() {
+		guard let vc = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBar") as? TabBarController else {
+			fatalError("Can't load tabbars")
+		}
+		
+		let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
+		sceneDelegate?.changeRootViewController(vc)
 	}
 	
 	// MARK: Styles

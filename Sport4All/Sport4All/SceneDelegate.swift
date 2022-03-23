@@ -18,16 +18,46 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		// This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 		guard let _ = (scene as? UIWindowScene) else { return }
 		
+		let userDefaultsToken: String = UserDefaultsProvider.shared.string(key: .authUserToken) ?? ""
+		
 		/* Lanzar Onboarding */
 		if !UserDefaultsProvider.shared.bool(key: .isNewUser) {
 			// Show Onboarding
 			let vc = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
-			vc.modalPresentationStyle = .fullScreen
+			vc.modalPresentationStyle = .automatic
 			vc.modalType = .firstLogin
 			window?.rootViewController = vc
 		}
 		
+		// Show differents view controller if user has token or not
+		if userDefaultsToken != "" {
+			// Show Home Controller
+			let vc = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBar")
+			vc.modalPresentationStyle = .automatic
+			vc.modalTransitionStyle = .coverVertical
+			window?.rootViewController = vc
+		} else {
+		   // Show Auth Controller
+		   let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
+		   vc.modalPresentationStyle = .automatic
+		   vc.modalTransitionStyle = .coverVertical
+		   window?.rootViewController = vc
+	   }
+		
 		window?.makeKeyAndVisible()
+	}
+	
+	
+	/// Change Root View Controller
+	/// - Parameters:
+	///   - vc: The view controller to go when call this function
+	///   - animated: If you have animation or not
+	func changeRootViewController(_ vc: UIViewController, animated: Bool = true) {
+		guard let window = self.window else { return }
+		
+		window.rootViewController = vc
+		
+		UIView.transition(with: window, duration: 0.5, options: [.transitionCrossDissolve], animations: nil, completion: nil)
 	}
 
 	func sceneDidDisconnect(_ scene: UIScene) {

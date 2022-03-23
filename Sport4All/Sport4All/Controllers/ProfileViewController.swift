@@ -61,8 +61,6 @@ class ProfileViewController: UIViewController {
 	// MARK: Action Functions
 	@objc func settingsButtonTapped(tapGestureRecognizer: UITapGestureRecognizer) {
 		let vc = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: "Settings") as! SettingsViewController
-		
-		vc.modalPresentationStyle = .automatic
 		vc.settingsDelegate = self
 		present(vc, animated: true, completion: nil)
 	}
@@ -166,23 +164,23 @@ class ProfileViewController: UIViewController {
 	
 	private func logOut() {
 		NetworkingProvider.shared.logOut { status, msg in
-			print(status)
+			guard let msg = msg else { return }
 			
 			if status == 1 {
 				let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
 				vc.modalPresentationStyle = .fullScreen
 				vc.modalTransitionStyle = .coverVertical
+				vc.isModalInPresentation = true
 				self.present(vc, animated: true, completion: nil)
-				print(msg)
 			} else {
-				print(msg)
+				let indicator = SPIndicatorView(title: "Ha ocurrido un error", message: msg, preset: .error)
+				indicator.present(duration: 2)
 			}
 		} failure: { error in
 			let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
 			vc.modalPresentationStyle = .fullScreen
 			vc.modalTransitionStyle = .coverVertical
 			vc.errorType = .decodingError
-			print("Error 1")
 			self.present(vc, animated: true, completion: nil)
 		}
 	}
@@ -192,7 +190,7 @@ class ProfileViewController: UIViewController {
 		vc.modalPresentationStyle = .fullScreen
 		vc.modalTransitionStyle = .coverVertical
 		vc.modalType = .showTutorial
-		self.present(vc, animated: true, completion: nil)
+		present(vc, animated: true, completion: nil)
 	}
 	
 	// MARK: Styles
@@ -226,6 +224,7 @@ extension ProfileViewController: SettingsViewControllerDelegate {
 			self.goToOnboarding()
 		case .LogOut:
 			self.logOut()
+			UserDefaultsProvider.shared.remove(key: .authUserToken)
 		}
 	}
 }
