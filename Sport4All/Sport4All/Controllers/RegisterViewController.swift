@@ -91,7 +91,7 @@ class RegisterViewController: UIViewController {
 				self.present(alertView, animated: true, completion: nil)
 			}
 		} failure: { error in
-			self.navigateToAuthController()
+			self.navigateToAuthController()	
 		}
 	}
 	
