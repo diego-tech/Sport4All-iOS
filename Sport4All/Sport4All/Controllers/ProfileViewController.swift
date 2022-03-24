@@ -84,6 +84,22 @@ class ProfileViewController: UIViewController {
 	private func fetchUserInfo() {
 		NetworkingProvider.shared.userInfo { responseData, status, msg in
 			if status == 1 {
+				if let authUserName = responseData?.name {
+					UserDefaultsProvider.shared.setUserDefaults(key: .authUserName, value: authUserName)
+				}
+				
+				if let authUserSurname = responseData?.surname {
+					UserDefaultsProvider.shared.setUserDefaults(key: .authUserSurname, value: authUserSurname)
+				}
+				
+				if let authUserImg = responseData?.image {
+					UserDefaultsProvider.shared.setUserDefaults(key: .authUserImg, value: authUserImg)
+				}
+				
+				if let authUserGenre = responseData?.genre {
+					UserDefaultsProvider.shared.setUserDefaults(key: .authUserGenre, value: authUserGenre)
+				}
+				
 				guard let userEmail = responseData?.email else { return }
 				if let userName = responseData?.name, let userSurname = responseData?.surname {
 					self.userNameLabel.text = userName + " " + userSurname

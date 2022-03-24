@@ -86,22 +86,6 @@ class AuthViewController: UIViewController {
 				
 				if AuxFunctions.checkStatusCode(statusCode: statusCode) {
 					if let authUserToken = responseData?.token, let authUserEmail = responseData?.email {
-						if let authUserName = responseData?.name {
-							UserDefaultsProvider.shared.setUserDefaults(key: .authUserName, value: authUserName)
-						}
-						
-						if let authUserSurname = responseData?.surname {
-							UserDefaultsProvider.shared.setUserDefaults(key: .authUserSurname, value: authUserSurname)
-						}
-						
-						if let authUserImg = responseData?.image {
-							UserDefaultsProvider.shared.setUserDefaults(key: .authUserImg, value: authUserImg)
-						}
-						
-						if let authUserGenre = responseData?.genre {
-							UserDefaultsProvider.shared.setUserDefaults(key: .authUserGenre, value: authUserGenre)
-						}
-						
 						UserDefaultsProvider.shared.setUserDefaults(key: .authUserToken, value: authUserToken)
 						UserDefaultsProvider.shared.setUserDefaults(key: .authUserEmail, value: authUserEmail)
 						
@@ -152,8 +136,8 @@ class AuthViewController: UIViewController {
 	private func setIndicatorForErrors() {
 		switch errorType {
 		case .decodingError:
-			let indicatorView = SPIndicatorView(title: "Error", message: "Pruebe a logearse otra vez", preset: .error)
-			indicatorView.present(duration: 3)
+			let alertView = UIAlertController(title: "Error", message: "Pruebe a logearse otra vez", preferredStyle: .alert)
+			present(alertView, animated: true)
 		case .userTokenError:
 			debugPrint("User Token Error")
 		default:
