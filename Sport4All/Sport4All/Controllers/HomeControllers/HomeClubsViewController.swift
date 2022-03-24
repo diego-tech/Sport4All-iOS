@@ -19,7 +19,10 @@ class HomeClubsViewController: UIViewController {
 	@IBOutlet weak var homeClubsTableView: UITableView!
 	@IBOutlet weak var allClubsLabel: UILabel!
 	@IBOutlet weak var bestRatedLabel: UILabel!
-	@IBOutlet weak var uiViewBestRated: UIView!
+	@IBOutlet weak var allClubsTopToBottomSearchBarConstraint: NSLayoutConstraint!
+	@IBOutlet weak var bestRatedUIViewTopToBottomSearhBarConstraint: NSLayoutConstraint!
+	@IBOutlet weak var bestRatedUIViewBottomToTopAllClubsUIView: NSLayoutConstraint!
+	@IBOutlet weak var bestRatedUIView: UIView!
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
@@ -82,8 +85,6 @@ class HomeClubsViewController: UIViewController {
 			if error == nil {
 				if status == 1 {
 					self?.homeClubsTableView.reloadData()
-				} else {
-					
 				}
 			} else {
 				let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
@@ -97,12 +98,19 @@ class HomeClubsViewController: UIViewController {
 	
 	private func mostRatedCollectionList() {
 		collectionViewModel.fetchMostRated { [weak self] status, error in
-			
+			debugPrint("Status \(status)")
 			if error == nil {
 				if status == 1 {
 					self?.bestRatedCollectionView.reloadData()
+					self?.bestRatedUIViewBottomToTopAllClubsUIView.isActive = true
+					self?.bestRatedUIView.isHidden = false
+					self?.allClubsTopToBottomSearchBarConstraint.isActive = false
+					self?.bestRatedUIViewTopToBottomSearhBarConstraint.isActive = true
 				} else if status == 3 {
-					self?.uiViewBestRated.isHidden = true
+					self?.bestRatedUIView.isHidden = true
+					self?.allClubsTopToBottomSearchBarConstraint.isActive = true
+					self?.bestRatedUIViewTopToBottomSearhBarConstraint.isActive = false
+					self?.bestRatedUIViewBottomToTopAllClubsUIView.isActive = false
 				}
 			} else {
 				let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
