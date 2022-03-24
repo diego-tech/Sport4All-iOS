@@ -12,6 +12,7 @@ class HomeClubsViewController: UIViewController {
 	// MARK: Variables
 	private var tableViewModel = HomeListViewModel()
 	private var collectionViewModel = HomeCollectionViewModel()
+	private var isAnimating: Bool = true
 	
 	// MARK: Outlets
 	@IBOutlet weak var searchBar: UITextField!
@@ -45,7 +46,7 @@ class HomeClubsViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
-		
+				
 		// Search Bar Delegate
 		searchBar.delegate = self
 		
@@ -62,18 +63,7 @@ class HomeClubsViewController: UIViewController {
 		bestRatedLabel.isUserInteractionEnabled = true
 		let tapBestRatedLabel = UITapGestureRecognizer(target: self, action: #selector(tapBestRatedLabel(sender:)))
 		bestRatedLabel.addGestureRecognizer(tapBestRatedLabel)
-		
-//		self.searchBar.isHidden = true
-//
-//		UIView.animate(withDuration: 10, animations: {
-//			debugPrint("Hello Search Bar 1")
-//			self.searchBar.isHidden = false
-//
-//			// Custom Search Bar
-//			self.searchBar.customSearch()
-//		})
-//		setView()
-		
+
 		// Custom Search Bar
 		self.searchBar.customSearch()
 	}
@@ -184,8 +174,11 @@ extension HomeClubsViewController: UICollectionViewDelegate, UICollectionViewDel
 		cell.setItemWithValueOf(club)
 		cell.reserveButtonDelegate = self
 		cell.alpha = 0
-		
-		UIView.animate(withDuration: 1.5, animations: { cell.alpha = 1 })
+			
+		if isAnimating {
+			UIView.animate(withDuration: 1.5, animations: { cell.alpha = 1 })
+			isAnimating = false
+		}
 		return cell
 	}
 	
@@ -226,7 +219,10 @@ extension HomeClubsViewController: UITableViewDataSource, UITableViewDelegate {
 		cell.setCellWithValueOf(club)
 		cell.alpha = 0
 		
-		UIView.animate(withDuration: 1.5, animations: { cell.alpha = 1 })
+		if isAnimating {
+			UIView.animate(withDuration: 1.5, animations: { cell.alpha = 1 })
+			isAnimating = false
+		}
 		return cell
 	}
 	

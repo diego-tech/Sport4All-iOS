@@ -51,6 +51,11 @@ class ModifyPasswordViewController: UIViewController {
 	private func changePassword() {
 		if !firstPasswordTF.checkIfIsEmpty(placeHolderText: "Introduzca la Contraseña") && !checkPasswordTF.checkIfIsEmpty(placeHolderText: "Introduzca la Contraseña") {
 			if checkIfPassIsSame() {
+				UIView.animate(withDuration: 1) {
+					self.savePasswordBTN.isEnabled = false
+					self.savePasswordBTN.alpha = 0.5
+				}
+				
 				guard let password = checkPasswordTF.text else { return }
 				
 				NetworkingProvider.shared.modifyPassword(newPassword: password) { responseData, status, msg in
@@ -69,6 +74,11 @@ class ModifyPasswordViewController: UIViewController {
 					} else {
 						let indicatorView = SPIndicatorView(title: "Ha ocurrido un error", message: errorMsg, preset: .error)
 						indicatorView.present(duration: 3)
+					}
+					
+					UIView.animate(withDuration: 1) {
+						self.savePasswordBTN.isEnabled = true
+						self.savePasswordBTN.alpha = 1
 					}
 				} failure: { error in
 					let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController

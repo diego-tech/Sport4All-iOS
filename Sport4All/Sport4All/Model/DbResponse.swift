@@ -76,3 +76,8 @@ struct InfoClubResponse: Codable {
 	let data: Club?
 	let msg: String?
 }
+
+struct CheckHasTokenResponse: Codable {
+	let status: Int?
+	let msg: String?
+}

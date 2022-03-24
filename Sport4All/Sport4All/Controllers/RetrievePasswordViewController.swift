@@ -56,18 +56,29 @@ class RetrievePasswordViewController: UIViewController {
 	private func retrievePassword() {
 		guard let email = email else { return }
 		
+		UIView.animate(withDuration: 1) {
+			self.sendButton.isEnabled = false
+			self.sendButton.alpha = 0.5
+		}
+		
 		NetworkingProvider.shared.retrievePassword(email: email) { status, msg in
 			if status == 1 {
 				let indicator = SPIndicatorView(title: "Compruebe su bandeja de entrada", preset: .done)
-				indicator.present(duration: 2) {
+				indicator.present(duration: 1.5) {
 					self.goToAuth()
 				}
 			} else {
 				let indicator = SPIndicatorView(title: "Ha Ocurrido un Error", message: "Pruebe más tarde", preset: .error)
-				indicator.present(duration: 3)
+				indicator.present(duration: 2)
+			}
+			
+			UIView.animate(withDuration: 1) {
+				self.sendButton.isEnabled = true
+				self.sendButton.alpha = 1
 			}
 		} failure: { error in
-			debugPrint(error?.localizedDescription)
+			guard let error = error else { return }
+			debugPrint("Retrieve Password Error \(error)")
 			self.goToAuth()
 		}
 	}
