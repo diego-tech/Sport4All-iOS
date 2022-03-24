@@ -9,7 +9,7 @@ import UIKit
 
 extension UIColor {
 	
-	// Colors
+	// App Colors
 	static let backgroundColor = UIColor(named: "BackgroundColor")
 	static let blueBerry = UIColor(named: "BlueBerry")
 	static let calendarColor = UIColor(named: "CalendarColor")
@@ -20,4 +20,5 @@ extension UIColor {
 	static let redColor = UIColor(named: "RedColor")
 	static let searchColor = UIColor(named: "SearchColor")
 	static let softBlue = UIColor(named: "SoftBlue")
+	static let blueLowOpacity = UIColor(named: "BlueLowOpacity")
 }
