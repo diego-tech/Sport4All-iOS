@@ -54,6 +54,7 @@ class ReservesViewController: UIViewController {
 		guard let nowTime = nowTime else { return }
 		let nowTimeStr = dateFormatter.string(from: nowTime)
 		pickedTime = nowTimeStr + ":00"
+		
 		hourTextField.text = pickedTime
 	
 		// Init Table View

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SPIndicator
 
 enum ReserveType {
 	case courtReserve
@@ -151,29 +152,78 @@ class PayResumeViewController: UIViewController {
 	}
 	
 	private func courtReservePay() {
+		UIView.animate(withDuration: 1) {
+			self.payButton.isEnabled = false
+			self.payButton.alpha = 0.5
+		}
 		guard let clubId = club?.id else { return }
-		print("Tiempo Variable \(time)")
 		let reserveQuery = ReserveQuery(club_id: clubId, court_id: court_id, day: day, start_time: start_time, time: time)
-		
-		print("Reserva \(reserveQuery)")
-		
+				
 		NetworkingProvider.shared.courtReserve(reserveQuery: reserveQuery) { responseData, status, msg in
-			print(responseData)
-			print(status)
-			print(msg)
+			guard let status = status else { return }
+			guard responseData != nil else { return }
+			guard let msg = msg else { return }
+			if status == 1 {
+				let indicator = SPIndicatorView(title: "Pago Realizado Correctamente", message: msg, preset: .done)
+				indicator.present(duration: 1) {
+					self.dismiss(animated: true, completion: nil)
+				}
+			} else {
+				let indicator = SPIndicatorView(title: "Ha ocurrido un error", message: msg, preset: .error)
+				indicator.present(duration: 2) {
+					self.dismiss(animated: true, completion: nil)
+				}
+			}
+			
+			UIView.animate(withDuration: 1) {
+				self.payButton.isEnabled = true
+				self.payButton.alpha = 1
+			}
 		} failure: { error in
-			print(error)
+			guard let error = error else { return }
+			debugPrint("Court Reserve Pay Error \(error)")
+			self.goToAuth()
 		}
 	}
 	
 	private func matchReservePay() {
-		NetworkingProvider.shared.matchInscription(match_id: matchId) { responseData, status, msg in
-			print(responseData)
-			print(status)
-			print(msg)
-		} failure: { error in
-			print(error)
+		UIView.animate(withDuration: 1) {
+			self.payButton.isEnabled = false
+			self.payButton.alpha = 0.5
 		}
+		NetworkingProvider.shared.matchInscription(match_id: matchId) { responseData, status, msg in
+			guard let status = status else { return }
+			guard responseData != nil else { return }
+			guard let msg = msg else { return }
+			if status == 1 {
+				let indicator = SPIndicatorView(title: "Pago Realizado Correctamente", message: msg, preset: .done)
+				indicator.present(duration: 1) {
+					self.dismiss(animated: true, completion: nil)
+				}
+			} else {
+				let indicator = SPIndicatorView(title: "Ha ocurrido un error", message: msg, preset: .error)
+				indicator.present(duration: 2) {
+					self.dismiss(animated: true, completion: nil)
+				}
+			}
+			
+			UIView.animate(withDuration: 1) {
+				self.payButton.isEnabled = true
+				self.payButton.alpha = 1
+			}
+		} failure: { error in
+			guard let error = error else { return }
+			debugPrint("Match Reserve Pay Error \(error)")
+			self.goToAuth()
+		}
+	}
+	
+	private func goToAuth() {
+		let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
+		vc.modalPresentationStyle = .fullScreen
+		vc.modalTransitionStyle = .coverVertical
+		vc.errorType = .decodingError
+		present(vc, animated: true, completion: nil)
 	}
 	
 	// MARK: Styles

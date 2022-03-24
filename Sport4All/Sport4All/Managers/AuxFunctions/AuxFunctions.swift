@@ -78,8 +78,10 @@ final class AuxFunctions {
 	static func getTimeList(openingTime: Int, closingTime: Int) -> [String] {
 		let dateFormatter = DateFormatter()
 		let today = Date()
+		let todayHalfHour = today.nearestHour()
+		guard let todayHalfHour = todayHalfHour else { return [""] }
 		dateFormatter.dateFormat = "HH"
-		let nowTime = dateFormatter.string(from: today)
+		let nowTime = dateFormatter.string(from: todayHalfHour)
 		let nowTimeInt = Int(nowTime)
 		
 		var startArrayTime: Int = 0
