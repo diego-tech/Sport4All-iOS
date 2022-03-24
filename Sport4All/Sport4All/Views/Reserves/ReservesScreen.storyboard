@@ -13,6 +13,9 @@
         <array key="SF-Pro-Display-Medium.otf">
             <string>SFProDisplay-Medium</string>
         </array>
+        <array key="SF-Pro.ttf">
+            <string>SFPro-Medium</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Reserves View Controller-->
@@ -82,6 +85,15 @@
                                                     <constraint firstAttribute="height" constant="1" id="ypi-Cq-tpc"/>
                                                 </constraints>
                                             </view>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No hay pistas libres en este momento!!!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjv-dE-KN0">
+                                                <rect key="frame" x="20" y="439" width="374" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="olc-om-1eG"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SFPro-Medium" family="SF Pro" pointSize="17"/>
+                                                <color key="textColor" name="HardColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BI7-g2-dL2">
                                                 <rect key="frame" x="0.0" y="387" width="414" height="1"/>
                                                 <color key="backgroundColor" name="HardColor"/>
@@ -157,8 +169,11 @@
                                             <constraint firstAttribute="height" constant="600" id="Ey0-pD-99u"/>
                                             <constraint firstAttribute="trailing" secondItem="BI7-g2-dL2" secondAttribute="trailing" id="KAn-RA-Vhq"/>
                                             <constraint firstAttribute="bottom" secondItem="dJk-ix-05Y" secondAttribute="bottom" constant="30" id="Kao-Wq-vk6"/>
+                                            <constraint firstItem="Gjv-dE-KN0" firstAttribute="top" secondItem="BI7-g2-dL2" secondAttribute="bottom" constant="51" id="L9j-lu-rsp"/>
                                             <constraint firstAttribute="trailing" secondItem="2SQ-3F-bLt" secondAttribute="trailing" constant="20" id="LbX-Us-Nv3"/>
+                                            <constraint firstItem="Gjv-dE-KN0" firstAttribute="leading" secondItem="Wkt-kx-t3y" secondAttribute="leading" constant="20" id="MR1-Kw-sOg"/>
                                             <constraint firstItem="Mff-ml-TfI" firstAttribute="leading" secondItem="Wkt-kx-t3y" secondAttribute="leading" id="TgZ-Ne-43H"/>
+                                            <constraint firstAttribute="trailing" secondItem="Gjv-dE-KN0" secondAttribute="trailing" constant="20" id="gLu-Fb-GSi"/>
                                             <constraint firstItem="BI7-g2-dL2" firstAttribute="top" secondItem="2SQ-3F-bLt" secondAttribute="bottom" constant="21" id="j7G-rc-b0o"/>
                                             <constraint firstItem="OQy-2b-3Re" firstAttribute="top" secondItem="Wkt-kx-t3y" secondAttribute="top" id="sZV-mv-FMM"/>
                                             <constraint firstItem="2SQ-3F-bLt" firstAttribute="leading" secondItem="Wkt-kx-t3y" secondAttribute="leading" constant="20" id="thd-Zf-xBF"/>
@@ -195,6 +210,7 @@
                         <outlet property="calendarHeightConstraint" destination="3kB-Nd-fnK" id="VPp-Hu-jUA"/>
                         <outlet property="clubBannerImageView" destination="XyD-EH-tFr" id="ylh-xV-nFy"/>
                         <outlet property="clubNameLabel" destination="IPt-u0-YwW" id="CMj-2n-m4w"/>
+                        <outlet property="errorLabel" destination="Gjv-dE-KN0" id="GIu-vb-YVJ"/>
                         <outlet property="hourTextField" destination="2SQ-3F-bLt" id="5Lp-Ao-iRV"/>
                         <outlet property="reservesTableView" destination="dJk-ix-05Y" id="VDv-R0-ZL6"/>
                     </connections>

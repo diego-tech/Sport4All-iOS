@@ -7,6 +7,7 @@
 
 import UIKit
 import FSCalendar
+import SPIndicator
 
 class ReservesViewController: UIViewController {
 	
@@ -38,6 +39,7 @@ class ReservesViewController: UIViewController {
 	@IBOutlet weak var clubNameLabel: UILabel!
 	@IBOutlet weak var reservesTableView: UITableView!
 	@IBOutlet weak var hourTextField: UITextField!
+	@IBOutlet weak var errorLabel: UILabel!
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
@@ -115,8 +117,23 @@ class ReservesViewController: UIViewController {
 		}		
 		guard let queryCourt = queryCourt else { return }
 
-		tableViewModel.fetchFreeCourts(queryCourt: queryCourt) { [weak self] status in
-			self?.initTableView()
+		tableViewModel.fetchFreeCourts(queryCourt: queryCourt) { [weak self] status, error in
+			if error == nil {
+				if status == 1 {
+					self?.initTableView()
+				} else if status == 3 {
+					self?.errorLabel.isHidden = false
+				} else {
+					let indicatorView = SPIndicatorView(title: "Ha ocurrido un error", preset: .error)
+					indicatorView.present(duration: 2)
+				}
+			} else {
+				let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
+				vc.modalPresentationStyle = .fullScreen
+				vc.modalTransitionStyle = .coverVertical
+				vc.errorType = .decodingError
+				self?.present(vc, animated: true, completion: nil)
+			}
 		}
 	}
 	

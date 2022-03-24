@@ -14,15 +14,21 @@ class CourtsListViewModel {
 	private var status = Int()
 
 	// MARK: Free Courts List
-	func fetchFreeCourts(queryCourt: QueryCourt, completion: @escaping (_ status: Int?) -> ()) {
+	func fetchFreeCourts(queryCourt: QueryCourt, completion: @escaping (_ status: Int?, _ error: Error?) -> ()) {
 		NetworkingProvider.shared.freeCourts(courtsParameters: queryCourt) { responseData, status, msg in
 			guard let responseList = responseData else { return }
 			guard let status = status else { return }
 			self.status = status
 			self.courtList = responseList
-			completion(status)
+			if responseList.isEmpty {
+				completion(3, nil)
+			} else {
+				completion(status, nil)
+			}
 		} failure: { error in
-			debugPrint(error)
+			guard let error = error else { return }
+			debugPrint("Free Courts List Error \(error)")
+			completion(0, error)
 		}
 	}
 	
