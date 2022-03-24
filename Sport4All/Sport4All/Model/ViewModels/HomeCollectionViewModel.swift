@@ -21,7 +21,7 @@ class HomeCollectionViewModel {
 			guard let status = status else { return }
 			self.status = status
 			self.clubList = responseList
-			if self.clubList.isEmpty {
+			if responseList.isEmpty {
 				completion(3, nil)
 			} else {
 				completion(status, nil)

@@ -16,6 +16,7 @@
         </array>
         <array key="SF-Pro.ttf">
             <string>SFPro-Light</string>
+            <string>SFPro-Medium</string>
             <string>SFPro-Regular</string>
             <string>SFPro-Semibold</string>
         </array>
@@ -315,14 +316,24 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Hay Eventos Disponibles !!!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDy-7o-SUn">
+                                <rect key="frame" x="20" y="438" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" name="SFPro-Medium" family="SF Pro" pointSize="17"/>
+                                <color key="textColor" name="HardColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XFq-Ej-Eeg"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="wDy-7o-SUn" firstAttribute="centerY" secondItem="geu-BB-Jkw" secondAttribute="centerY" id="1QP-o1-MFz"/>
                             <constraint firstItem="KEH-2U-aXS" firstAttribute="leading" secondItem="XFq-Ej-Eeg" secondAttribute="leading" id="2Gz-L6-PgT"/>
                             <constraint firstItem="KEH-2U-aXS" firstAttribute="trailing" secondItem="XFq-Ej-Eeg" secondAttribute="trailing" id="G6u-B2-PpJ"/>
                             <constraint firstItem="KEH-2U-aXS" firstAttribute="top" secondItem="XFq-Ej-Eeg" secondAttribute="top" id="KMB-8p-oFu"/>
                             <constraint firstItem="KEH-2U-aXS" firstAttribute="bottom" secondItem="XFq-Ej-Eeg" secondAttribute="bottom" id="NoA-oW-Zgs"/>
+                            <constraint firstItem="XFq-Ej-Eeg" firstAttribute="trailing" secondItem="wDy-7o-SUn" secondAttribute="trailing" constant="20" id="RQG-SJ-hv3"/>
+                            <constraint firstItem="wDy-7o-SUn" firstAttribute="centerX" secondItem="geu-BB-Jkw" secondAttribute="centerX" id="q6a-SV-mvK"/>
+                            <constraint firstItem="wDy-7o-SUn" firstAttribute="leading" secondItem="XFq-Ej-Eeg" secondAttribute="leading" constant="20" id="qdA-sx-LSo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lo5-hY-m1d">
@@ -330,6 +341,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="eventsTableView" destination="KEH-2U-aXS" id="cGm-kd-9jn"/>
+                        <outlet property="noEventsLabel" destination="wDy-7o-SUn" id="gcR-XW-HBE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xLF-3S-CvM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -363,7 +375,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="654"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ABW-rG-40h" userLabel="BestRatedUIView">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ABW-rG-40h" userLabel="BestRatedUIView">
                                 <rect key="frame" x="0.0" y="99" width="414" height="184.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mejor Valorados" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QdO-0x-0UR">

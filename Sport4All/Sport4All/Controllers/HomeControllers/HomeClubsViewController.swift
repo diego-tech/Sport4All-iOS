@@ -46,14 +46,12 @@ class HomeClubsViewController: UIViewController {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
 		
+		// Search Bar Delegate
 		searchBar.delegate = self
 		
 		// Init Collection View and Table View
 		initCollectionView()
 		initTableView()
-		
-		// Custom Search Bar
-		searchBar.customSearch()
 		
 		// All Clubs Label Action
 		allClubsLabel.isUserInteractionEnabled = true
@@ -64,6 +62,20 @@ class HomeClubsViewController: UIViewController {
 		bestRatedLabel.isUserInteractionEnabled = true
 		let tapBestRatedLabel = UITapGestureRecognizer(target: self, action: #selector(tapBestRatedLabel(sender:)))
 		bestRatedLabel.addGestureRecognizer(tapBestRatedLabel)
+		
+//		self.searchBar.isHidden = true
+//
+//		UIView.animate(withDuration: 10, animations: {
+//			debugPrint("Hello Search Bar 1")
+//			self.searchBar.isHidden = false
+//
+//			// Custom Search Bar
+//			self.searchBar.customSearch()
+//		})
+//		setView()
+		
+		// Custom Search Bar
+		self.searchBar.customSearch()
 	}
 	
 	// MARK: Action Functions
@@ -85,20 +97,19 @@ class HomeClubsViewController: UIViewController {
 			if error == nil {
 				if status == 1 {
 					self?.homeClubsTableView.reloadData()
+				} else if status == 1 {
+					self?.homeClubsTableView.reloadData()
+				} else {
+					self?.goToAuth()
 				}
 			} else {
-				let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
-				vc.modalPresentationStyle = .fullScreen
-				vc.modalTransitionStyle = .coverVertical
-				vc.errorType = .decodingError
-				self?.present(vc, animated: true, completion: nil)
+				self?.goToAuth()
 			}
 		}
 	}
 	
 	private func mostRatedCollectionList() {
 		collectionViewModel.fetchMostRated { [weak self] status, error in
-			debugPrint("Status \(status)")
 			if error == nil {
 				if status == 1 {
 					self?.bestRatedCollectionView.reloadData()
@@ -111,15 +122,21 @@ class HomeClubsViewController: UIViewController {
 					self?.allClubsTopToBottomSearchBarConstraint.isActive = true
 					self?.bestRatedUIViewTopToBottomSearhBarConstraint.isActive = false
 					self?.bestRatedUIViewBottomToTopAllClubsUIView.isActive = false
+				} else {
+					self?.goToAuth()
 				}
 			} else {
-				let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
-				vc.modalPresentationStyle = .fullScreen
-				vc.modalTransitionStyle = .coverVertical
-				vc.errorType = .decodingError
-				self?.present(vc, animated: true, completion: nil)
+				self?.goToAuth()
 			}
 		}
+	}
+	
+	private func goToAuth() {
+		let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
+		vc.modalPresentationStyle = .fullScreen
+		vc.modalTransitionStyle = .coverVertical
+		vc.errorType = .decodingError
+		self.present(vc, animated: true, completion: nil)
 	}
 	
 	private func initTableView() {
@@ -142,6 +159,16 @@ class HomeClubsViewController: UIViewController {
 		bestRatedCollectionView.showsVerticalScrollIndicator = false
 		bestRatedCollectionView.showsHorizontalScrollIndicator = false
 		bestRatedCollectionView.reloadData()
+	}
+	
+	private func setView() {
+		debugPrint("Hello Search Bar")
+		self.searchBar.isHidden = true
+		
+		UIView.animate(withDuration: 10, animations: {
+			debugPrint("Hello Search Bar 1")
+			self.searchBar.isHidden = false
+		})
 	}
 }
 
