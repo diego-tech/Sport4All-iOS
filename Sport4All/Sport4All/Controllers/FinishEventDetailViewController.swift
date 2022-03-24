@@ -22,6 +22,7 @@ class FinishEventDetailViewController: UIViewController {
 	@IBOutlet weak var typeEventLabel: UILabel!
 	@IBOutlet weak var dayEventLabel: UILabel!
 	@IBOutlet weak var hourEventLabel: UILabel!
+	@IBOutlet weak var infoClubButton: UIButton!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -85,9 +86,19 @@ class FinishEventDetailViewController: UIViewController {
 	private func fetchClubInfo() {
 		NetworkingProvider.shared.infoClub(club_id: clubId) { responseData, status, msg in
 			guard let club = responseData else { return }
-			self.club = club
+			if status == 1 {
+				self.club = club
+			} else {
+				self.infoClubButton.isEnabled = false
+			}
 		} failure: { error in
-			debugPrint(error)
+			guard let error = error else { return }
+			debugPrint("Fetch Club Info Error \(error)")
+			let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
+			vc.modalPresentationStyle = .fullScreen
+			vc.modalTransitionStyle = .coverVertical
+			vc.errorType = .decodingError
+			self.present(vc, animated: true, completion: nil)
 		}
 	}
 	

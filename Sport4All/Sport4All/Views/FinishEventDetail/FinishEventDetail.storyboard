@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cJG-er-oeb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -28,7 +28,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7h-Ui-V7v">
                                 <rect key="frame" x="0.0" y="88" width="414" height="281"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InfoClubImg" translatesAutoresizingMaskIntoConstraints="NO" id="WNm-LW-rFa" customClass="LazyImageView" customModule="Sport4All" customModuleProvider="target">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WNm-LW-rFa" customClass="LazyImageView" customModule="Sport4All" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="20" width="414" height="166"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="166" id="dgD-W7-qWi"/>
@@ -228,6 +228,7 @@
                         <outlet property="dayEventLabel" destination="P7O-d6-zYX" id="PkH-5Z-fY6"/>
                         <outlet property="headerUIView" destination="o7h-Ui-V7v" id="q3F-O8-DdI"/>
                         <outlet property="hourEventLabel" destination="rs4-1n-o2B" id="WMv-Zb-LxF"/>
+                        <outlet property="infoClubButton" destination="cQe-49-DXB" id="7lO-GV-d3k"/>
                         <outlet property="typeEventLabel" destination="XcR-kT-YLZ" id="XY9-e7-piQ"/>
                     </connections>
                 </viewController>
@@ -255,7 +256,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="InfoClubImg" width="375" height="150"/>
         <image name="InfoIcon" width="45" height="45"/>
         <image name="Phone" width="45" height="45"/>
         <image name="Web" width="45" height="45"/>

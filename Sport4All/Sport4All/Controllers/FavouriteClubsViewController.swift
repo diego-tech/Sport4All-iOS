@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SPIndicator
 
 class FavouriteClubsViewController: UIViewController {
 	
@@ -37,13 +38,14 @@ class FavouriteClubsViewController: UIViewController {
 			if error == nil {
 				if status == 1 {
 					self?.initTableView()
+				} else if status == 3 {
+					print("Is Empty")
+				} else {
+					let indicator = SPIndicatorView(title: "Ha ocurrido un error", preset: .error)
+					indicator.present(duration: 2)
 				}
 			} else {
-				let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
-				vc.modalPresentationStyle = .fullScreen
-				vc.modalTransitionStyle = .coverVertical
-				vc.errorType = .decodingError
-				self?.present(vc, animated: true, completion: nil)
+				self?.goToAuth()
 			}
 		}
 	}
@@ -57,6 +59,14 @@ class FavouriteClubsViewController: UIViewController {
 		favouritesTableView.showsHorizontalScrollIndicator = false
 		favouritesTableView.showsVerticalScrollIndicator = false
 		favouritesTableView.reloadData()
+	}
+	
+	private func goToAuth() {
+		let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
+		vc.modalPresentationStyle = .fullScreen
+		vc.modalTransitionStyle = .coverVertical
+		vc.errorType = .decodingError
+		present(vc, animated: true, completion: nil)
 	}
 	
 	// MARK: Styles
@@ -110,15 +120,20 @@ extension FavouriteClubsViewController: UITableViewDataSource, UITableViewDelega
 		guard let clubId = club.id else { return }
 		switch editingStyle {
 		case .delete:
-			NetworkingProvider.shared.deleteFavouriteClub(clubId: clubId) { responseData, status, msg in
-				print(responseData)
-				print(status)
-				print(msg)
+			NetworkingProvider.shared.deleteFavouriteClub(clubId: clubId) { [weak self] status, msg in
+				guard let status = status else { return }
+				if status == 1 {
+					self?.clubViewModel.removeForRowAt(indexPath: indexPath)
+					tableView.deleteRows(at: [indexPath], with: .left)
+				} else {
+					let indicator = SPIndicatorView(title: "Ha ocurrido un error", preset: .error)
+					indicator.present(duration: 2)
+				}
 			} failure: { error in
-				print(error)
+				guard let error = error else { return }
+				debugPrint("Delete Favourite FAV VC Error \(error)")
+				self.goToAuth()
 			}
-			clubViewModel.removeForRowAt(indexPath: indexPath)
-			tableView.deleteRows(at: [indexPath], with: .fade)
 		default:
 			break
 		}

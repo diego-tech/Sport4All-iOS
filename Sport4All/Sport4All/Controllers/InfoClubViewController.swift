@@ -120,8 +120,7 @@ class InfoClubViewController: UIViewController {
 		guard let id = club?.id else { return }
 		
 		if !isFavourite {
-			NetworkingProvider.shared.deleteFavouriteClub(clubId: id) { responseData, status, msg in
-				print(responseData)
+			NetworkingProvider.shared.deleteFavouriteClub(clubId: id) { status, msg in
 				print(status)
 				print(msg)
 			} failure: { error in
