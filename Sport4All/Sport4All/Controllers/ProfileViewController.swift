@@ -115,8 +115,9 @@ class ProfileViewController: UIViewController {
 				}
 				
 				if let userImage = responseData?.image  {
-					guard let url = URL(string: Constants.kStorageURL + userImage) else { return }
-					self.userImageView.loadImage(fromURL: url)
+					if let url = URL(string: Constants.kStorageURL + userImage) {
+						self.userImageView.loadImage(fromURL: url)
+					}
 				}
 				
 				self.activityIndicator.stopAnimating()
@@ -127,6 +128,7 @@ class ProfileViewController: UIViewController {
 		}
 	}
 	
+	/// Call Pending List Functions In View Model
 	private func pendingList() {
 		self.pendingEventsCollectionView.dataSource = self
 		self.pendingEventsCollectionView.delegate = self
@@ -164,6 +166,7 @@ class ProfileViewController: UIViewController {
 		
 	}
 	
+	/// Call Finish List Functions In View Model
 	private func finishList() {
 		self.finalEventsCollectionView.dataSource = self
 		self.finalEventsCollectionView.delegate = self
