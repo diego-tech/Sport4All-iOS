@@ -18,41 +18,59 @@ class FinishListProfileViewModel {
 	private var status = Int()
 	
 	// MARK: Fetch Finish Events
-	func fetchFinishEvents(completion: @escaping (_ status: Int?) -> ()) {
+	func fetchFinishEvents(completion: @escaping (_ status: Int?, _ error: Error?) -> ()) {
 		NetworkingProvider.shared.finishEvents { responseData, status, msg in
 			guard let responseList = responseData else { return }
 			guard let status = status else { return }
 			self.status = status
 			self.finishEvent = responseList
-			completion(status)
+			if responseList.isEmpty {
+				completion(3, nil)
+			} else {
+				completion(status, nil)
+			}
 		} failure: { error in
-			debugPrint(error)
+			guard let error = error else { return }
+			debugPrint("Finish Events List Error \(error)")
+			completion(0, nil)
 		}
 	}
 	
 	// MARK: Fetch Finish Matchs
-	func fetchFinishMatchs(completion: @escaping (_ status: Int?) -> ()) {
+	func fetchFinishMatchs(completion: @escaping (_ status: Int?, _ error: Error?) -> ()) {
 		NetworkingProvider.shared.finishMatch { responseData, status, msg in
 			guard let responseList = responseData else { return }
 			guard let status = status else { return }
 			self.status = status
 			self.finishMatch = responseList
-			completion(status)
+			if responseList.isEmpty {
+				completion(3, nil)
+			} else {
+				completion(status, nil)
+			}
 		} failure: { error in
-			debugPrint(error)
+			guard let error = error else { return }
+			debugPrint("Finish Matchs List Error \(error)")
+			completion(0, nil)
 		}
 	}
 	
 	// MARK: Fetch Finish Reserves
-	func fetchFinishReserves(completion: @escaping (_ status: Int?) -> ()) {
+	func fetchFinishReserves(completion: @escaping (_ status: Int?, _ error: Error?) -> ()) {
 		NetworkingProvider.shared.finishReserve { responseData, status, msg in
 			guard let responseList = responseData else { return }
 			guard let status = status else { return }
 			self.status = status
 			self.finishReserve = responseList
-			completion(status)
+			if responseList.isEmpty {
+				completion(3, nil)
+			} else {
+				completion(status, nil)
+			}
 		} failure: { error in
-			print(error)
+			guard let error = error else { return }
+			debugPrint("Finish Reserves List Error \(error)")
+			completion(0, nil)
 		}
 	}
 	

@@ -133,15 +133,15 @@ class ProfileViewController: UIViewController {
 		self.pendingEventsCollectionView.dataSource = self
 		self.pendingEventsCollectionView.delegate = self
 		
-		pendingCollectionViewModel.fetchPendingEvents { [weak self] status in
+		pendingCollectionViewModel.fetchPendingEvents { [weak self] status, error in
 			self?.pendingEventsCollectionView.reloadData()
 		}
 		
-		pendingCollectionViewModel.fetchPendingMatches { [weak self] status in
+		pendingCollectionViewModel.fetchPendingMatches { [weak self] status, error in
 			self?.pendingEventsCollectionView.reloadData()
 		}
 		
-		pendingCollectionViewModel.fetchPendingReserves { [weak self] status in
+		pendingCollectionViewModel.fetchPendingReserves { [weak self] status, error in
 			self?.pendingEventsCollectionView.reloadData()
 		}
 	}
@@ -150,15 +150,15 @@ class ProfileViewController: UIViewController {
 		self.finalEventsCollectionView.dataSource = self
 		self.finalEventsCollectionView.delegate = self
 		
-		finishCollectionViewModel.fetchFinishEvents { [weak self] status in
+		finishCollectionViewModel.fetchFinishEvents { [weak self] status, error in
 			self?.finalEventsCollectionView.reloadData()
 		}
 		
-		finishCollectionViewModel.fetchFinishMatchs { [weak self] status in
+		finishCollectionViewModel.fetchFinishMatchs { [weak self] status, error in
 			self?.finalEventsCollectionView.reloadData()
 		}
 		
-		finishCollectionViewModel.fetchFinishReserves { [weak self] status in
+		finishCollectionViewModel.fetchFinishReserves { [weak self] status, error in
 			self?.finalEventsCollectionView.reloadData()
 		}
 	}

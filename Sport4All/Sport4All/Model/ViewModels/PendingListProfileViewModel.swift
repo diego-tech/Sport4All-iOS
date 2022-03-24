@@ -18,41 +18,59 @@ class PendingListProfileViewModel {
 	private var status = Int()
 	
 	// MARK: Fetch Pending Events
-	func fetchPendingEvents(completion: @escaping (_ status: Int?) -> ()) {
+	func fetchPendingEvents(completion: @escaping (_ status: Int?, _ error: Error?) -> ()) {
 		NetworkingProvider.shared.pendingEvents { responseData, status, msg in
 			guard let responseList = responseData else { return }
 			guard let status = status else { return }
 			self.status = status
 			self.pendingEvent = responseList
-			completion(status)
+			if responseList.isEmpty {
+				completion(3, nil)
+			} else {
+				completion(status, nil)
+			}
 		} failure: { error in
-			print(error)
+			guard let error = error else { return }
+			debugPrint("Pending Events List Error \(error)")
+			completion(0, error)
 		}
 	}
 	
 	// MARK: Fetch Pending Matches
-	func fetchPendingMatches(completion: @escaping (_ status: Int?) -> ()) {
+	func fetchPendingMatches(completion: @escaping (_ status: Int?, _ error: Error?) -> ()) {
 		NetworkingProvider.shared.pendingMatches { responseData, status, msg in
 			guard let responseList = responseData else { return }
 			guard let status = status else { return }
 			self.status = status
 			self.pendingMatch = responseList
-			completion(status)
+			if responseList.isEmpty {
+				completion(3, nil)
+			} else {
+				completion(status, nil)
+			}
 		} failure: { error in
-			print(error)
+			guard let error = error else { return }
+			debugPrint("Pending Matches List Error \(error)")
+			completion(0, error)
 		}
 	}
 	
 	// MARK: Fetch Pending Reserves
-	func fetchPendingReserves(completion: @escaping (_ status: Int?) -> ()) {
+	func fetchPendingReserves(completion: @escaping (_ status: Int?, _ error: Error?) -> ()) {
 		NetworkingProvider.shared.pendingReserves { responseData, status, msg in
 			guard let responseList = responseData else { return }
 			guard let status = status else { return }
 			self.status = status
 			self.pendingReserve = responseList
-			completion(status)
+			if responseList.isEmpty {
+				completion(3, nil)
+			} else {
+				completion(status, nil)
+			}
 		} failure: { error in
-			print(error)
+			guard let error = error else { return }
+			debugPrint("Pending Reserves List Error \(error)")
+			completion(0, error)
 		}
 	}
 	
