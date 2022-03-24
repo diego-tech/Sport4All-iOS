@@ -31,8 +31,8 @@ class ProfileViewController: UIViewController {
 	@IBOutlet weak var pendingEventsCollectionView: UICollectionView!
 	@IBOutlet weak var finalEventsCollectionView: UICollectionView!
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-	@IBOutlet weak var pendingListLabel: UILabel!
-	@IBOutlet weak var finishListLabel: UILabel!
+	@IBOutlet weak var pendingActivityIndicator: UIActivityIndicatorView!
+	@IBOutlet weak var finishActivityIndicator: UIActivityIndicatorView!
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
@@ -123,11 +123,7 @@ class ProfileViewController: UIViewController {
 				self.activityIndicator.isHidden = true
 			}
 		} failure: { error in
-			let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
-			vc.modalPresentationStyle = .fullScreen
-			vc.modalTransitionStyle = .coverVertical
-			vc.errorType = .decodingError
-			self.present(vc, animated: true, completion: nil)
+			self.goToAuth()
 		}
 	}
 	
@@ -139,14 +135,9 @@ class ProfileViewController: UIViewController {
 			if error == nil {
 				if status == 1 {
 					self?.pendingEventsCollectionView.reloadData()
-				} else if status == 3 {
-					guard let strongSelf = self else { return }
-					if strongSelf.checkIfPendingLabelIsHide() {
-						self?.pendingListLabel.isHidden = false
-					} else {
-						self?.pendingListLabel.isHidden = true
-					}
 				}
+			} else {
+				self?.goToAuth()
 			}
 		}
 		
@@ -154,14 +145,9 @@ class ProfileViewController: UIViewController {
 			if error == nil {
 				if status == 1 {
 					self?.pendingEventsCollectionView.reloadData()
-				} else if status == 3 {
-					guard let strongSelf = self else { return }
-					if strongSelf.checkIfPendingLabelIsHide() {
-						self?.pendingListLabel.isHidden = false
-					} else {
-						self?.pendingListLabel.isHidden = true
-					}
 				}
+			} else {
+				self?.goToAuth()
 			}
 		}
 		
@@ -169,16 +155,13 @@ class ProfileViewController: UIViewController {
 			if error == nil {
 				if status == 1 {
 					self?.pendingEventsCollectionView.reloadData()
-				} else if status == 3 {
-					guard let strongSelf = self else { return }
-					if strongSelf.checkIfPendingLabelIsHide() {
-						self?.pendingListLabel.isHidden = false
-					} else {
-						self?.pendingListLabel.isHidden = true
-					}
 				}
+				self?.pendingActivityIndicator.stopAnimating()
+			} else {
+				self?.goToAuth()
 			}
 		}
+		
 	}
 	
 	private func finishList() {
@@ -189,14 +172,9 @@ class ProfileViewController: UIViewController {
 			if error == nil {
 				if status == 1 {
 					self?.finalEventsCollectionView.reloadData()
-				} else if status == 3 {
-					guard let strongSelf = self else { return }
-					if strongSelf.checkIfFinishLabelIsHide() {
-						self?.finishListLabel.isHidden = false
-					} else {
-						self?.finishListLabel.isHidden = true
-					}
 				}
+			} else {
+				self?.goToAuth()
 			}
 		}
 		
@@ -204,14 +182,9 @@ class ProfileViewController: UIViewController {
 			if error == nil {
 				if status == 1 {
 					self?.finalEventsCollectionView.reloadData()
-				} else if status == 3 {
-					guard let strongSelf = self else { return }
-					if strongSelf.checkIfFinishLabelIsHide() {
-						self?.finishListLabel.isHidden = false
-					} else {
-						self?.finishListLabel.isHidden = true
-					}
 				}
+			} else {
+				self?.goToAuth()
 			}
 		}
 		
@@ -219,14 +192,11 @@ class ProfileViewController: UIViewController {
 			if error == nil {
 				if status == 1 {
 					self?.finalEventsCollectionView.reloadData()
-				} else if status == 3 {
-					guard let strongSelf = self else { return }
-					if strongSelf.checkIfFinishLabelIsHide() {
-						self?.finishListLabel.isHidden = false
-					} else {
-						self?.finishListLabel.isHidden = true
-					}
 				}
+				
+				self?.finishActivityIndicator.stopAnimating()
+			} else {
+				self?.goToAuth()
 			}
 		}
 	}
@@ -249,22 +219,6 @@ class ProfileViewController: UIViewController {
 		finalEventsCollectionView.showsHorizontalScrollIndicator = false
 	}
 	
-	private func checkIfFinishLabelIsHide() -> Bool {
-		if finishListLabel.isHidden == true {
-			return true
-		} else {
-			return false
-		}
-	}
-	
-	private func checkIfPendingLabelIsHide() -> Bool {
-		if pendingListLabel.isHidden == true {
-			return true
-		} else {
-			return false
-		}
-	}
-	
 	private func logOut() {
 		NetworkingProvider.shared.logOut { status, msg in
 			guard let msg = msg else { return }
@@ -280,11 +234,7 @@ class ProfileViewController: UIViewController {
 				indicator.present(duration: 2)
 			}
 		} failure: { error in
-			let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
-			vc.modalPresentationStyle = .fullScreen
-			vc.modalTransitionStyle = .coverVertical
-			vc.errorType = .decodingError
-			self.present(vc, animated: true, completion: nil)
+			self.goToAuth()
 		}
 	}
 	
@@ -293,6 +243,14 @@ class ProfileViewController: UIViewController {
 		vc.modalPresentationStyle = .fullScreen
 		vc.modalTransitionStyle = .coverVertical
 		vc.modalType = .showTutorial
+		present(vc, animated: true, completion: nil)
+	}
+	
+	private func goToAuth() {
+		let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
+		vc.modalPresentationStyle = .fullScreen
+		vc.modalTransitionStyle = .coverVertical
+		vc.errorType = .decodingError
 		present(vc, animated: true, completion: nil)
 	}
 	
