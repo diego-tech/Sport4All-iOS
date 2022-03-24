@@ -105,6 +105,11 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
 	}
 	
 	private func editUser() {
+		UIView.animate(withDuration: 1) {
+			self.editButton.isEnabled = false
+			self.editButton.alpha = 0.5
+		}
+		
 		let editUser = getValues()
 		
 		NetworkingProvider.shared.modifyData(userModify: editUser) { responseData, status, msg in
@@ -116,6 +121,11 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
 			} else {
 				let indicatorView = SPIndicatorView(title: "Ha ocurrido un error", message: msg, preset: .error)
 				indicatorView.present(duration: 3)
+			}
+			
+			UIView.animate(withDuration: 1) {
+				self.editButton.isEnabled = true
+				self.editButton.alpha = 1
 			}
 		} failure: { error in
 			let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
