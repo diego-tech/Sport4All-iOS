@@ -19,17 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		reachabilityManager?.startListening { status in
 			switch status {
 			case .notReachable:
-				print("No Internet")
+				debugPrint("No Internet")
 				let indicatorView = SPIndicatorView(title: "No Tienes Conexión a Internet", preset: .error)
 				indicatorView.present(duration: 3)
 			case .unknown:
-				print("Unknown")
+				debugPrint("Unknown")
 				let indicatorView = SPIndicatorView(title: "No Tienes Conexión a Internet", preset: .error)
 				indicatorView.present(duration: 3)
 			case .reachable(.cellular):
-				print("Cellular")
+				debugPrint("Cellular")
 			case .reachable(.ethernetOrWiFi):
-				print("Wifi")
+				debugPrint("Wifi")
 			}
 		}
 		
