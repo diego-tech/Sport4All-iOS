@@ -117,7 +117,6 @@ class ProfileViewController: UIViewController {
 			vc.modalPresentationStyle = .fullScreen
 			vc.modalTransitionStyle = .coverVertical
 			vc.errorType = .decodingError
-			print("Error 1")
 			self.present(vc, animated: true, completion: nil)
 		}
 	}

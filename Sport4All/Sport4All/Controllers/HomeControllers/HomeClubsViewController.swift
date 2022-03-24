@@ -19,6 +19,7 @@ class HomeClubsViewController: UIViewController {
 	@IBOutlet weak var homeClubsTableView: UITableView!
 	@IBOutlet weak var allClubsLabel: UILabel!
 	@IBOutlet weak var bestRatedLabel: UILabel!
+	@IBOutlet weak var uiViewBestRated: UIView!
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
@@ -79,16 +80,37 @@ class HomeClubsViewController: UIViewController {
 	private func clubList() {
 		tableViewModel.fetchClubList { [weak self] status, error  in
 			if error == nil {
-				self?.homeClubsTableView.reloadData()
+				if status == 1 {
+					self?.homeClubsTableView.reloadData()
+				} else {
+					
+				}
 			} else {
-				debugPrint("Error \(error)")
+				let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
+				vc.modalPresentationStyle = .fullScreen
+				vc.modalTransitionStyle = .coverVertical
+				vc.errorType = .decodingError
+				self?.present(vc, animated: true, completion: nil)
 			}
 		}
 	}
 	
 	private func mostRatedCollectionList() {
-		collectionViewModel.fetchMostRated { [weak self] status in
-			self?.bestRatedCollectionView.reloadData()
+		collectionViewModel.fetchMostRated { [weak self] status, error in
+			
+			if error == nil {
+				if status == 1 {
+					self?.bestRatedCollectionView.reloadData()
+				} else if status == 3 {
+					self?.uiViewBestRated.isHidden = true
+				}
+			} else {
+				let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
+				vc.modalPresentationStyle = .fullScreen
+				vc.modalTransitionStyle = .coverVertical
+				vc.errorType = .decodingError
+				self?.present(vc, animated: true, completion: nil)
+			}
 		}
 	}
 	
@@ -191,8 +213,16 @@ extension HomeClubsViewController: UITextFieldDelegate {
 		
 		if query.count >= 3 {
 			// Test Search Route
-			tableViewModel.fetchSearchClub(with: query) { [weak self] status in
-				self?.initTableView()
+			tableViewModel.fetchSearchClub(with: query) { [weak self] status, error in
+				if error == nil {
+					self?.initTableView()
+				} else {
+					let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
+					vc.modalPresentationStyle = .fullScreen
+					vc.modalTransitionStyle = .coverVertical
+					vc.errorType = .decodingError
+					self?.present(vc, animated: true, completion: nil)
+				}
 			}
 		} else {
 			clubList()

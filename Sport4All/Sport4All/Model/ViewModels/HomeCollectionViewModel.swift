@@ -15,16 +15,20 @@ class HomeCollectionViewModel {
 	private var status = Int()
 	
 	// MARK: Fetch Most Rated
-	func fetchMostRated(completion: @escaping (_ status: Int) -> ()) {
+	func fetchMostRated(completion: @escaping (_ status: Int, _ error: Error?) -> ()) {
 		NetworkingProvider.shared.mostRatedList { responseData, status, msg in
 			guard let responseList = responseData else { return }
 			guard let status = status else { return }
 			self.status = status
 			self.clubList = responseList
-			print(responseList)
-			completion(status)
+			if self.clubList.isEmpty {
+				completion(3, nil)
+			}
+			completion(status, nil)
 		} failure: { error in
-			debugPrint(error)
+			guard let error = error else { return }
+			debugPrint("Fetch Most Rated Error \(error)")
+			completion(0, error)
 		}
 	}
 	

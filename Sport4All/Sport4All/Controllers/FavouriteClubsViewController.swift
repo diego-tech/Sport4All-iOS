@@ -33,8 +33,18 @@ class FavouriteClubsViewController: UIViewController {
 	
 	// MARK: Functions
 	private func clubFavouriteList() {
-		clubViewModel.fetchFavouriteClubList { [weak self] status in
-			self?.initTableView()
+		clubViewModel.fetchFavouriteClubList { [weak self] status, error in
+			if error == nil {
+				if status == 1 {
+					self?.initTableView()
+				}
+			} else {
+				let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
+				vc.modalPresentationStyle = .fullScreen
+				vc.modalTransitionStyle = .coverVertical
+				vc.errorType = .decodingError
+				self?.present(vc, animated: true, completion: nil)
+			}
 		}
 	}
 	
