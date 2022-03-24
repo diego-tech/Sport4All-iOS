@@ -8,6 +8,7 @@
 import UIKit
 import MapKit
 import Contacts
+import SPIndicator
 
 class InfoClubViewController: UIViewController {
 	
@@ -121,20 +122,50 @@ class InfoClubViewController: UIViewController {
 		
 		if !isFavourite {
 			NetworkingProvider.shared.deleteFavouriteClub(clubId: id) { status, msg in
-				print(status)
-				print(msg)
+				guard let status = status else { return }
+				guard let msg = msg else { return }
+				if status != 1 {
+					if self.isFavourite {
+						self.isFavourite = true
+					} else {
+						self.isFavourite = false
+					}
+					let indicator = SPIndicatorView(title: "Ha ocurrido un error", message: msg, preset: .error)
+					indicator.present(duration: 2)
+				}
 			} failure: { error in
-				print(error)
+				guard let error = error else { return }
+				debugPrint("Delete Favourite Club \(error)")
+				self.goToAuth()
 			}
 		} else {
 			NetworkingProvider.shared.registerFavClub(clubId: id) { responseData, status, msg in
-				print(responseData)
-				print(status)
-				print(msg)
+				guard responseData != nil else { return }
+				guard let status = status else { return }
+				guard let msg = msg else { return }
+				if status != 1 {
+					if self.isFavourite {
+						self.isFavourite = true
+					} else {
+						self.isFavourite = false
+					}
+					let indicator = SPIndicatorView(title: "Ha ocurrido un error", message: msg, preset: .error)
+					indicator.present(duration: 2)
+				}
 			} failure: { error in
-				print(error)
+				guard let error = error else { return }
+				debugPrint("Add Favourite Club \(error)")
+				self.goToAuth()
 			}
 		}
+	}
+	
+	private func goToAuth() {
+		let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
+		vc.modalPresentationStyle = .fullScreen
+		vc.modalTransitionStyle = .coverVertical
+		vc.errorType = .decodingError
+		present(vc, animated: true, completion: nil)
 	}
 	
 	private func configureMapView() {
