@@ -15,6 +15,7 @@ class FavouriteClubsViewController: UIViewController {
 	
 	// MARK: Outlets
 	@IBOutlet weak var favouritesTableView: UITableView!
+	@IBOutlet weak var noFavClubsLabel: UILabel!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -39,7 +40,7 @@ class FavouriteClubsViewController: UIViewController {
 				if status == 1 {
 					self?.initTableView()
 				} else if status == 3 {
-					print("Is Empty")
+					self?.noFavClubsLabel.isHidden = false
 				} else {
 					let indicator = SPIndicatorView(title: "Ha ocurrido un error", preset: .error)
 					indicator.present(duration: 2)
