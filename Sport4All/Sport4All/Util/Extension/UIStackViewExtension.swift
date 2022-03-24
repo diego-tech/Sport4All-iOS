@@ -13,7 +13,7 @@ extension UIStackView {
 	func setServicesInStackView(services: [ClubService], imageSize: CGRect) {
 		self.arrangedSubviews.forEach { $0.removeFromSuperview() }
 		
-		var servicesImages = [UIImage()]
+		var servicesImages = [UIImage]()
 		
 		for service in services {
 			servicesImages.append(AuxFunctions.getServices(clubService: service))
@@ -22,7 +22,7 @@ extension UIStackView {
 		for servicesImage in servicesImages {
 			let serviceImageView: UIImageView = {
 				let image = UIImageView(frame: imageSize)
-				image.contentMode = .scaleToFill
+				image.contentMode = .scaleAspectFit
 				image.tintColor = .corporativeColor
 				return image
 			}()

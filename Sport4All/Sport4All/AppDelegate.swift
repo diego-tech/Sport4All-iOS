@@ -15,10 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		// Tiempo de Cargar Launch Screen
 		Thread.sleep(forTimeInterval: 2.0)
-		
+				
 		// Inicializar IQKeyboardManager
 		IQKeyboardManager.shared.enable = true
-		
+		IQKeyboardManager.shared.enableAutoToolbar = false
+
 		// Override point for customization after application launch.
 		return true
 	}

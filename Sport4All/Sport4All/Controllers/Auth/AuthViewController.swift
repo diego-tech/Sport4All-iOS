@@ -6,6 +6,13 @@
 //
 
 import UIKit
+import SPIndicator
+import Alamofire
+
+enum ErrorType {
+	case decodingError
+	case userTokenError
+}
 
 class AuthViewController: UIViewController {
 	
@@ -13,6 +20,8 @@ class AuthViewController: UIViewController {
 	var userEmail: String?
 	var userPassword: String?
 	var message: String?
+	
+	var errorType: ErrorType?
 	
 	// MARK: Outlets
 	@IBOutlet weak var emailTextField: UITextField!
@@ -25,7 +34,13 @@ class AuthViewController: UIViewController {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
 		
-		// Inicialización Estilos
+		// Check if user has internet
+		checkIfHasInternet()
+		
+		// Set Up Errors
+		setIndicatorForErrors()
+		
+		// Styles Inicialization
 		setTextFieldStyles()
 		setButtonStyles()
 		
@@ -33,64 +48,64 @@ class AuthViewController: UIViewController {
 		emailTextField.text = "diego171200@gmail.com"
 		passwordTextField.text = "Prueba12345."
 		
-		// Testeo Funciones API
-//		register()
-//		login()
-//		userInfo()
-//		retrievePassword()
-//		modifyData()
-//		modifyPassword()
-//		registerFavClub()
-//		clubList()
+		// TextField Delegates
+		emailTextField.delegate = self
+		passwordTextField.delegate = self
+		accessButton.isEnabled = false
+		accessButton.alpha = 0.5
+	}
+	
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+		view.endEditing(true)
+		super.touchesBegan(touches, with: event)
 	}
 	
 	// MARK: Action Functions
 	@IBAction func rememberPasswordButtonAction(_ sender: UIButton) {
-		// Ir a Recuperar Contraseña
+		// Go to Recovery Password
 		let vc = UIStoryboard(name: "RetrievePassword", bundle: nil).instantiateViewController(withIdentifier: "RetrievePassword")
 		present(vc, animated: true, completion: nil)
 	}
 	
 	@IBAction func accessButtonAction(_ sender: UIButton) {
-		userLogin()
+		fetchUserLogin()
 	}
 	
 	@IBAction func goToRegisterButtonAction(_ sender: UIButton) {
-		// Ir a Registro
+		// Go To Register Screen
 		let vc = UIStoryboard(name: "Register", bundle: nil).instantiateViewController(withIdentifier: "FirstRegister")
 		present(vc, animated: true, completion: nil)
 	}
 	
 	// MARK: Functions
-	private func userLogin() {
+	private func fetchUserLogin() {
 		let userLogin = getTextFieldValues()
-		print(userLogin)
 		
 		if (emailTFisEmpty() && passwordTFisEmpty()) {
 			NetworkingProvider.shared.login(userLogin: userLogin) { responseData, status, msg in
 				let statusCode = status
 				
-				if let msg = msg {
-					self.message = msg
-				}
+				guard let msg = msg else { return }
+				guard let errorMsg = responseData?.errors else { return }
 				
 				if AuxFunctions.checkStatusCode(statusCode: statusCode) {
-					if let authUserToken = responseData?.token {
+					if let authUserToken = responseData?.token, let authUserEmail = responseData?.email {
 						UserDefaultsProvider.shared.setUserDefaults(key: .authUserToken, value: authUserToken)
+						UserDefaultsProvider.shared.setUserDefaults(key: .authUserEmail, value: authUserEmail)
 						
-						let vc = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBar")
-						self.show(vc, sender: self)
+						self.goToHome()
 					}
 				}  else {
-					debugPrint("Error")
+					let indicator = SPIndicatorView(title: msg, message: errorMsg, preset: .error)
+					indicator.present(duration: 2)
 				}
-				
 			} failure: { error in
-				print(error)
+				guard let error = error else { return }
+				debugPrint("Auth VC Fatal Error \(error)")
 			}
 		}
 	}
-		
+	
 	private func getTextFieldValues() -> UserLogin {
 		if let email = emailTextField.text, let password = passwordTextField.text {
 			userEmail = email
@@ -102,7 +117,7 @@ class AuthViewController: UIViewController {
 	
 	private func emailTFisEmpty() -> Bool {
 		if emailTextField.text == "" {
-			emailTextField.placeholderStyles(placeHolderText: "Introduzca el Correo Electrónico")
+			emailTextField.placeholderStyles(placeHolderText: Strings.emailErrorPlaceholder)
 			emailTextField.bottomBorder(color: .red)
 			return false
 		} else {
@@ -113,7 +128,7 @@ class AuthViewController: UIViewController {
 	
 	private func passwordTFisEmpty() -> Bool {
 		if passwordTextField.text == ""{
-			passwordTextField.placeholderStyles(placeHolderText: "Introduzca la Contraseña")
+			passwordTextField.placeholderStyles(placeHolderText: Strings.passwordErrorPlaceholder)
 			passwordTextField.bottomBorder(color: .red)
 			return false
 		} else {
@@ -122,16 +137,62 @@ class AuthViewController: UIViewController {
 		}
 	}
 	
+	private func setIndicatorForErrors() {
+		switch errorType {
+		case .decodingError:
+			let alertView = UIAlertController(title: "Error", message: "Pruebe a logearse otra vez", preferredStyle: .alert)
+			present(alertView, animated: true)
+		case .userTokenError:
+			debugPrint("User Token Error")
+		default:
+			break
+		}
+	}
+	
+	private func goToHome() {
+		guard let vc = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBar") as? TabBarController else {
+			fatalError("Can't load tabbars")
+		}
+		
+		let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
+		sceneDelegate?.changeRootViewController(vc)
+	}
+	
+	private func checkIfHasInternet() {
+		let reachabilityManager = NetworkReachabilityManager(host: "www.google.com")
+
+		reachabilityManager?.startListening { status in
+			switch status {
+			case .notReachable:
+				debugPrint("No Internet")
+				let indicatorView = SPIndicatorView(title: "No Tienes Conexión a Internet", preset: .error)
+				indicatorView.present(duration: 3)
+				self.accessButton.isEnabled = true
+				self.accessButton.alpha = 0.5
+			case .unknown:
+				debugPrint("Unknown")
+				let indicatorView = SPIndicatorView(title: "No Tienes Conexión a Internet", preset: .error)
+				indicatorView.present(duration: 3)
+				self.accessButton.isEnabled = true
+				self.accessButton.alpha = 0.5
+			case .reachable(.cellular):
+				debugPrint("Cellular")
+			case .reachable(.ethernetOrWiFi):
+				debugPrint("Wifi")
+			}
+		}
+	}
+	
 	// MARK: Styles
 	private func setTextFieldStyles() {
 		// Estilos Email Text Field
 		emailTextField.bottomBorder(color: .hardColor ?? .black)
-		emailTextField.placeholderStyles(placeHolderText: "Correo Electrónico")
+		emailTextField.placeholderStyles(placeHolderText: Strings.emailPlaceholder)
 		emailTextField.textStyles(keyboardType: .emailAddress)
 		
 		// Estilos Password Text Field
 		passwordTextField.bottomBorder(color: .hardColor ?? .black)
-		passwordTextField.placeholderStyles(placeHolderText: "Contraseña")
+		passwordTextField.placeholderStyles(placeHolderText: Strings.passwordPlaceholder)
 		passwordTextField.textStyles(keyboardType: .default)
 		passwordTextField.isSecureTextEntry = true
 		passwordTextField.showAndHidePassword()
@@ -141,95 +202,28 @@ class AuthViewController: UIViewController {
 		// Estilos Access Button
 		accessButton.round()
 		accessButton.colors()
+		accessButton.titleLabel?.font = UIFont(name: FontType.SFProDisplayBold.rawValue, size: 17)
 	}
-	
-	// MARK: API FUNCTIONS TEST
-//	private func register() {
-//		let newUser = NewUser(email: "test1@test.com", password: "Test1234", genre: "Otro", name: "Test", surname: "Test 1", image: "test.png")
-//
-//		NetworkingProvider.shared.register(newUser: newUser) { responseData, status, msg in
-//			print(responseData)
-//			print(status)
-//			print(msg)
-//		} failure: { error in
-//			print(error)
-//		}
-//	}
-//
-//	private func login() {
-//		let userLogin = UserLogin(email: "test1@test.com", password: "s0fBYfoZ")
-//
-//		NetworkingProvider.shared.login(userLogin: userLogin) { responseData, status, msg in
-//			print(responseData)
-//			print(status)
-//			print(msg)
-//		} failure: { error in
-//			print(error)
-//		}
-//	}
-//
-//	private func userInfo() {
-//		NetworkingProvider.shared.userInfo { responseData, status, msg in
-//			print(responseData)
-//			print(status)
-//			print(msg)
-//		} failure: { error in
-//			print(error)
-//		}
-//	}
-//
-//	private func retrievePassword() {
-//		let userEmail = "test1@test.com"
-//
-//		NetworkingProvider.shared.retrievePassword(email: userEmail) { status, msg in
-//			print(status)
-//			print(msg)
-//		} failure: { error in
-//			print(error)
-//		}
-//	}
-//
-//	private func modifyData() {
-//		let modifyUser = NewUser(email: nil, password: nil, genre: nil, name: "Test Modificado", surname: nil, image: nil)
-//
-//		NetworkingProvider.shared.modifyData(userModify: modifyUser) { responseData, status, msg in
-//			print(responseData)
-//			print(status)
-//			print(msg)
-//		} failure: { error in
-//			print(error)
-//		}
-//	}
-//
-//	private func modifyPassword() {
-//		let password = "Pass1."
-//
-//		NetworkingProvider.shared.modifyPassword(newPassword: password) { responseData, status, msg in
-//			print(responseData)
-//			print(status)
-//			print(msg)
-//		} failure: { error in
-//			print(error)
-//		}
-//	}
-//
-//	private func registerFavClub() {
-//		NetworkingProvider.shared.registerFavClub(clubId: 1) { responseData, status, msg in
-//			print(responseData)
-//			print(status)
-//			print(msg)
-//		} failure: { error in
-//			print(error)
-//		}
-//	}
-//
-//	private func clubList() {
-//		NetworkingProvider.shared.clubList { responseData, status, msg in
-//			print(responseData)
-//			print(status)
-//			print(msg)
-//		} failure: { error in
-//			print(error)
-//		}
-//	}
 }
+
+// MARK: UITextField Delegate
+extension AuthViewController: UITextFieldDelegate {
+	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+		let text = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+
+		if text.isEmpty {
+			UIView.animate(withDuration: 1) {
+				self.accessButton.isEnabled = false
+				self.accessButton.alpha = 0.5
+			}
+		} else {
+			UIView.animate(withDuration: 1) {
+				self.accessButton.isEnabled = true
+				self.accessButton.alpha = 1
+			}
+		}
+	
+		return true
+	}
+}
+

@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum ModalType {
+	case firstLogin
+	case showTutorial
+}
+
 class OnboardingViewController: UIViewController {
 
 	// MARK: Variables
@@ -22,6 +27,8 @@ class OnboardingViewController: UIViewController {
 		}
 	}
 	
+	var modalType: ModalType?
+	
 	// MARK: Outlets
 	@IBOutlet weak var skipButton: UIButton!
 	@IBOutlet weak var onboardingCollectionView: UICollectionView!
@@ -31,34 +38,29 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-		
+				
 		slides = [
 			OnboardingSlide(
-				title: "Screen 1",
-				description: "En el apartado clubes, podrás encontrar información sobre los clubes en los que podrás reservar espacios deportivos.",
-				image: UIImage(named: "LaunchLogo")!),
+				title: Strings.slide1Title,
+				description: Strings.slide1Description,
+				image: UIImage(named: "InfoBlue")!),
 			OnboardingSlide(
-				title: "Screen 2",
-				description: "En el apartado partidos podrás jugar con otros usuarios que necesiten compañeros en sus partidos.",
-				image: UIImage(named: "LaunchLogo")!),
+				title: Strings.slide2Title,
+				description: Strings.slide2Description,
+				image: UIImage(named: "SocialOnboard")!),
 			OnboardingSlide(
-				title: "Screen 3",
-				description: "Acceda fácilmente a los establecimientos identificándose con el código Qr que se le facilitará al realizar la reserva.",
-				image: UIImage(named: "LaunchLogo")!),
+				title: Strings.slide3Title,
+				description: Strings.slide3Description,
+				image: UIImage(named: "QRCode")!),
 			OnboardingSlide(
-				title: "Screen 4",
-				description: "Podrá registrarse en los eventos que los clubes realizan, como torneos, partidos amistosos, webinars y muchas más actividades.",
-				image: UIImage(named: "LaunchLogo")!),
+				title: Strings.slide4Title,
+				description: Strings.slide4Description,
+				image: UIImage(named: "Trophy")!),
 			OnboardingSlide(
-				title: "Screen 5",
-				description: "Controle los eventos personalizados que su club le proporcione.",
-				image: UIImage(named: "LaunchLogo")!),
-			OnboardingSlide(
-				title: "Screen 6",
-				description: "Registresé en nuesta aplicación y disfrute de la diversión de hacer deporte.",
-				image: UIImage(named: "LaunchLogo")!)
+				title: Strings.slide5Title,
+				description: Strings.slide5Description,
+				image: UIImage(named: "Player")!)
 		]
-		
 		
 		// Collection View
 		onboardingCollectionView.dataSource = self
@@ -66,7 +68,7 @@ class OnboardingViewController: UIViewController {
 		
 		// Page Control
 		pageControl.numberOfPages = slides.count
-    }
+	}
 	
 	
 	// MARK: Action Functions
@@ -78,7 +80,15 @@ class OnboardingViewController: UIViewController {
 	@IBAction func nextButtonAction(_ sender: UIButton) {
 		if currentPage == slides.count - 1 {
 			UserDefaultsProvider.shared.setUserDefaults(key: .isNewUser, value: true)
-			navigateToAuth()
+			
+			switch modalType {
+			case .firstLogin:
+				self.navigateToAuth()
+			case .showTutorial:
+				self.navigateToTabBar()
+			case .none:
+				break
+			}
 		} else {
 			currentPage += 1
 			let indexPath = IndexPath(item: currentPage, section: 0)
@@ -92,6 +102,10 @@ class OnboardingViewController: UIViewController {
 		vc.modalPresentationStyle = .fullScreen
 		vc.modalTransitionStyle = .flipHorizontal
 		present(vc, animated: true, completion: nil)
+	}
+	
+	private func navigateToTabBar() {
+		self.dismiss(animated: true)
 	}
 }
 

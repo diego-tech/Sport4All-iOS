@@ -8,6 +8,7 @@
 import UIKit
 import MapKit
 import Contacts
+import SPIndicator
 
 class InfoClubViewController: UIViewController {
 	
@@ -32,14 +33,15 @@ class InfoClubViewController: UIViewController {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
 		
+		// Map View Delegate
 		locationMapView.delegate = self
-	
+		
 		// Configure Models
 		configure()
 		
 		// Configure Favourite
 		setFavouriteButton()
-
+		
 		// Configure NavBar
 		configureNavbar()
 		
@@ -55,7 +57,7 @@ class InfoClubViewController: UIViewController {
 		} else {
 			isFavourite = true
 		}
-
+		
 		callAddFavorRemove()
 		setFavouriteButton()
 	}
@@ -74,11 +76,17 @@ class InfoClubViewController: UIViewController {
 		}
 	}
 	
+	@IBAction func reserveButtonAction(_ sender: UIButton) {
+		let vc = UIStoryboard(name: "ReservesScreen", bundle: nil).instantiateViewController(withIdentifier: "ReservesScreen") as! ReservesViewController
+		vc.club = club
+		navigationController?.pushViewController(vc, animated: true)
+	}
+	
 	// MARK: Functions
 	private func configure() {
 		guard let club = club else { return debugPrint("Error Club") }
-		guard let banner = club.club_banner else { return debugPrint("Error Banner") }
-		guard let url = URL(string: Constants.kStorageURL + banner) else { return debugPrint("Error Url Imagen") }
+		guard let banner = club.clubBanner else { return debugPrint("Error Banner") }
+		guard let bannerUrl = URL(string: Constants.kStorageURL + banner) else { return debugPrint("Error Url Imagen") }
 		guard let description = club.description else { return debugPrint("Error Desc") }
 		guard let services = club.services else { return debugPrint("Error Servicios") }
 		guard let location = club.direction else { return debugPrint("Error Dirección") }
@@ -86,10 +94,11 @@ class InfoClubViewController: UIViewController {
 		
 		self.clubTitleLabel.text = club.name
 		
-		self.clubBannerImageView.loadImage(fromURL: url)
-
+		self.clubBannerImageView.loadImage(fromURL: bannerUrl)
+		
 		self.clubInfoTextView.text = description
 		self.clubServicesStackView.setServicesInStackView(services: services, imageSize: CGRect(x: 0, y: 0, width: 50, height: 50))
+		print("Location \(location)")
 		self.callFindLocation(locationName: location)
 		
 		if fav {
@@ -112,22 +121,51 @@ class InfoClubViewController: UIViewController {
 		guard let id = club?.id else { return }
 		
 		if !isFavourite {
-			NetworkingProvider.shared.deleteFavouriteClub(clubId: id) { responseData, status, msg in
-				print(responseData)
-				print(status)
-				print(msg)
+			NetworkingProvider.shared.deleteFavouriteClub(clubId: id) { status, msg in
+				guard let status = status else { return }
+				guard let msg = msg else { return }
+				if status != 1 {
+					if self.isFavourite {
+						self.isFavourite = true
+					} else {
+						self.isFavourite = false
+					}
+					let indicator = SPIndicatorView(title: "Ha ocurrido un error", message: msg, preset: .error)
+					indicator.present(duration: 2)
+				}
 			} failure: { error in
-				print(error)
+				guard let error = error else { return }
+				debugPrint("Delete Favourite Club \(error)")
+				self.goToAuth()
 			}
 		} else {
 			NetworkingProvider.shared.registerFavClub(clubId: id) { responseData, status, msg in
-				print(responseData)
-				print(status)
-				print(msg)
+				guard responseData != nil else { return }
+				guard let status = status else { return }
+				guard let msg = msg else { return }
+				if status != 1 {
+					if self.isFavourite {
+						self.isFavourite = true
+					} else {
+						self.isFavourite = false
+					}
+					let indicator = SPIndicatorView(title: "Ha ocurrido un error", message: msg, preset: .error)
+					indicator.present(duration: 2)
+				}
 			} failure: { error in
-				print(error)
+				guard let error = error else { return }
+				debugPrint("Add Favourite Club \(error)")
+				self.goToAuth()
 			}
 		}
+	}
+	
+	private func goToAuth() {
+		let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
+		vc.modalPresentationStyle = .fullScreen
+		vc.modalTransitionStyle = .coverVertical
+		vc.errorType = .decodingError
+		present(vc, animated: true, completion: nil)
 	}
 	
 	private func configureMapView() {
@@ -166,7 +204,7 @@ class InfoClubViewController: UIViewController {
 			.font: UIFont(name: FontType.SFProDisplayBold.rawValue, size: 22) ?? .systemFont(ofSize: 22, weight: .bold)
 		]
 		
-		title = "INFORMACION"
+		title = Strings.infoClubTitle
 		
 		let yourBackImage = UIImage(systemName: "arrowshape.turn.up.backward.fill", withConfiguration:  UIImage.SymbolConfiguration(pointSize: 18))
 		let backButtonItem = UIBarButtonItem(image: yourBackImage, style: .plain, target: self, action: #selector(popView(tapGestureRecognizer:)))
@@ -201,29 +239,5 @@ extension InfoClubViewController: MKMapViewDelegate {
 		guard let place = view.annotation as? Annotation else { return }
 		let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
 		place.mapItem?.openInMaps(launchOptions: launchOptions)
-	}
-}
-
-// MARK: Annotation Class
-class Annotation: NSObject, MKAnnotation {
-	var coordinate: CLLocationCoordinate2D
-	var title: String?
-	var subtitle: String?
-	
-	init(coordinate: CLLocationCoordinate2D, title: String, subtitle: String) {
-		self.coordinate = coordinate
-		self.title = title
-		self.subtitle = subtitle
-		
-		super.init()
-	}
-	
-	var mapItem: MKMapItem? {
-		guard let location = title else { return nil }
-		let addressDict = [CNPostalAddressStreetKey: location]
-		let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: addressDict)
-		let mapItem = MKMapItem(placemark: placemark)
-		mapItem.name = title
-		return mapItem
 	}
 }

@@ -32,7 +32,7 @@ class ClubTableViewCell: UITableViewCell {
 	
 	// MARK: Functions
 	func setCellWithValueOf(_ club: Club) {
-		updateUI(clubName: club.name, clubPhone: club.tlf, clubImageStr: club.club_img, services: club.services)
+		updateUI(clubName: club.name, clubPhone: club.tlf, clubImageStr: club.clubImg, services: club.services)
 	}
 	
 	private func updateUI(clubName: String?, clubPhone: String?, clubImageStr: String?, services: [ClubService]?) {		

@@ -6,14 +6,16 @@
 //
 
 import UIKit
+import SPIndicator
 
 class FavouriteClubsViewController: UIViewController {
 	
 	// MARK: Variables
-	private var clubViewModel = ClubListViewModel()
+	private var clubViewModel = HomeListViewModel()
 	
 	// MARK: Outlets
 	@IBOutlet weak var favouritesTableView: UITableView!
+	@IBOutlet weak var noFavClubsLabel: UILabel!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -33,8 +35,19 @@ class FavouriteClubsViewController: UIViewController {
 	
 	// MARK: Functions
 	private func clubFavouriteList() {
-		clubViewModel.fetchFavouriteClubList { [weak self] status in
-			self?.initTableView()
+		clubViewModel.fetchFavouriteClubList { [weak self] status, error in
+			if error == nil {
+				if status == 1 {
+					self?.initTableView()
+				} else if status == 3 {
+					self?.noFavClubsLabel.isHidden = false
+				} else {
+					let indicator = SPIndicatorView(title: "Ha ocurrido un error", preset: .error)
+					indicator.present(duration: 2)
+				}
+			} else {
+				self?.goToAuth()
+			}
 		}
 	}
 	
@@ -49,6 +62,14 @@ class FavouriteClubsViewController: UIViewController {
 		favouritesTableView.reloadData()
 	}
 	
+	private func goToAuth() {
+		let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
+		vc.modalPresentationStyle = .fullScreen
+		vc.modalTransitionStyle = .coverVertical
+		vc.errorType = .decodingError
+		present(vc, animated: true, completion: nil)
+	}
+	
 	// MARK: Styles
 	private func configureNavbar() {
 		self.navigationController!.navigationBar.titleTextAttributes = [
@@ -56,7 +77,7 @@ class FavouriteClubsViewController: UIViewController {
 			.font: UIFont(name: FontType.SFProDisplayBold.rawValue, size: 22) ?? .systemFont(ofSize: 22, weight: .bold)
 		]
 		
-		title = "CLUBES FAVORITOS"
+		title = Strings.favTitle
 		
 		let yourBackImage = UIImage(systemName: "arrowshape.turn.up.backward.fill", withConfiguration:  UIImage.SymbolConfiguration(pointSize: 18))
 		let backButtonItem = UIBarButtonItem(image: yourBackImage, style: .plain, target: self, action: #selector(popView(tapGestureRecognizer:)))
@@ -100,21 +121,26 @@ extension FavouriteClubsViewController: UITableViewDataSource, UITableViewDelega
 		guard let clubId = club.id else { return }
 		switch editingStyle {
 		case .delete:
-			NetworkingProvider.shared.deleteFavouriteClub(clubId: clubId) { responseData, status, msg in
-				print(responseData)
-				print(status)
-				print(msg)
+			NetworkingProvider.shared.deleteFavouriteClub(clubId: clubId) { [weak self] status, msg in
+				guard let status = status else { return }
+				if status == 1 {
+					self?.clubViewModel.removeForRowAt(indexPath: indexPath)
+					tableView.deleteRows(at: [indexPath], with: .left)
+				} else {
+					let indicator = SPIndicatorView(title: "Ha ocurrido un error", preset: .error)
+					indicator.present(duration: 2)
+				}
 			} failure: { error in
-				print(error)
+				guard let error = error else { return }
+				debugPrint("Delete Favourite FAV VC Error \(error)")
+				self.goToAuth()
 			}
-			clubViewModel.removeForRowAt(indexPath: indexPath)
-			tableView.deleteRows(at: [indexPath], with: .fade)
 		default:
 			break
 		}
 	}
 	
 	func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
-		return "Eliminar"
+		return Strings.titleForDeleteConfirmation
 	}
 }

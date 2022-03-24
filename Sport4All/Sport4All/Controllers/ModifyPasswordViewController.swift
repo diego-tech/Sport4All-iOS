@@ -6,20 +6,20 @@
 //
 
 import UIKit
+import SPIndicator
 
 class ModifyPasswordViewController: UIViewController {
 	
 	// MARK: Variables
 	
 	// MARK: Outlets
-	@IBOutlet weak var goBackBTN: UIButton!
 	@IBOutlet weak var savePasswordBTN: UIButton!
 	@IBOutlet weak var firstPasswordTF: UITextField!
 	@IBOutlet weak var checkPasswordTF: UITextField!
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		// Do any additional setup after loading the view.
 		
 		// Configure Navbar
 		configureNavbar()
@@ -27,13 +27,22 @@ class ModifyPasswordViewController: UIViewController {
 		// Inicialización Estilos
 		setTextFieldStyles()
 		setButtonStyles()
-    }
-	
-	// MARK: Action Functions
-	@IBAction func goBackButtonAction(_ sender: UIButton) {
-		dismiss(animated: true, completion: nil)
+		
+		// UITextField Delegates
+		firstPasswordTF.delegate = self
+		checkPasswordTF.delegate = self
+		
+		// Configuration Password At First
+		savePasswordBTN.isEnabled = false
+		savePasswordBTN.alpha = 0.5
 	}
 	
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+		view.endEditing(true)
+		super.touchesBegan(touches, with: event)
+	}
+	
+	// MARK: Action Functions
 	@IBAction func savePasswordButtonAction(_ sender: UIButton) {
 		changePassword()
 	}
@@ -42,7 +51,42 @@ class ModifyPasswordViewController: UIViewController {
 	private func changePassword() {
 		if !firstPasswordTF.checkIfIsEmpty(placeHolderText: "Introduzca la Contraseña") && !checkPasswordTF.checkIfIsEmpty(placeHolderText: "Introduzca la Contraseña") {
 			if checkIfPassIsSame() {
-				debugPrint("Contraseña Cambiada")
+				UIView.animate(withDuration: 1) {
+					self.savePasswordBTN.isEnabled = false
+					self.savePasswordBTN.alpha = 0.5
+				}
+				
+				guard let password = checkPasswordTF.text else { return }
+				
+				NetworkingProvider.shared.modifyPassword(newPassword: password) { responseData, status, msg in
+					guard let errorMsg = responseData?.errors else { return }
+					guard let status = status else { return }
+					guard let msg = msg else { return }
+					
+					if status == 1 {
+						let indicatorView = SPIndicatorView(title: "Contraseña modificada correctamente", message: msg, preset: .done)
+						indicatorView.present(duration: 3) {
+							let vc = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBar")
+							vc.modalPresentationStyle = .automatic
+							vc.modalTransitionStyle = .coverVertical
+							self.navigationController?.pushViewController(vc, animated: true)
+						}
+					} else {
+						let indicatorView = SPIndicatorView(title: "Ha ocurrido un error", message: errorMsg, preset: .error)
+						indicatorView.present(duration: 3)
+					}
+					
+					UIView.animate(withDuration: 1) {
+						self.savePasswordBTN.isEnabled = true
+						self.savePasswordBTN.alpha = 1
+					}
+				} failure: { error in
+					let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
+					vc.modalPresentationStyle = .fullScreen
+					vc.modalTransitionStyle = .coverVertical
+					vc.errorType = .decodingError
+					self.present(vc, animated: true, completion: nil)
+				}
 			}
 		}
 	}
@@ -92,13 +136,34 @@ class ModifyPasswordViewController: UIViewController {
 		let yourBackImage = UIImage(systemName: "arrowshape.turn.up.backward.fill", withConfiguration:  UIImage.SymbolConfiguration(pointSize: 18))
 		let backButtonItem = UIBarButtonItem(image: yourBackImage, style: .plain, target: self, action: #selector(popView(tapGestureRecognizer:)))
 		backButtonItem.tintColor = .corporativeColor
-
+		
 		self.navigationItem.leftBarButtonItem = backButtonItem
-
+		
 		self.navigationItem.setHidesBackButton(true, animated: true)
 	}
 	
 	@objc func popView(tapGestureRecognizer: UITapGestureRecognizer) {
 		self.navigationController?.popViewController(animated: true)
+	}
+}
+
+// MARK: UITextField Delegate
+extension ModifyPasswordViewController: UITextFieldDelegate {
+	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+		let text = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+
+		if text.isEmpty {
+			UIView.animate(withDuration: 1) {
+				self.savePasswordBTN.isEnabled = false
+				self.savePasswordBTN.alpha = 0.5
+			}
+		} else {
+			UIView.animate(withDuration: 1) {
+				self.savePasswordBTN.isEnabled = true
+				self.savePasswordBTN.alpha = 1
+			}
+		}
+	
+		return true
 	}
 }
