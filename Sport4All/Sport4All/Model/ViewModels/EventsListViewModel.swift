@@ -69,8 +69,6 @@ class EventsListViewModel {
 		} else {
 			return eventList.count
 		}
-		
-		return 0
 	}
 	
 	func cellForRowAtEventList(indexPath: IndexPath) -> Event {

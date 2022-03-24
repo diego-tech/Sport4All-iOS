@@ -731,11 +731,18 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No hay partidos disponibles este día!!!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICZ-hA-1TT">
+                                <rect key="frame" x="20" y="324" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" name="SFPro-Medium" family="SF Pro" pointSize="17"/>
+                                <color key="textColor" name="HardColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5IF-K6-Jce"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="B95-yo-cvw" firstAttribute="top" secondItem="x2N-Xi-I4w" secondAttribute="bottom" id="2Li-3v-yV5"/>
+                            <constraint firstItem="5IF-K6-Jce" firstAttribute="trailing" secondItem="ICZ-hA-1TT" secondAttribute="trailing" constant="20" id="9YO-my-xIX"/>
                             <constraint firstItem="5IF-K6-Jce" firstAttribute="trailing" secondItem="lj3-k2-NOX" secondAttribute="trailing" constant="10" id="EIH-2x-Fmc"/>
                             <constraint firstItem="x2N-Xi-I4w" firstAttribute="top" secondItem="Yie-1L-eJg" secondAttribute="top" id="GrZ-U9-AZO"/>
                             <constraint firstItem="lj3-k2-NOX" firstAttribute="leading" secondItem="5IF-K6-Jce" secondAttribute="leading" constant="10" id="OAB-br-PRD"/>
@@ -743,6 +750,9 @@
                             <constraint firstItem="x2N-Xi-I4w" firstAttribute="leading" secondItem="5IF-K6-Jce" secondAttribute="leading" id="Rsz-pO-frn"/>
                             <constraint firstItem="lj3-k2-NOX" firstAttribute="top" secondItem="x2N-Xi-I4w" secondAttribute="bottom" constant="10" id="Vxo-pC-pN0"/>
                             <constraint firstAttribute="trailing" secondItem="B95-yo-cvw" secondAttribute="trailing" id="ZmY-Pz-Fpw"/>
+                            <constraint firstItem="ICZ-hA-1TT" firstAttribute="top" secondItem="B95-yo-cvw" secondAttribute="bottom" constant="23" id="ubR-81-qxw"/>
+                            <constraint firstItem="ICZ-hA-1TT" firstAttribute="leading" secondItem="5IF-K6-Jce" secondAttribute="leading" constant="20" id="vuS-Jd-GgZ"/>
+                            <constraint firstItem="ICZ-hA-1TT" firstAttribute="centerX" secondItem="Yie-1L-eJg" secondAttribute="centerX" id="wLY-CQ-XE2"/>
                             <constraint firstItem="5IF-K6-Jce" firstAttribute="bottom" secondItem="lj3-k2-NOX" secondAttribute="bottom" constant="30" id="xjj-5T-Rlt"/>
                             <constraint firstItem="B95-yo-cvw" firstAttribute="leading" secondItem="Yie-1L-eJg" secondAttribute="leading" id="yJ0-Nf-FIi"/>
                         </constraints>
@@ -751,6 +761,7 @@
                         <outlet property="calendar" destination="x2N-Xi-I4w" id="H68-Jx-jNP"/>
                         <outlet property="calendarHeightConstraint" destination="TB0-de-q3U" id="j2I-TB-tRA"/>
                         <outlet property="matchesTableView" destination="lj3-k2-NOX" id="YA7-bv-XHA"/>
+                        <outlet property="noMatchesLabel" destination="ICZ-hA-1TT" id="4aj-kt-7XW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6p9-q2-tin" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

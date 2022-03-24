@@ -25,21 +25,6 @@
             </objects>
             <point key="canvasLocation" x="1028.985507246377" y="79.6875"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="6uv-6s-uXa">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KO7-j4-8Ww" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="heN-DU-eki">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bRE-Bp-zcO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="118.84057971014494" y="79.6875"/>
-        </scene>
     </scenes>
     <resources>
         <namedColor name="BackgroundColor">

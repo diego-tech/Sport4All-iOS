@@ -8,6 +8,7 @@
 import UIKit
 import FSCalendar
 import MapKit
+import SPIndicator
 
 class HomeMatchesViewController:  UIViewController {
 	
@@ -20,10 +21,13 @@ class HomeMatchesViewController:  UIViewController {
 	@IBOutlet weak var calendar: FSCalendar!
 	@IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
 	@IBOutlet weak var matchesTableView: UITableView!
+	@IBOutlet weak var noMatchesLabel: UILabel!
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		
+		noMatchesLabel.isHidden = true
+
 		// Init Values For First Query
 		let today = Date()
 		formatter.dateFormat = "yyyy-MM-dd"
@@ -37,7 +41,7 @@ class HomeMatchesViewController:  UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
-		
+				
 		// Calendar Styles
 		calendarStyles()
 	}
@@ -69,13 +73,19 @@ class HomeMatchesViewController:  UIViewController {
 		
 		matchListViewModel.fetchMatchList(day: queryDay) { [weak self] status, error  in
 			if error == nil {
-				self?.initTableView()
+				if status == 1 {
+					self?.initTableView()
+				} else if status == 3 {
+					self?.noMatchesLabel.isHidden = false
+				} else {
+					let indicator = SPIndicatorView(title: "Ha ocurrido un error", preset: .error)
+					indicator.present(duration: 2)
+				}
 			} else {
 				let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
 				vc.modalPresentationStyle = .fullScreen
 				vc.modalTransitionStyle = .coverVertical
 				vc.errorType = .decodingError
-				print("Error 1")
 				self?.present(vc, animated: true, completion: nil)
 			}
 		}

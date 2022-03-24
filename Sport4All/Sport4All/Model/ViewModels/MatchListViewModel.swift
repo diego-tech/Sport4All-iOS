@@ -20,7 +20,11 @@ class MatchlistViewModel {
 			guard let status = status else { return }
 			self.status = status
 			self.matchList = responseList
-			completion(status, nil)
+			if responseList.isEmpty {
+				completion(3, nil)
+			} else {
+				completion(status, nil)
+			}
 		} failure: { error in
 			completion(0, error)
 		}
