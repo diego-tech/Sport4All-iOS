@@ -30,6 +30,7 @@ class ProfileViewController: UIViewController {
 	@IBOutlet weak var userNameLabel: UILabel!
 	@IBOutlet weak var pendingEventsCollectionView: UICollectionView!
 	@IBOutlet weak var finalEventsCollectionView: UICollectionView!
+	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
@@ -45,6 +46,10 @@ class ProfileViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
+		
+		// Initialize Activity Indicator
+		activityIndicator.startAnimating()
+		activityIndicator.isHidden = false
 		
 		// Configure Navbar
 		configureNavbar()
@@ -111,6 +116,9 @@ class ProfileViewController: UIViewController {
 					guard let url = URL(string: Constants.kStorageURL + userImage) else { return }
 					self.userImageView.loadImage(fromURL: url)
 				}
+				
+				self.activityIndicator.stopAnimating()
+				self.activityIndicator.isHidden = true
 			}
 		} failure: { error in
 			let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController

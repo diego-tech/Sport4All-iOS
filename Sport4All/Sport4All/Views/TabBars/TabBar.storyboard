@@ -115,11 +115,21 @@
                                             <constraint firstAttribute="height" constant="1" id="J1n-bX-pfm"/>
                                         </constraints>
                                     </view>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="fix-b6-jsa">
+                                        <rect key="frame" x="197" y="110" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="qrK-oI-KVo"/>
+                                            <constraint firstAttribute="width" constant="20" id="r6X-SQ-CJI"/>
+                                        </constraints>
+                                        <color key="color" name="CorporativeColor"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" name="BackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="gKy-kd-y8y" secondAttribute="trailing" constant="20" id="6Lf-xH-UJj"/>
+                                    <constraint firstItem="fix-b6-jsa" firstAttribute="centerY" secondItem="SeR-6g-nar" secondAttribute="centerY" id="G90-vK-laT"/>
                                     <constraint firstItem="g6D-Tw-DJx" firstAttribute="top" secondItem="SeR-6g-nar" secondAttribute="top" constant="30" id="NiA-ag-tCZ"/>
+                                    <constraint firstItem="fix-b6-jsa" firstAttribute="centerX" secondItem="gKy-kd-y8y" secondAttribute="centerX" id="OUb-o8-JSB"/>
                                     <constraint firstItem="HlW-p8-nM3" firstAttribute="width" secondItem="SeR-6g-nar" secondAttribute="width" id="RCn-Ap-l1v"/>
                                     <constraint firstItem="HlW-p8-nM3" firstAttribute="top" secondItem="gKy-kd-y8y" secondAttribute="bottom" constant="35" id="XCH-LB-lLu"/>
                                     <constraint firstItem="HlW-p8-nM3" firstAttribute="leading" secondItem="SeR-6g-nar" secondAttribute="leading" id="iqa-jq-wbd"/>
@@ -282,6 +292,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="u5a-mo-BRC"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="fix-b6-jsa" id="zO9-Bj-NQ4"/>
                         <outlet property="finalEventsCollectionView" destination="NU9-Zn-c6h" id="9XO-Pa-q8i"/>
                         <outlet property="headerUIView" destination="SeR-6g-nar" id="Bnj-3x-aU8"/>
                         <outlet property="pendingEventsCollectionView" destination="m6a-Xy-kH7" id="JG2-Oc-zI5"/>
