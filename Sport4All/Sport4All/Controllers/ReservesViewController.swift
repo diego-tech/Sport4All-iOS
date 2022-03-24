@@ -46,9 +46,12 @@ class ReservesViewController: UIViewController {
 		dateFormatter.dateFormat = "yyyy-MM-dd"
 		let todayFormat = dateFormatter.string(from: today)
 		pickedDate = todayFormat
-		dateFormatter.dateFormat = "HH:mm:ss"
-		let nowTime = dateFormatter.string(from: today)
-		pickedTime = nowTime
+		dateFormatter.dateFormat = "HH:mm"
+		
+		let nowTime = today.nearestHour()
+		guard let nowTime = nowTime else { return }
+		let nowTimeStr = dateFormatter.string(from: nowTime)
+		pickedTime = nowTimeStr + ":00"
 		hourTextField.text = pickedTime
 	
 		// Init Table View
@@ -58,7 +61,7 @@ class ReservesViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
-		
+				
 		// Configure Models
 		configure()
 		

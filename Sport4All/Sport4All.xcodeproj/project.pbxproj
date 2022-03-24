@@ -30,6 +30,7 @@
 		5E197F01278D7E6F008BBABB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E197F00278D7E6F008BBABB /* Constants.swift */; };
 		5E197F03278D80D4008BBABB /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E197F02278D80D4008BBABB /* ColorExtension.swift */; };
 		5E212AFE27C2709A0013E1BE /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E212AFD27C2709A0013E1BE /* UIImageViewExtension.swift */; };
+		5E242A8427ECD90F00097E43 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E242A8327ECD90F00097E43 /* DateExtension.swift */; };
 		5E2CC1CD27EB269700C07608 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 5E2CC1CC27EB269700C07608 /* FSCalendar */; };
 		5E2FEE6727A43E3E008B0AE1 /* RetrievePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E2FEE6627A43E3E008B0AE1 /* RetrievePassword.storyboard */; };
 		5E2FEE6927A442DA008B0AE1 /* RetrievePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2FEE6827A442DA008B0AE1 /* RetrievePasswordViewController.swift */; };
@@ -143,6 +144,7 @@
 		5E197F00278D7E6F008BBABB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5E197F02278D80D4008BBABB /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		5E212AFD27C2709A0013E1BE /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		5E242A8327ECD90F00097E43 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		5E2FEE6627A43E3E008B0AE1 /* RetrievePassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RetrievePassword.storyboard; sourceTree = "<group>"; };
 		5E2FEE6827A442DA008B0AE1 /* RetrievePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrievePasswordViewController.swift; sourceTree = "<group>"; };
 		5E371D2827A925F900446D73 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 				5E212AFD27C2709A0013E1BE /* UIImageViewExtension.swift */,
 				5ECB5E8427D3560F003498BF /* UIStackViewExtension.swift */,
 				5EFA865427D9FFAF00FE220F /* UIImageExtension.swift */,
+				5E242A8327ECD90F00097E43 /* DateExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -932,6 +935,7 @@
 				5EA12CA527D78DC300774428 /* ReservesViewController.swift in Sources */,
 				5EF497A627A55794008B0C37 /* UserDefaultsProvider.swift in Sources */,
 				5EDC2CE027C6A2E1007EE2C0 /* PayResumeViewController.swift in Sources */,
+				5E242A8427ECD90F00097E43 /* DateExtension.swift in Sources */,
 				5E45A2A427E60A4000DB5BF5 /* Reserve.swift in Sources */,
 				5E197F03278D80D4008BBABB /* ColorExtension.swift in Sources */,
 				5E51235E27BBD5D70047EE44 /* InfoClubViewController.swift in Sources */,
