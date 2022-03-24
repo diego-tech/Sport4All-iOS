@@ -31,6 +31,8 @@ class ProfileViewController: UIViewController {
 	@IBOutlet weak var pendingEventsCollectionView: UICollectionView!
 	@IBOutlet weak var finalEventsCollectionView: UICollectionView!
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+	@IBOutlet weak var pendingListLabel: UILabel!
+	@IBOutlet weak var finishListLabel: UILabel!
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
@@ -134,32 +136,98 @@ class ProfileViewController: UIViewController {
 		self.pendingEventsCollectionView.delegate = self
 		
 		pendingCollectionViewModel.fetchPendingEvents { [weak self] status, error in
-			self?.pendingEventsCollectionView.reloadData()
+			if error == nil {
+				if status == 1 {
+					self?.pendingEventsCollectionView.reloadData()
+				} else if status == 3 {
+					guard let strongSelf = self else { return }
+					if strongSelf.checkIfPendingLabelIsHide() {
+						self?.pendingListLabel.isHidden = false
+					} else {
+						self?.pendingListLabel.isHidden = true
+					}
+				}
+			}
 		}
 		
 		pendingCollectionViewModel.fetchPendingMatches { [weak self] status, error in
-			self?.pendingEventsCollectionView.reloadData()
+			if error == nil {
+				if status == 1 {
+					self?.pendingEventsCollectionView.reloadData()
+				} else if status == 3 {
+					guard let strongSelf = self else { return }
+					if strongSelf.checkIfPendingLabelIsHide() {
+						self?.pendingListLabel.isHidden = false
+					} else {
+						self?.pendingListLabel.isHidden = true
+					}
+				}
+			}
 		}
 		
 		pendingCollectionViewModel.fetchPendingReserves { [weak self] status, error in
-			self?.pendingEventsCollectionView.reloadData()
+			if error == nil {
+				if status == 1 {
+					self?.pendingEventsCollectionView.reloadData()
+				} else if status == 3 {
+					guard let strongSelf = self else { return }
+					if strongSelf.checkIfPendingLabelIsHide() {
+						self?.pendingListLabel.isHidden = false
+					} else {
+						self?.pendingListLabel.isHidden = true
+					}
+				}
+			}
 		}
 	}
 	
 	private func finishList() {
 		self.finalEventsCollectionView.dataSource = self
 		self.finalEventsCollectionView.delegate = self
-		
+	
 		finishCollectionViewModel.fetchFinishEvents { [weak self] status, error in
-			self?.finalEventsCollectionView.reloadData()
+			if error == nil {
+				if status == 1 {
+					self?.finalEventsCollectionView.reloadData()
+				} else if status == 3 {
+					guard let strongSelf = self else { return }
+					if strongSelf.checkIfFinishLabelIsHide() {
+						self?.finishListLabel.isHidden = false
+					} else {
+						self?.finishListLabel.isHidden = true
+					}
+				}
+			}
 		}
 		
 		finishCollectionViewModel.fetchFinishMatchs { [weak self] status, error in
-			self?.finalEventsCollectionView.reloadData()
+			if error == nil {
+				if status == 1 {
+					self?.finalEventsCollectionView.reloadData()
+				} else if status == 3 {
+					guard let strongSelf = self else { return }
+					if strongSelf.checkIfFinishLabelIsHide() {
+						self?.finishListLabel.isHidden = false
+					} else {
+						self?.finishListLabel.isHidden = true
+					}
+				}
+			}
 		}
 		
 		finishCollectionViewModel.fetchFinishReserves { [weak self] status, error in
-			self?.finalEventsCollectionView.reloadData()
+			if error == nil {
+				if status == 1 {
+					self?.finalEventsCollectionView.reloadData()
+				} else if status == 3 {
+					guard let strongSelf = self else { return }
+					if strongSelf.checkIfFinishLabelIsHide() {
+						self?.finishListLabel.isHidden = false
+					} else {
+						self?.finishListLabel.isHidden = true
+					}
+				}
+			}
 		}
 	}
 	
@@ -179,6 +247,22 @@ class ProfileViewController: UIViewController {
 		finalEventsCollectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
 		finalEventsCollectionView.showsVerticalScrollIndicator = false
 		finalEventsCollectionView.showsHorizontalScrollIndicator = false
+	}
+	
+	private func checkIfFinishLabelIsHide() -> Bool {
+		if finishListLabel.isHidden == true {
+			return true
+		} else {
+			return false
+		}
+	}
+	
+	private func checkIfPendingLabelIsHide() -> Bool {
+		if pendingListLabel.isHidden == true {
+			return true
+		} else {
+			return false
+		}
 	}
 	
 	private func logOut() {
