@@ -59,8 +59,18 @@ class DetailEventViewController: UIViewController {
 				indicatorView.present(duration: 3)
 			}
 		} failure: { error in
-			print(error)
+			guard let error = error else { return }
+			debugPrint("Inscribe Button Error \(error)")
+			self.goToAuth()
 		}
+	}
+	
+	private func goToAuth() {
+		let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
+		vc.modalPresentationStyle = .fullScreen
+		vc.modalTransitionStyle = .coverVertical
+		vc.errorType = .decodingError
+		present(vc, animated: true, completion: nil)
 	}
 	
 	// MARK: Functions
