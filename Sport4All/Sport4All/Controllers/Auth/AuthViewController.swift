@@ -7,6 +7,7 @@
 
 import UIKit
 import SPIndicator
+import Alamofire
 
 enum ErrorType {
 	case decodingError
@@ -32,6 +33,9 @@ class AuthViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
+		
+		// Check if user has internet
+		checkIfHasInternet()
 		
 		// Set Up Errors
 		setIndicatorForErrors()
@@ -152,6 +156,31 @@ class AuthViewController: UIViewController {
 		
 		let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
 		sceneDelegate?.changeRootViewController(vc)
+	}
+	
+	private func checkIfHasInternet() {
+		let reachabilityManager = NetworkReachabilityManager(host: "www.google.com")
+
+		reachabilityManager?.startListening { status in
+			switch status {
+			case .notReachable:
+				debugPrint("No Internet")
+				let indicatorView = SPIndicatorView(title: "No Tienes Conexión a Internet", preset: .error)
+				indicatorView.present(duration: 3)
+				self.accessButton.isEnabled = true
+				self.accessButton.alpha = 0.5
+			case .unknown:
+				debugPrint("Unknown")
+				let indicatorView = SPIndicatorView(title: "No Tienes Conexión a Internet", preset: .error)
+				indicatorView.present(duration: 3)
+				self.accessButton.isEnabled = true
+				self.accessButton.alpha = 0.5
+			case .reachable(.cellular):
+				debugPrint("Cellular")
+			case .reachable(.ethernetOrWiFi):
+				debugPrint("Wifi")
+			}
+		}
 	}
 	
 	// MARK: Styles

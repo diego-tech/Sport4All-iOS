@@ -7,31 +7,11 @@
 
 import UIKit
 import IQKeyboardManagerSwift
-import Alamofire
-import SPIndicator
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-		let reachabilityManager = NetworkReachabilityManager(host: "www.google.com")
-
-		reachabilityManager?.startListening { status in
-			switch status {
-			case .notReachable:
-				debugPrint("No Internet")
-				let indicatorView = SPIndicatorView(title: "No Tienes Conexión a Internet", preset: .error)
-				indicatorView.present(duration: 3)
-			case .unknown:
-				debugPrint("Unknown")
-				let indicatorView = SPIndicatorView(title: "No Tienes Conexión a Internet", preset: .error)
-				indicatorView.present(duration: 3)
-			case .reachable(.cellular):
-				debugPrint("Cellular")
-			case .reachable(.ethernetOrWiFi):
-				debugPrint("Wifi")
-			}
-		}
 		
 		// Tiempo de Cargar Launch Screen
 		Thread.sleep(forTimeInterval: 2.0)
