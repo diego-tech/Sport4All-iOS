@@ -19,6 +19,7 @@ class SocialViewController: UIViewController {
 	
 	// MARK: Outlets
 	@IBOutlet weak var eventsTableView: UITableView!
+	@IBOutlet weak var noEventsLabel: UILabel!
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
@@ -31,6 +32,9 @@ class SocialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+		
+		// Hide Label First
+		self.noEventsLabel.isHidden = true
 		
 		// Configure Navbar
 		configureNavbar()
@@ -46,13 +50,41 @@ class SocialViewController: UIViewController {
 	
 	// MARK: Functions
 	private func eventsList() {
-		tableViewModel.fetchEventList { [weak self] status in
-			self?.initTableView()
+		tableViewModel.fetchEventList { [weak self] status, error in
+			if error == nil {
+				if status == 1 {
+					self?.initTableView()
+				} else if status == 3 {
+					self?.noEventsLabel.isHidden = false
+				} else {
+					self?.goToAuth()
+				}
+			} else {
+				self?.goToAuth()
+			}
 		}
 		
-		tableViewModel.fetchFavEventsList { [weak self] status in
-			self?.initTableView()
+		tableViewModel.fetchFavEventsList { [weak self] status, error in
+			if error == nil {
+				if status == 1 {
+					self?.initTableView()
+				} else if status == 3 {
+					self?.noEventsLabel.isHidden = false
+				} else {
+					self?.goToAuth()
+				}
+			} else {
+				self?.goToAuth()
+			}
 		}
+	}
+	
+	private func goToAuth() {
+		let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! AuthViewController
+		vc.modalPresentationStyle = .fullScreen
+		vc.modalTransitionStyle = .coverVertical
+		vc.errorType = .decodingError
+		self.present(vc, animated: true, completion: nil)
 	}
 	
 	private func initTableView() {

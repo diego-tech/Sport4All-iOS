@@ -21,10 +21,11 @@ class HomeListViewModel {
 			guard let status = status else { return }
 			self.status = status
 			self.clubList = responseList
-			if self.clubList.isEmpty {
+			if responseList.isEmpty {
 				completion(3, nil)
+			} else {
+				completion(status, nil)
 			}
-			completion(status, nil)
 		} failure: { error in
 			guard let error = error else { return }
 			debugPrint("Fetch Club List Error \(error)")
@@ -39,10 +40,11 @@ class HomeListViewModel {
 			guard let status = status else { return }
 			self.status = status
 			self.clubList = responseList
-			if self.clubList.isEmpty {
+			if responseList.isEmpty {
 				completion(3, nil)
+			} else {
+				completion(status, nil)
 			}
-			completion(status, nil)
 		} failure: { error in
 			guard let error = error else { return }
 			debugPrint("Fetch Fav Club List Error \(error)")
@@ -57,10 +59,11 @@ class HomeListViewModel {
 			guard let status = status else { return }
 			self.status = status
 			self.clubList = responseList
-			if self.clubList.isEmpty {
+			if responseList.isEmpty {
 				completion(3, nil)
+			} else {
+				completion(status, nil)
 			}
-			completion(status, nil)
 		} failure: { error in
 			guard let error = error else { return }
 			debugPrint("Fetch Search Club List Error \(error)")

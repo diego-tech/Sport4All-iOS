@@ -17,32 +17,44 @@ class EventsListViewModel {
 	]
 	
 	private var eventList = [Event]()
-	private var favEventList = [Event]()	
+	private var favEventList = [Event]()
 	private var status = Int()
 	
 	// MARK: Fetch Events List
-	func fetchEventList(completion: @escaping (_ status: Int?) -> ()) {
+	func fetchEventList(completion: @escaping (_ status: Int?, _ error: Error?) -> ()) {
 		NetworkingProvider.shared.listEvents { responseData, status, msg in
 			guard let responseList = responseData else { return }
 			guard let status = status else { return }
 			self.status = status
 			self.eventList = responseList
-			completion(status)
+			if responseList.isEmpty {
+				completion(3, nil)
+			} else {
+				completion(status, nil)
+			}
 		} failure: { error in
-			debugPrint(error)
+			guard let error = error else { return }
+			debugPrint("Fetch List Events Error \(error)")
+			completion(0, error)
 		}
 	}
 	
 	// MARK: Fetch Fav Events List
-	func fetchFavEventsList(completion: @escaping (_ status: Int?) -> ()) {
+	func fetchFavEventsList(completion: @escaping (_ status: Int?, _ error: Error?) -> ()) {
 		NetworkingProvider.shared.listEventsByFav { responseData, status, msg in
 			guard let responseList = responseData else { return }
 			guard let status = status else { return }
 			self.status = status
 			self.favEventList = responseList
-			completion(status)
+			if responseList.isEmpty {
+				completion(3, nil)
+			} else {
+				completion(status, nil)
+			}
 		} failure: { error in
-			debugPrint(error)
+			guard let error = error else { return }
+			debugPrint("Fetch Fave List Events Error \(error)")
+			completion(0, error)
 		}
 	}
 	
