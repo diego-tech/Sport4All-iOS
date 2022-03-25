@@ -60,7 +60,7 @@ struct MatchItem: Codable {
 
 struct MatchInscription: Codable {
 	let id: Int?
-	let matchId: Int?
+	let matchId: String?
 	let userId: Int?
 	let updatedAt: Date?
 	let createdAt: Date?

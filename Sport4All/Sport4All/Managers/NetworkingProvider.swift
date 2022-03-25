@@ -516,7 +516,7 @@ final class NetworkingProvider {
 		
 		let parameters = [
 			"match_id": match_id
-		] as [String: Any]
+		] as [String: Int]
 		
 		AF.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseDecodable(of: MatchInscriptionResponse.self, decoder: DateDecoder()) {
 			response in
