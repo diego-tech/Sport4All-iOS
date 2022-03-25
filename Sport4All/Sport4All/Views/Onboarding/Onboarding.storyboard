@@ -148,6 +148,7 @@
                             <constraint firstItem="VUr-26-G7j" firstAttribute="centerX" secondItem="O8D-Wh-tgq" secondAttribute="centerX" id="kUi-ER-h0H"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="b4A-Oq-gi2"/>
                     <connections>
                         <outlet property="nextButton" destination="VUr-26-G7j" id="NQU-HI-jkc"/>
                         <outlet property="onboardingCollectionView" destination="6Dh-mS-hjI" id="Ouj-cx-NnG"/>
@@ -157,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uKn-Vr-z7n" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2409" y="106"/>
+            <point key="canvasLocation" x="-1500.0000000000002" y="105.80357142857143"/>
         </scene>
     </scenes>
     <resources>

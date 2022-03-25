@@ -48,14 +48,7 @@ class CustomSegmentedControl: UISegmentedControl
 		
 		underlineSegmented.frame = underlineFrame
 		underlineSegmented.backgroundColor = UIColor.hardColor
-		
-		if selectedSegmentIndex == 0 {
-			underlineSegmented.tag = 0
-		} else if selectedSegmentIndex == 1{
-			underlineSegmented.tag = 1
-		} else {
-			underlineSegmented.tag = 2
-		}
+		underlineSegmented.tag = 1
 	}
 	
 	func addAllUnderline() {
@@ -69,7 +62,7 @@ class CustomSegmentedControl: UISegmentedControl
 	}
 	
 	func changeUnderlinePosition() {
-		guard let underline = self.viewWithTag(tag) else { return }
+		guard let underline = self.viewWithTag(1) else { return }
 		let underlineFinalXPosition = (self.bounds.width / CGFloat(self.numberOfSegments)) * CGFloat(selectedSegmentIndex)
 		
 		UIView.animate(withDuration: 0.1, animations: {
