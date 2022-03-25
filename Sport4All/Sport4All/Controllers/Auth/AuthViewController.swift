@@ -44,10 +44,6 @@ class AuthViewController: UIViewController {
 		setTextFieldStyles()
 		setButtonStyles()
 		
-		// Login Test Diego
-		emailTextField.text = "diego171200@gmail.com"
-		passwordTextField.text = "Prueba12345."
-		
 		// TextField Delegates
 		emailTextField.delegate = self
 		passwordTextField.delegate = self

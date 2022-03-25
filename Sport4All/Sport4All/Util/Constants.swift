@@ -14,10 +14,6 @@ struct Constants {
 	static let kStorageURL = "http://ec2-3-8-102-5.eu-west-2.compute.amazonaws.com/storage/"
 	static let kContactUsWeb = "http://ec2-3-8-102-5.eu-west-2.compute.amazonaws.com/"
 	
-//	static let kBaseURL = "http://localhost/api"
-//	static let kStorageURL = "http://localhost/storage"
-//	static let kContactUsWeb = "http://localhost/"
-	
 	// Services Enum Strings
 	static let parking = "Parking"
 	static let coffeeShop = "Cafeteria"

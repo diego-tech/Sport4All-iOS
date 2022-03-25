@@ -34,12 +34,6 @@ class RegisterViewController: UIViewController {
 		setTextFieldStyles()
 		setButtonStyles()
 		
-		// Register Test Diego
-		firstEmailTF.text = "cristo.luke99@gmail.com"
-		secondEmailTF.text = "prueba3@prueba.com"
-		firstPasswordTF.text = "Prueba12345."
-		secondPasswordTF.text = "Prueba12345."
-		
 		// TextField Delegates
 		firstEmailTF.delegate = self
 		secondEmailTF.delegate = self
