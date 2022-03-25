@@ -68,9 +68,7 @@ class SocialViewController: UIViewController {
 			if error == nil {
 				if status == 1 {
 					self?.initTableView()
-				} else if status == 3 {
-					self?.noEventsLabel.isHidden = false
-				} else {
+				} else if status == 0 {
 					self?.goToAuth()
 				}
 			} else {
