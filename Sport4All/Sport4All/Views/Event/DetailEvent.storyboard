@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -43,12 +44,14 @@
                                         <color key="textColor" red="0.19607843137254902" green="0.26666666666666666" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="InfoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="wSS-ZD-qu6">
-                                        <rect key="frame" x="352" y="200" width="37" height="32"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="wSS-ZD-qu6">
+                                        <rect key="frame" x="352" y="200.5" width="37" height="31"/>
+                                        <color key="tintColor" name="HardColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="37" id="0EJ-lS-apJ"/>
                                             <constraint firstAttribute="height" constant="32" id="edq-JY-8i0"/>
                                         </constraints>
+                                        <imageReference key="image" image="info.circle" catalog="system" symbolScale="medium"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fM6-J4-k9H">
                                         <rect key="frame" x="0.0" y="266" width="414" height="1"/>
@@ -213,7 +216,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="InfoIcon" width="45" height="45"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <namedColor name="BackgroundColor">
             <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

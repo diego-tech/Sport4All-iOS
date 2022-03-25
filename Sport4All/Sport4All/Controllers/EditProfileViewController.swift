@@ -230,7 +230,7 @@ extension EditProfileViewController: UIImagePickerControllerDelegate {
 			guard let status = status else { return }
 			guard let msg = msg else { return }
 			if status == 0 {
-				let indicatorView = SPIndicatorView(title: "Ha ocurrido un con la subida de la imagen", message: msg, preset: .error)
+				let indicatorView = SPIndicatorView(title: "Ha ocurrido un error con la subida de la imagen", message: msg, preset: .error)
 				indicatorView.present(duration: 3)
 				self.editButton.isEnabled = false
 				self.editButton.alpha = 0.5
