@@ -205,6 +205,7 @@ class PayResumeViewController: UIViewController {
 			if status == 1 {
 				let indicator = SPIndicatorView(title: "Pago Realizado Correctamente", message: msg, preset: .done)
 				indicator.present(duration: 1) {
+					self.payResumeDelegate?.payResumeViewController(self, didFinishPayment: true)
 					self.dismiss(animated: true, completion: nil)
 				}
 			} else {
