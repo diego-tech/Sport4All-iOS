@@ -36,8 +36,8 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
 		setTextFieldStyles()
 		setButtonStyles()
 		setImageStyles()
-		setSegmentedControl()
-		
+//		setSegmentedControl()
+
 		// Init Image Picker Delegate
 		pickerController.delegate = self
 		
@@ -58,7 +58,7 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
 		// Segmented Control
-		genreSegmentedControl.setUpView()
+		setSegmentedControl()
 	}
 	
 	// MARK: Action Functions
@@ -202,10 +202,13 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
 			switch userGenre {
 			case Strings.womanGenre:
 				genreSegmentedControl.selectedSegmentIndex = 0
+				genreSegmentedControl.setUpView()
 			case Strings.manGenre:
 				genreSegmentedControl.selectedSegmentIndex = 1
+				genreSegmentedControl.setUpView()
 			case Strings.otherGenre:
 				genreSegmentedControl.selectedSegmentIndex = 2
+				genreSegmentedControl.setUpView()
 			default:
 				break
 			}
@@ -227,7 +230,7 @@ extension EditProfileViewController: UIImagePickerControllerDelegate {
 			guard let status = status else { return }
 			guard let msg = msg else { return }
 			if status == 0 {
-				let indicatorView = SPIndicatorView(title: "Ha ocurrido un con la subida de la imagen", message: msg, preset: .error)
+				let indicatorView = SPIndicatorView(title: "Ha ocurrido un error con la subida de la imagen", message: msg, preset: .error)
 				indicatorView.present(duration: 3)
 				self.editButton.isEnabled = false
 				self.editButton.alpha = 0.5

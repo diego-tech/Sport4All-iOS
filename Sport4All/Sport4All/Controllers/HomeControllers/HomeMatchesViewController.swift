@@ -75,6 +75,7 @@ class HomeMatchesViewController:  UIViewController {
 			if error == nil {
 				if status == 1 {
 					self?.initTableView()
+					self?.noMatchesLabel.isHidden = true
 				} else if status == 3 {
 					self?.noMatchesLabel.isHidden = false
 				} else {

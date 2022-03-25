@@ -377,7 +377,17 @@ extension ReservesViewController: ReservesDetailTableViewCellDelegate {
 		vc.price = price
  		vc.reserveDay = pickedDate
 		vc.reserveHour = pickedTime
+		vc.payResumeDelegate = self
 		modalPresentationStyle = .automatic
 		self.present(vc, animated: true, completion: nil)
+	}
+}
+
+// MARK: PayResumeDelegate
+extension ReservesViewController: PayResumeViewControllerDelegate {
+	func payResumeViewController(_ payResumeViewController: PayResumeViewController, didFinishPayment bool: Bool) {
+		if bool {
+			self.navigationController?.popViewController(animated: true)
+		}
 	}
 }

@@ -80,8 +80,9 @@ class SettingsViewController: UIViewController {
 				dismiss(animated: true, completion: nil)
 			},
 			SettingsOption(title: "Ver Tutorial", icon: UIImage(systemName: "eye.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .hardColor ?? .black, optionType: .ShowTutorial) { [self] option in
-				settingsDelegate?.settingsViewController(self, didSelectOption: option)
-				dismiss(animated: true, completion: nil)
+				dismiss(animated: true) {
+					self.settingsDelegate?.settingsViewController(self, didSelectOption: option)
+				}
 			},
 			SettingsOption(title: "Cerrar Sesión", icon: UIImage(systemName: "xmark.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20)), tintColor: .red, optionType: .LogOut) { [self] option in
 				settingsDelegate?.settingsViewController(self, didSelectOption: option)

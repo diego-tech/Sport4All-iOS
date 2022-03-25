@@ -56,8 +56,8 @@ struct ReserveResponse: Codable {
 
 struct MatchInscriptionResponse: Codable {
 	let status: Int?
-	let data: MatchInscription?
 	let msg: String?
+	let data: MatchInscription?
 }
 
 struct InscriptionEventResponse: Codable {

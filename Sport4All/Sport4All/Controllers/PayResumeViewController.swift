@@ -13,6 +13,10 @@ enum ReserveType {
 	case matchReserve
 }
 
+protocol PayResumeViewControllerDelegate {
+	func payResumeViewController(_ payResumeViewController: PayResumeViewController, didFinishPayment bool: Bool)
+}
+
 class PayResumeViewController: UIViewController {
 	
 	// MARK: Variables
@@ -31,6 +35,8 @@ class PayResumeViewController: UIViewController {
 	var time: Int = 0
 	
 	var matchId: Int = 0
+	
+	var payResumeDelegate: PayResumeViewControllerDelegate?
 	
 	// MARK: Outlets
 	@IBOutlet weak var clubNameLabel: UILabel!
@@ -166,6 +172,7 @@ class PayResumeViewController: UIViewController {
 			if status == 1 {
 				let indicator = SPIndicatorView(title: "Pago Realizado Correctamente", message: msg, preset: .done)
 				indicator.present(duration: 1) {
+					self.payResumeDelegate?.payResumeViewController(self, didFinishPayment: true)
 					self.dismiss(animated: true, completion: nil)
 				}
 			} else {
@@ -187,6 +194,7 @@ class PayResumeViewController: UIViewController {
 	}
 	
 	private func matchReservePay() {
+		print(matchId)
 		UIView.animate(withDuration: 1) {
 			self.payButton.isEnabled = false
 			self.payButton.alpha = 0.5

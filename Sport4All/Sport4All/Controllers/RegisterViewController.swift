@@ -35,7 +35,7 @@ class RegisterViewController: UIViewController {
 		setButtonStyles()
 		
 		// Register Test Diego
-		firstEmailTF.text = "prueba3@prueba.com"
+		firstEmailTF.text = "cristo.luke99@gmail.com"
 		secondEmailTF.text = "prueba3@prueba.com"
 		firstPasswordTF.text = "Prueba12345."
 		secondPasswordTF.text = "Prueba12345."
