@@ -74,7 +74,14 @@ class OnboardingViewController: UIViewController {
 	// MARK: Action Functions
 	@IBAction func skipTutorialButtonAction(_ sender: UIButton) {
 		UserDefaultsProvider.shared.setUserDefaults(key: .isNewUser, value: true)
-		navigateToAuth()
+		switch modalType {
+		case .firstLogin:
+			self.navigateToAuth()
+		case .showTutorial:
+			self.navigateToTabBar()
+		case .none:
+			break
+		}
 	}
 	
 	@IBAction func nextButtonAction(_ sender: UIButton) {
