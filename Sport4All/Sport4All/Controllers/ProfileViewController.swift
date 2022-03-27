@@ -93,18 +93,26 @@ class ProfileViewController: UIViewController {
 			if status == 1 {
 				if let authUserName = responseData?.name {
 					UserDefaultsProvider.shared.setUserDefaults(key: .authUserName, value: authUserName)
+				} else {
+					UserDefaultsProvider.shared.remove(key: .authUserName)
 				}
 				
 				if let authUserSurname = responseData?.surname {
 					UserDefaultsProvider.shared.setUserDefaults(key: .authUserSurname, value: authUserSurname)
+				} else {
+					UserDefaultsProvider.shared.remove(key: .authUserSurname)
 				}
 				
 				if let authUserImg = responseData?.image {
 					UserDefaultsProvider.shared.setUserDefaults(key: .authUserImg, value: authUserImg)
+				} else {
+					UserDefaultsProvider.shared.remove(key: .authUserImg)
 				}
 				
 				if let authUserGenre = responseData?.genre {
 					UserDefaultsProvider.shared.setUserDefaults(key: .authUserGenre, value: authUserGenre)
+				} else {
+					UserDefaultsProvider.shared.remove(key: .authUserGenre)
 				}
 				
 				guard let userEmail = responseData?.email else { return }
