@@ -9,14 +9,14 @@ import Foundation
 
 struct Inscription: Codable {
 	let id: Int?
-	let eventId: Int?
+	let event_id: Int?
 	let userId: Int?
 	let updatedAt: Date?
 	let createdAt: Date?
 	
 	enum CodingKeys: String, CodingKey {
 		case id
-		case eventId = "event_id"
+		case event_id
 		case userId = "user_id"
 		case updatedAt = "updated_at"
 		case createdAt = "created_at"

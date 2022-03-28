@@ -57,7 +57,7 @@ class FinishEventDetailViewController: UIViewController {
 	
 	@IBAction func goToCallClubButtonAction(_ sender: UIButton) {
 		guard let tlf = club?.tlf else { return }
-		if let urlToOpen = URL(string: tlf) {
+		if let urlToOpen = URL(string: "tel://\(tlf)") {
 			UIApplication.shared.open(urlToOpen, options: [:], completionHandler: nil )
 		}
 	}
